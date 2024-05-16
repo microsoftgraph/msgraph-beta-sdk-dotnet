@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class InitiateInvestigationResponseAction : ResponseAction, IParsable 
+    public class InitiateInvestigationResponseAction : ResponseAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier property</summary>
-        public DeviceIdEntityIdentifier? Identifier {
+        public DeviceIdEntityIdentifier? Identifier
+        {
             get { return BackingStore?.Get<DeviceIdEntityIdentifier?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"identifier", n => { Identifier = n.GetEnumValue<DeviceIdEntityIdentifier>(); } },
+                { "identifier", n => { Identifier = n.GetEnumValue<DeviceIdEntityIdentifier>(); } },
             };
         }
         /// <summary>

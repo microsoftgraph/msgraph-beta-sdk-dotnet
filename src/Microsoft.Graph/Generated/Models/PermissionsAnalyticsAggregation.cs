@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PermissionsAnalyticsAggregation : Entity, IParsable 
+    public class PermissionsAnalyticsAggregation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The aws property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsAnalytics? Aws {
+        public PermissionsAnalytics? Aws
+        {
             get { return BackingStore?.Get<PermissionsAnalytics?>("aws"); }
             set { BackingStore?.Set("aws", value); }
         }
 #nullable restore
 #else
-        public PermissionsAnalytics Aws {
+        public PermissionsAnalytics Aws
+        {
             get { return BackingStore?.Get<PermissionsAnalytics>("aws"); }
             set { BackingStore?.Set("aws", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The azure property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsAnalytics? Azure {
+        public PermissionsAnalytics? Azure
+        {
             get { return BackingStore?.Get<PermissionsAnalytics?>("azure"); }
             set { BackingStore?.Set("azure", value); }
         }
 #nullable restore
 #else
-        public PermissionsAnalytics Azure {
+        public PermissionsAnalytics Azure
+        {
             get { return BackingStore?.Get<PermissionsAnalytics>("azure"); }
             set { BackingStore?.Set("azure", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The gcp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsAnalytics? Gcp {
+        public PermissionsAnalytics? Gcp
+        {
             get { return BackingStore?.Get<PermissionsAnalytics?>("gcp"); }
             set { BackingStore?.Set("gcp", value); }
         }
 #nullable restore
 #else
-        public PermissionsAnalytics Gcp {
+        public PermissionsAnalytics Gcp
+        {
             get { return BackingStore?.Get<PermissionsAnalytics>("gcp"); }
             set { BackingStore?.Set("gcp", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"aws", n => { Aws = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
-                {"azure", n => { Azure = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
-                {"gcp", n => { Gcp = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
+                { "aws", n => { Aws = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
+                { "azure", n => { Azure = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
+                { "gcp", n => { Gcp = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

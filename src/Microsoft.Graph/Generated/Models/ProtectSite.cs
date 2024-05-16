@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ProtectSite : LabelActionBase, IParsable 
+    public class ProtectSite : LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessType property</summary>
-        public SiteAccessType? AccessType {
+        public SiteAccessType? AccessType
+        {
             get { return BackingStore?.Get<SiteAccessType?>("accessType"); }
             set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>The conditionalAccessProtectionLevelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConditionalAccessProtectionLevelId {
+        public string? ConditionalAccessProtectionLevelId
+        {
             get { return BackingStore?.Get<string?>("conditionalAccessProtectionLevelId"); }
             set { BackingStore?.Set("conditionalAccessProtectionLevelId", value); }
         }
 #nullable restore
 #else
-        public string ConditionalAccessProtectionLevelId {
+        public string ConditionalAccessProtectionLevelId
+        {
             get { return BackingStore?.Get<string>("conditionalAccessProtectionLevelId"); }
             set { BackingStore?.Set("conditionalAccessProtectionLevelId", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessType", n => { AccessType = n.GetEnumValue<SiteAccessType>(); } },
-                {"conditionalAccessProtectionLevelId", n => { ConditionalAccessProtectionLevelId = n.GetStringValue(); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<SiteAccessType>(); } },
+                { "conditionalAccessProtectionLevelId", n => { ConditionalAccessProtectionLevelId = n.GetStringValue(); } },
             };
         }
         /// <summary>

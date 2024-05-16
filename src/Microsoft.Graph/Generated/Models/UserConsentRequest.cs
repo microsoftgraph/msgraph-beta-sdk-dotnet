@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserConsentRequest : Request, IParsable 
+    public class UserConsentRequest : Request, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Approval decisions associated with a request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Approval? Approval {
+        public Microsoft.Graph.Beta.Models.Approval? Approval
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Approval?>("approval"); }
             set { BackingStore?.Set("approval", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Approval Approval {
+        public Microsoft.Graph.Beta.Models.Approval Approval
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Approval>("approval"); }
             set { BackingStore?.Set("approval", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user&apos;s justification for requiring access to the app. Supports $filter (eq only) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason {
+        public string? Reason
+        {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #nullable restore
 #else
-        public string Reason {
+        public string Reason
+        {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"approval", n => { Approval = n.GetObjectValue<Microsoft.Graph.Beta.Models.Approval>(Microsoft.Graph.Beta.Models.Approval.CreateFromDiscriminatorValue); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
+                { "approval", n => { Approval = n.GetObjectValue<Microsoft.Graph.Beta.Models.Approval>(Microsoft.Graph.Beta.Models.Approval.CreateFromDiscriminatorValue); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
             };
         }
         /// <summary>

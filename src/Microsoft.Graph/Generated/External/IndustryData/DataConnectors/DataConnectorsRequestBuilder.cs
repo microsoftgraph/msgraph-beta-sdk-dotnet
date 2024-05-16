@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
+namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors
+{
     /// <summary>
     /// Provides operations to manage the dataConnectors property of the microsoft.graph.industryData.industryDataRoot entity.
     /// </summary>
-    public class DataConnectorsRequestBuilder : BaseRequestBuilder 
+    public class DataConnectorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count
@@ -51,8 +52,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
         {
         }
         /// <summary>
-        /// Get the industryDataConnector resources from the dataConnector navigation property.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-list?view=graph-rest-beta" />
+        /// Get a list of the azureDataLakeConnector objects and their properties.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnectorCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,13 +71,13 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<IndustryDataConnectorCollectionResponse>(requestInfo, IndustryDataConnectorCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new azureDataLakeConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-post?view=graph-rest-beta" />
+        /// Create a new industryDataConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -96,12 +97,12 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the industryDataConnector resources from the dataConnector navigation property.
+        /// Get a list of the azureDataLakeConnector objects and their properties.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +121,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return requestInfo;
         }
         /// <summary>
-        /// Create a new azureDataLakeConnector object.
+        /// Create a new industryDataConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +152,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
             return new DataConnectorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the industryDataConnector resources from the dataConnector navigation property.
+        /// Get a list of the azureDataLakeConnector objects and their properties.
         /// </summary>
         public class DataConnectorsRequestBuilderGetQueryParameters 
         {
@@ -219,14 +220,14 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DataConnectorsRequestBuilderGetRequestConfiguration : RequestConfiguration<DataConnectorsRequestBuilderGetQueryParameters> 
+        public class DataConnectorsRequestBuilderGetRequestConfiguration : RequestConfiguration<DataConnectorsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DataConnectorsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class DataConnectorsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

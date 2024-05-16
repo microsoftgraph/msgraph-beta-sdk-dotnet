@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VerifiableCredentialRetrieved : VerifiableCredentialRequirementStatus, IParsable 
+    public class VerifiableCredentialRetrieved : VerifiableCredentialRequirementStatus, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The specific date and time that the presentation request will expire and a new one will need to be generated.</summary>
-        public DateTimeOffset? ExpiryDateTime {
+        public DateTimeOffset? ExpiryDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expiryDateTime"); }
             set { BackingStore?.Set("expiryDateTime", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
+                { "expiryDateTime", n => { ExpiryDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -5,39 +5,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries {
+namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries
+{
     #pragma warning disable CS1591
-    public class GetHealthMetricTimeSeriesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GetHealthMetricTimeSeriesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDateTime property</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The metricName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MetricName {
+        public string? MetricName
+        {
             get { return BackingStore?.Get<string?>("metricName"); }
             set { BackingStore?.Set("metricName", value); }
         }
 #nullable restore
 #else
-        public string MetricName {
+        public string MetricName
+        {
             get { return BackingStore?.Get<string>("metricName"); }
             set { BackingStore?.Set("metricName", value); }
         }
 #endif
         /// <summary>The startDateTime property</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"metricName", n => { MetricName = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "metricName", n => { MetricName = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

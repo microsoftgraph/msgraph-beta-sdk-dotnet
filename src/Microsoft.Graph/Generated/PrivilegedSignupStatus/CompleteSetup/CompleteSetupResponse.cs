@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
+namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup
+{
     [Obsolete("This class is obsolete. Use CompleteSetupPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CompleteSetupResponse : CompleteSetupPostResponse, IParsable 
+    public class CompleteSetupResponse : CompleteSetupPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

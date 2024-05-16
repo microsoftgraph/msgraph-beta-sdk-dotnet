@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ScheduleSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ScheduleSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Settings for governing how to rollout content to devices. One of: microsoft.graph.windowsUpdates.dateDrivenRolloutSettings, microsoft.graph.windowsUpdates.durationDrivenRolloutSettings, or microsoft.graph.windowsUpdates.rateDrivenRolloutSettings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GradualRolloutSettings? GradualRollout {
+        public GradualRolloutSettings? GradualRollout
+        {
             get { return BackingStore?.Get<GradualRolloutSettings?>("gradualRollout"); }
             set { BackingStore?.Set("gradualRollout", value); }
         }
 #nullable restore
 #else
-        public GradualRolloutSettings GradualRollout {
+        public GradualRolloutSettings GradualRollout
+        {
             get { return BackingStore?.Get<GradualRolloutSettings>("gradualRollout"); }
             set { BackingStore?.Set("gradualRollout", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"gradualRollout", n => { GradualRollout = n.GetObjectValue<GradualRolloutSettings>(GradualRolloutSettings.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "gradualRollout", n => { GradualRollout = n.GetObjectValue<GradualRolloutSettings>(GradualRolloutSettings.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

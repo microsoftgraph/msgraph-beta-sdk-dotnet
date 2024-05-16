@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for iOS lob app provisioning configuration PolicySetItem.
     /// </summary>
-    public class IosLobAppProvisioningConfigurationPolicySetItem : PolicySetItem, IParsable 
+    public class IosLobAppProvisioningConfigurationPolicySetItem : PolicySetItem, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="IosLobAppProvisioningConfigurationPolicySetItem"/> and sets the default values.

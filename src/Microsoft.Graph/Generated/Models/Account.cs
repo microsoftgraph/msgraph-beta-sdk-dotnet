@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Account : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Account : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The blocked property</summary>
-        public bool? Blocked {
+        public bool? Blocked
+        {
             get { return BackingStore?.Get<bool?>("blocked"); }
             set { BackingStore?.Set("blocked", value); }
         }
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category {
+        public string? Category
+        {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public string Category {
+        public string Category
+        {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
@@ -39,37 +44,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number {
+        public string? Number
+        {
             get { return BackingStore?.Get<string?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public string Number {
+        public string Number
+        {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -77,13 +88,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,13 +104,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The subCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubCategory {
+        public string? SubCategory
+        {
             get { return BackingStore?.Get<string?>("subCategory"); }
             set { BackingStore?.Set("subCategory", value); }
         }
 #nullable restore
 #else
-        public string SubCategory {
+        public string SubCategory
+        {
             get { return BackingStore?.Get<string>("subCategory"); }
             set { BackingStore?.Set("subCategory", value); }
         }
@@ -128,14 +143,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"blocked", n => { Blocked = n.GetBoolValue(); } },
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"number", n => { Number = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"subCategory", n => { SubCategory = n.GetStringValue(); } },
+                { "blocked", n => { Blocked = n.GetBoolValue(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "number", n => { Number = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "subCategory", n => { SubCategory = n.GetStringValue(); } },
             };
         }
         /// <summary>

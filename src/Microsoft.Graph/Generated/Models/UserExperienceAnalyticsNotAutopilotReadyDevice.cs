@@ -4,51 +4,59 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics Device not windows autopilot ready.
     /// </summary>
-    public class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity, IParsable 
+    public class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity, IParsable
     {
         /// <summary>The intune device&apos;s autopilotProfileAssigned.</summary>
-        public bool? AutoPilotProfileAssigned {
+        public bool? AutoPilotProfileAssigned
+        {
             get { return BackingStore?.Get<bool?>("autoPilotProfileAssigned"); }
             set { BackingStore?.Set("autoPilotProfileAssigned", value); }
         }
         /// <summary>The intune device&apos;s autopilotRegistered.</summary>
-        public bool? AutoPilotRegistered {
+        public bool? AutoPilotRegistered
+        {
             get { return BackingStore?.Get<bool?>("autoPilotRegistered"); }
             set { BackingStore?.Set("autoPilotRegistered", value); }
         }
         /// <summary>The intune device&apos;s azure Ad joinType.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureAdJoinType {
+        public string? AzureAdJoinType
+        {
             get { return BackingStore?.Get<string?>("azureAdJoinType"); }
             set { BackingStore?.Set("azureAdJoinType", value); }
         }
 #nullable restore
 #else
-        public string AzureAdJoinType {
+        public string AzureAdJoinType
+        {
             get { return BackingStore?.Get<string>("azureAdJoinType"); }
             set { BackingStore?.Set("azureAdJoinType", value); }
         }
 #endif
         /// <summary>The intune device&apos;s azureAdRegistered.</summary>
-        public bool? AzureAdRegistered {
+        public bool? AzureAdRegistered
+        {
             get { return BackingStore?.Get<bool?>("azureAdRegistered"); }
             set { BackingStore?.Set("azureAdRegistered", value); }
         }
         /// <summary>The intune device&apos;s name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -56,13 +64,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The intune device&apos;s managed by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedBy {
+        public string? ManagedBy
+        {
             get { return BackingStore?.Get<string?>("managedBy"); }
             set { BackingStore?.Set("managedBy", value); }
         }
 #nullable restore
 #else
-        public string ManagedBy {
+        public string ManagedBy
+        {
             get { return BackingStore?.Get<string>("managedBy"); }
             set { BackingStore?.Set("managedBy", value); }
         }
@@ -70,13 +80,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The intune device&apos;s manufacturer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -84,13 +96,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The intune device&apos;s model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -98,13 +112,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The intune device&apos;s serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
@@ -127,15 +143,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"autoPilotProfileAssigned", n => { AutoPilotProfileAssigned = n.GetBoolValue(); } },
-                {"autoPilotRegistered", n => { AutoPilotRegistered = n.GetBoolValue(); } },
-                {"azureAdJoinType", n => { AzureAdJoinType = n.GetStringValue(); } },
-                {"azureAdRegistered", n => { AzureAdRegistered = n.GetBoolValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"managedBy", n => { ManagedBy = n.GetStringValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "autoPilotProfileAssigned", n => { AutoPilotProfileAssigned = n.GetBoolValue(); } },
+                { "autoPilotRegistered", n => { AutoPilotRegistered = n.GetBoolValue(); } },
+                { "azureAdJoinType", n => { AzureAdJoinType = n.GetStringValue(); } },
+                { "azureAdRegistered", n => { AzureAdRegistered = n.GetBoolValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "managedBy", n => { ManagedBy = n.GetStringValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

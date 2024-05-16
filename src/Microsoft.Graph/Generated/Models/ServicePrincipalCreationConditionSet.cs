@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ServicePrincipalCreationConditionSet : Entity, IParsable 
+    public class ServicePrincipalCreationConditionSet : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The applicationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ApplicationIds {
+        public List<string>? ApplicationIds
+        {
             get { return BackingStore?.Get<List<string>?>("applicationIds"); }
             set { BackingStore?.Set("applicationIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ApplicationIds {
+        public List<string> ApplicationIds
+        {
             get { return BackingStore?.Get<List<string>>("applicationIds"); }
             set { BackingStore?.Set("applicationIds", value); }
         }
@@ -26,38 +29,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The applicationPublisherIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ApplicationPublisherIds {
+        public List<string>? ApplicationPublisherIds
+        {
             get { return BackingStore?.Get<List<string>?>("applicationPublisherIds"); }
             set { BackingStore?.Set("applicationPublisherIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ApplicationPublisherIds {
+        public List<string> ApplicationPublisherIds
+        {
             get { return BackingStore?.Get<List<string>>("applicationPublisherIds"); }
             set { BackingStore?.Set("applicationPublisherIds", value); }
         }
 #endif
         /// <summary>The applicationsFromVerifiedPublisherOnly property</summary>
-        public bool? ApplicationsFromVerifiedPublisherOnly {
+        public bool? ApplicationsFromVerifiedPublisherOnly
+        {
             get { return BackingStore?.Get<bool?>("applicationsFromVerifiedPublisherOnly"); }
             set { BackingStore?.Set("applicationsFromVerifiedPublisherOnly", value); }
         }
         /// <summary>The applicationTenantIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ApplicationTenantIds {
+        public List<string>? ApplicationTenantIds
+        {
             get { return BackingStore?.Get<List<string>?>("applicationTenantIds"); }
             set { BackingStore?.Set("applicationTenantIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ApplicationTenantIds {
+        public List<string> ApplicationTenantIds
+        {
             get { return BackingStore?.Get<List<string>>("applicationTenantIds"); }
             set { BackingStore?.Set("applicationTenantIds", value); }
         }
 #endif
         /// <summary>The certifiedApplicationsOnly property</summary>
-        public bool? CertifiedApplicationsOnly {
+        public bool? CertifiedApplicationsOnly
+        {
             get { return BackingStore?.Get<bool?>("certifiedApplicationsOnly"); }
             set { BackingStore?.Set("certifiedApplicationsOnly", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicationIds", n => { ApplicationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"applicationPublisherIds", n => { ApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"applicationTenantIds", n => { ApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"applicationsFromVerifiedPublisherOnly", n => { ApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
-                {"certifiedApplicationsOnly", n => { CertifiedApplicationsOnly = n.GetBoolValue(); } },
+                { "applicationIds", n => { ApplicationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "applicationPublisherIds", n => { ApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "applicationTenantIds", n => { ApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "applicationsFromVerifiedPublisherOnly", n => { ApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
+                { "certifiedApplicationsOnly", n => { CertifiedApplicationsOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

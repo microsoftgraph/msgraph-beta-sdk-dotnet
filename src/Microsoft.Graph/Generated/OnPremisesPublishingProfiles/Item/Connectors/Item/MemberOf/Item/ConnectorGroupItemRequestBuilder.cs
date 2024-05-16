@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item {
+namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item.MemberOf.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \onPremisesPublishingProfiles\{onPremisesPublishingProfile-id}\connectors\{connector-id}\memberOf\{connectorGroup-id}
     /// </summary>
-    public class ConnectorGroupItemRequestBuilder : BaseRequestBuilder 
+    public class ConnectorGroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
         public RefRequestBuilder Ref

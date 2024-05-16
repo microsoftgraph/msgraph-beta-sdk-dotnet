@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomExtensionHandler : Entity, IParsable 
+    public class CustomExtensionHandler : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates which custom workflow extension is executed at this stage. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomAccessPackageWorkflowExtension? CustomExtension {
+        public CustomAccessPackageWorkflowExtension? CustomExtension
+        {
             get { return BackingStore?.Get<CustomAccessPackageWorkflowExtension?>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #nullable restore
 #else
-        public CustomAccessPackageWorkflowExtension CustomExtension {
+        public CustomAccessPackageWorkflowExtension CustomExtension
+        {
             get { return BackingStore?.Get<CustomAccessPackageWorkflowExtension>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
 #endif
         /// <summary>Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
-        public AccessPackageCustomExtensionStage? Stage {
+        public AccessPackageCustomExtensionStage? Stage
+        {
             get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
             set { BackingStore?.Set("stage", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customExtension", n => { CustomExtension = n.GetObjectValue<CustomAccessPackageWorkflowExtension>(CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue); } },
-                {"stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
+                { "customExtension", n => { CustomExtension = n.GetObjectValue<CustomAccessPackageWorkflowExtension>(CustomAccessPackageWorkflowExtension.CreateFromDiscriminatorValue); } },
+                { "stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
             };
         }
         /// <summary>

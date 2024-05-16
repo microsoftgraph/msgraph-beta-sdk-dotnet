@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
+namespace Microsoft.Graph.Beta.Teams.GetOpenShifts
+{
     [Obsolete("This class is obsolete. Use GetOpenShiftsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOpenShiftsResponse : GetOpenShiftsGetResponse, IParsable 
+    public class GetOpenShiftsResponse : GetOpenShiftsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

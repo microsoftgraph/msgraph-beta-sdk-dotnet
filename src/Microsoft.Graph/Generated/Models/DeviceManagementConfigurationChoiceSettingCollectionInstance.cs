@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Setting instance within policy
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable 
+    public class DeviceManagementConfigurationChoiceSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>Choice setting collection value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationChoiceSettingValue>? ChoiceSettingCollectionValue {
+        public List<DeviceManagementConfigurationChoiceSettingValue>? ChoiceSettingCollectionValue
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValue>?>("choiceSettingCollectionValue"); }
             set { BackingStore?.Set("choiceSettingCollectionValue", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationChoiceSettingValue> ChoiceSettingCollectionValue {
+        public List<DeviceManagementConfigurationChoiceSettingValue> ChoiceSettingCollectionValue
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationChoiceSettingValue>>("choiceSettingCollectionValue"); }
             set { BackingStore?.Set("choiceSettingCollectionValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"choiceSettingCollectionValue", n => { ChoiceSettingCollectionValue = n.GetCollectionOfObjectValues<DeviceManagementConfigurationChoiceSettingValue>(DeviceManagementConfigurationChoiceSettingValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "choiceSettingCollectionValue", n => { ChoiceSettingCollectionValue = n.GetCollectionOfObjectValues<DeviceManagementConfigurationChoiceSettingValue>(DeviceManagementConfigurationChoiceSettingValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

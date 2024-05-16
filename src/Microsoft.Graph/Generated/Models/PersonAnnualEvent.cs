@@ -5,32 +5,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PersonAnnualEvent : ItemFacet, IParsable 
+    public class PersonAnnualEvent : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date property</summary>
-        public Date? Date {
+        public Date? Date
+        {
             get { return BackingStore?.Get<Date?>("date"); }
             set { BackingStore?.Set("date", value); }
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The type property</summary>
-        public PersonAnnualEventType? Type {
+        public PersonAnnualEventType? Type
+        {
             get { return BackingStore?.Get<PersonAnnualEventType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -59,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"date", n => { Date = n.GetDateValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<PersonAnnualEventType>(); } },
+                { "date", n => { Date = n.GetDateValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<PersonAnnualEventType>(); } },
             };
         }
         /// <summary>

@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EntitlementManagementSettings : Entity, IParsable 
+    public class EntitlementManagementSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If externalUserLifecycleAction is BlockSignInAndDelete, the number of days after an external user is blocked from sign in before their account is deleted.</summary>
-        public int? DaysUntilExternalUserDeletedAfterBlocked {
+        public int? DaysUntilExternalUserDeletedAfterBlocked
+        {
             get { return BackingStore?.Get<int?>("daysUntilExternalUserDeletedAfterBlocked"); }
             set { BackingStore?.Set("daysUntilExternalUserDeletedAfterBlocked", value); }
         }
         /// <summary>One of None, BlockSignIn, or BlockSignInAndDelete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalUserLifecycleAction {
+        public string? ExternalUserLifecycleAction
+        {
             get { return BackingStore?.Get<string?>("externalUserLifecycleAction"); }
             set { BackingStore?.Set("externalUserLifecycleAction", value); }
         }
 #nullable restore
 #else
-        public string ExternalUserLifecycleAction {
+        public string ExternalUserLifecycleAction
+        {
             get { return BackingStore?.Get<string>("externalUserLifecycleAction"); }
             set { BackingStore?.Set("externalUserLifecycleAction", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"daysUntilExternalUserDeletedAfterBlocked", n => { DaysUntilExternalUserDeletedAfterBlocked = n.GetIntValue(); } },
-                {"externalUserLifecycleAction", n => { ExternalUserLifecycleAction = n.GetStringValue(); } },
+                { "daysUntilExternalUserDeletedAfterBlocked", n => { DaysUntilExternalUserDeletedAfterBlocked = n.GetIntValue(); } },
+                { "externalUserLifecycleAction", n => { ExternalUserLifecycleAction = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamsAppIcon : Entity, IParsable 
+    public class TeamsAppIcon : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The contents of the app icon if the icon is hosted within the Teams infrastructure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkHostedContent? HostedContent {
+        public TeamworkHostedContent? HostedContent
+        {
             get { return BackingStore?.Get<TeamworkHostedContent?>("hostedContent"); }
             set { BackingStore?.Set("hostedContent", value); }
         }
 #nullable restore
 #else
-        public TeamworkHostedContent HostedContent {
+        public TeamworkHostedContent HostedContent
+        {
             get { return BackingStore?.Get<TeamworkHostedContent>("hostedContent"); }
             set { BackingStore?.Set("hostedContent", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The web URL that can be used for downloading the image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"hostedContent", n => { HostedContent = n.GetObjectValue<TeamworkHostedContent>(TeamworkHostedContent.CreateFromDiscriminatorValue); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "hostedContent", n => { HostedContent = n.GetObjectValue<TeamworkHostedContent>(TeamworkHostedContent.CreateFromDiscriminatorValue); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

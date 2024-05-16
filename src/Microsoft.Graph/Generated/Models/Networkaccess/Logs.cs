@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class Logs : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Logs : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of remote network health events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RemoteNetworkHealthEvent>? RemoteNetworks {
+        public List<RemoteNetworkHealthEvent>? RemoteNetworks
+        {
             get { return BackingStore?.Get<List<RemoteNetworkHealthEvent>?>("remoteNetworks"); }
             set { BackingStore?.Set("remoteNetworks", value); }
         }
 #nullable restore
 #else
-        public List<RemoteNetworkHealthEvent> RemoteNetworks {
+        public List<RemoteNetworkHealthEvent> RemoteNetworks
+        {
             get { return BackingStore?.Get<List<RemoteNetworkHealthEvent>>("remoteNetworks"); }
             set { BackingStore?.Set("remoteNetworks", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>A network access traffic log entry that contains comprehensive information about network traffic events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NetworkAccessTraffic>? Traffic {
+        public List<NetworkAccessTraffic>? Traffic
+        {
             get { return BackingStore?.Get<List<NetworkAccessTraffic>?>("traffic"); }
             set { BackingStore?.Set("traffic", value); }
         }
 #nullable restore
 #else
-        public List<NetworkAccessTraffic> Traffic {
+        public List<NetworkAccessTraffic> Traffic
+        {
             get { return BackingStore?.Get<List<NetworkAccessTraffic>>("traffic"); }
             set { BackingStore?.Set("traffic", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<RemoteNetworkHealthEvent>(RemoteNetworkHealthEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"traffic", n => { Traffic = n.GetCollectionOfObjectValues<NetworkAccessTraffic>(NetworkAccessTraffic.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<RemoteNetworkHealthEvent>(RemoteNetworkHealthEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "traffic", n => { Traffic = n.GetCollectionOfObjectValues<NetworkAccessTraffic>(NetworkAccessTraffic.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

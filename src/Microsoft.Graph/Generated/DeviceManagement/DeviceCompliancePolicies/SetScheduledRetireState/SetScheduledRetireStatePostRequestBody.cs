@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetScheduledRetireState
+{
     #pragma warning disable CS1591
-    public class SetScheduledRetireStatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SetScheduledRetireStatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,24 +23,28 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
         /// <summary>The managedDeviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ManagedDeviceIds {
+        public List<string>? ManagedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>?>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ManagedDeviceIds {
+        public List<string> ManagedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
 #endif
         /// <summary>The scopedToAllDevices property</summary>
-        public bool? ScopedToAllDevices {
+        public bool? ScopedToAllDevices
+        {
             get { return BackingStore?.Get<bool?>("scopedToAllDevices"); }
             set { BackingStore?.Set("scopedToAllDevices", value); }
         }
         /// <summary>Cancel or confirm scheduled retire </summary>
-        public ScheduledRetireState? State {
+        public ScheduledRetireState? State
+        {
             get { return BackingStore?.Get<ScheduledRetireState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"scopedToAllDevices", n => { ScopedToAllDevices = n.GetBoolValue(); } },
-                {"state", n => { State = n.GetEnumValue<ScheduledRetireState>(); } },
+                { "managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "scopedToAllDevices", n => { ScopedToAllDevices = n.GetBoolValue(); } },
+                { "state", n => { State = n.GetEnumValue<ScheduledRetireState>(); } },
             };
         }
         /// <summary>

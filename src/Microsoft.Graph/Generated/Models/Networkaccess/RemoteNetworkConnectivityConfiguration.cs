@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RemoteNetworkConnectivityConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RemoteNetworkConnectivityConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>List of connectivity configurations for deviceLink objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectivityConfigurationLink>? Links {
+        public List<ConnectivityConfigurationLink>? Links
+        {
             get { return BackingStore?.Get<List<ConnectivityConfigurationLink>?>("links"); }
             set { BackingStore?.Set("links", value); }
         }
 #nullable restore
 #else
-        public List<ConnectivityConfigurationLink> Links {
+        public List<ConnectivityConfigurationLink> Links
+        {
             get { return BackingStore?.Get<List<ConnectivityConfigurationLink>>("links"); }
             set { BackingStore?.Set("links", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Unique identifier or a specific reference assigned to a branchSite. Key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteNetworkId {
+        public string? RemoteNetworkId
+        {
             get { return BackingStore?.Get<string?>("remoteNetworkId"); }
             set { BackingStore?.Set("remoteNetworkId", value); }
         }
 #nullable restore
 #else
-        public string RemoteNetworkId {
+        public string RemoteNetworkId
+        {
             get { return BackingStore?.Get<string>("remoteNetworkId"); }
             set { BackingStore?.Set("remoteNetworkId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Display name assigned to a branchSite.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemoteNetworkName {
+        public string? RemoteNetworkName
+        {
             get { return BackingStore?.Get<string?>("remoteNetworkName"); }
             set { BackingStore?.Set("remoteNetworkName", value); }
         }
 #nullable restore
 #else
-        public string RemoteNetworkName {
+        public string RemoteNetworkName
+        {
             get { return BackingStore?.Get<string>("remoteNetworkName"); }
             set { BackingStore?.Set("remoteNetworkName", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"links", n => { Links = n.GetCollectionOfObjectValues<ConnectivityConfigurationLink>(ConnectivityConfigurationLink.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
-                {"remoteNetworkName", n => { RemoteNetworkName = n.GetStringValue(); } },
+                { "links", n => { Links = n.GetCollectionOfObjectValues<ConnectivityConfigurationLink>(ConnectivityConfigurationLink.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "remoteNetworkId", n => { RemoteNetworkId = n.GetStringValue(); } },
+                { "remoteNetworkName", n => { RemoteNetworkName = n.GetStringValue(); } },
             };
         }
         /// <summary>

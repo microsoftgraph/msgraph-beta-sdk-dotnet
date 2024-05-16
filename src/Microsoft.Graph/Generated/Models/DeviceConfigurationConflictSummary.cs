@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Conflict summary for a set of device configuration policies.
     /// </summary>
-    public class DeviceConfigurationConflictSummary : Entity, IParsable 
+    public class DeviceConfigurationConflictSummary : Entity, IParsable
     {
         /// <summary>The set of policies in conflict with the given setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SettingSource>? ConflictingDeviceConfigurations {
+        public List<SettingSource>? ConflictingDeviceConfigurations
+        {
             get { return BackingStore?.Get<List<SettingSource>?>("conflictingDeviceConfigurations"); }
             set { BackingStore?.Set("conflictingDeviceConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<SettingSource> ConflictingDeviceConfigurations {
+        public List<SettingSource> ConflictingDeviceConfigurations
+        {
             get { return BackingStore?.Get<List<SettingSource>>("conflictingDeviceConfigurations"); }
             set { BackingStore?.Set("conflictingDeviceConfigurations", value); }
         }
@@ -27,19 +30,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The set of settings in conflict with the given policies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ContributingSettings {
+        public List<string>? ContributingSettings
+        {
             get { return BackingStore?.Get<List<string>?>("contributingSettings"); }
             set { BackingStore?.Set("contributingSettings", value); }
         }
 #nullable restore
 #else
-        public List<string> ContributingSettings {
+        public List<string> ContributingSettings
+        {
             get { return BackingStore?.Get<List<string>>("contributingSettings"); }
             set { BackingStore?.Set("contributingSettings", value); }
         }
 #endif
         /// <summary>The count of checkins impacted by the conflicting policies and settings</summary>
-        public int? DeviceCheckinsImpacted {
+        public int? DeviceCheckinsImpacted
+        {
             get { return BackingStore?.Get<int?>("deviceCheckinsImpacted"); }
             set { BackingStore?.Set("deviceCheckinsImpacted", value); }
         }
@@ -61,9 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conflictingDeviceConfigurations", n => { ConflictingDeviceConfigurations = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"contributingSettings", n => { ContributingSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"deviceCheckinsImpacted", n => { DeviceCheckinsImpacted = n.GetIntValue(); } },
+                { "conflictingDeviceConfigurations", n => { ConflictingDeviceConfigurations = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contributingSettings", n => { ContributingSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "deviceCheckinsImpacted", n => { DeviceCheckinsImpacted = n.GetIntValue(); } },
             };
         }
         /// <summary>

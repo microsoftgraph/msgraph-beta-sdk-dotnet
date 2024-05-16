@@ -4,51 +4,59 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics battery health device performance entity contains device level battery information.
     /// </summary>
-    public class UserExperienceAnalyticsBatteryHealthDevicePerformance : Entity, IParsable 
+    public class UserExperienceAnalyticsBatteryHealthDevicePerformance : Entity, IParsable
     {
         /// <summary>Estimated battery age. Unit in days. Valid values 0 to 2147483647</summary>
-        public int? BatteryAgeInDays {
+        public int? BatteryAgeInDays
+        {
             get { return BackingStore?.Get<int?>("batteryAgeInDays"); }
             set { BackingStore?.Set("batteryAgeInDays", value); }
         }
         /// <summary>Properties (maxCapacity and cycleCount) related to all batteries of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsDeviceBatteryDetail>? DeviceBatteriesDetails {
+        public List<UserExperienceAnalyticsDeviceBatteryDetail>? DeviceBatteriesDetails
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsDeviceBatteryDetail>?>("deviceBatteriesDetails"); }
             set { BackingStore?.Set("deviceBatteriesDetails", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsDeviceBatteryDetail> DeviceBatteriesDetails {
+        public List<UserExperienceAnalyticsDeviceBatteryDetail> DeviceBatteriesDetails
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsDeviceBatteryDetail>>("deviceBatteriesDetails"); }
             set { BackingStore?.Set("deviceBatteriesDetails", value); }
         }
 #endif
         /// <summary>Number of batteries in a user device. Valid values 0 to 2147483647</summary>
-        public int? DeviceBatteryCount {
+        public int? DeviceBatteryCount
+        {
             get { return BackingStore?.Get<int?>("deviceBatteryCount"); }
             set { BackingStore?.Set("deviceBatteryCount", value); }
         }
         /// <summary>A weighted average of a device’s maximum capacity score and runtime estimate score. Values range from 0-100. Valid values 0 to 2147483647</summary>
-        public int? DeviceBatteryHealthScore {
+        public int? DeviceBatteryHealthScore
+        {
             get { return BackingStore?.Get<int?>("deviceBatteryHealthScore"); }
             set { BackingStore?.Set("deviceBatteryHealthScore", value); }
         }
         /// <summary>Tags for computed information on how battery on the device is behaving. E.g. newbattery, batterycapacityred, designcapacityzero, etc.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceBatteryTags {
+        public List<string>? DeviceBatteryTags
+        {
             get { return BackingStore?.Get<List<string>?>("deviceBatteryTags"); }
             set { BackingStore?.Set("deviceBatteryTags", value); }
         }
 #nullable restore
 #else
-        public List<string> DeviceBatteryTags {
+        public List<string> DeviceBatteryTags
+        {
             get { return BackingStore?.Get<List<string>>("deviceBatteryTags"); }
             set { BackingStore?.Set("deviceBatteryTags", value); }
         }
@@ -56,13 +64,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier of the device, Intune DeviceID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -70,61 +80,71 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device friendly name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values 0 to 2147483647</summary>
-        public int? EstimatedRuntimeInMinutes {
+        public int? EstimatedRuntimeInMinutes
+        {
             get { return BackingStore?.Get<int?>("estimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("estimatedRuntimeInMinutes", value); }
         }
         /// <summary>Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647</summary>
-        public int? FullBatteryDrainCount {
+        public int? FullBatteryDrainCount
+        {
             get { return BackingStore?.Get<int?>("fullBatteryDrainCount"); }
             set { BackingStore?.Set("fullBatteryDrainCount", value); }
         }
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus {
+        public UserExperienceAnalyticsHealthState? HealthStatus
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The manufacturer name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #endif
         /// <summary>Ratio of current capacity and design capacity of the battery with the lowest capacity. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647</summary>
-        public int? MaxCapacityPercentage {
+        public int? MaxCapacityPercentage
+        {
             get { return BackingStore?.Get<int?>("maxCapacityPercentage"); }
             set { BackingStore?.Set("maxCapacityPercentage", value); }
         }
         /// <summary>The model name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -147,19 +167,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"batteryAgeInDays", n => { BatteryAgeInDays = n.GetIntValue(); } },
-                {"deviceBatteriesDetails", n => { DeviceBatteriesDetails = n.GetCollectionOfObjectValues<UserExperienceAnalyticsDeviceBatteryDetail>(UserExperienceAnalyticsDeviceBatteryDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceBatteryCount", n => { DeviceBatteryCount = n.GetIntValue(); } },
-                {"deviceBatteryHealthScore", n => { DeviceBatteryHealthScore = n.GetIntValue(); } },
-                {"deviceBatteryTags", n => { DeviceBatteryTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"estimatedRuntimeInMinutes", n => { EstimatedRuntimeInMinutes = n.GetIntValue(); } },
-                {"fullBatteryDrainCount", n => { FullBatteryDrainCount = n.GetIntValue(); } },
-                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"maxCapacityPercentage", n => { MaxCapacityPercentage = n.GetIntValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
+                { "batteryAgeInDays", n => { BatteryAgeInDays = n.GetIntValue(); } },
+                { "deviceBatteriesDetails", n => { DeviceBatteriesDetails = n.GetCollectionOfObjectValues<UserExperienceAnalyticsDeviceBatteryDetail>(UserExperienceAnalyticsDeviceBatteryDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceBatteryCount", n => { DeviceBatteryCount = n.GetIntValue(); } },
+                { "deviceBatteryHealthScore", n => { DeviceBatteryHealthScore = n.GetIntValue(); } },
+                { "deviceBatteryTags", n => { DeviceBatteryTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "estimatedRuntimeInMinutes", n => { EstimatedRuntimeInMinutes = n.GetIntValue(); } },
+                { "fullBatteryDrainCount", n => { FullBatteryDrainCount = n.GetIntValue(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "maxCapacityPercentage", n => { MaxCapacityPercentage = n.GetIntValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
             };
         }
         /// <summary>

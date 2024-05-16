@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect {
+namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Connect
+{
     [Obsolete("This class is obsolete. Use ConnectPostResponse instead.")]
     #pragma warning disable CS1591
-    public class ConnectResponse : ConnectPostResponse, IParsable 
+    public class ConnectResponse : ConnectPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

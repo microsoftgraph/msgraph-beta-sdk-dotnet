@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for iOS Volume-Purchased Program (VPP) Apps.
     /// </summary>
-    public class IosVppApp : MobileApp, IParsable 
+    public class IosVppApp : MobileApp, IParsable
     {
         /// <summary>The applicable iOS Device Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosDeviceType? ApplicableDeviceType {
+        public IosDeviceType? ApplicableDeviceType
+        {
             get { return BackingStore?.Get<IosDeviceType?>("applicableDeviceType"); }
             set { BackingStore?.Set("applicableDeviceType", value); }
         }
 #nullable restore
 #else
-        public IosDeviceType ApplicableDeviceType {
+        public IosDeviceType ApplicableDeviceType
+        {
             get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
             set { BackingStore?.Set("applicableDeviceType", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppStoreUrl {
+        public string? AppStoreUrl
+        {
             get { return BackingStore?.Get<string?>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
 #nullable restore
 #else
-        public string AppStoreUrl {
+        public string AppStoreUrl
+        {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The licenses assigned to this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosVppAppAssignedLicense>? AssignedLicenses {
+        public List<IosVppAppAssignedLicense>? AssignedLicenses
+        {
             get { return BackingStore?.Get<List<IosVppAppAssignedLicense>?>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
 #nullable restore
 #else
-        public List<IosVppAppAssignedLicense> AssignedLicenses {
+        public List<IosVppAppAssignedLicense> AssignedLicenses
+        {
             get { return BackingStore?.Get<List<IosVppAppAssignedLicense>>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Identity Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleId {
+        public string? BundleId
+        {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
 #nullable restore
 #else
-        public string BundleId {
+        public string BundleId
+        {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
@@ -69,61 +78,71 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The supported License Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VppLicensingType? LicensingType {
+        public VppLicensingType? LicensingType
+        {
             get { return BackingStore?.Get<VppLicensingType?>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
 #nullable restore
 #else
-        public VppLicensingType LicensingType {
+        public VppLicensingType LicensingType
+        {
             get { return BackingStore?.Get<VppLicensingType>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
 #endif
         /// <summary>The VPP application release date and time.</summary>
-        public DateTimeOffset? ReleaseDateTime {
+        public DateTimeOffset? ReleaseDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
             set { BackingStore?.Set("releaseDateTime", value); }
         }
         /// <summary>Results of revoke license actions on this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosVppAppRevokeLicensesActionResult>? RevokeLicenseActionResults {
+        public List<IosVppAppRevokeLicensesActionResult>? RevokeLicenseActionResults
+        {
             get { return BackingStore?.Get<List<IosVppAppRevokeLicensesActionResult>?>("revokeLicenseActionResults"); }
             set { BackingStore?.Set("revokeLicenseActionResults", value); }
         }
 #nullable restore
 #else
-        public List<IosVppAppRevokeLicensesActionResult> RevokeLicenseActionResults {
+        public List<IosVppAppRevokeLicensesActionResult> RevokeLicenseActionResults
+        {
             get { return BackingStore?.Get<List<IosVppAppRevokeLicensesActionResult>>("revokeLicenseActionResults"); }
             set { BackingStore?.Set("revokeLicenseActionResults", value); }
         }
 #endif
         /// <summary>The total number of VPP licenses.</summary>
-        public int? TotalLicenseCount {
+        public int? TotalLicenseCount
+        {
             get { return BackingStore?.Get<int?>("totalLicenseCount"); }
             set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>The number of VPP licenses in use.</summary>
-        public int? UsedLicenseCount {
+        public int? UsedLicenseCount
+        {
             get { return BackingStore?.Get<int?>("usedLicenseCount"); }
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>Possible types of an Apple Volume Purchase Program token.</summary>
-        public Microsoft.Graph.Beta.Models.VppTokenAccountType? VppTokenAccountType {
+        public Microsoft.Graph.Beta.Models.VppTokenAccountType? VppTokenAccountType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VppTokenAccountType?>("vppTokenAccountType"); }
             set { BackingStore?.Set("vppTokenAccountType", value); }
         }
         /// <summary>The Apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VppTokenAppleId {
+        public string? VppTokenAppleId
+        {
             get { return BackingStore?.Get<string?>("vppTokenAppleId"); }
             set { BackingStore?.Set("vppTokenAppleId", value); }
         }
 #nullable restore
 #else
-        public string VppTokenAppleId {
+        public string VppTokenAppleId
+        {
             get { return BackingStore?.Get<string>("vppTokenAppleId"); }
             set { BackingStore?.Set("vppTokenAppleId", value); }
         }
@@ -131,13 +150,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of the VPP token associated with this app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VppTokenId {
+        public string? VppTokenId
+        {
             get { return BackingStore?.Get<string?>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
 #nullable restore
 #else
-        public string VppTokenId {
+        public string VppTokenId
+        {
             get { return BackingStore?.Get<string>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
@@ -145,13 +166,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The organization associated with the Apple Volume Purchase Program Token</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VppTokenOrganizationName {
+        public string? VppTokenOrganizationName
+        {
             get { return BackingStore?.Get<string?>("vppTokenOrganizationName"); }
             set { BackingStore?.Set("vppTokenOrganizationName", value); }
         }
 #nullable restore
 #else
-        public string VppTokenOrganizationName {
+        public string VppTokenOrganizationName
+        {
             get { return BackingStore?.Get<string>("vppTokenOrganizationName"); }
             set { BackingStore?.Set("vppTokenOrganizationName", value); }
         }
@@ -181,19 +204,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
-                {"applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<IosDeviceType>(IosDeviceType.CreateFromDiscriminatorValue); } },
-                {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<IosVppAppAssignedLicense>(IosVppAppAssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"bundleId", n => { BundleId = n.GetStringValue(); } },
-                {"licensingType", n => { LicensingType = n.GetObjectValue<VppLicensingType>(VppLicensingType.CreateFromDiscriminatorValue); } },
-                {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
-                {"revokeLicenseActionResults", n => { RevokeLicenseActionResults = n.GetCollectionOfObjectValues<IosVppAppRevokeLicensesActionResult>(IosVppAppRevokeLicensesActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
-                {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
-                {"vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },
-                {"vppTokenAppleId", n => { VppTokenAppleId = n.GetStringValue(); } },
-                {"vppTokenId", n => { VppTokenId = n.GetStringValue(); } },
-                {"vppTokenOrganizationName", n => { VppTokenOrganizationName = n.GetStringValue(); } },
+                { "appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
+                { "applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<IosDeviceType>(IosDeviceType.CreateFromDiscriminatorValue); } },
+                { "assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<IosVppAppAssignedLicense>(IosVppAppAssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bundleId", n => { BundleId = n.GetStringValue(); } },
+                { "licensingType", n => { LicensingType = n.GetObjectValue<VppLicensingType>(VppLicensingType.CreateFromDiscriminatorValue); } },
+                { "releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
+                { "revokeLicenseActionResults", n => { RevokeLicenseActionResults = n.GetCollectionOfObjectValues<IosVppAppRevokeLicensesActionResult>(IosVppAppRevokeLicensesActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
+                { "usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
+                { "vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },
+                { "vppTokenAppleId", n => { VppTokenAppleId = n.GetStringValue(); } },
+                { "vppTokenId", n => { VppTokenId = n.GetStringValue(); } },
+                { "vppTokenOrganizationName", n => { VppTokenOrganizationName = n.GetStringValue(); } },
             };
         }
         /// <summary>

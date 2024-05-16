@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class GcpScope : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GcpScope : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Type of GCP resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceType {
+        public string? ResourceType
+        {
             get { return BackingStore?.Get<string?>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
 #nullable restore
 #else
-        public string ResourceType {
+        public string ResourceType
+        {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The service property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemTypeService? Service {
+        public AuthorizationSystemTypeService? Service
+        {
             get { return BackingStore?.Get<AuthorizationSystemTypeService?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemTypeService Service {
+        public AuthorizationSystemTypeService Service
+        {
             get { return BackingStore?.Get<AuthorizationSystemTypeService>("service"); }
             set { BackingStore?.Set("service", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resourceType", n => { ResourceType = n.GetStringValue(); } },
-                {"service", n => { Service = n.GetObjectValue<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resourceType", n => { ResourceType = n.GetStringValue(); } },
+                { "service", n => { Service = n.GetObjectValue<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

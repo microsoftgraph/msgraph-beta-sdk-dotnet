@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Setting Template
     /// </summary>
-    public class DeviceManagementConfigurationSettingTemplate : Entity, IParsable 
+    public class DeviceManagementConfigurationSettingTemplate : Entity, IParsable
     {
         /// <summary>List of related Setting Definitions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingDefinition>? SettingDefinitions {
+        public List<DeviceManagementConfigurationSettingDefinition>? SettingDefinitions
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>?>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {
+        public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Setting Instance Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingInstanceTemplate? SettingInstanceTemplate {
+        public DeviceManagementConfigurationSettingInstanceTemplate? SettingInstanceTemplate
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplate?>("settingInstanceTemplate"); }
             set { BackingStore?.Set("settingInstanceTemplate", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingInstanceTemplate SettingInstanceTemplate {
+        public DeviceManagementConfigurationSettingInstanceTemplate SettingInstanceTemplate
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstanceTemplate>("settingInstanceTemplate"); }
             set { BackingStore?.Set("settingInstanceTemplate", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDefinition>(DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"settingInstanceTemplate", n => { SettingInstanceTemplate = n.GetObjectValue<DeviceManagementConfigurationSettingInstanceTemplate>(DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue); } },
+                { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDefinition>(DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settingInstanceTemplate", n => { SettingInstanceTemplate = n.GetObjectValue<DeviceManagementConfigurationSettingInstanceTemplate>(DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

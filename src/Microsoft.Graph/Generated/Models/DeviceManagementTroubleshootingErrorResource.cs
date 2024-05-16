@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.
     /// </summary>
-    public class DeviceManagementTroubleshootingErrorResource : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementTroubleshootingErrorResource : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The link to the web resource. Can contain any of the following formatters: {{UPN}}, {{DeviceGUID}}, {{UserGUID}}</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Link {
+        public string? Link
+        {
             get { return BackingStore?.Get<string?>("link"); }
             set { BackingStore?.Set("link", value); }
         }
 #nullable restore
 #else
-        public string Link {
+        public string Link
+        {
             get { return BackingStore?.Get<string>("link"); }
             set { BackingStore?.Set("link", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"link", n => { Link = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
+                { "link", n => { Link = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>

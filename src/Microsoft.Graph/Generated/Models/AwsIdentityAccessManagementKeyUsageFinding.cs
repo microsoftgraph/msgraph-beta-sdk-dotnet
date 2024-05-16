@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsIdentityAccessManagementKeyUsageFinding : Finding, IParsable 
+    public class AwsIdentityAccessManagementKeyUsageFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsAccessKey? AccessKey {
+        public AwsAccessKey? AccessKey
+        {
             get { return BackingStore?.Get<AwsAccessKey?>("accessKey"); }
             set { BackingStore?.Set("accessKey", value); }
         }
 #nullable restore
 #else
-        public AwsAccessKey AccessKey {
+        public AwsAccessKey AccessKey
+        {
             get { return BackingStore?.Get<AwsAccessKey>("accessKey"); }
             set { BackingStore?.Set("accessKey", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The actionSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ActionSummary? ActionSummary {
+        public Microsoft.Graph.Beta.Models.ActionSummary? ActionSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionSummary?>("actionSummary"); }
             set { BackingStore?.Set("actionSummary", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ActionSummary ActionSummary {
+        public Microsoft.Graph.Beta.Models.ActionSummary ActionSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionSummary>("actionSummary"); }
             set { BackingStore?.Set("actionSummary", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The awsAccessKeyDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AwsAccessKeyDetails? AwsAccessKeyDetails {
+        public Microsoft.Graph.Beta.Models.AwsAccessKeyDetails? AwsAccessKeyDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAccessKeyDetails?>("awsAccessKeyDetails"); }
             set { BackingStore?.Set("awsAccessKeyDetails", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AwsAccessKeyDetails AwsAccessKeyDetails {
+        public Microsoft.Graph.Beta.Models.AwsAccessKeyDetails AwsAccessKeyDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAccessKeyDetails>("awsAccessKeyDetails"); }
             set { BackingStore?.Set("awsAccessKeyDetails", value); }
         }
@@ -54,19 +61,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The permissionsCreepIndex property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex? PermissionsCreepIndex {
+        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex? PermissionsCreepIndex
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsCreepIndex?>("permissionsCreepIndex"); }
             set { BackingStore?.Set("permissionsCreepIndex", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex PermissionsCreepIndex {
+        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex PermissionsCreepIndex
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex"); }
             set { BackingStore?.Set("permissionsCreepIndex", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public IamStatus? Status {
+        public IamStatus? Status
+        {
             get { return BackingStore?.Get<IamStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -88,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessKey", n => { AccessKey = n.GetObjectValue<AwsAccessKey>(AwsAccessKey.CreateFromDiscriminatorValue); } },
-                {"actionSummary", n => { ActionSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionSummary>(Microsoft.Graph.Beta.Models.ActionSummary.CreateFromDiscriminatorValue); } },
-                {"awsAccessKeyDetails", n => { AwsAccessKeyDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsAccessKeyDetails>(Microsoft.Graph.Beta.Models.AwsAccessKeyDetails.CreateFromDiscriminatorValue); } },
-                {"permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetEnumValue<IamStatus>(); } },
+                { "accessKey", n => { AccessKey = n.GetObjectValue<AwsAccessKey>(AwsAccessKey.CreateFromDiscriminatorValue); } },
+                { "actionSummary", n => { ActionSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionSummary>(Microsoft.Graph.Beta.Models.ActionSummary.CreateFromDiscriminatorValue); } },
+                { "awsAccessKeyDetails", n => { AwsAccessKeyDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsAccessKeyDetails>(Microsoft.Graph.Beta.Models.AwsAccessKeyDetails.CreateFromDiscriminatorValue); } },
+                { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<IamStatus>(); } },
             };
         }
         /// <summary>

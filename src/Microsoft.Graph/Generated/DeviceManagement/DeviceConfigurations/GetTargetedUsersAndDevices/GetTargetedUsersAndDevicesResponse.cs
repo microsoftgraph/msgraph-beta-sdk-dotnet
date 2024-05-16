@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices
+{
     [Obsolete("This class is obsolete. Use GetTargetedUsersAndDevicesPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetTargetedUsersAndDevicesResponse : GetTargetedUsersAndDevicesPostResponse, IParsable 
+    public class GetTargetedUsersAndDevicesResponse : GetTargetedUsersAndDevicesPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

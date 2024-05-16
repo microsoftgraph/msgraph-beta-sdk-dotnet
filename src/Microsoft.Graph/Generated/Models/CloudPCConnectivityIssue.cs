@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analyte connectivity issue entity.
     /// </summary>
-    public class CloudPCConnectivityIssue : Entity, IParsable 
+    public class CloudPCConnectivityIssue : Entity, IParsable
     {
         /// <summary>The Intune DeviceId of the device the connection is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The error code of the connectivity issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode {
+        public string? ErrorCode
+        {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
 #nullable restore
 #else
-        public string ErrorCode {
+        public string ErrorCode
+        {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
 #endif
         /// <summary>The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.</summary>
-        public DateTimeOffset? ErrorDateTime {
+        public DateTimeOffset? ErrorDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("errorDateTime"); }
             set { BackingStore?.Set("errorDateTime", value); }
         }
         /// <summary>The detailed description of what went wrong.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorDescription {
+        public string? ErrorDescription
+        {
             get { return BackingStore?.Get<string?>("errorDescription"); }
             set { BackingStore?.Set("errorDescription", value); }
         }
 #nullable restore
 #else
-        public string ErrorDescription {
+        public string ErrorDescription
+        {
             get { return BackingStore?.Get<string>("errorDescription"); }
             set { BackingStore?.Set("errorDescription", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The recommended action to fix the corresponding error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecommendedAction {
+        public string? RecommendedAction
+        {
             get { return BackingStore?.Get<string?>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
 #nullable restore
 #else
-        public string RecommendedAction {
+        public string RecommendedAction
+        {
             get { return BackingStore?.Get<string>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique id of user who initialize the connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -103,12 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
-                {"errorDateTime", n => { ErrorDateTime = n.GetDateTimeOffsetValue(); } },
-                {"errorDescription", n => { ErrorDescription = n.GetStringValue(); } },
-                {"recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "errorDateTime", n => { ErrorDateTime = n.GetDateTimeOffsetValue(); } },
+                { "errorDescription", n => { ErrorDescription = n.GetStringValue(); } },
+                { "recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

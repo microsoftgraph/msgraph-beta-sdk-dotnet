@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EnumeratedInboundPorts : InboundPorts, IParsable 
+    public class EnumeratedInboundPorts : InboundPorts, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collection of ports that allow inbound traffic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ports {
+        public List<string>? Ports
+        {
             get { return BackingStore?.Get<List<string>?>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #nullable restore
 #else
-        public List<string> Ports {
+        public List<string> Ports
+        {
             get { return BackingStore?.Get<List<string>>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

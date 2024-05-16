@@ -5,39 +5,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessRuleSatisfied : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessRuleSatisfied : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Refers to the conditional access policy conditions that are satisfied. The possible values are: none, application, users, devicePlatform, location, clientType, signInRisk, userRisk, time, deviceState, client, ipAddressSeenByAzureAD, ipAddressSeenByResourceProvider, unknownFutureValue, servicePrincipals, servicePrincipalRisk, authenticationFlows, insiderRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: servicePrincipals, servicePrincipalRisk, authenticationFlows, insiderRisk. conditionalAccessConditions is a multi-valued enumeration and the property can contain multiple values in a comma-separated list.</summary>
-        public ConditionalAccessConditions? ConditionalAccessCondition {
+        public ConditionalAccessConditions? ConditionalAccessCondition
+        {
             get { return BackingStore?.Get<ConditionalAccessConditions?>("conditionalAccessCondition"); }
             set { BackingStore?.Set("conditionalAccessCondition", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Refers to the conditional access policy conditions that were satisfied. The possible values are: allApps, firstPartyApps, office365, appId, acr, appFilter, allUsers, guest, groupId, roleId, userId, allDevicePlatforms, devicePlatform, allLocations, insideCorpnet, allTrustedLocations, locationId, allDevices, deviceFilter, deviceState, unknownFutureValue, deviceFilterIncludeRuleNotMatched, allDeviceStates, anonymizedIPAddress, unfamiliarFeatures, nationStateIPAddress, realTimeThreatIntelligence, internalGuest, b2bCollaborationGuest, b2bCollaborationMember, b2bDirectConnectUser, otherExternalUser, serviceProvider, microsoftAdminPortals, deviceCodeFlow, accountTransfer, insiderRisk. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values in this evolvable enum: deviceFilterIncludeRuleNotMatched, allDeviceStates, anonymizedIPAddress, unfamiliarFeatures, nationStateIPAddress, realTimeThreatIntelligence, internalGuest, b2bCollaborationGuest, b2bCollaborationMember, b2bDirectConnectUser, otherExternalUser, serviceProvider, microsoftAdminPortals, deviceCodeFlow, accountTransfer, insiderRisk.</summary>
-        public ConditionalAccessRule? RuleSatisfied {
+        public ConditionalAccessRule? RuleSatisfied
+        {
             get { return BackingStore?.Get<ConditionalAccessRule?>("ruleSatisfied"); }
             set { BackingStore?.Set("ruleSatisfied", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"conditionalAccessCondition", n => { ConditionalAccessCondition = n.GetEnumValue<ConditionalAccessConditions>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ruleSatisfied", n => { RuleSatisfied = n.GetEnumValue<ConditionalAccessRule>(); } },
+                { "conditionalAccessCondition", n => { ConditionalAccessCondition = n.GetEnumValue<ConditionalAccessConditions>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ruleSatisfied", n => { RuleSatisfied = n.GetEnumValue<ConditionalAccessRule>(); } },
             };
         }
         /// <summary>

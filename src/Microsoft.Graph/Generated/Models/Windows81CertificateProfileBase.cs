@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    public class Windows81CertificateProfileBase : WindowsCertificateProfileBase, IParsable 
+    public class Windows81CertificateProfileBase : WindowsCertificateProfileBase, IParsable
     {
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames {
+        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
+        {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #nullable restore
 #else
-        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
+        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames
+        {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtendedKeyUsage>? ExtendedKeyUsages {
+        public List<ExtendedKeyUsage>? ExtendedKeyUsages
+        {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #nullable restore
 #else
-        public List<ExtendedKeyUsage> ExtendedKeyUsages {
+        public List<ExtendedKeyUsage> ExtendedKeyUsages
+        {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
@@ -68,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

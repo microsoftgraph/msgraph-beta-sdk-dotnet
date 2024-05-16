@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class HostSecurityProfile : Entity, IParsable 
+    public class HostSecurityProfile : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The azureSubscriptionId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureSubscriptionId {
+        public string? AzureSubscriptionId
+        {
             get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
 #nullable restore
 #else
-        public string AzureSubscriptionId {
+        public string AzureSubscriptionId
+        {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
@@ -26,66 +29,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The azureTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureTenantId {
+        public string? AzureTenantId
+        {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #nullable restore
 #else
-        public string AzureTenantId {
+        public string AzureTenantId
+        {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #endif
         /// <summary>The firstSeenDateTime property</summary>
-        public DateTimeOffset? FirstSeenDateTime {
+        public DateTimeOffset? FirstSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>The fqdn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fqdn {
+        public string? Fqdn
+        {
             get { return BackingStore?.Get<string?>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
 #nullable restore
 #else
-        public string Fqdn {
+        public string Fqdn
+        {
             get { return BackingStore?.Get<string>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
 #endif
         /// <summary>The isAzureAdJoined property</summary>
-        public bool? IsAzureAdJoined {
+        public bool? IsAzureAdJoined
+        {
             get { return BackingStore?.Get<bool?>("isAzureAdJoined"); }
             set { BackingStore?.Set("isAzureAdJoined", value); }
         }
         /// <summary>The isAzureAdRegistered property</summary>
-        public bool? IsAzureAdRegistered {
+        public bool? IsAzureAdRegistered
+        {
             get { return BackingStore?.Get<bool?>("isAzureAdRegistered"); }
             set { BackingStore?.Set("isAzureAdRegistered", value); }
         }
         /// <summary>The isHybridAzureDomainJoined property</summary>
-        public bool? IsHybridAzureDomainJoined {
+        public bool? IsHybridAzureDomainJoined
+        {
             get { return BackingStore?.Get<bool?>("isHybridAzureDomainJoined"); }
             set { BackingStore?.Set("isHybridAzureDomainJoined", value); }
         }
         /// <summary>The lastSeenDateTime property</summary>
-        public DateTimeOffset? LastSeenDateTime {
+        public DateTimeOffset? LastSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The logonUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LogonUser>? LogonUsers {
+        public List<LogonUser>? LogonUsers
+        {
             get { return BackingStore?.Get<List<LogonUser>?>("logonUsers"); }
             set { BackingStore?.Set("logonUsers", value); }
         }
 #nullable restore
 #else
-        public List<LogonUser> LogonUsers {
+        public List<LogonUser> LogonUsers
+        {
             get { return BackingStore?.Get<List<LogonUser>>("logonUsers"); }
             set { BackingStore?.Set("logonUsers", value); }
         }
@@ -93,13 +107,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The netBiosName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetBiosName {
+        public string? NetBiosName
+        {
             get { return BackingStore?.Get<string?>("netBiosName"); }
             set { BackingStore?.Set("netBiosName", value); }
         }
 #nullable restore
 #else
-        public string NetBiosName {
+        public string NetBiosName
+        {
             get { return BackingStore?.Get<string>("netBiosName"); }
             set { BackingStore?.Set("netBiosName", value); }
         }
@@ -107,13 +123,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The networkInterfaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NetworkInterface>? NetworkInterfaces {
+        public List<NetworkInterface>? NetworkInterfaces
+        {
             get { return BackingStore?.Get<List<NetworkInterface>?>("networkInterfaces"); }
             set { BackingStore?.Set("networkInterfaces", value); }
         }
 #nullable restore
 #else
-        public List<NetworkInterface> NetworkInterfaces {
+        public List<NetworkInterface> NetworkInterfaces
+        {
             get { return BackingStore?.Get<List<NetworkInterface>>("networkInterfaces"); }
             set { BackingStore?.Set("networkInterfaces", value); }
         }
@@ -121,13 +139,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The os property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Os {
+        public string? Os
+        {
             get { return BackingStore?.Get<string?>("os"); }
             set { BackingStore?.Set("os", value); }
         }
 #nullable restore
 #else
-        public string Os {
+        public string Os
+        {
             get { return BackingStore?.Get<string>("os"); }
             set { BackingStore?.Set("os", value); }
         }
@@ -135,13 +155,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The osVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
@@ -149,13 +171,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The parentHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentHost {
+        public string? ParentHost
+        {
             get { return BackingStore?.Get<string?>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
 #nullable restore
 #else
-        public string ParentHost {
+        public string ParentHost
+        {
             get { return BackingStore?.Get<string>("parentHost"); }
             set { BackingStore?.Set("parentHost", value); }
         }
@@ -163,13 +187,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The relatedHostIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RelatedHostIds {
+        public List<string>? RelatedHostIds
+        {
             get { return BackingStore?.Get<List<string>?>("relatedHostIds"); }
             set { BackingStore?.Set("relatedHostIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RelatedHostIds {
+        public List<string> RelatedHostIds
+        {
             get { return BackingStore?.Get<List<string>>("relatedHostIds"); }
             set { BackingStore?.Set("relatedHostIds", value); }
         }
@@ -177,13 +203,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The riskScore property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RiskScore {
+        public string? RiskScore
+        {
             get { return BackingStore?.Get<string?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
 #nullable restore
 #else
-        public string RiskScore {
+        public string RiskScore
+        {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
@@ -191,13 +219,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags {
+        public List<string>? Tags
+        {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<string> Tags {
+        public List<string> Tags
+        {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
@@ -205,13 +235,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation {
+        public SecurityVendorInformation? VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation {
+        public SecurityVendorInformation VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
@@ -234,24 +266,24 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
-                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
-                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"fqdn", n => { Fqdn = n.GetStringValue(); } },
-                {"isAzureAdJoined", n => { IsAzureAdJoined = n.GetBoolValue(); } },
-                {"isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
-                {"isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
-                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"logonUsers", n => { LogonUsers = n.GetCollectionOfObjectValues<LogonUser>(LogonUser.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"netBiosName", n => { NetBiosName = n.GetStringValue(); } },
-                {"networkInterfaces", n => { NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>(NetworkInterface.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"os", n => { Os = n.GetStringValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"parentHost", n => { ParentHost = n.GetStringValue(); } },
-                {"relatedHostIds", n => { RelatedHostIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"riskScore", n => { RiskScore = n.GetStringValue(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "azureSubscriptionId", n => { AzureSubscriptionId = n.GetStringValue(); } },
+                { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "fqdn", n => { Fqdn = n.GetStringValue(); } },
+                { "isAzureAdJoined", n => { IsAzureAdJoined = n.GetBoolValue(); } },
+                { "isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
+                { "isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
+                { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "logonUsers", n => { LogonUsers = n.GetCollectionOfObjectValues<LogonUser>(LogonUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "netBiosName", n => { NetBiosName = n.GetStringValue(); } },
+                { "networkInterfaces", n => { NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>(NetworkInterface.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "parentHost", n => { ParentHost = n.GetStringValue(); } },
+                { "relatedHostIds", n => { RelatedHostIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "riskScore", n => { RiskScore = n.GetStringValue(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

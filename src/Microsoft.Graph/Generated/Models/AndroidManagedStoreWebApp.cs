@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for web apps configured to be distributed via the managed Android app store.
     /// </summary>
-    public class AndroidManagedStoreWebApp : AndroidManagedStoreApp, IParsable 
+    public class AndroidManagedStoreWebApp : AndroidManagedStoreApp, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="AndroidManagedStoreWebApp"/> and sets the default values.

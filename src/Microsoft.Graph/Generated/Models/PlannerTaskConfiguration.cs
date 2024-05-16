@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerTaskConfiguration : Entity, IParsable 
+    public class PlannerTaskConfiguration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Policy configuration for tasks created for the businessScenario when they&apos;re being changed outside of the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerTaskPolicy? EditPolicy {
+        public PlannerTaskPolicy? EditPolicy
+        {
             get { return BackingStore?.Get<PlannerTaskPolicy?>("editPolicy"); }
             set { BackingStore?.Set("editPolicy", value); }
         }
 #nullable restore
 #else
-        public PlannerTaskPolicy EditPolicy {
+        public PlannerTaskPolicy EditPolicy
+        {
             get { return BackingStore?.Get<PlannerTaskPolicy>("editPolicy"); }
             set { BackingStore?.Set("editPolicy", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"editPolicy", n => { EditPolicy = n.GetObjectValue<PlannerTaskPolicy>(PlannerTaskPolicy.CreateFromDiscriminatorValue); } },
+                { "editPolicy", n => { EditPolicy = n.GetObjectValue<PlannerTaskPolicy>(PlannerTaskPolicy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

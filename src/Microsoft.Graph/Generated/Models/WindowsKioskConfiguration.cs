@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by the kiosk resource.
     /// </summary>
-    public class WindowsKioskConfiguration : DeviceConfiguration, IParsable 
+    public class WindowsKioskConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.</summary>
-        public bool? EdgeKioskEnablePublicBrowsing {
+        public bool? EdgeKioskEnablePublicBrowsing
+        {
             get { return BackingStore?.Get<bool?>("edgeKioskEnablePublicBrowsing"); }
             set { BackingStore?.Set("edgeKioskEnablePublicBrowsing", value); }
         }
         /// <summary>Specify URLs that the kiosk browser is allowed to navigate to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KioskBrowserBlockedUrlExceptions {
+        public List<string>? KioskBrowserBlockedUrlExceptions
+        {
             get { return BackingStore?.Get<List<string>?>("kioskBrowserBlockedUrlExceptions"); }
             set { BackingStore?.Set("kioskBrowserBlockedUrlExceptions", value); }
         }
 #nullable restore
 #else
-        public List<string> KioskBrowserBlockedUrlExceptions {
+        public List<string> KioskBrowserBlockedUrlExceptions
+        {
             get { return BackingStore?.Get<List<string>>("kioskBrowserBlockedUrlExceptions"); }
             set { BackingStore?.Set("kioskBrowserBlockedUrlExceptions", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specify URLs that the kiosk browsers should not navigate to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KioskBrowserBlockedURLs {
+        public List<string>? KioskBrowserBlockedURLs
+        {
             get { return BackingStore?.Get<List<string>?>("kioskBrowserBlockedURLs"); }
             set { BackingStore?.Set("kioskBrowserBlockedURLs", value); }
         }
 #nullable restore
 #else
-        public List<string> KioskBrowserBlockedURLs {
+        public List<string> KioskBrowserBlockedURLs
+        {
             get { return BackingStore?.Get<List<string>>("kioskBrowserBlockedURLs"); }
             set { BackingStore?.Set("kioskBrowserBlockedURLs", value); }
         }
@@ -46,47 +52,55 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specify the default URL the browser should navigate to on launch.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KioskBrowserDefaultUrl {
+        public string? KioskBrowserDefaultUrl
+        {
             get { return BackingStore?.Get<string?>("kioskBrowserDefaultUrl"); }
             set { BackingStore?.Set("kioskBrowserDefaultUrl", value); }
         }
 #nullable restore
 #else
-        public string KioskBrowserDefaultUrl {
+        public string KioskBrowserDefaultUrl
+        {
             get { return BackingStore?.Get<string>("kioskBrowserDefaultUrl"); }
             set { BackingStore?.Set("kioskBrowserDefaultUrl", value); }
         }
 #endif
         /// <summary>Enable the kiosk browser&apos;s end session button. By default, the end session button is disabled.</summary>
-        public bool? KioskBrowserEnableEndSessionButton {
+        public bool? KioskBrowserEnableEndSessionButton
+        {
             get { return BackingStore?.Get<bool?>("kioskBrowserEnableEndSessionButton"); }
             set { BackingStore?.Set("kioskBrowserEnableEndSessionButton", value); }
         }
         /// <summary>Enable the kiosk browser&apos;s home button. By default, the home button is disabled.</summary>
-        public bool? KioskBrowserEnableHomeButton {
+        public bool? KioskBrowserEnableHomeButton
+        {
             get { return BackingStore?.Get<bool?>("kioskBrowserEnableHomeButton"); }
             set { BackingStore?.Set("kioskBrowserEnableHomeButton", value); }
         }
         /// <summary>Enable the kiosk browser&apos;s navigation buttons(forward/back). By default, the navigation buttons are disabled.</summary>
-        public bool? KioskBrowserEnableNavigationButtons {
+        public bool? KioskBrowserEnableNavigationButtons
+        {
             get { return BackingStore?.Get<bool?>("kioskBrowserEnableNavigationButtons"); }
             set { BackingStore?.Set("kioskBrowserEnableNavigationButtons", value); }
         }
         /// <summary>Specify the number of minutes the session is idle until the kiosk browser restarts in a fresh state.  Valid values are 1-1440. Valid values 1 to 1440</summary>
-        public int? KioskBrowserRestartOnIdleTimeInMinutes {
+        public int? KioskBrowserRestartOnIdleTimeInMinutes
+        {
             get { return BackingStore?.Get<int?>("kioskBrowserRestartOnIdleTimeInMinutes"); }
             set { BackingStore?.Set("kioskBrowserRestartOnIdleTimeInMinutes", value); }
         }
         /// <summary>This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsKioskProfile>? KioskProfiles {
+        public List<WindowsKioskProfile>? KioskProfiles
+        {
             get { return BackingStore?.Get<List<WindowsKioskProfile>?>("kioskProfiles"); }
             set { BackingStore?.Set("kioskProfiles", value); }
         }
 #nullable restore
 #else
-        public List<WindowsKioskProfile> KioskProfiles {
+        public List<WindowsKioskProfile> KioskProfiles
+        {
             get { return BackingStore?.Get<List<WindowsKioskProfile>>("kioskProfiles"); }
             set { BackingStore?.Set("kioskProfiles", value); }
         }
@@ -94,13 +108,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>force update schedule for Kiosk devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule? WindowsKioskForceUpdateSchedule {
+        public Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule? WindowsKioskForceUpdateSchedule
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule?>("windowsKioskForceUpdateSchedule"); }
             set { BackingStore?.Set("windowsKioskForceUpdateSchedule", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule WindowsKioskForceUpdateSchedule {
+        public Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule WindowsKioskForceUpdateSchedule
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule>("windowsKioskForceUpdateSchedule"); }
             set { BackingStore?.Set("windowsKioskForceUpdateSchedule", value); }
         }
@@ -130,16 +146,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"edgeKioskEnablePublicBrowsing", n => { EdgeKioskEnablePublicBrowsing = n.GetBoolValue(); } },
-                {"kioskBrowserBlockedURLs", n => { KioskBrowserBlockedURLs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"kioskBrowserBlockedUrlExceptions", n => { KioskBrowserBlockedUrlExceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"kioskBrowserDefaultUrl", n => { KioskBrowserDefaultUrl = n.GetStringValue(); } },
-                {"kioskBrowserEnableEndSessionButton", n => { KioskBrowserEnableEndSessionButton = n.GetBoolValue(); } },
-                {"kioskBrowserEnableHomeButton", n => { KioskBrowserEnableHomeButton = n.GetBoolValue(); } },
-                {"kioskBrowserEnableNavigationButtons", n => { KioskBrowserEnableNavigationButtons = n.GetBoolValue(); } },
-                {"kioskBrowserRestartOnIdleTimeInMinutes", n => { KioskBrowserRestartOnIdleTimeInMinutes = n.GetIntValue(); } },
-                {"kioskProfiles", n => { KioskProfiles = n.GetCollectionOfObjectValues<WindowsKioskProfile>(WindowsKioskProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsKioskForceUpdateSchedule", n => { WindowsKioskForceUpdateSchedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule>(Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule.CreateFromDiscriminatorValue); } },
+                { "edgeKioskEnablePublicBrowsing", n => { EdgeKioskEnablePublicBrowsing = n.GetBoolValue(); } },
+                { "kioskBrowserBlockedURLs", n => { KioskBrowserBlockedURLs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "kioskBrowserBlockedUrlExceptions", n => { KioskBrowserBlockedUrlExceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "kioskBrowserDefaultUrl", n => { KioskBrowserDefaultUrl = n.GetStringValue(); } },
+                { "kioskBrowserEnableEndSessionButton", n => { KioskBrowserEnableEndSessionButton = n.GetBoolValue(); } },
+                { "kioskBrowserEnableHomeButton", n => { KioskBrowserEnableHomeButton = n.GetBoolValue(); } },
+                { "kioskBrowserEnableNavigationButtons", n => { KioskBrowserEnableNavigationButtons = n.GetBoolValue(); } },
+                { "kioskBrowserRestartOnIdleTimeInMinutes", n => { KioskBrowserRestartOnIdleTimeInMinutes = n.GetIntValue(); } },
+                { "kioskProfiles", n => { KioskProfiles = n.GetCollectionOfObjectValues<WindowsKioskProfile>(WindowsKioskProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsKioskForceUpdateSchedule", n => { WindowsKioskForceUpdateSchedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule>(Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

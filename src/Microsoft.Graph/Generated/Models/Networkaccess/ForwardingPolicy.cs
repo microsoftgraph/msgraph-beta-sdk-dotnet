@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class ForwardingPolicy : Policy, IParsable 
+    public class ForwardingPolicy : Policy, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The trafficForwardingType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType? TrafficForwardingType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType? TrafficForwardingType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType?>("trafficForwardingType"); }
             set { BackingStore?.Set("trafficForwardingType", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<TrafficForwardingType>(); } },
+                { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<TrafficForwardingType>(); } },
             };
         }
         /// <summary>

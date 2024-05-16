@@ -4,66 +4,77 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics resource performance entity.
     /// </summary>
-    public class UserExperienceAnalyticsResourcePerformance : Entity, IParsable 
+    public class UserExperienceAnalyticsResourcePerformance : Entity, IParsable
     {
         /// <summary>AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100</summary>
-        public int? AverageSpikeTimeScore {
+        public int? AverageSpikeTimeScore
+        {
             get { return BackingStore?.Get<int?>("averageSpikeTimeScore"); }
             set { BackingStore?.Set("averageSpikeTimeScore", value); }
         }
         /// <summary>The clock speed of the processor, in MHz. Valid values 0 to 1000000</summary>
-        public double? CpuClockSpeedInMHz {
+        public double? CpuClockSpeedInMHz
+        {
             get { return BackingStore?.Get<double?>("cpuClockSpeedInMHz"); }
             set { BackingStore?.Set("cpuClockSpeedInMHz", value); }
         }
         /// <summary>The name of the processor on the device, For example, 11th Gen Intel(R) Core(TM) i7.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CpuDisplayName {
+        public string? CpuDisplayName
+        {
             get { return BackingStore?.Get<string?>("cpuDisplayName"); }
             set { BackingStore?.Set("cpuDisplayName", value); }
         }
 #nullable restore
 #else
-        public string CpuDisplayName {
+        public string CpuDisplayName
+        {
             get { return BackingStore?.Get<string>("cpuDisplayName"); }
             set { BackingStore?.Set("cpuDisplayName", value); }
         }
 #endif
         /// <summary>CPU spike time in percentage. Valid values 0 to 100</summary>
-        public double? CpuSpikeTimePercentage {
+        public double? CpuSpikeTimePercentage
+        {
             get { return BackingStore?.Get<double?>("cpuSpikeTimePercentage"); }
             set { BackingStore?.Set("cpuSpikeTimePercentage", value); }
         }
         /// <summary>Threshold of cpuSpikeTimeScore. Valid values 0 to 100</summary>
-        public double? CpuSpikeTimePercentageThreshold {
+        public double? CpuSpikeTimePercentageThreshold
+        {
             get { return BackingStore?.Get<double?>("cpuSpikeTimePercentageThreshold"); }
             set { BackingStore?.Set("cpuSpikeTimePercentageThreshold", value); }
         }
         /// <summary>The user experience analytics device CPU spike time score. Valid values 0 to 100</summary>
-        public int? CpuSpikeTimeScore {
+        public int? CpuSpikeTimeScore
+        {
             get { return BackingStore?.Get<int?>("cpuSpikeTimeScore"); }
             set { BackingStore?.Set("cpuSpikeTimeScore", value); }
         }
         /// <summary>User experience analytics summarized device count.</summary>
-        public long? DeviceCount {
+        public long? DeviceCount
+        {
             get { return BackingStore?.Get<long?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The id of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -71,47 +82,55 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>Resource performance score of a specific device. Valid values 0 to 100</summary>
-        public int? DeviceResourcePerformanceScore {
+        public int? DeviceResourcePerformanceScore
+        {
             get { return BackingStore?.Get<int?>("deviceResourcePerformanceScore"); }
             set { BackingStore?.Set("deviceResourcePerformanceScore", value); }
         }
         /// <summary>The diskType property</summary>
-        public Microsoft.Graph.Beta.Models.DiskType? DiskType {
+        public Microsoft.Graph.Beta.Models.DiskType? DiskType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiskType?>("diskType"); }
             set { BackingStore?.Set("diskType", value); }
         }
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus {
+        public UserExperienceAnalyticsHealthState? HealthStatus
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>Indicates if machine is physical or virtual. Possible values are: physical or virtual</summary>
-        public UserExperienceAnalyticsMachineType? MachineType {
+        public UserExperienceAnalyticsMachineType? MachineType
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsMachineType?>("machineType"); }
             set { BackingStore?.Set("machineType", value); }
         }
         /// <summary>The user experience analytics device manufacturer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -119,39 +138,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user experience analytics device model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #endif
         /// <summary>RAM spike time in percentage. Valid values 0 to 100</summary>
-        public double? RamSpikeTimePercentage {
+        public double? RamSpikeTimePercentage
+        {
             get { return BackingStore?.Get<double?>("ramSpikeTimePercentage"); }
             set { BackingStore?.Set("ramSpikeTimePercentage", value); }
         }
         /// <summary>Threshold of ramSpikeTimeScore. Valid values 0 to 100</summary>
-        public double? RamSpikeTimePercentageThreshold {
+        public double? RamSpikeTimePercentageThreshold
+        {
             get { return BackingStore?.Get<double?>("ramSpikeTimePercentageThreshold"); }
             set { BackingStore?.Set("ramSpikeTimePercentageThreshold", value); }
         }
         /// <summary>The user experience analytics device RAM spike time score. Valid values 0 to 100</summary>
-        public int? RamSpikeTimeScore {
+        public int? RamSpikeTimeScore
+        {
             get { return BackingStore?.Get<int?>("ramSpikeTimeScore"); }
             set { BackingStore?.Set("ramSpikeTimeScore", value); }
         }
         /// <summary>The count of cores of the processor of device. Valid values 0 to 512</summary>
-        public int? TotalProcessorCoreCount {
+        public int? TotalProcessorCoreCount
+        {
             get { return BackingStore?.Get<int?>("totalProcessorCoreCount"); }
             set { BackingStore?.Set("totalProcessorCoreCount", value); }
         }
         /// <summary>The total RAM of the device, in MB. Valid values 0 to 1000000</summary>
-        public double? TotalRamInMB {
+        public double? TotalRamInMB
+        {
             get { return BackingStore?.Get<double?>("totalRamInMB"); }
             set { BackingStore?.Set("totalRamInMB", value); }
         }
@@ -173,26 +199,26 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"averageSpikeTimeScore", n => { AverageSpikeTimeScore = n.GetIntValue(); } },
-                {"cpuClockSpeedInMHz", n => { CpuClockSpeedInMHz = n.GetDoubleValue(); } },
-                {"cpuDisplayName", n => { CpuDisplayName = n.GetStringValue(); } },
-                {"cpuSpikeTimePercentage", n => { CpuSpikeTimePercentage = n.GetDoubleValue(); } },
-                {"cpuSpikeTimePercentageThreshold", n => { CpuSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
-                {"cpuSpikeTimeScore", n => { CpuSpikeTimeScore = n.GetIntValue(); } },
-                {"deviceCount", n => { DeviceCount = n.GetLongValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"deviceResourcePerformanceScore", n => { DeviceResourcePerformanceScore = n.GetIntValue(); } },
-                {"diskType", n => { DiskType = n.GetEnumValue<DiskType>(); } },
-                {"healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
-                {"machineType", n => { MachineType = n.GetEnumValue<UserExperienceAnalyticsMachineType>(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"ramSpikeTimePercentage", n => { RamSpikeTimePercentage = n.GetDoubleValue(); } },
-                {"ramSpikeTimePercentageThreshold", n => { RamSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
-                {"ramSpikeTimeScore", n => { RamSpikeTimeScore = n.GetIntValue(); } },
-                {"totalProcessorCoreCount", n => { TotalProcessorCoreCount = n.GetIntValue(); } },
-                {"totalRamInMB", n => { TotalRamInMB = n.GetDoubleValue(); } },
+                { "averageSpikeTimeScore", n => { AverageSpikeTimeScore = n.GetIntValue(); } },
+                { "cpuClockSpeedInMHz", n => { CpuClockSpeedInMHz = n.GetDoubleValue(); } },
+                { "cpuDisplayName", n => { CpuDisplayName = n.GetStringValue(); } },
+                { "cpuSpikeTimePercentage", n => { CpuSpikeTimePercentage = n.GetDoubleValue(); } },
+                { "cpuSpikeTimePercentageThreshold", n => { CpuSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
+                { "cpuSpikeTimeScore", n => { CpuSpikeTimeScore = n.GetIntValue(); } },
+                { "deviceCount", n => { DeviceCount = n.GetLongValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "deviceResourcePerformanceScore", n => { DeviceResourcePerformanceScore = n.GetIntValue(); } },
+                { "diskType", n => { DiskType = n.GetEnumValue<DiskType>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "machineType", n => { MachineType = n.GetEnumValue<UserExperienceAnalyticsMachineType>(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "ramSpikeTimePercentage", n => { RamSpikeTimePercentage = n.GetDoubleValue(); } },
+                { "ramSpikeTimePercentageThreshold", n => { RamSpikeTimePercentageThreshold = n.GetDoubleValue(); } },
+                { "ramSpikeTimeScore", n => { RamSpikeTimeScore = n.GetIntValue(); } },
+                { "totalProcessorCoreCount", n => { TotalProcessorCoreCount = n.GetIntValue(); } },
+                { "totalRamInMB", n => { TotalRamInMB = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

@@ -11,11 +11,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments {
+namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments
+{
     /// <summary>
     /// Provides operations to manage the roleAssignments property of the microsoft.graph.rbacApplicationMultiple entity.
     /// </summary>
-    public class RoleAssignmentsRequestBuilder : BaseRequestBuilder 
+    public class RoleAssignmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count
@@ -51,8 +52,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments {
         {
         }
         /// <summary>
-        /// Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/rbacapplicationmultiple-list-roleassignments?view=graph-rest-beta" />
+        /// Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/unifiedroleassignmentmultiple-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="UnifiedRoleAssignmentMultipleCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +71,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentMultipleCollectionResponse>(requestInfo, UnifiedRoleAssignmentMultipleCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -96,12 +97,12 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments {
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<UnifiedRoleAssignmentMultiple>(requestInfo, UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
+        /// Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -151,7 +152,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments {
             return new RoleAssignmentsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of unifiedRoleAssignmentMultiple objects for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
+        /// Get the properties and relationships of a unifiedRoleAssignmentMultiple object of an RBAC provider.  The following RBAC providers are currently supported:- Cloud PC - device management (Intune) For other Microsoft 365 applications (like Microsoft Entra ID), use unifiedRoleAssignment.
         /// </summary>
         public class RoleAssignmentsRequestBuilderGetQueryParameters 
         {
@@ -219,14 +220,14 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters> 
+        public class RoleAssignmentsRequestBuilderGetRequestConfiguration : RequestConfiguration<RoleAssignmentsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class RoleAssignmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class RoleAssignmentsRequestBuilderPostRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

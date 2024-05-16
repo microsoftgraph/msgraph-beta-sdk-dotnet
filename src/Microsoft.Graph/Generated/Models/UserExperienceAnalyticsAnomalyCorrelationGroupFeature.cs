@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Describes the features of a device that are shared between all devices in a correlation group.
     /// </summary>
-    public class UserExperienceAnalyticsAnomalyCorrelationGroupFeature : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserExperienceAnalyticsAnomalyCorrelationGroupFeature : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the device&apos;s feature type. Possible values are: manufacturer, model, osVersion, application or driver.</summary>
-        public UserExperienceAnalyticsAnomalyDeviceFeatureType? DeviceFeatureType {
+        public UserExperienceAnalyticsAnomalyDeviceFeatureType? DeviceFeatureType
+        {
             get { return BackingStore?.Get<UserExperienceAnalyticsAnomalyDeviceFeatureType?>("deviceFeatureType"); }
             set { BackingStore?.Set("deviceFeatureType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specific metric values that describe the features of the given device feature type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Values {
+        public List<string>? Values
+        {
             get { return BackingStore?.Get<List<string>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<string> Values {
+        public List<string> Values
+        {
             get { return BackingStore?.Get<List<string>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceFeatureType", n => { DeviceFeatureType = n.GetEnumValue<UserExperienceAnalyticsAnomalyDeviceFeatureType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "deviceFeatureType", n => { DeviceFeatureType = n.GetEnumValue<UserExperienceAnalyticsAnomalyDeviceFeatureType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

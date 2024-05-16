@@ -5,47 +5,54 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MatchingDlpRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MatchingDlpRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DlpActionInfo>? Actions {
+        public List<DlpActionInfo>? Actions
+        {
             get { return BackingStore?.Get<List<DlpActionInfo>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<DlpActionInfo> Actions {
+        public List<DlpActionInfo> Actions
+        {
             get { return BackingStore?.Get<List<DlpActionInfo>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isMostRestrictive property</summary>
-        public bool? IsMostRestrictive {
+        public bool? IsMostRestrictive
+        {
             get { return BackingStore?.Get<bool?>("isMostRestrictive"); }
             set { BackingStore?.Set("isMostRestrictive", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policyId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyId {
+        public string? PolicyId
+        {
             get { return BackingStore?.Get<string?>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
 #nullable restore
 #else
-        public string PolicyId {
+        public string PolicyId
+        {
             get { return BackingStore?.Get<string>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
@@ -67,51 +76,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyName {
+        public string? PolicyName
+        {
             get { return BackingStore?.Get<string?>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
 #nullable restore
 #else
-        public string PolicyName {
+        public string PolicyName
+        {
             get { return BackingStore?.Get<string>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
 #endif
         /// <summary>The priority property</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The ruleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleId {
+        public string? RuleId
+        {
             get { return BackingStore?.Get<string?>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
 #nullable restore
 #else
-        public string RuleId {
+        public string RuleId
+        {
             get { return BackingStore?.Get<string>("ruleId"); }
             set { BackingStore?.Set("ruleId", value); }
         }
 #endif
         /// <summary>The ruleMode property</summary>
-        public Microsoft.Graph.Beta.Models.RuleMode? RuleMode {
+        public Microsoft.Graph.Beta.Models.RuleMode? RuleMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RuleMode?>("ruleMode"); }
             set { BackingStore?.Set("ruleMode", value); }
         }
         /// <summary>The ruleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleName {
+        public string? RuleName
+        {
             get { return BackingStore?.Get<string?>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
 #nullable restore
 #else
-        public string RuleName {
+        public string RuleName
+        {
             get { return BackingStore?.Get<string>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
@@ -142,15 +159,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actions", n => { Actions = n.GetCollectionOfObjectValues<DlpActionInfo>(DlpActionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isMostRestrictive", n => { IsMostRestrictive = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"policyId", n => { PolicyId = n.GetStringValue(); } },
-                {"policyName", n => { PolicyName = n.GetStringValue(); } },
-                {"priority", n => { Priority = n.GetIntValue(); } },
-                {"ruleId", n => { RuleId = n.GetStringValue(); } },
-                {"ruleMode", n => { RuleMode = n.GetEnumValue<RuleMode>(); } },
-                {"ruleName", n => { RuleName = n.GetStringValue(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<DlpActionInfo>(DlpActionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isMostRestrictive", n => { IsMostRestrictive = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "policyId", n => { PolicyId = n.GetStringValue(); } },
+                { "policyName", n => { PolicyName = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "ruleId", n => { RuleId = n.GetStringValue(); } },
+                { "ruleMode", n => { RuleMode = n.GetEnumValue<RuleMode>(); } },
+                { "ruleName", n => { RuleName = n.GetStringValue(); } },
             };
         }
         /// <summary>

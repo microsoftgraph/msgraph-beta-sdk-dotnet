@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Choice Setting Instance Template
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable 
+    public class DeviceManagementConfigurationChoiceSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable
     {
         /// <summary>Choice Setting Value Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationChoiceSettingValueTemplate? ChoiceSettingValueTemplate {
+        public DeviceManagementConfigurationChoiceSettingValueTemplate? ChoiceSettingValueTemplate
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueTemplate?>("choiceSettingValueTemplate"); }
             set { BackingStore?.Set("choiceSettingValueTemplate", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationChoiceSettingValueTemplate ChoiceSettingValueTemplate {
+        public DeviceManagementConfigurationChoiceSettingValueTemplate ChoiceSettingValueTemplate
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValueTemplate>("choiceSettingValueTemplate"); }
             set { BackingStore?.Set("choiceSettingValueTemplate", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"choiceSettingValueTemplate", n => { ChoiceSettingValueTemplate = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValueTemplate>(DeviceManagementConfigurationChoiceSettingValueTemplate.CreateFromDiscriminatorValue); } },
+                { "choiceSettingValueTemplate", n => { ChoiceSettingValueTemplate = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValueTemplate>(DeviceManagementConfigurationChoiceSettingValueTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

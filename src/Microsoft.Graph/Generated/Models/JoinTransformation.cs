@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class JoinTransformation : CustomClaimTransformation, IParsable 
+    public class JoinTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The input2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TransformationAttribute? Input2 {
+        public TransformationAttribute? Input2
+        {
             get { return BackingStore?.Get<TransformationAttribute?>("input2"); }
             set { BackingStore?.Set("input2", value); }
         }
 #nullable restore
 #else
-        public TransformationAttribute Input2 {
+        public TransformationAttribute Input2
+        {
             get { return BackingStore?.Get<TransformationAttribute>("input2"); }
             set { BackingStore?.Set("input2", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The separator property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Separator {
+        public string? Separator
+        {
             get { return BackingStore?.Get<string?>("separator"); }
             set { BackingStore?.Set("separator", value); }
         }
 #nullable restore
 #else
-        public string Separator {
+        public string Separator
+        {
             get { return BackingStore?.Get<string>("separator"); }
             set { BackingStore?.Set("separator", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"input2", n => { Input2 = n.GetObjectValue<TransformationAttribute>(TransformationAttribute.CreateFromDiscriminatorValue); } },
-                {"separator", n => { Separator = n.GetStringValue(); } },
+                { "input2", n => { Input2 = n.GetObjectValue<TransformationAttribute>(TransformationAttribute.CreateFromDiscriminatorValue); } },
+                { "separator", n => { Separator = n.GetStringValue(); } },
             };
         }
         /// <summary>

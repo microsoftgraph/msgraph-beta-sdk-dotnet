@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesPublishingProfile : Entity, IParsable 
+    public class OnPremisesPublishingProfile : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of existing onPremisesAgentGroup objects. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesAgentGroup>? AgentGroups {
+        public List<OnPremisesAgentGroup>? AgentGroups
+        {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesAgentGroup> AgentGroups {
+        public List<OnPremisesAgentGroup> AgentGroups
+        {
             get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of existing onPremisesAgent objects. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesAgent>? Agents {
+        public List<OnPremisesAgent>? Agents
+        {
             get { return BackingStore?.Get<List<OnPremisesAgent>?>("agents"); }
             set { BackingStore?.Set("agents", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesAgent> Agents {
+        public List<OnPremisesAgent> Agents
+        {
             get { return BackingStore?.Get<List<OnPremisesAgent>>("agents"); }
             set { BackingStore?.Set("agents", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectorGroup>? ConnectorGroups {
+        public List<ConnectorGroup>? ConnectorGroups
+        {
             get { return BackingStore?.Get<List<ConnectorGroup>?>("connectorGroups"); }
             set { BackingStore?.Set("connectorGroups", value); }
         }
 #nullable restore
 #else
-        public List<ConnectorGroup> ConnectorGroups {
+        public List<ConnectorGroup> ConnectorGroups
+        {
             get { return BackingStore?.Get<List<ConnectorGroup>>("connectorGroups"); }
             set { BackingStore?.Set("connectorGroups", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of existing connector objects for applications published through Application Proxy. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Connector>? Connectors {
+        public List<Connector>? Connectors
+        {
             get { return BackingStore?.Get<List<Connector>?>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
 #nullable restore
 #else
-        public List<Connector> Connectors {
+        public List<Connector> Connectors
+        {
             get { return BackingStore?.Get<List<Connector>>("connectors"); }
             set { BackingStore?.Set("connectors", value); }
         }
@@ -68,37 +77,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents a hybridAgentUpdaterConfiguration object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration? HybridAgentUpdaterConfiguration {
+        public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration? HybridAgentUpdaterConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration?>("hybridAgentUpdaterConfiguration"); }
             set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration HybridAgentUpdaterConfiguration {
+        public Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration HybridAgentUpdaterConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>("hybridAgentUpdaterConfiguration"); }
             set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
         }
 #endif
         /// <summary>The isDefaultAccessEnabled property</summary>
-        public bool? IsDefaultAccessEnabled {
+        public bool? IsDefaultAccessEnabled
+        {
             get { return BackingStore?.Get<bool?>("isDefaultAccessEnabled"); }
             set { BackingStore?.Set("isDefaultAccessEnabled", value); }
         }
         /// <summary>Represents if Microsoft Entra application proxy is enabled for the tenant.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>List of existing publishedResource objects. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PublishedResource>? PublishedResources {
+        public List<PublishedResource>? PublishedResources
+        {
             get { return BackingStore?.Get<List<PublishedResource>?>("publishedResources"); }
             set { BackingStore?.Set("publishedResources", value); }
         }
 #nullable restore
 #else
-        public List<PublishedResource> PublishedResources {
+        public List<PublishedResource> PublishedResources
+        {
             get { return BackingStore?.Get<List<PublishedResource>>("publishedResources"); }
             set { BackingStore?.Set("publishedResources", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"agents", n => { Agents = n.GetCollectionOfObjectValues<OnPremisesAgent>(OnPremisesAgent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"connectorGroups", n => { ConnectorGroups = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"connectors", n => { Connectors = n.GetCollectionOfObjectValues<Connector>(Connector.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hybridAgentUpdaterConfiguration", n => { HybridAgentUpdaterConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>(Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration.CreateFromDiscriminatorValue); } },
-                {"isDefaultAccessEnabled", n => { IsDefaultAccessEnabled = n.GetBoolValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"publishedResources", n => { PublishedResources = n.GetCollectionOfObjectValues<PublishedResource>(PublishedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agents", n => { Agents = n.GetCollectionOfObjectValues<OnPremisesAgent>(OnPremisesAgent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectorGroups", n => { ConnectorGroups = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectors", n => { Connectors = n.GetCollectionOfObjectValues<Connector>(Connector.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hybridAgentUpdaterConfiguration", n => { HybridAgentUpdaterConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>(Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration.CreateFromDiscriminatorValue); } },
+                { "isDefaultAccessEnabled", n => { IsDefaultAccessEnabled = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "publishedResources", n => { PublishedResources = n.GetCollectionOfObjectValues<PublishedResource>(PublishedResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

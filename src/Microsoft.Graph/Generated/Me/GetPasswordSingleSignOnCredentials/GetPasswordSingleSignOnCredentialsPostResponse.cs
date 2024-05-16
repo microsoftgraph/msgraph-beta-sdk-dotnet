@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
+namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials
+{
     #pragma warning disable CS1591
-    public class GetPasswordSingleSignOnCredentialsPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetPasswordSingleSignOnCredentialsPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PasswordSingleSignOnCredentialSet>? Value {
+        public List<PasswordSingleSignOnCredentialSet>? Value
+        {
             get { return BackingStore?.Get<List<PasswordSingleSignOnCredentialSet>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PasswordSingleSignOnCredentialSet> Value {
+        public List<PasswordSingleSignOnCredentialSet> Value
+        {
             get { return BackingStore?.Get<List<PasswordSingleSignOnCredentialSet>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.GetPasswordSingleSignOnCredentials {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<PasswordSingleSignOnCredentialSet>(PasswordSingleSignOnCredentialSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<PasswordSingleSignOnCredentialSet>(PasswordSingleSignOnCredentialSet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class Headers : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Headers : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the origin or source from which the request is being made.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Origin {
+        public string? Origin
+        {
             get { return BackingStore?.Get<string?>("origin"); }
             set { BackingStore?.Set("origin", value); }
         }
 #nullable restore
 #else
-        public string Origin {
+        public string Origin
+        {
             get { return BackingStore?.Get<string>("origin"); }
             set { BackingStore?.Set("origin", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the referring URL or the URL of the web page that the current request originates from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Referrer {
+        public string? Referrer
+        {
             get { return BackingStore?.Get<string?>("referrer"); }
             set { BackingStore?.Set("referrer", value); }
         }
 #nullable restore
 #else
-        public string Referrer {
+        public string Referrer
+        {
             get { return BackingStore?.Get<string>("referrer"); }
             set { BackingStore?.Set("referrer", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the information about the client original IP address when the request passes through one or more proxy servers or load balancers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XForwardedFor {
+        public string? XForwardedFor
+        {
             get { return BackingStore?.Get<string?>("xForwardedFor"); }
             set { BackingStore?.Set("xForwardedFor", value); }
         }
 #nullable restore
 #else
-        public string XForwardedFor {
+        public string XForwardedFor
+        {
             get { return BackingStore?.Get<string>("xForwardedFor"); }
             set { BackingStore?.Set("xForwardedFor", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"origin", n => { Origin = n.GetStringValue(); } },
-                {"referrer", n => { Referrer = n.GetStringValue(); } },
-                {"xForwardedFor", n => { XForwardedFor = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "origin", n => { Origin = n.GetStringValue(); } },
+                { "referrer", n => { Referrer = n.GetStringValue(); } },
+                { "xForwardedFor", n => { XForwardedFor = n.GetStringValue(); } },
             };
         }
         /// <summary>

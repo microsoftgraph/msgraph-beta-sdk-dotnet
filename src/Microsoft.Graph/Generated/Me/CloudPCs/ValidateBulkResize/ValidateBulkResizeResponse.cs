@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize {
+namespace Microsoft.Graph.Beta.Me.CloudPCs.ValidateBulkResize
+{
     [Obsolete("This class is obsolete. Use ValidateBulkResizePostResponse instead.")]
     #pragma warning disable CS1591
-    public class ValidateBulkResizeResponse : ValidateBulkResizePostResponse, IParsable 
+    public class ValidateBulkResizeResponse : ValidateBulkResizePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

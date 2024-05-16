@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkDeviceActivity : Entity, IParsable 
+    public class TeamworkDeviceActivity : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The active peripheral devices attached to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkActivePeripherals? ActivePeripherals {
+        public TeamworkActivePeripherals? ActivePeripherals
+        {
             get { return BackingStore?.Get<TeamworkActivePeripherals?>("activePeripherals"); }
             set { BackingStore?.Set("activePeripherals", value); }
         }
 #nullable restore
 #else
-        public TeamworkActivePeripherals ActivePeripherals {
+        public TeamworkActivePeripherals ActivePeripherals
+        {
             get { return BackingStore?.Get<TeamworkActivePeripherals>("activePeripherals"); }
             set { BackingStore?.Set("activePeripherals", value); }
         }
@@ -26,38 +29,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who created the device activity document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device activity document was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Identity of the user who last modified the device activity details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy {
+        public IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy {
+        public IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device activity detail was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activePeripherals", n => { ActivePeripherals = n.GetObjectValue<TeamworkActivePeripherals>(TeamworkActivePeripherals.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activePeripherals", n => { ActivePeripherals = n.GetObjectValue<TeamworkActivePeripherals>(TeamworkActivePeripherals.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

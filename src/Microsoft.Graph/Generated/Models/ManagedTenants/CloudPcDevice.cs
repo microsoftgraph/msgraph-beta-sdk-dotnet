@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class CloudPcDevice : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class CloudPcDevice : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudPcStatus {
+        public string? CloudPcStatus
+        {
             get { return BackingStore?.Get<string?>("cloudPcStatus"); }
             set { BackingStore?.Set("cloudPcStatus", value); }
         }
 #nullable restore
 #else
-        public string CloudPcStatus {
+        public string CloudPcStatus
+        {
             get { return BackingStore?.Get<string>("cloudPcStatus"); }
             set { BackingStore?.Set("cloudPcStatus", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The specification of the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceSpecification {
+        public string? DeviceSpecification
+        {
             get { return BackingStore?.Get<string?>("deviceSpecification"); }
             set { BackingStore?.Set("deviceSpecification", value); }
         }
 #nullable restore
 #else
-        public string DeviceSpecification {
+        public string DeviceSpecification
+        {
             get { return BackingStore?.Get<string>("deviceSpecification"); }
             set { BackingStore?.Set("deviceSpecification", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The display name  of the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Required. Read-only.</summary>
-        public DateTimeOffset? LastRefreshedDateTime {
+        public DateTimeOffset? LastRefreshedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
             set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The managed device identifier of the cloud PC device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managed device display name of the cloud PC device. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceName {
+        public string? ManagedDeviceName
+        {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceName {
+        public string ManagedDeviceName
+        {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The provisioning policy identifier for the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisioningPolicyId {
+        public string? ProvisioningPolicyId
+        {
             get { return BackingStore?.Get<string?>("provisioningPolicyId"); }
             set { BackingStore?.Set("provisioningPolicyId", value); }
         }
 #nullable restore
 #else
-        public string ProvisioningPolicyId {
+        public string ProvisioningPolicyId
+        {
             get { return BackingStore?.Get<string>("provisioningPolicyId"); }
             set { BackingStore?.Set("provisioningPolicyId", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The service plan name of the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePlanName {
+        public string? ServicePlanName
+        {
             get { return BackingStore?.Get<string?>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
 #nullable restore
 #else
-        public string ServicePlanName {
+        public string ServicePlanName
+        {
             get { return BackingStore?.Get<string>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The service plan type of the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePlanType {
+        public string? ServicePlanType
+        {
             get { return BackingStore?.Get<string?>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
         }
 #nullable restore
 #else
-        public string ServicePlanType {
+        public string ServicePlanType
+        {
             get { return BackingStore?.Get<string>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
         }
@@ -129,13 +147,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDisplayName {
+        public string? TenantDisplayName
+        {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TenantDisplayName {
+        public string TenantDisplayName
+        {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
@@ -143,13 +163,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -157,13 +179,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -186,18 +210,18 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cloudPcStatus", n => { CloudPcStatus = n.GetStringValue(); } },
-                {"deviceSpecification", n => { DeviceSpecification = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
-                {"provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
-                {"servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
-                {"servicePlanType", n => { ServicePlanType = n.GetStringValue(); } },
-                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "cloudPcStatus", n => { CloudPcStatus = n.GetStringValue(); } },
+                { "deviceSpecification", n => { DeviceSpecification = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
+                { "provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
+                { "servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
+                { "servicePlanType", n => { ServicePlanType = n.GetStringValue(); } },
+                { "tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

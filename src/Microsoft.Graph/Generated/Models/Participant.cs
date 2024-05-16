@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Participant : Entity, IParsable 
+    public class Participant : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParticipantInfo? Info {
+        public ParticipantInfo? Info
+        {
             get { return BackingStore?.Get<ParticipantInfo?>("info"); }
             set { BackingStore?.Set("info", value); }
         }
 #nullable restore
 #else
-        public ParticipantInfo Info {
+        public ParticipantInfo Info
+        {
             get { return BackingStore?.Get<ParticipantInfo>("info"); }
             set { BackingStore?.Set("info", value); }
         }
 #endif
         /// <summary>The isIdentityAnonymized property</summary>
-        public bool? IsIdentityAnonymized {
+        public bool? IsIdentityAnonymized
+        {
             get { return BackingStore?.Get<bool?>("isIdentityAnonymized"); }
             set { BackingStore?.Set("isIdentityAnonymized", value); }
         }
         /// <summary>true if the participant is in lobby.</summary>
-        public bool? IsInLobby {
+        public bool? IsInLobby
+        {
             get { return BackingStore?.Get<bool?>("isInLobby"); }
             set { BackingStore?.Set("isInLobby", value); }
         }
         /// <summary>true if the participant is muted (client or server muted).</summary>
-        public bool? IsMuted {
+        public bool? IsMuted
+        {
             get { return BackingStore?.Get<bool?>("isMuted"); }
             set { BackingStore?.Set("isMuted", value); }
         }
         /// <summary>The list of media streams.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MediaStream>? MediaStreams {
+        public List<MediaStream>? MediaStreams
+        {
             get { return BackingStore?.Get<List<MediaStream>?>("mediaStreams"); }
             set { BackingStore?.Set("mediaStreams", value); }
         }
 #nullable restore
 #else
-        public List<MediaStream> MediaStreams {
+        public List<MediaStream> MediaStreams
+        {
             get { return BackingStore?.Get<List<MediaStream>>("mediaStreams"); }
             set { BackingStore?.Set("mediaStreams", value); }
         }
@@ -55,13 +63,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A blob of data provided by the participant in the roster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Metadata {
+        public string? Metadata
+        {
             get { return BackingStore?.Get<string?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public string Metadata {
+        public string Metadata
+        {
             get { return BackingStore?.Get<string>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The participant&apos;s preferred display name that overrides the original display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreferredDisplayName {
+        public string? PreferredDisplayName
+        {
             get { return BackingStore?.Get<string?>("preferredDisplayName"); }
             set { BackingStore?.Set("preferredDisplayName", value); }
         }
 #nullable restore
 #else
-        public string PreferredDisplayName {
+        public string PreferredDisplayName
+        {
             get { return BackingStore?.Get<string>("preferredDisplayName"); }
             set { BackingStore?.Set("preferredDisplayName", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information on whether the participant has recording capability.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.RecordingInfo? RecordingInfo {
+        public Microsoft.Graph.Beta.Models.RecordingInfo? RecordingInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingInfo?>("recordingInfo"); }
             set { BackingStore?.Set("recordingInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.RecordingInfo RecordingInfo {
+        public Microsoft.Graph.Beta.Models.RecordingInfo RecordingInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingInfo>("recordingInfo"); }
             set { BackingStore?.Set("recordingInfo", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the reason why the participant was removed from the roster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.RemovedState? RemovedState {
+        public Microsoft.Graph.Beta.Models.RemovedState? RemovedState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemovedState?>("removedState"); }
             set { BackingStore?.Set("removedState", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.RemovedState RemovedState {
+        public Microsoft.Graph.Beta.Models.RemovedState RemovedState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemovedState>("removedState"); }
             set { BackingStore?.Set("removedState", value); }
         }
@@ -111,19 +127,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the reason or reasons why media content from this participant is restricted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnlineMeetingRestricted? RestrictedExperience {
+        public OnlineMeetingRestricted? RestrictedExperience
+        {
             get { return BackingStore?.Get<OnlineMeetingRestricted?>("restrictedExperience"); }
             set { BackingStore?.Set("restrictedExperience", value); }
         }
 #nullable restore
 #else
-        public OnlineMeetingRestricted RestrictedExperience {
+        public OnlineMeetingRestricted RestrictedExperience
+        {
             get { return BackingStore?.Get<OnlineMeetingRestricted>("restrictedExperience"); }
             set { BackingStore?.Set("restrictedExperience", value); }
         }
 #endif
         /// <summary>Indicates the roster sequence number the participant was last updated in.</summary>
-        public long? RosterSequenceNumber {
+        public long? RosterSequenceNumber
+        {
             get { return BackingStore?.Get<long?>("rosterSequenceNumber"); }
             set { BackingStore?.Set("rosterSequenceNumber", value); }
         }
@@ -145,17 +164,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"info", n => { Info = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
-                {"isIdentityAnonymized", n => { IsIdentityAnonymized = n.GetBoolValue(); } },
-                {"isInLobby", n => { IsInLobby = n.GetBoolValue(); } },
-                {"isMuted", n => { IsMuted = n.GetBoolValue(); } },
-                {"mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"metadata", n => { Metadata = n.GetStringValue(); } },
-                {"preferredDisplayName", n => { PreferredDisplayName = n.GetStringValue(); } },
-                {"recordingInfo", n => { RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
-                {"removedState", n => { RemovedState = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemovedState>(Microsoft.Graph.Beta.Models.RemovedState.CreateFromDiscriminatorValue); } },
-                {"restrictedExperience", n => { RestrictedExperience = n.GetObjectValue<OnlineMeetingRestricted>(OnlineMeetingRestricted.CreateFromDiscriminatorValue); } },
-                {"rosterSequenceNumber", n => { RosterSequenceNumber = n.GetLongValue(); } },
+                { "info", n => { Info = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
+                { "isIdentityAnonymized", n => { IsIdentityAnonymized = n.GetBoolValue(); } },
+                { "isInLobby", n => { IsInLobby = n.GetBoolValue(); } },
+                { "isMuted", n => { IsMuted = n.GetBoolValue(); } },
+                { "mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metadata", n => { Metadata = n.GetStringValue(); } },
+                { "preferredDisplayName", n => { PreferredDisplayName = n.GetStringValue(); } },
+                { "recordingInfo", n => { RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
+                { "removedState", n => { RemovedState = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemovedState>(Microsoft.Graph.Beta.Models.RemovedState.CreateFromDiscriminatorValue); } },
+                { "restrictedExperience", n => { RestrictedExperience = n.GetObjectValue<OnlineMeetingRestricted>(OnlineMeetingRestricted.CreateFromDiscriminatorValue); } },
+                { "rosterSequenceNumber", n => { RosterSequenceNumber = n.GetLongValue(); } },
             };
         }
         /// <summary>

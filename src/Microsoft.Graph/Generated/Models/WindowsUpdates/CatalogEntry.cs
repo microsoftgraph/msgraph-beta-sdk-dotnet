@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class CatalogEntry : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class CatalogEntry : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date on which the content is no longer available to deploy using the service. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? DeployableUntilDateTime {
+        public DateTimeOffset? DeployableUntilDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deployableUntilDateTime"); }
             set { BackingStore?.Set("deployableUntilDateTime", value); }
         }
         /// <summary>The display name of the content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The release date for the content. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? ReleaseDateTime {
+        public DateTimeOffset? ReleaseDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
             set { BackingStore?.Set("releaseDateTime", value); }
         }
@@ -59,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deployableUntilDateTime", n => { DeployableUntilDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deployableUntilDateTime", n => { DeployableUntilDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

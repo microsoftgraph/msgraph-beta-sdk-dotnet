@@ -4,24 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The windowsAutopilotSettings resource represents a Windows Autopilot Account to sync data with Windows device data sync service.
     /// </summary>
-    public class WindowsAutopilotSettings : Entity, IParsable 
+    public class WindowsAutopilotSettings : Entity, IParsable
     {
         /// <summary>Last data sync date time with DDS service.</summary>
-        public DateTimeOffset? LastManualSyncTriggerDateTime {
+        public DateTimeOffset? LastManualSyncTriggerDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastManualSyncTriggerDateTime"); }
             set { BackingStore?.Set("lastManualSyncTriggerDateTime", value); }
         }
         /// <summary>Last data sync date time with DDS service.</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The syncStatus property</summary>
-        public WindowsAutopilotSyncStatus? SyncStatus {
+        public WindowsAutopilotSyncStatus? SyncStatus
+        {
             get { return BackingStore?.Get<WindowsAutopilotSyncStatus?>("syncStatus"); }
             set { BackingStore?.Set("syncStatus", value); }
         }
@@ -43,9 +47,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastManualSyncTriggerDateTime", n => { LastManualSyncTriggerDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"syncStatus", n => { SyncStatus = n.GetEnumValue<WindowsAutopilotSyncStatus>(); } },
+                { "lastManualSyncTriggerDateTime", n => { LastManualSyncTriggerDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "syncStatus", n => { SyncStatus = n.GetEnumValue<WindowsAutopilotSyncStatus>(); } },
             };
         }
         /// <summary>

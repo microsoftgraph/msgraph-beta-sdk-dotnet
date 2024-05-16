@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class MonitoringSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MonitoringSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Specifies the rules through which monitoring signals can trigger actions on the deployment. Rules are combined using &apos;or.&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MonitoringRule>? MonitoringRules {
+        public List<MonitoringRule>? MonitoringRules
+        {
             get { return BackingStore?.Get<List<MonitoringRule>?>("monitoringRules"); }
             set { BackingStore?.Set("monitoringRules", value); }
         }
 #nullable restore
 #else
-        public List<MonitoringRule> MonitoringRules {
+        public List<MonitoringRule> MonitoringRules
+        {
             get { return BackingStore?.Get<List<MonitoringRule>>("monitoringRules"); }
             set { BackingStore?.Set("monitoringRules", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"monitoringRules", n => { MonitoringRules = n.GetCollectionOfObjectValues<MonitoringRule>(MonitoringRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "monitoringRules", n => { MonitoringRules = n.GetCollectionOfObjectValues<MonitoringRule>(MonitoringRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

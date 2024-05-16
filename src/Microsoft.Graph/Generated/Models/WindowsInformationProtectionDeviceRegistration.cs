@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.
     /// </summary>
-    public class WindowsInformationProtectionDeviceRegistration : Entity, IParsable 
+    public class WindowsInformationProtectionDeviceRegistration : Entity, IParsable
     {
         /// <summary>Device Mac address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceMacAddress {
+        public string? DeviceMacAddress
+        {
             get { return BackingStore?.Get<string?>("deviceMacAddress"); }
             set { BackingStore?.Set("deviceMacAddress", value); }
         }
 #nullable restore
 #else
-        public string DeviceMacAddress {
+        public string DeviceMacAddress
+        {
             get { return BackingStore?.Get<string>("deviceMacAddress"); }
             set { BackingStore?.Set("deviceMacAddress", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device identifier for this device registration record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceRegistrationId {
+        public string? DeviceRegistrationId
+        {
             get { return BackingStore?.Get<string?>("deviceRegistrationId"); }
             set { BackingStore?.Set("deviceRegistrationId", value); }
         }
 #nullable restore
 #else
-        public string DeviceRegistrationId {
+        public string DeviceRegistrationId
+        {
             get { return BackingStore?.Get<string>("deviceRegistrationId"); }
             set { BackingStore?.Set("deviceRegistrationId", value); }
         }
@@ -55,32 +62,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device type, for example, Windows laptop VS Windows phone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceType {
+        public string? DeviceType
+        {
             get { return BackingStore?.Get<string?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
 #nullable restore
 #else
-        public string DeviceType {
+        public string DeviceType
+        {
             get { return BackingStore?.Get<string>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
 #endif
         /// <summary>Last checkin time of the device.</summary>
-        public DateTimeOffset? LastCheckInDateTime {
+        public DateTimeOffset? LastCheckInDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }
             set { BackingStore?.Set("lastCheckInDateTime", value); }
         }
         /// <summary>UserId associated with this device registration record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -103,12 +115,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceMacAddress", n => { DeviceMacAddress = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"deviceRegistrationId", n => { DeviceRegistrationId = n.GetStringValue(); } },
-                {"deviceType", n => { DeviceType = n.GetStringValue(); } },
-                {"lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "deviceMacAddress", n => { DeviceMacAddress = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "deviceRegistrationId", n => { DeviceRegistrationId = n.GetStringValue(); } },
+                { "deviceType", n => { DeviceType = n.GetStringValue(); } },
+                { "lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

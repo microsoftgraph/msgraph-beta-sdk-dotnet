@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BulkManagedDeviceActionResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BulkManagedDeviceActionResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Failed devices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FailedDeviceIds {
+        public List<string>? FailedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>?>("failedDeviceIds"); }
             set { BackingStore?.Set("failedDeviceIds", value); }
         }
 #nullable restore
 #else
-        public List<string> FailedDeviceIds {
+        public List<string> FailedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>>("failedDeviceIds"); }
             set { BackingStore?.Set("failedDeviceIds", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Not found devices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotFoundDeviceIds {
+        public List<string>? NotFoundDeviceIds
+        {
             get { return BackingStore?.Get<List<string>?>("notFoundDeviceIds"); }
             set { BackingStore?.Set("notFoundDeviceIds", value); }
         }
 #nullable restore
 #else
-        public List<string> NotFoundDeviceIds {
+        public List<string> NotFoundDeviceIds
+        {
             get { return BackingStore?.Get<List<string>>("notFoundDeviceIds"); }
             set { BackingStore?.Set("notFoundDeviceIds", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Not supported devices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotSupportedDeviceIds {
+        public List<string>? NotSupportedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>?>("notSupportedDeviceIds"); }
             set { BackingStore?.Set("notSupportedDeviceIds", value); }
         }
 #nullable restore
 #else
-        public List<string> NotSupportedDeviceIds {
+        public List<string> NotSupportedDeviceIds
+        {
             get { return BackingStore?.Get<List<string>>("notSupportedDeviceIds"); }
             set { BackingStore?.Set("notSupportedDeviceIds", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Successful devices</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SuccessfulDeviceIds {
+        public List<string>? SuccessfulDeviceIds
+        {
             get { return BackingStore?.Get<List<string>?>("successfulDeviceIds"); }
             set { BackingStore?.Set("successfulDeviceIds", value); }
         }
 #nullable restore
 #else
-        public List<string> SuccessfulDeviceIds {
+        public List<string> SuccessfulDeviceIds
+        {
             get { return BackingStore?.Get<List<string>>("successfulDeviceIds"); }
             set { BackingStore?.Set("successfulDeviceIds", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"failedDeviceIds", n => { FailedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"notFoundDeviceIds", n => { NotFoundDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"notSupportedDeviceIds", n => { NotSupportedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"successfulDeviceIds", n => { SuccessfulDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "failedDeviceIds", n => { FailedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "notFoundDeviceIds", n => { NotFoundDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "notSupportedDeviceIds", n => { NotSupportedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "successfulDeviceIds", n => { SuccessfulDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

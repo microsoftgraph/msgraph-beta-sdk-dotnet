@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class ForwardingOptions : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ForwardingOptions : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The skipDnsLookupState property</summary>
-        public Status? SkipDnsLookupState {
+        public Status? SkipDnsLookupState
+        {
             get { return BackingStore?.Get<Status?>("skipDnsLookupState"); }
             set { BackingStore?.Set("skipDnsLookupState", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"skipDnsLookupState", n => { SkipDnsLookupState = n.GetEnumValue<Status>(); } },
+                { "skipDnsLookupState", n => { SkipDnsLookupState = n.GetEnumValue<Status>(); } },
             };
         }
         /// <summary>

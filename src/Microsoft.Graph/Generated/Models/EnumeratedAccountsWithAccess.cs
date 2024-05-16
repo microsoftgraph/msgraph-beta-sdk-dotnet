@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EnumeratedAccountsWithAccess : AccountsWithAccess, IParsable 
+    public class EnumeratedAccountsWithAccess : AccountsWithAccess, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystem>? Accounts {
+        public List<AuthorizationSystem>? Accounts
+        {
             get { return BackingStore?.Get<List<AuthorizationSystem>?>("accounts"); }
             set { BackingStore?.Set("accounts", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystem> Accounts {
+        public List<AuthorizationSystem> Accounts
+        {
             get { return BackingStore?.Get<List<AuthorizationSystem>>("accounts"); }
             set { BackingStore?.Set("accounts", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accounts", n => { Accounts = n.GetCollectionOfObjectValues<AuthorizationSystem>(AuthorizationSystem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<AuthorizationSystem>(AuthorizationSystem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

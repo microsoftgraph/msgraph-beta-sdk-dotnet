@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthorizationSystemInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuthorizationSystemInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The type of authorization system.The possible values are: azure, gcp, aws, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.AuthorizationSystemType? AuthorizationSystemType {
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemType? AuthorizationSystemType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemType?>("authorizationSystemType"); }
             set { BackingStore?.Set("authorizationSystemType", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Display name for the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique identifier for the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authorizationSystemType", n => { AuthorizationSystemType = n.GetEnumValue<AuthorizationSystemType>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "authorizationSystemType", n => { AuthorizationSystemType = n.GetEnumValue<AuthorizationSystemType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

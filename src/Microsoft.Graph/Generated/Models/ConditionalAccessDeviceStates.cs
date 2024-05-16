@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessDeviceStates : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessDeviceStates : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeStates {
+        public List<string>? ExcludeStates
+        {
             get { return BackingStore?.Get<List<string>?>("excludeStates"); }
             set { BackingStore?.Set("excludeStates", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeStates {
+        public List<string> ExcludeStates
+        {
             get { return BackingStore?.Get<List<string>>("excludeStates"); }
             set { BackingStore?.Set("excludeStates", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>States in the scope of the policy. All is the only allowed value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeStates {
+        public List<string>? IncludeStates
+        {
             get { return BackingStore?.Get<List<string>?>("includeStates"); }
             set { BackingStore?.Set("includeStates", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeStates {
+        public List<string> IncludeStates
+        {
             get { return BackingStore?.Get<List<string>>("includeStates"); }
             set { BackingStore?.Set("includeStates", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"excludeStates", n => { ExcludeStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeStates", n => { IncludeStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "excludeStates", n => { ExcludeStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeStates", n => { IncludeStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

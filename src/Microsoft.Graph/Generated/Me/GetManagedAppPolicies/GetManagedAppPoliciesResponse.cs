@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.GetManagedAppPolicies {
+namespace Microsoft.Graph.Beta.Me.GetManagedAppPolicies
+{
     [Obsolete("This class is obsolete. Use GetManagedAppPoliciesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetManagedAppPoliciesResponse : GetManagedAppPoliciesGetResponse, IParsable 
+    public class GetManagedAppPoliciesResponse : GetManagedAppPoliciesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

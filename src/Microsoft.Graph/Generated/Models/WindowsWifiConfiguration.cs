@@ -4,47 +4,55 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    public class WindowsWifiConfiguration : DeviceConfiguration, IParsable 
+    public class WindowsWifiConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Specify whether the wifi connection should connect automatically when in range.</summary>
-        public bool? ConnectAutomatically {
+        public bool? ConnectAutomatically
+        {
             get { return BackingStore?.Get<bool?>("connectAutomatically"); }
             set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>Specify whether the wifi connection should connect to more preferred networks when already connected to this one.  Requires ConnectAutomatically to be true.</summary>
-        public bool? ConnectToPreferredNetwork {
+        public bool? ConnectToPreferredNetwork
+        {
             get { return BackingStore?.Get<bool?>("connectToPreferredNetwork"); }
             set { BackingStore?.Set("connectToPreferredNetwork", value); }
         }
         /// <summary>Specify whether the wifi connection should connect automatically even when the SSID is not broadcasting.</summary>
-        public bool? ConnectWhenNetworkNameIsHidden {
+        public bool? ConnectWhenNetworkNameIsHidden
+        {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Specify whether to force FIPS compliance.</summary>
-        public bool? ForceFIPSCompliance {
+        public bool? ForceFIPSCompliance
+        {
             get { return BackingStore?.Get<bool?>("forceFIPSCompliance"); }
             set { BackingStore?.Set("forceFIPSCompliance", value); }
         }
         /// <summary>Specify the metered connection limit type for the wifi connection. Possible values are: unrestricted, fixed, variable.</summary>
-        public MeteredConnectionLimitType? MeteredConnectionLimit {
+        public MeteredConnectionLimitType? MeteredConnectionLimit
+        {
             get { return BackingStore?.Get<MeteredConnectionLimitType?>("meteredConnectionLimit"); }
             set { BackingStore?.Set("meteredConnectionLimit", value); }
         }
         /// <summary>Specify the network configuration name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkName {
+        public string? NetworkName
+        {
             get { return BackingStore?.Get<string?>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
 #nullable restore
 #else
-        public string NetworkName {
+        public string NetworkName
+        {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
@@ -52,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreSharedKey {
+        public string? PreSharedKey
+        {
             get { return BackingStore?.Get<string?>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #nullable restore
 #else
-        public string PreSharedKey {
+        public string PreSharedKey
+        {
             get { return BackingStore?.Get<string>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
@@ -66,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specify the URL for the proxy server configuration script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyAutomaticConfigurationUrl {
+        public string? ProxyAutomaticConfigurationUrl
+        {
             get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
 #nullable restore
 #else
-        public string ProxyAutomaticConfigurationUrl {
+        public string ProxyAutomaticConfigurationUrl
+        {
             get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
@@ -80,43 +92,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specify the IP address for the proxy server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyManualAddress {
+        public string? ProxyManualAddress
+        {
             get { return BackingStore?.Get<string?>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
 #nullable restore
 #else
-        public string ProxyManualAddress {
+        public string ProxyManualAddress
+        {
             get { return BackingStore?.Get<string>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
 #endif
         /// <summary>Specify the port for the proxy server.</summary>
-        public int? ProxyManualPort {
+        public int? ProxyManualPort
+        {
             get { return BackingStore?.Get<int?>("proxyManualPort"); }
             set { BackingStore?.Set("proxyManualPort", value); }
         }
         /// <summary>Specify the proxy setting for Wi-Fi configuration. Possible values are: none, manual, automatic, unknownFutureValue.</summary>
-        public WiFiProxySetting? ProxySetting {
+        public WiFiProxySetting? ProxySetting
+        {
             get { return BackingStore?.Get<WiFiProxySetting?>("proxySetting"); }
             set { BackingStore?.Set("proxySetting", value); }
         }
         /// <summary>Specify the SSID of the wifi connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ssid {
+        public string? Ssid
+        {
             get { return BackingStore?.Get<string?>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
 #nullable restore
 #else
-        public string Ssid {
+        public string Ssid
+        {
             get { return BackingStore?.Get<string>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
         /// <summary>Specify the Wifi Security Type. Possible values are: open, wpaPersonal, wpaEnterprise, wep, wpa2Personal, wpa2Enterprise.</summary>
-        public Microsoft.Graph.Beta.Models.WiFiSecurityType? WifiSecurityType {
+        public Microsoft.Graph.Beta.Models.WiFiSecurityType? WifiSecurityType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiSecurityType?>("wifiSecurityType"); }
             set { BackingStore?.Set("wifiSecurityType", value); }
         }
@@ -150,19 +169,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
-                {"connectToPreferredNetwork", n => { ConnectToPreferredNetwork = n.GetBoolValue(); } },
-                {"connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
-                {"forceFIPSCompliance", n => { ForceFIPSCompliance = n.GetBoolValue(); } },
-                {"meteredConnectionLimit", n => { MeteredConnectionLimit = n.GetEnumValue<MeteredConnectionLimitType>(); } },
-                {"networkName", n => { NetworkName = n.GetStringValue(); } },
-                {"preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
-                {"proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
-                {"proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
-                {"proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
-                {"proxySetting", n => { ProxySetting = n.GetEnumValue<WiFiProxySetting>(); } },
-                {"ssid", n => { Ssid = n.GetStringValue(); } },
-                {"wifiSecurityType", n => { WifiSecurityType = n.GetEnumValue<WiFiSecurityType>(); } },
+                { "connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
+                { "connectToPreferredNetwork", n => { ConnectToPreferredNetwork = n.GetBoolValue(); } },
+                { "connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
+                { "forceFIPSCompliance", n => { ForceFIPSCompliance = n.GetBoolValue(); } },
+                { "meteredConnectionLimit", n => { MeteredConnectionLimit = n.GetEnumValue<MeteredConnectionLimitType>(); } },
+                { "networkName", n => { NetworkName = n.GetStringValue(); } },
+                { "preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
+                { "proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
+                { "proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
+                { "proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
+                { "proxySetting", n => { ProxySetting = n.GetEnumValue<WiFiProxySetting>(); } },
+                { "ssid", n => { Ssid = n.GetStringValue(); } },
+                { "wifiSecurityType", n => { WifiSecurityType = n.GetEnumValue<WiFiSecurityType>(); } },
             };
         }
         /// <summary>

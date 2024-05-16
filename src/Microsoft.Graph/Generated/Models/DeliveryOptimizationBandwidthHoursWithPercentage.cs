@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Bandwidth limit as a percentage with business hours.
     /// </summary>
-    public class DeliveryOptimizationBandwidthHoursWithPercentage : DeliveryOptimizationBandwidth, IParsable 
+    public class DeliveryOptimizationBandwidthHoursWithPercentage : DeliveryOptimizationBandwidth, IParsable
     {
         /// <summary>Background download percentage hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeliveryOptimizationBandwidthBusinessHoursLimit? BandwidthBackgroundPercentageHours {
+        public DeliveryOptimizationBandwidthBusinessHoursLimit? BandwidthBackgroundPercentageHours
+        {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit?>("bandwidthBackgroundPercentageHours"); }
             set { BackingStore?.Set("bandwidthBackgroundPercentageHours", value); }
         }
 #nullable restore
 #else
-        public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthBackgroundPercentageHours {
+        public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthBackgroundPercentageHours
+        {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit>("bandwidthBackgroundPercentageHours"); }
             set { BackingStore?.Set("bandwidthBackgroundPercentageHours", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Foreground download percentage hours.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeliveryOptimizationBandwidthBusinessHoursLimit? BandwidthForegroundPercentageHours {
+        public DeliveryOptimizationBandwidthBusinessHoursLimit? BandwidthForegroundPercentageHours
+        {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit?>("bandwidthForegroundPercentageHours"); }
             set { BackingStore?.Set("bandwidthForegroundPercentageHours", value); }
         }
 #nullable restore
 #else
-        public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthForegroundPercentageHours {
+        public DeliveryOptimizationBandwidthBusinessHoursLimit BandwidthForegroundPercentageHours
+        {
             get { return BackingStore?.Get<DeliveryOptimizationBandwidthBusinessHoursLimit>("bandwidthForegroundPercentageHours"); }
             set { BackingStore?.Set("bandwidthForegroundPercentageHours", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bandwidthBackgroundPercentageHours", n => { BandwidthBackgroundPercentageHours = n.GetObjectValue<DeliveryOptimizationBandwidthBusinessHoursLimit>(DeliveryOptimizationBandwidthBusinessHoursLimit.CreateFromDiscriminatorValue); } },
-                {"bandwidthForegroundPercentageHours", n => { BandwidthForegroundPercentageHours = n.GetObjectValue<DeliveryOptimizationBandwidthBusinessHoursLimit>(DeliveryOptimizationBandwidthBusinessHoursLimit.CreateFromDiscriminatorValue); } },
+                { "bandwidthBackgroundPercentageHours", n => { BandwidthBackgroundPercentageHours = n.GetObjectValue<DeliveryOptimizationBandwidthBusinessHoursLimit>(DeliveryOptimizationBandwidthBusinessHoursLimit.CreateFromDiscriminatorValue); } },
+                { "bandwidthForegroundPercentageHours", n => { BandwidthForegroundPercentageHours = n.GetObjectValue<DeliveryOptimizationBandwidthBusinessHoursLimit>(DeliveryOptimizationBandwidthBusinessHoursLimit.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

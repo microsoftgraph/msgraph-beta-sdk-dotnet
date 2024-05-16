@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Deprovision {
+namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Deprovision
+{
     #pragma warning disable CS1591
-    public class DeprovisionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeprovisionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Deprovisio
         /// <summary>The deprovisionReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeprovisionReason {
+        public string? DeprovisionReason
+        {
             get { return BackingStore?.Get<string?>("deprovisionReason"); }
             set { BackingStore?.Set("deprovisionReason", value); }
         }
 #nullable restore
 #else
-        public string DeprovisionReason {
+        public string DeprovisionReason
+        {
             get { return BackingStore?.Get<string>("deprovisionReason"); }
             set { BackingStore?.Set("deprovisionReason", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Deprovisio
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deprovisionReason", n => { DeprovisionReason = n.GetStringValue(); } },
+                { "deprovisionReason", n => { DeprovisionReason = n.GetStringValue(); } },
             };
         }
         /// <summary>

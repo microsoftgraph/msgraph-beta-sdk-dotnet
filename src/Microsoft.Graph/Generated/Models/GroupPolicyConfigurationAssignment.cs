@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The group policy configuration assignment entity assigns one or more AAD groups to a specific group policy configuration.
     /// </summary>
-    public class GroupPolicyConfigurationAssignment : Entity, IParsable 
+    public class GroupPolicyConfigurationAssignment : Entity, IParsable
     {
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The type of groups targeted the group policy configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target {
+        public DeviceAndAppManagementAssignmentTarget? Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target {
+        public DeviceAndAppManagementAssignmentTarget Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -47,8 +51,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

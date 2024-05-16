@@ -4,39 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The security baseline compliance state summary for the security baseline of the account.
     /// </summary>
-    public class SecurityBaselineStateSummary : Entity, IParsable 
+    public class SecurityBaselineStateSummary : Entity, IParsable
     {
         /// <summary>Number of conflict devices</summary>
-        public int? ConflictCount {
+        public int? ConflictCount
+        {
             get { return BackingStore?.Get<int?>("conflictCount"); }
             set { BackingStore?.Set("conflictCount", value); }
         }
         /// <summary>Number of error devices</summary>
-        public int? ErrorCount {
+        public int? ErrorCount
+        {
             get { return BackingStore?.Get<int?>("errorCount"); }
             set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Number of not applicable devices</summary>
-        public int? NotApplicableCount {
+        public int? NotApplicableCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableCount"); }
             set { BackingStore?.Set("notApplicableCount", value); }
         }
         /// <summary>Number of not secure devices</summary>
-        public int? NotSecureCount {
+        public int? NotSecureCount
+        {
             get { return BackingStore?.Get<int?>("notSecureCount"); }
             set { BackingStore?.Set("notSecureCount", value); }
         }
         /// <summary>Number of secure devices</summary>
-        public int? SecureCount {
+        public int? SecureCount
+        {
             get { return BackingStore?.Get<int?>("secureCount"); }
             set { BackingStore?.Set("secureCount", value); }
         }
         /// <summary>Number of unknown devices</summary>
-        public int? UnknownCount {
+        public int? UnknownCount
+        {
             get { return BackingStore?.Get<int?>("unknownCount"); }
             set { BackingStore?.Set("unknownCount", value); }
         }
@@ -63,12 +70,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
-                {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
-                {"notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
-                {"notSecureCount", n => { NotSecureCount = n.GetIntValue(); } },
-                {"secureCount", n => { SecureCount = n.GetIntValue(); } },
-                {"unknownCount", n => { UnknownCount = n.GetIntValue(); } },
+                { "conflictCount", n => { ConflictCount = n.GetIntValue(); } },
+                { "errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                { "notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
+                { "notSecureCount", n => { NotSecureCount = n.GetIntValue(); } },
+                { "secureCount", n => { SecureCount = n.GetIntValue(); } },
+                { "unknownCount", n => { UnknownCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

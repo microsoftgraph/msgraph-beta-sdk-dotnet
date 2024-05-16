@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Connector : Entity, IParsable 
+    public class Connector : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The external IP address as detected by the connector server. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalIp {
+        public string? ExternalIp
+        {
             get { return BackingStore?.Get<string?>("externalIp"); }
             set { BackingStore?.Set("externalIp", value); }
         }
 #nullable restore
 #else
-        public string ExternalIp {
+        public string ExternalIp
+        {
             get { return BackingStore?.Get<string>("externalIp"); }
             set { BackingStore?.Set("externalIp", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the computer on which the connector is installed and runs on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MachineName {
+        public string? MachineName
+        {
             get { return BackingStore?.Get<string?>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
 #nullable restore
 #else
-        public string MachineName {
+        public string MachineName
+        {
             get { return BackingStore?.Get<string>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connectorGroup that the connector is a member of. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectorGroup>? MemberOf {
+        public List<ConnectorGroup>? MemberOf
+        {
             get { return BackingStore?.Get<List<ConnectorGroup>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #nullable restore
 #else
-        public List<ConnectorGroup> MemberOf {
+        public List<ConnectorGroup> MemberOf
+        {
             get { return BackingStore?.Get<List<ConnectorGroup>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public ConnectorStatus? Status {
+        public ConnectorStatus? Status
+        {
             get { return BackingStore?.Get<ConnectorStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The version of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -88,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"externalIp", n => { ExternalIp = n.GetStringValue(); } },
-                {"machineName", n => { MachineName = n.GetStringValue(); } },
-                {"memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<ConnectorStatus>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "externalIp", n => { ExternalIp = n.GetStringValue(); } },
+                { "machineName", n => { MachineName = n.GetStringValue(); } },
+                { "memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<ConnectorStatus>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

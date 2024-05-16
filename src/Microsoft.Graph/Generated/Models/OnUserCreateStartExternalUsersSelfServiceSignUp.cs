@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnUserCreateStartExternalUsersSelfServiceSignUp : OnUserCreateStartHandler, IParsable 
+    public class OnUserCreateStartExternalUsersSelfServiceSignUp : OnUserCreateStartHandler, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of user object to create. The possible values are: member, guest, unknownFutureValue.</summary>
-        public UserType? UserTypeToCreate {
+        public UserType? UserTypeToCreate
+        {
             get { return BackingStore?.Get<UserType?>("userTypeToCreate"); }
             set { BackingStore?.Set("userTypeToCreate", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"userTypeToCreate", n => { UserTypeToCreate = n.GetEnumValue<UserType>(); } },
+                { "userTypeToCreate", n => { UserTypeToCreate = n.GetEnumValue<UserType>(); } },
             };
         }
         /// <summary>

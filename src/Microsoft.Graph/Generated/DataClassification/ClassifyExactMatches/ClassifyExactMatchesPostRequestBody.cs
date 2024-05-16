@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
+namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches
+{
     #pragma warning disable CS1591
-    public class ClassifyExactMatchesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ClassifyExactMatchesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
         /// <summary>The contentClassifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentClassification>? ContentClassifications {
+        public List<ContentClassification>? ContentClassifications
+        {
             get { return BackingStore?.Get<List<ContentClassification>?>("contentClassifications"); }
             set { BackingStore?.Set("contentClassifications", value); }
         }
 #nullable restore
 #else
-        public List<ContentClassification> ContentClassifications {
+        public List<ContentClassification> ContentClassifications
+        {
             get { return BackingStore?.Get<List<ContentClassification>>("contentClassifications"); }
             set { BackingStore?.Set("contentClassifications", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
         /// <summary>The sensitiveTypeIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SensitiveTypeIds {
+        public List<string>? SensitiveTypeIds
+        {
             get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
 #nullable restore
 #else
-        public List<string> SensitiveTypeIds {
+        public List<string> SensitiveTypeIds
+        {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
         /// <summary>The text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
         /// <summary>The timeoutInMs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeoutInMs {
+        public string? TimeoutInMs
+        {
             get { return BackingStore?.Get<string?>("timeoutInMs"); }
             set { BackingStore?.Set("timeoutInMs", value); }
         }
 #nullable restore
 #else
-        public string TimeoutInMs {
+        public string TimeoutInMs
+        {
             get { return BackingStore?.Get<string>("timeoutInMs"); }
             set { BackingStore?.Set("timeoutInMs", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contentClassifications", n => { ContentClassifications = n.GetCollectionOfObjectValues<ContentClassification>(ContentClassification.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
-                {"timeoutInMs", n => { TimeoutInMs = n.GetStringValue(); } },
+                { "contentClassifications", n => { ContentClassifications = n.GetCollectionOfObjectValues<ContentClassification>(ContentClassification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
+                { "timeoutInMs", n => { TimeoutInMs = n.GetStringValue(); } },
             };
         }
         /// <summary>

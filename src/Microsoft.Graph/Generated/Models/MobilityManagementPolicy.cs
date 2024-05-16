@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MobilityManagementPolicy : Entity, IParsable 
+    public class MobilityManagementPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.</summary>
-        public PolicyScope? AppliesTo {
+        public PolicyScope? AppliesTo
+        {
             get { return BackingStore?.Get<PolicyScope?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Compliance URL of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ComplianceUrl {
+        public string? ComplianceUrl
+        {
             get { return BackingStore?.Get<string?>("complianceUrl"); }
             set { BackingStore?.Set("complianceUrl", value); }
         }
 #nullable restore
 #else
-        public string ComplianceUrl {
+        public string ComplianceUrl
+        {
             get { return BackingStore?.Get<string>("complianceUrl"); }
             set { BackingStore?.Set("complianceUrl", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Discovery URL of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiscoveryUrl {
+        public string? DiscoveryUrl
+        {
             get { return BackingStore?.Get<string?>("discoveryUrl"); }
             set { BackingStore?.Set("discoveryUrl", value); }
         }
 #nullable restore
 #else
-        public string DiscoveryUrl {
+        public string DiscoveryUrl
+        {
             get { return BackingStore?.Get<string>("discoveryUrl"); }
             set { BackingStore?.Set("discoveryUrl", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Display name of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -73,32 +83,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Microsoft Entra groups under the scope of the mobility management application if appliesTo is selected</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Group>? IncludedGroups {
+        public List<Group>? IncludedGroups
+        {
             get { return BackingStore?.Get<List<Group>?>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
 #nullable restore
 #else
-        public List<Group> IncludedGroups {
+        public List<Group> IncludedGroups
+        {
             get { return BackingStore?.Get<List<Group>>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
 #endif
         /// <summary>Whether policy is valid. Invalid policies may not be updated and should be deleted.</summary>
-        public bool? IsValid {
+        public bool? IsValid
+        {
             get { return BackingStore?.Get<bool?>("isValid"); }
             set { BackingStore?.Set("isValid", value); }
         }
         /// <summary>Terms of Use URL of the mobility management application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TermsOfUseUrl {
+        public string? TermsOfUseUrl
+        {
             get { return BackingStore?.Get<string?>("termsOfUseUrl"); }
             set { BackingStore?.Set("termsOfUseUrl", value); }
         }
 #nullable restore
 #else
-        public string TermsOfUseUrl {
+        public string TermsOfUseUrl
+        {
             get { return BackingStore?.Get<string>("termsOfUseUrl"); }
             set { BackingStore?.Set("termsOfUseUrl", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appliesTo", n => { AppliesTo = n.GetEnumValue<PolicyScope>(); } },
-                {"complianceUrl", n => { ComplianceUrl = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"discoveryUrl", n => { DiscoveryUrl = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"includedGroups", n => { IncludedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isValid", n => { IsValid = n.GetBoolValue(); } },
-                {"termsOfUseUrl", n => { TermsOfUseUrl = n.GetStringValue(); } },
+                { "appliesTo", n => { AppliesTo = n.GetEnumValue<PolicyScope>(); } },
+                { "complianceUrl", n => { ComplianceUrl = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "discoveryUrl", n => { DiscoveryUrl = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "includedGroups", n => { IncludedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isValid", n => { IsValid = n.GetBoolValue(); } },
+                { "termsOfUseUrl", n => { TermsOfUseUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

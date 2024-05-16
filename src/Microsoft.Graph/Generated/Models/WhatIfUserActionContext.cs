@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WhatIfUserActionContext : ConditionalAccessContext, IParsable 
+    public class WhatIfUserActionContext : ConditionalAccessContext, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The userAction property</summary>
-        public Microsoft.Graph.Beta.Models.UserAction? UserAction {
+        public Microsoft.Graph.Beta.Models.UserAction? UserAction
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserAction?>("userAction"); }
             set { BackingStore?.Set("userAction", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"userAction", n => { UserAction = n.GetEnumValue<UserAction>(); } },
+                { "userAction", n => { UserAction = n.GetEnumValue<UserAction>(); } },
             };
         }
         /// <summary>

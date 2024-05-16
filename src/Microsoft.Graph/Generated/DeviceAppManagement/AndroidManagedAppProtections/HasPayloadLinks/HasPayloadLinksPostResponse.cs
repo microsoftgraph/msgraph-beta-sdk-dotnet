@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.HasPayloadLinks
+{
     #pragma warning disable CS1591
-    public class HasPayloadLinksPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class HasPayloadLinksPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HasPayloadLinkResultItem>? Value {
+        public List<HasPayloadLinkResultItem>? Value
+        {
             get { return BackingStore?.Get<List<HasPayloadLinkResultItem>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<HasPayloadLinkResultItem> Value {
+        public List<HasPayloadLinkResultItem> Value
+        {
             get { return BackingStore?.Get<List<HasPayloadLinkResultItem>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<HasPayloadLinkResultItem>(HasPayloadLinkResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<HasPayloadLinkResultItem>(HasPayloadLinkResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

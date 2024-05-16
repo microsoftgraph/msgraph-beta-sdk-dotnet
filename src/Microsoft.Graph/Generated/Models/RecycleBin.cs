@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RecycleBin : BaseItem, IParsable 
+    public class RecycleBin : BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of the recycleBinItems deleted by a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RecycleBinItem>? Items {
+        public List<RecycleBinItem>? Items
+        {
             get { return BackingStore?.Get<List<RecycleBinItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<RecycleBinItem> Items {
+        public List<RecycleBinItem> Items
+        {
             get { return BackingStore?.Get<List<RecycleBinItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"items", n => { Items = n.GetCollectionOfObjectValues<RecycleBinItem>(RecycleBinItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<RecycleBinItem>(RecycleBinItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

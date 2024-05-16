@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class WebCategory : RuleDestination, IParsable 
+    public class WebCategory : RuleDestination, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name for the web category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The group or category to which the web category belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Group {
+        public string? Group
+        {
             get { return BackingStore?.Get<string?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #nullable restore
 #else
-        public string Group {
+        public string Group
+        {
             get { return BackingStore?.Get<string>("group"); }
             set { BackingStore?.Set("group", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The unique name that is associated with the web category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"group", n => { Group = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "group", n => { Group = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>

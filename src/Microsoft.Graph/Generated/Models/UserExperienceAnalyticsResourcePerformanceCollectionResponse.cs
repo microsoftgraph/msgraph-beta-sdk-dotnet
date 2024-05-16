@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserExperienceAnalyticsResourcePerformanceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class UserExperienceAnalyticsResourcePerformanceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsResourcePerformance>? Value {
+        public List<UserExperienceAnalyticsResourcePerformance>? Value
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsResourcePerformance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsResourcePerformance> Value {
+        public List<UserExperienceAnalyticsResourcePerformance> Value
+        {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsResourcePerformance>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<UserExperienceAnalyticsResourcePerformance>(UserExperienceAnalyticsResourcePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<UserExperienceAnalyticsResourcePerformance>(UserExperienceAnalyticsResourcePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

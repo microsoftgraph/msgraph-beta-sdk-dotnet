@@ -5,32 +5,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcRemoteActionResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcRemoteActionResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionName {
+        public string? ActionName
+        {
             get { return BackingStore?.Get<string?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
 #nullable restore
 #else
-        public string ActionName {
+        public string ActionName
+        {
             get { return BackingStore?.Get<string>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
 #endif
         /// <summary>State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.ActionState? ActionState {
+        public Microsoft.Graph.Beta.Models.ActionState? ActionState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
             set { BackingStore?.Set("actionState", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -39,32 +44,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the Cloud PC device on which the remote action is performed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudPcId {
+        public string? CloudPcId
+        {
             get { return BackingStore?.Get<string?>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
 #nullable restore
 #else
-        public string CloudPcId {
+        public string CloudPcId
+        {
             get { return BackingStore?.Get<string>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
 #endif
         /// <summary>Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as &apos;2014-01-01T00:00:00Z&apos;.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The ID of the Intune managed device on which the remote action is performed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
@@ -72,32 +82,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as &apos;2014-01-01T00:00:00Z&apos;.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The details of the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcStatusDetails? StatusDetails {
+        public CloudPcStatusDetails? StatusDetails
+        {
             get { return BackingStore?.Get<CloudPcStatusDetails?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #nullable restore
 #else
-        public CloudPcStatusDetails StatusDetails {
+        public CloudPcStatusDetails StatusDetails
+        {
             get { return BackingStore?.Get<CloudPcStatusDetails>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
@@ -128,14 +143,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionName", n => { ActionName = n.GetStringValue(); } },
-                {"actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
-                {"cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"statusDetails", n => { StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
+                { "actionName", n => { ActionName = n.GetStringValue(); } },
+                { "actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                { "cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "statusDetails", n => { StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

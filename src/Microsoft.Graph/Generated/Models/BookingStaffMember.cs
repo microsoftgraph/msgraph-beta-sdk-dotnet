@@ -4,76 +4,89 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents a staff member who provides services in a business.
     /// </summary>
-    public class BookingStaffMember : BookingPerson, IParsable 
+    public class BookingStaffMember : BookingPerson, IParsable
     {
         /// <summary>True means that if the staff member is a Microsoft 365 user, the Bookings API would verify the staff member&apos;s availability in their personal calendar in Microsoft 365, before making a booking.</summary>
-        public bool? AvailabilityIsAffectedByPersonalCalendar {
+        public bool? AvailabilityIsAffectedByPersonalCalendar
+        {
             get { return BackingStore?.Get<bool?>("availabilityIsAffectedByPersonalCalendar"); }
             set { BackingStore?.Set("availabilityIsAffectedByPersonalCalendar", value); }
         }
         /// <summary>Identifies a color to represent the staff member. The color corresponds to the color palette in the Staff details page in the Bookings app.</summary>
-        public int? ColorIndex {
+        public int? ColorIndex
+        {
             get { return BackingStore?.Get<int?>("colorIndex"); }
             set { BackingStore?.Set("colorIndex", value); }
         }
         /// <summary>The date, time and timezone when the staff member was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Indicates that a staff members are  notified via email when a booking assigned to them is created or changed. The default value is true</summary>
-        public bool? IsEmailNotificationEnabled {
+        public bool? IsEmailNotificationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEmailNotificationEnabled"); }
             set { BackingStore?.Set("isEmailNotificationEnabled", value); }
         }
         /// <summary>The date, time and timezone when the staff member was last updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The membershipStatus property</summary>
-        public BookingStaffMembershipStatus? MembershipStatus {
+        public BookingStaffMembershipStatus? MembershipStatus
+        {
             get { return BackingStore?.Get<BookingStaffMembershipStatus?>("membershipStatus"); }
             set { BackingStore?.Set("membershipStatus", value); }
         }
         /// <summary>The role property</summary>
-        public BookingStaffRole? Role {
+        public BookingStaffRole? Role
+        {
             get { return BackingStore?.Get<BookingStaffRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>The time zone of the staff member. For a list of possible values, see dateTimeTimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone {
+        public string? TimeZone
+        {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #nullable restore
 #else
-        public string TimeZone {
+        public string TimeZone
+        {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #endif
         /// <summary>True means the staff member&apos;s availability is as specified in the businessHours property of the business. False means the availability is determined by the staff member&apos;s workingHours property setting.</summary>
-        public bool? UseBusinessHours {
+        public bool? UseBusinessHours
+        {
             get { return BackingStore?.Get<bool?>("useBusinessHours"); }
             set { BackingStore?.Set("useBusinessHours", value); }
         }
         /// <summary>The range of hours each day of the week that the staff member is available for booking. By default, they&apos;re initialized to be the same as the businessHours property of the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingWorkHours>? WorkingHours {
+        public List<BookingWorkHours>? WorkingHours
+        {
             get { return BackingStore?.Get<List<BookingWorkHours>?>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
 #nullable restore
 #else
-        public List<BookingWorkHours> WorkingHours {
+        public List<BookingWorkHours> WorkingHours
+        {
             get { return BackingStore?.Get<List<BookingWorkHours>>("workingHours"); }
             set { BackingStore?.Set("workingHours", value); }
         }
@@ -96,16 +109,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
-                {"colorIndex", n => { ColorIndex = n.GetIntValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"membershipStatus", n => { MembershipStatus = n.GetEnumValue<BookingStaffMembershipStatus>(); } },
-                {"role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
-                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
-                {"useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
-                {"workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
+                { "colorIndex", n => { ColorIndex = n.GetIntValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "membershipStatus", n => { MembershipStatus = n.GetEnumValue<BookingStaffMembershipStatus>(); } },
+                { "role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
+                { "timeZone", n => { TimeZone = n.GetStringValue(); } },
+                { "useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
+                { "workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

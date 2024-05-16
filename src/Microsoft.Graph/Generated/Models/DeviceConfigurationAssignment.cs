@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The device configuration assignment entity assigns an AAD group to a specific device configuration.
     /// </summary>
-    public class DeviceConfigurationAssignment : Entity, IParsable 
+    public class DeviceConfigurationAssignment : Entity, IParsable
     {
         /// <summary>The admin intent to apply or remove the profile. Possible values are: apply, remove.</summary>
-        public DeviceConfigAssignmentIntent? Intent {
+        public DeviceConfigAssignmentIntent? Intent
+        {
             get { return BackingStore?.Get<DeviceConfigAssignmentIntent?>("intent"); }
             set { BackingStore?.Set("intent", value); }
         }
         /// <summary>Represents source of assignment.</summary>
-        public DeviceAndAppManagementAssignmentSource? Source {
+        public DeviceAndAppManagementAssignmentSource? Source
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>The identifier of the source of the assignment. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceId {
+        public string? SourceId
+        {
             get { return BackingStore?.Get<string?>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
 #nullable restore
 #else
-        public string SourceId {
+        public string SourceId
+        {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The assignment target for the device configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target {
+        public DeviceAndAppManagementAssignmentTarget? Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target {
+        public DeviceAndAppManagementAssignmentTarget Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"intent", n => { Intent = n.GetEnumValue<DeviceConfigAssignmentIntent>(); } },
-                {"source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
-                {"sourceId", n => { SourceId = n.GetStringValue(); } },
-                {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "intent", n => { Intent = n.GetEnumValue<DeviceConfigAssignmentIntent>(); } },
+                { "source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
+                { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

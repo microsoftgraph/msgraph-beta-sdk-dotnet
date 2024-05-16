@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// An item in the list of app positions that sets the order of items on the Managed Home Screen
     /// </summary>
-    public class AndroidDeviceOwnerKioskModeAppPositionItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AndroidDeviceOwnerKioskModeAppPositionItem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents an item on the Android Device Owner Managed Home Screen (application, weblink or folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidDeviceOwnerKioskModeHomeScreenItem? Item {
+        public AndroidDeviceOwnerKioskModeHomeScreenItem? Item
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeHomeScreenItem?>("item"); }
             set { BackingStore?.Set("item", value); }
         }
 #nullable restore
 #else
-        public AndroidDeviceOwnerKioskModeHomeScreenItem Item {
+        public AndroidDeviceOwnerKioskModeHomeScreenItem Item
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerKioskModeHomeScreenItem>("item"); }
             set { BackingStore?.Set("item", value); }
         }
@@ -35,19 +39,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Position of the item on the grid. Valid values 0 to 9999999</summary>
-        public int? Position {
+        public int? Position
+        {
             get { return BackingStore?.Get<int?>("position"); }
             set { BackingStore?.Set("position", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"item", n => { Item = n.GetObjectValue<AndroidDeviceOwnerKioskModeHomeScreenItem>(AndroidDeviceOwnerKioskModeHomeScreenItem.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"position", n => { Position = n.GetIntValue(); } },
+                { "item", n => { Item = n.GetObjectValue<AndroidDeviceOwnerKioskModeHomeScreenItem>(AndroidDeviceOwnerKioskModeHomeScreenItem.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "position", n => { Position = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RedundancyConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RedundancyConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The redundancyTier property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.RedundancyTier? RedundancyTier {
+        public Microsoft.Graph.Beta.Models.Networkaccess.RedundancyTier? RedundancyTier
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.RedundancyTier?>("redundancyTier"); }
             set { BackingStore?.Set("redundancyTier", value); }
         }
         /// <summary>Indicate the specific IP address used for establishing the Border Gateway Protocol (BGP) connection with Microsoft&apos;s network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneLocalIpAddress {
+        public string? ZoneLocalIpAddress
+        {
             get { return BackingStore?.Get<string?>("zoneLocalIpAddress"); }
             set { BackingStore?.Set("zoneLocalIpAddress", value); }
         }
 #nullable restore
 #else
-        public string ZoneLocalIpAddress {
+        public string ZoneLocalIpAddress
+        {
             get { return BackingStore?.Get<string>("zoneLocalIpAddress"); }
             set { BackingStore?.Set("zoneLocalIpAddress", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"redundancyTier", n => { RedundancyTier = n.GetEnumValue<RedundancyTier>(); } },
-                {"zoneLocalIpAddress", n => { ZoneLocalIpAddress = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "redundancyTier", n => { RedundancyTier = n.GetEnumValue<RedundancyTier>(); } },
+                { "zoneLocalIpAddress", n => { ZoneLocalIpAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

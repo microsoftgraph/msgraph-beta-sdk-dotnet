@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Android SCEP certificate profile
     /// </summary>
-    public class AndroidScepCertificateProfile : AndroidCertificateProfileBase, IParsable 
+    public class AndroidScepCertificateProfile : AndroidCertificateProfileBase, IParsable
     {
         /// <summary>Hash Algorithm Options.</summary>
-        public HashAlgorithms? HashAlgorithm {
+        public HashAlgorithms? HashAlgorithm
+        {
             get { return BackingStore?.Get<HashAlgorithms?>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
         /// <summary>Key Size Options.</summary>
-        public Microsoft.Graph.Beta.Models.KeySize? KeySize {
+        public Microsoft.Graph.Beta.Models.KeySize? KeySize
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>("keySize"); }
             set { BackingStore?.Set("keySize", value); }
         }
         /// <summary>Key Usage Options.</summary>
-        public KeyUsages? KeyUsage {
+        public KeyUsages? KeyUsage
+        {
             get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
             set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
@@ -42,13 +48,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>SCEP Server Url(s)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScepServerUrls {
+        public List<string>? ScepServerUrls
+        {
             get { return BackingStore?.Get<List<string>?>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> ScepServerUrls {
+        public List<string> ScepServerUrls
+        {
             get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
@@ -56,13 +64,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom String that defines the AAD Attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectAlternativeNameFormatString {
+        public string? SubjectAlternativeNameFormatString
+        {
             get { return BackingStore?.Get<string?>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
 #nullable restore
 #else
-        public string SubjectAlternativeNameFormatString {
+        public string SubjectAlternativeNameFormatString
+        {
             get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
@@ -70,13 +80,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectNameFormatString {
+        public string? SubjectNameFormatString
+        {
             get { return BackingStore?.Get<string?>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
 #nullable restore
 #else
-        public string SubjectNameFormatString {
+        public string SubjectNameFormatString
+        {
             get { return BackingStore?.Get<string>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
@@ -106,13 +118,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<HashAlgorithms>(); } },
-                {"keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
-                {"keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
-                {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
-                {"subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
+                { "hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<HashAlgorithms>(); } },
+                { "keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
+                { "keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
+                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
+                { "subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
             };
         }
         /// <summary>

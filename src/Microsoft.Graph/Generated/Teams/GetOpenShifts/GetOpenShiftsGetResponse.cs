@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
+namespace Microsoft.Graph.Beta.Teams.GetOpenShifts
+{
     #pragma warning disable CS1591
-    public class GetOpenShiftsGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetOpenShiftsGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OpenShift>? Value {
+        public List<OpenShift>? Value
+        {
             get { return BackingStore?.Get<List<OpenShift>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<OpenShift> Value {
+        public List<OpenShift> Value
+        {
             get { return BackingStore?.Get<List<OpenShift>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Teams.GetOpenShifts {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<OpenShift>(OpenShift.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<OpenShift>(OpenShift.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

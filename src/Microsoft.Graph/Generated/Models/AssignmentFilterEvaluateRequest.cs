@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Request for assignment filter evaluation for devices.
     /// </summary>
-    public class AssignmentFilterEvaluateRequest : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignmentFilterEvaluateRequest : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -35,32 +39,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Order the devices should be sorted in. Default is ascending on device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OrderBy {
+        public List<string>? OrderBy
+        {
             get { return BackingStore?.Get<List<string>?>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
 #nullable restore
 #else
-        public List<string> OrderBy {
+        public List<string> OrderBy
+        {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
 #endif
         /// <summary>Supported platform types.</summary>
-        public DevicePlatformType? Platform {
+        public DevicePlatformType? Platform
+        {
             get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Rule definition of the Assignment Filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rule {
+        public string? Rule
+        {
             get { return BackingStore?.Get<string?>("rule"); }
             set { BackingStore?.Set("rule", value); }
         }
 #nullable restore
 #else
-        public string Rule {
+        public string Rule
+        {
             get { return BackingStore?.Get<string>("rule"); }
             set { BackingStore?.Set("rule", value); }
         }
@@ -68,24 +77,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Search keyword applied to scope found devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Search {
+        public string? Search
+        {
             get { return BackingStore?.Get<string?>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #nullable restore
 #else
-        public string Search {
+        public string Search
+        {
             get { return BackingStore?.Get<string>("search"); }
             set { BackingStore?.Set("search", value); }
         }
 #endif
         /// <summary>Number of records to skip. Default value is 0</summary>
-        public int? Skip {
+        public int? Skip
+        {
             get { return BackingStore?.Get<int?>("skip"); }
             set { BackingStore?.Set("skip", value); }
         }
         /// <summary>Limit of records per request. Default value is 100, if provided less than 0 or greater than 100</summary>
-        public int? Top {
+        public int? Top
+        {
             get { return BackingStore?.Get<int?>("top"); }
             set { BackingStore?.Set("top", value); }
         }
@@ -115,13 +128,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
-                {"rule", n => { Rule = n.GetStringValue(); } },
-                {"search", n => { Search = n.GetStringValue(); } },
-                {"skip", n => { Skip = n.GetIntValue(); } },
-                {"top", n => { Top = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                { "rule", n => { Rule = n.GetStringValue(); } },
+                { "search", n => { Search = n.GetStringValue(); } },
+                { "skip", n => { Skip = n.GetIntValue(); } },
+                { "top", n => { Top = n.GetIntValue(); } },
             };
         }
         /// <summary>

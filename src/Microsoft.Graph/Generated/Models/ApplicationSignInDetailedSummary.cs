@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ApplicationSignInDetailedSummary : Entity, IParsable 
+    public class ApplicationSignInDetailedSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? AggregatedEventDateTime {
+        public DateTimeOffset? AggregatedEventDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("aggregatedEventDateTime"); }
             set { BackingStore?.Set("aggregatedEventDateTime", value); }
         }
         /// <summary>Name of the application that the user signed in to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDisplayName {
+        public string? AppDisplayName
+        {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AppDisplayName {
+        public string AppDisplayName
+        {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
@@ -31,32 +35,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ID of the application that the user signed in to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #endif
         /// <summary>Count of sign-ins made by the application.</summary>
-        public long? SignInCount {
+        public long? SignInCount
+        {
             get { return BackingStore?.Get<long?>("signInCount"); }
             set { BackingStore?.Set("signInCount", value); }
         }
         /// <summary>Details of the sign-in status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInStatus? Status {
+        public SignInStatus? Status
+        {
             get { return BackingStore?.Get<SignInStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public SignInStatus Status {
+        public SignInStatus Status
+        {
             get { return BackingStore?.Get<SignInStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"aggregatedEventDateTime", n => { AggregatedEventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"signInCount", n => { SignInCount = n.GetLongValue(); } },
-                {"status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
+                { "aggregatedEventDateTime", n => { AggregatedEventDateTime = n.GetDateTimeOffsetValue(); } },
+                { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "signInCount", n => { SignInCount = n.GetLongValue(); } },
+                { "status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

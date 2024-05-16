@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerRoster : Entity, IParsable 
+    public class PlannerRoster : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Retrieves the members of the plannerRoster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerRosterMember>? Members {
+        public List<PlannerRosterMember>? Members
+        {
             get { return BackingStore?.Get<List<PlannerRosterMember>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<PlannerRosterMember> Members {
+        public List<PlannerRosterMember> Members
+        {
             get { return BackingStore?.Get<List<PlannerRosterMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Retrieves the plans contained by the plannerRoster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlan>? Plans {
+        public List<PlannerPlan>? Plans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>?>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlan> Plans {
+        public List<PlannerPlan> Plans
+        {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"members", n => { Members = n.GetCollectionOfObjectValues<PlannerRosterMember>(PlannerRosterMember.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"plans", n => { Plans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<PlannerRosterMember>(PlannerRosterMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "plans", n => { Plans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

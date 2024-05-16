@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BufferEncryptionResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BufferEncryptionResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The encryptedBuffer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? EncryptedBuffer {
+        public byte[]? EncryptedBuffer
+        {
             get { return BackingStore?.Get<byte[]?>("encryptedBuffer"); }
             set { BackingStore?.Set("encryptedBuffer", value); }
         }
 #nullable restore
 #else
-        public byte[] EncryptedBuffer {
+        public byte[] EncryptedBuffer
+        {
             get { return BackingStore?.Get<byte[]>("encryptedBuffer"); }
             set { BackingStore?.Set("encryptedBuffer", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The publishingLicense property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? PublishingLicense {
+        public byte[]? PublishingLicense
+        {
             get { return BackingStore?.Get<byte[]?>("publishingLicense"); }
             set { BackingStore?.Set("publishingLicense", value); }
         }
 #nullable restore
 #else
-        public byte[] PublishingLicense {
+        public byte[] PublishingLicense
+        {
             get { return BackingStore?.Get<byte[]>("publishingLicense"); }
             set { BackingStore?.Set("publishingLicense", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"encryptedBuffer", n => { EncryptedBuffer = n.GetByteArrayValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"publishingLicense", n => { PublishingLicense = n.GetByteArrayValue(); } },
+                { "encryptedBuffer", n => { EncryptedBuffer = n.GetByteArrayValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "publishingLicense", n => { PublishingLicense = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

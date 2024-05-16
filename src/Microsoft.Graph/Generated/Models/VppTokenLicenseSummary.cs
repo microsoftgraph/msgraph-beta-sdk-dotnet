@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// License summary of a given app in a token.
     /// </summary>
-    public class VppTokenLicenseSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VppTokenLicenseSummary : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The Apple Id associated with the given Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppleId {
+        public string? AppleId
+        {
             get { return BackingStore?.Get<string?>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
 #nullable restore
 #else
-        public string AppleId {
+        public string AppleId
+        {
             get { return BackingStore?.Get<string>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
 #endif
         /// <summary>The number of VPP licenses available.</summary>
-        public int? AvailableLicenseCount {
+        public int? AvailableLicenseCount
+        {
             get { return BackingStore?.Get<int?>("availableLicenseCount"); }
             set { BackingStore?.Set("availableLicenseCount", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -54,32 +61,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The organization associated with the Apple Volume Purchase Program Token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationName {
+        public string? OrganizationName
+        {
             get { return BackingStore?.Get<string?>("organizationName"); }
             set { BackingStore?.Set("organizationName", value); }
         }
 #nullable restore
 #else
-        public string OrganizationName {
+        public string OrganizationName
+        {
             get { return BackingStore?.Get<string>("organizationName"); }
             set { BackingStore?.Set("organizationName", value); }
         }
 #endif
         /// <summary>The number of VPP licenses in use.</summary>
-        public int? UsedLicenseCount {
+        public int? UsedLicenseCount
+        {
             get { return BackingStore?.Get<int?>("usedLicenseCount"); }
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>Identifier of the VPP token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VppTokenId {
+        public string? VppTokenId
+        {
             get { return BackingStore?.Get<string?>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
 #nullable restore
 #else
-        public string VppTokenId {
+        public string VppTokenId
+        {
             get { return BackingStore?.Get<string>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
@@ -110,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appleId", n => { AppleId = n.GetStringValue(); } },
-                {"availableLicenseCount", n => { AvailableLicenseCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"organizationName", n => { OrganizationName = n.GetStringValue(); } },
-                {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
-                {"vppTokenId", n => { VppTokenId = n.GetStringValue(); } },
+                { "appleId", n => { AppleId = n.GetStringValue(); } },
+                { "availableLicenseCount", n => { AvailableLicenseCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "organizationName", n => { OrganizationName = n.GetStringValue(); } },
+                { "usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
+                { "vppTokenId", n => { VppTokenId = n.GetStringValue(); } },
             };
         }
         /// <summary>

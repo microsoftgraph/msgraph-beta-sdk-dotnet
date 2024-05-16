@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList {
+namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList
+{
     #pragma warning disable CS1591
-    public class ImportDeviceIdentityListPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class ImportDeviceIdentityListPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImportedDeviceIdentityResult>? Value {
+        public List<ImportedDeviceIdentityResult>? Value
+        {
             get { return BackingStore?.Get<List<ImportedDeviceIdentityResult>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ImportedDeviceIdentityResult> Value {
+        public List<ImportedDeviceIdentityResult> Value
+        {
             get { return BackingStore?.Get<List<ImportedDeviceIdentityResult>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportD
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ImportedDeviceIdentityResult>(ImportedDeviceIdentityResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ImportedDeviceIdentityResult>(ImportedDeviceIdentityResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

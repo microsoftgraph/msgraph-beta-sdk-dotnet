@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationMethodsPolicy : Entity, IParsable 
+    public class AuthenticationMethodsPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodConfiguration>? AuthenticationMethodConfigurations {
+        public List<AuthenticationMethodConfiguration>? AuthenticationMethodConfigurations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodConfiguration>?>("authenticationMethodConfigurations"); }
             set { BackingStore?.Set("authenticationMethodConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations {
+        public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodConfiguration>>("authenticationMethodConfigurations"); }
             set { BackingStore?.Set("authenticationMethodConfigurations", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A description of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -40,56 +45,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date and time of the last update to the policy.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The state of migration of the authentication methods policy from the legacy multifactor authentication and self-service password reset (SSPR) policies. The possible values are: premigration - means the authentication methods policy is used for authentication only, legacy policies are respected. migrationInProgress - means the authentication methods policy is used for both authentication and SSPR, legacy policies are respected. migrationComplete - means the authentication methods policy is used for authentication and SSPR, legacy policies are ignored. unknownFutureValue - Evolvable enumeration sentinel value. Don&apos;t use.</summary>
-        public AuthenticationMethodsPolicyMigrationState? PolicyMigrationState {
+        public AuthenticationMethodsPolicyMigrationState? PolicyMigrationState
+        {
             get { return BackingStore?.Get<AuthenticationMethodsPolicyMigrationState?>("policyMigrationState"); }
             set { BackingStore?.Set("policyMigrationState", value); }
         }
         /// <summary>The version of the policy in use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyVersion {
+        public string? PolicyVersion
+        {
             get { return BackingStore?.Get<string?>("policyVersion"); }
             set { BackingStore?.Set("policyVersion", value); }
         }
 #nullable restore
 #else
-        public string PolicyVersion {
+        public string PolicyVersion
+        {
             get { return BackingStore?.Get<string>("policyVersion"); }
             set { BackingStore?.Set("policyVersion", value); }
         }
 #endif
         /// <summary>Days before the user will be asked to reconfirm their method.</summary>
-        public int? ReconfirmationInDays {
+        public int? ReconfirmationInDays
+        {
             get { return BackingStore?.Get<int?>("reconfirmationInDays"); }
             set { BackingStore?.Set("reconfirmationInDays", value); }
         }
         /// <summary>Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.RegistrationEnforcement? RegistrationEnforcement {
+        public Microsoft.Graph.Beta.Models.RegistrationEnforcement? RegistrationEnforcement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegistrationEnforcement?>("registrationEnforcement"); }
             set { BackingStore?.Set("registrationEnforcement", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.RegistrationEnforcement RegistrationEnforcement {
+        public Microsoft.Graph.Beta.Models.RegistrationEnforcement RegistrationEnforcement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegistrationEnforcement>("registrationEnforcement"); }
             set { BackingStore?.Set("registrationEnforcement", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Enable users to report unexpected voice call or phone app notification multi-factor authentication prompts as suspicious.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings? ReportSuspiciousActivitySettings {
+        public Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings? ReportSuspiciousActivitySettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings?>("reportSuspiciousActivitySettings"); }
             set { BackingStore?.Set("reportSuspiciousActivitySettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings ReportSuspiciousActivitySettings {
+        public Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings ReportSuspiciousActivitySettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings>("reportSuspiciousActivitySettings"); }
             set { BackingStore?.Set("reportSuspiciousActivitySettings", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Prompt users with their most-preferred credential for multifactor authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.SystemCredentialPreferences? SystemCredentialPreferences {
+        public Microsoft.Graph.Beta.Models.SystemCredentialPreferences? SystemCredentialPreferences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SystemCredentialPreferences?>("systemCredentialPreferences"); }
             set { BackingStore?.Set("systemCredentialPreferences", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.SystemCredentialPreferences SystemCredentialPreferences {
+        public Microsoft.Graph.Beta.Models.SystemCredentialPreferences SystemCredentialPreferences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SystemCredentialPreferences>("systemCredentialPreferences"); }
             set { BackingStore?.Set("systemCredentialPreferences", value); }
         }
@@ -140,16 +158,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationMethodConfigurations", n => { AuthenticationMethodConfigurations = n.GetCollectionOfObjectValues<AuthenticationMethodConfiguration>(AuthenticationMethodConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"policyMigrationState", n => { PolicyMigrationState = n.GetEnumValue<AuthenticationMethodsPolicyMigrationState>(); } },
-                {"policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
-                {"reconfirmationInDays", n => { ReconfirmationInDays = n.GetIntValue(); } },
-                {"registrationEnforcement", n => { RegistrationEnforcement = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegistrationEnforcement>(Microsoft.Graph.Beta.Models.RegistrationEnforcement.CreateFromDiscriminatorValue); } },
-                {"reportSuspiciousActivitySettings", n => { ReportSuspiciousActivitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings>(Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings.CreateFromDiscriminatorValue); } },
-                {"systemCredentialPreferences", n => { SystemCredentialPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.SystemCredentialPreferences>(Microsoft.Graph.Beta.Models.SystemCredentialPreferences.CreateFromDiscriminatorValue); } },
+                { "authenticationMethodConfigurations", n => { AuthenticationMethodConfigurations = n.GetCollectionOfObjectValues<AuthenticationMethodConfiguration>(AuthenticationMethodConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "policyMigrationState", n => { PolicyMigrationState = n.GetEnumValue<AuthenticationMethodsPolicyMigrationState>(); } },
+                { "policyVersion", n => { PolicyVersion = n.GetStringValue(); } },
+                { "reconfirmationInDays", n => { ReconfirmationInDays = n.GetIntValue(); } },
+                { "registrationEnforcement", n => { RegistrationEnforcement = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegistrationEnforcement>(Microsoft.Graph.Beta.Models.RegistrationEnforcement.CreateFromDiscriminatorValue); } },
+                { "reportSuspiciousActivitySettings", n => { ReportSuspiciousActivitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings>(Microsoft.Graph.Beta.Models.ReportSuspiciousActivitySettings.CreateFromDiscriminatorValue); } },
+                { "systemCredentialPreferences", n => { SystemCredentialPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.SystemCredentialPreferences>(Microsoft.Graph.Beta.Models.SystemCredentialPreferences.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcExternalPartnerSetting : Entity, IParsable 
+    public class CloudPcExternalPartnerSetting : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).</summary>
-        public bool? EnableConnection {
+        public bool? EnableConnection
+        {
             get { return BackingStore?.Get<bool?>("enableConnection"); }
             set { BackingStore?.Set("enableConnection", value); }
         }
         /// <summary>Last data sync time for this external partner. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: &apos;2014-01-01T00:00:00Z&apos;.</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The external partner ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PartnerId {
+        public string? PartnerId
+        {
             get { return BackingStore?.Get<string?>("partnerId"); }
             set { BackingStore?.Set("partnerId", value); }
         }
 #nullable restore
 #else
-        public string PartnerId {
+        public string PartnerId
+        {
             get { return BackingStore?.Get<string>("partnerId"); }
             set { BackingStore?.Set("partnerId", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public CloudPcExternalPartnerStatus? Status {
+        public CloudPcExternalPartnerStatus? Status
+        {
             get { return BackingStore?.Get<CloudPcExternalPartnerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Status details message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusDetails {
+        public string? StatusDetails
+        {
             get { return BackingStore?.Get<string?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #nullable restore
 #else
-        public string StatusDetails {
+        public string StatusDetails
+        {
             get { return BackingStore?.Get<string>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
@@ -70,11 +78,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enableConnection", n => { EnableConnection = n.GetBoolValue(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"partnerId", n => { PartnerId = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CloudPcExternalPartnerStatus>(); } },
-                {"statusDetails", n => { StatusDetails = n.GetStringValue(); } },
+                { "enableConnection", n => { EnableConnection = n.GetBoolValue(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "partnerId", n => { PartnerId = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CloudPcExternalPartnerStatus>(); } },
+                { "statusDetails", n => { StatusDetails = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID
+{
     [Obsolete("This class is obsolete. Use FindByCatalogIdWithCatalogIDGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FindByCatalogIdWithCatalogIDResponse : FindByCatalogIdWithCatalogIDGetResponse, IParsable 
+    public class FindByCatalogIdWithCatalogIDResponse : FindByCatalogIdWithCatalogIDGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

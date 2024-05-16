@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// History Item contained in the Mobile App Troubleshooting Event.
     /// </summary>
-    public class MobileAppTroubleshootingAppUpdateHistory : MobileAppTroubleshootingHistoryItem, IParsable 
+    public class MobileAppTroubleshootingAppUpdateHistory : MobileAppTroubleshootingHistoryItem, IParsable
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

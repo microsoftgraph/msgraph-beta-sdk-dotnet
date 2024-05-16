@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.AssignJustInTimeConfiguration {
+namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.AssignJustInTimeConfiguration
+{
     #pragma warning disable CS1591
-    public class AssignJustInTimeConfigurationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignJustInTimeConfigurationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assig
         /// <summary>The justInTimeAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationJustInTimeAssignmentPolicy? JustInTimeAssignments {
+        public DeviceManagementConfigurationJustInTimeAssignmentPolicy? JustInTimeAssignments
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationJustInTimeAssignmentPolicy?>("justInTimeAssignments"); }
             set { BackingStore?.Set("justInTimeAssignments", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationJustInTimeAssignmentPolicy JustInTimeAssignments {
+        public DeviceManagementConfigurationJustInTimeAssignmentPolicy JustInTimeAssignments
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationJustInTimeAssignmentPolicy>("justInTimeAssignments"); }
             set { BackingStore?.Set("justInTimeAssignments", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Assig
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"justInTimeAssignments", n => { JustInTimeAssignments = n.GetObjectValue<DeviceManagementConfigurationJustInTimeAssignmentPolicy>(DeviceManagementConfigurationJustInTimeAssignmentPolicy.CreateFromDiscriminatorValue); } },
+                { "justInTimeAssignments", n => { JustInTimeAssignments = n.GetObjectValue<DeviceManagementConfigurationJustInTimeAssignmentPolicy>(DeviceManagementConfigurationJustInTimeAssignmentPolicy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

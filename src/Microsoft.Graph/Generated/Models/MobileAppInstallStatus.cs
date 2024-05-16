@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for the installation state of a mobile app for a device. This will be deprecated starting May, 2023 (Intune Release 2305).
     /// </summary>
-    public class MobileAppInstallStatus : Entity, IParsable 
+    public class MobileAppInstallStatus : Entity, IParsable
     {
         /// <summary>The navigation link to the mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileApp? App {
+        public MobileApp? App
+        {
             get { return BackingStore?.Get<MobileApp?>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #nullable restore
 #else
-        public MobileApp App {
+        public MobileApp App
+        {
             get { return BackingStore?.Get<MobileApp>("app"); }
             set { BackingStore?.Set("app", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -55,52 +62,61 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Human readable version of the application</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayVersion {
+        public string? DisplayVersion
+        {
             get { return BackingStore?.Get<string?>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
 #nullable restore
 #else
-        public string DisplayVersion {
+        public string DisplayVersion
+        {
             get { return BackingStore?.Get<string>("displayVersion"); }
             set { BackingStore?.Set("displayVersion", value); }
         }
 #endif
         /// <summary>The error code for install or uninstall failures.</summary>
-        public int? ErrorCode {
+        public int? ErrorCode
+        {
             get { return BackingStore?.Get<int?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
-        public ResultantAppState? InstallState {
+        public ResultantAppState? InstallState
+        {
             get { return BackingStore?.Get<ResultantAppState?>("installState"); }
             set { BackingStore?.Set("installState", value); }
         }
         /// <summary>Enum indicating additional details regarding why an application has a particular install state.</summary>
-        public ResultantAppStateDetail? InstallStateDetail {
+        public ResultantAppStateDetail? InstallStateDetail
+        {
             get { return BackingStore?.Get<ResultantAppStateDetail?>("installStateDetail"); }
             set { BackingStore?.Set("installStateDetail", value); }
         }
         /// <summary>Last sync date time</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
-        public ResultantAppState? MobileAppInstallStatusValue {
+        public ResultantAppState? MobileAppInstallStatusValue
+        {
             get { return BackingStore?.Get<ResultantAppState?>("mobileAppInstallStatusValue"); }
             set { BackingStore?.Set("mobileAppInstallStatusValue", value); }
         }
         /// <summary>OS Description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsDescription {
+        public string? OsDescription
+        {
             get { return BackingStore?.Get<string?>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
 #nullable restore
 #else
-        public string OsDescription {
+        public string OsDescription
+        {
             get { return BackingStore?.Get<string>("osDescription"); }
             set { BackingStore?.Set("osDescription", value); }
         }
@@ -108,13 +124,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>OS Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
@@ -122,13 +140,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device User Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -136,13 +156,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User Principal Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -165,19 +187,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"app", n => { App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
-                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
-                {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
-                {"installStateDetail", n => { InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mobileAppInstallStatusValue", n => { MobileAppInstallStatusValue = n.GetEnumValue<ResultantAppState>(); } },
-                {"osDescription", n => { OsDescription = n.GetStringValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "app", n => { App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                { "installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
+                { "installStateDetail", n => { InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "mobileAppInstallStatusValue", n => { MobileAppInstallStatusValue = n.GetEnumValue<ResultantAppState>(); } },
+                { "osDescription", n => { OsDescription = n.GetStringValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

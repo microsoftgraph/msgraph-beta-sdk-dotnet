@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an iOS Web Content Filter setting type, which installs URL bookmarks into iOS built-in browser. An example scenario is in the classroom where teachers would like the students to navigate websites through browser bookmarks configured on their iOS devices, and no access to other sites.
     /// </summary>
-    public class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase, IParsable 
+    public class IosWebContentFilterSpecificWebsitesAccess : IosWebContentFilterBase, IParsable
     {
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosBookmark>? SpecificWebsitesOnly {
+        public List<IosBookmark>? SpecificWebsitesOnly
+        {
             get { return BackingStore?.Get<List<IosBookmark>?>("specificWebsitesOnly"); }
             set { BackingStore?.Set("specificWebsitesOnly", value); }
         }
 #nullable restore
 #else
-        public List<IosBookmark> SpecificWebsitesOnly {
+        public List<IosBookmark> SpecificWebsitesOnly
+        {
             get { return BackingStore?.Get<List<IosBookmark>>("specificWebsitesOnly"); }
             set { BackingStore?.Set("specificWebsitesOnly", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>URL bookmarks which will be installed into built-in browser and user is only allowed to access websites through bookmarks. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosBookmark>? WebsiteList {
+        public List<IosBookmark>? WebsiteList
+        {
             get { return BackingStore?.Get<List<IosBookmark>?>("websiteList"); }
             set { BackingStore?.Set("websiteList", value); }
         }
 #nullable restore
 #else
-        public List<IosBookmark> WebsiteList {
+        public List<IosBookmark> WebsiteList
+        {
             get { return BackingStore?.Get<List<IosBookmark>>("websiteList"); }
             set { BackingStore?.Set("websiteList", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"specificWebsitesOnly", n => { SpecificWebsitesOnly = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"websiteList", n => { WebsiteList = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "specificWebsitesOnly", n => { SpecificWebsitesOnly = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "websiteList", n => { WebsiteList = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

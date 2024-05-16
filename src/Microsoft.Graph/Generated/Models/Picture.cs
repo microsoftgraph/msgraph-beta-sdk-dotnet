@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Picture : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Picture : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -34,43 +38,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The contentType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType {
+        public string? ContentType
+        {
             get { return BackingStore?.Get<string?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #nullable restore
 #else
-        public string ContentType {
+        public string ContentType
+        {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
         /// <summary>The height property</summary>
-        public int? Height {
+        public int? Height
+        {
             get { return BackingStore?.Get<int?>("height"); }
             set { BackingStore?.Set("height", value); }
         }
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The width property</summary>
-        public int? Width {
+        public int? Width
+        {
             get { return BackingStore?.Get<int?>("width"); }
             set { BackingStore?.Set("width", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"contentType", n => { ContentType = n.GetStringValue(); } },
-                {"height", n => { Height = n.GetIntValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"width", n => { Width = n.GetIntValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "contentType", n => { ContentType = n.GetStringValue(); } },
+                { "height", n => { Height = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "width", n => { Width = n.GetIntValue(); } },
             };
         }
         /// <summary>

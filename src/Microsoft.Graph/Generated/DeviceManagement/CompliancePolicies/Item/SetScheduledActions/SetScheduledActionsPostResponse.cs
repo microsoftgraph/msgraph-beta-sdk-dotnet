@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions {
+namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions
+{
     #pragma warning disable CS1591
-    public class SetScheduledActionsPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class SetScheduledActionsPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementComplianceScheduledActionForRule>? Value {
+        public List<DeviceManagementComplianceScheduledActionForRule>? Value
+        {
             get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementComplianceScheduledActionForRule> Value {
+        public List<DeviceManagementComplianceScheduledActionForRule> Value
+        {
             get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetSched
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>(DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>(DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

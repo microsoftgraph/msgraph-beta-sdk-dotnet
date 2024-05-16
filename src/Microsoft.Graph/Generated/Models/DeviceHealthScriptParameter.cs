@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Base properties of the script parameter.
     /// </summary>
-    public class DeviceHealthScriptParameter : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceHealthScriptParameter : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Whether Apply DefaultValue When Not Assigned</summary>
-        public bool? ApplyDefaultValueWhenNotAssigned {
+        public bool? ApplyDefaultValueWhenNotAssigned
+        {
             get { return BackingStore?.Get<bool?>("applyDefaultValueWhenNotAssigned"); }
             set { BackingStore?.Set("applyDefaultValueWhenNotAssigned", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of the param</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>Whether the param is required</summary>
-        public bool? IsRequired {
+        public bool? IsRequired
+        {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
         /// <summary>The name of the param</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -103,11 +113,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applyDefaultValueWhenNotAssigned", n => { ApplyDefaultValueWhenNotAssigned = n.GetBoolValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "applyDefaultValueWhenNotAssigned", n => { ApplyDefaultValueWhenNotAssigned = n.GetBoolValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

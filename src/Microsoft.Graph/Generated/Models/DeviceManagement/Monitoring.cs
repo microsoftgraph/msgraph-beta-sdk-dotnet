@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     #pragma warning disable CS1591
-    public class Monitoring : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Monitoring : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of records of alert events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertRecord>? AlertRecords {
+        public List<AlertRecord>? AlertRecords
+        {
             get { return BackingStore?.Get<List<AlertRecord>?>("alertRecords"); }
             set { BackingStore?.Set("alertRecords", value); }
         }
 #nullable restore
 #else
-        public List<AlertRecord> AlertRecords {
+        public List<AlertRecord> AlertRecords
+        {
             get { return BackingStore?.Get<List<AlertRecord>>("alertRecords"); }
             set { BackingStore?.Set("alertRecords", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The collection of alert rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertRule>? AlertRules {
+        public List<AlertRule>? AlertRules
+        {
             get { return BackingStore?.Get<List<AlertRule>?>("alertRules"); }
             set { BackingStore?.Set("alertRules", value); }
         }
 #nullable restore
 #else
-        public List<AlertRule> AlertRules {
+        public List<AlertRule> AlertRules
+        {
             get { return BackingStore?.Get<List<AlertRule>>("alertRules"); }
             set { BackingStore?.Set("alertRules", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alertRecords", n => { AlertRecords = n.GetCollectionOfObjectValues<AlertRecord>(AlertRecord.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"alertRules", n => { AlertRules = n.GetCollectionOfObjectValues<AlertRule>(AlertRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertRecords", n => { AlertRecords = n.GetCollectionOfObjectValues<AlertRecord>(AlertRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertRules", n => { AlertRules = n.GetCollectionOfObjectValues<AlertRule>(AlertRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

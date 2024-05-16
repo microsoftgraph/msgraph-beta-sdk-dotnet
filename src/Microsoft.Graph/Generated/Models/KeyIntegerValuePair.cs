@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A key-value pair with a string key and an integer value.
     /// </summary>
-    public class KeyIntegerValuePair : KeyTypedValuePair, IParsable 
+    public class KeyIntegerValuePair : KeyTypedValuePair, IParsable
     {
         /// <summary>The integer value of the key-value pair.</summary>
-        public int? Value {
+        public int? Value
+        {
             get { return BackingStore?.Get<int?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventRegistrationPredefinedQuestion : VirtualEventRegistrationQuestionBase, IParsable 
+    public class VirtualEventRegistrationPredefinedQuestion : VirtualEventRegistrationQuestionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The label property</summary>
-        public VirtualEventRegistrationPredefinedQuestionLabel? Label {
+        public VirtualEventRegistrationPredefinedQuestionLabel? Label
+        {
             get { return BackingStore?.Get<VirtualEventRegistrationPredefinedQuestionLabel?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"label", n => { Label = n.GetEnumValue<VirtualEventRegistrationPredefinedQuestionLabel>(); } },
+                { "label", n => { Label = n.GetEnumValue<VirtualEventRegistrationPredefinedQuestionLabel>(); } },
             };
         }
         /// <summary>

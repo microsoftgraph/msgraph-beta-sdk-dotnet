@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The ManagedAppPolicy resource represents a base type for platform specific policies.
     /// </summary>
-    public class ManagedAppPolicy : Entity, IParsable 
+    public class ManagedAppPolicy : Entity, IParsable
     {
         /// <summary>The date and time the policy was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The policy&apos;s description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -32,32 +36,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Policy display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Last time the policy was modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -109,12 +120,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

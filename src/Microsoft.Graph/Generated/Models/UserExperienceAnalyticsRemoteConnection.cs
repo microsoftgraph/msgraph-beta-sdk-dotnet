@@ -4,52 +4,61 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analyte remote connection entity.
     /// </summary>
-    public class UserExperienceAnalyticsRemoteConnection : Entity, IParsable 
+    public class UserExperienceAnalyticsRemoteConnection : Entity, IParsable
     {
         /// <summary>The sign in failure percentage of Cloud PC Device. Valid values 0 to 100</summary>
-        public double? CloudPcFailurePercentage {
+        public double? CloudPcFailurePercentage
+        {
             get { return BackingStore?.Get<double?>("cloudPcFailurePercentage"); }
             set { BackingStore?.Set("cloudPcFailurePercentage", value); }
         }
         /// <summary>The round tip time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308</summary>
-        public double? CloudPcRoundTripTime {
+        public double? CloudPcRoundTripTime
+        {
             get { return BackingStore?.Get<double?>("cloudPcRoundTripTime"); }
             set { BackingStore?.Set("cloudPcRoundTripTime", value); }
         }
         /// <summary>The sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308</summary>
-        public double? CloudPcSignInTime {
+        public double? CloudPcSignInTime
+        {
             get { return BackingStore?.Get<double?>("cloudPcSignInTime"); }
             set { BackingStore?.Set("cloudPcSignInTime", value); }
         }
         /// <summary>The core boot time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308</summary>
-        public double? CoreBootTime {
+        public double? CoreBootTime
+        {
             get { return BackingStore?.Get<double?>("coreBootTime"); }
             set { BackingStore?.Set("coreBootTime", value); }
         }
         /// <summary>The core sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308</summary>
-        public double? CoreSignInTime {
+        public double? CoreSignInTime
+        {
             get { return BackingStore?.Get<double?>("coreSignInTime"); }
             set { BackingStore?.Set("coreSignInTime", value); }
         }
         /// <summary>The count of remote connection. Valid values 0 to 2147483647</summary>
-        public int? DeviceCount {
+        public int? DeviceCount
+        {
             get { return BackingStore?.Get<int?>("deviceCount"); }
             set { BackingStore?.Set("deviceCount", value); }
         }
         /// <summary>The id of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -57,13 +66,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -71,13 +82,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user experience analytics manufacturer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -85,32 +98,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user experience analytics device model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #endif
         /// <summary>The remote sign in time of Cloud PC Device. Valid values 0 to 1.79769313486232E+308</summary>
-        public double? RemoteSignInTime {
+        public double? RemoteSignInTime
+        {
             get { return BackingStore?.Get<double?>("remoteSignInTime"); }
             set { BackingStore?.Set("remoteSignInTime", value); }
         }
         /// <summary>The user experience analytics userPrincipalName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -118,13 +136,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user experience analytics virtual network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VirtualNetwork {
+        public string? VirtualNetwork
+        {
             get { return BackingStore?.Get<string?>("virtualNetwork"); }
             set { BackingStore?.Set("virtualNetwork", value); }
         }
 #nullable restore
 #else
-        public string VirtualNetwork {
+        public string VirtualNetwork
+        {
             get { return BackingStore?.Get<string>("virtualNetwork"); }
             set { BackingStore?.Set("virtualNetwork", value); }
         }
@@ -147,19 +167,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cloudPcFailurePercentage", n => { CloudPcFailurePercentage = n.GetDoubleValue(); } },
-                {"cloudPcRoundTripTime", n => { CloudPcRoundTripTime = n.GetDoubleValue(); } },
-                {"cloudPcSignInTime", n => { CloudPcSignInTime = n.GetDoubleValue(); } },
-                {"coreBootTime", n => { CoreBootTime = n.GetDoubleValue(); } },
-                {"coreSignInTime", n => { CoreSignInTime = n.GetDoubleValue(); } },
-                {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"remoteSignInTime", n => { RemoteSignInTime = n.GetDoubleValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"virtualNetwork", n => { VirtualNetwork = n.GetStringValue(); } },
+                { "cloudPcFailurePercentage", n => { CloudPcFailurePercentage = n.GetDoubleValue(); } },
+                { "cloudPcRoundTripTime", n => { CloudPcRoundTripTime = n.GetDoubleValue(); } },
+                { "cloudPcSignInTime", n => { CloudPcSignInTime = n.GetDoubleValue(); } },
+                { "coreBootTime", n => { CoreBootTime = n.GetDoubleValue(); } },
+                { "coreSignInTime", n => { CoreSignInTime = n.GetDoubleValue(); } },
+                { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "remoteSignInTime", n => { RemoteSignInTime = n.GetDoubleValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "virtualNetwork", n => { VirtualNetwork = n.GetStringValue(); } },
             };
         }
         /// <summary>

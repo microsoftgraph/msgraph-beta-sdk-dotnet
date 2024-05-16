@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class GovernanceRoleDefinition : Entity, IParsable 
+    public class GovernanceRoleDefinition : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the role definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The external id of the role definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. The associated resource for the role definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceResource? Resource {
+        public GovernanceResource? Resource
+        {
             get { return BackingStore?.Get<GovernanceResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public GovernanceResource Resource {
+        public GovernanceResource Resource
+        {
             get { return BackingStore?.Get<GovernanceResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Required. The id of the resource associated with the role definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The associated role setting for the role definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleSetting? RoleSetting {
+        public GovernanceRoleSetting? RoleSetting
+        {
             get { return BackingStore?.Get<GovernanceRoleSetting?>("roleSetting"); }
             set { BackingStore?.Set("roleSetting", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleSetting RoleSetting {
+        public GovernanceRoleSetting RoleSetting
+        {
             get { return BackingStore?.Get<GovernanceRoleSetting>("roleSetting"); }
             set { BackingStore?.Set("roleSetting", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The templateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId {
+        public string? TemplateId
+        {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
 #nullable restore
 #else
-        public string TemplateId {
+        public string TemplateId
+        {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
@@ -111,12 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
-                {"roleSetting", n => { RoleSetting = n.GetObjectValue<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue); } },
-                {"templateId", n => { TemplateId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "roleSetting", n => { RoleSetting = n.GetObjectValue<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue); } },
+                { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

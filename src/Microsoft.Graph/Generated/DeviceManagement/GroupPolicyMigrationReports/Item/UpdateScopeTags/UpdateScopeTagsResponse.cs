@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.UpdateScopeTags {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item.UpdateScopeTags
+{
     [Obsolete("This class is obsolete. Use UpdateScopeTagsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class UpdateScopeTagsResponse : UpdateScopeTagsPostResponse, IParsable 
+    public class UpdateScopeTagsResponse : UpdateScopeTagsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

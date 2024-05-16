@@ -4,85 +4,99 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics device scope entity contains device scope configuration values use to apply filtering on the endpoint analytics reports.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceScope : Entity, IParsable 
+    public class UserExperienceAnalyticsDeviceScope : Entity, IParsable
     {
         /// <summary>Indicates the creation date and time for the custom device scope.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The name of the user experience analytics device Scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceScopeName {
+        public string? DeviceScopeName
+        {
             get { return BackingStore?.Get<string?>("deviceScopeName"); }
             set { BackingStore?.Set("deviceScopeName", value); }
         }
 #nullable restore
 #else
-        public string DeviceScopeName {
+        public string DeviceScopeName
+        {
             get { return BackingStore?.Get<string>("deviceScopeName"); }
             set { BackingStore?.Set("deviceScopeName", value); }
         }
 #endif
         /// <summary>Indicates whether a device scope is enabled or disabled. When TRUE, the device scope is enabled. When FALSE, the device scope is disabled. Default value is FALSE.</summary>
-        public bool? Enabled {
+        public bool? Enabled
+        {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>Indicates whether the device scope configuration is built-in or custom. When TRUE, the device scope configuration is built-in. When FALSE, the device scope configuration is custom. Default value is FALSE.</summary>
-        public bool? IsBuiltIn {
+        public bool? IsBuiltIn
+        {
             get { return BackingStore?.Get<bool?>("isBuiltIn"); }
             set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>Indicates the last updated date and time for the custom device scope.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Device scope configuration query operator. Possible values are: equals, notEquals, contains, notContains, greaterThan, lessThan. Default value: equals.</summary>
-        public DeviceScopeOperator? Operator {
+        public DeviceScopeOperator? Operator
+        {
             get { return BackingStore?.Get<DeviceScopeOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The unique identifier of the person (admin) who created the device scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerId {
+        public string? OwnerId
+        {
             get { return BackingStore?.Get<string?>("ownerId"); }
             set { BackingStore?.Set("ownerId", value); }
         }
 #nullable restore
 #else
-        public string OwnerId {
+        public string OwnerId
+        {
             get { return BackingStore?.Get<string>("ownerId"); }
             set { BackingStore?.Set("ownerId", value); }
         }
 #endif
         /// <summary>Device scope configuration parameter. It will be expend in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.</summary>
-        public DeviceScopeParameter? Parameter {
+        public DeviceScopeParameter? Parameter
+        {
             get { return BackingStore?.Get<DeviceScopeParameter?>("parameter"); }
             set { BackingStore?.Set("parameter", value); }
         }
         /// <summary>Indicates the device scope status after the device scope has been enabled. Possible values are: none, computing, insufficientData or completed. Default value is none.</summary>
-        public DeviceScopeStatus? Status {
+        public DeviceScopeStatus? Status
+        {
             get { return BackingStore?.Get<DeviceScopeStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The device scope configuration query clause value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -90,13 +104,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier for a user device scope tag Id used for the creation of device scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueObjectId {
+        public string? ValueObjectId
+        {
             get { return BackingStore?.Get<string?>("valueObjectId"); }
             set { BackingStore?.Set("valueObjectId", value); }
         }
 #nullable restore
 #else
-        public string ValueObjectId {
+        public string ValueObjectId
+        {
             get { return BackingStore?.Get<string>("valueObjectId"); }
             set { BackingStore?.Set("valueObjectId", value); }
         }
@@ -119,17 +135,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceScopeName", n => { DeviceScopeName = n.GetStringValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operator", n => { Operator = n.GetEnumValue<DeviceScopeOperator>(); } },
-                {"ownerId", n => { OwnerId = n.GetStringValue(); } },
-                {"parameter", n => { Parameter = n.GetEnumValue<DeviceScopeParameter>(); } },
-                {"status", n => { Status = n.GetEnumValue<DeviceScopeStatus>(); } },
-                {"value", n => { Value = n.GetStringValue(); } },
-                {"valueObjectId", n => { ValueObjectId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deviceScopeName", n => { DeviceScopeName = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "operator", n => { Operator = n.GetEnumValue<DeviceScopeOperator>(); } },
+                { "ownerId", n => { OwnerId = n.GetStringValue(); } },
+                { "parameter", n => { Parameter = n.GetEnumValue<DeviceScopeParameter>(); } },
+                { "status", n => { Status = n.GetEnumValue<DeviceScopeStatus>(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
+                { "valueObjectId", n => { ValueObjectId = n.GetStringValue(); } },
             };
         }
         /// <summary>

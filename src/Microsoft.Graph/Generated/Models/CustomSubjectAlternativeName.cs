@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Custom Subject Alternative Name definition
     /// </summary>
-    public class CustomSubjectAlternativeName : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CustomSubjectAlternativeName : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom SAN Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -35,19 +39,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Subject Alternative Name Options.</summary>
-        public SubjectAlternativeNameType? SanType {
+        public SubjectAlternativeNameType? SanType
+        {
             get { return BackingStore?.Get<SubjectAlternativeNameType?>("sanType"); }
             set { BackingStore?.Set("sanType", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sanType", n => { SanType = n.GetEnumValue<SubjectAlternativeNameType>(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sanType", n => { SanType = n.GetEnumValue<SubjectAlternativeNameType>(); } },
             };
         }
         /// <summary>

@@ -4,29 +4,34 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that represents the health thresholds of a health metric
     /// </summary>
-    public class MicrosoftTunnelHealthThreshold : Entity, IParsable 
+    public class MicrosoftTunnelHealthThreshold : Entity, IParsable
     {
         /// <summary>The threshold for being healthy based on default health status metrics: CPU usage healthy &lt; 50%, Memory usage healthy &lt; 50%, Disk space healthy &gt; 5GB, Latency healthy &lt; 10ms, health metrics can be customized. Read-only.</summary>
-        public long? DefaultHealthyThreshold {
+        public long? DefaultHealthyThreshold
+        {
             get { return BackingStore?.Get<long?>("defaultHealthyThreshold"); }
             set { BackingStore?.Set("defaultHealthyThreshold", value); }
         }
         /// <summary>The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy &gt; 75%, Memory usage unhealthy &gt; 75%, Disk space &lt; 3GB, Latency unhealthy &gt; 20ms, health metrics can be customized. Read-only.</summary>
-        public long? DefaultUnhealthyThreshold {
+        public long? DefaultUnhealthyThreshold
+        {
             get { return BackingStore?.Get<long?>("defaultUnhealthyThreshold"); }
             set { BackingStore?.Set("defaultUnhealthyThreshold", value); }
         }
         /// <summary>The threshold for being healthy based on default health status metrics: CPU usage healthy &lt; 50%, Memory usage healthy &lt; 50%, Disk space healthy &gt; 5GB, Latency healthy &lt; 10ms, health metrics can be customized.</summary>
-        public long? HealthyThreshold {
+        public long? HealthyThreshold
+        {
             get { return BackingStore?.Get<long?>("healthyThreshold"); }
             set { BackingStore?.Set("healthyThreshold", value); }
         }
         /// <summary>The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy &gt; 75%, Memory usage unhealthy &gt; 75%, Disk space &lt; 3GB, Latency Unhealthy &gt; 20ms, health metrics can be customized.</summary>
-        public long? UnhealthyThreshold {
+        public long? UnhealthyThreshold
+        {
             get { return BackingStore?.Get<long?>("unhealthyThreshold"); }
             set { BackingStore?.Set("unhealthyThreshold", value); }
         }
@@ -48,10 +53,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultHealthyThreshold", n => { DefaultHealthyThreshold = n.GetLongValue(); } },
-                {"defaultUnhealthyThreshold", n => { DefaultUnhealthyThreshold = n.GetLongValue(); } },
-                {"healthyThreshold", n => { HealthyThreshold = n.GetLongValue(); } },
-                {"unhealthyThreshold", n => { UnhealthyThreshold = n.GetLongValue(); } },
+                { "defaultHealthyThreshold", n => { DefaultHealthyThreshold = n.GetLongValue(); } },
+                { "defaultUnhealthyThreshold", n => { DefaultUnhealthyThreshold = n.GetLongValue(); } },
+                { "healthyThreshold", n => { HealthyThreshold = n.GetLongValue(); } },
+                { "unhealthyThreshold", n => { UnhealthyThreshold = n.GetLongValue(); } },
             };
         }
         /// <summary>

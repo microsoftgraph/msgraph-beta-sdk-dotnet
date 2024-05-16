@@ -4,38 +4,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups
     /// </summary>
-    public class TargetedManagedAppProtection : ManagedAppProtection, IParsable 
+    public class TargetedManagedAppProtection : ManagedAppProtection, IParsable
     {
         /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
-        public TargetedManagedAppGroupType? AppGroupType {
+        public TargetedManagedAppGroupType? AppGroupType
+        {
             get { return BackingStore?.Get<TargetedManagedAppGroupType?>("appGroupType"); }
             set { BackingStore?.Set("appGroupType", value); }
         }
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppPolicyAssignment>? Assignments {
+        public List<TargetedManagedAppPolicyAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppPolicyAssignment> Assignments {
+        public List<TargetedManagedAppPolicyAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Indicates if the policy is deployed to any inclusion groups or not.</summary>
-        public bool? IsAssigned {
+        public bool? IsAssigned
+        {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
             set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>Management levels for apps</summary>
-        public AppManagementLevel? TargetedAppManagementLevels {
+        public AppManagementLevel? TargetedAppManagementLevels
+        {
             get { return BackingStore?.Get<AppManagementLevel?>("targetedAppManagementLevels"); }
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
@@ -70,10 +76,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
-                {"targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<AppManagementLevel>(); } },
+                { "appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                { "targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<AppManagementLevel>(); } },
             };
         }
         /// <summary>

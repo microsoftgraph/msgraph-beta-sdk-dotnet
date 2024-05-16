@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MeetingRegistration : MeetingRegistrationBase, IParsable 
+    public class MeetingRegistration : MeetingRegistrationBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Custom registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingRegistrationQuestion>? CustomQuestions {
+        public List<MeetingRegistrationQuestion>? CustomQuestions
+        {
             get { return BackingStore?.Get<List<MeetingRegistrationQuestion>?>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
 #nullable restore
 #else
-        public List<MeetingRegistrationQuestion> CustomQuestions {
+        public List<MeetingRegistrationQuestion> CustomQuestions
+        {
             get { return BackingStore?.Get<List<MeetingRegistrationQuestion>>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
@@ -26,37 +29,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>The meeting end time in UTC.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The number of times the registration page has been visited. Read-only.</summary>
-        public int? RegistrationPageViewCount {
+        public int? RegistrationPageViewCount
+        {
             get { return BackingStore?.Get<int?>("registrationPageViewCount"); }
             set { BackingStore?.Set("registrationPageViewCount", value); }
         }
         /// <summary>The URL of the registration page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationPageWebUrl {
+        public string? RegistrationPageWebUrl
+        {
             get { return BackingStore?.Get<string?>("registrationPageWebUrl"); }
             set { BackingStore?.Set("registrationPageWebUrl", value); }
         }
 #nullable restore
 #else
-        public string RegistrationPageWebUrl {
+        public string RegistrationPageWebUrl
+        {
             get { return BackingStore?.Get<string>("registrationPageWebUrl"); }
             set { BackingStore?.Set("registrationPageWebUrl", value); }
         }
@@ -64,32 +73,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The meeting speaker&apos;s information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MeetingSpeaker>? Speakers {
+        public List<MeetingSpeaker>? Speakers
+        {
             get { return BackingStore?.Get<List<MeetingSpeaker>?>("speakers"); }
             set { BackingStore?.Set("speakers", value); }
         }
 #nullable restore
 #else
-        public List<MeetingSpeaker> Speakers {
+        public List<MeetingSpeaker> Speakers
+        {
             get { return BackingStore?.Get<List<MeetingSpeaker>>("speakers"); }
             set { BackingStore?.Set("speakers", value); }
         }
 #endif
         /// <summary>The meeting start time in UTC.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The subject of the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -119,14 +133,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<MeetingRegistrationQuestion>(MeetingRegistrationQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"registrationPageViewCount", n => { RegistrationPageViewCount = n.GetIntValue(); } },
-                {"registrationPageWebUrl", n => { RegistrationPageWebUrl = n.GetStringValue(); } },
-                {"speakers", n => { Speakers = n.GetCollectionOfObjectValues<MeetingSpeaker>(MeetingSpeaker.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
+                { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<MeetingRegistrationQuestion>(MeetingRegistrationQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "registrationPageViewCount", n => { RegistrationPageViewCount = n.GetIntValue(); } },
+                { "registrationPageWebUrl", n => { RegistrationPageWebUrl = n.GetStringValue(); } },
+                { "speakers", n => { Speakers = n.GetCollectionOfObjectValues<MeetingSpeaker>(MeetingSpeaker.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

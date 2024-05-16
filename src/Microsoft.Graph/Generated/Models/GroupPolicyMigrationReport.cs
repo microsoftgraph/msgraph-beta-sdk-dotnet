@@ -4,80 +4,93 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The Group Policy migration report.
     /// </summary>
-    public class GroupPolicyMigrationReport : Entity, IParsable 
+    public class GroupPolicyMigrationReport : Entity, IParsable
     {
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The name of Group Policy Object from the GPO Xml Content</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
-        public DateTimeOffset? GroupPolicyCreatedDateTime {
+        public DateTimeOffset? GroupPolicyCreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("groupPolicyCreatedDateTime"); }
             set { BackingStore?.Set("groupPolicyCreatedDateTime", value); }
         }
         /// <summary>The date and time at which the GroupPolicyMigrationReport was last modified.</summary>
-        public DateTimeOffset? GroupPolicyLastModifiedDateTime {
+        public DateTimeOffset? GroupPolicyLastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("groupPolicyLastModifiedDateTime"); }
             set { BackingStore?.Set("groupPolicyLastModifiedDateTime", value); }
         }
         /// <summary>The Group Policy Object GUID from GPO Xml content</summary>
-        public Guid? GroupPolicyObjectId {
+        public Guid? GroupPolicyObjectId
+        {
             get { return BackingStore?.Get<Guid?>("groupPolicyObjectId"); }
             set { BackingStore?.Set("groupPolicyObjectId", value); }
         }
         /// <summary>A list of group policy settings to MDM/Intune mappings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicySettingMapping>? GroupPolicySettingMappings {
+        public List<GroupPolicySettingMapping>? GroupPolicySettingMappings
+        {
             get { return BackingStore?.Get<List<GroupPolicySettingMapping>?>("groupPolicySettingMappings"); }
             set { BackingStore?.Set("groupPolicySettingMappings", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicySettingMapping> GroupPolicySettingMappings {
+        public List<GroupPolicySettingMapping> GroupPolicySettingMappings
+        {
             get { return BackingStore?.Get<List<GroupPolicySettingMapping>>("groupPolicySettingMappings"); }
             set { BackingStore?.Set("groupPolicySettingMappings", value); }
         }
 #endif
         /// <summary>The date and time at which the GroupPolicyMigrationReport was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Indicates if the Group Policy Object file is covered and ready for Intune migration.</summary>
-        public GroupPolicyMigrationReadiness? MigrationReadiness {
+        public GroupPolicyMigrationReadiness? MigrationReadiness
+        {
             get { return BackingStore?.Get<GroupPolicyMigrationReadiness?>("migrationReadiness"); }
             set { BackingStore?.Set("migrationReadiness", value); }
         }
         /// <summary>The distinguished name of the OU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OuDistinguishedName {
+        public string? OuDistinguishedName
+        {
             get { return BackingStore?.Get<string?>("ouDistinguishedName"); }
             set { BackingStore?.Set("ouDistinguishedName", value); }
         }
 #nullable restore
 #else
-        public string OuDistinguishedName {
+        public string OuDistinguishedName
+        {
             get { return BackingStore?.Get<string>("ouDistinguishedName"); }
             set { BackingStore?.Set("ouDistinguishedName", value); }
         }
@@ -85,47 +98,55 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of scope tags for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #endif
         /// <summary>The number of Group Policy Settings supported by Intune.</summary>
-        public int? SupportedSettingsCount {
+        public int? SupportedSettingsCount
+        {
             get { return BackingStore?.Get<int?>("supportedSettingsCount"); }
             set { BackingStore?.Set("supportedSettingsCount", value); }
         }
         /// <summary>The Percentage of Group Policy Settings supported by Intune.</summary>
-        public int? SupportedSettingsPercent {
+        public int? SupportedSettingsPercent
+        {
             get { return BackingStore?.Get<int?>("supportedSettingsPercent"); }
             set { BackingStore?.Set("supportedSettingsPercent", value); }
         }
         /// <summary>The Targeted in AD property from GPO Xml Content</summary>
-        public bool? TargetedInActiveDirectory {
+        public bool? TargetedInActiveDirectory
+        {
             get { return BackingStore?.Get<bool?>("targetedInActiveDirectory"); }
             set { BackingStore?.Set("targetedInActiveDirectory", value); }
         }
         /// <summary>The total number of Group Policy Settings from GPO file.</summary>
-        public int? TotalSettingsCount {
+        public int? TotalSettingsCount
+        {
             get { return BackingStore?.Get<int?>("totalSettingsCount"); }
             set { BackingStore?.Set("totalSettingsCount", value); }
         }
         /// <summary>A list of unsupported group policy extensions inside the Group Policy Object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnsupportedGroupPolicyExtension>? UnsupportedGroupPolicyExtensions {
+        public List<UnsupportedGroupPolicyExtension>? UnsupportedGroupPolicyExtensions
+        {
             get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>?>("unsupportedGroupPolicyExtensions"); }
             set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
 #nullable restore
 #else
-        public List<UnsupportedGroupPolicyExtension> UnsupportedGroupPolicyExtensions {
+        public List<UnsupportedGroupPolicyExtension> UnsupportedGroupPolicyExtensions
+        {
             get { return BackingStore?.Get<List<UnsupportedGroupPolicyExtension>>("unsupportedGroupPolicyExtensions"); }
             set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
@@ -148,21 +169,21 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"groupPolicyCreatedDateTime", n => { GroupPolicyCreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupPolicyLastModifiedDateTime", n => { GroupPolicyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetGuidValue(); } },
-                {"groupPolicySettingMappings", n => { GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"migrationReadiness", n => { MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
-                {"ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"supportedSettingsCount", n => { SupportedSettingsCount = n.GetIntValue(); } },
-                {"supportedSettingsPercent", n => { SupportedSettingsPercent = n.GetIntValue(); } },
-                {"targetedInActiveDirectory", n => { TargetedInActiveDirectory = n.GetBoolValue(); } },
-                {"totalSettingsCount", n => { TotalSettingsCount = n.GetIntValue(); } },
-                {"unsupportedGroupPolicyExtensions", n => { UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>(UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "groupPolicyCreatedDateTime", n => { GroupPolicyCreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "groupPolicyLastModifiedDateTime", n => { GroupPolicyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetGuidValue(); } },
+                { "groupPolicySettingMappings", n => { GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "migrationReadiness", n => { MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
+                { "ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "supportedSettingsCount", n => { SupportedSettingsCount = n.GetIntValue(); } },
+                { "supportedSettingsPercent", n => { SupportedSettingsPercent = n.GetIntValue(); } },
+                { "targetedInActiveDirectory", n => { TargetedInActiveDirectory = n.GetBoolValue(); } },
+                { "totalSettingsCount", n => { TotalSettingsCount = n.GetIntValue(); } },
+                { "unsupportedGroupPolicyExtensions", n => { UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>(UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

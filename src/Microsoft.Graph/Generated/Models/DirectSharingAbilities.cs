@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DirectSharingAbilities : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DirectSharingAbilities : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether the current user can add existing guest recipients to this item using direct sharing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AddExistingExternalUsers {
+        public SharingOperationStatus? AddExistingExternalUsers
+        {
             get { return BackingStore?.Get<SharingOperationStatus?>("addExistingExternalUsers"); }
             set { BackingStore?.Set("addExistingExternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AddExistingExternalUsers {
+        public SharingOperationStatus AddExistingExternalUsers
+        {
             get { return BackingStore?.Get<SharingOperationStatus>("addExistingExternalUsers"); }
             set { BackingStore?.Set("addExistingExternalUsers", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates whether the current user can add internal recipients to this item using direct sharing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AddInternalUsers {
+        public SharingOperationStatus? AddInternalUsers
+        {
             get { return BackingStore?.Get<SharingOperationStatus?>("addInternalUsers"); }
             set { BackingStore?.Set("addInternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AddInternalUsers {
+        public SharingOperationStatus AddInternalUsers
+        {
             get { return BackingStore?.Get<SharingOperationStatus>("addInternalUsers"); }
             set { BackingStore?.Set("addInternalUsers", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates whether the current user can add new guest recipients to this item using direct sharing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AddNewExternalUsers {
+        public SharingOperationStatus? AddNewExternalUsers
+        {
             get { return BackingStore?.Get<SharingOperationStatus?>("addNewExternalUsers"); }
             set { BackingStore?.Set("addNewExternalUsers", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AddNewExternalUsers {
+        public SharingOperationStatus AddNewExternalUsers
+        {
             get { return BackingStore?.Get<SharingOperationStatus>("addNewExternalUsers"); }
             set { BackingStore?.Set("addNewExternalUsers", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates whether the user querying this endpoint can request access for the user or on behalf of other users, after which, site admins, can approve or deny the creation of a potential sharing link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? RequestGrantAccess {
+        public SharingOperationStatus? RequestGrantAccess
+        {
             get { return BackingStore?.Get<SharingOperationStatus?>("requestGrantAccess"); }
             set { BackingStore?.Set("requestGrantAccess", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus RequestGrantAccess {
+        public SharingOperationStatus RequestGrantAccess
+        {
             get { return BackingStore?.Get<SharingOperationStatus>("requestGrantAccess"); }
             set { BackingStore?.Set("requestGrantAccess", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addExistingExternalUsers", n => { AddExistingExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                {"addInternalUsers", n => { AddInternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                {"addNewExternalUsers", n => { AddNewExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"requestGrantAccess", n => { RequestGrantAccess = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addExistingExternalUsers", n => { AddExistingExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addInternalUsers", n => { AddInternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addNewExternalUsers", n => { AddNewExternalUsers = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "requestGrantAccess", n => { RequestGrantAccess = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

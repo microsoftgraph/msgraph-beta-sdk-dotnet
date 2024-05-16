@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ItemPhone : ItemFacet, IParsable 
+    public class ItemPhone : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Friendly name the user has assigned this phone number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Phone number provided by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number {
+        public string? Number
+        {
             get { return BackingStore?.Get<string?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public string Number {
+        public string Number
+        {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #endif
         /// <summary>The type property</summary>
-        public PhoneType? Type {
+        public PhoneType? Type
+        {
             get { return BackingStore?.Get<PhoneType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"number", n => { Number = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<PhoneType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "number", n => { Number = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<PhoneType>(); } },
             };
         }
         /// <summary>

@@ -4,24 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Describes a dependency type between two mobile apps.
     /// </summary>
-    public class MobileAppDependency : MobileAppRelationship, IParsable 
+    public class MobileAppDependency : MobileAppRelationship, IParsable
     {
         /// <summary>Indicates the dependency type associated with a relationship between two mobile apps.</summary>
-        public MobileAppDependencyType? DependencyType {
+        public MobileAppDependencyType? DependencyType
+        {
             get { return BackingStore?.Get<MobileAppDependencyType?>("dependencyType"); }
             set { BackingStore?.Set("dependencyType", value); }
         }
         /// <summary>The total number of apps that directly or indirectly depend on the parent app. This property is read-only.</summary>
-        public int? DependentAppCount {
+        public int? DependentAppCount
+        {
             get { return BackingStore?.Get<int?>("dependentAppCount"); }
             set { BackingStore?.Set("dependentAppCount", value); }
         }
         /// <summary>The total number of apps the child app directly or indirectly depends on. This property is read-only.</summary>
-        public int? DependsOnAppCount {
+        public int? DependsOnAppCount
+        {
             get { return BackingStore?.Get<int?>("dependsOnAppCount"); }
             set { BackingStore?.Set("dependsOnAppCount", value); }
         }
@@ -50,9 +54,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"dependencyType", n => { DependencyType = n.GetEnumValue<MobileAppDependencyType>(); } },
-                {"dependentAppCount", n => { DependentAppCount = n.GetIntValue(); } },
-                {"dependsOnAppCount", n => { DependsOnAppCount = n.GetIntValue(); } },
+                { "dependencyType", n => { DependencyType = n.GetEnumValue<MobileAppDependencyType>(); } },
+                { "dependentAppCount", n => { DependentAppCount = n.GetIntValue(); } },
+                { "dependsOnAppCount", n => { DependsOnAppCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

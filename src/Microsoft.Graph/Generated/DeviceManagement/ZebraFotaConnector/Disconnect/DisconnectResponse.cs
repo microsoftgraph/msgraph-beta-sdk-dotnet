@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect {
+namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.Disconnect
+{
     [Obsolete("This class is obsolete. Use DisconnectPostResponse instead.")]
     #pragma warning disable CS1591
-    public class DisconnectResponse : DisconnectPostResponse, IParsable 
+    public class DisconnectResponse : DisconnectPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

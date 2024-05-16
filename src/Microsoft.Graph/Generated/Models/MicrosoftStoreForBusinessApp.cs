@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Microsoft Store for Business Apps. This class does not support Create, Delete, or Update.
     /// </summary>
-    public class MicrosoftStoreForBusinessApp : MobileApp, IParsable 
+    public class MicrosoftStoreForBusinessApp : MobileApp, IParsable
     {
         /// <summary>The collection of contained apps in a mobileApp acting as a package.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileContainedApp>? ContainedApps {
+        public List<MobileContainedApp>? ContainedApps
+        {
             get { return BackingStore?.Get<List<MobileContainedApp>?>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
 #nullable restore
 #else
-        public List<MobileContainedApp> ContainedApps {
+        public List<MobileContainedApp> ContainedApps
+        {
             get { return BackingStore?.Get<List<MobileContainedApp>>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
 #endif
         /// <summary>The licenseType property</summary>
-        public MicrosoftStoreForBusinessLicenseType? LicenseType {
+        public MicrosoftStoreForBusinessLicenseType? LicenseType
+        {
             get { return BackingStore?.Get<MicrosoftStoreForBusinessLicenseType?>("licenseType"); }
             set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>The supported License Type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VppLicensingType? LicensingType {
+        public VppLicensingType? LicensingType
+        {
             get { return BackingStore?.Get<VppLicensingType?>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
 #nullable restore
 #else
-        public VppLicensingType LicensingType {
+        public VppLicensingType LicensingType
+        {
             get { return BackingStore?.Get<VppLicensingType>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The app package identifier</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageIdentityName {
+        public string? PackageIdentityName
+        {
             get { return BackingStore?.Get<string?>("packageIdentityName"); }
             set { BackingStore?.Set("packageIdentityName", value); }
         }
 #nullable restore
 #else
-        public string PackageIdentityName {
+        public string PackageIdentityName
+        {
             get { return BackingStore?.Get<string>("packageIdentityName"); }
             set { BackingStore?.Set("packageIdentityName", value); }
         }
@@ -60,24 +68,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The app product key</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductKey {
+        public string? ProductKey
+        {
             get { return BackingStore?.Get<string?>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
 #nullable restore
 #else
-        public string ProductKey {
+        public string ProductKey
+        {
             get { return BackingStore?.Get<string>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
 #endif
         /// <summary>The total number of Microsoft Store for Business licenses.</summary>
-        public int? TotalLicenseCount {
+        public int? TotalLicenseCount
+        {
             get { return BackingStore?.Get<int?>("totalLicenseCount"); }
             set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>The number of Microsoft Store for Business licenses in use.</summary>
-        public int? UsedLicenseCount {
+        public int? UsedLicenseCount
+        {
             get { return BackingStore?.Get<int?>("usedLicenseCount"); }
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
@@ -106,13 +118,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"licenseType", n => { LicenseType = n.GetEnumValue<MicrosoftStoreForBusinessLicenseType>(); } },
-                {"licensingType", n => { LicensingType = n.GetObjectValue<VppLicensingType>(VppLicensingType.CreateFromDiscriminatorValue); } },
-                {"packageIdentityName", n => { PackageIdentityName = n.GetStringValue(); } },
-                {"productKey", n => { ProductKey = n.GetStringValue(); } },
-                {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
-                {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
+                { "containedApps", n => { ContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "licenseType", n => { LicenseType = n.GetEnumValue<MicrosoftStoreForBusinessLicenseType>(); } },
+                { "licensingType", n => { LicensingType = n.GetObjectValue<VppLicensingType>(VppLicensingType.CreateFromDiscriminatorValue); } },
+                { "packageIdentityName", n => { PackageIdentityName = n.GetStringValue(); } },
+                { "productKey", n => { ProductKey = n.GetStringValue(); } },
+                { "totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
+                { "usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

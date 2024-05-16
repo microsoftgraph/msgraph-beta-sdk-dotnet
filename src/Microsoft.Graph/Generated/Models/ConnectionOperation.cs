@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ConnectionOperation : Entity, IParsable 
+    public class ConnectionOperation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The error property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicError? Error {
+        public PublicError? Error
+        {
             get { return BackingStore?.Get<PublicError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public PublicError Error {
+        public PublicError Error
+        {
             get { return BackingStore?.Get<PublicError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public ConnectionOperationStatus? Status {
+        public ConnectionOperationStatus? Status
+        {
             get { return BackingStore?.Get<ConnectionOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetEnumValue<ConnectionOperationStatus>(); } },
+                { "error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<ConnectionOperationStatus>(); } },
             };
         }
         /// <summary>

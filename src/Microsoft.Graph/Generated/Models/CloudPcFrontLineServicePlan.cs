@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcFrontLineServicePlan : Entity, IParsable 
+    public class CloudPcFrontLineServicePlan : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allotmentLicensesCount property</summary>
-        public int? AllotmentLicensesCount {
+        public int? AllotmentLicensesCount
+        {
             get { return BackingStore?.Get<int?>("allotmentLicensesCount"); }
             set { BackingStore?.Set("allotmentLicensesCount", value); }
         }
         /// <summary>The display name of the front-line service plan. For example, 2vCPU/8GB/128GB Front-line or 4vCPU/16GB/256GB Front-line.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The total number of front-line service plans purchased by the customer.</summary>
-        public int? TotalCount {
+        public int? TotalCount
+        {
             get { return BackingStore?.Get<int?>("totalCount"); }
             set { BackingStore?.Set("totalCount", value); }
         }
         /// <summary>The number of service plans that have been used for the account.</summary>
-        public int? UsedCount {
+        public int? UsedCount
+        {
             get { return BackingStore?.Get<int?>("usedCount"); }
             set { BackingStore?.Set("usedCount", value); }
         }
@@ -56,10 +62,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allotmentLicensesCount", n => { AllotmentLicensesCount = n.GetIntValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"totalCount", n => { TotalCount = n.GetIntValue(); } },
-                {"usedCount", n => { UsedCount = n.GetIntValue(); } },
+                { "allotmentLicensesCount", n => { AllotmentLicensesCount = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "totalCount", n => { TotalCount = n.GetIntValue(); } },
+                { "usedCount", n => { UsedCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

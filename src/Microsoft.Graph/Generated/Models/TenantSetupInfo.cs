@@ -4,64 +4,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TenantSetupInfo : Entity, IParsable 
+    public class TenantSetupInfo : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The defaultRolesSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRoleSettings? DefaultRolesSettings {
+        public PrivilegedRoleSettings? DefaultRolesSettings
+        {
             get { return BackingStore?.Get<PrivilegedRoleSettings?>("defaultRolesSettings"); }
             set { BackingStore?.Set("defaultRolesSettings", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRoleSettings DefaultRolesSettings {
+        public PrivilegedRoleSettings DefaultRolesSettings
+        {
             get { return BackingStore?.Get<PrivilegedRoleSettings>("defaultRolesSettings"); }
             set { BackingStore?.Set("defaultRolesSettings", value); }
         }
 #endif
         /// <summary>The firstTimeSetup property</summary>
-        public bool? FirstTimeSetup {
+        public bool? FirstTimeSetup
+        {
             get { return BackingStore?.Get<bool?>("firstTimeSetup"); }
             set { BackingStore?.Set("firstTimeSetup", value); }
         }
         /// <summary>The relevantRolesSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RelevantRolesSettings {
+        public List<string>? RelevantRolesSettings
+        {
             get { return BackingStore?.Get<List<string>?>("relevantRolesSettings"); }
             set { BackingStore?.Set("relevantRolesSettings", value); }
         }
 #nullable restore
 #else
-        public List<string> RelevantRolesSettings {
+        public List<string> RelevantRolesSettings
+        {
             get { return BackingStore?.Get<List<string>>("relevantRolesSettings"); }
             set { BackingStore?.Set("relevantRolesSettings", value); }
         }
 #endif
         /// <summary>The setupStatus property</summary>
-        public Microsoft.Graph.Beta.Models.SetupStatus? SetupStatus {
+        public Microsoft.Graph.Beta.Models.SetupStatus? SetupStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SetupStatus?>("setupStatus"); }
             set { BackingStore?.Set("setupStatus", value); }
         }
         /// <summary>The skipSetup property</summary>
-        public bool? SkipSetup {
+        public bool? SkipSetup
+        {
             get { return BackingStore?.Get<bool?>("skipSetup"); }
             set { BackingStore?.Set("skipSetup", value); }
         }
         /// <summary>The userRolesActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserRolesActions {
+        public string? UserRolesActions
+        {
             get { return BackingStore?.Get<string?>("userRolesActions"); }
             set { BackingStore?.Set("userRolesActions", value); }
         }
 #nullable restore
 #else
-        public string UserRolesActions {
+        public string UserRolesActions
+        {
             get { return BackingStore?.Get<string>("userRolesActions"); }
             set { BackingStore?.Set("userRolesActions", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultRolesSettings", n => { DefaultRolesSettings = n.GetObjectValue<PrivilegedRoleSettings>(PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
-                {"firstTimeSetup", n => { FirstTimeSetup = n.GetBoolValue(); } },
-                {"relevantRolesSettings", n => { RelevantRolesSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"setupStatus", n => { SetupStatus = n.GetEnumValue<SetupStatus>(); } },
-                {"skipSetup", n => { SkipSetup = n.GetBoolValue(); } },
-                {"userRolesActions", n => { UserRolesActions = n.GetStringValue(); } },
+                { "defaultRolesSettings", n => { DefaultRolesSettings = n.GetObjectValue<PrivilegedRoleSettings>(PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
+                { "firstTimeSetup", n => { FirstTimeSetup = n.GetBoolValue(); } },
+                { "relevantRolesSettings", n => { RelevantRolesSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "setupStatus", n => { SetupStatus = n.GetEnumValue<SetupStatus>(); } },
+                { "skipSetup", n => { SkipSetup = n.GetBoolValue(); } },
+                { "userRolesActions", n => { UserRolesActions = n.GetStringValue(); } },
             };
         }
         /// <summary>

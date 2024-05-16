@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnenoteResource : OnenoteEntityBaseModel, IParsable 
+    public class OnenoteResource : OnenoteEntityBaseModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The contentUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentUrl {
+        public string? ContentUrl
+        {
             get { return BackingStore?.Get<string?>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
 #nullable restore
 #else
-        public string ContentUrl {
+        public string ContentUrl
+        {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "contentUrl", n => { ContentUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

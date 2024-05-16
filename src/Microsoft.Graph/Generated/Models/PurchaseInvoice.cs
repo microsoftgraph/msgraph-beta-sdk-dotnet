@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PurchaseInvoice : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PurchaseInvoice : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The buyFromAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? BuyFromAddress {
+        public PostalAddressType? BuyFromAddress
+        {
             get { return BackingStore?.Get<PostalAddressType?>("buyFromAddress"); }
             set { BackingStore?.Set("buyFromAddress", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType BuyFromAddress {
+        public PostalAddressType BuyFromAddress
+        {
             get { return BackingStore?.Get<PostalAddressType>("buyFromAddress"); }
             set { BackingStore?.Set("buyFromAddress", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The currency property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Currency? Currency {
+        public Microsoft.Graph.Beta.Models.Currency? Currency
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency?>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Currency Currency {
+        public Microsoft.Graph.Beta.Models.Currency Currency
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Currency>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
@@ -49,62 +55,73 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The currencyCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode {
+        public string? CurrencyCode
+        {
             get { return BackingStore?.Get<string?>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
 #nullable restore
 #else
-        public string CurrencyCode {
+        public string CurrencyCode
+        {
             get { return BackingStore?.Get<string>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
 #endif
         /// <summary>The currencyId property</summary>
-        public Guid? CurrencyId {
+        public Guid? CurrencyId
+        {
             get { return BackingStore?.Get<Guid?>("currencyId"); }
             set { BackingStore?.Set("currencyId", value); }
         }
         /// <summary>The discountAmount property</summary>
-        public decimal? DiscountAmount {
+        public decimal? DiscountAmount
+        {
             get { return BackingStore?.Get<decimal?>("discountAmount"); }
             set { BackingStore?.Set("discountAmount", value); }
         }
         /// <summary>The discountAppliedBeforeTax property</summary>
-        public bool? DiscountAppliedBeforeTax {
+        public bool? DiscountAppliedBeforeTax
+        {
             get { return BackingStore?.Get<bool?>("discountAppliedBeforeTax"); }
             set { BackingStore?.Set("discountAppliedBeforeTax", value); }
         }
         /// <summary>The dueDate property</summary>
-        public Date? DueDate {
+        public Date? DueDate
+        {
             get { return BackingStore?.Get<Date?>("dueDate"); }
             set { BackingStore?.Set("dueDate", value); }
         }
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The invoiceDate property</summary>
-        public Date? InvoiceDate {
+        public Date? InvoiceDate
+        {
             get { return BackingStore?.Get<Date?>("invoiceDate"); }
             set { BackingStore?.Set("invoiceDate", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number {
+        public string? Number
+        {
             get { return BackingStore?.Get<string?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public string Number {
+        public string Number
+        {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -112,13 +129,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -126,13 +145,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The payToAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? PayToAddress {
+        public PostalAddressType? PayToAddress
+        {
             get { return BackingStore?.Get<PostalAddressType?>("payToAddress"); }
             set { BackingStore?.Set("payToAddress", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType PayToAddress {
+        public PostalAddressType PayToAddress
+        {
             get { return BackingStore?.Get<PostalAddressType>("payToAddress"); }
             set { BackingStore?.Set("payToAddress", value); }
         }
@@ -140,13 +161,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The payToContact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayToContact {
+        public string? PayToContact
+        {
             get { return BackingStore?.Get<string?>("payToContact"); }
             set { BackingStore?.Set("payToContact", value); }
         }
 #nullable restore
 #else
-        public string PayToContact {
+        public string PayToContact
+        {
             get { return BackingStore?.Get<string>("payToContact"); }
             set { BackingStore?.Set("payToContact", value); }
         }
@@ -154,51 +177,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The payToName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayToName {
+        public string? PayToName
+        {
             get { return BackingStore?.Get<string?>("payToName"); }
             set { BackingStore?.Set("payToName", value); }
         }
 #nullable restore
 #else
-        public string PayToName {
+        public string PayToName
+        {
             get { return BackingStore?.Get<string>("payToName"); }
             set { BackingStore?.Set("payToName", value); }
         }
 #endif
         /// <summary>The payToVendorId property</summary>
-        public Guid? PayToVendorId {
+        public Guid? PayToVendorId
+        {
             get { return BackingStore?.Get<Guid?>("payToVendorId"); }
             set { BackingStore?.Set("payToVendorId", value); }
         }
         /// <summary>The payToVendorNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayToVendorNumber {
+        public string? PayToVendorNumber
+        {
             get { return BackingStore?.Get<string?>("payToVendorNumber"); }
             set { BackingStore?.Set("payToVendorNumber", value); }
         }
 #nullable restore
 #else
-        public string PayToVendorNumber {
+        public string PayToVendorNumber
+        {
             get { return BackingStore?.Get<string>("payToVendorNumber"); }
             set { BackingStore?.Set("payToVendorNumber", value); }
         }
 #endif
         /// <summary>The pricesIncludeTax property</summary>
-        public bool? PricesIncludeTax {
+        public bool? PricesIncludeTax
+        {
             get { return BackingStore?.Get<bool?>("pricesIncludeTax"); }
             set { BackingStore?.Set("pricesIncludeTax", value); }
         }
         /// <summary>The purchaseInvoiceLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PurchaseInvoiceLine>? PurchaseInvoiceLines {
+        public List<PurchaseInvoiceLine>? PurchaseInvoiceLines
+        {
             get { return BackingStore?.Get<List<PurchaseInvoiceLine>?>("purchaseInvoiceLines"); }
             set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
 #nullable restore
 #else
-        public List<PurchaseInvoiceLine> PurchaseInvoiceLines {
+        public List<PurchaseInvoiceLine> PurchaseInvoiceLines
+        {
             get { return BackingStore?.Get<List<PurchaseInvoiceLine>>("purchaseInvoiceLines"); }
             set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
@@ -206,13 +237,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The shipToAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? ShipToAddress {
+        public PostalAddressType? ShipToAddress
+        {
             get { return BackingStore?.Get<PostalAddressType?>("shipToAddress"); }
             set { BackingStore?.Set("shipToAddress", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType ShipToAddress {
+        public PostalAddressType ShipToAddress
+        {
             get { return BackingStore?.Get<PostalAddressType>("shipToAddress"); }
             set { BackingStore?.Set("shipToAddress", value); }
         }
@@ -220,13 +253,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The shipToContact property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShipToContact {
+        public string? ShipToContact
+        {
             get { return BackingStore?.Get<string?>("shipToContact"); }
             set { BackingStore?.Set("shipToContact", value); }
         }
 #nullable restore
 #else
-        public string ShipToContact {
+        public string ShipToContact
+        {
             get { return BackingStore?.Get<string>("shipToContact"); }
             set { BackingStore?.Set("shipToContact", value); }
         }
@@ -234,13 +269,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The shipToName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShipToName {
+        public string? ShipToName
+        {
             get { return BackingStore?.Get<string?>("shipToName"); }
             set { BackingStore?.Set("shipToName", value); }
         }
 #nullable restore
 #else
-        public string ShipToName {
+        public string ShipToName
+        {
             get { return BackingStore?.Get<string>("shipToName"); }
             set { BackingStore?.Set("shipToName", value); }
         }
@@ -248,61 +285,71 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
         /// <summary>The totalAmountExcludingTax property</summary>
-        public decimal? TotalAmountExcludingTax {
+        public decimal? TotalAmountExcludingTax
+        {
             get { return BackingStore?.Get<decimal?>("totalAmountExcludingTax"); }
             set { BackingStore?.Set("totalAmountExcludingTax", value); }
         }
         /// <summary>The totalAmountIncludingTax property</summary>
-        public decimal? TotalAmountIncludingTax {
+        public decimal? TotalAmountIncludingTax
+        {
             get { return BackingStore?.Get<decimal?>("totalAmountIncludingTax"); }
             set { BackingStore?.Set("totalAmountIncludingTax", value); }
         }
         /// <summary>The totalTaxAmount property</summary>
-        public decimal? TotalTaxAmount {
+        public decimal? TotalTaxAmount
+        {
             get { return BackingStore?.Get<decimal?>("totalTaxAmount"); }
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>The vendor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Vendor? Vendor {
+        public Microsoft.Graph.Beta.Models.Vendor? Vendor
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Vendor?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Vendor Vendor {
+        public Microsoft.Graph.Beta.Models.Vendor Vendor
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Vendor>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
 #endif
         /// <summary>The vendorId property</summary>
-        public Guid? VendorId {
+        public Guid? VendorId
+        {
             get { return BackingStore?.Get<Guid?>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
         }
         /// <summary>The vendorInvoiceNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VendorInvoiceNumber {
+        public string? VendorInvoiceNumber
+        {
             get { return BackingStore?.Get<string?>("vendorInvoiceNumber"); }
             set { BackingStore?.Set("vendorInvoiceNumber", value); }
         }
 #nullable restore
 #else
-        public string VendorInvoiceNumber {
+        public string VendorInvoiceNumber
+        {
             get { return BackingStore?.Get<string>("vendorInvoiceNumber"); }
             set { BackingStore?.Set("vendorInvoiceNumber", value); }
         }
@@ -310,13 +357,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendorName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VendorName {
+        public string? VendorName
+        {
             get { return BackingStore?.Get<string?>("vendorName"); }
             set { BackingStore?.Set("vendorName", value); }
         }
 #nullable restore
 #else
-        public string VendorName {
+        public string VendorName
+        {
             get { return BackingStore?.Get<string>("vendorName"); }
             set { BackingStore?.Set("vendorName", value); }
         }
@@ -324,13 +373,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendorNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VendorNumber {
+        public string? VendorNumber
+        {
             get { return BackingStore?.Get<string?>("vendorNumber"); }
             set { BackingStore?.Set("vendorNumber", value); }
         }
 #nullable restore
 #else
-        public string VendorNumber {
+        public string VendorNumber
+        {
             get { return BackingStore?.Get<string>("vendorNumber"); }
             set { BackingStore?.Set("vendorNumber", value); }
         }
@@ -361,37 +412,37 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"buyFromAddress", n => { BuyFromAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
-                {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                {"currencyId", n => { CurrencyId = n.GetGuidValue(); } },
-                {"discountAmount", n => { DiscountAmount = n.GetDecimalValue(); } },
-                {"discountAppliedBeforeTax", n => { DiscountAppliedBeforeTax = n.GetBoolValue(); } },
-                {"dueDate", n => { DueDate = n.GetDateValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"invoiceDate", n => { InvoiceDate = n.GetDateValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"number", n => { Number = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"payToAddress", n => { PayToAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"payToContact", n => { PayToContact = n.GetStringValue(); } },
-                {"payToName", n => { PayToName = n.GetStringValue(); } },
-                {"payToVendorId", n => { PayToVendorId = n.GetGuidValue(); } },
-                {"payToVendorNumber", n => { PayToVendorNumber = n.GetStringValue(); } },
-                {"pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
-                {"purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<PurchaseInvoiceLine>(PurchaseInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"shipToAddress", n => { ShipToAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"shipToContact", n => { ShipToContact = n.GetStringValue(); } },
-                {"shipToName", n => { ShipToName = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
-                {"totalAmountExcludingTax", n => { TotalAmountExcludingTax = n.GetDecimalValue(); } },
-                {"totalAmountIncludingTax", n => { TotalAmountIncludingTax = n.GetDecimalValue(); } },
-                {"totalTaxAmount", n => { TotalTaxAmount = n.GetDecimalValue(); } },
-                {"vendor", n => { Vendor = n.GetObjectValue<Microsoft.Graph.Beta.Models.Vendor>(Microsoft.Graph.Beta.Models.Vendor.CreateFromDiscriminatorValue); } },
-                {"vendorId", n => { VendorId = n.GetGuidValue(); } },
-                {"vendorInvoiceNumber", n => { VendorInvoiceNumber = n.GetStringValue(); } },
-                {"vendorName", n => { VendorName = n.GetStringValue(); } },
-                {"vendorNumber", n => { VendorNumber = n.GetStringValue(); } },
+                { "buyFromAddress", n => { BuyFromAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
+                { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                { "currencyId", n => { CurrencyId = n.GetGuidValue(); } },
+                { "discountAmount", n => { DiscountAmount = n.GetDecimalValue(); } },
+                { "discountAppliedBeforeTax", n => { DiscountAppliedBeforeTax = n.GetBoolValue(); } },
+                { "dueDate", n => { DueDate = n.GetDateValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "invoiceDate", n => { InvoiceDate = n.GetDateValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "number", n => { Number = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "payToAddress", n => { PayToAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "payToContact", n => { PayToContact = n.GetStringValue(); } },
+                { "payToName", n => { PayToName = n.GetStringValue(); } },
+                { "payToVendorId", n => { PayToVendorId = n.GetGuidValue(); } },
+                { "payToVendorNumber", n => { PayToVendorNumber = n.GetStringValue(); } },
+                { "pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
+                { "purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<PurchaseInvoiceLine>(PurchaseInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shipToAddress", n => { ShipToAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "shipToContact", n => { ShipToContact = n.GetStringValue(); } },
+                { "shipToName", n => { ShipToName = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
+                { "totalAmountExcludingTax", n => { TotalAmountExcludingTax = n.GetDecimalValue(); } },
+                { "totalAmountIncludingTax", n => { TotalAmountIncludingTax = n.GetDecimalValue(); } },
+                { "totalTaxAmount", n => { TotalTaxAmount = n.GetDecimalValue(); } },
+                { "vendor", n => { Vendor = n.GetObjectValue<Microsoft.Graph.Beta.Models.Vendor>(Microsoft.Graph.Beta.Models.Vendor.CreateFromDiscriminatorValue); } },
+                { "vendorId", n => { VendorId = n.GetGuidValue(); } },
+                { "vendorInvoiceNumber", n => { VendorInvoiceNumber = n.GetStringValue(); } },
+                { "vendorName", n => { VendorName = n.GetStringValue(); } },
+                { "vendorNumber", n => { VendorNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TypedEmailAddress : EmailAddress, IParsable 
+    public class TypedEmailAddress : EmailAddress, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OtherLabel {
+        public string? OtherLabel
+        {
             get { return BackingStore?.Get<string?>("otherLabel"); }
             set { BackingStore?.Set("otherLabel", value); }
         }
 #nullable restore
 #else
-        public string OtherLabel {
+        public string OtherLabel
+        {
             get { return BackingStore?.Get<string>("otherLabel"); }
             set { BackingStore?.Set("otherLabel", value); }
         }
 #endif
         /// <summary>The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.</summary>
-        public EmailType? Type {
+        public EmailType? Type
+        {
             get { return BackingStore?.Get<EmailType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"otherLabel", n => { OtherLabel = n.GetStringValue(); } },
-                {"type", n => { Type = n.GetEnumValue<EmailType>(); } },
+                { "otherLabel", n => { OtherLabel = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<EmailType>(); } },
             };
         }
         /// <summary>

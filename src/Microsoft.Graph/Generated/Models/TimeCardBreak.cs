@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TimeCardBreak : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TimeCardBreak : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ID of the timeCardBreak.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BreakId {
+        public string? BreakId
+        {
             get { return BackingStore?.Get<string?>("breakId"); }
             set { BackingStore?.Set("breakId", value); }
         }
 #nullable restore
 #else
-        public string BreakId {
+        public string BreakId
+        {
             get { return BackingStore?.Get<string>("breakId"); }
             set { BackingStore?.Set("breakId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The start event of the timeCardBreak.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEvent? End {
+        public TimeCardEvent? End
+        {
             get { return BackingStore?.Get<TimeCardEvent?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #nullable restore
 #else
-        public TimeCardEvent End {
+        public TimeCardEvent End
+        {
             get { return BackingStore?.Get<TimeCardEvent>("end"); }
             set { BackingStore?.Set("end", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Notes about the timeCardBreak.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Notes {
+        public ItemBody? Notes
+        {
             get { return BackingStore?.Get<ItemBody?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public ItemBody Notes {
+        public ItemBody Notes
+        {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TimeCardEvent? Start {
+        public TimeCardEvent? Start
+        {
             get { return BackingStore?.Get<TimeCardEvent?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #nullable restore
 #else
-        public TimeCardEvent Start {
+        public TimeCardEvent Start
+        {
             get { return BackingStore?.Get<TimeCardEvent>("start"); }
             set { BackingStore?.Set("start", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"breakId", n => { BreakId = n.GetStringValue(); } },
-                {"end", n => { End = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
-                {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"start", n => { Start = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
+                { "breakId", n => { BreakId = n.GetStringValue(); } },
+                { "end", n => { End = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
+                { "notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "start", n => { Start = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

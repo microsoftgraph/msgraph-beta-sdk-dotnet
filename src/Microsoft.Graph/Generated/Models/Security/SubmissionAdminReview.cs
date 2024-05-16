@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class SubmissionAdminReview : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SubmissionAdminReview : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,24 +38,28 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Specifies who reviewed the email. The identification is an email ID or other identity strings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewBy {
+        public string? ReviewBy
+        {
             get { return BackingStore?.Get<string?>("reviewBy"); }
             set { BackingStore?.Set("reviewBy", value); }
         }
 #nullable restore
 #else
-        public string ReviewBy {
+        public string ReviewBy
+        {
             get { return BackingStore?.Get<string>("reviewBy"); }
             set { BackingStore?.Set("reviewBy", value); }
         }
 #endif
         /// <summary>Specifies the date time when the review occurred.</summary>
-        public DateTimeOffset? ReviewDateTime {
+        public DateTimeOffset? ReviewDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewDateTime"); }
             set { BackingStore?.Set("reviewDateTime", value); }
         }
         /// <summary>Specifies what the review result was. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable, and unknownFutureValue.</summary>
-        public SubmissionResultCategory? ReviewResult {
+        public SubmissionResultCategory? ReviewResult
+        {
             get { return BackingStore?.Get<SubmissionResultCategory?>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"reviewBy", n => { ReviewBy = n.GetStringValue(); } },
-                {"reviewDateTime", n => { ReviewDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewResult", n => { ReviewResult = n.GetEnumValue<SubmissionResultCategory>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "reviewBy", n => { ReviewBy = n.GetStringValue(); } },
+                { "reviewDateTime", n => { ReviewDateTime = n.GetDateTimeOffsetValue(); } },
+                { "reviewResult", n => { ReviewResult = n.GetEnumValue<SubmissionResultCategory>(); } },
             };
         }
         /// <summary>

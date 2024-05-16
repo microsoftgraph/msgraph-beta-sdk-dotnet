@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SimulationNotification : BaseEndUserNotification, IParsable 
+    public class SimulationNotification : BaseEndUserNotification, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Target user type. Possible values are: unknown, clicked, compromised, allUsers, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.TargettedUserType? TargettedUserType {
+        public Microsoft.Graph.Beta.Models.TargettedUserType? TargettedUserType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TargettedUserType?>("targettedUserType"); }
             set { BackingStore?.Set("targettedUserType", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"targettedUserType", n => { TargettedUserType = n.GetEnumValue<TargettedUserType>(); } },
+                { "targettedUserType", n => { TargettedUserType = n.GetEnumValue<TargettedUserType>(); } },
             };
         }
         /// <summary>

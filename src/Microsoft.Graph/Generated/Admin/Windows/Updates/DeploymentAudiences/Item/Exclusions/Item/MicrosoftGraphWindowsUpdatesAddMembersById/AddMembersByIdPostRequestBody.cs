@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Exclusions.Item.MicrosoftGraphWindowsUpdatesAddMembersById {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Exclusions.Item.MicrosoftGraphWindowsUpdatesAddMembersById
+{
     #pragma warning disable CS1591
-    public class AddMembersByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AddMembersByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
         /// <summary>The ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids {
+        public List<string>? Ids
+        {
             get { return BackingStore?.Get<List<string>?>("ids"); }
             set { BackingStore?.Set("ids", value); }
         }
 #nullable restore
 #else
-        public List<string> Ids {
+        public List<string> Ids
+        {
             get { return BackingStore?.Get<List<string>>("ids"); }
             set { BackingStore?.Set("ids", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
         /// <summary>The memberEntityType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberEntityType {
+        public string? MemberEntityType
+        {
             get { return BackingStore?.Get<string?>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
 #nullable restore
 #else
-        public string MemberEntityType {
+        public string MemberEntityType
+        {
             get { return BackingStore?.Get<string>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.DeploymentAudiences.Item.Ex
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
+                { "ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
             };
         }
         /// <summary>

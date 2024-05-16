@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryExportOperation : CaseOperation, IParsable 
+    public class EdiscoveryExportOperation : CaseOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The azureBlobContainer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureBlobContainer {
+        public string? AzureBlobContainer
+        {
             get { return BackingStore?.Get<string?>("azureBlobContainer"); }
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
 #nullable restore
 #else
-        public string AzureBlobContainer {
+        public string AzureBlobContainer
+        {
             get { return BackingStore?.Get<string>("azureBlobContainer"); }
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The azureBlobToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureBlobToken {
+        public string? AzureBlobToken
+        {
             get { return BackingStore?.Get<string?>("azureBlobToken"); }
             set { BackingStore?.Set("azureBlobToken", value); }
         }
 #nullable restore
 #else
-        public string AzureBlobToken {
+        public string AzureBlobToken
+        {
             get { return BackingStore?.Get<string>("azureBlobToken"); }
             set { BackingStore?.Set("azureBlobToken", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The description provided for the export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -54,37 +61,43 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The exportFileMetadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>? ExportFileMetadata {
+        public List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>? ExportFileMetadata
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>?>("exportFileMetadata"); }
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata> ExportFileMetadata {
+        public List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata> ExportFileMetadata
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>>("exportFileMetadata"); }
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
         /// <summary>The options provided for the export. For more information, see reviewSet: export. Possible values are: originalFiles, text, pdfReplacement, fileInfo, tags. The fileInfo member is deprecated and will stop returning data on April 30, 2023. Going forward, the summary and load file are always included.</summary>
-        public Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions {
+        public Microsoft.Graph.Beta.Models.Security.ExportOptions? ExportOptions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportOptions?>("exportOptions"); }
             set { BackingStore?.Set("exportOptions", value); }
         }
         /// <summary>The options provided that specify the structure of the export. For more information, see reviewSet: export. Possible values are: none, directory, pst.</summary>
-        public ExportFileStructure? ExportStructure {
+        public ExportFileStructure? ExportStructure
+        {
             get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
         }
         /// <summary>The outputFolderId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutputFolderId {
+        public string? OutputFolderId
+        {
             get { return BackingStore?.Get<string?>("outputFolderId"); }
             set { BackingStore?.Set("outputFolderId", value); }
         }
 #nullable restore
 #else
-        public string OutputFolderId {
+        public string OutputFolderId
+        {
             get { return BackingStore?.Get<string>("outputFolderId"); }
             set { BackingStore?.Set("outputFolderId", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The name provided for the export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OutputName {
+        public string? OutputName
+        {
             get { return BackingStore?.Get<string?>("outputName"); }
             set { BackingStore?.Set("outputName", value); }
         }
 #nullable restore
 #else
-        public string OutputName {
+        public string OutputName
+        {
             get { return BackingStore?.Get<string>("outputName"); }
             set { BackingStore?.Set("outputName", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Review set from where documents are exported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryReviewSet? ReviewSet {
+        public EdiscoveryReviewSet? ReviewSet
+        {
             get { return BackingStore?.Get<EdiscoveryReviewSet?>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryReviewSet ReviewSet {
+        public EdiscoveryReviewSet ReviewSet
+        {
             get { return BackingStore?.Get<EdiscoveryReviewSet>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The review set query that is used to filter the documents for export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryReviewSetQuery? ReviewSetQuery {
+        public EdiscoveryReviewSetQuery? ReviewSetQuery
+        {
             get { return BackingStore?.Get<EdiscoveryReviewSetQuery?>("reviewSetQuery"); }
             set { BackingStore?.Set("reviewSetQuery", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryReviewSetQuery ReviewSetQuery {
+        public EdiscoveryReviewSetQuery ReviewSetQuery
+        {
             get { return BackingStore?.Get<EdiscoveryReviewSetQuery>("reviewSetQuery"); }
             set { BackingStore?.Set("reviewSetQuery", value); }
         }
@@ -149,16 +168,16 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
-                {"azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"exportFileMetadata", n => { ExportFileMetadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>(Microsoft.Graph.Beta.Models.Security.ExportFileMetadata.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
-                {"exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
-                {"outputFolderId", n => { OutputFolderId = n.GetStringValue(); } },
-                {"outputName", n => { OutputName = n.GetStringValue(); } },
-                {"reviewSet", n => { ReviewSet = n.GetObjectValue<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
-                {"reviewSetQuery", n => { ReviewSetQuery = n.GetObjectValue<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue); } },
+                { "azureBlobContainer", n => { AzureBlobContainer = n.GetStringValue(); } },
+                { "azureBlobToken", n => { AzureBlobToken = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "exportFileMetadata", n => { ExportFileMetadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>(Microsoft.Graph.Beta.Models.Security.ExportFileMetadata.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exportOptions", n => { ExportOptions = n.GetEnumValue<ExportOptions>(); } },
+                { "exportStructure", n => { ExportStructure = n.GetEnumValue<ExportFileStructure>(); } },
+                { "outputFolderId", n => { OutputFolderId = n.GetStringValue(); } },
+                { "outputName", n => { OutputName = n.GetStringValue(); } },
+                { "reviewSet", n => { ReviewSet = n.GetObjectValue<EdiscoveryReviewSet>(EdiscoveryReviewSet.CreateFromDiscriminatorValue); } },
+                { "reviewSetQuery", n => { ReviewSetQuery = n.GetObjectValue<EdiscoveryReviewSetQuery>(EdiscoveryReviewSetQuery.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

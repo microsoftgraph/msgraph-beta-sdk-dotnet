@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EncryptWithUserDefinedRights : EncryptContent, IParsable 
+    public class EncryptWithUserDefinedRights : EncryptContent, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The allowAdHocPermissions property</summary>
-        public bool? AllowAdHocPermissions {
+        public bool? AllowAdHocPermissions
+        {
             get { return BackingStore?.Get<bool?>("allowAdHocPermissions"); }
             set { BackingStore?.Set("allowAdHocPermissions", value); }
         }
         /// <summary>The allowMailForwarding property</summary>
-        public bool? AllowMailForwarding {
+        public bool? AllowMailForwarding
+        {
             get { return BackingStore?.Get<bool?>("allowMailForwarding"); }
             set { BackingStore?.Set("allowMailForwarding", value); }
         }
         /// <summary>The decryptionRightsManagementTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DecryptionRightsManagementTemplateId {
+        public string? DecryptionRightsManagementTemplateId
+        {
             get { return BackingStore?.Get<string?>("decryptionRightsManagementTemplateId"); }
             set { BackingStore?.Set("decryptionRightsManagementTemplateId", value); }
         }
 #nullable restore
 #else
-        public string DecryptionRightsManagementTemplateId {
+        public string DecryptionRightsManagementTemplateId
+        {
             get { return BackingStore?.Get<string>("decryptionRightsManagementTemplateId"); }
             set { BackingStore?.Set("decryptionRightsManagementTemplateId", value); }
         }
@@ -58,9 +63,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowAdHocPermissions", n => { AllowAdHocPermissions = n.GetBoolValue(); } },
-                {"allowMailForwarding", n => { AllowMailForwarding = n.GetBoolValue(); } },
-                {"decryptionRightsManagementTemplateId", n => { DecryptionRightsManagementTemplateId = n.GetStringValue(); } },
+                { "allowAdHocPermissions", n => { AllowAdHocPermissions = n.GetBoolValue(); } },
+                { "allowMailForwarding", n => { AllowMailForwarding = n.GetBoolValue(); } },
+                { "decryptionRightsManagementTemplateId", n => { DecryptionRightsManagementTemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

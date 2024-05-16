@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationEventsPolicy : Entity, IParsable 
+    public class AuthenticationEventsPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of applicable actions to be taken on sign-up.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationListener>? OnSignupStart {
+        public List<AuthenticationListener>? OnSignupStart
+        {
             get { return BackingStore?.Get<List<AuthenticationListener>?>("onSignupStart"); }
             set { BackingStore?.Set("onSignupStart", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationListener> OnSignupStart {
+        public List<AuthenticationListener> OnSignupStart
+        {
             get { return BackingStore?.Get<List<AuthenticationListener>>("onSignupStart"); }
             set { BackingStore?.Set("onSignupStart", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"onSignupStart", n => { OnSignupStart = n.GetCollectionOfObjectValues<AuthenticationListener>(AuthenticationListener.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onSignupStart", n => { OnSignupStart = n.GetCollectionOfObjectValues<AuthenticationListener>(AuthenticationListener.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

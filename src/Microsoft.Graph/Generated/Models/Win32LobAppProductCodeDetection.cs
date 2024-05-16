@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains product code and version properties to detect a Win32 App
     /// </summary>
-    public class Win32LobAppProductCodeDetection : Win32LobAppDetection, IParsable 
+    public class Win32LobAppProductCodeDetection : Win32LobAppDetection, IParsable
     {
         /// <summary>The product code of Win32 Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductCode {
+        public string? ProductCode
+        {
             get { return BackingStore?.Get<string?>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
 #nullable restore
 #else
-        public string ProductCode {
+        public string ProductCode
+        {
             get { return BackingStore?.Get<string>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
@@ -27,19 +30,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The product version of Win32 Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductVersion {
+        public string? ProductVersion
+        {
             get { return BackingStore?.Get<string?>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
 #nullable restore
 #else
-        public string ProductVersion {
+        public string ProductVersion
+        {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
 #endif
         /// <summary>Contains properties for detection operator.</summary>
-        public Win32LobAppDetectionOperator? ProductVersionOperator {
+        public Win32LobAppDetectionOperator? ProductVersionOperator
+        {
             get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("productVersionOperator"); }
             set { BackingStore?.Set("productVersionOperator", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"productCode", n => { ProductCode = n.GetStringValue(); } },
-                {"productVersion", n => { ProductVersion = n.GetStringValue(); } },
-                {"productVersionOperator", n => { ProductVersionOperator = n.GetEnumValue<Win32LobAppDetectionOperator>(); } },
+                { "productCode", n => { ProductCode = n.GetStringValue(); } },
+                { "productVersion", n => { ProductVersion = n.GetStringValue(); } },
+                { "productVersionOperator", n => { ProductVersionOperator = n.GetEnumValue<Win32LobAppDetectionOperator>(); } },
             };
         }
         /// <summary>

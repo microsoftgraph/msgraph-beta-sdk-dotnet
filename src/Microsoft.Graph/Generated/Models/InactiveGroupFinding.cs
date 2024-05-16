@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InactiveGroupFinding : Finding, IParsable 
+    public class InactiveGroupFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actionSummary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ActionSummary? ActionSummary {
+        public Microsoft.Graph.Beta.Models.ActionSummary? ActionSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionSummary?>("actionSummary"); }
             set { BackingStore?.Set("actionSummary", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ActionSummary ActionSummary {
+        public Microsoft.Graph.Beta.Models.ActionSummary ActionSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionSummary>("actionSummary"); }
             set { BackingStore?.Set("actionSummary", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemIdentity? Group {
+        public AuthorizationSystemIdentity? Group
+        {
             get { return BackingStore?.Get<AuthorizationSystemIdentity?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemIdentity Group {
+        public AuthorizationSystemIdentity Group
+        {
             get { return BackingStore?.Get<AuthorizationSystemIdentity>("group"); }
             set { BackingStore?.Set("group", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The permissionsCreepIndex property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex? PermissionsCreepIndex {
+        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex? PermissionsCreepIndex
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsCreepIndex?>("permissionsCreepIndex"); }
             set { BackingStore?.Set("permissionsCreepIndex", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex PermissionsCreepIndex {
+        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex PermissionsCreepIndex
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex"); }
             set { BackingStore?.Set("permissionsCreepIndex", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionSummary", n => { ActionSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionSummary>(Microsoft.Graph.Beta.Models.ActionSummary.CreateFromDiscriminatorValue); } },
-                {"group", n => { Group = n.GetObjectValue<AuthorizationSystemIdentity>(AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
-                {"permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
+                { "actionSummary", n => { ActionSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionSummary>(Microsoft.Graph.Beta.Models.ActionSummary.CreateFromDiscriminatorValue); } },
+                { "group", n => { Group = n.GetObjectValue<AuthorizationSystemIdentity>(AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
+                { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

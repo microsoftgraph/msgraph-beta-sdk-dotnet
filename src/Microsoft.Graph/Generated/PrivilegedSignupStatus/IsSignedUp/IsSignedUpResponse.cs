@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp {
+namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp
+{
     [Obsolete("This class is obsolete. Use IsSignedUpGetResponse instead.")]
     #pragma warning disable CS1591
-    public class IsSignedUpResponse : IsSignedUpGetResponse, IParsable 
+    public class IsSignedUpResponse : IsSignedUpGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

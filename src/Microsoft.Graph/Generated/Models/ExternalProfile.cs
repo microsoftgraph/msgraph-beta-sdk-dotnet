@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExternalProfile : DirectoryObject, IParsable 
+    public class ExternalProfile : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The office address of the external user profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalOfficeAddress? Address {
+        public PhysicalOfficeAddress? Address
+        {
             get { return BackingStore?.Get<PhysicalOfficeAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public PhysicalOfficeAddress Address {
+        public PhysicalOfficeAddress Address
+        {
             get { return BackingStore?.Get<PhysicalOfficeAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The company name of the external user profile. Supports $filter (eq, startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompanyName {
+        public string? CompanyName
+        {
             get { return BackingStore?.Get<string?>("companyName"); }
             set { BackingStore?.Set("companyName", value); }
         }
 #nullable restore
 #else
-        public string CompanyName {
+        public string CompanyName
+        {
             get { return BackingStore?.Get<string>("companyName"); }
             set { BackingStore?.Set("companyName", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The object ID of the user who created the external user profile. Read-only. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy {
+        public string? CreatedBy
+        {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public string CreatedBy {
+        public string CreatedBy
+        {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Date and time when this external user was created. Not nullable. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The department of the external user profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Department {
+        public string? Department
+        {
             get { return BackingStore?.Get<string?>("department"); }
             set { BackingStore?.Set("department", value); }
         }
 #nullable restore
 #else
-        public string Department {
+        public string Department
+        {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
         }
@@ -73,37 +83,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the external user profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Represents whether the external user profile is discoverable in the directory. When true, this external profile shows up in Teams search.</summary>
-        public bool? IsDiscoverable {
+        public bool? IsDiscoverable
+        {
             get { return BackingStore?.Get<bool?>("isDiscoverable"); }
             set { BackingStore?.Set("isDiscoverable", value); }
         }
         /// <summary>Represents whether the external user profile is enabled in the directory. This property is peer to the accountEnabled property on the user object.</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The job title of the external user profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobTitle {
+        public string? JobTitle
+        {
             get { return BackingStore?.Get<string?>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
 #nullable restore
 #else
-        public string JobTitle {
+        public string JobTitle
+        {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The phone number of the external user profile. Must be in E164 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PhoneNumber {
+        public string? PhoneNumber
+        {
             get { return BackingStore?.Get<string?>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
 #nullable restore
 #else
-        public string PhoneNumber {
+        public string PhoneNumber
+        {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The object ID of the supervisor of the external user profile. Supports $filter (eq, startswith).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SupervisorId {
+        public string? SupervisorId
+        {
             get { return BackingStore?.Get<string?>("supervisorId"); }
             set { BackingStore?.Set("supervisorId", value); }
         }
 #nullable restore
 #else
-        public string SupervisorId {
+        public string SupervisorId
+        {
             get { return BackingStore?.Get<string>("supervisorId"); }
             set { BackingStore?.Set("supervisorId", value); }
         }
@@ -167,17 +187,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"address", n => { Address = n.GetObjectValue<PhysicalOfficeAddress>(PhysicalOfficeAddress.CreateFromDiscriminatorValue); } },
-                {"companyName", n => { CompanyName = n.GetStringValue(); } },
-                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"department", n => { Department = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isDiscoverable", n => { IsDiscoverable = n.GetBoolValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
-                {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"supervisorId", n => { SupervisorId = n.GetStringValue(); } },
+                { "address", n => { Address = n.GetObjectValue<PhysicalOfficeAddress>(PhysicalOfficeAddress.CreateFromDiscriminatorValue); } },
+                { "companyName", n => { CompanyName = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "department", n => { Department = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isDiscoverable", n => { IsDiscoverable = n.GetBoolValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
+                { "supervisorId", n => { SupervisorId = n.GetStringValue(); } },
             };
         }
         /// <summary>

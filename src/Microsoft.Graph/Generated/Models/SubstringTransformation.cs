@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SubstringTransformation : CustomClaimTransformation, IParsable 
+    public class SubstringTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The index property</summary>
-        public int? Index {
+        public int? Index
+        {
             get { return BackingStore?.Get<int?>("index"); }
             set { BackingStore?.Set("index", value); }
         }
         /// <summary>The length property</summary>
-        public int? Length {
+        public int? Length
+        {
             get { return BackingStore?.Get<int?>("length"); }
             set { BackingStore?.Set("length", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"index", n => { Index = n.GetIntValue(); } },
-                {"length", n => { Length = n.GetIntValue(); } },
+                { "index", n => { Index = n.GetIntValue(); } },
+                { "length", n => { Length = n.GetIntValue(); } },
             };
         }
         /// <summary>

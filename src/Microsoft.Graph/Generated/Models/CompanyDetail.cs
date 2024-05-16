@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CompanyDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CompanyDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Address of the company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? Address {
+        public PhysicalAddress? Address
+        {
             get { return BackingStore?.Get<PhysicalAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress Address {
+        public PhysicalAddress Address
+        {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Department Name within a company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Department {
+        public string? Department
+        {
             get { return BackingStore?.Get<string?>("department"); }
             set { BackingStore?.Set("department", value); }
         }
 #nullable restore
 #else
-        public string Department {
+        public string Department
+        {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Company name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Office Location of the person referred to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OfficeLocation {
+        public string? OfficeLocation
+        {
             get { return BackingStore?.Get<string?>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
 #nullable restore
 #else
-        public string OfficeLocation {
+        public string OfficeLocation
+        {
             get { return BackingStore?.Get<string>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Pronunciation guide for the company name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Pronunciation {
+        public string? Pronunciation
+        {
             get { return BackingStore?.Get<string?>("pronunciation"); }
             set { BackingStore?.Set("pronunciation", value); }
         }
 #nullable restore
 #else
-        public string Pronunciation {
+        public string Pronunciation
+        {
             get { return BackingStore?.Get<string>("pronunciation"); }
             set { BackingStore?.Set("pronunciation", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Link to the company home page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -141,13 +157,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"department", n => { Department = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
-                {"pronunciation", n => { Pronunciation = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "department", n => { Department = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
+                { "pronunciation", n => { Pronunciation = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

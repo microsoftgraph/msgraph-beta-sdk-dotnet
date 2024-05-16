@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class Connectivity : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Connectivity : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Branches represent locations for connectivity. DEPRECATED AND TO BE RETIRED SOON. Use the remoteNetwork relationship and its associated APIs instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BranchSite>? Branches {
+        public List<BranchSite>? Branches
+        {
             get { return BackingStore?.Get<List<BranchSite>?>("branches"); }
             set { BackingStore?.Set("branches", value); }
         }
 #nullable restore
 #else
-        public List<BranchSite> Branches {
+        public List<BranchSite> Branches
+        {
             get { return BackingStore?.Get<List<BranchSite>>("branches"); }
             set { BackingStore?.Set("branches", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represent locations, such as branches, that are connected to Global Secure Access services through an IPsec tunnel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RemoteNetwork>? RemoteNetworks {
+        public List<RemoteNetwork>? RemoteNetworks
+        {
             get { return BackingStore?.Get<List<RemoteNetwork>?>("remoteNetworks"); }
             set { BackingStore?.Set("remoteNetworks", value); }
         }
 #nullable restore
 #else
-        public List<RemoteNetwork> RemoteNetworks {
+        public List<RemoteNetwork> RemoteNetworks
+        {
             get { return BackingStore?.Get<List<RemoteNetwork>>("remoteNetworks"); }
             set { BackingStore?.Set("remoteNetworks", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The webCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WebCategory>? WebCategories {
+        public List<WebCategory>? WebCategories
+        {
             get { return BackingStore?.Get<List<WebCategory>?>("webCategories"); }
             set { BackingStore?.Set("webCategories", value); }
         }
 #nullable restore
 #else
-        public List<WebCategory> WebCategories {
+        public List<WebCategory> WebCategories
+        {
             get { return BackingStore?.Get<List<WebCategory>>("webCategories"); }
             set { BackingStore?.Set("webCategories", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"branches", n => { Branches = n.GetCollectionOfObjectValues<BranchSite>(BranchSite.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<RemoteNetwork>(RemoteNetwork.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"webCategories", n => { WebCategories = n.GetCollectionOfObjectValues<WebCategory>(WebCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "branches", n => { Branches = n.GetCollectionOfObjectValues<BranchSite>(BranchSite.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remoteNetworks", n => { RemoteNetworks = n.GetCollectionOfObjectValues<RemoteNetwork>(RemoteNetwork.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "webCategories", n => { WebCategories = n.GetCollectionOfObjectValues<WebCategory>(WebCategory.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

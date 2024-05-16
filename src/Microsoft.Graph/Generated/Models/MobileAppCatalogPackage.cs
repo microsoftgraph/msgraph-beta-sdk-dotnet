@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// mobileAppCatalogPackage is an abstract type that application catalog package entities derive from. A mobileAppCatalogPackage entity contains information about an application catalog package that can be deployed to Intune-managed devices.
     /// </summary>
-    public class MobileAppCatalogPackage : Entity, IParsable 
+    public class MobileAppCatalogPackage : Entity, IParsable
     {
         /// <summary>The name of the product (example: &quot;Fabrikam for Business&quot;). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductDisplayName {
+        public string? ProductDisplayName
+        {
             get { return BackingStore?.Get<string?>("productDisplayName"); }
             set { BackingStore?.Set("productDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ProductDisplayName {
+        public string ProductDisplayName
+        {
             get { return BackingStore?.Get<string>("productDisplayName"); }
             set { BackingStore?.Set("productDisplayName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of a specific product irrespective of version, or other attributes. Read-only. Returned by default. Supports: $filter, $select. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductId {
+        public string? ProductId
+        {
             get { return BackingStore?.Get<string?>("productId"); }
             set { BackingStore?.Set("productId", value); }
         }
 #nullable restore
 #else
-        public string ProductId {
+        public string ProductId
+        {
             get { return BackingStore?.Get<string>("productId"); }
             set { BackingStore?.Set("productId", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the application catalog package publisher (example: &quot;Fabrikam&quot;). Returned by default. Read-only. Supports $filter, $search, $select. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublisherDisplayName {
+        public string? PublisherDisplayName
+        {
             get { return BackingStore?.Get<string?>("publisherDisplayName"); }
             set { BackingStore?.Set("publisherDisplayName", value); }
         }
 #nullable restore
 #else
-        public string PublisherDisplayName {
+        public string PublisherDisplayName
+        {
             get { return BackingStore?.Get<string>("publisherDisplayName"); }
             set { BackingStore?.Set("publisherDisplayName", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the product version (example: &quot;1.2203.156&quot;). Returned by default. Read-only. Supports: $filter, $search, $select. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionDisplayName {
+        public string? VersionDisplayName
+        {
             get { return BackingStore?.Get<string?>("versionDisplayName"); }
             set { BackingStore?.Set("versionDisplayName", value); }
         }
 #nullable restore
 #else
-        public string VersionDisplayName {
+        public string VersionDisplayName
+        {
             get { return BackingStore?.Get<string>("versionDisplayName"); }
             set { BackingStore?.Set("versionDisplayName", value); }
         }
@@ -89,10 +98,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"productDisplayName", n => { ProductDisplayName = n.GetStringValue(); } },
-                {"productId", n => { ProductId = n.GetStringValue(); } },
-                {"publisherDisplayName", n => { PublisherDisplayName = n.GetStringValue(); } },
-                {"versionDisplayName", n => { VersionDisplayName = n.GetStringValue(); } },
+                { "productDisplayName", n => { ProductDisplayName = n.GetStringValue(); } },
+                { "productId", n => { ProductId = n.GetStringValue(); } },
+                { "publisherDisplayName", n => { PublisherDisplayName = n.GetStringValue(); } },
+                { "versionDisplayName", n => { VersionDisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

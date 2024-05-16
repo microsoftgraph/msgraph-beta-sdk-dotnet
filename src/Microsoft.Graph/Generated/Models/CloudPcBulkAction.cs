@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcBulkAction : Entity, IParsable 
+    public class CloudPcBulkAction : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Run summary of this bulk action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcBulkActionSummary? ActionSummary {
+        public CloudPcBulkActionSummary? ActionSummary
+        {
             get { return BackingStore?.Get<CloudPcBulkActionSummary?>("actionSummary"); }
             set { BackingStore?.Set("actionSummary", value); }
         }
 #nullable restore
 #else
-        public CloudPcBulkActionSummary ActionSummary {
+        public CloudPcBulkActionSummary ActionSummary
+        {
             get { return BackingStore?.Get<CloudPcBulkActionSummary>("actionSummary"); }
             set { BackingStore?.Set("actionSummary", value); }
         }
@@ -26,38 +29,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The cloudPcIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CloudPcIds {
+        public List<string>? CloudPcIds
+        {
             get { return BackingStore?.Get<List<string>?>("cloudPcIds"); }
             set { BackingStore?.Set("cloudPcIds", value); }
         }
 #nullable restore
 #else
-        public List<string> CloudPcIds {
+        public List<string> CloudPcIds
+        {
             get { return BackingStore?.Get<List<string>>("cloudPcIds"); }
             set { BackingStore?.Set("cloudPcIds", value); }
         }
 #endif
         /// <summary>The date and time when the bulk action was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Name of the bulk action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates whether the bulk actions can be initiated during maintenance window. When true, bulk action will use maintenance window to schedule action, When false means bulk action will not use the maintenance window. Default value is false.</summary>
-        public bool? ScheduledDuringMaintenanceWindow {
+        public bool? ScheduledDuringMaintenanceWindow
+        {
             get { return BackingStore?.Get<bool?>("scheduledDuringMaintenanceWindow"); }
             set { BackingStore?.Set("scheduledDuringMaintenanceWindow", value); }
         }
@@ -93,11 +102,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionSummary", n => { ActionSummary = n.GetObjectValue<CloudPcBulkActionSummary>(CloudPcBulkActionSummary.CreateFromDiscriminatorValue); } },
-                {"cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"scheduledDuringMaintenanceWindow", n => { ScheduledDuringMaintenanceWindow = n.GetBoolValue(); } },
+                { "actionSummary", n => { ActionSummary = n.GetObjectValue<CloudPcBulkActionSummary>(CloudPcBulkActionSummary.CreateFromDiscriminatorValue); } },
+                { "cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "scheduledDuringMaintenanceWindow", n => { ScheduledDuringMaintenanceWindow = n.GetBoolValue(); } },
             };
         }
         /// <summary>

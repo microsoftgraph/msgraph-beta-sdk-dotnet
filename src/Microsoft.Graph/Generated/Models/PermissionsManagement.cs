@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PermissionsManagement : Entity, IParsable 
+    public class PermissionsManagement : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents a change event of the scheduledPermissionsRequest entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionsRequestChange>? PermissionsRequestChanges {
+        public List<PermissionsRequestChange>? PermissionsRequestChanges
+        {
             get { return BackingStore?.Get<List<PermissionsRequestChange>?>("permissionsRequestChanges"); }
             set { BackingStore?.Set("permissionsRequestChanges", value); }
         }
 #nullable restore
 #else
-        public List<PermissionsRequestChange> PermissionsRequestChanges {
+        public List<PermissionsRequestChange> PermissionsRequestChanges
+        {
             get { return BackingStore?.Get<List<PermissionsRequestChange>>("permissionsRequestChanges"); }
             set { BackingStore?.Set("permissionsRequestChanges", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The scheduledPermissionsApprovals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Approval>? ScheduledPermissionsApprovals {
+        public List<Approval>? ScheduledPermissionsApprovals
+        {
             get { return BackingStore?.Get<List<Approval>?>("scheduledPermissionsApprovals"); }
             set { BackingStore?.Set("scheduledPermissionsApprovals", value); }
         }
 #nullable restore
 #else
-        public List<Approval> ScheduledPermissionsApprovals {
+        public List<Approval> ScheduledPermissionsApprovals
+        {
             get { return BackingStore?.Get<List<Approval>>("scheduledPermissionsApprovals"); }
             set { BackingStore?.Set("scheduledPermissionsApprovals", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents a permissions request that Permissions Management uses to manage permissions for an identity on resources in the authorization system. This request can be granted, rejected or canceled by identities in Permissions Management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ScheduledPermissionsRequest>? ScheduledPermissionsRequests {
+        public List<ScheduledPermissionsRequest>? ScheduledPermissionsRequests
+        {
             get { return BackingStore?.Get<List<ScheduledPermissionsRequest>?>("scheduledPermissionsRequests"); }
             set { BackingStore?.Set("scheduledPermissionsRequests", value); }
         }
 #nullable restore
 #else
-        public List<ScheduledPermissionsRequest> ScheduledPermissionsRequests {
+        public List<ScheduledPermissionsRequest> ScheduledPermissionsRequests
+        {
             get { return BackingStore?.Get<List<ScheduledPermissionsRequest>>("scheduledPermissionsRequests"); }
             set { BackingStore?.Set("scheduledPermissionsRequests", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"permissionsRequestChanges", n => { PermissionsRequestChanges = n.GetCollectionOfObjectValues<PermissionsRequestChange>(PermissionsRequestChange.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"scheduledPermissionsApprovals", n => { ScheduledPermissionsApprovals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"scheduledPermissionsRequests", n => { ScheduledPermissionsRequests = n.GetCollectionOfObjectValues<ScheduledPermissionsRequest>(ScheduledPermissionsRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "permissionsRequestChanges", n => { PermissionsRequestChanges = n.GetCollectionOfObjectValues<PermissionsRequestChange>(PermissionsRequestChange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scheduledPermissionsApprovals", n => { ScheduledPermissionsApprovals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scheduledPermissionsRequests", n => { ScheduledPermissionsRequests = n.GetCollectionOfObjectValues<ScheduledPermissionsRequest>(ScheduledPermissionsRequest.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,54 +5,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserTrainingCompletionSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserTrainingCompletionSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of users who completed all the trainings before the due date.</summary>
-        public int? CompletedUsersCount {
+        public int? CompletedUsersCount
+        {
             get { return BackingStore?.Get<int?>("completedUsersCount"); }
             set { BackingStore?.Set("completedUsersCount", value); }
         }
         /// <summary>The number of users who started at least one training.</summary>
-        public int? InProgressUsersCount {
+        public int? InProgressUsersCount
+        {
             get { return BackingStore?.Get<int?>("inProgressUsersCount"); }
             set { BackingStore?.Set("inProgressUsersCount", value); }
         }
         /// <summary>The number of users who didn&apos;t complete all the trainings before the due date.</summary>
-        public int? NotCompletedUsersCount {
+        public int? NotCompletedUsersCount
+        {
             get { return BackingStore?.Get<int?>("notCompletedUsersCount"); }
             set { BackingStore?.Set("notCompletedUsersCount", value); }
         }
         /// <summary>The number of users who didn&apos;t start any training.</summary>
-        public int? NotStartedUsersCount {
+        public int? NotStartedUsersCount
+        {
             get { return BackingStore?.Get<int?>("notStartedUsersCount"); }
             set { BackingStore?.Set("notStartedUsersCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of users who are already assigned the same training.</summary>
-        public int? PreviouslyAssignedUsersCount {
+        public int? PreviouslyAssignedUsersCount
+        {
             get { return BackingStore?.Get<int?>("previouslyAssignedUsersCount"); }
             set { BackingStore?.Set("previouslyAssignedUsersCount", value); }
         }
@@ -82,12 +91,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"completedUsersCount", n => { CompletedUsersCount = n.GetIntValue(); } },
-                {"inProgressUsersCount", n => { InProgressUsersCount = n.GetIntValue(); } },
-                {"notCompletedUsersCount", n => { NotCompletedUsersCount = n.GetIntValue(); } },
-                {"notStartedUsersCount", n => { NotStartedUsersCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"previouslyAssignedUsersCount", n => { PreviouslyAssignedUsersCount = n.GetIntValue(); } },
+                { "completedUsersCount", n => { CompletedUsersCount = n.GetIntValue(); } },
+                { "inProgressUsersCount", n => { InProgressUsersCount = n.GetIntValue(); } },
+                { "notCompletedUsersCount", n => { NotCompletedUsersCount = n.GetIntValue(); } },
+                { "notStartedUsersCount", n => { NotStartedUsersCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "previouslyAssignedUsersCount", n => { PreviouslyAssignedUsersCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

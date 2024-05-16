@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
     /// </summary>
-    public class UserExperienceAnalyticsAnomalySeverityOverview : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserExperienceAnalyticsAnomalySeverityOverview : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates count of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
-        public int? HighSeverityAnomalyCount {
+        public int? HighSeverityAnomalyCount
+        {
             get { return BackingStore?.Get<int?>("highSeverityAnomalyCount"); }
             set { BackingStore?.Set("highSeverityAnomalyCount", value); }
         }
         /// <summary>Indicates count of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
-        public int? InformationalSeverityAnomalyCount {
+        public int? InformationalSeverityAnomalyCount
+        {
             get { return BackingStore?.Get<int?>("informationalSeverityAnomalyCount"); }
             set { BackingStore?.Set("informationalSeverityAnomalyCount", value); }
         }
         /// <summary>Indicates count of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
-        public int? LowSeverityAnomalyCount {
+        public int? LowSeverityAnomalyCount
+        {
             get { return BackingStore?.Get<int?>("lowSeverityAnomalyCount"); }
             set { BackingStore?.Set("lowSeverityAnomalyCount", value); }
         }
         /// <summary>Indicates count of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
-        public int? MediumSeverityAnomalyCount {
+        public int? MediumSeverityAnomalyCount
+        {
             get { return BackingStore?.Get<int?>("mediumSeverityAnomalyCount"); }
             set { BackingStore?.Set("mediumSeverityAnomalyCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -78,11 +86,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"highSeverityAnomalyCount", n => { HighSeverityAnomalyCount = n.GetIntValue(); } },
-                {"informationalSeverityAnomalyCount", n => { InformationalSeverityAnomalyCount = n.GetIntValue(); } },
-                {"lowSeverityAnomalyCount", n => { LowSeverityAnomalyCount = n.GetIntValue(); } },
-                {"mediumSeverityAnomalyCount", n => { MediumSeverityAnomalyCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "highSeverityAnomalyCount", n => { HighSeverityAnomalyCount = n.GetIntValue(); } },
+                { "informationalSeverityAnomalyCount", n => { InformationalSeverityAnomalyCount = n.GetIntValue(); } },
+                { "lowSeverityAnomalyCount", n => { LowSeverityAnomalyCount = n.GetIntValue(); } },
+                { "mediumSeverityAnomalyCount", n => { MediumSeverityAnomalyCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

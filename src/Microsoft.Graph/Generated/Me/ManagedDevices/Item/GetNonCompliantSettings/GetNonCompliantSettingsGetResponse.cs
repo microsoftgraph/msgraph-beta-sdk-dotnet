@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings
+{
     #pragma warning disable CS1591
-    public class GetNonCompliantSettingsGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetNonCompliantSettingsGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicySettingState>? Value {
+        public List<DeviceCompliancePolicySettingState>? Value
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicySettingState> Value {
+        public List<DeviceCompliancePolicySettingState> Value
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingState>(DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingState>(DeviceCompliancePolicySettingState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

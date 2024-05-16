@@ -4,60 +4,69 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The security baseline compliance state summary of the security baseline for a device.
     /// </summary>
-    public class SecurityBaselineDeviceState : Entity, IParsable 
+    public class SecurityBaselineDeviceState : Entity, IParsable
     {
         /// <summary>Display name of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceDisplayName {
+        public string? DeviceDisplayName
+        {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
 #nullable restore
 #else
-        public string DeviceDisplayName {
+        public string DeviceDisplayName
+        {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
 #endif
         /// <summary>Last modified date time of the policy report</summary>
-        public DateTimeOffset? LastReportedDateTime {
+        public DateTimeOffset? LastReportedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>Intune device id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #endif
         /// <summary>Security Baseline Compliance State</summary>
-        public SecurityBaselineComplianceState? State {
+        public SecurityBaselineComplianceState? State
+        {
             get { return BackingStore?.Get<SecurityBaselineComplianceState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User Principal Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -80,11 +89,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
-                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Setting value template reference information
     /// </summary>
-    public class DeviceManagementConfigurationSettingValueTemplateReference : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementConfigurationSettingValueTemplateReference : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -35,19 +39,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Setting value template id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingValueTemplateId {
+        public string? SettingValueTemplateId
+        {
             get { return BackingStore?.Get<string?>("settingValueTemplateId"); }
             set { BackingStore?.Set("settingValueTemplateId", value); }
         }
 #nullable restore
 #else
-        public string SettingValueTemplateId {
+        public string SettingValueTemplateId
+        {
             get { return BackingStore?.Get<string>("settingValueTemplateId"); }
             set { BackingStore?.Set("settingValueTemplateId", value); }
         }
 #endif
         /// <summary>Indicates whether to update policy setting value to match template setting default value</summary>
-        public bool? UseTemplateDefault {
+        public bool? UseTemplateDefault
+        {
             get { return BackingStore?.Get<bool?>("useTemplateDefault"); }
             set { BackingStore?.Set("useTemplateDefault", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"settingValueTemplateId", n => { SettingValueTemplateId = n.GetStringValue(); } },
-                {"useTemplateDefault", n => { UseTemplateDefault = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "settingValueTemplateId", n => { SettingValueTemplateId = n.GetStringValue(); } },
+                { "useTemplateDefault", n => { UseTemplateDefault = n.GetBoolValue(); } },
             };
         }
         /// <summary>

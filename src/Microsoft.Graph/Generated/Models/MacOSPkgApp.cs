@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for the MacOSPkgApp.
     /// </summary>
-    public class MacOSPkgApp : MobileLobApp, IParsable 
+    public class MacOSPkgApp : MobileLobApp, IParsable
     {
         /// <summary>When TRUE, indicates that the app&apos;s version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app&apos;s version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature. The default value is FALSE.</summary>
-        public bool? IgnoreVersionDetection {
+        public bool? IgnoreVersionDetection
+        {
             get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
             set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
         /// <summary>The list of apps expected to be installed by the PKG. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSIncludedApp>? IncludedApps {
+        public List<MacOSIncludedApp>? IncludedApps
+        {
             get { return BackingStore?.Get<List<MacOSIncludedApp>?>("includedApps"); }
             set { BackingStore?.Set("includedApps", value); }
         }
 #nullable restore
 #else
-        public List<MacOSIncludedApp> IncludedApps {
+        public List<MacOSIncludedApp> IncludedApps
+        {
             get { return BackingStore?.Get<List<MacOSIncludedApp>>("includedApps"); }
             set { BackingStore?.Set("includedApps", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MacOSMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+        public MacOSMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<MacOSMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem {
+        public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<MacOSMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MacOSAppScript? PostInstallScript {
+        public MacOSAppScript? PostInstallScript
+        {
             get { return BackingStore?.Get<MacOSAppScript?>("postInstallScript"); }
             set { BackingStore?.Set("postInstallScript", value); }
         }
 #nullable restore
 #else
-        public MacOSAppScript PostInstallScript {
+        public MacOSAppScript PostInstallScript
+        {
             get { return BackingStore?.Get<MacOSAppScript>("postInstallScript"); }
             set { BackingStore?.Set("postInstallScript", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ComplexType macOSAppScript the contains the post-install script for the app. This will execute on the macOS device after the app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MacOSAppScript? PreInstallScript {
+        public MacOSAppScript? PreInstallScript
+        {
             get { return BackingStore?.Get<MacOSAppScript?>("preInstallScript"); }
             set { BackingStore?.Set("preInstallScript", value); }
         }
 #nullable restore
 #else
-        public MacOSAppScript PreInstallScript {
+        public MacOSAppScript PreInstallScript
+        {
             get { return BackingStore?.Get<MacOSAppScript>("preInstallScript"); }
             set { BackingStore?.Set("preInstallScript", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The bundleId of the primary app in the PKG. This maps to the CFBundleIdentifier in the app&apos;s bundle configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryBundleId {
+        public string? PrimaryBundleId
+        {
             get { return BackingStore?.Get<string?>("primaryBundleId"); }
             set { BackingStore?.Set("primaryBundleId", value); }
         }
 #nullable restore
 #else
-        public string PrimaryBundleId {
+        public string PrimaryBundleId
+        {
             get { return BackingStore?.Get<string>("primaryBundleId"); }
             set { BackingStore?.Set("primaryBundleId", value); }
         }
@@ -88,13 +100,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The version of the primary app in the PKG. This maps to the CFBundleShortVersion in the app&apos;s bundle configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryBundleVersion {
+        public string? PrimaryBundleVersion
+        {
             get { return BackingStore?.Get<string?>("primaryBundleVersion"); }
             set { BackingStore?.Set("primaryBundleVersion", value); }
         }
 #nullable restore
 #else
-        public string PrimaryBundleVersion {
+        public string PrimaryBundleVersion
+        {
             get { return BackingStore?.Get<string>("primaryBundleVersion"); }
             set { BackingStore?.Set("primaryBundleVersion", value); }
         }
@@ -124,13 +138,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
-                {"includedApps", n => { IncludedApps = n.GetCollectionOfObjectValues<MacOSIncludedApp>(MacOSIncludedApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<MacOSMinimumOperatingSystem>(MacOSMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
-                {"postInstallScript", n => { PostInstallScript = n.GetObjectValue<MacOSAppScript>(MacOSAppScript.CreateFromDiscriminatorValue); } },
-                {"preInstallScript", n => { PreInstallScript = n.GetObjectValue<MacOSAppScript>(MacOSAppScript.CreateFromDiscriminatorValue); } },
-                {"primaryBundleId", n => { PrimaryBundleId = n.GetStringValue(); } },
-                {"primaryBundleVersion", n => { PrimaryBundleVersion = n.GetStringValue(); } },
+                { "ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
+                { "includedApps", n => { IncludedApps = n.GetCollectionOfObjectValues<MacOSIncludedApp>(MacOSIncludedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<MacOSMinimumOperatingSystem>(MacOSMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "postInstallScript", n => { PostInstallScript = n.GetObjectValue<MacOSAppScript>(MacOSAppScript.CreateFromDiscriminatorValue); } },
+                { "preInstallScript", n => { PreInstallScript = n.GetObjectValue<MacOSAppScript>(MacOSAppScript.CreateFromDiscriminatorValue); } },
+                { "primaryBundleId", n => { PrimaryBundleId = n.GetStringValue(); } },
+                { "primaryBundleVersion", n => { PrimaryBundleVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

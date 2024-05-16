@@ -6,21 +6,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBy {
+namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessUsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedBy
+{
     #pragma warning disable CS1591
-    public class UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class UsageProfilingWithStartDateTimeWithEndDateTimeWithAggregatedByGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UsageProfilingPoint>? Value {
+        public List<UsageProfilingPoint>? Value
+        {
             get { return BackingStore?.Get<List<UsageProfilingPoint>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<UsageProfilingPoint> Value {
+        public List<UsageProfilingPoint> Value
+        {
             get { return BackingStore?.Get<List<UsageProfilingPoint>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -43,7 +46,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<UsageProfilingPoint>(UsageProfilingPoint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<UsageProfilingPoint>(UsageProfilingPoint.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class LogonUser : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class LogonUser : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Domain of user account used to logon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountDomain {
+        public string? AccountDomain
+        {
             get { return BackingStore?.Get<string?>("accountDomain"); }
             set { BackingStore?.Set("accountDomain", value); }
         }
 #nullable restore
 #else
-        public string AccountDomain {
+        public string AccountDomain
+        {
             get { return BackingStore?.Get<string>("accountDomain"); }
             set { BackingStore?.Set("accountDomain", value); }
         }
@@ -27,49 +30,57 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Account name of user account used to logon.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName {
+        public string? AccountName
+        {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
 #nullable restore
 #else
-        public string AccountName {
+        public string AccountName
+        {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
 #endif
         /// <summary>User Account type, per Windows definition. Possible values are: unknown, standard, power, administrator.</summary>
-        public UserAccountSecurityType? AccountType {
+        public UserAccountSecurityType? AccountType
+        {
             get { return BackingStore?.Get<UserAccountSecurityType?>("accountType"); }
             set { BackingStore?.Set("accountType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>DateTime at which the earliest logon by this user account occurred (provider-determined period). The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? FirstSeenDateTime {
+        public DateTimeOffset? FirstSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
         /// <summary>DateTime at which the latest logon by this user account occurred. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastSeenDateTime {
+        public DateTimeOffset? LastSeenDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>User logon ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LogonId {
+        public string? LogonId
+        {
             get { return BackingStore?.Get<string?>("logonId"); }
             set { BackingStore?.Set("logonId", value); }
         }
 #nullable restore
 #else
-        public string LogonId {
+        public string LogonId
+        {
             get { return BackingStore?.Get<string>("logonId"); }
             set { BackingStore?.Set("logonId", value); }
         }
@@ -77,13 +88,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LogonType?>? LogonTypes {
+        public List<LogonType?>? LogonTypes
+        {
             get { return BackingStore?.Get<List<LogonType?>?>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
 #nullable restore
 #else
-        public List<LogonType?> LogonTypes {
+        public List<LogonType?> LogonTypes
+        {
             get { return BackingStore?.Get<List<LogonType?>>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
@@ -91,13 +104,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -128,14 +143,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accountDomain", n => { AccountDomain = n.GetStringValue(); } },
-                {"accountName", n => { AccountName = n.GetStringValue(); } },
-                {"accountType", n => { AccountType = n.GetEnumValue<UserAccountSecurityType>(); } },
-                {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"logonId", n => { LogonId = n.GetStringValue(); } },
-                {"logonTypes", n => { LogonTypes = n.GetCollectionOfEnumValues<LogonType>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "accountDomain", n => { AccountDomain = n.GetStringValue(); } },
+                { "accountName", n => { AccountName = n.GetStringValue(); } },
+                { "accountType", n => { AccountType = n.GetEnumValue<UserAccountSecurityType>(); } },
+                { "firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                { "logonId", n => { LogonId = n.GetStringValue(); } },
+                { "logonTypes", n => { LogonTypes = n.GetCollectionOfEnumValues<LogonType>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

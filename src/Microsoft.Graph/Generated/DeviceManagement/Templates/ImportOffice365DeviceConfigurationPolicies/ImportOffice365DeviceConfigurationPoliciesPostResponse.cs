@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies {
+namespace Microsoft.Graph.Beta.DeviceManagement.Templates.ImportOffice365DeviceConfigurationPolicies
+{
     #pragma warning disable CS1591
-    public class ImportOffice365DeviceConfigurationPoliciesPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class ImportOffice365DeviceConfigurationPoliciesPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementIntent>? Value {
+        public List<DeviceManagementIntent>? Value
+        {
             get { return BackingStore?.Get<List<DeviceManagementIntent>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementIntent> Value {
+        public List<DeviceManagementIntent> Value
+        {
             get { return BackingStore?.Get<List<DeviceManagementIntent>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.ImportOffice365DeviceC
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementIntent>(DeviceManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementIntent>(DeviceManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

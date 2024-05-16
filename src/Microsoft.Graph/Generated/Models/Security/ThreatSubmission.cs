@@ -4,93 +4,108 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class ThreatSubmission : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ThreatSubmission : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubmissionAdminReview? AdminReview {
+        public SubmissionAdminReview? AdminReview
+        {
             get { return BackingStore?.Get<SubmissionAdminReview?>("adminReview"); }
             set { BackingStore?.Set("adminReview", value); }
         }
 #nullable restore
 #else
-        public SubmissionAdminReview AdminReview {
+        public SubmissionAdminReview AdminReview
+        {
             get { return BackingStore?.Get<SubmissionAdminReview>("adminReview"); }
             set { BackingStore?.Set("adminReview", value); }
         }
 #endif
         /// <summary>The category property</summary>
-        public SubmissionCategory? Category {
+        public SubmissionCategory? Category
+        {
             get { return BackingStore?.Get<SubmissionCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.</summary>
-        public SubmissionClientSource? ClientSource {
+        public SubmissionClientSource? ClientSource
+        {
             get { return BackingStore?.Get<SubmissionClientSource?>("clientSource"); }
             set { BackingStore?.Set("clientSource", value); }
         }
         /// <summary>Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.</summary>
-        public SubmissionContentType? ContentType {
+        public SubmissionContentType? ContentType
+        {
             get { return BackingStore?.Get<SubmissionContentType?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq &apos;value&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubmissionUserIdentity? CreatedBy {
+        public SubmissionUserIdentity? CreatedBy
+        {
             get { return BackingStore?.Get<SubmissionUserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public SubmissionUserIdentity CreatedBy {
+        public SubmissionUserIdentity CreatedBy
+        {
             get { return BackingStore?.Get<SubmissionUserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Specifies when the threat submission was created. Supports $filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Specifies the result of the analysis performed by Microsoft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubmissionResult? Result {
+        public SubmissionResult? Result
+        {
             get { return BackingStore?.Get<SubmissionResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #nullable restore
 #else
-        public SubmissionResult Result {
+        public SubmissionResult Result
+        {
             get { return BackingStore?.Get<SubmissionResult>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #endif
         /// <summary>Specifies the role of the submitter. Supports $filter = source eq &apos;value&apos;. The possible values are: administrator,  user and unkownFutureValue.</summary>
-        public SubmissionSource? Source {
+        public SubmissionSource? Source
+        {
             get { return BackingStore?.Get<SubmissionSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq &apos;value&apos;. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.</summary>
-        public LongRunningOperationStatus? Status {
+        public LongRunningOperationStatus? Status
+        {
             get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Indicates the tenant id of the submitter. Not required when created using a POST operation. It&apos;s extracted from the token of the post API call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -124,16 +139,16 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"adminReview", n => { AdminReview = n.GetObjectValue<SubmissionAdminReview>(SubmissionAdminReview.CreateFromDiscriminatorValue); } },
-                {"category", n => { Category = n.GetEnumValue<SubmissionCategory>(); } },
-                {"clientSource", n => { ClientSource = n.GetEnumValue<SubmissionClientSource>(); } },
-                {"contentType", n => { ContentType = n.GetEnumValue<SubmissionContentType>(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<SubmissionUserIdentity>(SubmissionUserIdentity.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"result", n => { Result = n.GetObjectValue<SubmissionResult>(SubmissionResult.CreateFromDiscriminatorValue); } },
-                {"source", n => { Source = n.GetEnumValue<SubmissionSource>(); } },
-                {"status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "adminReview", n => { AdminReview = n.GetObjectValue<SubmissionAdminReview>(SubmissionAdminReview.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetEnumValue<SubmissionCategory>(); } },
+                { "clientSource", n => { ClientSource = n.GetEnumValue<SubmissionClientSource>(); } },
+                { "contentType", n => { ContentType = n.GetEnumValue<SubmissionContentType>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<SubmissionUserIdentity>(SubmissionUserIdentity.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "result", n => { Result = n.GetObjectValue<SubmissionResult>(SubmissionResult.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetEnumValue<SubmissionSource>(); } },
+                { "status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

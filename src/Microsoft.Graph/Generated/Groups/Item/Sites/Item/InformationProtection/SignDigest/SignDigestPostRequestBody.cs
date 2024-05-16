@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest {
+namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.SignDigest
+{
     #pragma warning disable CS1591
-    public class SignDigestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SignDigestPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Sign
         /// <summary>The digest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Digest {
+        public byte[]? Digest
+        {
             get { return BackingStore?.Get<byte[]?>("digest"); }
             set { BackingStore?.Set("digest", value); }
         }
 #nullable restore
 #else
-        public byte[] Digest {
+        public byte[] Digest
+        {
             get { return BackingStore?.Get<byte[]>("digest"); }
             set { BackingStore?.Set("digest", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.InformationProtection.Sign
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"digest", n => { Digest = n.GetByteArrayValue(); } },
+                { "digest", n => { Digest = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

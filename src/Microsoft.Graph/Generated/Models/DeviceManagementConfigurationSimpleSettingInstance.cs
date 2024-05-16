@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Simple setting instance
     /// </summary>
-    public class DeviceManagementConfigurationSimpleSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable 
+    public class DeviceManagementConfigurationSimpleSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>The simpleSettingValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSimpleSettingValue? SimpleSettingValue {
+        public DeviceManagementConfigurationSimpleSettingValue? SimpleSettingValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValue?>("simpleSettingValue"); }
             set { BackingStore?.Set("simpleSettingValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSimpleSettingValue SimpleSettingValue {
+        public DeviceManagementConfigurationSimpleSettingValue SimpleSettingValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValue>("simpleSettingValue"); }
             set { BackingStore?.Set("simpleSettingValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"simpleSettingValue", n => { SimpleSettingValue = n.GetObjectValue<DeviceManagementConfigurationSimpleSettingValue>(DeviceManagementConfigurationSimpleSettingValue.CreateFromDiscriminatorValue); } },
+                { "simpleSettingValue", n => { SimpleSettingValue = n.GetObjectValue<DeviceManagementConfigurationSimpleSettingValue>(DeviceManagementConfigurationSimpleSettingValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

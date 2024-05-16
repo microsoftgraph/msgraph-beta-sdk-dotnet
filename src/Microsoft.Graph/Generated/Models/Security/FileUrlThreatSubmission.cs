@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class FileUrlThreatSubmission : FileThreatSubmission, IParsable 
+    public class FileUrlThreatSubmission : FileThreatSubmission, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>It specifies the URL of the file that needs to be submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileUrl {
+        public string? FileUrl
+        {
             get { return BackingStore?.Get<string?>("fileUrl"); }
             set { BackingStore?.Set("fileUrl", value); }
         }
 #nullable restore
 #else
-        public string FileUrl {
+        public string FileUrl
+        {
             get { return BackingStore?.Get<string>("fileUrl"); }
             set { BackingStore?.Set("fileUrl", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fileUrl", n => { FileUrl = n.GetStringValue(); } },
+                { "fileUrl", n => { FileUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

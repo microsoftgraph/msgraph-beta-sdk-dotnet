@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGraphNetworkaccessUpdatePolicyRules {
+namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGraphNetworkaccessUpdatePolicyRules
+{
     #pragma warning disable CS1591
-    public class UpdatePolicyRulesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdatePolicyRulesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
         /// <summary>The rules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PolicyRuleDelta>? Rules {
+        public List<PolicyRuleDelta>? Rules
+        {
             get { return BackingStore?.Get<List<PolicyRuleDelta>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<PolicyRuleDelta> Rules {
+        public List<PolicyRuleDelta> Rules
+        {
             get { return BackingStore?.Get<List<PolicyRuleDelta>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.Item.MicrosoftGr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"rules", n => { Rules = n.GetCollectionOfObjectValues<PolicyRuleDelta>(PolicyRuleDelta.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<PolicyRuleDelta>(PolicyRuleDelta.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

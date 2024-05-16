@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerTeamsPublicationInfo : PlannerTaskCreation, IParsable 
+    public class PlannerTeamsPublicationInfo : PlannerTaskCreation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when this task was last modified by the publication process. Read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the publication. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicationId {
+        public string? PublicationId
+        {
             get { return BackingStore?.Get<string?>("publicationId"); }
             set { BackingStore?.Set("publicationId", value); }
         }
 #nullable restore
 #else
-        public string PublicationId {
+        public string PublicationId
+        {
             get { return BackingStore?.Get<string>("publicationId"); }
             set { BackingStore?.Set("publicationId", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the plannerPlan this task was originally placed in. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublishedToPlanId {
+        public string? PublishedToPlanId
+        {
             get { return BackingStore?.Get<string?>("publishedToPlanId"); }
             set { BackingStore?.Set("publishedToPlanId", value); }
         }
 #nullable restore
 #else
-        public string PublishedToPlanId {
+        public string PublishedToPlanId
+        {
             get { return BackingStore?.Get<string>("publishedToPlanId"); }
             set { BackingStore?.Set("publishedToPlanId", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identifier of the team that initiated the publication process. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublishingTeamId {
+        public string? PublishingTeamId
+        {
             get { return BackingStore?.Get<string?>("publishingTeamId"); }
             set { BackingStore?.Set("publishingTeamId", value); }
         }
 #nullable restore
 #else
-        public string PublishingTeamId {
+        public string PublishingTeamId
+        {
             get { return BackingStore?.Get<string>("publishingTeamId"); }
             set { BackingStore?.Set("publishingTeamId", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the team that initiated the publication process. This display name is for reference only, and might not represent the most up-to-date name of the team. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublishingTeamName {
+        public string? PublishingTeamName
+        {
             get { return BackingStore?.Get<string?>("publishingTeamName"); }
             set { BackingStore?.Set("publishingTeamName", value); }
         }
 #nullable restore
 #else
-        public string PublishingTeamName {
+        public string PublishingTeamName
+        {
             get { return BackingStore?.Get<string>("publishingTeamName"); }
             set { BackingStore?.Set("publishingTeamName", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"publicationId", n => { PublicationId = n.GetStringValue(); } },
-                {"publishedToPlanId", n => { PublishedToPlanId = n.GetStringValue(); } },
-                {"publishingTeamId", n => { PublishingTeamId = n.GetStringValue(); } },
-                {"publishingTeamName", n => { PublishingTeamName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "publicationId", n => { PublicationId = n.GetStringValue(); } },
+                { "publishedToPlanId", n => { PublishedToPlanId = n.GetStringValue(); } },
+                { "publishingTeamId", n => { PublishingTeamId = n.GetStringValue(); } },
+                { "publishingTeamName", n => { PublishingTeamName = n.GetStringValue(); } },
             };
         }
         /// <summary>

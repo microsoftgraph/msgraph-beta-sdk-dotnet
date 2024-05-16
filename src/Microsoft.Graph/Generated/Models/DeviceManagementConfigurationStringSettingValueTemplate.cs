@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// String Setting Value Template
     /// </summary>
-    public class DeviceManagementConfigurationStringSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable 
+    public class DeviceManagementConfigurationStringSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable
     {
         /// <summary>String Setting Value Default Template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationStringSettingValueDefaultTemplate? DefaultValue {
+        public DeviceManagementConfigurationStringSettingValueDefaultTemplate? DefaultValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationStringSettingValueDefaultTemplate?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationStringSettingValueDefaultTemplate DefaultValue {
+        public DeviceManagementConfigurationStringSettingValueDefaultTemplate DefaultValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationStringSettingValueDefaultTemplate>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationStringSettingValueDefaultTemplate>(DeviceManagementConfigurationStringSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationStringSettingValueDefaultTemplate>(DeviceManagementConfigurationStringSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

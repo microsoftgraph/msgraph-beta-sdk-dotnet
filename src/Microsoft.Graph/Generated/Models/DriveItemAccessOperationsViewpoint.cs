@@ -5,63 +5,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DriveItemAccessOperationsViewpoint : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DriveItemAccessOperationsViewpoint : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the user can comment on this item.</summary>
-        public bool? CanComment {
+        public bool? CanComment
+        {
             get { return BackingStore?.Get<bool?>("canComment"); }
             set { BackingStore?.Set("canComment", value); }
         }
         /// <summary>Indicates whether the user can create files within this object. Returned only on folders.</summary>
-        public bool? CanCreateFile {
+        public bool? CanCreateFile
+        {
             get { return BackingStore?.Get<bool?>("canCreateFile"); }
             set { BackingStore?.Set("canCreateFile", value); }
         }
         /// <summary>Indicates whether the user can create folders within this object. Returned only on folders.</summary>
-        public bool? CanCreateFolder {
+        public bool? CanCreateFolder
+        {
             get { return BackingStore?.Get<bool?>("canCreateFolder"); }
             set { BackingStore?.Set("canCreateFolder", value); }
         }
         /// <summary>Indicates whether the user can delete this item.</summary>
-        public bool? CanDelete {
+        public bool? CanDelete
+        {
             get { return BackingStore?.Get<bool?>("canDelete"); }
             set { BackingStore?.Set("canDelete", value); }
         }
         /// <summary>Indicates whether the user can download this item.</summary>
-        public bool? CanDownload {
+        public bool? CanDownload
+        {
             get { return BackingStore?.Get<bool?>("canDownload"); }
             set { BackingStore?.Set("canDownload", value); }
         }
         /// <summary>Indicates whether the user can read this item.</summary>
-        public bool? CanRead {
+        public bool? CanRead
+        {
             get { return BackingStore?.Get<bool?>("canRead"); }
             set { BackingStore?.Set("canRead", value); }
         }
         /// <summary>Indicates whether the user can update this item.</summary>
-        public bool? CanUpdate {
+        public bool? CanUpdate
+        {
             get { return BackingStore?.Get<bool?>("canUpdate"); }
             set { BackingStore?.Set("canUpdate", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -92,14 +103,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"canComment", n => { CanComment = n.GetBoolValue(); } },
-                {"canCreateFile", n => { CanCreateFile = n.GetBoolValue(); } },
-                {"canCreateFolder", n => { CanCreateFolder = n.GetBoolValue(); } },
-                {"canDelete", n => { CanDelete = n.GetBoolValue(); } },
-                {"canDownload", n => { CanDownload = n.GetBoolValue(); } },
-                {"canRead", n => { CanRead = n.GetBoolValue(); } },
-                {"canUpdate", n => { CanUpdate = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "canComment", n => { CanComment = n.GetBoolValue(); } },
+                { "canCreateFile", n => { CanCreateFile = n.GetBoolValue(); } },
+                { "canCreateFolder", n => { CanCreateFolder = n.GetBoolValue(); } },
+                { "canDelete", n => { CanDelete = n.GetBoolValue(); } },
+                { "canDownload", n => { CanDownload = n.GetBoolValue(); } },
+                { "canRead", n => { CanRead = n.GetBoolValue(); } },
+                { "canUpdate", n => { CanUpdate = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole {
+namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole
+{
     [Obsolete("This class is obsolete. Use GetByUserIdAndRoleWithUserIdWithRoleGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetByUserIdAndRoleWithUserIdWithRoleResponse : GetByUserIdAndRoleWithUserIdWithRoleGetResponse, IParsable 
+    public class GetByUserIdAndRoleWithUserIdWithRoleResponse : GetByUserIdAndRoleWithUserIdWithRoleGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

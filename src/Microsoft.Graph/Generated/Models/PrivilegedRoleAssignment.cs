@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedRoleAssignment : Entity, IParsable 
+    public class PrivilegedRoleAssignment : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The expirationDateTime property</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The isElevated property</summary>
-        public bool? IsElevated {
+        public bool? IsElevated
+        {
             get { return BackingStore?.Get<bool?>("isElevated"); }
             set { BackingStore?.Set("isElevated", value); }
         }
         /// <summary>The resultMessage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultMessage {
+        public string? ResultMessage
+        {
             get { return BackingStore?.Get<string?>("resultMessage"); }
             set { BackingStore?.Set("resultMessage", value); }
         }
 #nullable restore
 #else
-        public string ResultMessage {
+        public string ResultMessage
+        {
             get { return BackingStore?.Get<string>("resultMessage"); }
             set { BackingStore?.Set("resultMessage", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleId {
+        public string? RoleId
+        {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
 #nullable restore
 #else
-        public string RoleId {
+        public string RoleId
+        {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRole? RoleInfo {
+        public PrivilegedRole? RoleInfo
+        {
             get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRole RoleInfo {
+        public PrivilegedRole RoleInfo
+        {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -93,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isElevated", n => { IsElevated = n.GetBoolValue(); } },
-                {"resultMessage", n => { ResultMessage = n.GetStringValue(); } },
-                {"roleId", n => { RoleId = n.GetStringValue(); } },
-                {"roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isElevated", n => { IsElevated = n.GetBoolValue(); } },
+                { "resultMessage", n => { ResultMessage = n.GetStringValue(); } },
+                { "roleId", n => { RoleId = n.GetStringValue(); } },
+                { "roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

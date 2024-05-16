@@ -4,28 +4,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CredentialUsageSummary : Entity, IParsable 
+    public class CredentialUsageSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authMethod property</summary>
-        public UsageAuthMethod? AuthMethod {
+        public UsageAuthMethod? AuthMethod
+        {
             get { return BackingStore?.Get<UsageAuthMethod?>("authMethod"); }
             set { BackingStore?.Set("authMethod", value); }
         }
         /// <summary>Provides the count of failed resets or registration data.</summary>
-        public long? FailureActivityCount {
+        public long? FailureActivityCount
+        {
             get { return BackingStore?.Get<long?>("failureActivityCount"); }
             set { BackingStore?.Set("failureActivityCount", value); }
         }
         /// <summary>The feature property</summary>
-        public FeatureType? Feature {
+        public FeatureType? Feature
+        {
             get { return BackingStore?.Get<FeatureType?>("feature"); }
             set { BackingStore?.Set("feature", value); }
         }
         /// <summary>Provides the count of successful registrations or resets.</summary>
-        public long? SuccessfulActivityCount {
+        public long? SuccessfulActivityCount
+        {
             get { return BackingStore?.Get<long?>("successfulActivityCount"); }
             set { BackingStore?.Set("successfulActivityCount", value); }
         }
@@ -47,10 +52,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authMethod", n => { AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
-                {"failureActivityCount", n => { FailureActivityCount = n.GetLongValue(); } },
-                {"feature", n => { Feature = n.GetEnumValue<FeatureType>(); } },
-                {"successfulActivityCount", n => { SuccessfulActivityCount = n.GetLongValue(); } },
+                { "authMethod", n => { AuthMethod = n.GetEnumValue<UsageAuthMethod>(); } },
+                { "failureActivityCount", n => { FailureActivityCount = n.GetLongValue(); } },
+                { "feature", n => { Feature = n.GetEnumValue<FeatureType>(); } },
+                { "successfulActivityCount", n => { SuccessfulActivityCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

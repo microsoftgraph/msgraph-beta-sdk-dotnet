@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents a Microsoft Bookings Business.
     /// </summary>
-    public class BookingBusiness : BookingNamedEntity, IParsable 
+    public class BookingBusiness : BookingNamedEntity, IParsable
     {
         /// <summary>The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? Address {
+        public PhysicalAddress? Address
+        {
             get { return BackingStore?.Get<PhysicalAddress?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress Address {
+        public PhysicalAddress Address
+        {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All the appointments of this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingAppointment>? Appointments {
+        public List<BookingAppointment>? Appointments
+        {
             get { return BackingStore?.Get<List<BookingAppointment>?>("appointments"); }
             set { BackingStore?.Set("appointments", value); }
         }
 #nullable restore
 #else
-        public List<BookingAppointment> Appointments {
+        public List<BookingAppointment> Appointments
+        {
             get { return BackingStore?.Get<List<BookingAppointment>>("appointments"); }
             set { BackingStore?.Set("appointments", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Settings for the published booking page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.BookingPageSettings? BookingPageSettings {
+        public Microsoft.Graph.Beta.Models.BookingPageSettings? BookingPageSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingPageSettings?>("bookingPageSettings"); }
             set { BackingStore?.Set("bookingPageSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.BookingPageSettings BookingPageSettings {
+        public Microsoft.Graph.Beta.Models.BookingPageSettings BookingPageSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingPageSettings>("bookingPageSettings"); }
             set { BackingStore?.Set("bookingPageSettings", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The hours of operation for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingWorkHours>? BusinessHours {
+        public List<BookingWorkHours>? BusinessHours
+        {
             get { return BackingStore?.Get<List<BookingWorkHours>?>("businessHours"); }
             set { BackingStore?.Set("businessHours", value); }
         }
 #nullable restore
 #else
-        public List<BookingWorkHours> BusinessHours {
+        public List<BookingWorkHours> BusinessHours
+        {
             get { return BackingStore?.Get<List<BookingWorkHours>>("businessHours"); }
             set { BackingStore?.Set("businessHours", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessType {
+        public string? BusinessType
+        {
             get { return BackingStore?.Get<string?>("businessType"); }
             set { BackingStore?.Set("businessType", value); }
         }
 #nullable restore
 #else
-        public string BusinessType {
+        public string BusinessType
+        {
             get { return BackingStore?.Get<string>("businessType"); }
             set { BackingStore?.Set("businessType", value); }
         }
@@ -83,32 +94,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The set of appointments of this business in a specified date range. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingAppointment>? CalendarView {
+        public List<BookingAppointment>? CalendarView
+        {
             get { return BackingStore?.Get<List<BookingAppointment>?>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
 #nullable restore
 #else
-        public List<BookingAppointment> CalendarView {
+        public List<BookingAppointment> CalendarView
+        {
             get { return BackingStore?.Get<List<BookingAppointment>>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
 #endif
         /// <summary>The date, time and timezone when the booking business was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>All the customers of this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingCustomer>? Customers {
+        public List<BookingCustomer>? Customers
+        {
             get { return BackingStore?.Get<List<BookingCustomer>?>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
 #nullable restore
 #else
-        public List<BookingCustomer> Customers {
+        public List<BookingCustomer> Customers
+        {
             get { return BackingStore?.Get<List<BookingCustomer>>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
@@ -116,13 +132,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All custom questions of this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingCustomQuestion>? CustomQuestions {
+        public List<BookingCustomQuestion>? CustomQuestions
+        {
             get { return BackingStore?.Get<List<BookingCustomQuestion>?>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
 #nullable restore
 #else
-        public List<BookingCustomQuestion> CustomQuestions {
+        public List<BookingCustomQuestion> CustomQuestions
+        {
             get { return BackingStore?.Get<List<BookingCustomQuestion>>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
@@ -130,13 +148,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The code for the currency that the business operates in on Microsoft Bookings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultCurrencyIso {
+        public string? DefaultCurrencyIso
+        {
             get { return BackingStore?.Get<string?>("defaultCurrencyIso"); }
             set { BackingStore?.Set("defaultCurrencyIso", value); }
         }
 #nullable restore
 #else
-        public string DefaultCurrencyIso {
+        public string DefaultCurrencyIso
+        {
             get { return BackingStore?.Get<string>("defaultCurrencyIso"); }
             set { BackingStore?.Set("defaultCurrencyIso", value); }
         }
@@ -144,51 +164,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The email address for the business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #endif
         /// <summary>The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.</summary>
-        public bool? IsPublished {
+        public bool? IsPublished
+        {
             get { return BackingStore?.Get<bool?>("isPublished"); }
             set { BackingStore?.Set("isPublished", value); }
         }
         /// <summary>The language of the self service booking page</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageTag {
+        public string? LanguageTag
+        {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
 #nullable restore
 #else
-        public string LanguageTag {
+        public string LanguageTag
+        {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
 #endif
         /// <summary>The date, time and timezone when the booking business was last updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Phone {
+        public string? Phone
+        {
             get { return BackingStore?.Get<string?>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
 #nullable restore
 #else
-        public string Phone {
+        public string Phone
+        {
             get { return BackingStore?.Get<string>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
@@ -196,13 +224,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicUrl {
+        public string? PublicUrl
+        {
             get { return BackingStore?.Get<string?>("publicUrl"); }
             set { BackingStore?.Set("publicUrl", value); }
         }
 #nullable restore
 #else
-        public string PublicUrl {
+        public string PublicUrl
+        {
             get { return BackingStore?.Get<string>("publicUrl"); }
             set { BackingStore?.Set("publicUrl", value); }
         }
@@ -210,13 +240,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specifies how bookings can be created for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BookingSchedulingPolicy? SchedulingPolicy {
+        public BookingSchedulingPolicy? SchedulingPolicy
+        {
             get { return BackingStore?.Get<BookingSchedulingPolicy?>("schedulingPolicy"); }
             set { BackingStore?.Set("schedulingPolicy", value); }
         }
 #nullable restore
 #else
-        public BookingSchedulingPolicy SchedulingPolicy {
+        public BookingSchedulingPolicy SchedulingPolicy
+        {
             get { return BackingStore?.Get<BookingSchedulingPolicy>("schedulingPolicy"); }
             set { BackingStore?.Set("schedulingPolicy", value); }
         }
@@ -224,13 +256,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All the services offered by this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingService>? Services {
+        public List<BookingService>? Services
+        {
             get { return BackingStore?.Get<List<BookingService>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #nullable restore
 #else
-        public List<BookingService> Services {
+        public List<BookingService> Services
+        {
             get { return BackingStore?.Get<List<BookingService>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
@@ -238,13 +272,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All the staff members that provide services in this business. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingStaffMember>? StaffMembers {
+        public List<BookingStaffMember>? StaffMembers
+        {
             get { return BackingStore?.Get<List<BookingStaffMember>?>("staffMembers"); }
             set { BackingStore?.Set("staffMembers", value); }
         }
 #nullable restore
 #else
-        public List<BookingStaffMember> StaffMembers {
+        public List<BookingStaffMember> StaffMembers
+        {
             get { return BackingStore?.Get<List<BookingStaffMember>>("staffMembers"); }
             set { BackingStore?.Set("staffMembers", value); }
         }
@@ -252,13 +288,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebSiteUrl {
+        public string? WebSiteUrl
+        {
             get { return BackingStore?.Get<string?>("webSiteUrl"); }
             set { BackingStore?.Set("webSiteUrl", value); }
         }
 #nullable restore
 #else
-        public string WebSiteUrl {
+        public string WebSiteUrl
+        {
             get { return BackingStore?.Get<string>("webSiteUrl"); }
             set { BackingStore?.Set("webSiteUrl", value); }
         }
@@ -288,26 +326,26 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"appointments", n => { Appointments = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"bookingPageSettings", n => { BookingPageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.BookingPageSettings>(Microsoft.Graph.Beta.Models.BookingPageSettings.CreateFromDiscriminatorValue); } },
-                {"businessHours", n => { BusinessHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"businessType", n => { BusinessType = n.GetStringValue(); } },
-                {"calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<BookingCustomQuestion>(BookingCustomQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomer>(BookingCustomer.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"defaultCurrencyIso", n => { DefaultCurrencyIso = n.GetStringValue(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"isPublished", n => { IsPublished = n.GetBoolValue(); } },
-                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"phone", n => { Phone = n.GetStringValue(); } },
-                {"publicUrl", n => { PublicUrl = n.GetStringValue(); } },
-                {"schedulingPolicy", n => { SchedulingPolicy = n.GetObjectValue<BookingSchedulingPolicy>(BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
-                {"services", n => { Services = n.GetCollectionOfObjectValues<BookingService>(BookingService.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"staffMembers", n => { StaffMembers = n.GetCollectionOfObjectValues<BookingStaffMember>(BookingStaffMember.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"webSiteUrl", n => { WebSiteUrl = n.GetStringValue(); } },
+                { "address", n => { Address = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "appointments", n => { Appointments = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bookingPageSettings", n => { BookingPageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.BookingPageSettings>(Microsoft.Graph.Beta.Models.BookingPageSettings.CreateFromDiscriminatorValue); } },
+                { "businessHours", n => { BusinessHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "businessType", n => { BusinessType = n.GetStringValue(); } },
+                { "calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<BookingAppointment>(BookingAppointment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<BookingCustomQuestion>(BookingCustomQuestion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomer>(BookingCustomer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultCurrencyIso", n => { DefaultCurrencyIso = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "isPublished", n => { IsPublished = n.GetBoolValue(); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "phone", n => { Phone = n.GetStringValue(); } },
+                { "publicUrl", n => { PublicUrl = n.GetStringValue(); } },
+                { "schedulingPolicy", n => { SchedulingPolicy = n.GetObjectValue<BookingSchedulingPolicy>(BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
+                { "services", n => { Services = n.GetCollectionOfObjectValues<BookingService>(BookingService.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "staffMembers", n => { StaffMembers = n.GetCollectionOfObjectValues<BookingStaffMember>(BookingStaffMember.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "webSiteUrl", n => { WebSiteUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

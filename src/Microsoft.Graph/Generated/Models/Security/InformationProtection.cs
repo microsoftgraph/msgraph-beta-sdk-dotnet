@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class InformationProtection : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class InformationProtection : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read the Microsoft Purview Information Protection policy settings for the user or organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InformationProtectionPolicySetting? LabelPolicySettings {
+        public InformationProtectionPolicySetting? LabelPolicySettings
+        {
             get { return BackingStore?.Get<InformationProtectionPolicySetting?>("labelPolicySettings"); }
             set { BackingStore?.Set("labelPolicySettings", value); }
         }
 #nullable restore
 #else
-        public InformationProtectionPolicySetting LabelPolicySettings {
+        public InformationProtectionPolicySetting LabelPolicySettings
+        {
             get { return BackingStore?.Get<InformationProtectionPolicySetting>("labelPolicySettings"); }
             set { BackingStore?.Set("labelPolicySettings", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Read the Microsoft Purview Information Protection labels for the user or organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitivityLabel>? SensitivityLabels {
+        public List<SensitivityLabel>? SensitivityLabels
+        {
             get { return BackingStore?.Get<List<SensitivityLabel>?>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
 #nullable restore
 #else
-        public List<SensitivityLabel> SensitivityLabels {
+        public List<SensitivityLabel> SensitivityLabels
+        {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"labelPolicySettings", n => { LabelPolicySettings = n.GetObjectValue<InformationProtectionPolicySetting>(InformationProtectionPolicySetting.CreateFromDiscriminatorValue); } },
-                {"sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "labelPolicySettings", n => { LabelPolicySettings = n.GetObjectValue<InformationProtectionPolicySetting>(InformationProtectionPolicySetting.CreateFromDiscriminatorValue); } },
+                { "sensitivityLabels", n => { SensitivityLabels = n.GetCollectionOfObjectValues<SensitivityLabel>(SensitivityLabel.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,28 +5,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MeetingCapability : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MeetingCapability : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates whether anonymous users dialout is allowed in a meeting.</summary>
-        public bool? AllowAnonymousUsersToDialOut {
+        public bool? AllowAnonymousUsersToDialOut
+        {
             get { return BackingStore?.Get<bool?>("allowAnonymousUsersToDialOut"); }
             set { BackingStore?.Set("allowAnonymousUsersToDialOut", value); }
         }
         /// <summary>Indicates whether anonymous users are allowed to start a meeting.</summary>
-        public bool? AllowAnonymousUsersToStartMeeting {
+        public bool? AllowAnonymousUsersToStartMeeting
+        {
             get { return BackingStore?.Get<bool?>("allowAnonymousUsersToStartMeeting"); }
             set { BackingStore?.Set("allowAnonymousUsersToStartMeeting", value); }
         }
         /// <summary>The autoAdmittedUsers property</summary>
-        public AutoAdmittedUsersType? AutoAdmittedUsers {
+        public AutoAdmittedUsersType? AutoAdmittedUsers
+        {
             get { return BackingStore?.Get<AutoAdmittedUsersType?>("autoAdmittedUsers"); }
             set { BackingStore?.Set("autoAdmittedUsers", value); }
         }
@@ -35,13 +40,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowAnonymousUsersToDialOut", n => { AllowAnonymousUsersToDialOut = n.GetBoolValue(); } },
-                {"allowAnonymousUsersToStartMeeting", n => { AllowAnonymousUsersToStartMeeting = n.GetBoolValue(); } },
-                {"autoAdmittedUsers", n => { AutoAdmittedUsers = n.GetEnumValue<AutoAdmittedUsersType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowAnonymousUsersToDialOut", n => { AllowAnonymousUsersToDialOut = n.GetBoolValue(); } },
+                { "allowAnonymousUsersToStartMeeting", n => { AllowAnonymousUsersToStartMeeting = n.GetBoolValue(); } },
+                { "autoAdmittedUsers", n => { AutoAdmittedUsers = n.GetEnumValue<AutoAdmittedUsersType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

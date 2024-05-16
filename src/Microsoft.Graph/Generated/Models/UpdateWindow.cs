@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UpdateWindow : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateWindow : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,24 +23,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>End of a time window during which agents can receive updates</summary>
-        public Time? UpdateWindowEndTime {
+        public Time? UpdateWindowEndTime
+        {
             get { return BackingStore?.Get<Time?>("updateWindowEndTime"); }
             set { BackingStore?.Set("updateWindowEndTime", value); }
         }
         /// <summary>Start of a time window during which agents can receive updates</summary>
-        public Time? UpdateWindowStartTime {
+        public Time? UpdateWindowStartTime
+        {
             get { return BackingStore?.Get<Time?>("updateWindowStartTime"); }
             set { BackingStore?.Set("updateWindowStartTime", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"updateWindowEndTime", n => { UpdateWindowEndTime = n.GetTimeValue(); } },
-                {"updateWindowStartTime", n => { UpdateWindowStartTime = n.GetTimeValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "updateWindowEndTime", n => { UpdateWindowEndTime = n.GetTimeValue(); } },
+                { "updateWindowStartTime", n => { UpdateWindowStartTime = n.GetTimeValue(); } },
             };
         }
         /// <summary>

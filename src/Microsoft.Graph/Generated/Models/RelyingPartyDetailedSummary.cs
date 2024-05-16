@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RelyingPartyDetailedSummary : Entity, IParsable 
+    public class RelyingPartyDetailedSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Number of failed sign in on Active Directory Federation Service in the period specified.</summary>
-        public long? FailedSignInCount {
+        public long? FailedSignInCount
+        {
             get { return BackingStore?.Get<long?>("failedSignInCount"); }
             set { BackingStore?.Set("failedSignInCount", value); }
         }
         /// <summary>The migrationStatus property</summary>
-        public Microsoft.Graph.Beta.Models.MigrationStatus? MigrationStatus {
+        public Microsoft.Graph.Beta.Models.MigrationStatus? MigrationStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MigrationStatus?>("migrationStatus"); }
             set { BackingStore?.Set("migrationStatus", value); }
         }
         /// <summary>Specifies all the validations check done on applications configuration details to evaluate if the application is ready to be moved to Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? MigrationValidationDetails {
+        public List<KeyValuePair>? MigrationValidationDetails
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("migrationValidationDetails"); }
             set { BackingStore?.Set("migrationValidationDetails", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> MigrationValidationDetails {
+        public List<KeyValuePair> MigrationValidationDetails
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("migrationValidationDetails"); }
             set { BackingStore?.Set("migrationValidationDetails", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This identifier is used to identify the relying party to this Federation Service. It&apos;s used when issuing claims to the relying party.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelyingPartyId {
+        public string? RelyingPartyId
+        {
             get { return BackingStore?.Get<string?>("relyingPartyId"); }
             set { BackingStore?.Set("relyingPartyId", value); }
         }
 #nullable restore
 #else
-        public string RelyingPartyId {
+        public string RelyingPartyId
+        {
             get { return BackingStore?.Get<string>("relyingPartyId"); }
             set { BackingStore?.Set("relyingPartyId", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of application or other entity on the internet that uses an identity provider to authenticate a user who wants to sign in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RelyingPartyName {
+        public string? RelyingPartyName
+        {
             get { return BackingStore?.Get<string?>("relyingPartyName"); }
             set { BackingStore?.Set("relyingPartyName", value); }
         }
 #nullable restore
 #else
-        public string RelyingPartyName {
+        public string RelyingPartyName
+        {
             get { return BackingStore?.Get<string>("relyingPartyName"); }
             set { BackingStore?.Set("relyingPartyName", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specifies where the relying party expects to receive the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ReplyUrls {
+        public List<string>? ReplyUrls
+        {
             get { return BackingStore?.Get<List<string>?>("replyUrls"); }
             set { BackingStore?.Set("replyUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> ReplyUrls {
+        public List<string> ReplyUrls
+        {
             get { return BackingStore?.Get<List<string>>("replyUrls"); }
             set { BackingStore?.Set("replyUrls", value); }
         }
@@ -78,34 +89,40 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Uniquely identifies the Active Directory forest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceId {
+        public string? ServiceId
+        {
             get { return BackingStore?.Get<string?>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
 #nullable restore
 #else
-        public string ServiceId {
+        public string ServiceId
+        {
             get { return BackingStore?.Get<string>("serviceId"); }
             set { BackingStore?.Set("serviceId", value); }
         }
 #endif
         /// <summary>Number of successful / (number of successful + number of failed sign ins) on Active Directory Federation Service in the period specified.</summary>
-        public double? SignInSuccessRate {
+        public double? SignInSuccessRate
+        {
             get { return BackingStore?.Get<double?>("signInSuccessRate"); }
             set { BackingStore?.Set("signInSuccessRate", value); }
         }
         /// <summary>Number of successful sign ins on Active Directory Federation Service.</summary>
-        public long? SuccessfulSignInCount {
+        public long? SuccessfulSignInCount
+        {
             get { return BackingStore?.Get<long?>("successfulSignInCount"); }
             set { BackingStore?.Set("successfulSignInCount", value); }
         }
         /// <summary>Number of successful + failed sign ins on Active Directory Federation Service in the period specified.</summary>
-        public long? TotalSignInCount {
+        public long? TotalSignInCount
+        {
             get { return BackingStore?.Get<long?>("totalSignInCount"); }
             set { BackingStore?.Set("totalSignInCount", value); }
         }
         /// <summary>Number of unique users that have signed into the application.</summary>
-        public long? UniqueUserCount {
+        public long? UniqueUserCount
+        {
             get { return BackingStore?.Get<long?>("uniqueUserCount"); }
             set { BackingStore?.Set("uniqueUserCount", value); }
         }
@@ -127,17 +144,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
-                {"migrationStatus", n => { MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
-                {"migrationValidationDetails", n => { MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"relyingPartyId", n => { RelyingPartyId = n.GetStringValue(); } },
-                {"relyingPartyName", n => { RelyingPartyName = n.GetStringValue(); } },
-                {"replyUrls", n => { ReplyUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"serviceId", n => { ServiceId = n.GetStringValue(); } },
-                {"signInSuccessRate", n => { SignInSuccessRate = n.GetDoubleValue(); } },
-                {"successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },
-                {"totalSignInCount", n => { TotalSignInCount = n.GetLongValue(); } },
-                {"uniqueUserCount", n => { UniqueUserCount = n.GetLongValue(); } },
+                { "failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
+                { "migrationStatus", n => { MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
+                { "migrationValidationDetails", n => { MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "relyingPartyId", n => { RelyingPartyId = n.GetStringValue(); } },
+                { "relyingPartyName", n => { RelyingPartyName = n.GetStringValue(); } },
+                { "replyUrls", n => { ReplyUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "serviceId", n => { ServiceId = n.GetStringValue(); } },
+                { "signInSuccessRate", n => { SignInSuccessRate = n.GetDoubleValue(); } },
+                { "successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },
+                { "totalSignInCount", n => { TotalSignInCount = n.GetLongValue(); } },
+                { "uniqueUserCount", n => { UniqueUserCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

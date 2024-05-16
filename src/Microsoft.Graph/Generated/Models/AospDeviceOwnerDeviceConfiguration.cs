@@ -4,79 +4,94 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerAOSPDeviceConfiguration resource.
     /// </summary>
-    public class AospDeviceOwnerDeviceConfiguration : DeviceConfiguration, IParsable 
+    public class AospDeviceOwnerDeviceConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not the user is allowed to enable unknown sources setting. When set to true, user is not allowed to enable unknown sources settings.</summary>
-        public bool? AppsBlockInstallFromUnknownSources {
+        public bool? AppsBlockInstallFromUnknownSources
+        {
             get { return BackingStore?.Get<bool?>("appsBlockInstallFromUnknownSources"); }
             set { BackingStore?.Set("appsBlockInstallFromUnknownSources", value); }
         }
         /// <summary>Indicates whether or not to block a user from configuring bluetooth.</summary>
-        public bool? BluetoothBlockConfiguration {
+        public bool? BluetoothBlockConfiguration
+        {
             get { return BackingStore?.Get<bool?>("bluetoothBlockConfiguration"); }
             set { BackingStore?.Set("bluetoothBlockConfiguration", value); }
         }
         /// <summary>Indicates whether or not to disable the use of bluetooth. When set to true, bluetooth cannot be enabled on the device.</summary>
-        public bool? BluetoothBlocked {
+        public bool? BluetoothBlocked
+        {
             get { return BackingStore?.Get<bool?>("bluetoothBlocked"); }
             set { BackingStore?.Set("bluetoothBlocked", value); }
         }
         /// <summary>Indicates whether or not to disable the use of the camera.</summary>
-        public bool? CameraBlocked {
+        public bool? CameraBlocked
+        {
             get { return BackingStore?.Get<bool?>("cameraBlocked"); }
             set { BackingStore?.Set("cameraBlocked", value); }
         }
         /// <summary>Indicates whether or not the factory reset option in settings is disabled.</summary>
-        public bool? FactoryResetBlocked {
+        public bool? FactoryResetBlocked
+        {
             get { return BackingStore?.Get<bool?>("factoryResetBlocked"); }
             set { BackingStore?.Set("factoryResetBlocked", value); }
         }
         /// <summary>Indicates the minimum length of the password required on the device. Valid values 4 to 16</summary>
-        public int? PasswordMinimumLength {
+        public int? PasswordMinimumLength
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
             set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before the screen times out.</summary>
-        public int? PasswordMinutesOfInactivityBeforeScreenTimeout {
+        public int? PasswordMinutesOfInactivityBeforeScreenTimeout
+        {
             get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeScreenTimeout"); }
             set { BackingStore?.Set("passwordMinutesOfInactivityBeforeScreenTimeout", value); }
         }
         /// <summary>Indicates the minimum password quality required on the device. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
-        public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType {
+        public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Indicates the number of times a user can enter an incorrect password before the device is wiped. Valid values 4 to 11</summary>
-        public int? PasswordSignInFailureCountBeforeFactoryReset {
+        public int? PasswordSignInFailureCountBeforeFactoryReset
+        {
             get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
             set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>Indicates whether or not to disable the capability to take screenshots.</summary>
-        public bool? ScreenCaptureBlocked {
+        public bool? ScreenCaptureBlocked
+        {
             get { return BackingStore?.Get<bool?>("screenCaptureBlocked"); }
             set { BackingStore?.Set("screenCaptureBlocked", value); }
         }
         /// <summary>Indicates whether or not to block the user from enabling debugging features on the device.</summary>
-        public bool? SecurityAllowDebuggingFeatures {
+        public bool? SecurityAllowDebuggingFeatures
+        {
             get { return BackingStore?.Get<bool?>("securityAllowDebuggingFeatures"); }
             set { BackingStore?.Set("securityAllowDebuggingFeatures", value); }
         }
         /// <summary>Indicates whether or not to block external media.</summary>
-        public bool? StorageBlockExternalMedia {
+        public bool? StorageBlockExternalMedia
+        {
             get { return BackingStore?.Get<bool?>("storageBlockExternalMedia"); }
             set { BackingStore?.Set("storageBlockExternalMedia", value); }
         }
         /// <summary>Indicates whether or not to block USB file transfer.</summary>
-        public bool? StorageBlockUsbFileTransfer {
+        public bool? StorageBlockUsbFileTransfer
+        {
             get { return BackingStore?.Get<bool?>("storageBlockUsbFileTransfer"); }
             set { BackingStore?.Set("storageBlockUsbFileTransfer", value); }
         }
         /// <summary>Indicates whether or not to block the user from editing the wifi connection settings.</summary>
-        public bool? WifiBlockEditConfigurations {
+        public bool? WifiBlockEditConfigurations
+        {
             get { return BackingStore?.Get<bool?>("wifiBlockEditConfigurations"); }
             set { BackingStore?.Set("wifiBlockEditConfigurations", value); }
         }
@@ -105,20 +120,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appsBlockInstallFromUnknownSources", n => { AppsBlockInstallFromUnknownSources = n.GetBoolValue(); } },
-                {"bluetoothBlockConfiguration", n => { BluetoothBlockConfiguration = n.GetBoolValue(); } },
-                {"bluetoothBlocked", n => { BluetoothBlocked = n.GetBoolValue(); } },
-                {"cameraBlocked", n => { CameraBlocked = n.GetBoolValue(); } },
-                {"factoryResetBlocked", n => { FactoryResetBlocked = n.GetBoolValue(); } },
-                {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
-                {"passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
-                {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordType>(); } },
-                {"passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
-                {"screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
-                {"securityAllowDebuggingFeatures", n => { SecurityAllowDebuggingFeatures = n.GetBoolValue(); } },
-                {"storageBlockExternalMedia", n => { StorageBlockExternalMedia = n.GetBoolValue(); } },
-                {"storageBlockUsbFileTransfer", n => { StorageBlockUsbFileTransfer = n.GetBoolValue(); } },
-                {"wifiBlockEditConfigurations", n => { WifiBlockEditConfigurations = n.GetBoolValue(); } },
+                { "appsBlockInstallFromUnknownSources", n => { AppsBlockInstallFromUnknownSources = n.GetBoolValue(); } },
+                { "bluetoothBlockConfiguration", n => { BluetoothBlockConfiguration = n.GetBoolValue(); } },
+                { "bluetoothBlocked", n => { BluetoothBlocked = n.GetBoolValue(); } },
+                { "cameraBlocked", n => { CameraBlocked = n.GetBoolValue(); } },
+                { "factoryResetBlocked", n => { FactoryResetBlocked = n.GetBoolValue(); } },
+                { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
+                { "passwordMinutesOfInactivityBeforeScreenTimeout", n => { PasswordMinutesOfInactivityBeforeScreenTimeout = n.GetIntValue(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordType>(); } },
+                { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
+                { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
+                { "securityAllowDebuggingFeatures", n => { SecurityAllowDebuggingFeatures = n.GetBoolValue(); } },
+                { "storageBlockExternalMedia", n => { StorageBlockExternalMedia = n.GetBoolValue(); } },
+                { "storageBlockUsbFileTransfer", n => { StorageBlockUsbFileTransfer = n.GetBoolValue(); } },
+                { "wifiBlockEditConfigurations", n => { WifiBlockEditConfigurations = n.GetBoolValue(); } },
             };
         }
         /// <summary>

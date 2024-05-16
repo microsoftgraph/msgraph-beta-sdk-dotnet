@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OpenNetworkAzureSecurityGroupFinding : Finding, IParsable 
+    public class OpenNetworkAzureSecurityGroupFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The inboundPorts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.InboundPorts? InboundPorts {
+        public Microsoft.Graph.Beta.Models.InboundPorts? InboundPorts
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InboundPorts?>("inboundPorts"); }
             set { BackingStore?.Set("inboundPorts", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.InboundPorts InboundPorts {
+        public Microsoft.Graph.Beta.Models.InboundPorts InboundPorts
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InboundPorts>("inboundPorts"); }
             set { BackingStore?.Set("inboundPorts", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The securityGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? SecurityGroup {
+        public AuthorizationSystemResource? SecurityGroup
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource?>("securityGroup"); }
             set { BackingStore?.Set("securityGroup", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource SecurityGroup {
+        public AuthorizationSystemResource SecurityGroup
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource>("securityGroup"); }
             set { BackingStore?.Set("securityGroup", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents a virtual machine in an authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualMachineDetails>? VirtualMachines {
+        public List<VirtualMachineDetails>? VirtualMachines
+        {
             get { return BackingStore?.Get<List<VirtualMachineDetails>?>("virtualMachines"); }
             set { BackingStore?.Set("virtualMachines", value); }
         }
 #nullable restore
 #else
-        public List<VirtualMachineDetails> VirtualMachines {
+        public List<VirtualMachineDetails> VirtualMachines
+        {
             get { return BackingStore?.Get<List<VirtualMachineDetails>>("virtualMachines"); }
             set { BackingStore?.Set("virtualMachines", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"inboundPorts", n => { InboundPorts = n.GetObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>(Microsoft.Graph.Beta.Models.InboundPorts.CreateFromDiscriminatorValue); } },
-                {"securityGroup", n => { SecurityGroup = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
-                {"virtualMachines", n => { VirtualMachines = n.GetCollectionOfObjectValues<VirtualMachineDetails>(VirtualMachineDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inboundPorts", n => { InboundPorts = n.GetObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>(Microsoft.Graph.Beta.Models.InboundPorts.CreateFromDiscriminatorValue); } },
+                { "securityGroup", n => { SecurityGroup = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "virtualMachines", n => { VirtualMachines = n.GetCollectionOfObjectValues<VirtualMachineDetails>(VirtualMachineDetails.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

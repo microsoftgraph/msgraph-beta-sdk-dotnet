@@ -5,42 +5,49 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InactiveUsersByApplicationMetricBase : Entity, IParsable 
+    public class InactiveUsersByApplicationMetricBase : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #endif
         /// <summary>The factDate property</summary>
-        public Date? FactDate {
+        public Date? FactDate
+        {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
         /// <summary>The inactive30DayCount property</summary>
-        public long? Inactive30DayCount {
+        public long? Inactive30DayCount
+        {
             get { return BackingStore?.Get<long?>("inactive30DayCount"); }
             set { BackingStore?.Set("inactive30DayCount", value); }
         }
         /// <summary>The inactive60DayCount property</summary>
-        public long? Inactive60DayCount {
+        public long? Inactive60DayCount
+        {
             get { return BackingStore?.Get<long?>("inactive60DayCount"); }
             set { BackingStore?.Set("inactive60DayCount", value); }
         }
         /// <summary>The inactive90DayCount property</summary>
-        public long? Inactive90DayCount {
+        public long? Inactive90DayCount
+        {
             get { return BackingStore?.Get<long?>("inactive90DayCount"); }
             set { BackingStore?.Set("inactive90DayCount", value); }
         }
@@ -68,11 +75,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"factDate", n => { FactDate = n.GetDateValue(); } },
-                {"inactive30DayCount", n => { Inactive30DayCount = n.GetLongValue(); } },
-                {"inactive60DayCount", n => { Inactive60DayCount = n.GetLongValue(); } },
-                {"inactive90DayCount", n => { Inactive90DayCount = n.GetLongValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "factDate", n => { FactDate = n.GetDateValue(); } },
+                { "inactive30DayCount", n => { Inactive30DayCount = n.GetLongValue(); } },
+                { "inactive60DayCount", n => { Inactive60DayCount = n.GetLongValue(); } },
+                { "inactive90DayCount", n => { Inactive90DayCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

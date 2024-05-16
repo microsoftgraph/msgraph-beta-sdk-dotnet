@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomConfiguration resource.
     /// </summary>
-    public class MacOSCustomConfiguration : DeviceConfiguration, IParsable 
+    public class MacOSCustomConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Indicates the channel used to deploy the configuration profile. Available choices are DeviceChannel, UserChannel</summary>
-        public AppleDeploymentChannel? DeploymentChannel {
+        public AppleDeploymentChannel? DeploymentChannel
+        {
             get { return BackingStore?.Get<AppleDeploymentChannel?>("deploymentChannel"); }
             set { BackingStore?.Set("deploymentChannel", value); }
         }
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Payload {
+        public byte[]? Payload
+        {
             get { return BackingStore?.Get<byte[]?>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
 #nullable restore
 #else
-        public byte[] Payload {
+        public byte[] Payload
+        {
             get { return BackingStore?.Get<byte[]>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Payload file name (.mobileconfig</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadFileName {
+        public string? PayloadFileName
+        {
             get { return BackingStore?.Get<string?>("payloadFileName"); }
             set { BackingStore?.Set("payloadFileName", value); }
         }
 #nullable restore
 #else
-        public string PayloadFileName {
+        public string PayloadFileName
+        {
             get { return BackingStore?.Get<string>("payloadFileName"); }
             set { BackingStore?.Set("payloadFileName", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name that is displayed to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadName {
+        public string? PayloadName
+        {
             get { return BackingStore?.Get<string?>("payloadName"); }
             set { BackingStore?.Set("payloadName", value); }
         }
 #nullable restore
 #else
-        public string PayloadName {
+        public string PayloadName
+        {
             get { return BackingStore?.Get<string>("payloadName"); }
             set { BackingStore?.Set("payloadName", value); }
         }
@@ -82,10 +90,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deploymentChannel", n => { DeploymentChannel = n.GetEnumValue<AppleDeploymentChannel>(); } },
-                {"payload", n => { Payload = n.GetByteArrayValue(); } },
-                {"payloadFileName", n => { PayloadFileName = n.GetStringValue(); } },
-                {"payloadName", n => { PayloadName = n.GetStringValue(); } },
+                { "deploymentChannel", n => { DeploymentChannel = n.GetEnumValue<AppleDeploymentChannel>(); } },
+                { "payload", n => { Payload = n.GetByteArrayValue(); } },
+                { "payloadFileName", n => { PayloadFileName = n.GetStringValue(); } },
+                { "payloadName", n => { PayloadName = n.GetStringValue(); } },
             };
         }
         /// <summary>

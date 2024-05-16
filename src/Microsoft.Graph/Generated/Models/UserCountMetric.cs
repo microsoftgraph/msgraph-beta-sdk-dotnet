@@ -5,31 +5,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserCountMetric : Entity, IParsable 
+    public class UserCountMetric : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The total number of users in the tenant over time.</summary>
-        public long? Count {
+        public long? Count
+        {
             get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
         /// <summary>The date of the insight.</summary>
-        public Date? FactDate {
+        public Date? FactDate
+        {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -52,9 +57,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"count", n => { Count = n.GetLongValue(); } },
-                {"factDate", n => { FactDate = n.GetDateValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
+                { "count", n => { Count = n.GetLongValue(); } },
+                { "factDate", n => { FactDate = n.GetDateValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
             };
         }
         /// <summary>

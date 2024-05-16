@@ -5,28 +5,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains the set of ResourceActions determining the allowed and not allowed permissions for each role.
     /// </summary>
-    public class RolePermission : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RolePermission : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Allowed Actions - Deprecated</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Actions {
+        public List<string>? Actions
+        {
             get { return BackingStore?.Get<List<string>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<string> Actions {
+        public List<string> Actions
+        {
             get { return BackingStore?.Get<List<string>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Resource Actions each containing a set of allowed and not allowed permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResourceAction>? ResourceActions {
+        public List<ResourceAction>? ResourceActions
+        {
             get { return BackingStore?.Get<List<ResourceAction>?>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
 #nullable restore
 #else
-        public List<ResourceAction> ResourceActions {
+        public List<ResourceAction> ResourceActions
+        {
             get { return BackingStore?.Get<List<ResourceAction>>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<ResourceAction>(ResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resourceActions", n => { ResourceActions = n.GetCollectionOfObjectValues<ResourceAction>(ResourceAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Trusted Root and PFX certificates for iOS EDU.
     /// </summary>
-    public class IosEduCertificateSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IosEduCertificateSettings : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertFileName {
+        public string? CertFileName
+        {
             get { return BackingStore?.Get<string?>("certFileName"); }
             set { BackingStore?.Set("certFileName", value); }
         }
 #nullable restore
 #else
-        public string CertFileName {
+        public string CertFileName
+        {
             get { return BackingStore?.Get<string>("certFileName"); }
             set { BackingStore?.Set("certFileName", value); }
         }
@@ -35,37 +39,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>PKCS Certificate Template Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateTemplateName {
+        public string? CertificateTemplateName
+        {
             get { return BackingStore?.Get<string?>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
 #nullable restore
 #else
-        public string CertificateTemplateName {
+        public string CertificateTemplateName
+        {
             get { return BackingStore?.Get<string>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
 #endif
         /// <summary>Certificate Validity Period Options.</summary>
-        public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
+        public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodScale"); }
             set { BackingStore?.Set("certificateValidityPeriodScale", value); }
         }
         /// <summary>Value for the Certificate Validity Period.</summary>
-        public int? CertificateValidityPeriodValue {
+        public int? CertificateValidityPeriodValue
+        {
             get { return BackingStore?.Get<int?>("certificateValidityPeriodValue"); }
             set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
         /// <summary>PKCS Certification Authority.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificationAuthority {
+        public string? CertificationAuthority
+        {
             get { return BackingStore?.Get<string?>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
 #nullable restore
 #else
-        public string CertificationAuthority {
+        public string CertificationAuthority
+        {
             get { return BackingStore?.Get<string>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>PKCS Certification Authority Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificationAuthorityName {
+        public string? CertificationAuthorityName
+        {
             get { return BackingStore?.Get<string?>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
 #nullable restore
 #else
-        public string CertificationAuthorityName {
+        public string CertificationAuthorityName
+        {
             get { return BackingStore?.Get<string>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
@@ -87,32 +99,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Certificate renewal threshold percentage. Valid values 1 to 99</summary>
-        public int? RenewalThresholdPercentage {
+        public int? RenewalThresholdPercentage
+        {
             get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
             set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
         /// <summary>Trusted Root Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? TrustedRootCertificate {
+        public byte[]? TrustedRootCertificate
+        {
             get { return BackingStore?.Get<byte[]?>("trustedRootCertificate"); }
             set { BackingStore?.Set("trustedRootCertificate", value); }
         }
 #nullable restore
 #else
-        public byte[] TrustedRootCertificate {
+        public byte[] TrustedRootCertificate
+        {
             get { return BackingStore?.Get<byte[]>("trustedRootCertificate"); }
             set { BackingStore?.Set("trustedRootCertificate", value); }
         }
@@ -143,15 +160,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"certFileName", n => { CertFileName = n.GetStringValue(); } },
-                {"certificateTemplateName", n => { CertificateTemplateName = n.GetStringValue(); } },
-                {"certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
-                {"certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
-                {"certificationAuthority", n => { CertificationAuthority = n.GetStringValue(); } },
-                {"certificationAuthorityName", n => { CertificationAuthorityName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
-                {"trustedRootCertificate", n => { TrustedRootCertificate = n.GetByteArrayValue(); } },
+                { "certFileName", n => { CertFileName = n.GetStringValue(); } },
+                { "certificateTemplateName", n => { CertificateTemplateName = n.GetStringValue(); } },
+                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
+                { "certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
+                { "certificationAuthority", n => { CertificationAuthority = n.GetStringValue(); } },
+                { "certificationAuthorityName", n => { CertificationAuthorityName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
+                { "trustedRootCertificate", n => { TrustedRootCertificate = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

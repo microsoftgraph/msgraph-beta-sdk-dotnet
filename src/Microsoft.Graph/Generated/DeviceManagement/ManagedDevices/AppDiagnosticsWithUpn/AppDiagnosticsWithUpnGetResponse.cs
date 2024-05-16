@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWithUpn {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWithUpn
+{
     #pragma warning disable CS1591
-    public class AppDiagnosticsWithUpnGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class AppDiagnosticsWithUpnGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PowerliftIncidentMetadata>? Value {
+        public List<PowerliftIncidentMetadata>? Value
+        {
             get { return BackingStore?.Get<List<PowerliftIncidentMetadata>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<PowerliftIncidentMetadata> Value {
+        public List<PowerliftIncidentMetadata> Value
+        {
             get { return BackingStore?.Get<List<PowerliftIncidentMetadata>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<PowerliftIncidentMetadata>(PowerliftIncidentMetadata.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<PowerliftIncidentMetadata>(PowerliftIncidentMetadata.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

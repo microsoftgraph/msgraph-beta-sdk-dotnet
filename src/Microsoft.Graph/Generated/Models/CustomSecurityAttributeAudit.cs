@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomSecurityAttributeAudit : Entity, IParsable 
+    public class CustomSecurityAttributeAudit : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The activityDateTime property</summary>
-        public DateTimeOffset? ActivityDateTime {
+        public DateTimeOffset? ActivityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>The activityDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityDisplayName {
+        public string? ActivityDisplayName
+        {
             get { return BackingStore?.Get<string?>("activityDisplayName"); }
             set { BackingStore?.Set("activityDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ActivityDisplayName {
+        public string ActivityDisplayName
+        {
             get { return BackingStore?.Get<string>("activityDisplayName"); }
             set { BackingStore?.Set("activityDisplayName", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The additionalDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? AdditionalDetails {
+        public List<KeyValue>? AdditionalDetails
+        {
             get { return BackingStore?.Get<List<KeyValue>?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> AdditionalDetails {
+        public List<KeyValue> AdditionalDetails
+        {
             get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category {
+        public string? Category
+        {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public string Category {
+        public string Category
+        {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The correlationId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId {
+        public string? CorrelationId
+        {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #nullable restore
 #else
-        public string CorrelationId {
+        public string CorrelationId
+        {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The initiatedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuditActivityInitiator? InitiatedBy {
+        public AuditActivityInitiator? InitiatedBy
+        {
             get { return BackingStore?.Get<AuditActivityInitiator?>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
 #nullable restore
 #else
-        public AuditActivityInitiator InitiatedBy {
+        public AuditActivityInitiator InitiatedBy
+        {
             get { return BackingStore?.Get<AuditActivityInitiator>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The loggedByService property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoggedByService {
+        public string? LoggedByService
+        {
             get { return BackingStore?.Get<string?>("loggedByService"); }
             set { BackingStore?.Set("loggedByService", value); }
         }
 #nullable restore
 #else
-        public string LoggedByService {
+        public string LoggedByService
+        {
             get { return BackingStore?.Get<string>("loggedByService"); }
             set { BackingStore?.Set("loggedByService", value); }
         }
@@ -101,32 +115,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The operationType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperationType {
+        public string? OperationType
+        {
             get { return BackingStore?.Get<string?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
 #nullable restore
 #else
-        public string OperationType {
+        public string OperationType
+        {
             get { return BackingStore?.Get<string>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
 #endif
         /// <summary>The result property</summary>
-        public OperationResult? Result {
+        public OperationResult? Result
+        {
             get { return BackingStore?.Get<OperationResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
         /// <summary>The resultReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResultReason {
+        public string? ResultReason
+        {
             get { return BackingStore?.Get<string?>("resultReason"); }
             set { BackingStore?.Set("resultReason", value); }
         }
 #nullable restore
 #else
-        public string ResultReason {
+        public string ResultReason
+        {
             get { return BackingStore?.Get<string>("resultReason"); }
             set { BackingStore?.Set("resultReason", value); }
         }
@@ -134,13 +153,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The targetResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetResource>? TargetResources {
+        public List<TargetResource>? TargetResources
+        {
             get { return BackingStore?.Get<List<TargetResource>?>("targetResources"); }
             set { BackingStore?.Set("targetResources", value); }
         }
 #nullable restore
 #else
-        public List<TargetResource> TargetResources {
+        public List<TargetResource> TargetResources
+        {
             get { return BackingStore?.Get<List<TargetResource>>("targetResources"); }
             set { BackingStore?.Set("targetResources", value); }
         }
@@ -148,13 +169,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The userAgent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserAgent {
+        public string? UserAgent
+        {
             get { return BackingStore?.Get<string?>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
 #nullable restore
 #else
-        public string UserAgent {
+        public string UserAgent
+        {
             get { return BackingStore?.Get<string>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
@@ -177,18 +200,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"activityDisplayName", n => { ActivityDisplayName = n.GetStringValue(); } },
-                {"additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                {"initiatedBy", n => { InitiatedBy = n.GetObjectValue<AuditActivityInitiator>(AuditActivityInitiator.CreateFromDiscriminatorValue); } },
-                {"loggedByService", n => { LoggedByService = n.GetStringValue(); } },
-                {"operationType", n => { OperationType = n.GetStringValue(); } },
-                {"result", n => { Result = n.GetEnumValue<OperationResult>(); } },
-                {"resultReason", n => { ResultReason = n.GetStringValue(); } },
-                {"targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<TargetResource>(TargetResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userAgent", n => { UserAgent = n.GetStringValue(); } },
+                { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activityDisplayName", n => { ActivityDisplayName = n.GetStringValue(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                { "initiatedBy", n => { InitiatedBy = n.GetObjectValue<AuditActivityInitiator>(AuditActivityInitiator.CreateFromDiscriminatorValue); } },
+                { "loggedByService", n => { LoggedByService = n.GetStringValue(); } },
+                { "operationType", n => { OperationType = n.GetStringValue(); } },
+                { "result", n => { Result = n.GetEnumValue<OperationResult>(); } },
+                { "resultReason", n => { ResultReason = n.GetStringValue(); } },
+                { "targetResources", n => { TargetResources = n.GetCollectionOfObjectValues<TargetResource>(TargetResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userAgent", n => { UserAgent = n.GetStringValue(); } },
             };
         }
         /// <summary>

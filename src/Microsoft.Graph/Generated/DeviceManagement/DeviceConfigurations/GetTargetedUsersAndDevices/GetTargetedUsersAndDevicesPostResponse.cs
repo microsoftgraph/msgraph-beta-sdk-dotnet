@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices
+{
     #pragma warning disable CS1591
-    public class GetTargetedUsersAndDevicesPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetTargetedUsersAndDevicesPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceConfigurationTargetedUserAndDevice>? Value {
+        public List<DeviceConfigurationTargetedUserAndDevice>? Value
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationTargetedUserAndDevice>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceConfigurationTargetedUserAndDevice> Value {
+        public List<DeviceConfigurationTargetedUserAndDevice> Value
+        {
             get { return BackingStore?.Get<List<DeviceConfigurationTargetedUserAndDevice>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargeted
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceConfigurationTargetedUserAndDevice>(DeviceConfigurationTargetedUserAndDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceConfigurationTargetedUserAndDevice>(DeviceConfigurationTargetedUserAndDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

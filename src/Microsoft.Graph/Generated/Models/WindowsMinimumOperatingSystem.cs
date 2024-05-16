@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The minimum operating system required for a Windows mobile app.
     /// </summary>
-    public class WindowsMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WindowsMinimumOperatingSystem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,79 +23,94 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Windows version 10.0 or later.</summary>
-        public bool? V100 {
+        public bool? V100
+        {
             get { return BackingStore?.Get<bool?>("v10_0"); }
             set { BackingStore?.Set("v10_0", value); }
         }
         /// <summary>Windows 10 1607 or later.</summary>
-        public bool? V101607 {
+        public bool? V101607
+        {
             get { return BackingStore?.Get<bool?>("v10_1607"); }
             set { BackingStore?.Set("v10_1607", value); }
         }
         /// <summary>Windows 10 1703 or later.</summary>
-        public bool? V101703 {
+        public bool? V101703
+        {
             get { return BackingStore?.Get<bool?>("v10_1703"); }
             set { BackingStore?.Set("v10_1703", value); }
         }
         /// <summary>Windows 10 1709 or later.</summary>
-        public bool? V101709 {
+        public bool? V101709
+        {
             get { return BackingStore?.Get<bool?>("v10_1709"); }
             set { BackingStore?.Set("v10_1709", value); }
         }
         /// <summary>Windows 10 1803 or later.</summary>
-        public bool? V101803 {
+        public bool? V101803
+        {
             get { return BackingStore?.Get<bool?>("v10_1803"); }
             set { BackingStore?.Set("v10_1803", value); }
         }
         /// <summary>Windows 10 1809 or later.</summary>
-        public bool? V101809 {
+        public bool? V101809
+        {
             get { return BackingStore?.Get<bool?>("v10_1809"); }
             set { BackingStore?.Set("v10_1809", value); }
         }
         /// <summary>Windows 10 1903 or later.</summary>
-        public bool? V101903 {
+        public bool? V101903
+        {
             get { return BackingStore?.Get<bool?>("v10_1903"); }
             set { BackingStore?.Set("v10_1903", value); }
         }
         /// <summary>Windows 10 1909 or later.</summary>
-        public bool? V101909 {
+        public bool? V101909
+        {
             get { return BackingStore?.Get<bool?>("v10_1909"); }
             set { BackingStore?.Set("v10_1909", value); }
         }
         /// <summary>Windows 10 2004 or later.</summary>
-        public bool? V102004 {
+        public bool? V102004
+        {
             get { return BackingStore?.Get<bool?>("v10_2004"); }
             set { BackingStore?.Set("v10_2004", value); }
         }
         /// <summary>Windows 10 21H1 or later.</summary>
-        public bool? V1021H1 {
+        public bool? V1021H1
+        {
             get { return BackingStore?.Get<bool?>("v10_21H1"); }
             set { BackingStore?.Set("v10_21H1", value); }
         }
         /// <summary>Windows 10 2H20 or later.</summary>
-        public bool? V102H20 {
+        public bool? V102H20
+        {
             get { return BackingStore?.Get<bool?>("v10_2H20"); }
             set { BackingStore?.Set("v10_2H20", value); }
         }
         /// <summary>Windows version 8.0 or later.</summary>
-        public bool? V80 {
+        public bool? V80
+        {
             get { return BackingStore?.Get<bool?>("v8_0"); }
             set { BackingStore?.Set("v8_0", value); }
         }
         /// <summary>Windows version 8.1 or later.</summary>
-        public bool? V81 {
+        public bool? V81
+        {
             get { return BackingStore?.Get<bool?>("v8_1"); }
             set { BackingStore?.Set("v8_1", value); }
         }
@@ -123,20 +140,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"v10_0", n => { V100 = n.GetBoolValue(); } },
-                {"v10_1607", n => { V101607 = n.GetBoolValue(); } },
-                {"v10_1703", n => { V101703 = n.GetBoolValue(); } },
-                {"v10_1709", n => { V101709 = n.GetBoolValue(); } },
-                {"v10_1803", n => { V101803 = n.GetBoolValue(); } },
-                {"v10_1809", n => { V101809 = n.GetBoolValue(); } },
-                {"v10_1903", n => { V101903 = n.GetBoolValue(); } },
-                {"v10_1909", n => { V101909 = n.GetBoolValue(); } },
-                {"v10_2004", n => { V102004 = n.GetBoolValue(); } },
-                {"v10_21H1", n => { V1021H1 = n.GetBoolValue(); } },
-                {"v10_2H20", n => { V102H20 = n.GetBoolValue(); } },
-                {"v8_0", n => { V80 = n.GetBoolValue(); } },
-                {"v8_1", n => { V81 = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "v10_0", n => { V100 = n.GetBoolValue(); } },
+                { "v10_1607", n => { V101607 = n.GetBoolValue(); } },
+                { "v10_1703", n => { V101703 = n.GetBoolValue(); } },
+                { "v10_1709", n => { V101709 = n.GetBoolValue(); } },
+                { "v10_1803", n => { V101803 = n.GetBoolValue(); } },
+                { "v10_1809", n => { V101809 = n.GetBoolValue(); } },
+                { "v10_1903", n => { V101903 = n.GetBoolValue(); } },
+                { "v10_1909", n => { V101909 = n.GetBoolValue(); } },
+                { "v10_2004", n => { V102004 = n.GetBoolValue(); } },
+                { "v10_21H1", n => { V1021H1 = n.GetBoolValue(); } },
+                { "v10_2H20", n => { V102H20 = n.GetBoolValue(); } },
+                { "v8_0", n => { V80 = n.GetBoolValue(); } },
+                { "v8_1", n => { V81 = n.GetBoolValue(); } },
             };
         }
         /// <summary>

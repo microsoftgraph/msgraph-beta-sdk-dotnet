@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class IndustryDataRunActivity : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class IndustryDataRunActivity : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The flow that was run by this activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IndustryDataActivity? Activity {
+        public IndustryDataActivity? Activity
+        {
             get { return BackingStore?.Get<IndustryDataActivity?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
 #nullable restore
 #else
-        public IndustryDataActivity Activity {
+        public IndustryDataActivity Activity
+        {
             get { return BackingStore?.Get<IndustryDataActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>An error object to diagnose critical failures in an activity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PublicError? BlockingError {
+        public Microsoft.Graph.Beta.Models.PublicError? BlockingError
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError?>("blockingError"); }
             set { BackingStore?.Set("blockingError", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PublicError BlockingError {
+        public Microsoft.Graph.Beta.Models.PublicError BlockingError
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicError>("blockingError"); }
             set { BackingStore?.Set("blockingError", value); }
         }
@@ -40,19 +45,22 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The name of the running flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public IndustryDataActivityStatus? Status {
+        public IndustryDataActivityStatus? Status
+        {
             get { return BackingStore?.Get<IndustryDataActivityStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -80,10 +88,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activity", n => { Activity = n.GetObjectValue<IndustryDataActivity>(IndustryDataActivity.CreateFromDiscriminatorValue); } },
-                {"blockingError", n => { BlockingError = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<IndustryDataActivityStatus>(); } },
+                { "activity", n => { Activity = n.GetObjectValue<IndustryDataActivity>(IndustryDataActivity.CreateFromDiscriminatorValue); } },
+                { "blockingError", n => { BlockingError = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<IndustryDataActivityStatus>(); } },
             };
         }
         /// <summary>

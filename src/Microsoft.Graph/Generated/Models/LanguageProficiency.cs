@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class LanguageProficiency : ItemFacet, IParsable 
+    public class LanguageProficiency : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the long-form name for the language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The proficiency property</summary>
-        public LanguageProficiencyLevel? Proficiency {
+        public LanguageProficiencyLevel? Proficiency
+        {
             get { return BackingStore?.Get<LanguageProficiencyLevel?>("proficiency"); }
             set { BackingStore?.Set("proficiency", value); }
         }
         /// <summary>Represents the users reading comprehension for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
-        public LanguageProficiencyLevel? Reading {
+        public LanguageProficiencyLevel? Reading
+        {
             get { return BackingStore?.Get<LanguageProficiencyLevel?>("reading"); }
             set { BackingStore?.Set("reading", value); }
         }
         /// <summary>Represents the users spoken proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
-        public LanguageProficiencyLevel? Spoken {
+        public LanguageProficiencyLevel? Spoken
+        {
             get { return BackingStore?.Get<LanguageProficiencyLevel?>("spoken"); }
             set { BackingStore?.Set("spoken", value); }
         }
         /// <summary>Contains the four-character BCP47 name for the language (en-US, no-NB, en-AU).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tag {
+        public string? Tag
+        {
             get { return BackingStore?.Get<string?>("tag"); }
             set { BackingStore?.Set("tag", value); }
         }
 #nullable restore
 #else
-        public string Tag {
+        public string Tag
+        {
             get { return BackingStore?.Get<string>("tag"); }
             set { BackingStore?.Set("tag", value); }
         }
@@ -55,19 +63,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The thumbnailUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailUrl {
+        public string? ThumbnailUrl
+        {
             get { return BackingStore?.Get<string?>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
 #nullable restore
 #else
-        public string ThumbnailUrl {
+        public string ThumbnailUrl
+        {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
 #endif
         /// <summary>Represents the users written proficiency for the language represented by the object. Possible values are: elementary, conversational, limitedWorking, professionalWorking, fullProfessional, nativeOrBilingual, unknownFutureValue.</summary>
-        public LanguageProficiencyLevel? Written {
+        public LanguageProficiencyLevel? Written
+        {
             get { return BackingStore?.Get<LanguageProficiencyLevel?>("written"); }
             set { BackingStore?.Set("written", value); }
         }
@@ -96,13 +107,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"proficiency", n => { Proficiency = n.GetEnumValue<LanguageProficiencyLevel>(); } },
-                {"reading", n => { Reading = n.GetEnumValue<LanguageProficiencyLevel>(); } },
-                {"spoken", n => { Spoken = n.GetEnumValue<LanguageProficiencyLevel>(); } },
-                {"tag", n => { Tag = n.GetStringValue(); } },
-                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
-                {"written", n => { Written = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "proficiency", n => { Proficiency = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                { "reading", n => { Reading = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                { "spoken", n => { Spoken = n.GetEnumValue<LanguageProficiencyLevel>(); } },
+                { "tag", n => { Tag = n.GetStringValue(); } },
+                { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                { "written", n => { Written = n.GetEnumValue<LanguageProficiencyLevel>(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that describes tenant level settings for derived credentials
     /// </summary>
-    public class DeviceManagementDerivedCredentialSettings : Entity, IParsable 
+    public class DeviceManagementDerivedCredentialSettings : Entity, IParsable
     {
         /// <summary>The display name for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -27,29 +30,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The URL that will be accessible to end users as they retrieve a derived credential using the Company Portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HelpUrl {
+        public string? HelpUrl
+        {
             get { return BackingStore?.Get<string?>("helpUrl"); }
             set { BackingStore?.Set("helpUrl", value); }
         }
 #nullable restore
 #else
-        public string HelpUrl {
+        public string HelpUrl
+        {
             get { return BackingStore?.Get<string>("helpUrl"); }
             set { BackingStore?.Set("helpUrl", value); }
         }
 #endif
         /// <summary>Supported values for the derived credential issuer.</summary>
-        public DeviceManagementDerivedCredentialIssuer? Issuer {
+        public DeviceManagementDerivedCredentialIssuer? Issuer
+        {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialIssuer?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
         /// <summary>Supported values for the notification type to use.</summary>
-        public DeviceManagementDerivedCredentialNotificationType? NotificationType {
+        public DeviceManagementDerivedCredentialNotificationType? NotificationType
+        {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialNotificationType?>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
         /// <summary>The nominal percentage of time before certificate renewal is initiated by the client.</summary>
-        public int? RenewalThresholdPercentage {
+        public int? RenewalThresholdPercentage
+        {
             get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
             set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
@@ -71,11 +79,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"helpUrl", n => { HelpUrl = n.GetStringValue(); } },
-                {"issuer", n => { Issuer = n.GetEnumValue<DeviceManagementDerivedCredentialIssuer>(); } },
-                {"notificationType", n => { NotificationType = n.GetEnumValue<DeviceManagementDerivedCredentialNotificationType>(); } },
-                {"renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "helpUrl", n => { HelpUrl = n.GetStringValue(); } },
+                { "issuer", n => { Issuer = n.GetEnumValue<DeviceManagementDerivedCredentialIssuer>(); } },
+                { "notificationType", n => { NotificationType = n.GetEnumValue<DeviceManagementDerivedCredentialNotificationType>(); } },
+                { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
             };
         }
         /// <summary>

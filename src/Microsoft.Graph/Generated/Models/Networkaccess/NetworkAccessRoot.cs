@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class NetworkAccessRoot : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class NetworkAccessRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The alerts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Alert>? Alerts {
+        public List<Alert>? Alerts
+        {
             get { return BackingStore?.Get<List<Alert>?>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
 #nullable restore
 #else
-        public List<Alert> Alerts {
+        public List<Alert> Alerts
+        {
             get { return BackingStore?.Get<List<Alert>>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Connectivity represents all the connectivity components in Global Secure Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.Connectivity? Connectivity {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Connectivity? Connectivity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity?>("connectivity"); }
             set { BackingStore?.Set("connectivity", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.Connectivity Connectivity {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Connectivity Connectivity
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>("connectivity"); }
             set { BackingStore?.Set("connectivity", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>A filtering policy defines the specific traffic that is allowed or blocked through the Global Secure Access services for a filtering profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FilteringPolicy>? FilteringPolicies {
+        public List<FilteringPolicy>? FilteringPolicies
+        {
             get { return BackingStore?.Get<List<FilteringPolicy>?>("filteringPolicies"); }
             set { BackingStore?.Set("filteringPolicies", value); }
         }
 #nullable restore
 #else
-        public List<FilteringPolicy> FilteringPolicies {
+        public List<FilteringPolicy> FilteringPolicies
+        {
             get { return BackingStore?.Get<List<FilteringPolicy>>("filteringPolicies"); }
             set { BackingStore?.Set("filteringPolicies", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>A filtering profile associates network access policies with Microsoft Entra ID Conditional Access policies, so that access policies can be applied to users and groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FilteringProfile>? FilteringProfiles {
+        public List<FilteringProfile>? FilteringProfiles
+        {
             get { return BackingStore?.Get<List<FilteringProfile>?>("filteringProfiles"); }
             set { BackingStore?.Set("filteringProfiles", value); }
         }
 #nullable restore
 #else
-        public List<FilteringProfile> FilteringProfiles {
+        public List<FilteringProfile> FilteringProfiles
+        {
             get { return BackingStore?.Get<List<FilteringProfile>>("filteringProfiles"); }
             set { BackingStore?.Set("filteringProfiles", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>A forwarding policy defines the specific traffic that is routed through the Global Secure Access Service. It&apos;s then added to a forwarding profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ForwardingPolicy>? ForwardingPolicies {
+        public List<ForwardingPolicy>? ForwardingPolicies
+        {
             get { return BackingStore?.Get<List<ForwardingPolicy>?>("forwardingPolicies"); }
             set { BackingStore?.Set("forwardingPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ForwardingPolicy> ForwardingPolicies {
+        public List<ForwardingPolicy> ForwardingPolicies
+        {
             get { return BackingStore?.Get<List<ForwardingPolicy>>("forwardingPolicies"); }
             set { BackingStore?.Set("forwardingPolicies", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>A forwarding profile determines which types of traffic are routed through the Global Secure Access services and which ones are skipped. The handling of specific traffic is determined by the forwarding policies that are added to the forwarding profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ForwardingProfile>? ForwardingProfiles {
+        public List<ForwardingProfile>? ForwardingProfiles
+        {
             get { return BackingStore?.Get<List<ForwardingProfile>?>("forwardingProfiles"); }
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #nullable restore
 #else
-        public List<ForwardingProfile> ForwardingProfiles {
+        public List<ForwardingProfile> ForwardingProfiles
+        {
             get { return BackingStore?.Get<List<ForwardingProfile>>("forwardingProfiles"); }
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents network connections that are routed through Global Secure Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.Logs? Logs {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Logs? Logs
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Logs?>("logs"); }
             set { BackingStore?.Set("logs", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.Logs Logs {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Logs Logs
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Logs>("logs"); }
             set { BackingStore?.Set("logs", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the status of the Global Secure Access services for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.Reports? Reports {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Reports? Reports
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Reports?>("reports"); }
             set { BackingStore?.Set("reports", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.Reports Reports {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Reports Reports
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Reports>("reports"); }
             set { BackingStore?.Set("reports", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Global Secure Access settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.Settings? Settings {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Settings? Settings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Settings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.Settings Settings {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Settings Settings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Settings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -138,13 +157,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the status of the Global Secure Access services for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus? TenantStatus {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus? TenantStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus?>("tenantStatus"); }
             set { BackingStore?.Set("tenantStatus", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus TenantStatus {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus TenantStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus>("tenantStatus"); }
             set { BackingStore?.Set("tenantStatus", value); }
         }
@@ -167,16 +188,16 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alerts", n => { Alerts = n.GetCollectionOfObjectValues<Alert>(Alert.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"connectivity", n => { Connectivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>(Microsoft.Graph.Beta.Models.Networkaccess.Connectivity.CreateFromDiscriminatorValue); } },
-                {"filteringPolicies", n => { FilteringPolicies = n.GetCollectionOfObjectValues<FilteringPolicy>(FilteringPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"filteringProfiles", n => { FilteringProfiles = n.GetCollectionOfObjectValues<FilteringProfile>(FilteringProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"forwardingPolicies", n => { ForwardingPolicies = n.GetCollectionOfObjectValues<ForwardingPolicy>(ForwardingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<ForwardingProfile>(ForwardingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"logs", n => { Logs = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Logs>(Microsoft.Graph.Beta.Models.Networkaccess.Logs.CreateFromDiscriminatorValue); } },
-                {"reports", n => { Reports = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Reports>(Microsoft.Graph.Beta.Models.Networkaccess.Reports.CreateFromDiscriminatorValue); } },
-                {"settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Settings>(Microsoft.Graph.Beta.Models.Networkaccess.Settings.CreateFromDiscriminatorValue); } },
-                {"tenantStatus", n => { TenantStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus>(Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus.CreateFromDiscriminatorValue); } },
+                { "alerts", n => { Alerts = n.GetCollectionOfObjectValues<Alert>(Alert.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectivity", n => { Connectivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Connectivity>(Microsoft.Graph.Beta.Models.Networkaccess.Connectivity.CreateFromDiscriminatorValue); } },
+                { "filteringPolicies", n => { FilteringPolicies = n.GetCollectionOfObjectValues<FilteringPolicy>(FilteringPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "filteringProfiles", n => { FilteringProfiles = n.GetCollectionOfObjectValues<FilteringProfile>(FilteringProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "forwardingPolicies", n => { ForwardingPolicies = n.GetCollectionOfObjectValues<ForwardingPolicy>(ForwardingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<ForwardingProfile>(ForwardingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "logs", n => { Logs = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Logs>(Microsoft.Graph.Beta.Models.Networkaccess.Logs.CreateFromDiscriminatorValue); } },
+                { "reports", n => { Reports = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Reports>(Microsoft.Graph.Beta.Models.Networkaccess.Reports.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Settings>(Microsoft.Graph.Beta.Models.Networkaccess.Settings.CreateFromDiscriminatorValue); } },
+                { "tenantStatus", n => { TenantStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus>(Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

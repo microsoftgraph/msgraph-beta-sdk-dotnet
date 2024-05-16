@@ -4,28 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Local Action Lock Device with Passcode Configuration
     /// </summary>
-    public class AndroidDeviceComplianceLocalActionLockDeviceWithPasscode : AndroidDeviceComplianceLocalActionBase, IParsable 
+    public class AndroidDeviceComplianceLocalActionLockDeviceWithPasscode : AndroidDeviceComplianceLocalActionBase, IParsable
     {
         /// <summary>Passcode to reset to Android device. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Passcode {
+        public string? Passcode
+        {
             get { return BackingStore?.Get<string?>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
 #nullable restore
 #else
-        public string Passcode {
+        public string Passcode
+        {
             get { return BackingStore?.Get<string>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
 #endif
         /// <summary>Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11</summary>
-        public int? PasscodeSignInFailureCountBeforeWipe {
+        public int? PasscodeSignInFailureCountBeforeWipe
+        {
             get { return BackingStore?.Get<int?>("passcodeSignInFailureCountBeforeWipe"); }
             set { BackingStore?.Set("passcodeSignInFailureCountBeforeWipe", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"passcode", n => { Passcode = n.GetStringValue(); } },
-                {"passcodeSignInFailureCountBeforeWipe", n => { PasscodeSignInFailureCountBeforeWipe = n.GetIntValue(); } },
+                { "passcode", n => { Passcode = n.GetStringValue(); } },
+                { "passcodeSignInFailureCountBeforeWipe", n => { PasscodeSignInFailureCountBeforeWipe = n.GetIntValue(); } },
             };
         }
         /// <summary>

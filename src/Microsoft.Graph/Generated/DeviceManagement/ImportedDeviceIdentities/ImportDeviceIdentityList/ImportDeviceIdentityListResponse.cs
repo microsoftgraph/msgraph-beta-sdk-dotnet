@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList {
+namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList
+{
     [Obsolete("This class is obsolete. Use ImportDeviceIdentityListPostResponse instead.")]
     #pragma warning disable CS1591
-    public class ImportDeviceIdentityListResponse : ImportDeviceIdentityListPostResponse, IParsable 
+    public class ImportDeviceIdentityListResponse : ImportDeviceIdentityListPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

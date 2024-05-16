@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class Fqdn : RuleDestination, IParsable 
+    public class Fqdn : RuleDestination, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines the FQDN used in a destination for a rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

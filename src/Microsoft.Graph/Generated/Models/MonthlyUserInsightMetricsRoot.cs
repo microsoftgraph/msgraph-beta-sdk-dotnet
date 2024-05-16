@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MonthlyUserInsightMetricsRoot : Entity, IParsable 
+    public class MonthlyUserInsightMetricsRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Insights for active users on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActiveUsersMetric>? ActiveUsers {
+        public List<ActiveUsersMetric>? ActiveUsers
+        {
             get { return BackingStore?.Get<List<ActiveUsersMetric>?>("activeUsers"); }
             set { BackingStore?.Set("activeUsers", value); }
         }
 #nullable restore
 #else
-        public List<ActiveUsersMetric> ActiveUsers {
+        public List<ActiveUsersMetric> ActiveUsers
+        {
             get { return BackingStore?.Get<List<ActiveUsersMetric>>("activeUsers"); }
             set { BackingStore?.Set("activeUsers", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Insights for authentications on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationsMetric>? Authentications {
+        public List<AuthenticationsMetric>? Authentications
+        {
             get { return BackingStore?.Get<List<AuthenticationsMetric>?>("authentications"); }
             set { BackingStore?.Set("authentications", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationsMetric> Authentications {
+        public List<AuthenticationsMetric> Authentications
+        {
             get { return BackingStore?.Get<List<AuthenticationsMetric>>("authentications"); }
             set { BackingStore?.Set("authentications", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The inactiveUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MonthlyInactiveUsersMetric>? InactiveUsers {
+        public List<MonthlyInactiveUsersMetric>? InactiveUsers
+        {
             get { return BackingStore?.Get<List<MonthlyInactiveUsersMetric>?>("inactiveUsers"); }
             set { BackingStore?.Set("inactiveUsers", value); }
         }
 #nullable restore
 #else
-        public List<MonthlyInactiveUsersMetric> InactiveUsers {
+        public List<MonthlyInactiveUsersMetric> InactiveUsers
+        {
             get { return BackingStore?.Get<List<MonthlyInactiveUsersMetric>>("inactiveUsers"); }
             set { BackingStore?.Set("inactiveUsers", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The inactiveUsersByApplication property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MonthlyInactiveUsersByApplicationMetric>? InactiveUsersByApplication {
+        public List<MonthlyInactiveUsersByApplicationMetric>? InactiveUsersByApplication
+        {
             get { return BackingStore?.Get<List<MonthlyInactiveUsersByApplicationMetric>?>("inactiveUsersByApplication"); }
             set { BackingStore?.Set("inactiveUsersByApplication", value); }
         }
 #nullable restore
 #else
-        public List<MonthlyInactiveUsersByApplicationMetric> InactiveUsersByApplication {
+        public List<MonthlyInactiveUsersByApplicationMetric> InactiveUsersByApplication
+        {
             get { return BackingStore?.Get<List<MonthlyInactiveUsersByApplicationMetric>>("inactiveUsersByApplication"); }
             set { BackingStore?.Set("inactiveUsersByApplication", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Insights for MFA usage on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MfaCompletionMetric>? MfaCompletions {
+        public List<MfaCompletionMetric>? MfaCompletions
+        {
             get { return BackingStore?.Get<List<MfaCompletionMetric>?>("mfaCompletions"); }
             set { BackingStore?.Set("mfaCompletions", value); }
         }
 #nullable restore
 #else
-        public List<MfaCompletionMetric> MfaCompletions {
+        public List<MfaCompletionMetric> MfaCompletions
+        {
             get { return BackingStore?.Get<List<MfaCompletionMetric>>("mfaCompletions"); }
             set { BackingStore?.Set("mfaCompletions", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Insights for all user requests on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserRequestsMetric>? Requests {
+        public List<UserRequestsMetric>? Requests
+        {
             get { return BackingStore?.Get<List<UserRequestsMetric>?>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
 #nullable restore
 #else
-        public List<UserRequestsMetric> Requests {
+        public List<UserRequestsMetric> Requests
+        {
             get { return BackingStore?.Get<List<UserRequestsMetric>>("requests"); }
             set { BackingStore?.Set("requests", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Total sign-ups on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSignUpMetric>? SignUps {
+        public List<UserSignUpMetric>? SignUps
+        {
             get { return BackingStore?.Get<List<UserSignUpMetric>?>("signUps"); }
             set { BackingStore?.Set("signUps", value); }
         }
 #nullable restore
 #else
-        public List<UserSignUpMetric> SignUps {
+        public List<UserSignUpMetric> SignUps
+        {
             get { return BackingStore?.Get<List<UserSignUpMetric>>("signUps"); }
             set { BackingStore?.Set("signUps", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Summary of all usage insights on apps registered in the tenant for a specified period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InsightSummary>? Summary {
+        public List<InsightSummary>? Summary
+        {
             get { return BackingStore?.Get<List<InsightSummary>?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public List<InsightSummary> Summary {
+        public List<InsightSummary> Summary
+        {
             get { return BackingStore?.Get<List<InsightSummary>>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
@@ -139,14 +156,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeUsers", n => { ActiveUsers = n.GetCollectionOfObjectValues<ActiveUsersMetric>(ActiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"authentications", n => { Authentications = n.GetCollectionOfObjectValues<AuthenticationsMetric>(AuthenticationsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"inactiveUsers", n => { InactiveUsers = n.GetCollectionOfObjectValues<MonthlyInactiveUsersMetric>(MonthlyInactiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"inactiveUsersByApplication", n => { InactiveUsersByApplication = n.GetCollectionOfObjectValues<MonthlyInactiveUsersByApplicationMetric>(MonthlyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"mfaCompletions", n => { MfaCompletions = n.GetCollectionOfObjectValues<MfaCompletionMetric>(MfaCompletionMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"requests", n => { Requests = n.GetCollectionOfObjectValues<UserRequestsMetric>(UserRequestsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"signUps", n => { SignUps = n.GetCollectionOfObjectValues<UserSignUpMetric>(UserSignUpMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"summary", n => { Summary = n.GetCollectionOfObjectValues<InsightSummary>(InsightSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activeUsers", n => { ActiveUsers = n.GetCollectionOfObjectValues<ActiveUsersMetric>(ActiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authentications", n => { Authentications = n.GetCollectionOfObjectValues<AuthenticationsMetric>(AuthenticationsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inactiveUsers", n => { InactiveUsers = n.GetCollectionOfObjectValues<MonthlyInactiveUsersMetric>(MonthlyInactiveUsersMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inactiveUsersByApplication", n => { InactiveUsersByApplication = n.GetCollectionOfObjectValues<MonthlyInactiveUsersByApplicationMetric>(MonthlyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mfaCompletions", n => { MfaCompletions = n.GetCollectionOfObjectValues<MfaCompletionMetric>(MfaCompletionMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "requests", n => { Requests = n.GetCollectionOfObjectValues<UserRequestsMetric>(UserRequestsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "signUps", n => { SignUps = n.GetCollectionOfObjectValues<UserSignUpMetric>(UserSignUpMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "summary", n => { Summary = n.GetCollectionOfObjectValues<InsightSummary>(InsightSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

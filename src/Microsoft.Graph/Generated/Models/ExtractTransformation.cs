@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExtractTransformation : CustomClaimTransformation, IParsable 
+    public class ExtractTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The value2 property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value2 {
+        public string? Value2
+        {
             get { return BackingStore?.Get<string?>("value2"); }
             set { BackingStore?.Set("value2", value); }
         }
 #nullable restore
 #else
-        public string Value2 {
+        public string Value2
+        {
             get { return BackingStore?.Get<string>("value2"); }
             set { BackingStore?.Set("value2", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetStringValue(); } },
-                {"value2", n => { Value2 = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
+                { "value2", n => { Value2 = n.GetStringValue(); } },
             };
         }
         /// <summary>

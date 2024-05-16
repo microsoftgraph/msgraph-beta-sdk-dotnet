@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class RateDrivenRolloutSettings : GradualRolloutSettings, IParsable 
+    public class RateDrivenRolloutSettings : GradualRolloutSettings, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the number of devices that are offered at the same time. When not set, all devices in the deployment are offered content at the same time.</summary>
-        public int? DevicesPerOffer {
+        public int? DevicesPerOffer
+        {
             get { return BackingStore?.Get<int?>("devicesPerOffer"); }
             set { BackingStore?.Set("devicesPerOffer", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"devicesPerOffer", n => { DevicesPerOffer = n.GetIntValue(); } },
+                { "devicesPerOffer", n => { DevicesPerOffer = n.GetIntValue(); } },
             };
         }
         /// <summary>

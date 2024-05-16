@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ContentApproval : ComplianceChange, IParsable 
+    public class ContentApproval : ComplianceChange, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeployableContent? Content {
+        public DeployableContent? Content
+        {
             get { return BackingStore?.Get<DeployableContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public DeployableContent Content {
+        public DeployableContent Content
+        {
             get { return BackingStore?.Get<DeployableContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Deployments created as a result of applying the approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Deployment>? Deployments {
+        public List<Deployment>? Deployments
+        {
             get { return BackingStore?.Get<List<Deployment>?>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
 #nullable restore
 #else
-        public List<Deployment> Deployments {
+        public List<Deployment> Deployments
+        {
             get { return BackingStore?.Get<List<Deployment>>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Settings for governing how to deploy content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings? DeploymentSettings {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings? DeploymentSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings?>("deploymentSettings"); }
             set { BackingStore?.Set("deploymentSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings DeploymentSettings {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings DeploymentSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>("deploymentSettings"); }
             set { BackingStore?.Set("deploymentSettings", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetObjectValue<DeployableContent>(DeployableContent.CreateFromDiscriminatorValue); } },
-                {"deploymentSettings", n => { DeploymentSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings.CreateFromDiscriminatorValue); } },
-                {"deployments", n => { Deployments = n.GetCollectionOfObjectValues<Deployment>(Deployment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "content", n => { Content = n.GetObjectValue<DeployableContent>(DeployableContent.CreateFromDiscriminatorValue); } },
+                { "deploymentSettings", n => { DeploymentSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings.CreateFromDiscriminatorValue); } },
+                { "deployments", n => { Deployments = n.GetCollectionOfObjectValues<Deployment>(Deployment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

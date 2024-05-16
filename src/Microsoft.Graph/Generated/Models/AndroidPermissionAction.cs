@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Mapping between an Android app permission and the action Android should take when that permission is requested.
     /// </summary>
-    public class AndroidPermissionAction : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AndroidPermissionAction : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Android action taken when an app requests a dangerous permission.</summary>
-        public AndroidPermissionActionType? Action {
+        public AndroidPermissionActionType? Action
+        {
             get { return BackingStore?.Get<AndroidPermissionActionType?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Android permission string, defined in the official Android documentation.  Example &apos;android.permission.READ_CONTACTS&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Permission {
+        public string? Permission
+        {
             get { return BackingStore?.Get<string?>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
 #nullable restore
 #else
-        public string Permission {
+        public string Permission
+        {
             get { return BackingStore?.Get<string>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<AndroidPermissionActionType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"permission", n => { Permission = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetEnumValue<AndroidPermissionActionType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "permission", n => { Permission = n.GetStringValue(); } },
             };
         }
         /// <summary>

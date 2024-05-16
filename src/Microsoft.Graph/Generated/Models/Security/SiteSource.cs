@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class SiteSource : DataSource, IParsable 
+    public class SiteSource : DataSource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The site property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Site? Site {
+        public Microsoft.Graph.Beta.Models.Site? Site
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Site?>("site"); }
             set { BackingStore?.Set("site", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Site Site {
+        public Microsoft.Graph.Beta.Models.Site Site
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Site>("site"); }
             set { BackingStore?.Set("site", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"site", n => { Site = n.GetObjectValue<Microsoft.Graph.Beta.Models.Site>(Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue); } },
+                { "site", n => { Site = n.GetObjectValue<Microsoft.Graph.Beta.Models.Site>(Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

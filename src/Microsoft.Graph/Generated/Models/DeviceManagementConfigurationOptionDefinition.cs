@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationOptionDefinition : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementConfigurationOptionDefinition : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of Settings that depends on this option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy {
+        public List<DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>?>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy {
+        public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of dependent settings for this option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationDependentOn>? DependentOn {
+        public List<DeviceManagementConfigurationDependentOn>? DependentOn
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>?>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationDependentOn> DependentOn {
+        public List<DeviceManagementConfigurationDependentOn> DependentOn
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of the option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Friendly name of the option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Help text of the option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HelpText {
+        public string? HelpText
+        {
             get { return BackingStore?.Get<string?>("helpText"); }
             set { BackingStore?.Set("helpText", value); }
         }
 #nullable restore
 #else
-        public string HelpText {
+        public string HelpText
+        {
             get { return BackingStore?.Get<string>("helpText"); }
             set { BackingStore?.Set("helpText", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier of option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId {
+        public string? ItemId
+        {
             get { return BackingStore?.Get<string?>("itemId"); }
             set { BackingStore?.Set("itemId", value); }
         }
 #nullable restore
 #else
-        public string ItemId {
+        public string ItemId
+        {
             get { return BackingStore?.Get<string>("itemId"); }
             set { BackingStore?.Set("itemId", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Value of the option</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingValue? OptionValue {
+        public DeviceManagementConfigurationSettingValue? OptionValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue?>("optionValue"); }
             set { BackingStore?.Set("optionValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingValue OptionValue {
+        public DeviceManagementConfigurationSettingValue OptionValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue>("optionValue"); }
             set { BackingStore?.Set("optionValue", value); }
         }
@@ -169,15 +189,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dependedOnBy", n => { DependedOnBy = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDependedOnBy>(DeviceManagementConfigurationSettingDependedOnBy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dependentOn", n => { DependentOn = n.GetCollectionOfObjectValues<DeviceManagementConfigurationDependentOn>(DeviceManagementConfigurationDependentOn.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"helpText", n => { HelpText = n.GetStringValue(); } },
-                {"itemId", n => { ItemId = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"optionValue", n => { OptionValue = n.GetObjectValue<DeviceManagementConfigurationSettingValue>(DeviceManagementConfigurationSettingValue.CreateFromDiscriminatorValue); } },
+                { "dependedOnBy", n => { DependedOnBy = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDependedOnBy>(DeviceManagementConfigurationSettingDependedOnBy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dependentOn", n => { DependentOn = n.GetCollectionOfObjectValues<DeviceManagementConfigurationDependentOn>(DeviceManagementConfigurationDependentOn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "helpText", n => { HelpText = n.GetStringValue(); } },
+                { "itemId", n => { ItemId = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "optionValue", n => { OptionValue = n.GetObjectValue<DeviceManagementConfigurationSettingValue>(DeviceManagementConfigurationSettingValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

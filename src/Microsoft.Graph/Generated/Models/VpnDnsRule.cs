@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// VPN DNS Rule definition.
     /// </summary>
-    public class VpnDnsRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VpnDnsRule : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Automatically connect to the VPN when the device connects to this domain: Default False.</summary>
-        public bool? AutoTrigger {
+        public bool? AutoTrigger
+        {
             get { return BackingStore?.Get<bool?>("autoTrigger"); }
             set { BackingStore?.Set("autoTrigger", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Keep this rule active even when the VPN is not connected: Default False</summary>
-        public bool? Persistent {
+        public bool? Persistent
+        {
             get { return BackingStore?.Get<bool?>("persistent"); }
             set { BackingStore?.Set("persistent", value); }
         }
         /// <summary>Proxy Server Uri.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyServerUri {
+        public string? ProxyServerUri
+        {
             get { return BackingStore?.Get<string?>("proxyServerUri"); }
             set { BackingStore?.Set("proxyServerUri", value); }
         }
 #nullable restore
 #else
-        public string ProxyServerUri {
+        public string ProxyServerUri
+        {
             get { return BackingStore?.Get<string>("proxyServerUri"); }
             set { BackingStore?.Set("proxyServerUri", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Servers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Servers {
+        public List<string>? Servers
+        {
             get { return BackingStore?.Get<List<string>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #nullable restore
 #else
-        public List<string> Servers {
+        public List<string> Servers
+        {
             get { return BackingStore?.Get<List<string>>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
@@ -110,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"autoTrigger", n => { AutoTrigger = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"persistent", n => { Persistent = n.GetBoolValue(); } },
-                {"proxyServerUri", n => { ProxyServerUri = n.GetStringValue(); } },
-                {"servers", n => { Servers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "autoTrigger", n => { AutoTrigger = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "persistent", n => { Persistent = n.GetBoolValue(); } },
+                { "proxyServerUri", n => { ProxyServerUri = n.GetStringValue(); } },
+                { "servers", n => { Servers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

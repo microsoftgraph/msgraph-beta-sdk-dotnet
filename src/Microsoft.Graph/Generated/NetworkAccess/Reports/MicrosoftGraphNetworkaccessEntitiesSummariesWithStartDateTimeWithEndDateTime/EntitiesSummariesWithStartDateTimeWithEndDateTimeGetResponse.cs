@@ -6,21 +6,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessEntitiesSummariesWithStartDateTimeWithEndDateTime
+{
     #pragma warning disable CS1591
-    public class EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class EntitiesSummariesWithStartDateTimeWithEndDateTimeGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EntitiesSummary>? Value {
+        public List<EntitiesSummary>? Value
+        {
             get { return BackingStore?.Get<List<EntitiesSummary>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EntitiesSummary> Value {
+        public List<EntitiesSummary> Value
+        {
             get { return BackingStore?.Get<List<EntitiesSummary>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -43,7 +46,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<EntitiesSummary>(EntitiesSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<EntitiesSummary>(EntitiesSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

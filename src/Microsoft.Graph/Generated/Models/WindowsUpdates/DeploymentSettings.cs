@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class DeploymentSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeploymentSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Settings for governing whether content is applicable to a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContentApplicabilitySettings? ContentApplicability {
+        public ContentApplicabilitySettings? ContentApplicability
+        {
             get { return BackingStore?.Get<ContentApplicabilitySettings?>("contentApplicability"); }
             set { BackingStore?.Set("contentApplicability", value); }
         }
 #nullable restore
 #else
-        public ContentApplicabilitySettings ContentApplicability {
+        public ContentApplicabilitySettings ContentApplicability
+        {
             get { return BackingStore?.Get<ContentApplicabilitySettings>("contentApplicability"); }
             set { BackingStore?.Set("contentApplicability", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Settings for governing whether updates should be expedited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExpediteSettings? Expedite {
+        public ExpediteSettings? Expedite
+        {
             get { return BackingStore?.Get<ExpediteSettings?>("expedite"); }
             set { BackingStore?.Set("expedite", value); }
         }
 #nullable restore
 #else
-        public ExpediteSettings Expedite {
+        public ExpediteSettings Expedite
+        {
             get { return BackingStore?.Get<ExpediteSettings>("expedite"); }
             set { BackingStore?.Set("expedite", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Settings for governing conditions to monitor and automated actions to take.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MonitoringSettings? Monitoring {
+        public MonitoringSettings? Monitoring
+        {
             get { return BackingStore?.Get<MonitoringSettings?>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
 #nullable restore
 #else
-        public MonitoringSettings Monitoring {
+        public MonitoringSettings Monitoring
+        {
             get { return BackingStore?.Get<MonitoringSettings>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Settings for governing how and when the content is rolled out.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ScheduleSettings? Schedule {
+        public ScheduleSettings? Schedule
+        {
             get { return BackingStore?.Get<ScheduleSettings?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public ScheduleSettings Schedule {
+        public ScheduleSettings Schedule
+        {
             get { return BackingStore?.Get<ScheduleSettings>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Settings for governing end user update experience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserExperienceSettings? UserExperience {
+        public UserExperienceSettings? UserExperience
+        {
             get { return BackingStore?.Get<UserExperienceSettings?>("userExperience"); }
             set { BackingStore?.Set("userExperience", value); }
         }
 #nullable restore
 #else
-        public UserExperienceSettings UserExperience {
+        public UserExperienceSettings UserExperience
+        {
             get { return BackingStore?.Get<UserExperienceSettings>("userExperience"); }
             set { BackingStore?.Set("userExperience", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"contentApplicability", n => { ContentApplicability = n.GetObjectValue<ContentApplicabilitySettings>(ContentApplicabilitySettings.CreateFromDiscriminatorValue); } },
-                {"expedite", n => { Expedite = n.GetObjectValue<ExpediteSettings>(ExpediteSettings.CreateFromDiscriminatorValue); } },
-                {"monitoring", n => { Monitoring = n.GetObjectValue<MonitoringSettings>(MonitoringSettings.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"schedule", n => { Schedule = n.GetObjectValue<ScheduleSettings>(ScheduleSettings.CreateFromDiscriminatorValue); } },
-                {"userExperience", n => { UserExperience = n.GetObjectValue<UserExperienceSettings>(UserExperienceSettings.CreateFromDiscriminatorValue); } },
+                { "contentApplicability", n => { ContentApplicability = n.GetObjectValue<ContentApplicabilitySettings>(ContentApplicabilitySettings.CreateFromDiscriminatorValue); } },
+                { "expedite", n => { Expedite = n.GetObjectValue<ExpediteSettings>(ExpediteSettings.CreateFromDiscriminatorValue); } },
+                { "monitoring", n => { Monitoring = n.GetObjectValue<MonitoringSettings>(MonitoringSettings.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<ScheduleSettings>(ScheduleSettings.CreateFromDiscriminatorValue); } },
+                { "userExperience", n => { UserExperience = n.GetObjectValue<UserExperienceSettings>(UserExperienceSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

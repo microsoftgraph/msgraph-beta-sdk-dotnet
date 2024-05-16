@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A ConfigManager defined collection of devices or users.
     /// </summary>
-    public class ConfigManagerCollection : Entity, IParsable 
+    public class ConfigManagerCollection : Entity, IParsable
     {
         /// <summary>The collection identifier in SCCM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CollectionIdentifier {
+        public string? CollectionIdentifier
+        {
             get { return BackingStore?.Get<string?>("collectionIdentifier"); }
             set { BackingStore?.Set("collectionIdentifier", value); }
         }
 #nullable restore
 #else
-        public string CollectionIdentifier {
+        public string CollectionIdentifier
+        {
             get { return BackingStore?.Get<string>("collectionIdentifier"); }
             set { BackingStore?.Set("collectionIdentifier", value); }
         }
 #endif
         /// <summary>The created date.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The DisplayName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Hierarchy Identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HierarchyIdentifier {
+        public string? HierarchyIdentifier
+        {
             get { return BackingStore?.Get<string?>("hierarchyIdentifier"); }
             set { BackingStore?.Set("hierarchyIdentifier", value); }
         }
 #nullable restore
 #else
-        public string HierarchyIdentifier {
+        public string HierarchyIdentifier
+        {
             get { return BackingStore?.Get<string>("hierarchyIdentifier"); }
             set { BackingStore?.Set("hierarchyIdentifier", value); }
         }
@@ -60,19 +68,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The HierarchyName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HierarchyName {
+        public string? HierarchyName
+        {
             get { return BackingStore?.Get<string?>("hierarchyName"); }
             set { BackingStore?.Set("hierarchyName", value); }
         }
 #nullable restore
 #else
-        public string HierarchyName {
+        public string HierarchyName
+        {
             get { return BackingStore?.Get<string>("hierarchyName"); }
             set { BackingStore?.Set("hierarchyName", value); }
         }
 #endif
         /// <summary>The last modified date.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
@@ -94,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"collectionIdentifier", n => { CollectionIdentifier = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"hierarchyIdentifier", n => { HierarchyIdentifier = n.GetStringValue(); } },
-                {"hierarchyName", n => { HierarchyName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "collectionIdentifier", n => { CollectionIdentifier = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "hierarchyIdentifier", n => { HierarchyIdentifier = n.GetStringValue(); } },
+                { "hierarchyName", n => { HierarchyName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

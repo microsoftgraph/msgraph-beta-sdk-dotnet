@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ExpediteSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExpediteSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True indicates that the deployment of the content is expedited.</summary>
-        public bool? IsExpedited {
+        public bool? IsExpedited
+        {
             get { return BackingStore?.Get<bool?>("isExpedited"); }
             set { BackingStore?.Set("isExpedited", value); }
         }
         /// <summary>True indicates that the deployment is an expedite readiness test.</summary>
-        public bool? IsReadinessTest {
+        public bool? IsReadinessTest
+        {
             get { return BackingStore?.Get<bool?>("isReadinessTest"); }
             set { BackingStore?.Set("isReadinessTest", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isExpedited", n => { IsExpedited = n.GetBoolValue(); } },
-                {"isReadinessTest", n => { IsReadinessTest = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isExpedited", n => { IsExpedited = n.GetBoolValue(); } },
+                { "isReadinessTest", n => { IsReadinessTest = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

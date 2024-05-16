@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ProviderTenantSetting : Entity, IParsable 
+    public class ProviderTenantSetting : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The azureTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureTenantId {
+        public string? AzureTenantId
+        {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #nullable restore
 #else
-        public string AzureTenantId {
+        public string AzureTenantId
+        {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #endif
         /// <summary>The enabled property</summary>
-        public bool? Enabled {
+        public bool? Enabled
+        {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The provider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider {
+        public string? Provider
+        {
             get { return BackingStore?.Get<string?>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
 #nullable restore
 #else
-        public string Provider {
+        public string Provider
+        {
             get { return BackingStore?.Get<string>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Vendor {
+        public string? Vendor
+        {
             get { return BackingStore?.Get<string?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
 #nullable restore
 #else
-        public string Vendor {
+        public string Vendor
+        {
             get { return BackingStore?.Get<string>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
-                {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"provider", n => { Provider = n.GetStringValue(); } },
-                {"vendor", n => { Vendor = n.GetStringValue(); } },
+                { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                { "enabled", n => { Enabled = n.GetBoolValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
+                { "vendor", n => { Vendor = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkActivePeripherals : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkActivePeripherals : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The communicationSpeaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? CommunicationSpeaker {
+        public TeamworkPeripheral? CommunicationSpeaker
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("communicationSpeaker"); }
             set { BackingStore?.Set("communicationSpeaker", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral CommunicationSpeaker {
+        public TeamworkPeripheral CommunicationSpeaker
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("communicationSpeaker"); }
             set { BackingStore?.Set("communicationSpeaker", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The contentCamera property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? ContentCamera {
+        public TeamworkPeripheral? ContentCamera
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("contentCamera"); }
             set { BackingStore?.Set("contentCamera", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral ContentCamera {
+        public TeamworkPeripheral ContentCamera
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("contentCamera"); }
             set { BackingStore?.Set("contentCamera", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The microphone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? Microphone {
+        public TeamworkPeripheral? Microphone
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("microphone"); }
             set { BackingStore?.Set("microphone", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral Microphone {
+        public TeamworkPeripheral Microphone
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("microphone"); }
             set { BackingStore?.Set("microphone", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roomCamera property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? RoomCamera {
+        public TeamworkPeripheral? RoomCamera
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("roomCamera"); }
             set { BackingStore?.Set("roomCamera", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral RoomCamera {
+        public TeamworkPeripheral RoomCamera
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("roomCamera"); }
             set { BackingStore?.Set("roomCamera", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The speaker property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? Speaker {
+        public TeamworkPeripheral? Speaker
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("speaker"); }
             set { BackingStore?.Set("speaker", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral Speaker {
+        public TeamworkPeripheral Speaker
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("speaker"); }
             set { BackingStore?.Set("speaker", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"communicationSpeaker", n => { CommunicationSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"contentCamera", n => { ContentCamera = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"microphone", n => { Microphone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"roomCamera", n => { RoomCamera = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"speaker", n => { Speaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "communicationSpeaker", n => { CommunicationSpeaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "contentCamera", n => { ContentCamera = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "microphone", n => { Microphone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "roomCamera", n => { RoomCamera = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "speaker", n => { Speaker = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

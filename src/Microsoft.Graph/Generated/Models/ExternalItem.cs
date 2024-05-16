@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExternalItem : Entity, IParsable 
+    public class ExternalItem : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The acl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Acl>? Acl {
+        public List<Microsoft.Graph.Beta.Models.Acl>? Acl
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Acl>?>("acl"); }
             set { BackingStore?.Set("acl", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Acl> Acl {
+        public List<Microsoft.Graph.Beta.Models.Acl> Acl
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Acl>>("acl"); }
             set { BackingStore?.Set("acl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExternalItemContent? Content {
+        public ExternalItemContent? Content
+        {
             get { return BackingStore?.Get<ExternalItemContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public ExternalItemContent Content {
+        public ExternalItemContent Content
+        {
             get { return BackingStore?.Get<ExternalItemContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Properties? Properties {
+        public Microsoft.Graph.Beta.Models.Properties? Properties
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Properties Properties {
+        public Microsoft.Graph.Beta.Models.Properties Properties
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Acl>(Microsoft.Graph.Beta.Models.Acl.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
-                {"properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.Properties>(Microsoft.Graph.Beta.Models.Properties.CreateFromDiscriminatorValue); } },
+                { "acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Acl>(Microsoft.Graph.Beta.Models.Acl.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.Properties>(Microsoft.Graph.Beta.Models.Properties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

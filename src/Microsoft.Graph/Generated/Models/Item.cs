@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Item : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Item : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The baseUnitOfMeasureId property</summary>
-        public Guid? BaseUnitOfMeasureId {
+        public Guid? BaseUnitOfMeasureId
+        {
             get { return BackingStore?.Get<Guid?>("baseUnitOfMeasureId"); }
             set { BackingStore?.Set("baseUnitOfMeasureId", value); }
         }
         /// <summary>The blocked property</summary>
-        public bool? Blocked {
+        public bool? Blocked
+        {
             get { return BackingStore?.Get<bool?>("blocked"); }
             set { BackingStore?.Set("blocked", value); }
         }
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -44,37 +50,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The gtin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Gtin {
+        public string? Gtin
+        {
             get { return BackingStore?.Get<string?>("gtin"); }
             set { BackingStore?.Set("gtin", value); }
         }
 #nullable restore
 #else
-        public string Gtin {
+        public string Gtin
+        {
             get { return BackingStore?.Get<string>("gtin"); }
             set { BackingStore?.Set("gtin", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The inventory property</summary>
-        public decimal? Inventory {
+        public decimal? Inventory
+        {
             get { return BackingStore?.Get<decimal?>("inventory"); }
             set { BackingStore?.Set("inventory", value); }
         }
         /// <summary>The itemCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ItemCategory? ItemCategory {
+        public Microsoft.Graph.Beta.Models.ItemCategory? ItemCategory
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemCategory?>("itemCategory"); }
             set { BackingStore?.Set("itemCategory", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ItemCategory ItemCategory {
+        public Microsoft.Graph.Beta.Models.ItemCategory ItemCategory
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemCategory>("itemCategory"); }
             set { BackingStore?.Set("itemCategory", value); }
         }
@@ -82,37 +94,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The itemCategoryCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemCategoryCode {
+        public string? ItemCategoryCode
+        {
             get { return BackingStore?.Get<string?>("itemCategoryCode"); }
             set { BackingStore?.Set("itemCategoryCode", value); }
         }
 #nullable restore
 #else
-        public string ItemCategoryCode {
+        public string ItemCategoryCode
+        {
             get { return BackingStore?.Get<string>("itemCategoryCode"); }
             set { BackingStore?.Set("itemCategoryCode", value); }
         }
 #endif
         /// <summary>The itemCategoryId property</summary>
-        public Guid? ItemCategoryId {
+        public Guid? ItemCategoryId
+        {
             get { return BackingStore?.Get<Guid?>("itemCategoryId"); }
             set { BackingStore?.Set("itemCategoryId", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The number property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Number {
+        public string? Number
+        {
             get { return BackingStore?.Get<string?>("number"); }
             set { BackingStore?.Set("number", value); }
         }
 #nullable restore
 #else
-        public string Number {
+        public string Number
+        {
             get { return BackingStore?.Get<string>("number"); }
             set { BackingStore?.Set("number", value); }
         }
@@ -120,13 +138,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -134,62 +154,72 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The picture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Picture>? Picture {
+        public List<Microsoft.Graph.Beta.Models.Picture>? Picture
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>?>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Picture> Picture {
+        public List<Microsoft.Graph.Beta.Models.Picture> Picture
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
 #endif
         /// <summary>The priceIncludesTax property</summary>
-        public bool? PriceIncludesTax {
+        public bool? PriceIncludesTax
+        {
             get { return BackingStore?.Get<bool?>("priceIncludesTax"); }
             set { BackingStore?.Set("priceIncludesTax", value); }
         }
         /// <summary>The taxGroupCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxGroupCode {
+        public string? TaxGroupCode
+        {
             get { return BackingStore?.Get<string?>("taxGroupCode"); }
             set { BackingStore?.Set("taxGroupCode", value); }
         }
 #nullable restore
 #else
-        public string TaxGroupCode {
+        public string TaxGroupCode
+        {
             get { return BackingStore?.Get<string>("taxGroupCode"); }
             set { BackingStore?.Set("taxGroupCode", value); }
         }
 #endif
         /// <summary>The taxGroupId property</summary>
-        public Guid? TaxGroupId {
+        public Guid? TaxGroupId
+        {
             get { return BackingStore?.Get<Guid?>("taxGroupId"); }
             set { BackingStore?.Set("taxGroupId", value); }
         }
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type {
+        public string? Type
+        {
             get { return BackingStore?.Get<string?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #nullable restore
 #else
-        public string Type {
+        public string Type
+        {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
 #endif
         /// <summary>The unitCost property</summary>
-        public decimal? UnitCost {
+        public decimal? UnitCost
+        {
             get { return BackingStore?.Get<decimal?>("unitCost"); }
             set { BackingStore?.Set("unitCost", value); }
         }
         /// <summary>The unitPrice property</summary>
-        public decimal? UnitPrice {
+        public decimal? UnitPrice
+        {
             get { return BackingStore?.Get<decimal?>("unitPrice"); }
             set { BackingStore?.Set("unitPrice", value); }
         }
@@ -219,25 +249,25 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"baseUnitOfMeasureId", n => { BaseUnitOfMeasureId = n.GetGuidValue(); } },
-                {"blocked", n => { Blocked = n.GetBoolValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"gtin", n => { Gtin = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"inventory", n => { Inventory = n.GetDecimalValue(); } },
-                {"itemCategory", n => { ItemCategory = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemCategory>(Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue); } },
-                {"itemCategoryCode", n => { ItemCategoryCode = n.GetStringValue(); } },
-                {"itemCategoryId", n => { ItemCategoryId = n.GetGuidValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"number", n => { Number = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"priceIncludesTax", n => { PriceIncludesTax = n.GetBoolValue(); } },
-                {"taxGroupCode", n => { TaxGroupCode = n.GetStringValue(); } },
-                {"taxGroupId", n => { TaxGroupId = n.GetGuidValue(); } },
-                {"type", n => { Type = n.GetStringValue(); } },
-                {"unitCost", n => { UnitCost = n.GetDecimalValue(); } },
-                {"unitPrice", n => { UnitPrice = n.GetDecimalValue(); } },
+                { "baseUnitOfMeasureId", n => { BaseUnitOfMeasureId = n.GetGuidValue(); } },
+                { "blocked", n => { Blocked = n.GetBoolValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "gtin", n => { Gtin = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "inventory", n => { Inventory = n.GetDecimalValue(); } },
+                { "itemCategory", n => { ItemCategory = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemCategory>(Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue); } },
+                { "itemCategoryCode", n => { ItemCategoryCode = n.GetStringValue(); } },
+                { "itemCategoryId", n => { ItemCategoryId = n.GetGuidValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "number", n => { Number = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "priceIncludesTax", n => { PriceIncludesTax = n.GetBoolValue(); } },
+                { "taxGroupCode", n => { TaxGroupCode = n.GetStringValue(); } },
+                { "taxGroupId", n => { TaxGroupId = n.GetGuidValue(); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+                { "unitCost", n => { UnitCost = n.GetDecimalValue(); } },
+                { "unitPrice", n => { UnitPrice = n.GetDecimalValue(); } },
             };
         }
         /// <summary>

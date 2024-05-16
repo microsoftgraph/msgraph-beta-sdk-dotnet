@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Export {
+namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignments.Export
+{
     [Obsolete("This class is obsolete. Use ExportGetResponse instead.")]
     #pragma warning disable CS1591
-    public class ExportResponse : ExportGetResponse, IParsable 
+    public class ExportResponse : ExportGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

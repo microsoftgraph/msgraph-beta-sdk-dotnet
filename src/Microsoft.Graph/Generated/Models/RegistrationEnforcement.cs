@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RegistrationEnforcement : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RegistrationEnforcement : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Run campaigns to remind users to set up targeted authentication methods.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign? AuthenticationMethodsRegistrationCampaign {
+        public Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign? AuthenticationMethodsRegistrationCampaign
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign?>("authenticationMethodsRegistrationCampaign"); }
             set { BackingStore?.Set("authenticationMethodsRegistrationCampaign", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaign {
+        public Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign AuthenticationMethodsRegistrationCampaign
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign>("authenticationMethodsRegistrationCampaign"); }
             set { BackingStore?.Set("authenticationMethodsRegistrationCampaign", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authenticationMethodsRegistrationCampaign", n => { AuthenticationMethodsRegistrationCampaign = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign>(Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "authenticationMethodsRegistrationCampaign", n => { AuthenticationMethodsRegistrationCampaign = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign>(Microsoft.Graph.Beta.Models.AuthenticationMethodsRegistrationCampaign.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

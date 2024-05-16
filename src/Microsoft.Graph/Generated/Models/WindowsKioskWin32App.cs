@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// KioskModeApp v4 for Win32 app support
     /// </summary>
-    public class WindowsKioskWin32App : WindowsKioskAppBase, IParsable 
+    public class WindowsKioskWin32App : WindowsKioskAppBase, IParsable
     {
         /// <summary>This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClassicAppPath {
+        public string? ClassicAppPath
+        {
             get { return BackingStore?.Get<string?>("classicAppPath"); }
             set { BackingStore?.Set("classicAppPath", value); }
         }
 #nullable restore
 #else
-        public string ClassicAppPath {
+        public string ClassicAppPath
+        {
             get { return BackingStore?.Get<string>("classicAppPath"); }
             set { BackingStore?.Set("classicAppPath", value); }
         }
@@ -27,29 +30,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Edge kiosk (url) for Edge kiosk mode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EdgeKiosk {
+        public string? EdgeKiosk
+        {
             get { return BackingStore?.Get<string?>("edgeKiosk"); }
             set { BackingStore?.Set("edgeKiosk", value); }
         }
 #nullable restore
 #else
-        public string EdgeKiosk {
+        public string EdgeKiosk
+        {
             get { return BackingStore?.Get<string>("edgeKiosk"); }
             set { BackingStore?.Set("edgeKiosk", value); }
         }
 #endif
         /// <summary>Edge kiosk idle timeout in minutes for Edge kiosk mode. Valid values 0 to 1440</summary>
-        public int? EdgeKioskIdleTimeoutMinutes {
+        public int? EdgeKioskIdleTimeoutMinutes
+        {
             get { return BackingStore?.Get<int?>("edgeKioskIdleTimeoutMinutes"); }
             set { BackingStore?.Set("edgeKioskIdleTimeoutMinutes", value); }
         }
         /// <summary>Edge kiosk type</summary>
-        public WindowsEdgeKioskType? EdgeKioskType {
+        public WindowsEdgeKioskType? EdgeKioskType
+        {
             get { return BackingStore?.Get<WindowsEdgeKioskType?>("edgeKioskType"); }
             set { BackingStore?.Set("edgeKioskType", value); }
         }
         /// <summary>Edge first run flag for Edge kiosk mode</summary>
-        public bool? EdgeNoFirstRun {
+        public bool? EdgeNoFirstRun
+        {
             get { return BackingStore?.Get<bool?>("edgeNoFirstRun"); }
             set { BackingStore?.Set("edgeNoFirstRun", value); }
         }
@@ -78,11 +86,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"classicAppPath", n => { ClassicAppPath = n.GetStringValue(); } },
-                {"edgeKiosk", n => { EdgeKiosk = n.GetStringValue(); } },
-                {"edgeKioskIdleTimeoutMinutes", n => { EdgeKioskIdleTimeoutMinutes = n.GetIntValue(); } },
-                {"edgeKioskType", n => { EdgeKioskType = n.GetEnumValue<WindowsEdgeKioskType>(); } },
-                {"edgeNoFirstRun", n => { EdgeNoFirstRun = n.GetBoolValue(); } },
+                { "classicAppPath", n => { ClassicAppPath = n.GetStringValue(); } },
+                { "edgeKiosk", n => { EdgeKiosk = n.GetStringValue(); } },
+                { "edgeKioskIdleTimeoutMinutes", n => { EdgeKioskIdleTimeoutMinutes = n.GetIntValue(); } },
+                { "edgeKioskType", n => { EdgeKioskType = n.GetEnumValue<WindowsEdgeKioskType>(); } },
+                { "edgeNoFirstRun", n => { EdgeNoFirstRun = n.GetBoolValue(); } },
             };
         }
         /// <summary>

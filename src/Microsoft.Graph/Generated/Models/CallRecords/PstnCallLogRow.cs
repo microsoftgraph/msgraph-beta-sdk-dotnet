@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.CallRecords {
+namespace Microsoft.Graph.Beta.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class PstnCallLogRow : CallLogRow, IParsable 
+    public class PstnCallLogRow : CallLogRow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The source of the call duration data. If the call uses a third-party telecommunications operator via the Operator Connect Program, the operator may provide their own call duration data. In this case, the property value is operator. Otherwise, the value is microsoft.</summary>
-        public PstnCallDurationSource? CallDurationSource {
+        public PstnCallDurationSource? CallDurationSource
+        {
             get { return BackingStore?.Get<PstnCallDurationSource?>("callDurationSource"); }
             set { BackingStore?.Set("callDurationSource", value); }
         }
         /// <summary>Number of the user or bot who received the call (E.164).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CalleeNumber {
+        public string? CalleeNumber
+        {
             get { return BackingStore?.Get<string?>("calleeNumber"); }
             set { BackingStore?.Set("calleeNumber", value); }
         }
 #nullable restore
 #else
-        public string CalleeNumber {
+        public string CalleeNumber
+        {
             get { return BackingStore?.Get<string>("calleeNumber"); }
             set { BackingStore?.Set("calleeNumber", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Number of the user or bot who made the call (E.164).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallerNumber {
+        public string? CallerNumber
+        {
             get { return BackingStore?.Get<string?>("callerNumber"); }
             set { BackingStore?.Set("callerNumber", value); }
         }
 #nullable restore
 #else
-        public string CallerNumber {
+        public string CallerNumber
+        {
             get { return BackingStore?.Get<string>("callerNumber"); }
             set { BackingStore?.Set("callerNumber", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Call identifier. Not guaranteed to be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallId {
+        public string? CallId
+        {
             get { return BackingStore?.Get<string?>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
 #nullable restore
 #else
-        public string CallId {
+        public string CallId
+        {
             get { return BackingStore?.Get<string>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
@@ -59,32 +67,37 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Indicates whether the call was a PSTN outbound or inbound call and the type of call such as a call placed by a user or an audio conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CallType {
+        public string? CallType
+        {
             get { return BackingStore?.Get<string?>("callType"); }
             set { BackingStore?.Set("callType", value); }
         }
 #nullable restore
 #else
-        public string CallType {
+        public string CallType
+        {
             get { return BackingStore?.Get<string>("callType"); }
             set { BackingStore?.Set("callType", value); }
         }
 #endif
         /// <summary>Amount of money or cost of the call that is charged to your account.</summary>
-        public decimal? Charge {
+        public decimal? Charge
+        {
             get { return BackingStore?.Get<decimal?>("charge"); }
             set { BackingStore?.Set("charge", value); }
         }
         /// <summary>Local IPv4 of the client that is retrieved from the operating system of the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientLocalIpV4Address {
+        public string? ClientLocalIpV4Address
+        {
             get { return BackingStore?.Get<string?>("clientLocalIpV4Address"); }
             set { BackingStore?.Set("clientLocalIpV4Address", value); }
         }
 #nullable restore
 #else
-        public string ClientLocalIpV4Address {
+        public string ClientLocalIpV4Address
+        {
             get { return BackingStore?.Get<string>("clientLocalIpV4Address"); }
             set { BackingStore?.Set("clientLocalIpV4Address", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Local IPv6 of the client that is retrieved from the operating system of the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientLocalIpV6Address {
+        public string? ClientLocalIpV6Address
+        {
             get { return BackingStore?.Get<string?>("clientLocalIpV6Address"); }
             set { BackingStore?.Set("clientLocalIpV6Address", value); }
         }
 #nullable restore
 #else
-        public string ClientLocalIpV6Address {
+        public string ClientLocalIpV6Address
+        {
             get { return BackingStore?.Get<string>("clientLocalIpV6Address"); }
             set { BackingStore?.Set("clientLocalIpV6Address", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Public IPv4 of the client that can be used to determine the location of the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientPublicIpV4Address {
+        public string? ClientPublicIpV4Address
+        {
             get { return BackingStore?.Get<string?>("clientPublicIpV4Address"); }
             set { BackingStore?.Set("clientPublicIpV4Address", value); }
         }
 #nullable restore
 #else
-        public string ClientPublicIpV4Address {
+        public string ClientPublicIpV4Address
+        {
             get { return BackingStore?.Get<string>("clientPublicIpV4Address"); }
             set { BackingStore?.Set("clientPublicIpV4Address", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Public IPv6 of the client that can be used to determine the location of the client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientPublicIpV6Address {
+        public string? ClientPublicIpV6Address
+        {
             get { return BackingStore?.Get<string?>("clientPublicIpV6Address"); }
             set { BackingStore?.Set("clientPublicIpV6Address", value); }
         }
 #nullable restore
 #else
-        public string ClientPublicIpV6Address {
+        public string ClientPublicIpV6Address
+        {
             get { return BackingStore?.Get<string>("clientPublicIpV6Address"); }
             set { BackingStore?.Set("clientPublicIpV6Address", value); }
         }
@@ -134,32 +153,37 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>ID of the audio conference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConferenceId {
+        public string? ConferenceId
+        {
             get { return BackingStore?.Get<string?>("conferenceId"); }
             set { BackingStore?.Set("conferenceId", value); }
         }
 #nullable restore
 #else
-        public string ConferenceId {
+        public string ConferenceId
+        {
             get { return BackingStore?.Get<string>("conferenceId"); }
             set { BackingStore?.Set("conferenceId", value); }
         }
 #endif
         /// <summary>Connection fee price.</summary>
-        public decimal? ConnectionCharge {
+        public decimal? ConnectionCharge
+        {
             get { return BackingStore?.Get<decimal?>("connectionCharge"); }
             set { BackingStore?.Set("connectionCharge", value); }
         }
         /// <summary>Type of currency used to calculate the cost of the call (ISO 4217).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency {
+        public string? Currency
+        {
             get { return BackingStore?.Get<string?>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
 #nullable restore
 #else
-        public string Currency {
+        public string Currency
+        {
             get { return BackingStore?.Get<string>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationContext {
+        public string? DestinationContext
+        {
             get { return BackingStore?.Get<string?>("destinationContext"); }
             set { BackingStore?.Set("destinationContext", value); }
         }
 #nullable restore
 #else
-        public string DestinationContext {
+        public string DestinationContext
+        {
             get { return BackingStore?.Get<string>("destinationContext"); }
             set { BackingStore?.Set("destinationContext", value); }
         }
@@ -181,37 +207,43 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Country or region dialed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationName {
+        public string? DestinationName
+        {
             get { return BackingStore?.Get<string?>("destinationName"); }
             set { BackingStore?.Set("destinationName", value); }
         }
 #nullable restore
 #else
-        public string DestinationName {
+        public string DestinationName
+        {
             get { return BackingStore?.Get<string>("destinationName"); }
             set { BackingStore?.Set("destinationName", value); }
         }
 #endif
         /// <summary>How long the call was connected, in seconds.</summary>
-        public int? Duration {
+        public int? Duration
+        {
             get { return BackingStore?.Get<int?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>Call end time.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>User&apos;s phone number type, such as a service of toll-free number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InventoryType {
+        public string? InventoryType
+        {
             get { return BackingStore?.Get<string?>("inventoryType"); }
             set { BackingStore?.Set("inventoryType", value); }
         }
 #nullable restore
 #else
-        public string InventoryType {
+        public string InventoryType
+        {
             get { return BackingStore?.Get<string>("inventoryType"); }
             set { BackingStore?.Set("inventoryType", value); }
         }
@@ -219,13 +251,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The license used for the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LicenseCapability {
+        public string? LicenseCapability
+        {
             get { return BackingStore?.Get<string?>("licenseCapability"); }
             set { BackingStore?.Set("licenseCapability", value); }
         }
 #nullable restore
 #else
-        public string LicenseCapability {
+        public string LicenseCapability
+        {
             get { return BackingStore?.Get<string>("licenseCapability"); }
             set { BackingStore?.Set("licenseCapability", value); }
         }
@@ -233,32 +267,37 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The telecommunications operator that provided PSTN services for this call. It may be Microsoft, or it may be a third-party operator via the Operator Connect Program.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Operator {
+        public string? Operator
+        {
             get { return BackingStore?.Get<string?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
 #nullable restore
 #else
-        public string Operator {
+        public string Operator
+        {
             get { return BackingStore?.Get<string>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
 #endif
         /// <summary>Call start time.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Country code of the tenant. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantCountryCode {
+        public string? TenantCountryCode
+        {
             get { return BackingStore?.Get<string?>("tenantCountryCode"); }
             set { BackingStore?.Set("tenantCountryCode", value); }
         }
 #nullable restore
 #else
-        public string TenantCountryCode {
+        public string TenantCountryCode
+        {
             get { return BackingStore?.Get<string>("tenantCountryCode"); }
             set { BackingStore?.Set("tenantCountryCode", value); }
         }
@@ -266,13 +305,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Country code of the user. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UsageCountryCode {
+        public string? UsageCountryCode
+        {
             get { return BackingStore?.Get<string?>("usageCountryCode"); }
             set { BackingStore?.Set("usageCountryCode", value); }
         }
 #nullable restore
 #else
-        public string UsageCountryCode {
+        public string UsageCountryCode
+        {
             get { return BackingStore?.Get<string>("usageCountryCode"); }
             set { BackingStore?.Set("usageCountryCode", value); }
         }
@@ -295,29 +336,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callDurationSource", n => { CallDurationSource = n.GetEnumValue<PstnCallDurationSource>(); } },
-                {"callId", n => { CallId = n.GetStringValue(); } },
-                {"callType", n => { CallType = n.GetStringValue(); } },
-                {"calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
-                {"callerNumber", n => { CallerNumber = n.GetStringValue(); } },
-                {"charge", n => { Charge = n.GetDecimalValue(); } },
-                {"clientLocalIpV4Address", n => { ClientLocalIpV4Address = n.GetStringValue(); } },
-                {"clientLocalIpV6Address", n => { ClientLocalIpV6Address = n.GetStringValue(); } },
-                {"clientPublicIpV4Address", n => { ClientPublicIpV4Address = n.GetStringValue(); } },
-                {"clientPublicIpV6Address", n => { ClientPublicIpV6Address = n.GetStringValue(); } },
-                {"conferenceId", n => { ConferenceId = n.GetStringValue(); } },
-                {"connectionCharge", n => { ConnectionCharge = n.GetDecimalValue(); } },
-                {"currency", n => { Currency = n.GetStringValue(); } },
-                {"destinationContext", n => { DestinationContext = n.GetStringValue(); } },
-                {"destinationName", n => { DestinationName = n.GetStringValue(); } },
-                {"duration", n => { Duration = n.GetIntValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"inventoryType", n => { InventoryType = n.GetStringValue(); } },
-                {"licenseCapability", n => { LicenseCapability = n.GetStringValue(); } },
-                {"operator", n => { Operator = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tenantCountryCode", n => { TenantCountryCode = n.GetStringValue(); } },
-                {"usageCountryCode", n => { UsageCountryCode = n.GetStringValue(); } },
+                { "callDurationSource", n => { CallDurationSource = n.GetEnumValue<PstnCallDurationSource>(); } },
+                { "callId", n => { CallId = n.GetStringValue(); } },
+                { "callType", n => { CallType = n.GetStringValue(); } },
+                { "calleeNumber", n => { CalleeNumber = n.GetStringValue(); } },
+                { "callerNumber", n => { CallerNumber = n.GetStringValue(); } },
+                { "charge", n => { Charge = n.GetDecimalValue(); } },
+                { "clientLocalIpV4Address", n => { ClientLocalIpV4Address = n.GetStringValue(); } },
+                { "clientLocalIpV6Address", n => { ClientLocalIpV6Address = n.GetStringValue(); } },
+                { "clientPublicIpV4Address", n => { ClientPublicIpV4Address = n.GetStringValue(); } },
+                { "clientPublicIpV6Address", n => { ClientPublicIpV6Address = n.GetStringValue(); } },
+                { "conferenceId", n => { ConferenceId = n.GetStringValue(); } },
+                { "connectionCharge", n => { ConnectionCharge = n.GetDecimalValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "destinationContext", n => { DestinationContext = n.GetStringValue(); } },
+                { "destinationName", n => { DestinationName = n.GetStringValue(); } },
+                { "duration", n => { Duration = n.GetIntValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "inventoryType", n => { InventoryType = n.GetStringValue(); } },
+                { "licenseCapability", n => { LicenseCapability = n.GetStringValue(); } },
+                { "operator", n => { Operator = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "tenantCountryCode", n => { TenantCountryCode = n.GetStringValue(); } },
+                { "usageCountryCode", n => { UsageCountryCode = n.GetStringValue(); } },
             };
         }
         /// <summary>

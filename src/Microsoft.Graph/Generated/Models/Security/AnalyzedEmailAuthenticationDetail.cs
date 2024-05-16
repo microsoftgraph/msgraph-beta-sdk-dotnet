@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AnalyzedEmailAuthenticationDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AnalyzedEmailAuthenticationDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>A value used by Microsoft 365 to combine email authentication such as SPF, DKIM, and DMARC, to determine whether the message is authentic.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CompositeAuthentication {
+        public string? CompositeAuthentication
+        {
             get { return BackingStore?.Get<string?>("compositeAuthentication"); }
             set { BackingStore?.Set("compositeAuthentication", value); }
         }
 #nullable restore
 #else
-        public string CompositeAuthentication {
+        public string CompositeAuthentication
+        {
             get { return BackingStore?.Get<string>("compositeAuthentication"); }
             set { BackingStore?.Set("compositeAuthentication", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>DomainKeys identified mail (DKIM). Indicates whether it was pass/fail/soft fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dkim {
+        public string? Dkim
+        {
             get { return BackingStore?.Get<string?>("dkim"); }
             set { BackingStore?.Set("dkim", value); }
         }
 #nullable restore
 #else
-        public string Dkim {
+        public string Dkim
+        {
             get { return BackingStore?.Get<string>("dkim"); }
             set { BackingStore?.Set("dkim", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Domain-based Message Authentication. Indicates whether it was pass/fail/soft fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Dmarc {
+        public string? Dmarc
+        {
             get { return BackingStore?.Get<string?>("dmarc"); }
             set { BackingStore?.Set("dmarc", value); }
         }
 #nullable restore
 #else
-        public string Dmarc {
+        public string Dmarc
+        {
             get { return BackingStore?.Get<string>("dmarc"); }
             set { BackingStore?.Set("dmarc", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Sender Policy Framework (SPF). Indicates whether it was pass/fail/soft fail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderPolicyFramework {
+        public string? SenderPolicyFramework
+        {
             get { return BackingStore?.Get<string?>("senderPolicyFramework"); }
             set { BackingStore?.Set("senderPolicyFramework", value); }
         }
 #nullable restore
 #else
-        public string SenderPolicyFramework {
+        public string SenderPolicyFramework
+        {
             get { return BackingStore?.Get<string>("senderPolicyFramework"); }
             set { BackingStore?.Set("senderPolicyFramework", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"compositeAuthentication", n => { CompositeAuthentication = n.GetStringValue(); } },
-                {"dkim", n => { Dkim = n.GetStringValue(); } },
-                {"dmarc", n => { Dmarc = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"senderPolicyFramework", n => { SenderPolicyFramework = n.GetStringValue(); } },
+                { "compositeAuthentication", n => { CompositeAuthentication = n.GetStringValue(); } },
+                { "dkim", n => { Dkim = n.GetStringValue(); } },
+                { "dmarc", n => { Dmarc = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "senderPolicyFramework", n => { SenderPolicyFramework = n.GetStringValue(); } },
             };
         }
         /// <summary>

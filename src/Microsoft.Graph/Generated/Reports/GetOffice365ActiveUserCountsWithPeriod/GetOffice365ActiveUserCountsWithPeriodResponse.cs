@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserCountsWithPeriod
+{
     [Obsolete("This class is obsolete. Use GetOffice365ActiveUserCountsWithPeriodGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOffice365ActiveUserCountsWithPeriodResponse : GetOffice365ActiveUserCountsWithPeriodGetResponse, IParsable 
+    public class GetOffice365ActiveUserCountsWithPeriodResponse : GetOffice365ActiveUserCountsWithPeriodGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

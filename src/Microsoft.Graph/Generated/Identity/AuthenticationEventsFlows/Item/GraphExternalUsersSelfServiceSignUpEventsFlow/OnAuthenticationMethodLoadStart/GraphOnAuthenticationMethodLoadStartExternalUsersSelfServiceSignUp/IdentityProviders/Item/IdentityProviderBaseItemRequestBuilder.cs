@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.OnAuthenticationMethodLoadStart.GraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp.IdentityProviders.Item {
+namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.OnAuthenticationMethodLoadStart.GraphOnAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp.IdentityProviders.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \identity\authenticationEventsFlows\{authenticationEventsFlow-id}\graph.externalUsersSelfServiceSignUpEventsFlow\onAuthenticationMethodLoadStart\graph.onAuthenticationMethodLoadStartExternalUsersSelfServiceSignUp\identityProviders\{identityProviderBase-id}
     /// </summary>
-    public class IdentityProviderBaseItemRequestBuilder : BaseRequestBuilder 
+    public class IdentityProviderBaseItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of identityContainer entities.</summary>
         public RefRequestBuilder Ref

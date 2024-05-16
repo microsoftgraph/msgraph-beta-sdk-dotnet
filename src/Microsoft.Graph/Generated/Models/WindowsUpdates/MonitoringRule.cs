@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class MonitoringRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MonitoringRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action triggered when the threshold for the given signal is reached. Possible values are: alertError, pauseDeployment, offerFallback, unknownFutureValue. The offerFallback member is only supported on feature update deployments of Windows 11 and must be paired with the ineligible signal. The fallback version offered is the version 22H2 of Windows 10.</summary>
-        public MonitoringAction? Action {
+        public MonitoringAction? Action
+        {
             get { return BackingStore?.Get<MonitoringAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -25,24 +28,28 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The signal to monitor. Possible values are: rollback, ineligible, unknownFutureValue. The ineligible member is only supported on feature update deployments of Windows 11 and must be paired with the offerFallback action.</summary>
-        public MonitoringSignal? Signal {
+        public MonitoringSignal? Signal
+        {
             get { return BackingStore?.Get<MonitoringSignal?>("signal"); }
             set { BackingStore?.Set("signal", value); }
         }
         /// <summary>The threshold for a signal at which to trigger the action. An integer from 1 to 100 (inclusive). This value is ignored when the signal is ineligible and the action is offerFallback.</summary>
-        public int? Threshold {
+        public int? Threshold
+        {
             get { return BackingStore?.Get<int?>("threshold"); }
             set { BackingStore?.Set("threshold", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<MonitoringAction>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"signal", n => { Signal = n.GetEnumValue<MonitoringSignal>(); } },
-                {"threshold", n => { Threshold = n.GetIntValue(); } },
+                { "action", n => { Action = n.GetEnumValue<MonitoringAction>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "signal", n => { Signal = n.GetEnumValue<MonitoringSignal>(); } },
+                { "threshold", n => { Threshold = n.GetIntValue(); } },
             };
         }
         /// <summary>

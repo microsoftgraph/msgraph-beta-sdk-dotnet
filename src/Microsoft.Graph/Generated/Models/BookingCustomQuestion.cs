@@ -4,52 +4,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents a custom question of the business.
     /// </summary>
-    public class BookingCustomQuestion : Entity, IParsable 
+    public class BookingCustomQuestion : Entity, IParsable
     {
         /// <summary>The expected answer type. The possible values are: text, radioButton, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
+        public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnswerInputType?>("answerInputType"); }
             set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>List of possible answer values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AnswerOptions {
+        public List<string>? AnswerOptions
+        {
             get { return BackingStore?.Get<List<string>?>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
 #nullable restore
 #else
-        public List<string> AnswerOptions {
+        public List<string> AnswerOptions
+        {
             get { return BackingStore?.Get<List<string>>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
 #endif
         /// <summary>The date, time and timezone when the custom question was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Display name of this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date, time and timezone when the custom question was last updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
@@ -71,11 +79,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
-                {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
+                { "answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

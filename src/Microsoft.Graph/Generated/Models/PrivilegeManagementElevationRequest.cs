@@ -4,55 +4,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// These are elevation approval requests for EPM support arbitrated scenario initiated by IW user that admins can take action on.
     /// </summary>
-    public class PrivilegeManagementElevationRequest : Entity, IParsable 
+    public class PrivilegeManagementElevationRequest : Entity, IParsable
     {
         /// <summary>Details of the application which is being requested to elevate, allowing the admin to understand the identity of the application. It includes file info such as FilePath, FileHash, FilePublisher, and etc. Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ApplicationDetail? ApplicationDetail {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationDetail?>("applicationDetail"); }
+        public ElevationRequestApplicationDetail? ApplicationDetail
+        {
+            get { return BackingStore?.Get<ElevationRequestApplicationDetail?>("applicationDetail"); }
             set { BackingStore?.Set("applicationDetail", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ApplicationDetail ApplicationDetail {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationDetail>("applicationDetail"); }
+        public ElevationRequestApplicationDetail ApplicationDetail
+        {
+            get { return BackingStore?.Get<ElevationRequestApplicationDetail>("applicationDetail"); }
             set { BackingStore?.Set("applicationDetail", value); }
         }
 #endif
         /// <summary>The device name used to initiate the elevation request. For example: &apos;cotonso-laptop&apos;. Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>The date and time when the elevation request was submitted/created. The value cannot be modified and is automatically populated when the elevation request is submitted/created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default. Read-only.</summary>
-        public DateTimeOffset? RequestCreatedDateTime {
+        public DateTimeOffset? RequestCreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestCreatedDateTime"); }
             set { BackingStore?.Set("requestCreatedDateTime", value); }
         }
         /// <summary>The Azure Active Directory (AAD) identifier of the end user who is requesting this elevation. For example: &apos;F1A57311-B9EB-45B7-9415-8555E68EDC9E&apos;. Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedByUserId {
+        public string? RequestedByUserId
+        {
             get { return BackingStore?.Get<string?>("requestedByUserId"); }
             set { BackingStore?.Set("requestedByUserId", value); }
         }
 #nullable restore
 #else
-        public string RequestedByUserId {
+        public string RequestedByUserId
+        {
             get { return BackingStore?.Get<string>("requestedByUserId"); }
             set { BackingStore?.Set("requestedByUserId", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The User Principal Name (UPN) of the end user who requested this elevation. For example: &apos;user1@contoso.com&apos;. Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedByUserPrincipalName {
+        public string? RequestedByUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("requestedByUserPrincipalName"); }
             set { BackingStore?.Set("requestedByUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string RequestedByUserPrincipalName {
+        public string RequestedByUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("requestedByUserPrincipalName"); }
             set { BackingStore?.Set("requestedByUserPrincipalName", value); }
         }
@@ -74,51 +84,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Intune Device Identifier of the managed device used to initiate the elevation request. For example: &apos;90F5F6E8-CA09-4811-97F6-4D0DD532D916&apos;. Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestedOnDeviceId {
+        public string? RequestedOnDeviceId
+        {
             get { return BackingStore?.Get<string?>("requestedOnDeviceId"); }
             set { BackingStore?.Set("requestedOnDeviceId", value); }
         }
 #nullable restore
 #else
-        public string RequestedOnDeviceId {
+        public string RequestedOnDeviceId
+        {
             get { return BackingStore?.Get<string>("requestedOnDeviceId"); }
             set { BackingStore?.Set("requestedOnDeviceId", value); }
         }
 #endif
         /// <summary>Expiration set for the request when it was created, regardless of approved or denied status. For example: &apos;2023-08-03T14:24:22Z&apos;. Returned by default. Returned by default. Read-only.</summary>
-        public DateTimeOffset? RequestExpiryDateTime {
+        public DateTimeOffset? RequestExpiryDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestExpiryDateTime"); }
             set { BackingStore?.Set("requestExpiryDateTime", value); }
         }
         /// <summary>Justification provided by the end user for the elevation request. For example :&apos;Need to elevate to install microsoft word&apos;. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestJustification {
+        public string? RequestJustification
+        {
             get { return BackingStore?.Get<string?>("requestJustification"); }
             set { BackingStore?.Set("requestJustification", value); }
         }
 #nullable restore
 #else
-        public string RequestJustification {
+        public string RequestJustification
+        {
             get { return BackingStore?.Get<string>("requestJustification"); }
             set { BackingStore?.Set("requestJustification", value); }
         }
 #endif
         /// <summary>The date and time when the elevation request was either submitted/created or approved/denied. The value cannot be modified and is automatically populated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default. Read-only.</summary>
-        public DateTimeOffset? RequestLastModifiedDateTime {
+        public DateTimeOffset? RequestLastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestLastModifiedDateTime"); }
             set { BackingStore?.Set("requestLastModifiedDateTime", value); }
         }
         /// <summary>This is the Azure Active Directory (AAD) user id of the administrator who approved or denied the request. For example: &apos;F1A57311-B9EB-45B7-9415-8555E68EDC9E&apos;. This field would be String.Empty before the request is either approved or denied. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewCompletedByUserId {
+        public string? ReviewCompletedByUserId
+        {
             get { return BackingStore?.Get<string?>("reviewCompletedByUserId"); }
             set { BackingStore?.Set("reviewCompletedByUserId", value); }
         }
 #nullable restore
 #else
-        public string ReviewCompletedByUserId {
+        public string ReviewCompletedByUserId
+        {
             get { return BackingStore?.Get<string>("reviewCompletedByUserId"); }
             set { BackingStore?.Set("reviewCompletedByUserId", value); }
         }
@@ -126,38 +144,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This is the User Principal Name (UPN) of the administrator who approved or denied the request. For example: &apos;admin@contoso.com&apos;. This field would be String.Empty before the request is either approved or denied. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewCompletedByUserPrincipalName {
+        public string? ReviewCompletedByUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("reviewCompletedByUserPrincipalName"); }
             set { BackingStore?.Set("reviewCompletedByUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string ReviewCompletedByUserPrincipalName {
+        public string ReviewCompletedByUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("reviewCompletedByUserPrincipalName"); }
             set { BackingStore?.Set("reviewCompletedByUserPrincipalName", value); }
         }
 #endif
         /// <summary>The DateTime for which the request was approved or denied. For example, midnight UTC on August 3rd, 2023 would look like this: &apos;2023-08-03T00:00:00Z&apos;. Read-only.</summary>
-        public DateTimeOffset? ReviewCompletedDateTime {
+        public DateTimeOffset? ReviewCompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewCompletedDateTime"); }
             set { BackingStore?.Set("reviewCompletedDateTime", value); }
         }
         /// <summary>An optional justification provided by approver at approval or denied time. This field will be String.Empty if approver decides to not provide a justification. For example: &apos;Run this installer today&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReviewerJustification {
+        public string? ReviewerJustification
+        {
             get { return BackingStore?.Get<string?>("reviewerJustification"); }
             set { BackingStore?.Set("reviewerJustification", value); }
         }
 #nullable restore
 #else
-        public string ReviewerJustification {
+        public string ReviewerJustification
+        {
             get { return BackingStore?.Get<string>("reviewerJustification"); }
             set { BackingStore?.Set("reviewerJustification", value); }
         }
 #endif
         /// <summary>Indicates state of elevation request</summary>
-        public ElevationRequestState? Status {
+        public ElevationRequestState? Status
+        {
             get { return BackingStore?.Get<ElevationRequestState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -179,20 +203,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicationDetail", n => { ApplicationDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.ApplicationDetail>(Microsoft.Graph.Beta.Models.ApplicationDetail.CreateFromDiscriminatorValue); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"requestCreatedDateTime", n => { RequestCreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requestExpiryDateTime", n => { RequestExpiryDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requestJustification", n => { RequestJustification = n.GetStringValue(); } },
-                {"requestLastModifiedDateTime", n => { RequestLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requestedByUserId", n => { RequestedByUserId = n.GetStringValue(); } },
-                {"requestedByUserPrincipalName", n => { RequestedByUserPrincipalName = n.GetStringValue(); } },
-                {"requestedOnDeviceId", n => { RequestedOnDeviceId = n.GetStringValue(); } },
-                {"reviewCompletedByUserId", n => { ReviewCompletedByUserId = n.GetStringValue(); } },
-                {"reviewCompletedByUserPrincipalName", n => { ReviewCompletedByUserPrincipalName = n.GetStringValue(); } },
-                {"reviewCompletedDateTime", n => { ReviewCompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewerJustification", n => { ReviewerJustification = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<ElevationRequestState>(); } },
+                { "applicationDetail", n => { ApplicationDetail = n.GetObjectValue<ElevationRequestApplicationDetail>(ElevationRequestApplicationDetail.CreateFromDiscriminatorValue); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "requestCreatedDateTime", n => { RequestCreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "requestExpiryDateTime", n => { RequestExpiryDateTime = n.GetDateTimeOffsetValue(); } },
+                { "requestJustification", n => { RequestJustification = n.GetStringValue(); } },
+                { "requestLastModifiedDateTime", n => { RequestLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "requestedByUserId", n => { RequestedByUserId = n.GetStringValue(); } },
+                { "requestedByUserPrincipalName", n => { RequestedByUserPrincipalName = n.GetStringValue(); } },
+                { "requestedOnDeviceId", n => { RequestedOnDeviceId = n.GetStringValue(); } },
+                { "reviewCompletedByUserId", n => { ReviewCompletedByUserId = n.GetStringValue(); } },
+                { "reviewCompletedByUserPrincipalName", n => { ReviewCompletedByUserPrincipalName = n.GetStringValue(); } },
+                { "reviewCompletedDateTime", n => { ReviewCompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "reviewerJustification", n => { ReviewerJustification = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<ElevationRequestState>(); } },
             };
         }
         /// <summary>
@@ -203,7 +227,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ApplicationDetail>("applicationDetail", ApplicationDetail);
+            writer.WriteObjectValue<ElevationRequestApplicationDetail>("applicationDetail", ApplicationDetail);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteDateTimeOffsetValue("requestCreatedDateTime", RequestCreatedDateTime);
             writer.WriteStringValue("requestedByUserId", RequestedByUserId);

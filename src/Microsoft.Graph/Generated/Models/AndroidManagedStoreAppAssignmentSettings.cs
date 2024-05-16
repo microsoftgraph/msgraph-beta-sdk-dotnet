@@ -4,28 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties used to assign an Android Managed Store mobile app to a group.
     /// </summary>
-    public class AndroidManagedStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    public class AndroidManagedStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
     {
         /// <summary>The track IDs to enable for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AndroidManagedStoreAppTrackIds {
+        public List<string>? AndroidManagedStoreAppTrackIds
+        {
             get { return BackingStore?.Get<List<string>?>("androidManagedStoreAppTrackIds"); }
             set { BackingStore?.Set("androidManagedStoreAppTrackIds", value); }
         }
 #nullable restore
 #else
-        public List<string> AndroidManagedStoreAppTrackIds {
+        public List<string> AndroidManagedStoreAppTrackIds
+        {
             get { return BackingStore?.Get<List<string>>("androidManagedStoreAppTrackIds"); }
             set { BackingStore?.Set("androidManagedStoreAppTrackIds", value); }
         }
 #endif
         /// <summary>Prioritization for automatic updates of Android Managed Store apps set on assignment.</summary>
-        public AndroidManagedStoreAutoUpdateMode? AutoUpdateMode {
+        public AndroidManagedStoreAutoUpdateMode? AutoUpdateMode
+        {
             get { return BackingStore?.Get<AndroidManagedStoreAutoUpdateMode?>("autoUpdateMode"); }
             set { BackingStore?.Set("autoUpdateMode", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"androidManagedStoreAppTrackIds", n => { AndroidManagedStoreAppTrackIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"autoUpdateMode", n => { AutoUpdateMode = n.GetEnumValue<AndroidManagedStoreAutoUpdateMode>(); } },
+                { "androidManagedStoreAppTrackIds", n => { AndroidManagedStoreAppTrackIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "autoUpdateMode", n => { AutoUpdateMode = n.GetEnumValue<AndroidManagedStoreAutoUpdateMode>(); } },
             };
         }
         /// <summary>

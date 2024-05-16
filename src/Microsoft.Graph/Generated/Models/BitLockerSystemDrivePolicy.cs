@@ -5,58 +5,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// BitLocker Encryption Base Policies.
     /// </summary>
-    public class BitLockerSystemDrivePolicy : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BitLockerSystemDrivePolicy : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Select the encryption method for operating system drives. Possible values are: aesCbc128, aesCbc256, xtsAes128, xtsAes256.</summary>
-        public BitLockerEncryptionMethod? EncryptionMethod {
+        public BitLockerEncryptionMethod? EncryptionMethod
+        {
             get { return BackingStore?.Get<BitLockerEncryptionMethod?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
         /// <summary>Indicates the minimum length of startup pin. Valid values 4 to 20</summary>
-        public int? MinimumPinLength {
+        public int? MinimumPinLength
+        {
             get { return BackingStore?.Get<int?>("minimumPinLength"); }
             set { BackingStore?.Set("minimumPinLength", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Enable pre-boot recovery message and Url. If requireStartupAuthentication is false, this value does not affect.</summary>
-        public bool? PrebootRecoveryEnableMessageAndUrl {
+        public bool? PrebootRecoveryEnableMessageAndUrl
+        {
             get { return BackingStore?.Get<bool?>("prebootRecoveryEnableMessageAndUrl"); }
             set { BackingStore?.Set("prebootRecoveryEnableMessageAndUrl", value); }
         }
         /// <summary>Defines a custom recovery message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrebootRecoveryMessage {
+        public string? PrebootRecoveryMessage
+        {
             get { return BackingStore?.Get<string?>("prebootRecoveryMessage"); }
             set { BackingStore?.Set("prebootRecoveryMessage", value); }
         }
 #nullable restore
 #else
-        public string PrebootRecoveryMessage {
+        public string PrebootRecoveryMessage
+        {
             get { return BackingStore?.Get<string>("prebootRecoveryMessage"); }
             set { BackingStore?.Set("prebootRecoveryMessage", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Defines a custom recovery URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrebootRecoveryUrl {
+        public string? PrebootRecoveryUrl
+        {
             get { return BackingStore?.Get<string?>("prebootRecoveryUrl"); }
             set { BackingStore?.Set("prebootRecoveryUrl", value); }
         }
 #nullable restore
 #else
-        public string PrebootRecoveryUrl {
+        public string PrebootRecoveryUrl
+        {
             get { return BackingStore?.Get<string>("prebootRecoveryUrl"); }
             set { BackingStore?.Set("prebootRecoveryUrl", value); }
         }
@@ -78,44 +89,52 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Allows to recover BitLocker encrypted operating system drives in the absence of the required startup key information. This policy setting is applied when you turn on BitLocker.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BitLockerRecoveryOptions? RecoveryOptions {
+        public BitLockerRecoveryOptions? RecoveryOptions
+        {
             get { return BackingStore?.Get<BitLockerRecoveryOptions?>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
 #nullable restore
 #else
-        public BitLockerRecoveryOptions RecoveryOptions {
+        public BitLockerRecoveryOptions RecoveryOptions
+        {
             get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }
             set { BackingStore?.Set("recoveryOptions", value); }
         }
 #endif
         /// <summary>Indicates whether to allow BitLocker without a compatible TPM (requires a password or a startup key on a USB flash drive).</summary>
-        public bool? StartupAuthenticationBlockWithoutTpmChip {
+        public bool? StartupAuthenticationBlockWithoutTpmChip
+        {
             get { return BackingStore?.Get<bool?>("startupAuthenticationBlockWithoutTpmChip"); }
             set { BackingStore?.Set("startupAuthenticationBlockWithoutTpmChip", value); }
         }
         /// <summary>Require additional authentication at startup.</summary>
-        public bool? StartupAuthenticationRequired {
+        public bool? StartupAuthenticationRequired
+        {
             get { return BackingStore?.Get<bool?>("startupAuthenticationRequired"); }
             set { BackingStore?.Set("startupAuthenticationRequired", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? StartupAuthenticationTpmKeyUsage {
+        public ConfigurationUsage? StartupAuthenticationTpmKeyUsage
+        {
             get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmKeyUsage"); }
             set { BackingStore?.Set("startupAuthenticationTpmKeyUsage", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? StartupAuthenticationTpmPinAndKeyUsage {
+        public ConfigurationUsage? StartupAuthenticationTpmPinAndKeyUsage
+        {
             get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmPinAndKeyUsage"); }
             set { BackingStore?.Set("startupAuthenticationTpmPinAndKeyUsage", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? StartupAuthenticationTpmPinUsage {
+        public ConfigurationUsage? StartupAuthenticationTpmPinUsage
+        {
             get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmPinUsage"); }
             set { BackingStore?.Set("startupAuthenticationTpmPinUsage", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? StartupAuthenticationTpmUsage {
+        public ConfigurationUsage? StartupAuthenticationTpmUsage
+        {
             get { return BackingStore?.Get<ConfigurationUsage?>("startupAuthenticationTpmUsage"); }
             set { BackingStore?.Set("startupAuthenticationTpmUsage", value); }
         }
@@ -145,19 +164,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<BitLockerEncryptionMethod>(); } },
-                {"minimumPinLength", n => { MinimumPinLength = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"prebootRecoveryEnableMessageAndUrl", n => { PrebootRecoveryEnableMessageAndUrl = n.GetBoolValue(); } },
-                {"prebootRecoveryMessage", n => { PrebootRecoveryMessage = n.GetStringValue(); } },
-                {"prebootRecoveryUrl", n => { PrebootRecoveryUrl = n.GetStringValue(); } },
-                {"recoveryOptions", n => { RecoveryOptions = n.GetObjectValue<BitLockerRecoveryOptions>(BitLockerRecoveryOptions.CreateFromDiscriminatorValue); } },
-                {"startupAuthenticationBlockWithoutTpmChip", n => { StartupAuthenticationBlockWithoutTpmChip = n.GetBoolValue(); } },
-                {"startupAuthenticationRequired", n => { StartupAuthenticationRequired = n.GetBoolValue(); } },
-                {"startupAuthenticationTpmKeyUsage", n => { StartupAuthenticationTpmKeyUsage = n.GetEnumValue<ConfigurationUsage>(); } },
-                {"startupAuthenticationTpmPinAndKeyUsage", n => { StartupAuthenticationTpmPinAndKeyUsage = n.GetEnumValue<ConfigurationUsage>(); } },
-                {"startupAuthenticationTpmPinUsage", n => { StartupAuthenticationTpmPinUsage = n.GetEnumValue<ConfigurationUsage>(); } },
-                {"startupAuthenticationTpmUsage", n => { StartupAuthenticationTpmUsage = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<BitLockerEncryptionMethod>(); } },
+                { "minimumPinLength", n => { MinimumPinLength = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "prebootRecoveryEnableMessageAndUrl", n => { PrebootRecoveryEnableMessageAndUrl = n.GetBoolValue(); } },
+                { "prebootRecoveryMessage", n => { PrebootRecoveryMessage = n.GetStringValue(); } },
+                { "prebootRecoveryUrl", n => { PrebootRecoveryUrl = n.GetStringValue(); } },
+                { "recoveryOptions", n => { RecoveryOptions = n.GetObjectValue<BitLockerRecoveryOptions>(BitLockerRecoveryOptions.CreateFromDiscriminatorValue); } },
+                { "startupAuthenticationBlockWithoutTpmChip", n => { StartupAuthenticationBlockWithoutTpmChip = n.GetBoolValue(); } },
+                { "startupAuthenticationRequired", n => { StartupAuthenticationRequired = n.GetBoolValue(); } },
+                { "startupAuthenticationTpmKeyUsage", n => { StartupAuthenticationTpmKeyUsage = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "startupAuthenticationTpmPinAndKeyUsage", n => { StartupAuthenticationTpmPinAndKeyUsage = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "startupAuthenticationTpmPinUsage", n => { StartupAuthenticationTpmPinUsage = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "startupAuthenticationTpmUsage", n => { StartupAuthenticationTpmUsage = n.GetEnumValue<ConfigurationUsage>(); } },
             };
         }
         /// <summary>

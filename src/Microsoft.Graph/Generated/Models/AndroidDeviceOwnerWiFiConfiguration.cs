@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    public class AndroidDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable 
+    public class AndroidDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
-        public bool? ConnectAutomatically {
+        public bool? ConnectAutomatically
+        {
             get { return BackingStore?.Get<bool?>("connectAutomatically"); }
             set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
-        public bool? ConnectWhenNetworkNameIsHidden {
+        public bool? ConnectWhenNetworkNameIsHidden
+        {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>The MAC address randomization mode for Android device Wi-Fi configuration. Possible values include automatic and hardware. Default value is automatic. Possible values are: automatic, hardware, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.MacAddressRandomizationMode? MacAddressRandomizationMode {
+        public Microsoft.Graph.Beta.Models.MacAddressRandomizationMode? MacAddressRandomizationMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacAddressRandomizationMode?>("macAddressRandomizationMode"); }
             set { BackingStore?.Set("macAddressRandomizationMode", value); }
         }
         /// <summary>Network Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkName {
+        public string? NetworkName
+        {
             get { return BackingStore?.Get<string?>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
 #nullable restore
 #else
-        public string NetworkName {
+        public string NetworkName
+        {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
@@ -42,32 +48,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreSharedKey {
+        public string? PreSharedKey
+        {
             get { return BackingStore?.Get<string?>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #nullable restore
 #else
-        public string PreSharedKey {
+        public string PreSharedKey
+        {
             get { return BackingStore?.Get<string>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #endif
         /// <summary>This is the pre-shared key for WPA Personal Wi-Fi network.</summary>
-        public bool? PreSharedKeyIsSet {
+        public bool? PreSharedKeyIsSet
+        {
             get { return BackingStore?.Get<bool?>("preSharedKeyIsSet"); }
             set { BackingStore?.Set("preSharedKeyIsSet", value); }
         }
         /// <summary>Specify the proxy server configuration script URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyAutomaticConfigurationUrl {
+        public string? ProxyAutomaticConfigurationUrl
+        {
             get { return BackingStore?.Get<string?>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
 #nullable restore
 #else
-        public string ProxyAutomaticConfigurationUrl {
+        public string ProxyAutomaticConfigurationUrl
+        {
             get { return BackingStore?.Get<string>("proxyAutomaticConfigurationUrl"); }
             set { BackingStore?.Set("proxyAutomaticConfigurationUrl", value); }
         }
@@ -75,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of hosts to exclude using the proxy on connections for. These hosts can use wildcards such as .example.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyExclusionList {
+        public string? ProxyExclusionList
+        {
             get { return BackingStore?.Get<string?>("proxyExclusionList"); }
             set { BackingStore?.Set("proxyExclusionList", value); }
         }
 #nullable restore
 #else
-        public string ProxyExclusionList {
+        public string ProxyExclusionList
+        {
             get { return BackingStore?.Get<string>("proxyExclusionList"); }
             set { BackingStore?.Set("proxyExclusionList", value); }
         }
@@ -89,43 +102,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specify the proxy server IP address. Android documentation does not specify IPv4 or IPv6. For example: 192.168.1.1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyManualAddress {
+        public string? ProxyManualAddress
+        {
             get { return BackingStore?.Get<string?>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
 #nullable restore
 #else
-        public string ProxyManualAddress {
+        public string ProxyManualAddress
+        {
             get { return BackingStore?.Get<string>("proxyManualAddress"); }
             set { BackingStore?.Set("proxyManualAddress", value); }
         }
 #endif
         /// <summary>Specify the proxy server port.</summary>
-        public int? ProxyManualPort {
+        public int? ProxyManualPort
+        {
             get { return BackingStore?.Get<int?>("proxyManualPort"); }
             set { BackingStore?.Set("proxyManualPort", value); }
         }
         /// <summary>Wi-Fi Proxy Settings.</summary>
-        public WiFiProxySetting? ProxySettings {
+        public WiFiProxySetting? ProxySettings
+        {
             get { return BackingStore?.Get<WiFiProxySetting?>("proxySettings"); }
             set { BackingStore?.Set("proxySettings", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ssid {
+        public string? Ssid
+        {
             get { return BackingStore?.Get<string?>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
 #nullable restore
 #else
-        public string Ssid {
+        public string Ssid
+        {
             get { return BackingStore?.Get<string>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
         /// <summary>Wi-Fi Security Types for Android Device Owner.</summary>
-        public AndroidDeviceOwnerWiFiSecurityType? WiFiSecurityType {
+        public AndroidDeviceOwnerWiFiSecurityType? WiFiSecurityType
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
@@ -159,19 +179,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
-                {"connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
-                {"macAddressRandomizationMode", n => { MacAddressRandomizationMode = n.GetEnumValue<MacAddressRandomizationMode>(); } },
-                {"networkName", n => { NetworkName = n.GetStringValue(); } },
-                {"preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
-                {"preSharedKeyIsSet", n => { PreSharedKeyIsSet = n.GetBoolValue(); } },
-                {"proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
-                {"proxyExclusionList", n => { ProxyExclusionList = n.GetStringValue(); } },
-                {"proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
-                {"proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
-                {"proxySettings", n => { ProxySettings = n.GetEnumValue<WiFiProxySetting>(); } },
-                {"ssid", n => { Ssid = n.GetStringValue(); } },
-                {"wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AndroidDeviceOwnerWiFiSecurityType>(); } },
+                { "connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
+                { "connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
+                { "macAddressRandomizationMode", n => { MacAddressRandomizationMode = n.GetEnumValue<MacAddressRandomizationMode>(); } },
+                { "networkName", n => { NetworkName = n.GetStringValue(); } },
+                { "preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
+                { "preSharedKeyIsSet", n => { PreSharedKeyIsSet = n.GetBoolValue(); } },
+                { "proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
+                { "proxyExclusionList", n => { ProxyExclusionList = n.GetStringValue(); } },
+                { "proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
+                { "proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
+                { "proxySettings", n => { ProxySettings = n.GetEnumValue<WiFiProxySetting>(); } },
+                { "ssid", n => { Ssid = n.GetStringValue(); } },
+                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AndroidDeviceOwnerWiFiSecurityType>(); } },
             };
         }
         /// <summary>

@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TrainingNotificationDelivery : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TrainingNotificationDelivery : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of users to whom mails couldn&apos;t be delivered.</summary>
-        public int? FailedMessageDeliveryCount {
+        public int? FailedMessageDeliveryCount
+        {
             get { return BackingStore?.Get<int?>("failedMessageDeliveryCount"); }
             set { BackingStore?.Set("failedMessageDeliveryCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of users whose email address was successfully resolved from target users.</summary>
-        public int? ResolvedTargetsCount {
+        public int? ResolvedTargetsCount
+        {
             get { return BackingStore?.Get<int?>("resolvedTargetsCount"); }
             set { BackingStore?.Set("resolvedTargetsCount", value); }
         }
         /// <summary>The number of users who received a mail while the training campaign was in the &apos;in progress&apos; state.</summary>
-        public int? SuccessfulMessageDeliveryCount {
+        public int? SuccessfulMessageDeliveryCount
+        {
             get { return BackingStore?.Get<int?>("successfulMessageDeliveryCount"); }
             set { BackingStore?.Set("successfulMessageDeliveryCount", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"failedMessageDeliveryCount", n => { FailedMessageDeliveryCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resolvedTargetsCount", n => { ResolvedTargetsCount = n.GetIntValue(); } },
-                {"successfulMessageDeliveryCount", n => { SuccessfulMessageDeliveryCount = n.GetIntValue(); } },
+                { "failedMessageDeliveryCount", n => { FailedMessageDeliveryCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resolvedTargetsCount", n => { ResolvedTargetsCount = n.GetIntValue(); } },
+                { "successfulMessageDeliveryCount", n => { SuccessfulMessageDeliveryCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

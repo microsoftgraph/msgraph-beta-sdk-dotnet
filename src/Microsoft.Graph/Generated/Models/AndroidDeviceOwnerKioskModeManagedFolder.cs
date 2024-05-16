@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A folder containing pages of apps and weblinks on the Managed Home Screen
     /// </summary>
-    public class AndroidDeviceOwnerKioskModeManagedFolder : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AndroidDeviceOwnerKioskModeManagedFolder : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique identifier for the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderIdentifier {
+        public string? FolderIdentifier
+        {
             get { return BackingStore?.Get<string?>("folderIdentifier"); }
             set { BackingStore?.Set("folderIdentifier", value); }
         }
 #nullable restore
 #else
-        public string FolderIdentifier {
+        public string FolderIdentifier
+        {
             get { return BackingStore?.Get<string>("folderIdentifier"); }
             set { BackingStore?.Set("folderIdentifier", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Display name for the folder</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderName {
+        public string? FolderName
+        {
             get { return BackingStore?.Get<string?>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
 #nullable restore
 #else
-        public string FolderName {
+        public string FolderName
+        {
             get { return BackingStore?.Get<string>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Items to be added to managed folder. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerKioskModeFolderItem>? Items {
+        public List<AndroidDeviceOwnerKioskModeFolderItem>? Items
+        {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerKioskModeFolderItem> Items {
+        public List<AndroidDeviceOwnerKioskModeFolderItem> Items
+        {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"folderIdentifier", n => { FolderIdentifier = n.GetStringValue(); } },
-                {"folderName", n => { FolderName = n.GetStringValue(); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<AndroidDeviceOwnerKioskModeFolderItem>(AndroidDeviceOwnerKioskModeFolderItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "folderIdentifier", n => { FolderIdentifier = n.GetStringValue(); } },
+                { "folderName", n => { FolderName = n.GetStringValue(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<AndroidDeviceOwnerKioskModeFolderItem>(AndroidDeviceOwnerKioskModeFolderItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

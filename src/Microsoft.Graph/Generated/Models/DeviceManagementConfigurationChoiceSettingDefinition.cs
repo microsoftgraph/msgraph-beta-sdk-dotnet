@@ -4,35 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable 
+    public class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Default option for choice setting</summary>
+        /// <summary>Default option for the choice setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultOptionId {
+        public string? DefaultOptionId
+        {
             get { return BackingStore?.Get<string?>("defaultOptionId"); }
             set { BackingStore?.Set("defaultOptionId", value); }
         }
 #nullable restore
 #else
-        public string DefaultOptionId {
+        public string DefaultOptionId
+        {
             get { return BackingStore?.Get<string>("defaultOptionId"); }
             set { BackingStore?.Set("defaultOptionId", value); }
         }
 #endif
-        /// <summary>Options for the setting that can be selected</summary>
+        /// <summary>Options for the setting that can be selected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationOptionDefinition>? Options {
+        public List<DeviceManagementConfigurationOptionDefinition>? Options
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinition>?>("options"); }
             set { BackingStore?.Set("options", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationOptionDefinition> Options {
+        public List<DeviceManagementConfigurationOptionDefinition> Options
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinition>>("options"); }
             set { BackingStore?.Set("options", value); }
         }
@@ -60,8 +65,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultOptionId", n => { DefaultOptionId = n.GetStringValue(); } },
-                {"options", n => { Options = n.GetCollectionOfObjectValues<DeviceManagementConfigurationOptionDefinition>(DeviceManagementConfigurationOptionDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultOptionId", n => { DefaultOptionId = n.GetStringValue(); } },
+                { "options", n => { Options = n.GetCollectionOfObjectValues<DeviceManagementConfigurationOptionDefinition>(DeviceManagementConfigurationOptionDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

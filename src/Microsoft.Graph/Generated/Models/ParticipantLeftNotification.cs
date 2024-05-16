@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ParticipantLeftNotification : Entity, IParsable 
+    public class ParticipantLeftNotification : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The call property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Call? Call {
+        public Microsoft.Graph.Beta.Models.Call? Call
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Call?>("call"); }
             set { BackingStore?.Set("call", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Call Call {
+        public Microsoft.Graph.Beta.Models.Call Call
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Call>("call"); }
             set { BackingStore?.Set("call", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>ID of the participant under the policy who has left the meeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParticipantId {
+        public string? ParticipantId
+        {
             get { return BackingStore?.Get<string?>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
 #nullable restore
 #else
-        public string ParticipantId {
+        public string ParticipantId
+        {
             get { return BackingStore?.Get<string>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"call", n => { Call = n.GetObjectValue<Microsoft.Graph.Beta.Models.Call>(Microsoft.Graph.Beta.Models.Call.CreateFromDiscriminatorValue); } },
-                {"participantId", n => { ParticipantId = n.GetStringValue(); } },
+                { "call", n => { Call = n.GetObjectValue<Microsoft.Graph.Beta.Models.Call>(Microsoft.Graph.Beta.Models.Call.CreateFromDiscriminatorValue); } },
+                { "participantId", n => { ParticipantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

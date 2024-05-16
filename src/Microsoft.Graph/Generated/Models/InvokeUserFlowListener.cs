@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InvokeUserFlowListener : AuthenticationListener, IParsable 
+    public class InvokeUserFlowListener : AuthenticationListener, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user flow that is invoked when this action executes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public B2xIdentityUserFlow? UserFlow {
+        public B2xIdentityUserFlow? UserFlow
+        {
             get { return BackingStore?.Get<B2xIdentityUserFlow?>("userFlow"); }
             set { BackingStore?.Set("userFlow", value); }
         }
 #nullable restore
 #else
-        public B2xIdentityUserFlow UserFlow {
+        public B2xIdentityUserFlow UserFlow
+        {
             get { return BackingStore?.Get<B2xIdentityUserFlow>("userFlow"); }
             set { BackingStore?.Set("userFlow", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"userFlow", n => { UserFlow = n.GetObjectValue<B2xIdentityUserFlow>(B2xIdentityUserFlow.CreateFromDiscriminatorValue); } },
+                { "userFlow", n => { UserFlow = n.GetObjectValue<B2xIdentityUserFlow>(B2xIdentityUserFlow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

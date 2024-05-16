@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RoomList : Place, IParsable 
+    public class RoomList : Place, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The email address of the room list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailAddress {
+        public string? EmailAddress
+        {
             get { return BackingStore?.Get<string?>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
 #nullable restore
 #else
-        public string EmailAddress {
+        public string EmailAddress
+        {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The rooms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Room>? Rooms {
+        public List<Room>? Rooms
+        {
             get { return BackingStore?.Get<List<Room>?>("rooms"); }
             set { BackingStore?.Set("rooms", value); }
         }
 #nullable restore
 #else
-        public List<Room> Rooms {
+        public List<Room> Rooms
+        {
             get { return BackingStore?.Get<List<Room>>("rooms"); }
             set { BackingStore?.Set("rooms", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The workspaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Workspace>? Workspaces {
+        public List<Workspace>? Workspaces
+        {
             get { return BackingStore?.Get<List<Workspace>?>("workspaces"); }
             set { BackingStore?.Set("workspaces", value); }
         }
 #nullable restore
 #else
-        public List<Workspace> Workspaces {
+        public List<Workspace> Workspaces
+        {
             get { return BackingStore?.Get<List<Workspace>>("workspaces"); }
             set { BackingStore?.Set("workspaces", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
-                {"rooms", n => { Rooms = n.GetCollectionOfObjectValues<Room>(Room.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"workspaces", n => { Workspaces = n.GetCollectionOfObjectValues<Workspace>(Workspace.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emailAddress", n => { EmailAddress = n.GetStringValue(); } },
+                { "rooms", n => { Rooms = n.GetCollectionOfObjectValues<Room>(Room.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "workspaces", n => { Workspaces = n.GetCollectionOfObjectValues<Workspace>(Workspace.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

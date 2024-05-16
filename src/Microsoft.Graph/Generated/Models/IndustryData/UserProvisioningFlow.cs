@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class UserProvisioningFlow : ProvisioningFlow, IParsable 
+    public class UserProvisioningFlow : ProvisioningFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A boolean choice indicating whether unmatched users should be created or ignored.</summary>
-        public bool? CreateUnmatchedUsers {
+        public bool? CreateUnmatchedUsers
+        {
             get { return BackingStore?.Get<bool?>("createUnmatchedUsers"); }
             set { BackingStore?.Set("createUnmatchedUsers", value); }
         }
         /// <summary>The different management choices for the new users to be provisioned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserCreationOptions? CreationOptions {
+        public UserCreationOptions? CreationOptions
+        {
             get { return BackingStore?.Get<UserCreationOptions?>("creationOptions"); }
             set { BackingStore?.Set("creationOptions", value); }
         }
 #nullable restore
 #else
-        public UserCreationOptions CreationOptions {
+        public UserCreationOptions CreationOptions
+        {
             get { return BackingStore?.Get<UserCreationOptions>("creationOptions"); }
             set { BackingStore?.Set("creationOptions", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The managementOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserManagementOptions? ManagementOptions {
+        public UserManagementOptions? ManagementOptions
+        {
             get { return BackingStore?.Get<UserManagementOptions?>("managementOptions"); }
             set { BackingStore?.Set("managementOptions", value); }
         }
 #nullable restore
 #else
-        public UserManagementOptions ManagementOptions {
+        public UserManagementOptions ManagementOptions
+        {
             get { return BackingStore?.Get<UserManagementOptions>("managementOptions"); }
             set { BackingStore?.Set("managementOptions", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createUnmatchedUsers", n => { CreateUnmatchedUsers = n.GetBoolValue(); } },
-                {"creationOptions", n => { CreationOptions = n.GetObjectValue<UserCreationOptions>(UserCreationOptions.CreateFromDiscriminatorValue); } },
-                {"managementOptions", n => { ManagementOptions = n.GetObjectValue<UserManagementOptions>(UserManagementOptions.CreateFromDiscriminatorValue); } },
+                { "createUnmatchedUsers", n => { CreateUnmatchedUsers = n.GetBoolValue(); } },
+                { "creationOptions", n => { CreationOptions = n.GetObjectValue<UserCreationOptions>(UserCreationOptions.CreateFromDiscriminatorValue); } },
+                { "managementOptions", n => { ManagementOptions = n.GetObjectValue<UserManagementOptions>(UserManagementOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

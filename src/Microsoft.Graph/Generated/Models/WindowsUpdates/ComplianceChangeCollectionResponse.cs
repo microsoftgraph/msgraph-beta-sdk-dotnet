@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ComplianceChangeCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable 
+    public class ComplianceChangeCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ComplianceChange>? Value {
+        public List<ComplianceChange>? Value
+        {
             get { return BackingStore?.Get<List<ComplianceChange>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ComplianceChange> Value {
+        public List<ComplianceChange> Value
+        {
             get { return BackingStore?.Get<List<ComplianceChange>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ComplianceChange>(ComplianceChange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ComplianceChange>(ComplianceChange.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

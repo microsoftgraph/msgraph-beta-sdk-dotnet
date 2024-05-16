@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateGlobalScript
+{
     [Obsolete("This class is obsolete. Use UpdateGlobalScriptPostResponse instead.")]
     #pragma warning disable CS1591
-    public class UpdateGlobalScriptResponse : UpdateGlobalScriptPostResponse, IParsable 
+    public class UpdateGlobalScriptResponse : UpdateGlobalScriptPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

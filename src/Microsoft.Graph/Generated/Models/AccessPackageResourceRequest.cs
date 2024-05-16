@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageResourceRequest : Entity, IParsable 
+    public class AccessPackageResourceRequest : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessPackageResource property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AccessPackageResource? AccessPackageResource {
+        public Microsoft.Graph.Beta.Models.AccessPackageResource? AccessPackageResource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource?>("accessPackageResource"); }
             set { BackingStore?.Set("accessPackageResource", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
+        public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource"); }
             set { BackingStore?.Set("accessPackageResource", value); }
         }
@@ -26,42 +29,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique ID of the access package catalog.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CatalogId {
+        public string? CatalogId
+        {
             get { return BackingStore?.Get<string?>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
 #nullable restore
 #else
-        public string CatalogId {
+        public string CatalogId
+        {
             get { return BackingStore?.Get<string>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
 #endif
         /// <summary>The executeImmediately property</summary>
-        public bool? ExecuteImmediately {
+        public bool? ExecuteImmediately
+        {
             get { return BackingStore?.Get<bool?>("executeImmediately"); }
             set { BackingStore?.Set("executeImmediately", value); }
         }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>If set, does not add the resource.</summary>
-        public bool? IsValidationOnly {
+        public bool? IsValidationOnly
+        {
             get { return BackingStore?.Get<bool?>("isValidationOnly"); }
             set { BackingStore?.Set("isValidationOnly", value); }
         }
         /// <summary>The requestor&apos;s justification for adding or removing the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AccessPackageSubject? Requestor {
+        public AccessPackageSubject? Requestor
+        {
             get { return BackingStore?.Get<AccessPackageSubject?>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
 #nullable restore
 #else
-        public AccessPackageSubject Requestor {
+        public AccessPackageSubject Requestor
+        {
             get { return BackingStore?.Get<AccessPackageSubject>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestState {
+        public string? RequestState
+        {
             get { return BackingStore?.Get<string?>("requestState"); }
             set { BackingStore?.Set("requestState", value); }
         }
 #nullable restore
 #else
-        public string RequestState {
+        public string RequestState
+        {
             get { return BackingStore?.Get<string>("requestState"); }
             set { BackingStore?.Set("requestState", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The requestStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestStatus {
+        public string? RequestStatus
+        {
             get { return BackingStore?.Get<string?>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
 #nullable restore
 #else
-        public string RequestStatus {
+        public string RequestStatus
+        {
             get { return BackingStore?.Get<string>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Use AdminAdd to add a resource, if the caller is an administrator or resource owner, AdminUpdate to update a resource, or AdminRemove to remove a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestType {
+        public string? RequestType
+        {
             get { return BackingStore?.Get<string?>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
 #nullable restore
 #else
-        public string RequestType {
+        public string RequestType
+        {
             get { return BackingStore?.Get<string>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
@@ -140,16 +158,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessPackageResource", n => { AccessPackageResource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
-                {"catalogId", n => { CatalogId = n.GetStringValue(); } },
-                {"executeImmediately", n => { ExecuteImmediately = n.GetBoolValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
-                {"justification", n => { Justification = n.GetStringValue(); } },
-                {"requestState", n => { RequestState = n.GetStringValue(); } },
-                {"requestStatus", n => { RequestStatus = n.GetStringValue(); } },
-                {"requestType", n => { RequestType = n.GetStringValue(); } },
-                {"requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
+                { "accessPackageResource", n => { AccessPackageResource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResource>(Microsoft.Graph.Beta.Models.AccessPackageResource.CreateFromDiscriminatorValue); } },
+                { "catalogId", n => { CatalogId = n.GetStringValue(); } },
+                { "executeImmediately", n => { ExecuteImmediately = n.GetBoolValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isValidationOnly", n => { IsValidationOnly = n.GetBoolValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
+                { "requestState", n => { RequestState = n.GetStringValue(); } },
+                { "requestStatus", n => { RequestStatus = n.GetStringValue(); } },
+                { "requestType", n => { RequestType = n.GetStringValue(); } },
+                { "requestor", n => { Requestor = n.GetObjectValue<AccessPackageSubject>(AccessPackageSubject.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

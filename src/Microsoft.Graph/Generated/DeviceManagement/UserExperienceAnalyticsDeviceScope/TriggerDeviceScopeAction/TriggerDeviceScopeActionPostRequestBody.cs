@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScope.TriggerDeviceScopeAction {
+namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScope.TriggerDeviceScopeAction
+{
     #pragma warning disable CS1591
-    public class TriggerDeviceScopeActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TriggerDeviceScopeActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionName {
+        public string? ActionName
+        {
             get { return BackingStore?.Get<string?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
 #nullable restore
 #else
-        public string ActionName {
+        public string ActionName
+        {
             get { return BackingStore?.Get<string>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         /// <summary>The deviceScopeId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceScopeId {
+        public string? DeviceScopeId
+        {
             get { return BackingStore?.Get<string?>("deviceScopeId"); }
             set { BackingStore?.Set("deviceScopeId", value); }
         }
 #nullable restore
 #else
-        public string DeviceScopeId {
+        public string DeviceScopeId
+        {
             get { return BackingStore?.Get<string>("deviceScopeId"); }
             set { BackingStore?.Set("deviceScopeId", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceSco
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionName", n => { ActionName = n.GetStringValue(); } },
-                {"deviceScopeId", n => { DeviceScopeId = n.GetStringValue(); } },
+                { "actionName", n => { ActionName = n.GetStringValue(); } },
+                { "deviceScopeId", n => { DeviceScopeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

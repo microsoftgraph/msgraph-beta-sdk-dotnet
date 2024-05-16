@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime {
+namespace Microsoft.Graph.Beta.Communications.CallRecords.MicrosoftGraphCallRecordsGetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTime
+{
     [Obsolete("This class is obsolete. Use GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeResponse : GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse, IParsable 
+    public class GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeResponse : GetPstnOnlineMeetingDialoutReportWithFromDateTimeWithToDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.CallRecords {
+namespace Microsoft.Graph.Beta.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class SmsLogRow : CallLogRow, IParsable 
+    public class SmsLogRow : CallLogRow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Amount of money or cost of the SMS that is charged.</summary>
-        public decimal? CallCharge {
+        public decimal? CallCharge
+        {
             get { return BackingStore?.Get<decimal?>("callCharge"); }
             set { BackingStore?.Set("callCharge", value); }
         }
         /// <summary>Currency used to calculate the cost of the call. For details, see ISO 4217.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency {
+        public string? Currency
+        {
             get { return BackingStore?.Get<string?>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
 #nullable restore
 #else
-        public string Currency {
+        public string Currency
+        {
             get { return BackingStore?.Get<string>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Indicates whether the SMS was Domestic (within a country or region) or International (outside a country or region) based on the user&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationContext {
+        public string? DestinationContext
+        {
             get { return BackingStore?.Get<string?>("destinationContext"); }
             set { BackingStore?.Set("destinationContext", value); }
         }
 #nullable restore
 #else
-        public string DestinationContext {
+        public string DestinationContext
+        {
             get { return BackingStore?.Get<string>("destinationContext"); }
             set { BackingStore?.Set("destinationContext", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Country or region of a phone number that received the SMS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationName {
+        public string? DestinationName
+        {
             get { return BackingStore?.Get<string?>("destinationName"); }
             set { BackingStore?.Set("destinationName", value); }
         }
 #nullable restore
 #else
-        public string DestinationName {
+        public string DestinationName
+        {
             get { return BackingStore?.Get<string>("destinationName"); }
             set { BackingStore?.Set("destinationName", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Partially obfuscated phone number that received the SMS. For details, see E.164.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationNumber {
+        public string? DestinationNumber
+        {
             get { return BackingStore?.Get<string?>("destinationNumber"); }
             set { BackingStore?.Set("destinationNumber", value); }
         }
 #nullable restore
 #else
-        public string DestinationNumber {
+        public string DestinationNumber
+        {
             get { return BackingStore?.Get<string>("destinationNumber"); }
             set { BackingStore?.Set("destinationNumber", value); }
         }
@@ -73,32 +83,37 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The license used for the SMS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LicenseCapability {
+        public string? LicenseCapability
+        {
             get { return BackingStore?.Get<string?>("licenseCapability"); }
             set { BackingStore?.Set("licenseCapability", value); }
         }
 #nullable restore
 #else
-        public string LicenseCapability {
+        public string LicenseCapability
+        {
             get { return BackingStore?.Get<string>("licenseCapability"); }
             set { BackingStore?.Set("licenseCapability", value); }
         }
 #endif
         /// <summary>The date and time when the SMS was sent.</summary>
-        public DateTimeOffset? SentDateTime {
+        public DateTimeOffset? SentDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("sentDateTime"); }
             set { BackingStore?.Set("sentDateTime", value); }
         }
         /// <summary>SMS identifier. Not guaranteed to be unique.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SmsId {
+        public string? SmsId
+        {
             get { return BackingStore?.Get<string?>("smsId"); }
             set { BackingStore?.Set("smsId", value); }
         }
 #nullable restore
 #else
-        public string SmsId {
+        public string SmsId
+        {
             get { return BackingStore?.Get<string>("smsId"); }
             set { BackingStore?.Set("smsId", value); }
         }
@@ -106,32 +121,37 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Type of SMS such as outbound or inbound.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SmsType {
+        public string? SmsType
+        {
             get { return BackingStore?.Get<string?>("smsType"); }
             set { BackingStore?.Set("smsType", value); }
         }
 #nullable restore
 #else
-        public string SmsType {
+        public string SmsType
+        {
             get { return BackingStore?.Get<string>("smsType"); }
             set { BackingStore?.Set("smsType", value); }
         }
 #endif
         /// <summary>Number of SMS units sent/received.</summary>
-        public int? SmsUnits {
+        public int? SmsUnits
+        {
             get { return BackingStore?.Get<int?>("smsUnits"); }
             set { BackingStore?.Set("smsUnits", value); }
         }
         /// <summary>Partially obfuscated phone number that sent the SMS. For details, see E.164.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceNumber {
+        public string? SourceNumber
+        {
             get { return BackingStore?.Get<string?>("sourceNumber"); }
             set { BackingStore?.Set("sourceNumber", value); }
         }
 #nullable restore
 #else
-        public string SourceNumber {
+        public string SourceNumber
+        {
             get { return BackingStore?.Get<string>("sourceNumber"); }
             set { BackingStore?.Set("sourceNumber", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Country code of the tenant. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantCountryCode {
+        public string? TenantCountryCode
+        {
             get { return BackingStore?.Get<string?>("tenantCountryCode"); }
             set { BackingStore?.Set("tenantCountryCode", value); }
         }
 #nullable restore
 #else
-        public string TenantCountryCode {
+        public string TenantCountryCode
+        {
             get { return BackingStore?.Get<string>("tenantCountryCode"); }
             set { BackingStore?.Set("tenantCountryCode", value); }
         }
@@ -153,13 +175,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Country code of the user. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserCountryCode {
+        public string? UserCountryCode
+        {
             get { return BackingStore?.Get<string?>("userCountryCode"); }
             set { BackingStore?.Set("userCountryCode", value); }
         }
 #nullable restore
 #else
-        public string UserCountryCode {
+        public string UserCountryCode
+        {
             get { return BackingStore?.Get<string>("userCountryCode"); }
             set { BackingStore?.Set("userCountryCode", value); }
         }
@@ -182,19 +206,19 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callCharge", n => { CallCharge = n.GetDecimalValue(); } },
-                {"currency", n => { Currency = n.GetStringValue(); } },
-                {"destinationContext", n => { DestinationContext = n.GetStringValue(); } },
-                {"destinationName", n => { DestinationName = n.GetStringValue(); } },
-                {"destinationNumber", n => { DestinationNumber = n.GetStringValue(); } },
-                {"licenseCapability", n => { LicenseCapability = n.GetStringValue(); } },
-                {"sentDateTime", n => { SentDateTime = n.GetDateTimeOffsetValue(); } },
-                {"smsId", n => { SmsId = n.GetStringValue(); } },
-                {"smsType", n => { SmsType = n.GetStringValue(); } },
-                {"smsUnits", n => { SmsUnits = n.GetIntValue(); } },
-                {"sourceNumber", n => { SourceNumber = n.GetStringValue(); } },
-                {"tenantCountryCode", n => { TenantCountryCode = n.GetStringValue(); } },
-                {"userCountryCode", n => { UserCountryCode = n.GetStringValue(); } },
+                { "callCharge", n => { CallCharge = n.GetDecimalValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "destinationContext", n => { DestinationContext = n.GetStringValue(); } },
+                { "destinationName", n => { DestinationName = n.GetStringValue(); } },
+                { "destinationNumber", n => { DestinationNumber = n.GetStringValue(); } },
+                { "licenseCapability", n => { LicenseCapability = n.GetStringValue(); } },
+                { "sentDateTime", n => { SentDateTime = n.GetDateTimeOffsetValue(); } },
+                { "smsId", n => { SmsId = n.GetStringValue(); } },
+                { "smsType", n => { SmsType = n.GetStringValue(); } },
+                { "smsUnits", n => { SmsUnits = n.GetIntValue(); } },
+                { "sourceNumber", n => { SourceNumber = n.GetStringValue(); } },
+                { "tenantCountryCode", n => { TenantCountryCode = n.GetStringValue(); } },
+                { "userCountryCode", n => { UserCountryCode = n.GetStringValue(); } },
             };
         }
         /// <summary>

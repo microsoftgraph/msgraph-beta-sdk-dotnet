@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SharePointSharingAbilities : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SharePointSharingAbilities : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The anyone link abilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkScopeAbilities? AnyoneLinkAbilities {
+        public LinkScopeAbilities? AnyoneLinkAbilities
+        {
             get { return BackingStore?.Get<LinkScopeAbilities?>("anyoneLinkAbilities"); }
             set { BackingStore?.Set("anyoneLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkScopeAbilities AnyoneLinkAbilities {
+        public LinkScopeAbilities AnyoneLinkAbilities
+        {
             get { return BackingStore?.Get<LinkScopeAbilities>("anyoneLinkAbilities"); }
             set { BackingStore?.Set("anyoneLinkAbilities", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The direct sharing abilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DirectSharingAbilities? DirectSharingAbilities {
+        public Microsoft.Graph.Beta.Models.DirectSharingAbilities? DirectSharingAbilities
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectSharingAbilities?>("directSharingAbilities"); }
             set { BackingStore?.Set("directSharingAbilities", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DirectSharingAbilities DirectSharingAbilities {
+        public Microsoft.Graph.Beta.Models.DirectSharingAbilities DirectSharingAbilities
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectSharingAbilities>("directSharingAbilities"); }
             set { BackingStore?.Set("directSharingAbilities", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The organization link abilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkScopeAbilities? OrganizationLinkAbilities {
+        public LinkScopeAbilities? OrganizationLinkAbilities
+        {
             get { return BackingStore?.Get<LinkScopeAbilities?>("organizationLinkAbilities"); }
             set { BackingStore?.Set("organizationLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkScopeAbilities OrganizationLinkAbilities {
+        public LinkScopeAbilities OrganizationLinkAbilities
+        {
             get { return BackingStore?.Get<LinkScopeAbilities>("organizationLinkAbilities"); }
             set { BackingStore?.Set("organizationLinkAbilities", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The specificPeople link abilities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LinkScopeAbilities? SpecificPeopleLinkAbilities {
+        public LinkScopeAbilities? SpecificPeopleLinkAbilities
+        {
             get { return BackingStore?.Get<LinkScopeAbilities?>("specificPeopleLinkAbilities"); }
             set { BackingStore?.Set("specificPeopleLinkAbilities", value); }
         }
 #nullable restore
 #else
-        public LinkScopeAbilities SpecificPeopleLinkAbilities {
+        public LinkScopeAbilities SpecificPeopleLinkAbilities
+        {
             get { return BackingStore?.Get<LinkScopeAbilities>("specificPeopleLinkAbilities"); }
             set { BackingStore?.Set("specificPeopleLinkAbilities", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"anyoneLinkAbilities", n => { AnyoneLinkAbilities = n.GetObjectValue<LinkScopeAbilities>(LinkScopeAbilities.CreateFromDiscriminatorValue); } },
-                {"directSharingAbilities", n => { DirectSharingAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectSharingAbilities>(Microsoft.Graph.Beta.Models.DirectSharingAbilities.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"organizationLinkAbilities", n => { OrganizationLinkAbilities = n.GetObjectValue<LinkScopeAbilities>(LinkScopeAbilities.CreateFromDiscriminatorValue); } },
-                {"specificPeopleLinkAbilities", n => { SpecificPeopleLinkAbilities = n.GetObjectValue<LinkScopeAbilities>(LinkScopeAbilities.CreateFromDiscriminatorValue); } },
+                { "anyoneLinkAbilities", n => { AnyoneLinkAbilities = n.GetObjectValue<LinkScopeAbilities>(LinkScopeAbilities.CreateFromDiscriminatorValue); } },
+                { "directSharingAbilities", n => { DirectSharingAbilities = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectSharingAbilities>(Microsoft.Graph.Beta.Models.DirectSharingAbilities.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "organizationLinkAbilities", n => { OrganizationLinkAbilities = n.GetObjectValue<LinkScopeAbilities>(LinkScopeAbilities.CreateFromDiscriminatorValue); } },
+                { "specificPeopleLinkAbilities", n => { SpecificPeopleLinkAbilities = n.GetObjectValue<LinkScopeAbilities>(LinkScopeAbilities.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

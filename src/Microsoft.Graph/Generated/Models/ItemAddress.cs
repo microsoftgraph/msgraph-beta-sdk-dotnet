@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ItemAddress : ItemFacet, IParsable 
+    public class ItemAddress : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PhysicalAddress? Detail {
+        public PhysicalAddress? Detail
+        {
             get { return BackingStore?.Get<PhysicalAddress?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public PhysicalAddress Detail {
+        public PhysicalAddress Detail
+        {
             get { return BackingStore?.Get<PhysicalAddress>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Friendly name the user has assigned to this address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The geocoordinates of the address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.GeoCoordinates? GeoCoordinates {
+        public Microsoft.Graph.Beta.Models.GeoCoordinates? GeoCoordinates
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates?>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.GeoCoordinates GeoCoordinates {
+        public Microsoft.Graph.Beta.Models.GeoCoordinates GeoCoordinates
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates>("geoCoordinates"); }
             set { BackingStore?.Set("geoCoordinates", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"detail", n => { Detail = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>(Microsoft.Graph.Beta.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "detail", n => { Detail = n.GetObjectValue<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "geoCoordinates", n => { GeoCoordinates = n.GetObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>(Microsoft.Graph.Beta.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

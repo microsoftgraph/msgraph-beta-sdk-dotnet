@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval {
+namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval
+{
     #pragma warning disable CS1591
-    public class CancelApprovalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CancelApprovalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The approvalSource property</summary>
-        public OperationApprovalSource? ApprovalSource {
+        public OperationApprovalSource? ApprovalSource
+        {
             get { return BackingStore?.Get<OperationApprovalSource?>("approvalSource"); }
             set { BackingStore?.Set("approvalSource", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.C
         /// <summary>The justification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.C
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"approvalSource", n => { ApprovalSource = n.GetEnumValue<OperationApprovalSource>(); } },
-                {"justification", n => { Justification = n.GetStringValue(); } },
+                { "approvalSource", n => { ApprovalSource = n.GetEnumValue<OperationApprovalSource>(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
             };
         }
         /// <summary>

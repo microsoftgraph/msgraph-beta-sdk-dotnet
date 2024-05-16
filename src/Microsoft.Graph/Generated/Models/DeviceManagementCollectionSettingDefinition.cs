@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity representing the defintion for a collection setting
     /// </summary>
-    public class DeviceManagementCollectionSettingDefinition : DeviceManagementSettingDefinition, IParsable 
+    public class DeviceManagementCollectionSettingDefinition : DeviceManagementSettingDefinition, IParsable
     {
         /// <summary>The Setting Definition ID that describes what each element of the collection looks like</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ElementDefinitionId {
+        public string? ElementDefinitionId
+        {
             get { return BackingStore?.Get<string?>("elementDefinitionId"); }
             set { BackingStore?.Set("elementDefinitionId", value); }
         }
 #nullable restore
 #else
-        public string ElementDefinitionId {
+        public string ElementDefinitionId
+        {
             get { return BackingStore?.Get<string>("elementDefinitionId"); }
             set { BackingStore?.Set("elementDefinitionId", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"elementDefinitionId", n => { ElementDefinitionId = n.GetStringValue(); } },
+                { "elementDefinitionId", n => { ElementDefinitionId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows management app entity.
     /// </summary>
-    public class WindowsManagementApp : Entity, IParsable 
+    public class WindowsManagementApp : Entity, IParsable
     {
         /// <summary>Windows management app available version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AvailableVersion {
+        public string? AvailableVersion
+        {
             get { return BackingStore?.Get<string?>("availableVersion"); }
             set { BackingStore?.Set("availableVersion", value); }
         }
 #nullable restore
 #else
-        public string AvailableVersion {
+        public string AvailableVersion
+        {
             get { return BackingStore?.Get<string>("availableVersion"); }
             set { BackingStore?.Set("availableVersion", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of health states for installed Windows management app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsManagementAppHealthState>? HealthStates {
+        public List<WindowsManagementAppHealthState>? HealthStates
+        {
             get { return BackingStore?.Get<List<WindowsManagementAppHealthState>?>("healthStates"); }
             set { BackingStore?.Set("healthStates", value); }
         }
 #nullable restore
 #else
-        public List<WindowsManagementAppHealthState> HealthStates {
+        public List<WindowsManagementAppHealthState> HealthStates
+        {
             get { return BackingStore?.Get<List<WindowsManagementAppHealthState>>("healthStates"); }
             set { BackingStore?.Set("healthStates", value); }
         }
 #endif
         /// <summary>ManagedInstallerStatus</summary>
-        public ManagedInstallerStatus? ManagedInstaller {
+        public ManagedInstallerStatus? ManagedInstaller
+        {
             get { return BackingStore?.Get<ManagedInstallerStatus?>("managedInstaller"); }
             set { BackingStore?.Set("managedInstaller", value); }
         }
         /// <summary>Managed Installer Configured Date Time</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedInstallerConfiguredDateTime {
+        public string? ManagedInstallerConfiguredDateTime
+        {
             get { return BackingStore?.Get<string?>("managedInstallerConfiguredDateTime"); }
             set { BackingStore?.Set("managedInstallerConfiguredDateTime", value); }
         }
 #nullable restore
 #else
-        public string ManagedInstallerConfiguredDateTime {
+        public string ManagedInstallerConfiguredDateTime
+        {
             get { return BackingStore?.Get<string>("managedInstallerConfiguredDateTime"); }
             set { BackingStore?.Set("managedInstallerConfiguredDateTime", value); }
         }
@@ -75,10 +83,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"availableVersion", n => { AvailableVersion = n.GetStringValue(); } },
-                {"healthStates", n => { HealthStates = n.GetCollectionOfObjectValues<WindowsManagementAppHealthState>(WindowsManagementAppHealthState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedInstaller", n => { ManagedInstaller = n.GetEnumValue<ManagedInstallerStatus>(); } },
-                {"managedInstallerConfiguredDateTime", n => { ManagedInstallerConfiguredDateTime = n.GetStringValue(); } },
+                { "availableVersion", n => { AvailableVersion = n.GetStringValue(); } },
+                { "healthStates", n => { HealthStates = n.GetCollectionOfObjectValues<WindowsManagementAppHealthState>(WindowsManagementAppHealthState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedInstaller", n => { ManagedInstaller = n.GetEnumValue<ManagedInstallerStatus>(); } },
+                { "managedInstallerConfiguredDateTime", n => { ManagedInstallerConfiguredDateTime = n.GetStringValue(); } },
             };
         }
         /// <summary>

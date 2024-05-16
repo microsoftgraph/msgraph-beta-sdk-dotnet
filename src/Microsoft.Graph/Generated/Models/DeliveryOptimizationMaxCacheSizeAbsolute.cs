@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Delivery Optimization max cache size absolute type.
     /// </summary>
-    public class DeliveryOptimizationMaxCacheSizeAbsolute : DeliveryOptimizationMaxCacheSize, IParsable 
+    public class DeliveryOptimizationMaxCacheSizeAbsolute : DeliveryOptimizationMaxCacheSize, IParsable
     {
         /// <summary>Specifies the maximum size in GB of Delivery Optimization cache. Valid values 0 to 4294967295</summary>
-        public long? MaximumCacheSizeInGigabytes {
+        public long? MaximumCacheSizeInGigabytes
+        {
             get { return BackingStore?.Get<long?>("maximumCacheSizeInGigabytes"); }
             set { BackingStore?.Set("maximumCacheSizeInGigabytes", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"maximumCacheSizeInGigabytes", n => { MaximumCacheSizeInGigabytes = n.GetLongValue(); } },
+                { "maximumCacheSizeInGigabytes", n => { MaximumCacheSizeInGigabytes = n.GetLongValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Policy used to configure detailed management settings for a specified set of apps
     /// </summary>
-    public class ManagedAppProtection : ManagedAppPolicy, IParsable 
+    public class ManagedAppProtection : ManagedAppPolicy, IParsable
     {
         /// <summary>Data storage locations where a user may store managed data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppDataIngestionLocation?>? AllowedDataIngestionLocations {
+        public List<ManagedAppDataIngestionLocation?>? AllowedDataIngestionLocations
+        {
             get { return BackingStore?.Get<List<ManagedAppDataIngestionLocation?>?>("allowedDataIngestionLocations"); }
             set { BackingStore?.Set("allowedDataIngestionLocations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppDataIngestionLocation?> AllowedDataIngestionLocations {
+        public List<ManagedAppDataIngestionLocation?> AllowedDataIngestionLocations
+        {
             get { return BackingStore?.Get<List<ManagedAppDataIngestionLocation?>>("allowedDataIngestionLocations"); }
             set { BackingStore?.Set("allowedDataIngestionLocations", value); }
         }
@@ -27,122 +30,145 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Data storage locations where a user may store managed data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedAppDataStorageLocation?>? AllowedDataStorageLocations {
+        public List<ManagedAppDataStorageLocation?>? AllowedDataStorageLocations
+        {
             get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>?>("allowedDataStorageLocations"); }
             set { BackingStore?.Set("allowedDataStorageLocations", value); }
         }
 #nullable restore
 #else
-        public List<ManagedAppDataStorageLocation?> AllowedDataStorageLocations {
+        public List<ManagedAppDataStorageLocation?> AllowedDataStorageLocations
+        {
             get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>>("allowedDataStorageLocations"); }
             set { BackingStore?.Set("allowedDataStorageLocations", value); }
         }
 #endif
         /// <summary>Data can be transferred from/to these classes of apps</summary>
-        public ManagedAppDataTransferLevel? AllowedInboundDataTransferSources {
+        public ManagedAppDataTransferLevel? AllowedInboundDataTransferSources
+        {
             get { return BackingStore?.Get<ManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
             set { BackingStore?.Set("allowedInboundDataTransferSources", value); }
         }
         /// <summary>Specify the number of characters that may be cut or copied from Org data and accounts to any application. This setting overrides the AllowedOutboundClipboardSharingLevel restriction. Default value of &apos;0&apos; means no exception is allowed.</summary>
-        public int? AllowedOutboundClipboardSharingExceptionLength {
+        public int? AllowedOutboundClipboardSharingExceptionLength
+        {
             get { return BackingStore?.Get<int?>("allowedOutboundClipboardSharingExceptionLength"); }
             set { BackingStore?.Set("allowedOutboundClipboardSharingExceptionLength", value); }
         }
         /// <summary>Represents the level to which the device&apos;s clipboard may be shared between apps</summary>
-        public ManagedAppClipboardSharingLevel? AllowedOutboundClipboardSharingLevel {
+        public ManagedAppClipboardSharingLevel? AllowedOutboundClipboardSharingLevel
+        {
             get { return BackingStore?.Get<ManagedAppClipboardSharingLevel?>("allowedOutboundClipboardSharingLevel"); }
             set { BackingStore?.Set("allowedOutboundClipboardSharingLevel", value); }
         }
         /// <summary>Data can be transferred from/to these classes of apps</summary>
-        public ManagedAppDataTransferLevel? AllowedOutboundDataTransferDestinations {
+        public ManagedAppDataTransferLevel? AllowedOutboundDataTransferDestinations
+        {
             get { return BackingStore?.Get<ManagedAppDataTransferLevel?>("allowedOutboundDataTransferDestinations"); }
             set { BackingStore?.Set("allowedOutboundDataTransferDestinations", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfDeviceComplianceRequired {
+        public ManagedAppRemediationAction? AppActionIfDeviceComplianceRequired
+        {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfDeviceComplianceRequired"); }
             set { BackingStore?.Set("appActionIfDeviceComplianceRequired", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfMaximumPinRetriesExceeded {
+        public ManagedAppRemediationAction? AppActionIfMaximumPinRetriesExceeded
+        {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfMaximumPinRetriesExceeded"); }
             set { BackingStore?.Set("appActionIfMaximumPinRetriesExceeded", value); }
         }
         /// <summary>If set, it will specify what action to take in the case where the user is unable to checkin because their authentication token is invalid. This happens when the user is deleted or disabled in AAD. Possible values are: block, wipe, warn.</summary>
-        public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser {
+        public ManagedAppRemediationAction? AppActionIfUnableToAuthenticateUser
+        {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfUnableToAuthenticateUser"); }
             set { BackingStore?.Set("appActionIfUnableToAuthenticateUser", value); }
         }
         /// <summary>Indicates whether a user can bring data into org documents.</summary>
-        public bool? BlockDataIngestionIntoOrganizationDocuments {
+        public bool? BlockDataIngestionIntoOrganizationDocuments
+        {
             get { return BackingStore?.Get<bool?>("blockDataIngestionIntoOrganizationDocuments"); }
             set { BackingStore?.Set("blockDataIngestionIntoOrganizationDocuments", value); }
         }
         /// <summary>Indicates whether contacts can be synced to the user&apos;s device.</summary>
-        public bool? ContactSyncBlocked {
+        public bool? ContactSyncBlocked
+        {
             get { return BackingStore?.Get<bool?>("contactSyncBlocked"); }
             set { BackingStore?.Set("contactSyncBlocked", value); }
         }
         /// <summary>Indicates whether the backup of a managed app&apos;s data is blocked.</summary>
-        public bool? DataBackupBlocked {
+        public bool? DataBackupBlocked
+        {
             get { return BackingStore?.Get<bool?>("dataBackupBlocked"); }
             set { BackingStore?.Set("dataBackupBlocked", value); }
         }
         /// <summary>Indicates whether device compliance is required.</summary>
-        public bool? DeviceComplianceRequired {
+        public bool? DeviceComplianceRequired
+        {
             get { return BackingStore?.Get<bool?>("deviceComplianceRequired"); }
             set { BackingStore?.Set("deviceComplianceRequired", value); }
         }
         /// <summary>The classes of apps that are allowed to click-to-open a phone number, for making phone calls or sending text messages.</summary>
-        public ManagedAppPhoneNumberRedirectLevel? DialerRestrictionLevel {
+        public ManagedAppPhoneNumberRedirectLevel? DialerRestrictionLevel
+        {
             get { return BackingStore?.Get<ManagedAppPhoneNumberRedirectLevel?>("dialerRestrictionLevel"); }
             set { BackingStore?.Set("dialerRestrictionLevel", value); }
         }
         /// <summary>Indicates whether use of the app pin is required if the device pin is set.</summary>
-        public bool? DisableAppPinIfDevicePinIsSet {
+        public bool? DisableAppPinIfDevicePinIsSet
+        {
             get { return BackingStore?.Get<bool?>("disableAppPinIfDevicePinIsSet"); }
             set { BackingStore?.Set("disableAppPinIfDevicePinIsSet", value); }
         }
         /// <summary>Indicates whether use of the fingerprint reader is allowed in place of a pin if PinRequired is set to True.</summary>
-        public bool? FingerprintBlocked {
+        public bool? FingerprintBlocked
+        {
             get { return BackingStore?.Get<bool?>("fingerprintBlocked"); }
             set { BackingStore?.Set("fingerprintBlocked", value); }
         }
         /// <summary>A grace period before blocking app access during off clock hours.</summary>
-        public TimeSpan? GracePeriodToBlockAppsDuringOffClockHours {
+        public TimeSpan? GracePeriodToBlockAppsDuringOffClockHours
+        {
             get { return BackingStore?.Get<TimeSpan?>("gracePeriodToBlockAppsDuringOffClockHours"); }
             set { BackingStore?.Set("gracePeriodToBlockAppsDuringOffClockHours", value); }
         }
         /// <summary>Type of managed browser</summary>
-        public ManagedBrowserType? ManagedBrowser {
+        public ManagedBrowserType? ManagedBrowser
+        {
             get { return BackingStore?.Get<ManagedBrowserType?>("managedBrowser"); }
             set { BackingStore?.Set("managedBrowser", value); }
         }
         /// <summary>Indicates whether internet links should be opened in the managed browser app, or any custom browser specified by CustomBrowserProtocol (for iOS) or CustomBrowserPackageId/CustomBrowserDisplayName (for Android)</summary>
-        public bool? ManagedBrowserToOpenLinksRequired {
+        public bool? ManagedBrowserToOpenLinksRequired
+        {
             get { return BackingStore?.Get<bool?>("managedBrowserToOpenLinksRequired"); }
             set { BackingStore?.Set("managedBrowserToOpenLinksRequired", value); }
         }
         /// <summary>The maxium threat level allowed for an app to be compliant.</summary>
-        public ManagedAppDeviceThreatLevel? MaximumAllowedDeviceThreatLevel {
+        public ManagedAppDeviceThreatLevel? MaximumAllowedDeviceThreatLevel
+        {
             get { return BackingStore?.Get<ManagedAppDeviceThreatLevel?>("maximumAllowedDeviceThreatLevel"); }
             set { BackingStore?.Set("maximumAllowedDeviceThreatLevel", value); }
         }
         /// <summary>Maximum number of incorrect pin retry attempts before the managed app is either blocked or wiped.</summary>
-        public int? MaximumPinRetries {
+        public int? MaximumPinRetries
+        {
             get { return BackingStore?.Get<int?>("maximumPinRetries"); }
             set { BackingStore?.Set("maximumPinRetries", value); }
         }
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaximumRequiredOsVersion {
+        public string? MaximumRequiredOsVersion
+        {
             get { return BackingStore?.Get<string?>("maximumRequiredOsVersion"); }
             set { BackingStore?.Set("maximumRequiredOsVersion", value); }
         }
 #nullable restore
 #else
-        public string MaximumRequiredOsVersion {
+        public string MaximumRequiredOsVersion
+        {
             get { return BackingStore?.Get<string>("maximumRequiredOsVersion"); }
             set { BackingStore?.Set("maximumRequiredOsVersion", value); }
         }
@@ -150,13 +176,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaximumWarningOsVersion {
+        public string? MaximumWarningOsVersion
+        {
             get { return BackingStore?.Get<string?>("maximumWarningOsVersion"); }
             set { BackingStore?.Set("maximumWarningOsVersion", value); }
         }
 #nullable restore
 #else
-        public string MaximumWarningOsVersion {
+        public string MaximumWarningOsVersion
+        {
             get { return BackingStore?.Get<string>("maximumWarningOsVersion"); }
             set { BackingStore?.Set("maximumWarningOsVersion", value); }
         }
@@ -164,32 +192,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaximumWipeOsVersion {
+        public string? MaximumWipeOsVersion
+        {
             get { return BackingStore?.Get<string?>("maximumWipeOsVersion"); }
             set { BackingStore?.Set("maximumWipeOsVersion", value); }
         }
 #nullable restore
 #else
-        public string MaximumWipeOsVersion {
+        public string MaximumWipeOsVersion
+        {
             get { return BackingStore?.Get<string>("maximumWipeOsVersion"); }
             set { BackingStore?.Set("maximumWipeOsVersion", value); }
         }
 #endif
         /// <summary>Minimum pin length required for an app-level pin if PinRequired is set to True</summary>
-        public int? MinimumPinLength {
+        public int? MinimumPinLength
+        {
             get { return BackingStore?.Get<int?>("minimumPinLength"); }
             set { BackingStore?.Set("minimumPinLength", value); }
         }
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumRequiredAppVersion {
+        public string? MinimumRequiredAppVersion
+        {
             get { return BackingStore?.Get<string?>("minimumRequiredAppVersion"); }
             set { BackingStore?.Set("minimumRequiredAppVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumRequiredAppVersion {
+        public string MinimumRequiredAppVersion
+        {
             get { return BackingStore?.Get<string>("minimumRequiredAppVersion"); }
             set { BackingStore?.Set("minimumRequiredAppVersion", value); }
         }
@@ -197,13 +230,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumRequiredOsVersion {
+        public string? MinimumRequiredOsVersion
+        {
             get { return BackingStore?.Get<string?>("minimumRequiredOsVersion"); }
             set { BackingStore?.Set("minimumRequiredOsVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumRequiredOsVersion {
+        public string MinimumRequiredOsVersion
+        {
             get { return BackingStore?.Get<string>("minimumRequiredOsVersion"); }
             set { BackingStore?.Set("minimumRequiredOsVersion", value); }
         }
@@ -211,13 +246,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Versions less than the specified version will result in warning message on the managed app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumWarningAppVersion {
+        public string? MinimumWarningAppVersion
+        {
             get { return BackingStore?.Get<string?>("minimumWarningAppVersion"); }
             set { BackingStore?.Set("minimumWarningAppVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumWarningAppVersion {
+        public string MinimumWarningAppVersion
+        {
             get { return BackingStore?.Get<string>("minimumWarningAppVersion"); }
             set { BackingStore?.Set("minimumWarningAppVersion", value); }
         }
@@ -225,13 +262,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumWarningOsVersion {
+        public string? MinimumWarningOsVersion
+        {
             get { return BackingStore?.Get<string?>("minimumWarningOsVersion"); }
             set { BackingStore?.Set("minimumWarningOsVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumWarningOsVersion {
+        public string MinimumWarningOsVersion
+        {
             get { return BackingStore?.Get<string>("minimumWarningOsVersion"); }
             set { BackingStore?.Set("minimumWarningOsVersion", value); }
         }
@@ -239,13 +278,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Versions less than or equal to the specified version will wipe the managed app and the associated company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumWipeAppVersion {
+        public string? MinimumWipeAppVersion
+        {
             get { return BackingStore?.Get<string?>("minimumWipeAppVersion"); }
             set { BackingStore?.Set("minimumWipeAppVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumWipeAppVersion {
+        public string MinimumWipeAppVersion
+        {
             get { return BackingStore?.Get<string>("minimumWipeAppVersion"); }
             set { BackingStore?.Set("minimumWipeAppVersion", value); }
         }
@@ -253,94 +294,112 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Versions less than or equal to the specified version will wipe the managed app and the associated company data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumWipeOsVersion {
+        public string? MinimumWipeOsVersion
+        {
             get { return BackingStore?.Get<string?>("minimumWipeOsVersion"); }
             set { BackingStore?.Set("minimumWipeOsVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumWipeOsVersion {
+        public string MinimumWipeOsVersion
+        {
             get { return BackingStore?.Get<string>("minimumWipeOsVersion"); }
             set { BackingStore?.Set("minimumWipeOsVersion", value); }
         }
 #endif
         /// <summary>Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.MobileThreatDefensePartnerPriority? MobileThreatDefensePartnerPriority {
+        public Microsoft.Graph.Beta.Models.MobileThreatDefensePartnerPriority? MobileThreatDefensePartnerPriority
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileThreatDefensePartnerPriority?>("mobileThreatDefensePartnerPriority"); }
             set { BackingStore?.Set("mobileThreatDefensePartnerPriority", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction {
+        public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction
+        {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("mobileThreatDefenseRemediationAction"); }
             set { BackingStore?.Set("mobileThreatDefenseRemediationAction", value); }
         }
         /// <summary>Restrict managed app notification</summary>
-        public ManagedAppNotificationRestriction? NotificationRestriction {
+        public ManagedAppNotificationRestriction? NotificationRestriction
+        {
             get { return BackingStore?.Get<ManagedAppNotificationRestriction?>("notificationRestriction"); }
             set { BackingStore?.Set("notificationRestriction", value); }
         }
         /// <summary>Indicates whether organizational credentials are required for app use.</summary>
-        public bool? OrganizationalCredentialsRequired {
+        public bool? OrganizationalCredentialsRequired
+        {
             get { return BackingStore?.Get<bool?>("organizationalCredentialsRequired"); }
             set { BackingStore?.Set("organizationalCredentialsRequired", value); }
         }
         /// <summary>TimePeriod before the all-level pin must be reset if PinRequired is set to True.</summary>
-        public TimeSpan? PeriodBeforePinReset {
+        public TimeSpan? PeriodBeforePinReset
+        {
             get { return BackingStore?.Get<TimeSpan?>("periodBeforePinReset"); }
             set { BackingStore?.Set("periodBeforePinReset", value); }
         }
         /// <summary>The period after which access is checked when the device is not connected to the internet.</summary>
-        public TimeSpan? PeriodOfflineBeforeAccessCheck {
+        public TimeSpan? PeriodOfflineBeforeAccessCheck
+        {
             get { return BackingStore?.Get<TimeSpan?>("periodOfflineBeforeAccessCheck"); }
             set { BackingStore?.Set("periodOfflineBeforeAccessCheck", value); }
         }
         /// <summary>The amount of time an app is allowed to remain disconnected from the internet before all managed data it is wiped.</summary>
-        public TimeSpan? PeriodOfflineBeforeWipeIsEnforced {
+        public TimeSpan? PeriodOfflineBeforeWipeIsEnforced
+        {
             get { return BackingStore?.Get<TimeSpan?>("periodOfflineBeforeWipeIsEnforced"); }
             set { BackingStore?.Set("periodOfflineBeforeWipeIsEnforced", value); }
         }
         /// <summary>The period after which access is checked when the device is connected to the internet.</summary>
-        public TimeSpan? PeriodOnlineBeforeAccessCheck {
+        public TimeSpan? PeriodOnlineBeforeAccessCheck
+        {
             get { return BackingStore?.Get<TimeSpan?>("periodOnlineBeforeAccessCheck"); }
             set { BackingStore?.Set("periodOnlineBeforeAccessCheck", value); }
         }
         /// <summary>Character set which is to be used for a user&apos;s app PIN</summary>
-        public ManagedAppPinCharacterSet? PinCharacterSet {
+        public ManagedAppPinCharacterSet? PinCharacterSet
+        {
             get { return BackingStore?.Get<ManagedAppPinCharacterSet?>("pinCharacterSet"); }
             set { BackingStore?.Set("pinCharacterSet", value); }
         }
         /// <summary>Indicates whether an app-level pin is required.</summary>
-        public bool? PinRequired {
+        public bool? PinRequired
+        {
             get { return BackingStore?.Get<bool?>("pinRequired"); }
             set { BackingStore?.Set("pinRequired", value); }
         }
         /// <summary>Timeout in minutes for an app pin instead of non biometrics passcode</summary>
-        public TimeSpan? PinRequiredInsteadOfBiometricTimeout {
+        public TimeSpan? PinRequiredInsteadOfBiometricTimeout
+        {
             get { return BackingStore?.Get<TimeSpan?>("pinRequiredInsteadOfBiometricTimeout"); }
             set { BackingStore?.Set("pinRequiredInsteadOfBiometricTimeout", value); }
         }
         /// <summary>Requires a pin to be unique from the number specified in this property.</summary>
-        public int? PreviousPinBlockCount {
+        public int? PreviousPinBlockCount
+        {
             get { return BackingStore?.Get<int?>("previousPinBlockCount"); }
             set { BackingStore?.Set("previousPinBlockCount", value); }
         }
         /// <summary>Indicates whether printing is allowed from managed apps.</summary>
-        public bool? PrintBlocked {
+        public bool? PrintBlocked
+        {
             get { return BackingStore?.Get<bool?>("printBlocked"); }
             set { BackingStore?.Set("printBlocked", value); }
         }
         /// <summary>Defines how app messaging redirection is protected by an App Protection Policy. Default is anyApp.</summary>
-        public MessagingRedirectAppType? ProtectedMessagingRedirectAppType {
+        public MessagingRedirectAppType? ProtectedMessagingRedirectAppType
+        {
             get { return BackingStore?.Get<MessagingRedirectAppType?>("protectedMessagingRedirectAppType"); }
             set { BackingStore?.Set("protectedMessagingRedirectAppType", value); }
         }
         /// <summary>Indicates whether users may use the &apos;Save As&apos; menu item to save a copy of protected files.</summary>
-        public bool? SaveAsBlocked {
+        public bool? SaveAsBlocked
+        {
             get { return BackingStore?.Get<bool?>("saveAsBlocked"); }
             set { BackingStore?.Set("saveAsBlocked", value); }
         }
         /// <summary>Indicates whether simplePin is blocked.</summary>
-        public bool? SimplePinBlocked {
+        public bool? SimplePinBlocked
+        {
             get { return BackingStore?.Get<bool?>("simplePinBlocked"); }
             set { BackingStore?.Set("simplePinBlocked", value); }
         }
@@ -377,53 +436,53 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedDataIngestionLocations", n => { AllowedDataIngestionLocations = n.GetCollectionOfEnumValues<ManagedAppDataIngestionLocation>()?.ToList(); } },
-                {"allowedDataStorageLocations", n => { AllowedDataStorageLocations = n.GetCollectionOfEnumValues<ManagedAppDataStorageLocation>()?.ToList(); } },
-                {"allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<ManagedAppDataTransferLevel>(); } },
-                {"allowedOutboundClipboardSharingExceptionLength", n => { AllowedOutboundClipboardSharingExceptionLength = n.GetIntValue(); } },
-                {"allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<ManagedAppClipboardSharingLevel>(); } },
-                {"allowedOutboundDataTransferDestinations", n => { AllowedOutboundDataTransferDestinations = n.GetEnumValue<ManagedAppDataTransferLevel>(); } },
-                {"appActionIfDeviceComplianceRequired", n => { AppActionIfDeviceComplianceRequired = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                {"appActionIfMaximumPinRetriesExceeded", n => { AppActionIfMaximumPinRetriesExceeded = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                {"appActionIfUnableToAuthenticateUser", n => { AppActionIfUnableToAuthenticateUser = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                {"blockDataIngestionIntoOrganizationDocuments", n => { BlockDataIngestionIntoOrganizationDocuments = n.GetBoolValue(); } },
-                {"contactSyncBlocked", n => { ContactSyncBlocked = n.GetBoolValue(); } },
-                {"dataBackupBlocked", n => { DataBackupBlocked = n.GetBoolValue(); } },
-                {"deviceComplianceRequired", n => { DeviceComplianceRequired = n.GetBoolValue(); } },
-                {"dialerRestrictionLevel", n => { DialerRestrictionLevel = n.GetEnumValue<ManagedAppPhoneNumberRedirectLevel>(); } },
-                {"disableAppPinIfDevicePinIsSet", n => { DisableAppPinIfDevicePinIsSet = n.GetBoolValue(); } },
-                {"fingerprintBlocked", n => { FingerprintBlocked = n.GetBoolValue(); } },
-                {"gracePeriodToBlockAppsDuringOffClockHours", n => { GracePeriodToBlockAppsDuringOffClockHours = n.GetTimeSpanValue(); } },
-                {"managedBrowser", n => { ManagedBrowser = n.GetEnumValue<ManagedBrowserType>(); } },
-                {"managedBrowserToOpenLinksRequired", n => { ManagedBrowserToOpenLinksRequired = n.GetBoolValue(); } },
-                {"maximumAllowedDeviceThreatLevel", n => { MaximumAllowedDeviceThreatLevel = n.GetEnumValue<ManagedAppDeviceThreatLevel>(); } },
-                {"maximumPinRetries", n => { MaximumPinRetries = n.GetIntValue(); } },
-                {"maximumRequiredOsVersion", n => { MaximumRequiredOsVersion = n.GetStringValue(); } },
-                {"maximumWarningOsVersion", n => { MaximumWarningOsVersion = n.GetStringValue(); } },
-                {"maximumWipeOsVersion", n => { MaximumWipeOsVersion = n.GetStringValue(); } },
-                {"minimumPinLength", n => { MinimumPinLength = n.GetIntValue(); } },
-                {"minimumRequiredAppVersion", n => { MinimumRequiredAppVersion = n.GetStringValue(); } },
-                {"minimumRequiredOsVersion", n => { MinimumRequiredOsVersion = n.GetStringValue(); } },
-                {"minimumWarningAppVersion", n => { MinimumWarningAppVersion = n.GetStringValue(); } },
-                {"minimumWarningOsVersion", n => { MinimumWarningOsVersion = n.GetStringValue(); } },
-                {"minimumWipeAppVersion", n => { MinimumWipeAppVersion = n.GetStringValue(); } },
-                {"minimumWipeOsVersion", n => { MinimumWipeOsVersion = n.GetStringValue(); } },
-                {"mobileThreatDefensePartnerPriority", n => { MobileThreatDefensePartnerPriority = n.GetEnumValue<MobileThreatDefensePartnerPriority>(); } },
-                {"mobileThreatDefenseRemediationAction", n => { MobileThreatDefenseRemediationAction = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                {"notificationRestriction", n => { NotificationRestriction = n.GetEnumValue<ManagedAppNotificationRestriction>(); } },
-                {"organizationalCredentialsRequired", n => { OrganizationalCredentialsRequired = n.GetBoolValue(); } },
-                {"periodBeforePinReset", n => { PeriodBeforePinReset = n.GetTimeSpanValue(); } },
-                {"periodOfflineBeforeAccessCheck", n => { PeriodOfflineBeforeAccessCheck = n.GetTimeSpanValue(); } },
-                {"periodOfflineBeforeWipeIsEnforced", n => { PeriodOfflineBeforeWipeIsEnforced = n.GetTimeSpanValue(); } },
-                {"periodOnlineBeforeAccessCheck", n => { PeriodOnlineBeforeAccessCheck = n.GetTimeSpanValue(); } },
-                {"pinCharacterSet", n => { PinCharacterSet = n.GetEnumValue<ManagedAppPinCharacterSet>(); } },
-                {"pinRequired", n => { PinRequired = n.GetBoolValue(); } },
-                {"pinRequiredInsteadOfBiometricTimeout", n => { PinRequiredInsteadOfBiometricTimeout = n.GetTimeSpanValue(); } },
-                {"previousPinBlockCount", n => { PreviousPinBlockCount = n.GetIntValue(); } },
-                {"printBlocked", n => { PrintBlocked = n.GetBoolValue(); } },
-                {"protectedMessagingRedirectAppType", n => { ProtectedMessagingRedirectAppType = n.GetEnumValue<MessagingRedirectAppType>(); } },
-                {"saveAsBlocked", n => { SaveAsBlocked = n.GetBoolValue(); } },
-                {"simplePinBlocked", n => { SimplePinBlocked = n.GetBoolValue(); } },
+                { "allowedDataIngestionLocations", n => { AllowedDataIngestionLocations = n.GetCollectionOfEnumValues<ManagedAppDataIngestionLocation>()?.ToList(); } },
+                { "allowedDataStorageLocations", n => { AllowedDataStorageLocations = n.GetCollectionOfEnumValues<ManagedAppDataStorageLocation>()?.ToList(); } },
+                { "allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<ManagedAppDataTransferLevel>(); } },
+                { "allowedOutboundClipboardSharingExceptionLength", n => { AllowedOutboundClipboardSharingExceptionLength = n.GetIntValue(); } },
+                { "allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<ManagedAppClipboardSharingLevel>(); } },
+                { "allowedOutboundDataTransferDestinations", n => { AllowedOutboundDataTransferDestinations = n.GetEnumValue<ManagedAppDataTransferLevel>(); } },
+                { "appActionIfDeviceComplianceRequired", n => { AppActionIfDeviceComplianceRequired = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                { "appActionIfMaximumPinRetriesExceeded", n => { AppActionIfMaximumPinRetriesExceeded = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                { "appActionIfUnableToAuthenticateUser", n => { AppActionIfUnableToAuthenticateUser = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                { "blockDataIngestionIntoOrganizationDocuments", n => { BlockDataIngestionIntoOrganizationDocuments = n.GetBoolValue(); } },
+                { "contactSyncBlocked", n => { ContactSyncBlocked = n.GetBoolValue(); } },
+                { "dataBackupBlocked", n => { DataBackupBlocked = n.GetBoolValue(); } },
+                { "deviceComplianceRequired", n => { DeviceComplianceRequired = n.GetBoolValue(); } },
+                { "dialerRestrictionLevel", n => { DialerRestrictionLevel = n.GetEnumValue<ManagedAppPhoneNumberRedirectLevel>(); } },
+                { "disableAppPinIfDevicePinIsSet", n => { DisableAppPinIfDevicePinIsSet = n.GetBoolValue(); } },
+                { "fingerprintBlocked", n => { FingerprintBlocked = n.GetBoolValue(); } },
+                { "gracePeriodToBlockAppsDuringOffClockHours", n => { GracePeriodToBlockAppsDuringOffClockHours = n.GetTimeSpanValue(); } },
+                { "managedBrowser", n => { ManagedBrowser = n.GetEnumValue<ManagedBrowserType>(); } },
+                { "managedBrowserToOpenLinksRequired", n => { ManagedBrowserToOpenLinksRequired = n.GetBoolValue(); } },
+                { "maximumAllowedDeviceThreatLevel", n => { MaximumAllowedDeviceThreatLevel = n.GetEnumValue<ManagedAppDeviceThreatLevel>(); } },
+                { "maximumPinRetries", n => { MaximumPinRetries = n.GetIntValue(); } },
+                { "maximumRequiredOsVersion", n => { MaximumRequiredOsVersion = n.GetStringValue(); } },
+                { "maximumWarningOsVersion", n => { MaximumWarningOsVersion = n.GetStringValue(); } },
+                { "maximumWipeOsVersion", n => { MaximumWipeOsVersion = n.GetStringValue(); } },
+                { "minimumPinLength", n => { MinimumPinLength = n.GetIntValue(); } },
+                { "minimumRequiredAppVersion", n => { MinimumRequiredAppVersion = n.GetStringValue(); } },
+                { "minimumRequiredOsVersion", n => { MinimumRequiredOsVersion = n.GetStringValue(); } },
+                { "minimumWarningAppVersion", n => { MinimumWarningAppVersion = n.GetStringValue(); } },
+                { "minimumWarningOsVersion", n => { MinimumWarningOsVersion = n.GetStringValue(); } },
+                { "minimumWipeAppVersion", n => { MinimumWipeAppVersion = n.GetStringValue(); } },
+                { "minimumWipeOsVersion", n => { MinimumWipeOsVersion = n.GetStringValue(); } },
+                { "mobileThreatDefensePartnerPriority", n => { MobileThreatDefensePartnerPriority = n.GetEnumValue<MobileThreatDefensePartnerPriority>(); } },
+                { "mobileThreatDefenseRemediationAction", n => { MobileThreatDefenseRemediationAction = n.GetEnumValue<ManagedAppRemediationAction>(); } },
+                { "notificationRestriction", n => { NotificationRestriction = n.GetEnumValue<ManagedAppNotificationRestriction>(); } },
+                { "organizationalCredentialsRequired", n => { OrganizationalCredentialsRequired = n.GetBoolValue(); } },
+                { "periodBeforePinReset", n => { PeriodBeforePinReset = n.GetTimeSpanValue(); } },
+                { "periodOfflineBeforeAccessCheck", n => { PeriodOfflineBeforeAccessCheck = n.GetTimeSpanValue(); } },
+                { "periodOfflineBeforeWipeIsEnforced", n => { PeriodOfflineBeforeWipeIsEnforced = n.GetTimeSpanValue(); } },
+                { "periodOnlineBeforeAccessCheck", n => { PeriodOnlineBeforeAccessCheck = n.GetTimeSpanValue(); } },
+                { "pinCharacterSet", n => { PinCharacterSet = n.GetEnumValue<ManagedAppPinCharacterSet>(); } },
+                { "pinRequired", n => { PinRequired = n.GetBoolValue(); } },
+                { "pinRequiredInsteadOfBiometricTimeout", n => { PinRequiredInsteadOfBiometricTimeout = n.GetTimeSpanValue(); } },
+                { "previousPinBlockCount", n => { PreviousPinBlockCount = n.GetIntValue(); } },
+                { "printBlocked", n => { PrintBlocked = n.GetBoolValue(); } },
+                { "protectedMessagingRedirectAppType", n => { ProtectedMessagingRedirectAppType = n.GetEnumValue<MessagingRedirectAppType>(); } },
+                { "saveAsBlocked", n => { SaveAsBlocked = n.GetBoolValue(); } },
+                { "simplePinBlocked", n => { SimplePinBlocked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

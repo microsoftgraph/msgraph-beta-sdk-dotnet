@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Metric Time series data point
     /// </summary>
-    public class MetricTimeSeriesDataPoint : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MetricTimeSeriesDataPoint : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Time of the metric time series data point</summary>
-        public DateTimeOffset? DateTime {
+        public DateTimeOffset? DateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Value of the metric time series data point</summary>
-        public long? Value {
+        public long? Value
+        {
             get { return BackingStore?.Get<long?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetLongValue(); } },
+                { "dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
             };
         }
         /// <summary>

@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Collection of properties describing the current status of the battery.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceBatteryDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserExperienceAnalyticsDeviceBatteryDetail : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,37 +23,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Uniquely identifies the batteries in a single device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BatteryId {
+        public string? BatteryId
+        {
             get { return BackingStore?.Get<string?>("batteryId"); }
             set { BackingStore?.Set("batteryId", value); }
         }
 #nullable restore
 #else
-        public string BatteryId {
+        public string BatteryId
+        {
             get { return BackingStore?.Get<string>("batteryId"); }
             set { BackingStore?.Set("batteryId", value); }
         }
 #endif
         /// <summary>Number of times the battery has been discharged an amount that equals 100% of its capacity, but not necessarily by discharging it from 100% to 0%. Valid values 0 to 2147483647</summary>
-        public int? FullBatteryDrainCount {
+        public int? FullBatteryDrainCount
+        {
             get { return BackingStore?.Get<int?>("fullBatteryDrainCount"); }
             set { BackingStore?.Set("fullBatteryDrainCount", value); }
         }
         /// <summary>Ratio of current capacity and design capacity of the battery. Unit in percentage and values range from 0-100. Valid values 0 to 2147483647</summary>
-        public int? MaxCapacityPercentage {
+        public int? MaxCapacityPercentage
+        {
             get { return BackingStore?.Get<int?>("maxCapacityPercentage"); }
             set { BackingStore?.Set("maxCapacityPercentage", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -82,10 +90,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"batteryId", n => { BatteryId = n.GetStringValue(); } },
-                {"fullBatteryDrainCount", n => { FullBatteryDrainCount = n.GetIntValue(); } },
-                {"maxCapacityPercentage", n => { MaxCapacityPercentage = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "batteryId", n => { BatteryId = n.GetStringValue(); } },
+                { "fullBatteryDrainCount", n => { FullBatteryDrainCount = n.GetIntValue(); } },
+                { "maxCapacityPercentage", n => { MaxCapacityPercentage = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

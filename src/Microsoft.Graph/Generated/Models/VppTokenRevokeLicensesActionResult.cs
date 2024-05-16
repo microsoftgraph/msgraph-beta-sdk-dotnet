@@ -4,24 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The status of the revoke licenses action performed on the Apple Volume Purchase Program token.
     /// </summary>
-    public class VppTokenRevokeLicensesActionResult : VppTokenActionResult, IParsable 
+    public class VppTokenRevokeLicensesActionResult : VppTokenActionResult, IParsable
     {
         /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
-        public VppTokenActionFailureReason? ActionFailureReason {
+        public VppTokenActionFailureReason? ActionFailureReason
+        {
             get { return BackingStore?.Get<VppTokenActionFailureReason?>("actionFailureReason"); }
             set { BackingStore?.Set("actionFailureReason", value); }
         }
         /// <summary>A count of the number of licenses that failed to revoke.</summary>
-        public int? FailedLicensesCount {
+        public int? FailedLicensesCount
+        {
             get { return BackingStore?.Get<int?>("failedLicensesCount"); }
             set { BackingStore?.Set("failedLicensesCount", value); }
         }
         /// <summary>A count of the number of licenses that were attempted to revoke.</summary>
-        public int? TotalLicensesCount {
+        public int? TotalLicensesCount
+        {
             get { return BackingStore?.Get<int?>("totalLicensesCount"); }
             set { BackingStore?.Set("totalLicensesCount", value); }
         }
@@ -43,9 +47,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionFailureReason", n => { ActionFailureReason = n.GetEnumValue<VppTokenActionFailureReason>(); } },
-                {"failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
-                {"totalLicensesCount", n => { TotalLicensesCount = n.GetIntValue(); } },
+                { "actionFailureReason", n => { ActionFailureReason = n.GetEnumValue<VppTokenActionFailureReason>(); } },
+                { "failedLicensesCount", n => { FailedLicensesCount = n.GetIntValue(); } },
+                { "totalLicensesCount", n => { TotalLicensesCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

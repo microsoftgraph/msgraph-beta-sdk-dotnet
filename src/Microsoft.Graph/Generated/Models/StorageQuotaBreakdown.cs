@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class StorageQuotaBreakdown : Entity, IParsable 
+    public class StorageQuotaBreakdown : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The manageWebUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManageWebUrl {
+        public string? ManageWebUrl
+        {
             get { return BackingStore?.Get<string?>("manageWebUrl"); }
             set { BackingStore?.Set("manageWebUrl", value); }
         }
 #nullable restore
 #else
-        public string ManageWebUrl {
+        public string ManageWebUrl
+        {
             get { return BackingStore?.Get<string>("manageWebUrl"); }
             set { BackingStore?.Set("manageWebUrl", value); }
         }
 #endif
         /// <summary>The used property</summary>
-        public long? Used {
+        public long? Used
+        {
             get { return BackingStore?.Get<long?>("used"); }
             set { BackingStore?.Set("used", value); }
         }
@@ -65,9 +71,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"manageWebUrl", n => { ManageWebUrl = n.GetStringValue(); } },
-                {"used", n => { Used = n.GetLongValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "manageWebUrl", n => { ManageWebUrl = n.GetStringValue(); } },
+                { "used", n => { Used = n.GetLongValue(); } },
             };
         }
         /// <summary>

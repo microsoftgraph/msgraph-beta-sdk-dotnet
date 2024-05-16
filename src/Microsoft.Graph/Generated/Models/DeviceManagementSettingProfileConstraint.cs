@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint enforcing a given profile metadata
     /// </summary>
-    public class DeviceManagementSettingProfileConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingProfileConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>The source of the entity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Source {
+        public string? Source
+        {
             get { return BackingStore?.Get<string?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public string Source {
+        public string Source
+        {
             get { return BackingStore?.Get<string>("source"); }
             set { BackingStore?.Set("source", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of types this entity carries</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Types {
+        public List<string>? Types
+        {
             get { return BackingStore?.Get<List<string>?>("types"); }
             set { BackingStore?.Set("types", value); }
         }
 #nullable restore
 #else
-        public List<string> Types {
+        public List<string> Types
+        {
             get { return BackingStore?.Get<List<string>>("types"); }
             set { BackingStore?.Set("types", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"source", n => { Source = n.GetStringValue(); } },
-                {"types", n => { Types = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "source", n => { Source = n.GetStringValue(); } },
+                { "types", n => { Types = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

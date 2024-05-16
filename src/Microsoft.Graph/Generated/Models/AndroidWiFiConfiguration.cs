@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    public class AndroidWiFiConfiguration : DeviceConfiguration, IParsable 
+    public class AndroidWiFiConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
-        public bool? ConnectAutomatically {
+        public bool? ConnectAutomatically
+        {
             get { return BackingStore?.Get<bool?>("connectAutomatically"); }
             set { BackingStore?.Set("connectAutomatically", value); }
         }
         /// <summary>When set to true, this profile forces the device to connect to a network that doesn&apos;t broadcast its SSID to all devices.</summary>
-        public bool? ConnectWhenNetworkNameIsHidden {
+        public bool? ConnectWhenNetworkNameIsHidden
+        {
             get { return BackingStore?.Get<bool?>("connectWhenNetworkNameIsHidden"); }
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NetworkName {
+        public string? NetworkName
+        {
             get { return BackingStore?.Get<string?>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
 #nullable restore
 #else
-        public string NetworkName {
+        public string NetworkName
+        {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
@@ -37,19 +42,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ssid {
+        public string? Ssid
+        {
             get { return BackingStore?.Get<string?>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
 #nullable restore
 #else
-        public string Ssid {
+        public string Ssid
+        {
             get { return BackingStore?.Get<string>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
 #endif
         /// <summary>Wi-Fi Security Types for Android.</summary>
-        public AndroidWiFiSecurityType? WiFiSecurityType {
+        public AndroidWiFiSecurityType? WiFiSecurityType
+        {
             get { return BackingStore?.Get<AndroidWiFiSecurityType?>("wiFiSecurityType"); }
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
@@ -83,11 +91,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
-                {"connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
-                {"networkName", n => { NetworkName = n.GetStringValue(); } },
-                {"ssid", n => { Ssid = n.GetStringValue(); } },
-                {"wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AndroidWiFiSecurityType>(); } },
+                { "connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
+                { "connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
+                { "networkName", n => { NetworkName = n.GetStringValue(); } },
+                { "ssid", n => { Ssid = n.GetStringValue(); } },
+                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AndroidWiFiSecurityType>(); } },
             };
         }
         /// <summary>

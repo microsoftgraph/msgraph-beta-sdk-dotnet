@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigurations.Item.Assign
+{
     #pragma warning disable CS1591
-    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appProvisioningConfigurationGroupAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppProvisioningConfigGroupAssignment>? AppProvisioningConfigurationGroupAssignments {
+        public List<MobileAppProvisioningConfigGroupAssignment>? AppProvisioningConfigurationGroupAssignments
+        {
             get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>?>("appProvisioningConfigurationGroupAssignments"); }
             set { BackingStore?.Set("appProvisioningConfigurationGroupAssignments", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments {
+        public List<MobileAppProvisioningConfigGroupAssignment> AppProvisioningConfigurationGroupAssignments
+        {
             get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>("appProvisioningConfigurationGroupAssignments"); }
             set { BackingStore?.Set("appProvisioningConfigurationGroupAssignments", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         /// <summary>The iOSLobAppProvisioningConfigAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosLobAppProvisioningConfigurationAssignment>? IOSLobAppProvisioningConfigAssignments {
+        public List<IosLobAppProvisioningConfigurationAssignment>? IOSLobAppProvisioningConfigAssignments
+        {
             get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>?>("iOSLobAppProvisioningConfigAssignments"); }
             set { BackingStore?.Set("iOSLobAppProvisioningConfigAssignments", value); }
         }
 #nullable restore
 #else
-        public List<IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments {
+        public List<IosLobAppProvisioningConfigurationAssignment> IOSLobAppProvisioningConfigAssignments
+        {
             get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>("iOSLobAppProvisioningConfigAssignments"); }
             set { BackingStore?.Set("iOSLobAppProvisioningConfigAssignments", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appProvisioningConfigurationGroupAssignments", n => { AppProvisioningConfigurationGroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"iOSLobAppProvisioningConfigAssignments", n => { IOSLobAppProvisioningConfigAssignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appProvisioningConfigurationGroupAssignments", n => { AppProvisioningConfigurationGroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "iOSLobAppProvisioningConfigAssignments", n => { IOSLobAppProvisioningConfigAssignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,51 +4,59 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The Group Policy Object file uploaded by admin.
     /// </summary>
-    public class GroupPolicyObjectFile : Entity, IParsable 
+    public class GroupPolicyObjectFile : Entity, IParsable
     {
         /// <summary>The Group Policy Object file content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content {
+        public string? Content
+        {
             get { return BackingStore?.Get<string?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public string Content {
+        public string Content
+        {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>The date and time at which the GroupPolicy was first uploaded.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The Group Policy Object GUID from GPO Xml content</summary>
-        public Guid? GroupPolicyObjectId {
+        public Guid? GroupPolicyObjectId
+        {
             get { return BackingStore?.Get<Guid?>("groupPolicyObjectId"); }
             set { BackingStore?.Set("groupPolicyObjectId", value); }
         }
         /// <summary>The date and time at which the GroupPolicyObjectFile was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The distinguished name of the OU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OuDistinguishedName {
+        public string? OuDistinguishedName
+        {
             get { return BackingStore?.Get<string?>("ouDistinguishedName"); }
             set { BackingStore?.Set("ouDistinguishedName", value); }
         }
 #nullable restore
 #else
-        public string OuDistinguishedName {
+        public string OuDistinguishedName
+        {
             get { return BackingStore?.Get<string>("ouDistinguishedName"); }
             set { BackingStore?.Set("ouDistinguishedName", value); }
         }
@@ -56,13 +64,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of scope tags for the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -85,12 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetGuidValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetGuidValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

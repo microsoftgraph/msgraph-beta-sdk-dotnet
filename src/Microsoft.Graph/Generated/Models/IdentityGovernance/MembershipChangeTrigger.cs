@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+namespace Microsoft.Graph.Beta.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class MembershipChangeTrigger : WorkflowExecutionTrigger, IParsable 
+    public class MembershipChangeTrigger : WorkflowExecutionTrigger, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The changeType property</summary>
-        public MembershipChangeType? ChangeType {
+        public MembershipChangeType? ChangeType
+        {
             get { return BackingStore?.Get<MembershipChangeType?>("changeType"); }
             set { BackingStore?.Set("changeType", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"changeType", n => { ChangeType = n.GetEnumValue<MembershipChangeType>(); } },
+                { "changeType", n => { ChangeType = n.GetEnumValue<MembershipChangeType>(); } },
             };
         }
         /// <summary>

@@ -7,11 +7,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.IncompatibleGroups.Item {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.IncompatibleGroups.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\incompatibleGroups\{group-id}
     /// </summary>
-    public class GroupItemRequestBuilder : BaseRequestBuilder 
+    public class GroupItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of identityGovernance entities.</summary>
         public RefRequestBuilder Ref

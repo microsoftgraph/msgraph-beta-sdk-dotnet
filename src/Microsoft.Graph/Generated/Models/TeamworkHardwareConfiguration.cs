@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkHardwareConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkHardwareConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The compute property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? Compute {
+        public TeamworkPeripheral? Compute
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("compute"); }
             set { BackingStore?.Set("compute", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral Compute {
+        public TeamworkPeripheral Compute
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("compute"); }
             set { BackingStore?.Set("compute", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The hdmiIngest property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? HdmiIngest {
+        public TeamworkPeripheral? HdmiIngest
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("hdmiIngest"); }
             set { BackingStore?.Set("hdmiIngest", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral HdmiIngest {
+        public TeamworkPeripheral HdmiIngest
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("hdmiIngest"); }
             set { BackingStore?.Set("hdmiIngest", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The CPU model on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessorModel {
+        public string? ProcessorModel
+        {
             get { return BackingStore?.Get<string?>("processorModel"); }
             set { BackingStore?.Set("processorModel", value); }
         }
 #nullable restore
 #else
-        public string ProcessorModel {
+        public string ProcessorModel
+        {
             get { return BackingStore?.Get<string>("processorModel"); }
             set { BackingStore?.Set("processorModel", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"compute", n => { Compute = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"hdmiIngest", n => { HdmiIngest = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"processorModel", n => { ProcessorModel = n.GetStringValue(); } },
+                { "compute", n => { Compute = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "hdmiIngest", n => { HdmiIngest = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "processorModel", n => { ProcessorModel = n.GetStringValue(); } },
             };
         }
         /// <summary>

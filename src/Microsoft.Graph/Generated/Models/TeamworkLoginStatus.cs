@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkLoginStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkLoginStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information about the Exchange connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? ExchangeConnection {
+        public TeamworkConnection? ExchangeConnection
+        {
             get { return BackingStore?.Get<TeamworkConnection?>("exchangeConnection"); }
             set { BackingStore?.Set("exchangeConnection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection ExchangeConnection {
+        public TeamworkConnection ExchangeConnection
+        {
             get { return BackingStore?.Get<TeamworkConnection>("exchangeConnection"); }
             set { BackingStore?.Set("exchangeConnection", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information about the Skype for Business connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? SkypeConnection {
+        public TeamworkConnection? SkypeConnection
+        {
             get { return BackingStore?.Get<TeamworkConnection?>("skypeConnection"); }
             set { BackingStore?.Set("skypeConnection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection SkypeConnection {
+        public TeamworkConnection SkypeConnection
+        {
             get { return BackingStore?.Get<TeamworkConnection>("skypeConnection"); }
             set { BackingStore?.Set("skypeConnection", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information about the Teams connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? TeamsConnection {
+        public TeamworkConnection? TeamsConnection
+        {
             get { return BackingStore?.Get<TeamworkConnection?>("teamsConnection"); }
             set { BackingStore?.Set("teamsConnection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection TeamsConnection {
+        public TeamworkConnection TeamsConnection
+        {
             get { return BackingStore?.Get<TeamworkConnection>("teamsConnection"); }
             set { BackingStore?.Set("teamsConnection", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"exchangeConnection", n => { ExchangeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"skypeConnection", n => { SkypeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
-                {"teamsConnection", n => { TeamsConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "exchangeConnection", n => { ExchangeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "skypeConnection", n => { SkypeConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "teamsConnection", n => { TeamsConnection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

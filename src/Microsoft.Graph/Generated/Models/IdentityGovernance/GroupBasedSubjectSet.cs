@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+namespace Microsoft.Graph.Beta.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class GroupBasedSubjectSet : Microsoft.Graph.Beta.Models.SubjectSet, IParsable 
+    public class GroupBasedSubjectSet : Microsoft.Graph.Beta.Models.SubjectSet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Group>? Groups {
+        public List<Microsoft.Graph.Beta.Models.Group>? Groups
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Group>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Group> Groups {
+        public List<Microsoft.Graph.Beta.Models.Group> Groups
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Group>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groups", n => { Groups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

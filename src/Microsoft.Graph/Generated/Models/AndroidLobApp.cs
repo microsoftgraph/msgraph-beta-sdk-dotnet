@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Android Line Of Business apps.
     /// </summary>
-    public class AndroidLobApp : MobileLobApp, IParsable 
+    public class AndroidLobApp : MobileLobApp, IParsable
     {
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+        public AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<AndroidMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem {
+        public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The package identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId {
+        public string? PackageId
+        {
             get { return BackingStore?.Get<string?>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
 #nullable restore
 #else
-        public string PackageId {
+        public string PackageId
+        {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
 #endif
         /// <summary>Specifies which platform(s) can be targeted for a given Android LOB application or Managed Android LOB application.</summary>
-        public AndroidTargetedPlatforms? TargetedPlatforms {
+        public AndroidTargetedPlatforms? TargetedPlatforms
+        {
             get { return BackingStore?.Get<AndroidTargetedPlatforms?>("targetedPlatforms"); }
             set { BackingStore?.Set("targetedPlatforms", value); }
         }
         /// <summary>The version code of Android Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionCode {
+        public string? VersionCode
+        {
             get { return BackingStore?.Get<string?>("versionCode"); }
             set { BackingStore?.Set("versionCode", value); }
         }
 #nullable restore
 #else
-        public string VersionCode {
+        public string VersionCode
+        {
             get { return BackingStore?.Get<string>("versionCode"); }
             set { BackingStore?.Set("versionCode", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The version name of Android Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VersionName {
+        public string? VersionName
+        {
             get { return BackingStore?.Get<string?>("versionName"); }
             set { BackingStore?.Set("versionName", value); }
         }
 #nullable restore
 #else
-        public string VersionName {
+        public string VersionName
+        {
             get { return BackingStore?.Get<string>("versionName"); }
             set { BackingStore?.Set("versionName", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<AndroidMinimumOperatingSystem>(AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
-                {"packageId", n => { PackageId = n.GetStringValue(); } },
-                {"targetedPlatforms", n => { TargetedPlatforms = n.GetEnumValue<AndroidTargetedPlatforms>(); } },
-                {"versionCode", n => { VersionCode = n.GetStringValue(); } },
-                {"versionName", n => { VersionName = n.GetStringValue(); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<AndroidMinimumOperatingSystem>(AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "packageId", n => { PackageId = n.GetStringValue(); } },
+                { "targetedPlatforms", n => { TargetedPlatforms = n.GetEnumValue<AndroidTargetedPlatforms>(); } },
+                { "versionCode", n => { VersionCode = n.GetStringValue(); } },
+                { "versionName", n => { VersionName = n.GetStringValue(); } },
             };
         }
         /// <summary>

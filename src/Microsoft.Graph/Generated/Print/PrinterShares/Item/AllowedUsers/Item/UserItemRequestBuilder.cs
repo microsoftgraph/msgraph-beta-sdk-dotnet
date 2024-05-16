@@ -8,11 +8,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item {
+namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \print\printerShares\{printerShare-id}\allowedUsers\{user-id}
     /// </summary>
-    public class UserItemRequestBuilder : BaseRequestBuilder 
+    public class UserItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The mailboxSettings property</summary>
         public MailboxSettingsRequestBuilder MailboxSettings

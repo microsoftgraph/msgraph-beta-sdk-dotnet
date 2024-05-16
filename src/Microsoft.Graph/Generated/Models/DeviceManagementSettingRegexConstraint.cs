@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint enforcing the setting matches against a given RegEx pattern
     /// </summary>
-    public class DeviceManagementSettingRegexConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingRegexConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>The RegEx pattern to match against</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Regex {
+        public string? Regex
+        {
             get { return BackingStore?.Get<string?>("regex"); }
             set { BackingStore?.Set("regex", value); }
         }
 #nullable restore
 #else
-        public string Regex {
+        public string Regex
+        {
             get { return BackingStore?.Get<string>("regex"); }
             set { BackingStore?.Set("regex", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"regex", n => { Regex = n.GetStringValue(); } },
+                { "regex", n => { Regex = n.GetStringValue(); } },
             };
         }
         /// <summary>

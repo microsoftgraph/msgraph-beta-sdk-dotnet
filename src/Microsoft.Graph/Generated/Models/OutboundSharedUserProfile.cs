@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OutboundSharedUserProfile : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OutboundSharedUserProfile : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantReference>? Tenants {
+        public List<TenantReference>? Tenants
+        {
             get { return BackingStore?.Get<List<TenantReference>?>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
 #nullable restore
 #else
-        public List<TenantReference> Tenants {
+        public List<TenantReference> Tenants
+        {
             get { return BackingStore?.Get<List<TenantReference>>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The object id of the external user. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"tenants", n => { Tenants = n.GetCollectionOfObjectValues<TenantReference>(TenantReference.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "tenants", n => { Tenants = n.GetCollectionOfObjectValues<TenantReference>(TenantReference.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

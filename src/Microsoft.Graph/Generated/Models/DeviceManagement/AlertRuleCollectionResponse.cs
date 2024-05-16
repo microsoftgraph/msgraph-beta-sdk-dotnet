@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     #pragma warning disable CS1591
-    public class AlertRuleCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable 
+    public class AlertRuleCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertRule>? Value {
+        public List<AlertRule>? Value
+        {
             get { return BackingStore?.Get<List<AlertRule>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AlertRule> Value {
+        public List<AlertRule> Value
+        {
             get { return BackingStore?.Get<List<AlertRule>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<AlertRule>(AlertRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<AlertRule>(AlertRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

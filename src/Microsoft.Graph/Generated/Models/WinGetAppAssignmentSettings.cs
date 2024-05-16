@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties used to assign a WinGet app to a group.
     /// </summary>
-    public class WinGetAppAssignmentSettings : MobileAppAssignmentSettings, IParsable 
+    public class WinGetAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
     {
         /// <summary>The install time settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WinGetAppInstallTimeSettings? InstallTimeSettings {
+        public WinGetAppInstallTimeSettings? InstallTimeSettings
+        {
             get { return BackingStore?.Get<WinGetAppInstallTimeSettings?>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #nullable restore
 #else
-        public WinGetAppInstallTimeSettings InstallTimeSettings {
+        public WinGetAppInstallTimeSettings InstallTimeSettings
+        {
             get { return BackingStore?.Get<WinGetAppInstallTimeSettings>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #endif
         /// <summary>Contains value for notification status.</summary>
-        public WinGetAppNotification? Notifications {
+        public WinGetAppNotification? Notifications
+        {
             get { return BackingStore?.Get<WinGetAppNotification?>("notifications"); }
             set { BackingStore?.Set("notifications", value); }
         }
         /// <summary>The reboot settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WinGetAppRestartSettings? RestartSettings {
+        public WinGetAppRestartSettings? RestartSettings
+        {
             get { return BackingStore?.Get<WinGetAppRestartSettings?>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
 #nullable restore
 #else
-        public WinGetAppRestartSettings RestartSettings {
+        public WinGetAppRestartSettings RestartSettings
+        {
             get { return BackingStore?.Get<WinGetAppRestartSettings>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<WinGetAppInstallTimeSettings>(WinGetAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
-                {"notifications", n => { Notifications = n.GetEnumValue<WinGetAppNotification>(); } },
-                {"restartSettings", n => { RestartSettings = n.GetObjectValue<WinGetAppRestartSettings>(WinGetAppRestartSettings.CreateFromDiscriminatorValue); } },
+                { "installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<WinGetAppInstallTimeSettings>(WinGetAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
+                { "notifications", n => { Notifications = n.GetEnumValue<WinGetAppNotification>(); } },
+                { "restartSettings", n => { RestartSettings = n.GetObjectValue<WinGetAppRestartSettings>(WinGetAppRestartSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

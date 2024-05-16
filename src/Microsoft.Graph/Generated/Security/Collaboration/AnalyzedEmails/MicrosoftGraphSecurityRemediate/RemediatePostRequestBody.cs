@@ -6,31 +6,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate {
+namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGraphSecurityRemediate
+{
     #pragma warning disable CS1591
-    public class RemediatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RemediatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public RemediationAction? Action {
+        public RemediationAction? Action
+        {
             get { return BackingStore?.Get<RemediationAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The analyzedEmails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AnalyzedEmail>? AnalyzedEmails {
+        public List<AnalyzedEmail>? AnalyzedEmails
+        {
             get { return BackingStore?.Get<List<AnalyzedEmail>?>("analyzedEmails"); }
             set { BackingStore?.Set("analyzedEmails", value); }
         }
 #nullable restore
 #else
-        public List<AnalyzedEmail> AnalyzedEmails {
+        public List<AnalyzedEmail> AnalyzedEmails
+        {
             get { return BackingStore?.Get<List<AnalyzedEmail>>("analyzedEmails"); }
             set { BackingStore?.Set("analyzedEmails", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -54,24 +61,28 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The remediateSendersCopy property</summary>
-        public bool? RemediateSendersCopy {
+        public bool? RemediateSendersCopy
+        {
             get { return BackingStore?.Get<bool?>("remediateSendersCopy"); }
             set { BackingStore?.Set("remediateSendersCopy", value); }
         }
         /// <summary>The severity property</summary>
-        public RemediationSeverity? Severity {
+        public RemediationSeverity? Severity
+        {
             get { return BackingStore?.Get<RemediationSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
@@ -101,12 +112,12 @@ namespace Microsoft.Graph.Beta.Security.Collaboration.AnalyzedEmails.MicrosoftGr
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<RemediationAction>(); } },
-                {"analyzedEmails", n => { AnalyzedEmails = n.GetCollectionOfObjectValues<AnalyzedEmail>(AnalyzedEmail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"remediateSendersCopy", n => { RemediateSendersCopy = n.GetBoolValue(); } },
-                {"severity", n => { Severity = n.GetEnumValue<RemediationSeverity>(); } },
+                { "action", n => { Action = n.GetEnumValue<RemediationAction>(); } },
+                { "analyzedEmails", n => { AnalyzedEmails = n.GetCollectionOfObjectValues<AnalyzedEmail>(AnalyzedEmail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "remediateSendersCopy", n => { RemediateSendersCopy = n.GetBoolValue(); } },
+                { "severity", n => { Severity = n.GetEnumValue<RemediationSeverity>(); } },
             };
         }
         /// <summary>

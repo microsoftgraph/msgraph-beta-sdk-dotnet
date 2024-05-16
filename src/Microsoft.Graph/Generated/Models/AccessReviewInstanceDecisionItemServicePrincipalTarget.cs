@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewInstanceDecisionItemServicePrincipalTarget : AccessReviewInstanceDecisionItemTarget, IParsable 
+    public class AccessReviewInstanceDecisionItemServicePrincipalTarget : AccessReviewInstanceDecisionItemTarget, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appId for the service principal entity being reviewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the service principal whose access is being reviewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalDisplayName {
+        public string? ServicePrincipalDisplayName
+        {
             get { return BackingStore?.Get<string?>("servicePrincipalDisplayName"); }
             set { BackingStore?.Set("servicePrincipalDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalDisplayName {
+        public string ServicePrincipalDisplayName
+        {
             get { return BackingStore?.Get<string>("servicePrincipalDisplayName"); }
             set { BackingStore?.Set("servicePrincipalDisplayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The servicePrincipalId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalId {
+        public string? ServicePrincipalId
+        {
             get { return BackingStore?.Get<string?>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalId {
+        public string ServicePrincipalId
+        {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"servicePrincipalDisplayName", n => { ServicePrincipalDisplayName = n.GetStringValue(); } },
-                {"servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "servicePrincipalDisplayName", n => { ServicePrincipalDisplayName = n.GetStringValue(); } },
+                { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
             };
         }
         /// <summary>

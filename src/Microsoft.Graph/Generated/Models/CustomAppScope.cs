@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomAppScope : AppScope, IParsable 
+    public class CustomAppScope : AppScope, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The customAttributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomAppScopeAttributesDictionary? CustomAttributes {
+        public CustomAppScopeAttributesDictionary? CustomAttributes
+        {
             get { return BackingStore?.Get<CustomAppScopeAttributesDictionary?>("customAttributes"); }
             set { BackingStore?.Set("customAttributes", value); }
         }
 #nullable restore
 #else
-        public CustomAppScopeAttributesDictionary CustomAttributes {
+        public CustomAppScopeAttributesDictionary CustomAttributes
+        {
             get { return BackingStore?.Get<CustomAppScopeAttributesDictionary>("customAttributes"); }
             set { BackingStore?.Set("customAttributes", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customAttributes", n => { CustomAttributes = n.GetObjectValue<CustomAppScopeAttributesDictionary>(CustomAppScopeAttributesDictionary.CreateFromDiscriminatorValue); } },
+                { "customAttributes", n => { CustomAttributes = n.GetObjectValue<CustomAppScopeAttributesDictionary>(CustomAppScopeAttributesDictionary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

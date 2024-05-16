@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class GcpAssociatedIdentities : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GcpAssociatedIdentities : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The all property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpIdentity>? All {
+        public List<GcpIdentity>? All
+        {
             get { return BackingStore?.Get<List<GcpIdentity>?>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #nullable restore
 #else
-        public List<GcpIdentity> All {
+        public List<GcpIdentity> All
+        {
             get { return BackingStore?.Get<List<GcpIdentity>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The serviceAccounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpServiceAccount>? ServiceAccounts {
+        public List<GcpServiceAccount>? ServiceAccounts
+        {
             get { return BackingStore?.Get<List<GcpServiceAccount>?>("serviceAccounts"); }
             set { BackingStore?.Set("serviceAccounts", value); }
         }
 #nullable restore
 #else
-        public List<GcpServiceAccount> ServiceAccounts {
+        public List<GcpServiceAccount> ServiceAccounts
+        {
             get { return BackingStore?.Get<List<GcpServiceAccount>>("serviceAccounts"); }
             set { BackingStore?.Set("serviceAccounts", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpUser>? Users {
+        public List<GcpUser>? Users
+        {
             get { return BackingStore?.Get<List<GcpUser>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<GcpUser> Users {
+        public List<GcpUser> Users
+        {
             get { return BackingStore?.Get<List<GcpUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"all", n => { All = n.GetCollectionOfObjectValues<GcpIdentity>(GcpIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"serviceAccounts", n => { ServiceAccounts = n.GetCollectionOfObjectValues<GcpServiceAccount>(GcpServiceAccount.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"users", n => { Users = n.GetCollectionOfObjectValues<GcpUser>(GcpUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "all", n => { All = n.GetCollectionOfObjectValues<GcpIdentity>(GcpIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "serviceAccounts", n => { ServiceAccounts = n.GetCollectionOfObjectValues<GcpServiceAccount>(GcpServiceAccount.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<GcpUser>(GcpUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

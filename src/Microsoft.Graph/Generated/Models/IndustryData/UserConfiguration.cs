@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class UserConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The password settings for the users to be provisioned with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PasswordSettings? DefaultPasswordSettings {
+        public PasswordSettings? DefaultPasswordSettings
+        {
             get { return BackingStore?.Get<PasswordSettings?>("defaultPasswordSettings"); }
             set { BackingStore?.Set("defaultPasswordSettings", value); }
         }
 #nullable restore
 #else
-        public PasswordSettings DefaultPasswordSettings {
+        public PasswordSettings DefaultPasswordSettings
+        {
             get { return BackingStore?.Get<PasswordSettings>("defaultPasswordSettings"); }
             set { BackingStore?.Set("defaultPasswordSettings", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The license skus for the users to be provisioned with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? LicenseSkus {
+        public List<string>? LicenseSkus
+        {
             get { return BackingStore?.Get<List<string>?>("licenseSkus"); }
             set { BackingStore?.Set("licenseSkus", value); }
         }
 #nullable restore
 #else
-        public List<string> LicenseSkus {
+        public List<string> LicenseSkus
+        {
             get { return BackingStore?.Get<List<string>>("licenseSkus"); }
             set { BackingStore?.Set("licenseSkus", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The roleGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IndustryData.RoleGroup? RoleGroup {
+        public Microsoft.Graph.Beta.Models.IndustryData.RoleGroup? RoleGroup
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup?>("roleGroup"); }
             set { BackingStore?.Set("roleGroup", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IndustryData.RoleGroup RoleGroup {
+        public Microsoft.Graph.Beta.Models.IndustryData.RoleGroup RoleGroup
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>("roleGroup"); }
             set { BackingStore?.Set("roleGroup", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"defaultPasswordSettings", n => { DefaultPasswordSettings = n.GetObjectValue<PasswordSettings>(PasswordSettings.CreateFromDiscriminatorValue); } },
-                {"licenseSkus", n => { LicenseSkus = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"roleGroup", n => { RoleGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>(Microsoft.Graph.Beta.Models.IndustryData.RoleGroup.CreateFromDiscriminatorValue); } },
+                { "defaultPasswordSettings", n => { DefaultPasswordSettings = n.GetObjectValue<PasswordSettings>(PasswordSettings.CreateFromDiscriminatorValue); } },
+                { "licenseSkus", n => { LicenseSkus = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "roleGroup", n => { RoleGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>(Microsoft.Graph.Beta.Models.IndustryData.RoleGroup.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Admin : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Admin : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appsAndServices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminAppsAndServices? AppsAndServices {
+        public AdminAppsAndServices? AppsAndServices
+        {
             get { return BackingStore?.Get<AdminAppsAndServices?>("appsAndServices"); }
             set { BackingStore?.Set("appsAndServices", value); }
         }
 #nullable restore
 #else
-        public AdminAppsAndServices AppsAndServices {
+        public AdminAppsAndServices AppsAndServices
+        {
             get { return BackingStore?.Get<AdminAppsAndServices>("appsAndServices"); }
             set { BackingStore?.Set("appsAndServices", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The dynamics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminDynamics? Dynamics {
+        public AdminDynamics? Dynamics
+        {
             get { return BackingStore?.Get<AdminDynamics?>("dynamics"); }
             set { BackingStore?.Set("dynamics", value); }
         }
 #nullable restore
 #else
-        public AdminDynamics Dynamics {
+        public AdminDynamics Dynamics
+        {
             get { return BackingStore?.Get<AdminDynamics>("dynamics"); }
             set { BackingStore?.Set("dynamics", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A container for Microsoft Edge resources. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Edge? Edge {
+        public Microsoft.Graph.Beta.Models.Edge? Edge
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Edge?>("edge"); }
             set { BackingStore?.Set("edge", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Edge Edge {
+        public Microsoft.Graph.Beta.Models.Edge Edge
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Edge>("edge"); }
             set { BackingStore?.Set("edge", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The forms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminForms? Forms {
+        public AdminForms? Forms
+        {
             get { return BackingStore?.Get<AdminForms?>("forms"); }
             set { BackingStore?.Set("forms", value); }
         }
 #nullable restore
 #else
-        public AdminForms Forms {
+        public AdminForms Forms
+        {
             get { return BackingStore?.Get<AdminForms>("forms"); }
             set { BackingStore?.Set("forms", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A container for the Microsoft 365 apps admin functionality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminMicrosoft365Apps? Microsoft365Apps {
+        public AdminMicrosoft365Apps? Microsoft365Apps
+        {
             get { return BackingStore?.Get<AdminMicrosoft365Apps?>("microsoft365Apps"); }
             set { BackingStore?.Set("microsoft365Apps", value); }
         }
 #nullable restore
 #else
-        public AdminMicrosoft365Apps Microsoft365Apps {
+        public AdminMicrosoft365Apps Microsoft365Apps
+        {
             get { return BackingStore?.Get<AdminMicrosoft365Apps>("microsoft365Apps"); }
             set { BackingStore?.Set("microsoft365Apps", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents a setting to control people-related admin settings in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PeopleAdminSettings? People {
+        public PeopleAdminSettings? People
+        {
             get { return BackingStore?.Get<PeopleAdminSettings?>("people"); }
             set { BackingStore?.Set("people", value); }
         }
 #nullable restore
 #else
-        public PeopleAdminSettings People {
+        public PeopleAdminSettings People
+        {
             get { return BackingStore?.Get<PeopleAdminSettings>("people"); }
             set { BackingStore?.Set("people", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A container for administrative resources to manage reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminReportSettings? ReportSettings {
+        public AdminReportSettings? ReportSettings
+        {
             get { return BackingStore?.Get<AdminReportSettings?>("reportSettings"); }
             set { BackingStore?.Set("reportSettings", value); }
         }
 #nullable restore
 #else
-        public AdminReportSettings ReportSettings {
+        public AdminReportSettings ReportSettings
+        {
             get { return BackingStore?.Get<AdminReportSettings>("reportSettings"); }
             set { BackingStore?.Set("reportSettings", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A container for service communications resources. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ServiceAnnouncement? ServiceAnnouncement {
+        public Microsoft.Graph.Beta.Models.ServiceAnnouncement? ServiceAnnouncement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceAnnouncement?>("serviceAnnouncement"); }
             set { BackingStore?.Set("serviceAnnouncement", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ServiceAnnouncement ServiceAnnouncement {
+        public Microsoft.Graph.Beta.Models.ServiceAnnouncement ServiceAnnouncement
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceAnnouncement>("serviceAnnouncement"); }
             set { BackingStore?.Set("serviceAnnouncement", value); }
         }
@@ -146,13 +166,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sharepoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Sharepoint? Sharepoint {
+        public Microsoft.Graph.Beta.Models.Sharepoint? Sharepoint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Sharepoint?>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Sharepoint Sharepoint {
+        public Microsoft.Graph.Beta.Models.Sharepoint Sharepoint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Sharepoint>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
@@ -160,13 +182,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The todo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminTodo? Todo {
+        public AdminTodo? Todo
+        {
             get { return BackingStore?.Get<AdminTodo?>("todo"); }
             set { BackingStore?.Set("todo", value); }
         }
 #nullable restore
 #else
-        public AdminTodo Todo {
+        public AdminTodo Todo
+        {
             get { return BackingStore?.Get<AdminTodo>("todo"); }
             set { BackingStore?.Set("todo", value); }
         }
@@ -174,13 +198,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A container for all Windows administrator functionalities. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminWindows? Windows {
+        public AdminWindows? Windows
+        {
             get { return BackingStore?.Get<AdminWindows?>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #nullable restore
 #else
-        public AdminWindows Windows {
+        public AdminWindows Windows
+        {
             get { return BackingStore?.Get<AdminWindows>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
@@ -211,18 +237,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appsAndServices", n => { AppsAndServices = n.GetObjectValue<AdminAppsAndServices>(AdminAppsAndServices.CreateFromDiscriminatorValue); } },
-                {"dynamics", n => { Dynamics = n.GetObjectValue<AdminDynamics>(AdminDynamics.CreateFromDiscriminatorValue); } },
-                {"edge", n => { Edge = n.GetObjectValue<Microsoft.Graph.Beta.Models.Edge>(Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue); } },
-                {"forms", n => { Forms = n.GetObjectValue<AdminForms>(AdminForms.CreateFromDiscriminatorValue); } },
-                {"microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<AdminMicrosoft365Apps>(AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"people", n => { People = n.GetObjectValue<PeopleAdminSettings>(PeopleAdminSettings.CreateFromDiscriminatorValue); } },
-                {"reportSettings", n => { ReportSettings = n.GetObjectValue<AdminReportSettings>(AdminReportSettings.CreateFromDiscriminatorValue); } },
-                {"serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
-                {"sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.Sharepoint>(Microsoft.Graph.Beta.Models.Sharepoint.CreateFromDiscriminatorValue); } },
-                {"todo", n => { Todo = n.GetObjectValue<AdminTodo>(AdminTodo.CreateFromDiscriminatorValue); } },
-                {"windows", n => { Windows = n.GetObjectValue<AdminWindows>(AdminWindows.CreateFromDiscriminatorValue); } },
+                { "appsAndServices", n => { AppsAndServices = n.GetObjectValue<AdminAppsAndServices>(AdminAppsAndServices.CreateFromDiscriminatorValue); } },
+                { "dynamics", n => { Dynamics = n.GetObjectValue<AdminDynamics>(AdminDynamics.CreateFromDiscriminatorValue); } },
+                { "edge", n => { Edge = n.GetObjectValue<Microsoft.Graph.Beta.Models.Edge>(Microsoft.Graph.Beta.Models.Edge.CreateFromDiscriminatorValue); } },
+                { "forms", n => { Forms = n.GetObjectValue<AdminForms>(AdminForms.CreateFromDiscriminatorValue); } },
+                { "microsoft365Apps", n => { Microsoft365Apps = n.GetObjectValue<AdminMicrosoft365Apps>(AdminMicrosoft365Apps.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "people", n => { People = n.GetObjectValue<PeopleAdminSettings>(PeopleAdminSettings.CreateFromDiscriminatorValue); } },
+                { "reportSettings", n => { ReportSettings = n.GetObjectValue<AdminReportSettings>(AdminReportSettings.CreateFromDiscriminatorValue); } },
+                { "serviceAnnouncement", n => { ServiceAnnouncement = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServiceAnnouncement>(Microsoft.Graph.Beta.Models.ServiceAnnouncement.CreateFromDiscriminatorValue); } },
+                { "sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.Sharepoint>(Microsoft.Graph.Beta.Models.Sharepoint.CreateFromDiscriminatorValue); } },
+                { "todo", n => { Todo = n.GetObjectValue<AdminTodo>(AdminTodo.CreateFromDiscriminatorValue); } },
+                { "windows", n => { Windows = n.GetObjectValue<AdminWindows>(AdminWindows.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

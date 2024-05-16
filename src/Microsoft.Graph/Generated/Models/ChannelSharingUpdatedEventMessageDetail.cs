@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ChannelSharingUpdatedEventMessageDetail : EventMessageDetail, IParsable 
+    public class ChannelSharingUpdatedEventMessageDetail : EventMessageDetail, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Initiator of the event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Initiator {
+        public IdentitySet? Initiator
+        {
             get { return BackingStore?.Get<IdentitySet?>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Initiator {
+        public IdentitySet Initiator
+        {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the team to which the shared channel belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerTeamId {
+        public string? OwnerTeamId
+        {
             get { return BackingStore?.Get<string?>("ownerTeamId"); }
             set { BackingStore?.Set("ownerTeamId", value); }
         }
 #nullable restore
 #else
-        public string OwnerTeamId {
+        public string OwnerTeamId
+        {
             get { return BackingStore?.Get<string>("ownerTeamId"); }
             set { BackingStore?.Set("ownerTeamId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the tenant to which the shared channel belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OwnerTenantId {
+        public string? OwnerTenantId
+        {
             get { return BackingStore?.Get<string?>("ownerTenantId"); }
             set { BackingStore?.Set("ownerTenantId", value); }
         }
 #nullable restore
 #else
-        public string OwnerTenantId {
+        public string OwnerTenantId
+        {
             get { return BackingStore?.Get<string>("ownerTenantId"); }
             set { BackingStore?.Set("ownerTenantId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the shared channel.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SharedChannelId {
+        public string? SharedChannelId
+        {
             get { return BackingStore?.Get<string?>("sharedChannelId"); }
             set { BackingStore?.Set("sharedChannelId", value); }
         }
 #nullable restore
 #else
-        public string SharedChannelId {
+        public string SharedChannelId
+        {
             get { return BackingStore?.Get<string>("sharedChannelId"); }
             set { BackingStore?.Set("sharedChannelId", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"ownerTeamId", n => { OwnerTeamId = n.GetStringValue(); } },
-                {"ownerTenantId", n => { OwnerTenantId = n.GetStringValue(); } },
-                {"sharedChannelId", n => { SharedChannelId = n.GetStringValue(); } },
+                { "initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "ownerTeamId", n => { OwnerTeamId = n.GetStringValue(); } },
+                { "ownerTenantId", n => { OwnerTenantId = n.GetStringValue(); } },
+                { "sharedChannelId", n => { SharedChannelId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// iOS Education device configuration
     /// </summary>
-    public class IosEduDeviceConfiguration : DeviceConfiguration, IParsable 
+    public class IosEduDeviceConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>The Trusted Root and PFX certificates for Device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosEduCertificateSettings? DeviceCertificateSettings {
+        public IosEduCertificateSettings? DeviceCertificateSettings
+        {
             get { return BackingStore?.Get<IosEduCertificateSettings?>("deviceCertificateSettings"); }
             set { BackingStore?.Set("deviceCertificateSettings", value); }
         }
 #nullable restore
 #else
-        public IosEduCertificateSettings DeviceCertificateSettings {
+        public IosEduCertificateSettings DeviceCertificateSettings
+        {
             get { return BackingStore?.Get<IosEduCertificateSettings>("deviceCertificateSettings"); }
             set { BackingStore?.Set("deviceCertificateSettings", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Trusted Root and PFX certificates for Student</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosEduCertificateSettings? StudentCertificateSettings {
+        public IosEduCertificateSettings? StudentCertificateSettings
+        {
             get { return BackingStore?.Get<IosEduCertificateSettings?>("studentCertificateSettings"); }
             set { BackingStore?.Set("studentCertificateSettings", value); }
         }
 #nullable restore
 #else
-        public IosEduCertificateSettings StudentCertificateSettings {
+        public IosEduCertificateSettings StudentCertificateSettings
+        {
             get { return BackingStore?.Get<IosEduCertificateSettings>("studentCertificateSettings"); }
             set { BackingStore?.Set("studentCertificateSettings", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Trusted Root and PFX certificates for iOS EDU.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosEduCertificateSettings? TeacherCertificateSettings {
+        public IosEduCertificateSettings? TeacherCertificateSettings
+        {
             get { return BackingStore?.Get<IosEduCertificateSettings?>("teacherCertificateSettings"); }
             set { BackingStore?.Set("teacherCertificateSettings", value); }
         }
 #nullable restore
 #else
-        public IosEduCertificateSettings TeacherCertificateSettings {
+        public IosEduCertificateSettings TeacherCertificateSettings
+        {
             get { return BackingStore?.Get<IosEduCertificateSettings>("teacherCertificateSettings"); }
             set { BackingStore?.Set("teacherCertificateSettings", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceCertificateSettings", n => { DeviceCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
-                {"studentCertificateSettings", n => { StudentCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
-                {"teacherCertificateSettings", n => { TeacherCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
+                { "deviceCertificateSettings", n => { DeviceCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
+                { "studentCertificateSettings", n => { StudentCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
+                { "teacherCertificateSettings", n => { TeacherCertificateSettings = n.GetObjectValue<IosEduCertificateSettings>(IosEduCertificateSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

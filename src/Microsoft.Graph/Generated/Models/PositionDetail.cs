@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PositionDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PositionDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Detail about the company or employer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CompanyDetail? Company {
+        public CompanyDetail? Company
+        {
             get { return BackingStore?.Get<CompanyDetail?>("company"); }
             set { BackingStore?.Set("company", value); }
         }
 #nullable restore
 #else
-        public CompanyDetail Company {
+        public CompanyDetail Company
+        {
             get { return BackingStore?.Get<CompanyDetail>("company"); }
             set { BackingStore?.Set("company", value); }
         }
@@ -35,51 +39,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of the position in question.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>When the position ended.</summary>
-        public Date? EndMonthYear {
+        public Date? EndMonthYear
+        {
             get { return BackingStore?.Get<Date?>("endMonthYear"); }
             set { BackingStore?.Set("endMonthYear", value); }
         }
         /// <summary>The title held when in that position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JobTitle {
+        public string? JobTitle
+        {
             get { return BackingStore?.Get<string?>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
 #nullable restore
 #else
-        public string JobTitle {
+        public string JobTitle
+        {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
 #endif
         /// <summary>The place where the employee is within the organizational hierarchy.</summary>
-        public int? Layer {
+        public int? Layer
+        {
             get { return BackingStore?.Get<int?>("layer"); }
             set { BackingStore?.Set("layer", value); }
         }
         /// <summary>The employee’s experience or management level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Level {
+        public string? Level
+        {
             get { return BackingStore?.Get<string?>("level"); }
             set { BackingStore?.Set("level", value); }
         }
 #nullable restore
 #else
-        public string Level {
+        public string Level
+        {
             get { return BackingStore?.Get<string>("level"); }
             set { BackingStore?.Set("level", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -101,32 +115,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The role the position entailed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Role {
+        public string? Role
+        {
             get { return BackingStore?.Get<string?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #nullable restore
 #else
-        public string Role {
+        public string Role
+        {
             get { return BackingStore?.Get<string>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #endif
         /// <summary>The start month and year of the position.</summary>
-        public Date? StartMonthYear {
+        public Date? StartMonthYear
+        {
             get { return BackingStore?.Get<Date?>("startMonthYear"); }
             set { BackingStore?.Set("startMonthYear", value); }
         }
         /// <summary>summary of the position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Summary {
+        public string? Summary
+        {
             get { return BackingStore?.Get<string?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public string Summary {
+        public string Summary
+        {
             get { return BackingStore?.Get<string>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
@@ -157,16 +176,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"company", n => { Company = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"endMonthYear", n => { EndMonthYear = n.GetDateValue(); } },
-                {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
-                {"layer", n => { Layer = n.GetIntValue(); } },
-                {"level", n => { Level = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"role", n => { Role = n.GetStringValue(); } },
-                {"startMonthYear", n => { StartMonthYear = n.GetDateValue(); } },
-                {"summary", n => { Summary = n.GetStringValue(); } },
+                { "company", n => { Company = n.GetObjectValue<CompanyDetail>(CompanyDetail.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "endMonthYear", n => { EndMonthYear = n.GetDateValue(); } },
+                { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                { "layer", n => { Layer = n.GetIntValue(); } },
+                { "level", n => { Level = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "role", n => { Role = n.GetStringValue(); } },
+                { "startMonthYear", n => { StartMonthYear = n.GetDateValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
             };
         }
         /// <summary>

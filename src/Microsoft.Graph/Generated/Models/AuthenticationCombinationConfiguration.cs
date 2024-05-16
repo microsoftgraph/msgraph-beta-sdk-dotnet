@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationCombinationConfiguration : Entity, IParsable 
+    public class AuthenticationCombinationConfiguration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object defined for the authenticationStrengthPolicy. For fido2combinationConfigurations use &apos;fido2&apos;, for x509certificatecombinationconfiguration use &apos;x509CertificateSingleFactor&apos; or &apos;x509CertificateMultiFactor&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationMethodModes?>? AppliesToCombinations {
+        public List<AuthenticationMethodModes?>? AppliesToCombinations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>?>("appliesToCombinations"); }
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationMethodModes?> AppliesToCombinations {
+        public List<AuthenticationMethodModes?> AppliesToCombinations
+        {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("appliesToCombinations"); }
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
@@ -47,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appliesToCombinations", n => { AppliesToCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
+                { "appliesToCombinations", n => { AppliesToCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
             };
         }
         /// <summary>

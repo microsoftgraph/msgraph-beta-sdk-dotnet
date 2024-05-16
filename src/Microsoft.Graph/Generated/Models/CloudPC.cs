@@ -4,35 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPC : Entity, IParsable 
+    public class CloudPC : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Microsoft Entra device ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AadDeviceId {
+        public string? AadDeviceId
+        {
             get { return BackingStore?.Get<string?>("aadDeviceId"); }
             set { BackingStore?.Set("aadDeviceId", value); }
         }
 #nullable restore
 #else
-        public string AadDeviceId {
+        public string AadDeviceId
+        {
             get { return BackingStore?.Get<string>("aadDeviceId"); }
             set { BackingStore?.Set("aadDeviceId", value); }
         }
 #endif
-        /// <summary>The allotment name divides tenant licenses into smaller batches or groups that helps restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.</summary>
+        /// <summary>The allotment name divides tenant licenses into smaller batches or groups that help restrict the number of licenses available for use in a specific assignment. When the provisioningType is dedicated, the allotment name is null. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllotmentDisplayName {
+        public string? AllotmentDisplayName
+        {
             get { return BackingStore?.Get<string?>("allotmentDisplayName"); }
             set { BackingStore?.Set("allotmentDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AllotmentDisplayName {
+        public string AllotmentDisplayName
+        {
             get { return BackingStore?.Get<string>("allotmentDisplayName"); }
             set { BackingStore?.Set("allotmentDisplayName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connectionSettings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcConnectionSettings? ConnectionSettings {
+        public CloudPcConnectionSettings? ConnectionSettings
+        {
             get { return BackingStore?.Get<CloudPcConnectionSettings?>("connectionSettings"); }
             set { BackingStore?.Set("connectionSettings", value); }
         }
 #nullable restore
 #else
-        public CloudPcConnectionSettings ConnectionSettings {
+        public CloudPcConnectionSettings ConnectionSettings
+        {
             get { return BackingStore?.Get<CloudPcConnectionSettings>("connectionSettings"); }
             set { BackingStore?.Set("connectionSettings", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC can be connected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcConnectivityResult? ConnectivityResult {
+        public CloudPcConnectivityResult? ConnectivityResult
+        {
             get { return BackingStore?.Get<CloudPcConnectivityResult?>("connectivityResult"); }
             set { BackingStore?.Set("connectivityResult", value); }
         }
 #nullable restore
 #else
-        public CloudPcConnectivityResult ConnectivityResult {
+        public CloudPcConnectivityResult ConnectivityResult
+        {
             get { return BackingStore?.Get<CloudPcConnectivityResult>("connectivityResult"); }
             set { BackingStore?.Set("connectivityResult", value); }
         }
@@ -68,51 +77,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The disasterRecoveryCapability property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcDisasterRecoveryCapability? DisasterRecoveryCapability {
+        public CloudPcDisasterRecoveryCapability? DisasterRecoveryCapability
+        {
             get { return BackingStore?.Get<CloudPcDisasterRecoveryCapability?>("disasterRecoveryCapability"); }
             set { BackingStore?.Set("disasterRecoveryCapability", value); }
         }
 #nullable restore
 #else
-        public CloudPcDisasterRecoveryCapability DisasterRecoveryCapability {
+        public CloudPcDisasterRecoveryCapability DisasterRecoveryCapability
+        {
             get { return BackingStore?.Get<CloudPcDisasterRecoveryCapability>("disasterRecoveryCapability"); }
             set { BackingStore?.Set("disasterRecoveryCapability", value); }
         }
 #endif
         /// <summary>The disk encryption applied to the Cloud PC. Possible values: notAvailable, notEncrypted, encryptedUsingPlatformManagedKey, encryptedUsingCustomerManagedKey, and unknownFutureValue.</summary>
-        public CloudPcDiskEncryptionState? DiskEncryptionState {
+        public CloudPcDiskEncryptionState? DiskEncryptionState
+        {
             get { return BackingStore?.Get<CloudPcDiskEncryptionState?>("diskEncryptionState"); }
             set { BackingStore?.Set("diskEncryptionState", value); }
         }
         /// <summary>The display name of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The date and time when the grace period ends and reprovisioning or deprovisioning happen. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? GracePeriodEndDateTime {
+        /// <summary>The date and time when the grace period ends and reprovisioning or deprovisioning happens. Required only if the status is inGracePeriod. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? GracePeriodEndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("gracePeriodEndDateTime"); }
             set { BackingStore?.Set("gracePeriodEndDateTime", value); }
         }
         /// <summary>Name of the OS image that&apos;s on the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageDisplayName {
+        public string? ImageDisplayName
+        {
             get { return BackingStore?.Get<string?>("imageDisplayName"); }
             set { BackingStore?.Set("imageDisplayName", value); }
         }
 #nullable restore
 #else
-        public string ImageDisplayName {
+        public string ImageDisplayName
+        {
             get { return BackingStore?.Get<string>("imageDisplayName"); }
             set { BackingStore?.Set("imageDisplayName", value); }
         }
@@ -120,32 +137,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The last login result of the Cloud PC. For example, { &apos;time&apos;: &apos;2014-01-01T00:00:00Z&apos;}.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcLoginResult? LastLoginResult {
+        public CloudPcLoginResult? LastLoginResult
+        {
             get { return BackingStore?.Get<CloudPcLoginResult?>("lastLoginResult"); }
             set { BackingStore?.Set("lastLoginResult", value); }
         }
 #nullable restore
 #else
-        public CloudPcLoginResult LastLoginResult {
+        public CloudPcLoginResult LastLoginResult
+        {
             get { return BackingStore?.Get<CloudPcLoginResult>("lastLoginResult"); }
             set { BackingStore?.Set("lastLoginResult", value); }
         }
 #endif
-        /// <summary>The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        /// <summary>The last modified date and time of the Cloud PC. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014, is 2014-01-01T00:00:00Z.</summary>
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The last remote action result of the enterprise Cloud PCs. The supported remote actions are: Reboot, Rename, Reprovision, Restore, Troubleshoot.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcRemoteActionResult? LastRemoteActionResult {
+        public CloudPcRemoteActionResult? LastRemoteActionResult
+        {
             get { return BackingStore?.Get<CloudPcRemoteActionResult?>("lastRemoteActionResult"); }
             set { BackingStore?.Set("lastRemoteActionResult", value); }
         }
 #nullable restore
 #else
-        public CloudPcRemoteActionResult LastRemoteActionResult {
+        public CloudPcRemoteActionResult LastRemoteActionResult
+        {
             get { return BackingStore?.Get<CloudPcRemoteActionResult>("lastRemoteActionResult"); }
             set { BackingStore?.Set("lastRemoteActionResult", value); }
         }
@@ -153,13 +175,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Intune device ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Intune device name of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceName {
+        public string? ManagedDeviceName
+        {
             get { return BackingStore?.Get<string?>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceName {
+        public string ManagedDeviceName
+        {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
@@ -181,51 +207,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Azure network connection that is applied during the provisioning of Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnPremisesConnectionName {
+        public string? OnPremisesConnectionName
+        {
             get { return BackingStore?.Get<string?>("onPremisesConnectionName"); }
             set { BackingStore?.Set("onPremisesConnectionName", value); }
         }
 #nullable restore
 #else
-        public string OnPremisesConnectionName {
+        public string OnPremisesConnectionName
+        {
             get { return BackingStore?.Get<string>("onPremisesConnectionName"); }
             set { BackingStore?.Set("onPremisesConnectionName", value); }
         }
 #endif
         /// <summary>The version of the operating system (OS) to provision on Cloud PCs. Possible values are: windows10, windows11, unknownFutureValue.</summary>
-        public CloudPcOperatingSystem? OsVersion {
+        public CloudPcOperatingSystem? OsVersion
+        {
             get { return BackingStore?.Get<CloudPcOperatingSystem?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>The results of every partner agent&apos;s installation status on Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcPartnerAgentInstallResult>? PartnerAgentInstallResults {
+        public List<CloudPcPartnerAgentInstallResult>? PartnerAgentInstallResults
+        {
             get { return BackingStore?.Get<List<CloudPcPartnerAgentInstallResult>?>("partnerAgentInstallResults"); }
             set { BackingStore?.Set("partnerAgentInstallResults", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults {
+        public List<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults
+        {
             get { return BackingStore?.Get<List<CloudPcPartnerAgentInstallResult>>("partnerAgentInstallResults"); }
             set { BackingStore?.Set("partnerAgentInstallResults", value); }
         }
 #endif
         /// <summary>The power state of a Cloud PC. The possible values are: running, poweredOff, unknown. This property only supports shift work Cloud PCs.</summary>
-        public CloudPcPowerState? PowerState {
+        public CloudPcPowerState? PowerState
+        {
             get { return BackingStore?.Get<CloudPcPowerState?>("powerState"); }
             set { BackingStore?.Set("powerState", value); }
         }
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisioningPolicyId {
+        public string? ProvisioningPolicyId
+        {
             get { return BackingStore?.Get<string?>("provisioningPolicyId"); }
             set { BackingStore?.Set("provisioningPolicyId", value); }
         }
 #nullable restore
 #else
-        public string ProvisioningPolicyId {
+        public string ProvisioningPolicyId
+        {
             get { return BackingStore?.Get<string>("provisioningPolicyId"); }
             set { BackingStore?.Set("provisioningPolicyId", value); }
         }
@@ -233,32 +267,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The provisioning policy that is applied during the provisioning of Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisioningPolicyName {
+        public string? ProvisioningPolicyName
+        {
             get { return BackingStore?.Get<string?>("provisioningPolicyName"); }
             set { BackingStore?.Set("provisioningPolicyName", value); }
         }
 #nullable restore
 #else
-        public string ProvisioningPolicyName {
+        public string ProvisioningPolicyName
+        {
             get { return BackingStore?.Get<string>("provisioningPolicyName"); }
             set { BackingStore?.Set("provisioningPolicyName", value); }
         }
 #endif
-        /// <summary>The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue. Default value is dedicated.</summary>
-        public CloudPcProvisioningType? ProvisioningType {
+        /// <summary>The type of licenses to be used when provisioning Cloud PCs using this policy. Possible values are: dedicated, shared, unknownFutureValue,sharedByUser, sharedByUser. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The default value is dedicated. CAUTION: The shared member is deprecated and will stop returning on April 30, 2027； in the future, use the sharedByUser member.</summary>
+        public CloudPcProvisioningType? ProvisioningType
+        {
             get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
             set { BackingStore?.Set("provisioningType", value); }
         }
         /// <summary>The scopeIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScopeIds {
+        public List<string>? ScopeIds
+        {
             get { return BackingStore?.Get<List<string>?>("scopeIds"); }
             set { BackingStore?.Set("scopeIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ScopeIds {
+        public List<string> ScopeIds
+        {
             get { return BackingStore?.Get<List<string>>("scopeIds"); }
             set { BackingStore?.Set("scopeIds", value); }
         }
@@ -266,13 +305,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The service plan ID of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePlanId {
+        public string? ServicePlanId
+        {
             get { return BackingStore?.Get<string?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
 #nullable restore
 #else
-        public string ServicePlanId {
+        public string ServicePlanId
+        {
             get { return BackingStore?.Get<string>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
@@ -280,56 +321,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The service plan name of the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePlanName {
+        public string? ServicePlanName
+        {
             get { return BackingStore?.Get<string?>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
 #nullable restore
 #else
-        public string ServicePlanName {
+        public string ServicePlanName
+        {
             get { return BackingStore?.Get<string>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
 #endif
         /// <summary>The service plan type of the Cloud PC.</summary>
-        public CloudPcServicePlanType? ServicePlanType {
+        public CloudPcServicePlanType? ServicePlanType
+        {
             get { return BackingStore?.Get<CloudPcServicePlanType?>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
         }
         /// <summary>The status property</summary>
-        public CloudPcStatus? Status {
+        public CloudPcStatus? Status
+        {
             get { return BackingStore?.Get<CloudPcStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The details of the Cloud PC status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcStatusDetails? StatusDetails {
+        public CloudPcStatusDetails? StatusDetails
+        {
             get { return BackingStore?.Get<CloudPcStatusDetails?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #nullable restore
 #else
-        public CloudPcStatusDetails StatusDetails {
+        public CloudPcStatusDetails StatusDetails
+        {
             get { return BackingStore?.Get<CloudPcStatusDetails>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #endif
         /// <summary>The account type of the user on provisioned Cloud PCs. Possible values are: standardUser, administrator, unknownFutureValue.</summary>
-        public CloudPcUserAccountType? UserAccountType {
+        public CloudPcUserAccountType? UserAccountType
+        {
             get { return BackingStore?.Get<CloudPcUserAccountType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
         }
         /// <summary>The user principal name (UPN) of the user assigned to the Cloud PC.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -352,35 +402,35 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"aadDeviceId", n => { AadDeviceId = n.GetStringValue(); } },
-                {"allotmentDisplayName", n => { AllotmentDisplayName = n.GetStringValue(); } },
-                {"connectionSettings", n => { ConnectionSettings = n.GetObjectValue<CloudPcConnectionSettings>(CloudPcConnectionSettings.CreateFromDiscriminatorValue); } },
-                {"connectivityResult", n => { ConnectivityResult = n.GetObjectValue<CloudPcConnectivityResult>(CloudPcConnectivityResult.CreateFromDiscriminatorValue); } },
-                {"disasterRecoveryCapability", n => { DisasterRecoveryCapability = n.GetObjectValue<CloudPcDisasterRecoveryCapability>(CloudPcDisasterRecoveryCapability.CreateFromDiscriminatorValue); } },
-                {"diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<CloudPcDiskEncryptionState>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
-                {"lastLoginResult", n => { LastLoginResult = n.GetObjectValue<CloudPcLoginResult>(CloudPcLoginResult.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastRemoteActionResult", n => { LastRemoteActionResult = n.GetObjectValue<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
-                {"onPremisesConnectionName", n => { OnPremisesConnectionName = n.GetStringValue(); } },
-                {"osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
-                {"partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<CloudPcPartnerAgentInstallResult>(CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"powerState", n => { PowerState = n.GetEnumValue<CloudPcPowerState>(); } },
-                {"provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
-                {"provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
-                {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
-                {"scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
-                {"servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
-                {"servicePlanType", n => { ServicePlanType = n.GetEnumValue<CloudPcServicePlanType>(); } },
-                {"status", n => { Status = n.GetEnumValue<CloudPcStatus>(); } },
-                {"statusDetails", n => { StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
-                {"userAccountType", n => { UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "aadDeviceId", n => { AadDeviceId = n.GetStringValue(); } },
+                { "allotmentDisplayName", n => { AllotmentDisplayName = n.GetStringValue(); } },
+                { "connectionSettings", n => { ConnectionSettings = n.GetObjectValue<CloudPcConnectionSettings>(CloudPcConnectionSettings.CreateFromDiscriminatorValue); } },
+                { "connectivityResult", n => { ConnectivityResult = n.GetObjectValue<CloudPcConnectivityResult>(CloudPcConnectivityResult.CreateFromDiscriminatorValue); } },
+                { "disasterRecoveryCapability", n => { DisasterRecoveryCapability = n.GetObjectValue<CloudPcDisasterRecoveryCapability>(CloudPcDisasterRecoveryCapability.CreateFromDiscriminatorValue); } },
+                { "diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<CloudPcDiskEncryptionState>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
+                { "lastLoginResult", n => { LastLoginResult = n.GetObjectValue<CloudPcLoginResult>(CloudPcLoginResult.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastRemoteActionResult", n => { LastRemoteActionResult = n.GetObjectValue<CloudPcRemoteActionResult>(CloudPcRemoteActionResult.CreateFromDiscriminatorValue); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
+                { "onPremisesConnectionName", n => { OnPremisesConnectionName = n.GetStringValue(); } },
+                { "osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
+                { "partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<CloudPcPartnerAgentInstallResult>(CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "powerState", n => { PowerState = n.GetEnumValue<CloudPcPowerState>(); } },
+                { "provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
+                { "provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
+                { "provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
+                { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
+                { "servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
+                { "servicePlanType", n => { ServicePlanType = n.GetEnumValue<CloudPcServicePlanType>(); } },
+                { "status", n => { Status = n.GetEnumValue<CloudPcStatus>(); } },
+                { "statusDetails", n => { StatusDetails = n.GetObjectValue<CloudPcStatusDetails>(CloudPcStatusDetails.CreateFromDiscriminatorValue); } },
+                { "userAccountType", n => { UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

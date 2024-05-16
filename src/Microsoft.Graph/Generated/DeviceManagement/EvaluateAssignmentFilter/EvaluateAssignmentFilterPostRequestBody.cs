@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter {
+namespace Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter
+{
     #pragma warning disable CS1591
-    public class EvaluateAssignmentFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EvaluateAssignmentFilterPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter {
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AssignmentFilterEvaluateRequest? Data {
+        public AssignmentFilterEvaluateRequest? Data
+        {
             get { return BackingStore?.Get<AssignmentFilterEvaluateRequest?>("data"); }
             set { BackingStore?.Set("data", value); }
         }
 #nullable restore
 #else
-        public AssignmentFilterEvaluateRequest Data {
+        public AssignmentFilterEvaluateRequest Data
+        {
             get { return BackingStore?.Get<AssignmentFilterEvaluateRequest>("data"); }
             set { BackingStore?.Set("data", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"data", n => { Data = n.GetObjectValue<AssignmentFilterEvaluateRequest>(AssignmentFilterEvaluateRequest.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<AssignmentFilterEvaluateRequest>(AssignmentFilterEvaluateRequest.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

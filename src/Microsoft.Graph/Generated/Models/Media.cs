@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Media : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Media : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If a file has a transcript, this setting controls if the closed captions / transcription for the media file should be shown to people during viewing. Read-Write.</summary>
-        public bool? IsTranscriptionShown {
+        public bool? IsTranscriptionShown
+        {
             get { return BackingStore?.Get<bool?>("isTranscriptionShown"); }
             set { BackingStore?.Set("isTranscriptionShown", value); }
         }
         /// <summary>Information about the source of media. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.MediaSource? MediaSource {
+        public Microsoft.Graph.Beta.Models.MediaSource? MediaSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource?>("mediaSource"); }
             set { BackingStore?.Set("mediaSource", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.MediaSource MediaSource {
+        public Microsoft.Graph.Beta.Models.MediaSource MediaSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource>("mediaSource"); }
             set { BackingStore?.Set("mediaSource", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isTranscriptionShown", n => { IsTranscriptionShown = n.GetBoolValue(); } },
-                {"mediaSource", n => { MediaSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaSource>(Microsoft.Graph.Beta.Models.MediaSource.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isTranscriptionShown", n => { IsTranscriptionShown = n.GetBoolValue(); } },
+                { "mediaSource", n => { MediaSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaSource>(Microsoft.Graph.Beta.Models.MediaSource.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

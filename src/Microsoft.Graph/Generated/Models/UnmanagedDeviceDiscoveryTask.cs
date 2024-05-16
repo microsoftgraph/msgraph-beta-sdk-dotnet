@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This task derived type represents a list of unmanaged devices discovered in the network.
     /// </summary>
-    public class UnmanagedDeviceDiscoveryTask : DeviceAppManagementTask, IParsable 
+    public class UnmanagedDeviceDiscoveryTask : DeviceAppManagementTask, IParsable
     {
         /// <summary>Unmanaged devices discovered in the network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnmanagedDevice>? UnmanagedDevices {
+        public List<UnmanagedDevice>? UnmanagedDevices
+        {
             get { return BackingStore?.Get<List<UnmanagedDevice>?>("unmanagedDevices"); }
             set { BackingStore?.Set("unmanagedDevices", value); }
         }
 #nullable restore
 #else
-        public List<UnmanagedDevice> UnmanagedDevices {
+        public List<UnmanagedDevice> UnmanagedDevices
+        {
             get { return BackingStore?.Get<List<UnmanagedDevice>>("unmanagedDevices"); }
             set { BackingStore?.Set("unmanagedDevices", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"unmanagedDevices", n => { UnmanagedDevices = n.GetCollectionOfObjectValues<UnmanagedDevice>(UnmanagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "unmanagedDevices", n => { UnmanagedDevices = n.GetCollectionOfObjectValues<UnmanagedDevice>(UnmanagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

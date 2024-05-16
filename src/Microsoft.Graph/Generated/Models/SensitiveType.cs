@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SensitiveType : Entity, IParsable 
+    public class SensitiveType : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The classificationMethod property</summary>
-        public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod {
+        public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationMethod?>("classificationMethod"); }
             set { BackingStore?.Set("classificationMethod", value); }
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The publisherName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublisherName {
+        public string? PublisherName
+        {
             get { return BackingStore?.Get<string?>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
 #nullable restore
 #else
-        public string PublisherName {
+        public string PublisherName
+        {
             get { return BackingStore?.Get<string>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The rulePackageId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RulePackageId {
+        public string? RulePackageId
+        {
             get { return BackingStore?.Get<string?>("rulePackageId"); }
             set { BackingStore?.Set("rulePackageId", value); }
         }
 #nullable restore
 #else
-        public string RulePackageId {
+        public string RulePackageId
+        {
             get { return BackingStore?.Get<string>("rulePackageId"); }
             set { BackingStore?.Set("rulePackageId", value); }
         }
@@ -73,37 +83,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The rulePackageType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RulePackageType {
+        public string? RulePackageType
+        {
             get { return BackingStore?.Get<string?>("rulePackageType"); }
             set { BackingStore?.Set("rulePackageType", value); }
         }
 #nullable restore
 #else
-        public string RulePackageType {
+        public string RulePackageType
+        {
             get { return BackingStore?.Get<string>("rulePackageType"); }
             set { BackingStore?.Set("rulePackageType", value); }
         }
 #endif
         /// <summary>The scope property</summary>
-        public SensitiveTypeScope? Scope {
+        public SensitiveTypeScope? Scope
+        {
             get { return BackingStore?.Get<SensitiveTypeScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
         /// <summary>The sensitiveTypeSource property</summary>
-        public Microsoft.Graph.Beta.Models.SensitiveTypeSource? SensitiveTypeSource {
+        public Microsoft.Graph.Beta.Models.SensitiveTypeSource? SensitiveTypeSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SensitiveTypeSource?>("sensitiveTypeSource"); }
             set { BackingStore?.Set("sensitiveTypeSource", value); }
         }
         /// <summary>The state property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? State {
+        public string? State
+        {
             get { return BackingStore?.Get<string?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public string State {
+        public string State
+        {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -126,15 +142,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"classificationMethod", n => { ClassificationMethod = n.GetEnumValue<ClassificationMethod>(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"publisherName", n => { PublisherName = n.GetStringValue(); } },
-                {"rulePackageId", n => { RulePackageId = n.GetStringValue(); } },
-                {"rulePackageType", n => { RulePackageType = n.GetStringValue(); } },
-                {"scope", n => { Scope = n.GetEnumValue<SensitiveTypeScope>(); } },
-                {"sensitiveTypeSource", n => { SensitiveTypeSource = n.GetEnumValue<SensitiveTypeSource>(); } },
-                {"state", n => { State = n.GetStringValue(); } },
+                { "classificationMethod", n => { ClassificationMethod = n.GetEnumValue<ClassificationMethod>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "publisherName", n => { PublisherName = n.GetStringValue(); } },
+                { "rulePackageId", n => { RulePackageId = n.GetStringValue(); } },
+                { "rulePackageType", n => { RulePackageType = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetEnumValue<SensitiveTypeScope>(); } },
+                { "sensitiveTypeSource", n => { SensitiveTypeSource = n.GetEnumValue<SensitiveTypeSource>(); } },
+                { "state", n => { State = n.GetStringValue(); } },
             };
         }
         /// <summary>

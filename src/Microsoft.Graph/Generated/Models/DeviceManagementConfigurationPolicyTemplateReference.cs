@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Policy template reference information
     /// </summary>
-    public class DeviceManagementConfigurationPolicyTemplateReference : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementConfigurationPolicyTemplateReference : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Template Display Name of the referenced template. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateDisplayName {
+        public string? TemplateDisplayName
+        {
             get { return BackingStore?.Get<string?>("templateDisplayName"); }
             set { BackingStore?.Set("templateDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TemplateDisplayName {
+        public string TemplateDisplayName
+        {
             get { return BackingStore?.Get<string>("templateDisplayName"); }
             set { BackingStore?.Set("templateDisplayName", value); }
         }
@@ -49,32 +55,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Template Display Version of the referenced Template. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateDisplayVersion {
+        public string? TemplateDisplayVersion
+        {
             get { return BackingStore?.Get<string?>("templateDisplayVersion"); }
             set { BackingStore?.Set("templateDisplayVersion", value); }
         }
 #nullable restore
 #else
-        public string TemplateDisplayVersion {
+        public string TemplateDisplayVersion
+        {
             get { return BackingStore?.Get<string>("templateDisplayVersion"); }
             set { BackingStore?.Set("templateDisplayVersion", value); }
         }
 #endif
         /// <summary>Describes the TemplateFamily for the Template entity</summary>
-        public DeviceManagementConfigurationTemplateFamily? TemplateFamily {
+        public DeviceManagementConfigurationTemplateFamily? TemplateFamily
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
             set { BackingStore?.Set("templateFamily", value); }
         }
         /// <summary>Template id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TemplateId {
+        public string? TemplateId
+        {
             get { return BackingStore?.Get<string?>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
 #nullable restore
 #else
-        public string TemplateId {
+        public string TemplateId
+        {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
@@ -105,11 +116,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"templateDisplayName", n => { TemplateDisplayName = n.GetStringValue(); } },
-                {"templateDisplayVersion", n => { TemplateDisplayVersion = n.GetStringValue(); } },
-                {"templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
-                {"templateId", n => { TemplateId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "templateDisplayName", n => { TemplateDisplayName = n.GetStringValue(); } },
+                { "templateDisplayVersion", n => { TemplateDisplayVersion = n.GetStringValue(); } },
+                { "templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
+                { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

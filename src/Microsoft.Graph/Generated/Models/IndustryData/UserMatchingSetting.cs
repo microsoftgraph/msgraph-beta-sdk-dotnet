@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class UserMatchingSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UserMatchingSetting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The RefUserMatchTarget for matching a user from the source with a Microsoft Entra user object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserMatchTargetReferenceValue? MatchTarget {
+        public UserMatchTargetReferenceValue? MatchTarget
+        {
             get { return BackingStore?.Get<UserMatchTargetReferenceValue?>("matchTarget"); }
             set { BackingStore?.Set("matchTarget", value); }
         }
 #nullable restore
 #else
-        public UserMatchTargetReferenceValue MatchTarget {
+        public UserMatchTargetReferenceValue MatchTarget
+        {
             get { return BackingStore?.Get<UserMatchTargetReferenceValue>("matchTarget"); }
             set { BackingStore?.Set("matchTarget", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The priority order to apply when a user has multiple RefRole codes assigned.</summary>
-        public int? PriorityOrder {
+        public int? PriorityOrder
+        {
             get { return BackingStore?.Get<int?>("priorityOrder"); }
             set { BackingStore?.Set("priorityOrder", value); }
         }
         /// <summary>The roleGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IndustryData.RoleGroup? RoleGroup {
+        public Microsoft.Graph.Beta.Models.IndustryData.RoleGroup? RoleGroup
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup?>("roleGroup"); }
             set { BackingStore?.Set("roleGroup", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IndustryData.RoleGroup RoleGroup {
+        public Microsoft.Graph.Beta.Models.IndustryData.RoleGroup RoleGroup
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>("roleGroup"); }
             set { BackingStore?.Set("roleGroup", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The sourceIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentifierTypeReferenceValue? SourceIdentifier {
+        public IdentifierTypeReferenceValue? SourceIdentifier
+        {
             get { return BackingStore?.Get<IdentifierTypeReferenceValue?>("sourceIdentifier"); }
             set { BackingStore?.Set("sourceIdentifier", value); }
         }
 #nullable restore
 #else
-        public IdentifierTypeReferenceValue SourceIdentifier {
+        public IdentifierTypeReferenceValue SourceIdentifier
+        {
             get { return BackingStore?.Get<IdentifierTypeReferenceValue>("sourceIdentifier"); }
             set { BackingStore?.Set("sourceIdentifier", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"matchTarget", n => { MatchTarget = n.GetObjectValue<UserMatchTargetReferenceValue>(UserMatchTargetReferenceValue.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"priorityOrder", n => { PriorityOrder = n.GetIntValue(); } },
-                {"roleGroup", n => { RoleGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>(Microsoft.Graph.Beta.Models.IndustryData.RoleGroup.CreateFromDiscriminatorValue); } },
-                {"sourceIdentifier", n => { SourceIdentifier = n.GetObjectValue<IdentifierTypeReferenceValue>(IdentifierTypeReferenceValue.CreateFromDiscriminatorValue); } },
+                { "matchTarget", n => { MatchTarget = n.GetObjectValue<UserMatchTargetReferenceValue>(UserMatchTargetReferenceValue.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "priorityOrder", n => { PriorityOrder = n.GetIntValue(); } },
+                { "roleGroup", n => { RoleGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>(Microsoft.Graph.Beta.Models.IndustryData.RoleGroup.CreateFromDiscriminatorValue); } },
+                { "sourceIdentifier", n => { SourceIdentifier = n.GetObjectValue<IdentifierTypeReferenceValue>(IdentifierTypeReferenceValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

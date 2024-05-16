@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SequentialActivationRenewalsAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable 
+    public class SequentialActivationRenewalsAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The minimum number of activations within the timeIntervalBetweenActivations period to trigger an alert.</summary>
-        public int? SequentialActivationCounterThreshold {
+        public int? SequentialActivationCounterThreshold
+        {
             get { return BackingStore?.Get<int?>("sequentialActivationCounterThreshold"); }
             set { BackingStore?.Set("sequentialActivationCounterThreshold", value); }
         }
         /// <summary>Time interval between activations to trigger an alert.</summary>
-        public TimeSpan? TimeIntervalBetweenActivations {
+        public TimeSpan? TimeIntervalBetweenActivations
+        {
             get { return BackingStore?.Get<TimeSpan?>("timeIntervalBetweenActivations"); }
             set { BackingStore?.Set("timeIntervalBetweenActivations", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"sequentialActivationCounterThreshold", n => { SequentialActivationCounterThreshold = n.GetIntValue(); } },
-                {"timeIntervalBetweenActivations", n => { TimeIntervalBetweenActivations = n.GetTimeSpanValue(); } },
+                { "sequentialActivationCounterThreshold", n => { SequentialActivationCounterThreshold = n.GetIntValue(); } },
+                { "timeIntervalBetweenActivations", n => { TimeIntervalBetweenActivations = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

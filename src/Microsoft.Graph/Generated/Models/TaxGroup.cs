@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TaxGroup : Entity, IParsable 
+    public class TaxGroup : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Code {
+        public string? Code
+        {
             get { return BackingStore?.Get<string?>("code"); }
             set { BackingStore?.Set("code", value); }
         }
 #nullable restore
 #else
-        public string Code {
+        public string Code
+        {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The taxType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxType {
+        public string? TaxType
+        {
             get { return BackingStore?.Get<string?>("taxType"); }
             set { BackingStore?.Set("taxType", value); }
         }
 #nullable restore
 #else
-        public string TaxType {
+        public string TaxType
+        {
             get { return BackingStore?.Get<string>("taxType"); }
             set { BackingStore?.Set("taxType", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"code", n => { Code = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"taxType", n => { TaxType = n.GetStringValue(); } },
+                { "code", n => { Code = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "taxType", n => { TaxType = n.GetStringValue(); } },
             };
         }
         /// <summary>

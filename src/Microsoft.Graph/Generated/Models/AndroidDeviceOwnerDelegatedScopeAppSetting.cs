@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents one item in the list of managed apps with app details and its associated delegated scope(s).
     /// </summary>
-    public class AndroidDeviceOwnerDelegatedScopeAppSetting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AndroidDeviceOwnerDelegatedScopeAppSetting : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents an app in the list of managed applications</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AppListItem? AppDetail {
+        public AppListItem? AppDetail
+        {
             get { return BackingStore?.Get<AppListItem?>("appDetail"); }
             set { BackingStore?.Set("appDetail", value); }
         }
 #nullable restore
 #else
-        public AppListItem AppDetail {
+        public AppListItem AppDetail
+        {
             get { return BackingStore?.Get<AppListItem>("appDetail"); }
             set { BackingStore?.Set("appDetail", value); }
         }
@@ -33,13 +37,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of scopes an app has been assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidDeviceOwnerDelegatedAppScopeType?>? AppScopes {
+        public List<AndroidDeviceOwnerDelegatedAppScopeType?>? AppScopes
+        {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerDelegatedAppScopeType?>?>("appScopes"); }
             set { BackingStore?.Set("appScopes", value); }
         }
 #nullable restore
 #else
-        public List<AndroidDeviceOwnerDelegatedAppScopeType?> AppScopes {
+        public List<AndroidDeviceOwnerDelegatedAppScopeType?> AppScopes
+        {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerDelegatedAppScopeType?>>("appScopes"); }
             set { BackingStore?.Set("appScopes", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appDetail", n => { AppDetail = n.GetObjectValue<AppListItem>(AppListItem.CreateFromDiscriminatorValue); } },
-                {"appScopes", n => { AppScopes = n.GetCollectionOfEnumValues<AndroidDeviceOwnerDelegatedAppScopeType>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "appDetail", n => { AppDetail = n.GetObjectValue<AppListItem>(AppListItem.CreateFromDiscriminatorValue); } },
+                { "appScopes", n => { AppScopes = n.GetCollectionOfEnumValues<AndroidDeviceOwnerDelegatedAppScopeType>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

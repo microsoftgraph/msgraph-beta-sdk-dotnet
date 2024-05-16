@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ReportSuspiciousActivitySettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ReportSuspiciousActivitySettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The includeTarget property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IncludeTarget? IncludeTarget {
+        public Microsoft.Graph.Beta.Models.IncludeTarget? IncludeTarget
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncludeTarget?>("includeTarget"); }
             set { BackingStore?.Set("includeTarget", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IncludeTarget IncludeTarget {
+        public Microsoft.Graph.Beta.Models.IncludeTarget IncludeTarget
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncludeTarget>("includeTarget"); }
             set { BackingStore?.Set("includeTarget", value); }
         }
@@ -34,24 +38,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public AdvancedConfigState? State {
+        public AdvancedConfigState? State
+        {
             get { return BackingStore?.Get<AdvancedConfigState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Specifies the number the user enters on their phone to report the MFA prompt as suspicious.</summary>
-        public int? VoiceReportingCode {
+        public int? VoiceReportingCode
+        {
             get { return BackingStore?.Get<int?>("voiceReportingCode"); }
             set { BackingStore?.Set("voiceReportingCode", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"includeTarget", n => { IncludeTarget = n.GetObjectValue<Microsoft.Graph.Beta.Models.IncludeTarget>(Microsoft.Graph.Beta.Models.IncludeTarget.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<AdvancedConfigState>(); } },
-                {"voiceReportingCode", n => { VoiceReportingCode = n.GetIntValue(); } },
+                { "includeTarget", n => { IncludeTarget = n.GetObjectValue<Microsoft.Graph.Beta.Models.IncludeTarget>(Microsoft.Graph.Beta.Models.IncludeTarget.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<AdvancedConfigState>(); } },
+                { "voiceReportingCode", n => { VoiceReportingCode = n.GetIntValue(); } },
             };
         }
         /// <summary>

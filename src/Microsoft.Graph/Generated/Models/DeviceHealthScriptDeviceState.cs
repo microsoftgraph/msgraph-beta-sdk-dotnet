@@ -4,56 +4,65 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for device run state of the device health script.
     /// </summary>
-    public class DeviceHealthScriptDeviceState : Entity, IParsable 
+    public class DeviceHealthScriptDeviceState : Entity, IParsable
     {
         /// <summary>A list of the assignment filter ids used for health script applicability evaluation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AssignmentFilterIds {
+        public List<string>? AssignmentFilterIds
+        {
             get { return BackingStore?.Get<List<string>?>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
 #nullable restore
 #else
-        public List<string> AssignmentFilterIds {
+        public List<string> AssignmentFilterIds
+        {
             get { return BackingStore?.Get<List<string>>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
 #endif
         /// <summary>Indicates the type of execution status of the device management script.</summary>
-        public RunState? DetectionState {
+        public RunState? DetectionState
+        {
             get { return BackingStore?.Get<RunState?>("detectionState"); }
             set { BackingStore?.Set("detectionState", value); }
         }
         /// <summary>The next timestamp of when the device health script is expected to execute</summary>
-        public DateTimeOffset? ExpectedStateUpdateDateTime {
+        public DateTimeOffset? ExpectedStateUpdateDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expectedStateUpdateDateTime"); }
             set { BackingStore?.Set("expectedStateUpdateDateTime", value); }
         }
         /// <summary>The last timestamp of when the device health script executed</summary>
-        public DateTimeOffset? LastStateUpdateDateTime {
+        public DateTimeOffset? LastStateUpdateDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastStateUpdateDateTime"); }
             set { BackingStore?.Set("lastStateUpdateDateTime", value); }
         }
         /// <summary>The last time that Intune Managment Extension synced with Intune</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The managed device on which the device health script executed</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ManagedDevice? ManagedDevice {
+        public Microsoft.Graph.Beta.Models.ManagedDevice? ManagedDevice
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice?>("managedDevice"); }
             set { BackingStore?.Set("managedDevice", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice {
+        public Microsoft.Graph.Beta.Models.ManagedDevice ManagedDevice
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDevice>("managedDevice"); }
             set { BackingStore?.Set("managedDevice", value); }
         }
@@ -61,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Error from the detection script after remediation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostRemediationDetectionScriptError {
+        public string? PostRemediationDetectionScriptError
+        {
             get { return BackingStore?.Get<string?>("postRemediationDetectionScriptError"); }
             set { BackingStore?.Set("postRemediationDetectionScriptError", value); }
         }
 #nullable restore
 #else
-        public string PostRemediationDetectionScriptError {
+        public string PostRemediationDetectionScriptError
+        {
             get { return BackingStore?.Get<string>("postRemediationDetectionScriptError"); }
             set { BackingStore?.Set("postRemediationDetectionScriptError", value); }
         }
@@ -75,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Detection script output after remediation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostRemediationDetectionScriptOutput {
+        public string? PostRemediationDetectionScriptOutput
+        {
             get { return BackingStore?.Get<string?>("postRemediationDetectionScriptOutput"); }
             set { BackingStore?.Set("postRemediationDetectionScriptOutput", value); }
         }
 #nullable restore
 #else
-        public string PostRemediationDetectionScriptOutput {
+        public string PostRemediationDetectionScriptOutput
+        {
             get { return BackingStore?.Get<string>("postRemediationDetectionScriptOutput"); }
             set { BackingStore?.Set("postRemediationDetectionScriptOutput", value); }
         }
@@ -89,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Error from the detection script before remediation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreRemediationDetectionScriptError {
+        public string? PreRemediationDetectionScriptError
+        {
             get { return BackingStore?.Get<string?>("preRemediationDetectionScriptError"); }
             set { BackingStore?.Set("preRemediationDetectionScriptError", value); }
         }
 #nullable restore
 #else
-        public string PreRemediationDetectionScriptError {
+        public string PreRemediationDetectionScriptError
+        {
             get { return BackingStore?.Get<string>("preRemediationDetectionScriptError"); }
             set { BackingStore?.Set("preRemediationDetectionScriptError", value); }
         }
@@ -103,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Output of the detection script before remediation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreRemediationDetectionScriptOutput {
+        public string? PreRemediationDetectionScriptOutput
+        {
             get { return BackingStore?.Get<string?>("preRemediationDetectionScriptOutput"); }
             set { BackingStore?.Set("preRemediationDetectionScriptOutput", value); }
         }
 #nullable restore
 #else
-        public string PreRemediationDetectionScriptOutput {
+        public string PreRemediationDetectionScriptOutput
+        {
             get { return BackingStore?.Get<string>("preRemediationDetectionScriptOutput"); }
             set { BackingStore?.Set("preRemediationDetectionScriptOutput", value); }
         }
@@ -117,19 +134,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Error output of the remediation script</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemediationScriptError {
+        public string? RemediationScriptError
+        {
             get { return BackingStore?.Get<string?>("remediationScriptError"); }
             set { BackingStore?.Set("remediationScriptError", value); }
         }
 #nullable restore
 #else
-        public string RemediationScriptError {
+        public string RemediationScriptError
+        {
             get { return BackingStore?.Get<string>("remediationScriptError"); }
             set { BackingStore?.Set("remediationScriptError", value); }
         }
 #endif
         /// <summary>Indicates the type of execution status of the device management script.</summary>
-        public Microsoft.Graph.Beta.Models.RemediationState? RemediationState {
+        public Microsoft.Graph.Beta.Models.RemediationState? RemediationState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemediationState?>("remediationState"); }
             set { BackingStore?.Set("remediationState", value); }
         }
@@ -151,18 +171,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"detectionState", n => { DetectionState = n.GetEnumValue<RunState>(); } },
-                {"expectedStateUpdateDateTime", n => { ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedDevice", n => { ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
-                {"postRemediationDetectionScriptError", n => { PostRemediationDetectionScriptError = n.GetStringValue(); } },
-                {"postRemediationDetectionScriptOutput", n => { PostRemediationDetectionScriptOutput = n.GetStringValue(); } },
-                {"preRemediationDetectionScriptError", n => { PreRemediationDetectionScriptError = n.GetStringValue(); } },
-                {"preRemediationDetectionScriptOutput", n => { PreRemediationDetectionScriptOutput = n.GetStringValue(); } },
-                {"remediationScriptError", n => { RemediationScriptError = n.GetStringValue(); } },
-                {"remediationState", n => { RemediationState = n.GetEnumValue<RemediationState>(); } },
+                { "assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "detectionState", n => { DetectionState = n.GetEnumValue<RunState>(); } },
+                { "expectedStateUpdateDateTime", n => { ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managedDevice", n => { ManagedDevice = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue); } },
+                { "postRemediationDetectionScriptError", n => { PostRemediationDetectionScriptError = n.GetStringValue(); } },
+                { "postRemediationDetectionScriptOutput", n => { PostRemediationDetectionScriptOutput = n.GetStringValue(); } },
+                { "preRemediationDetectionScriptError", n => { PreRemediationDetectionScriptError = n.GetStringValue(); } },
+                { "preRemediationDetectionScriptOutput", n => { PreRemediationDetectionScriptOutput = n.GetStringValue(); } },
+                { "remediationScriptError", n => { RemediationScriptError = n.GetStringValue(); } },
+                { "remediationState", n => { RemediationState = n.GetEnumValue<RemediationState>(); } },
             };
         }
         /// <summary>

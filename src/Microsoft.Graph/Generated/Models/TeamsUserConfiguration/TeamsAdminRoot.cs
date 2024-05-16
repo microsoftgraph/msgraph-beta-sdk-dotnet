@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.TeamsUserConfiguration {
+namespace Microsoft.Graph.Beta.Models.TeamsUserConfiguration
+{
     #pragma warning disable CS1591
-    public class TeamsAdminRoot : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class TeamsAdminRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

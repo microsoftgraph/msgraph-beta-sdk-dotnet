@@ -4,72 +4,84 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing configurations in this profile you can instruct the native email client (Outlook) on Windows 10 devices to communicate with an Exchange server and get email, contacts, calendar, and tasks. Furthermore, you can also specify how much email to sync and how often the device should sync.
     /// </summary>
-    public class Windows10EasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable 
+    public class Windows10EasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable
     {
         /// <summary>Account name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName {
+        public string? AccountName
+        {
             get { return BackingStore?.Get<string?>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
 #nullable restore
 #else
-        public string AccountName {
+        public string AccountName
+        {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
 #endif
         /// <summary>Possible values for email sync duration.</summary>
-        public EmailSyncDuration? DurationOfEmailToSync {
+        public EmailSyncDuration? DurationOfEmailToSync
+        {
             get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
             set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
         /// <summary>Possible values for username source or email source.</summary>
-        public UserEmailSource? EmailAddressSource {
+        public UserEmailSource? EmailAddressSource
+        {
             get { return BackingStore?.Get<UserEmailSource?>("emailAddressSource"); }
             set { BackingStore?.Set("emailAddressSource", value); }
         }
         /// <summary>Possible values for email sync schedule.</summary>
-        public Microsoft.Graph.Beta.Models.EmailSyncSchedule? EmailSyncSchedule {
+        public Microsoft.Graph.Beta.Models.EmailSyncSchedule? EmailSyncSchedule
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSyncSchedule?>("emailSyncSchedule"); }
             set { BackingStore?.Set("emailSyncSchedule", value); }
         }
         /// <summary>Exchange location that (URL) that the native mail app connects to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostName {
+        public string? HostName
+        {
             get { return BackingStore?.Get<string?>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
 #nullable restore
 #else
-        public string HostName {
+        public string HostName
+        {
             get { return BackingStore?.Get<string>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
 #endif
         /// <summary>Indicates whether or not to use SSL.</summary>
-        public bool? RequireSsl {
+        public bool? RequireSsl
+        {
             get { return BackingStore?.Get<bool?>("requireSsl"); }
             set { BackingStore?.Set("requireSsl", value); }
         }
         /// <summary>Whether or not to sync the calendar.</summary>
-        public bool? SyncCalendar {
+        public bool? SyncCalendar
+        {
             get { return BackingStore?.Get<bool?>("syncCalendar"); }
             set { BackingStore?.Set("syncCalendar", value); }
         }
         /// <summary>Whether or not to sync contacts.</summary>
-        public bool? SyncContacts {
+        public bool? SyncContacts
+        {
             get { return BackingStore?.Get<bool?>("syncContacts"); }
             set { BackingStore?.Set("syncContacts", value); }
         }
         /// <summary>Whether or not to sync tasks.</summary>
-        public bool? SyncTasks {
+        public bool? SyncTasks
+        {
             get { return BackingStore?.Get<bool?>("syncTasks"); }
             set { BackingStore?.Set("syncTasks", value); }
         }
@@ -98,15 +110,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accountName", n => { AccountName = n.GetStringValue(); } },
-                {"durationOfEmailToSync", n => { DurationOfEmailToSync = n.GetEnumValue<EmailSyncDuration>(); } },
-                {"emailAddressSource", n => { EmailAddressSource = n.GetEnumValue<UserEmailSource>(); } },
-                {"emailSyncSchedule", n => { EmailSyncSchedule = n.GetEnumValue<EmailSyncSchedule>(); } },
-                {"hostName", n => { HostName = n.GetStringValue(); } },
-                {"requireSsl", n => { RequireSsl = n.GetBoolValue(); } },
-                {"syncCalendar", n => { SyncCalendar = n.GetBoolValue(); } },
-                {"syncContacts", n => { SyncContacts = n.GetBoolValue(); } },
-                {"syncTasks", n => { SyncTasks = n.GetBoolValue(); } },
+                { "accountName", n => { AccountName = n.GetStringValue(); } },
+                { "durationOfEmailToSync", n => { DurationOfEmailToSync = n.GetEnumValue<EmailSyncDuration>(); } },
+                { "emailAddressSource", n => { EmailAddressSource = n.GetEnumValue<UserEmailSource>(); } },
+                { "emailSyncSchedule", n => { EmailSyncSchedule = n.GetEnumValue<EmailSyncSchedule>(); } },
+                { "hostName", n => { HostName = n.GetStringValue(); } },
+                { "requireSsl", n => { RequireSsl = n.GetBoolValue(); } },
+                { "syncCalendar", n => { SyncCalendar = n.GetBoolValue(); } },
+                { "syncContacts", n => { SyncContacts = n.GetBoolValue(); } },
+                { "syncTasks", n => { SyncTasks = n.GetBoolValue(); } },
             };
         }
         /// <summary>

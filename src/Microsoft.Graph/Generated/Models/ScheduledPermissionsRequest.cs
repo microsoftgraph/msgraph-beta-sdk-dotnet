@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ScheduledPermissionsRequest : Entity, IParsable 
+    public class ScheduledPermissionsRequest : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public UnifiedRoleScheduleRequestActions? Action {
+        public UnifiedRoleScheduleRequestActions? Action
+        {
             get { return BackingStore?.Get<UnifiedRoleScheduleRequestActions?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Defines when the identity created the request.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The identity&apos;s justification for the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -36,13 +41,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Additional context for the permissions request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Notes {
+        public string? Notes
+        {
             get { return BackingStore?.Get<string?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public string Notes {
+        public string Notes
+        {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The requestedPermissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsDefinition? RequestedPermissions {
+        public PermissionsDefinition? RequestedPermissions
+        {
             get { return BackingStore?.Get<PermissionsDefinition?>("requestedPermissions"); }
             set { BackingStore?.Set("requestedPermissions", value); }
         }
 #nullable restore
 #else
-        public PermissionsDefinition RequestedPermissions {
+        public PermissionsDefinition RequestedPermissions
+        {
             get { return BackingStore?.Get<PermissionsDefinition>("requestedPermissions"); }
             set { BackingStore?.Set("requestedPermissions", value); }
         }
@@ -64,32 +73,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>When to assign the requested permissions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? ScheduleInfo {
+        public RequestSchedule? ScheduleInfo
+        {
             get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule ScheduleInfo {
+        public RequestSchedule ScheduleInfo
+        {
             get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #endif
         /// <summary>The statusDetail property</summary>
-        public Microsoft.Graph.Beta.Models.StatusDetail? StatusDetail {
+        public Microsoft.Graph.Beta.Models.StatusDetail? StatusDetail
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StatusDetail?>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
         }
         /// <summary>Ticketing-related metadata that you can use to correlate to the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TicketInfo? TicketInfo {
+        public Microsoft.Graph.Beta.Models.TicketInfo? TicketInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TicketInfo?>("ticketInfo"); }
             set { BackingStore?.Set("ticketInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TicketInfo TicketInfo {
+        public Microsoft.Graph.Beta.Models.TicketInfo TicketInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TicketInfo>("ticketInfo"); }
             set { BackingStore?.Set("ticketInfo", value); }
         }
@@ -112,14 +126,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"action", n => { Action = n.GetEnumValue<UnifiedRoleScheduleRequestActions>(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"justification", n => { Justification = n.GetStringValue(); } },
-                {"notes", n => { Notes = n.GetStringValue(); } },
-                {"requestedPermissions", n => { RequestedPermissions = n.GetObjectValue<PermissionsDefinition>(PermissionsDefinition.CreateFromDiscriminatorValue); } },
-                {"scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
-                {"statusDetail", n => { StatusDetail = n.GetEnumValue<StatusDetail>(); } },
-                {"ticketInfo", n => { TicketInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TicketInfo>(Microsoft.Graph.Beta.Models.TicketInfo.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<UnifiedRoleScheduleRequestActions>(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
+                { "notes", n => { Notes = n.GetStringValue(); } },
+                { "requestedPermissions", n => { RequestedPermissions = n.GetObjectValue<PermissionsDefinition>(PermissionsDefinition.CreateFromDiscriminatorValue); } },
+                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "statusDetail", n => { StatusDetail = n.GetEnumValue<StatusDetail>(); } },
+                { "ticketInfo", n => { TicketInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.TicketInfo>(Microsoft.Graph.Beta.Models.TicketInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

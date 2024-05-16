@@ -4,70 +4,81 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows Driver Update Profile
     /// </summary>
-    public class WindowsDriverUpdateProfile : Entity, IParsable 
+    public class WindowsDriverUpdateProfile : Entity, IParsable
     {
         /// <summary>An enum type to represent approval type of a driver update profile.</summary>
-        public DriverUpdateProfileApprovalType? ApprovalType {
+        public DriverUpdateProfileApprovalType? ApprovalType
+        {
             get { return BackingStore?.Get<DriverUpdateProfileApprovalType?>("approvalType"); }
             set { BackingStore?.Set("approvalType", value); }
         }
         /// <summary>The list of group assignments of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDriverUpdateProfileAssignment>? Assignments {
+        public List<WindowsDriverUpdateProfileAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDriverUpdateProfileAssignment> Assignments {
+        public List<WindowsDriverUpdateProfileAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>The date time that the profile was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Deployment deferral settings in days, only applicable when ApprovalType is set to automatic approval.</summary>
-        public int? DeploymentDeferralInDays {
+        public int? DeploymentDeferralInDays
+        {
             get { return BackingStore?.Get<int?>("deploymentDeferralInDays"); }
             set { BackingStore?.Set("deploymentDeferralInDays", value); }
         }
         /// <summary>The description of the profile which is specified by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>Number of devices reporting for this profile</summary>
-        public int? DeviceReporting {
+        public int? DeviceReporting
+        {
             get { return BackingStore?.Get<int?>("deviceReporting"); }
             set { BackingStore?.Set("deviceReporting", value); }
         }
         /// <summary>The display name for the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -75,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Driver inventories for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDriverUpdateInventory>? DriverInventories {
+        public List<WindowsDriverUpdateInventory>? DriverInventories
+        {
             get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>?>("driverInventories"); }
             set { BackingStore?.Set("driverInventories", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDriverUpdateInventory> DriverInventories {
+        public List<WindowsDriverUpdateInventory> DriverInventories
+        {
             get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>>("driverInventories"); }
             set { BackingStore?.Set("driverInventories", value); }
         }
@@ -89,37 +102,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Driver inventory sync status for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsDriverUpdateProfileInventorySyncStatus? InventorySyncStatus {
+        public WindowsDriverUpdateProfileInventorySyncStatus? InventorySyncStatus
+        {
             get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus?>("inventorySyncStatus"); }
             set { BackingStore?.Set("inventorySyncStatus", value); }
         }
 #nullable restore
 #else
-        public WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus {
+        public WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus
+        {
             get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus"); }
             set { BackingStore?.Set("inventorySyncStatus", value); }
         }
 #endif
         /// <summary>The date time that the profile was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Number of new driver updates available for this profile.</summary>
-        public int? NewUpdates {
+        public int? NewUpdates
+        {
             get { return BackingStore?.Get<int?>("newUpdates"); }
             set { BackingStore?.Set("newUpdates", value); }
         }
         /// <summary>List of Scope Tags for this Driver Update entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -142,18 +161,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"approvalType", n => { ApprovalType = n.GetEnumValue<DriverUpdateProfileApprovalType>(); } },
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDriverUpdateProfileAssignment>(WindowsDriverUpdateProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deploymentDeferralInDays", n => { DeploymentDeferralInDays = n.GetIntValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceReporting", n => { DeviceReporting = n.GetIntValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"driverInventories", n => { DriverInventories = n.GetCollectionOfObjectValues<WindowsDriverUpdateInventory>(WindowsDriverUpdateInventory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"inventorySyncStatus", n => { InventorySyncStatus = n.GetObjectValue<WindowsDriverUpdateProfileInventorySyncStatus>(WindowsDriverUpdateProfileInventorySyncStatus.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"newUpdates", n => { NewUpdates = n.GetIntValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "approvalType", n => { ApprovalType = n.GetEnumValue<DriverUpdateProfileApprovalType>(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDriverUpdateProfileAssignment>(WindowsDriverUpdateProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deploymentDeferralInDays", n => { DeploymentDeferralInDays = n.GetIntValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceReporting", n => { DeviceReporting = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "driverInventories", n => { DriverInventories = n.GetCollectionOfObjectValues<WindowsDriverUpdateInventory>(WindowsDriverUpdateInventory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inventorySyncStatus", n => { InventorySyncStatus = n.GetObjectValue<WindowsDriverUpdateProfileInventorySyncStatus>(WindowsDriverUpdateProfileInventorySyncStatus.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "newUpdates", n => { NewUpdates = n.GetIntValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

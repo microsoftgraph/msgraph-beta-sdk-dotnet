@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for the installation status for a user. This will be deprecated starting May, 2023 (Intune Release 2305).
     /// </summary>
-    public class UserAppInstallStatus : Entity, IParsable 
+    public class UserAppInstallStatus : Entity, IParsable
     {
         /// <summary>The navigation link to the mobile app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileApp? App {
+        public MobileApp? App
+        {
             get { return BackingStore?.Get<MobileApp?>("app"); }
             set { BackingStore?.Set("app", value); }
         }
 #nullable restore
 #else
-        public MobileApp App {
+        public MobileApp App
+        {
             get { return BackingStore?.Get<MobileApp>("app"); }
             set { BackingStore?.Set("app", value); }
         }
@@ -27,42 +30,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The install state of the app on devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppInstallStatus>? DeviceStatuses {
+        public List<MobileAppInstallStatus>? DeviceStatuses
+        {
             get { return BackingStore?.Get<List<MobileAppInstallStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppInstallStatus> DeviceStatuses {
+        public List<MobileAppInstallStatus> DeviceStatuses
+        {
             get { return BackingStore?.Get<List<MobileAppInstallStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #endif
         /// <summary>Failed Device Count.</summary>
-        public int? FailedDeviceCount {
+        public int? FailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Installed Device Count.</summary>
-        public int? InstalledDeviceCount {
+        public int? InstalledDeviceCount
+        {
             get { return BackingStore?.Get<int?>("installedDeviceCount"); }
             set { BackingStore?.Set("installedDeviceCount", value); }
         }
         /// <summary>Not installed device count.</summary>
-        public int? NotInstalledDeviceCount {
+        public int? NotInstalledDeviceCount
+        {
             get { return BackingStore?.Get<int?>("notInstalledDeviceCount"); }
             set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>User name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -70,13 +80,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User Principal Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -99,13 +111,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"app", n => { App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
-                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                {"installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
-                {"notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "app", n => { App = n.GetObjectValue<MobileApp>(MobileApp.CreateFromDiscriminatorValue); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                { "installedDeviceCount", n => { InstalledDeviceCount = n.GetIntValue(); } },
+                { "notInstalledDeviceCount", n => { NotInstalledDeviceCount = n.GetIntValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,45 +5,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Configuration manager client health state
     /// </summary>
-    public class ConfigurationManagerClientHealthState : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConfigurationManagerClientHealthState : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Error code for failed state.</summary>
-        public int? ErrorCode {
+        public int? ErrorCode
+        {
             get { return BackingStore?.Get<int?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Datetime for last sync with configuration manager management point.</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Configuration manager client state</summary>
-        public ConfigurationManagerClientState? State {
+        public ConfigurationManagerClientState? State
+        {
             get { return BackingStore?.Get<ConfigurationManagerClientState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<ConfigurationManagerClientState>(); } },
+                { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<ConfigurationManagerClientState>(); } },
             };
         }
         /// <summary>

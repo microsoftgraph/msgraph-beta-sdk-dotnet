@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class Ediscoveryroot : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Ediscoveryroot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The cases property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Case>? Cases {
+        public List<Case>? Cases
+        {
             get { return BackingStore?.Get<List<Case>?>("cases"); }
             set { BackingStore?.Set("cases", value); }
         }
 #nullable restore
 #else
-        public List<Case> Cases {
+        public List<Case> Cases
+        {
             get { return BackingStore?.Get<List<Case>>("cases"); }
             set { BackingStore?.Set("cases", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cases", n => { Cases = n.GetCollectionOfObjectValues<Case>(Case.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cases", n => { Cases = n.GetCollectionOfObjectValues<Case>(Case.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

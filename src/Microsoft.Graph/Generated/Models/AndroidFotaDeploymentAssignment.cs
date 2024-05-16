@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Describes deployment security group to assign a deployment to. The backend will expand the security Group ID to extract device serial numbers prior sending a create deployment request to Zebra.
     /// </summary>
-    public class AndroidFotaDeploymentAssignment : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AndroidFotaDeploymentAssignment : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The Azure Active Directory (Azure AD) we are deploying firmware updates to (e.g.: d93c8f48-bd42-4514-ba40-bc6b84780930). NOTE: Use this property moving forward because the existing property, target, is deprecated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? AssignmentTarget {
+        public DeviceAndAppManagementAssignmentTarget? AssignmentTarget
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("assignmentTarget"); }
             set { BackingStore?.Set("assignmentTarget", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget AssignmentTarget {
+        public DeviceAndAppManagementAssignmentTarget AssignmentTarget
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("assignmentTarget"); }
             set { BackingStore?.Set("assignmentTarget", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the Azure AD security group used for the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A unique identifier assigned to each Android FOTA Assignment entity</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The AAD Group we are deploying firmware updates to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidFotaDeploymentAssignmentTarget? Target {
+        public AndroidFotaDeploymentAssignmentTarget? Target
+        {
             get { return BackingStore?.Get<AndroidFotaDeploymentAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public AndroidFotaDeploymentAssignmentTarget Target {
+        public AndroidFotaDeploymentAssignmentTarget Target
+        {
             get { return BackingStore?.Get<AndroidFotaDeploymentAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -114,11 +126,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentTarget", n => { AssignmentTarget = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"target", n => { Target = n.GetObjectValue<AndroidFotaDeploymentAssignmentTarget>(AndroidFotaDeploymentAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "assignmentTarget", n => { AssignmentTarget = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<AndroidFotaDeploymentAssignmentTarget>(AndroidFotaDeploymentAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

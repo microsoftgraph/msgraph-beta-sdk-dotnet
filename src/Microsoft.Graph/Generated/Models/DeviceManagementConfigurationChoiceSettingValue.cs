@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Setting value
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingValue : DeviceManagementConfigurationSettingValue, IParsable 
+    public class DeviceManagementConfigurationChoiceSettingValue : DeviceManagementConfigurationSettingValue, IParsable
     {
         /// <summary>Child settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingInstance>? Children {
+        public List<DeviceManagementConfigurationSettingInstance>? Children
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingInstance> Children {
+        public List<DeviceManagementConfigurationSettingInstance> Children
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Choice setting value: an OptionDefinition ItemId.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"children", n => { Children = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingInstance>(DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"value", n => { Value = n.GetStringValue(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingInstance>(DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
             };
         }
         /// <summary>

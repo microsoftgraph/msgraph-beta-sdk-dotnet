@@ -6,62 +6,72 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AgedAccountsPayable : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AgedAccountsPayable : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The agedAsOfDate property</summary>
-        public Date? AgedAsOfDate {
+        public Date? AgedAsOfDate
+        {
             get { return BackingStore?.Get<Date?>("agedAsOfDate"); }
             set { BackingStore?.Set("agedAsOfDate", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The balanceDue property</summary>
-        public decimal? BalanceDue {
+        public decimal? BalanceDue
+        {
             get { return BackingStore?.Get<decimal?>("balanceDue"); }
             set { BackingStore?.Set("balanceDue", value); }
         }
         /// <summary>The currencyCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrencyCode {
+        public string? CurrencyCode
+        {
             get { return BackingStore?.Get<string?>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
 #nullable restore
 #else
-        public string CurrencyCode {
+        public string CurrencyCode
+        {
             get { return BackingStore?.Get<string>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
 #endif
         /// <summary>The currentAmount property</summary>
-        public decimal? CurrentAmount {
+        public decimal? CurrentAmount
+        {
             get { return BackingStore?.Get<decimal?>("currentAmount"); }
             set { BackingStore?.Set("currentAmount", value); }
         }
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -69,42 +79,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The period1Amount property</summary>
-        public decimal? Period1Amount {
+        public decimal? Period1Amount
+        {
             get { return BackingStore?.Get<decimal?>("period1Amount"); }
             set { BackingStore?.Set("period1Amount", value); }
         }
         /// <summary>The period2Amount property</summary>
-        public decimal? Period2Amount {
+        public decimal? Period2Amount
+        {
             get { return BackingStore?.Get<decimal?>("period2Amount"); }
             set { BackingStore?.Set("period2Amount", value); }
         }
         /// <summary>The period3Amount property</summary>
-        public decimal? Period3Amount {
+        public decimal? Period3Amount
+        {
             get { return BackingStore?.Get<decimal?>("period3Amount"); }
             set { BackingStore?.Set("period3Amount", value); }
         }
         /// <summary>The periodLengthFilter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PeriodLengthFilter {
+        public string? PeriodLengthFilter
+        {
             get { return BackingStore?.Get<string?>("periodLengthFilter"); }
             set { BackingStore?.Set("periodLengthFilter", value); }
         }
 #nullable restore
 #else
-        public string PeriodLengthFilter {
+        public string PeriodLengthFilter
+        {
             get { return BackingStore?.Get<string>("periodLengthFilter"); }
             set { BackingStore?.Set("periodLengthFilter", value); }
         }
@@ -112,13 +129,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendorId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VendorId {
+        public string? VendorId
+        {
             get { return BackingStore?.Get<string?>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
         }
 #nullable restore
 #else
-        public string VendorId {
+        public string VendorId
+        {
             get { return BackingStore?.Get<string>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
         }
@@ -126,13 +145,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendorNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VendorNumber {
+        public string? VendorNumber
+        {
             get { return BackingStore?.Get<string?>("vendorNumber"); }
             set { BackingStore?.Set("vendorNumber", value); }
         }
 #nullable restore
 #else
-        public string VendorNumber {
+        public string VendorNumber
+        {
             get { return BackingStore?.Get<string>("vendorNumber"); }
             set { BackingStore?.Set("vendorNumber", value); }
         }
@@ -163,19 +184,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"agedAsOfDate", n => { AgedAsOfDate = n.GetDateValue(); } },
-                {"balanceDue", n => { BalanceDue = n.GetDecimalValue(); } },
-                {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                {"currentAmount", n => { CurrentAmount = n.GetDecimalValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"period1Amount", n => { Period1Amount = n.GetDecimalValue(); } },
-                {"period2Amount", n => { Period2Amount = n.GetDecimalValue(); } },
-                {"period3Amount", n => { Period3Amount = n.GetDecimalValue(); } },
-                {"periodLengthFilter", n => { PeriodLengthFilter = n.GetStringValue(); } },
-                {"vendorId", n => { VendorId = n.GetStringValue(); } },
-                {"vendorNumber", n => { VendorNumber = n.GetStringValue(); } },
+                { "agedAsOfDate", n => { AgedAsOfDate = n.GetDateValue(); } },
+                { "balanceDue", n => { BalanceDue = n.GetDecimalValue(); } },
+                { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
+                { "currentAmount", n => { CurrentAmount = n.GetDecimalValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "period1Amount", n => { Period1Amount = n.GetDecimalValue(); } },
+                { "period2Amount", n => { Period2Amount = n.GetDecimalValue(); } },
+                { "period3Amount", n => { Period3Amount = n.GetDecimalValue(); } },
+                { "periodLengthFilter", n => { PeriodLengthFilter = n.GetStringValue(); } },
+                { "vendorId", n => { VendorId = n.GetStringValue(); } },
+                { "vendorNumber", n => { VendorNumber = n.GetStringValue(); } },
             };
         }
         /// <summary>

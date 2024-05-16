@@ -5,54 +5,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class UsageProfilingPoint : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UsageProfilingPoint : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The internetAccessTrafficCount property</summary>
-        public long? InternetAccessTrafficCount {
+        public long? InternetAccessTrafficCount
+        {
             get { return BackingStore?.Get<long?>("internetAccessTrafficCount"); }
             set { BackingStore?.Set("internetAccessTrafficCount", value); }
         }
         /// <summary>The microsoft365AccessTrafficCount property</summary>
-        public long? Microsoft365AccessTrafficCount {
+        public long? Microsoft365AccessTrafficCount
+        {
             get { return BackingStore?.Get<long?>("microsoft365AccessTrafficCount"); }
             set { BackingStore?.Set("microsoft365AccessTrafficCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The privateAccessTrafficCount property</summary>
-        public long? PrivateAccessTrafficCount {
+        public long? PrivateAccessTrafficCount
+        {
             get { return BackingStore?.Get<long?>("privateAccessTrafficCount"); }
             set { BackingStore?.Set("privateAccessTrafficCount", value); }
         }
         /// <summary>The timeStampDateTime property</summary>
-        public DateTimeOffset? TimeStampDateTime {
+        public DateTimeOffset? TimeStampDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("timeStampDateTime"); }
             set { BackingStore?.Set("timeStampDateTime", value); }
         }
         /// <summary>The totalTrafficCount property</summary>
-        public long? TotalTrafficCount {
+        public long? TotalTrafficCount
+        {
             get { return BackingStore?.Get<long?>("totalTrafficCount"); }
             set { BackingStore?.Set("totalTrafficCount", value); }
         }
@@ -82,12 +91,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"internetAccessTrafficCount", n => { InternetAccessTrafficCount = n.GetLongValue(); } },
-                {"microsoft365AccessTrafficCount", n => { Microsoft365AccessTrafficCount = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"privateAccessTrafficCount", n => { PrivateAccessTrafficCount = n.GetLongValue(); } },
-                {"timeStampDateTime", n => { TimeStampDateTime = n.GetDateTimeOffsetValue(); } },
-                {"totalTrafficCount", n => { TotalTrafficCount = n.GetLongValue(); } },
+                { "internetAccessTrafficCount", n => { InternetAccessTrafficCount = n.GetLongValue(); } },
+                { "microsoft365AccessTrafficCount", n => { Microsoft365AccessTrafficCount = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "privateAccessTrafficCount", n => { PrivateAccessTrafficCount = n.GetLongValue(); } },
+                { "timeStampDateTime", n => { TimeStampDateTime = n.GetDateTimeOffsetValue(); } },
+                { "totalTrafficCount", n => { TotalTrafficCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

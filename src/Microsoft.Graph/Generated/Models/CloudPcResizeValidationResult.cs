@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcResizeValidationResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcResizeValidationResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The cloudPC ID that corresponds to its unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudPcId {
+        public string? CloudPcId
+        {
             get { return BackingStore?.Get<string?>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
 #nullable restore
 #else
-        public string CloudPcId {
+        public string CloudPcId
+        {
             get { return BackingStore?.Get<string>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Describes a list of the validation result for the Cloud PC resize action. The possible values are: success, cloudPcNotFound, operationCnflict, operationNotSupported, targetLicenseHasAssigned, internalServerError, and unknownFutureValue.</summary>
-        public CloudPcResizeValidationCode? ValidationResult {
+        public CloudPcResizeValidationCode? ValidationResult
+        {
             get { return BackingStore?.Get<CloudPcResizeValidationCode?>("validationResult"); }
             set { BackingStore?.Set("validationResult", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"validationResult", n => { ValidationResult = n.GetEnumValue<CloudPcResizeValidationCode>(); } },
+                { "cloudPcId", n => { CloudPcId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "validationResult", n => { ValidationResult = n.GetEnumValue<CloudPcResizeValidationCode>(); } },
             };
         }
         /// <summary>

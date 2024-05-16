@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlannerPlanConfigurationLocalization : Entity, IParsable 
+    public class PlannerPlanConfigurationLocalization : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Localized names for configured buckets in the plan configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlanConfigurationBucketLocalization>? Buckets {
+        public List<PlannerPlanConfigurationBucketLocalization>? Buckets
+        {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationBucketLocalization>?>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlanConfigurationBucketLocalization> Buckets {
+        public List<PlannerPlanConfigurationBucketLocalization> Buckets
+        {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationBucketLocalization>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The language code associated with the localized names in this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageTag {
+        public string? LanguageTag
+        {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
 #nullable restore
 #else
-        public string LanguageTag {
+        public string LanguageTag
+        {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Localized title of the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlanTitle {
+        public string? PlanTitle
+        {
             get { return BackingStore?.Get<string?>("planTitle"); }
             set { BackingStore?.Set("planTitle", value); }
         }
 #nullable restore
 #else
-        public string PlanTitle {
+        public string PlanTitle
+        {
             get { return BackingStore?.Get<string>("planTitle"); }
             set { BackingStore?.Set("planTitle", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"buckets", n => { Buckets = n.GetCollectionOfObjectValues<PlannerPlanConfigurationBucketLocalization>(PlannerPlanConfigurationBucketLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
-                {"planTitle", n => { PlanTitle = n.GetStringValue(); } },
+                { "buckets", n => { Buckets = n.GetCollectionOfObjectValues<PlannerPlanConfigurationBucketLocalization>(PlannerPlanConfigurationBucketLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                { "planTitle", n => { PlanTitle = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkPeripheral : Entity, IParsable 
+    public class TeamworkPeripheral : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Display name for the peripheral.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The product ID of the device. Each product from a vendor has its own ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductId {
+        public string? ProductId
+        {
             get { return BackingStore?.Get<string?>("productId"); }
             set { BackingStore?.Set("productId", value); }
         }
 #nullable restore
 #else
-        public string ProductId {
+        public string ProductId
+        {
             get { return BackingStore?.Get<string>("productId"); }
             set { BackingStore?.Set("productId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier for the vendor of the device. Each vendor has a unique ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VendorId {
+        public string? VendorId
+        {
             get { return BackingStore?.Get<string?>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
         }
 #nullable restore
 #else
-        public string VendorId {
+        public string VendorId
+        {
             get { return BackingStore?.Get<string>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"productId", n => { ProductId = n.GetStringValue(); } },
-                {"vendorId", n => { VendorId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "productId", n => { ProductId = n.GetStringValue(); } },
+                { "vendorId", n => { VendorId = n.GetStringValue(); } },
             };
         }
         /// <summary>

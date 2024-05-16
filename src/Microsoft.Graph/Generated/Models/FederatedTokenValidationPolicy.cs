@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class FederatedTokenValidationPolicy : DirectoryObject, IParsable 
+    public class FederatedTokenValidationPolicy : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The validatingDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ValidatingDomains? ValidatingDomains {
+        public Microsoft.Graph.Beta.Models.ValidatingDomains? ValidatingDomains
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ValidatingDomains?>("validatingDomains"); }
             set { BackingStore?.Set("validatingDomains", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ValidatingDomains ValidatingDomains {
+        public Microsoft.Graph.Beta.Models.ValidatingDomains ValidatingDomains
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ValidatingDomains>("validatingDomains"); }
             set { BackingStore?.Set("validatingDomains", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"validatingDomains", n => { ValidatingDomains = n.GetObjectValue<Microsoft.Graph.Beta.Models.ValidatingDomains>(Microsoft.Graph.Beta.Models.ValidatingDomains.CreateFromDiscriminatorValue); } },
+                { "validatingDomains", n => { ValidatingDomains = n.GetObjectValue<Microsoft.Graph.Beta.Models.ValidatingDomains>(Microsoft.Graph.Beta.Models.ValidatingDomains.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

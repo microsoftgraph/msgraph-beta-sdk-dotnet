@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ReferenceAttachment : Attachment, IParsable 
+    public class ReferenceAttachment : Attachment, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.</summary>
-        public bool? IsFolder {
+        public bool? IsFolder
+        {
             get { return BackingStore?.Get<bool?>("isFolder"); }
             set { BackingStore?.Set("isFolder", value); }
         }
         /// <summary>Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.</summary>
-        public ReferenceAttachmentPermission? Permission {
+        public ReferenceAttachmentPermission? Permission
+        {
             get { return BackingStore?.Get<ReferenceAttachmentPermission?>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
         /// <summary>Applies to only a reference attachment of an image - URL to get a preview image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewUrl {
+        public string? PreviewUrl
+        {
             get { return BackingStore?.Get<string?>("previewUrl"); }
             set { BackingStore?.Set("previewUrl", value); }
         }
 #nullable restore
 #else
-        public string PreviewUrl {
+        public string PreviewUrl
+        {
             get { return BackingStore?.Get<string>("previewUrl"); }
             set { BackingStore?.Set("previewUrl", value); }
         }
 #endif
         /// <summary>The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.</summary>
-        public ReferenceAttachmentProvider? ProviderType {
+        public ReferenceAttachmentProvider? ProviderType
+        {
             get { return BackingStore?.Get<ReferenceAttachmentProvider?>("providerType"); }
             set { BackingStore?.Set("providerType", value); }
         }
         /// <summary>URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceUrl {
+        public string? SourceUrl
+        {
             get { return BackingStore?.Get<string?>("sourceUrl"); }
             set { BackingStore?.Set("sourceUrl", value); }
         }
 #nullable restore
 #else
-        public string SourceUrl {
+        public string SourceUrl
+        {
             get { return BackingStore?.Get<string>("sourceUrl"); }
             set { BackingStore?.Set("sourceUrl", value); }
         }
@@ -55,13 +63,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Applies to only a reference attachment of an image - URL to get a thumbnail image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailUrl {
+        public string? ThumbnailUrl
+        {
             get { return BackingStore?.Get<string?>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
 #nullable restore
 #else
-        public string ThumbnailUrl {
+        public string ThumbnailUrl
+        {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isFolder", n => { IsFolder = n.GetBoolValue(); } },
-                {"permission", n => { Permission = n.GetEnumValue<ReferenceAttachmentPermission>(); } },
-                {"previewUrl", n => { PreviewUrl = n.GetStringValue(); } },
-                {"providerType", n => { ProviderType = n.GetEnumValue<ReferenceAttachmentProvider>(); } },
-                {"sourceUrl", n => { SourceUrl = n.GetStringValue(); } },
-                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                { "isFolder", n => { IsFolder = n.GetBoolValue(); } },
+                { "permission", n => { Permission = n.GetEnumValue<ReferenceAttachmentPermission>(); } },
+                { "previewUrl", n => { PreviewUrl = n.GetStringValue(); } },
+                { "providerType", n => { ProviderType = n.GetEnumValue<ReferenceAttachmentProvider>(); } },
+                { "sourceUrl", n => { SourceUrl = n.GetStringValue(); } },
+                { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

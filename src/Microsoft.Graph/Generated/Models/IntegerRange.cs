@@ -5,49 +5,57 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class IntegerRange : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IntegerRange : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The inclusive upper bound of the integer range.</summary>
-        public long? End {
+        public long? End
+        {
             get { return BackingStore?.Get<long?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
         /// <summary>The maximum property</summary>
-        public long? Maximum {
+        public long? Maximum
+        {
             get { return BackingStore?.Get<long?>("maximum"); }
             set { BackingStore?.Set("maximum", value); }
         }
         /// <summary>The minimum property</summary>
-        public long? Minimum {
+        public long? Minimum
+        {
             get { return BackingStore?.Get<long?>("minimum"); }
             set { BackingStore?.Set("minimum", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The inclusive lower bound of the integer range.</summary>
-        public long? Start {
+        public long? Start
+        {
             get { return BackingStore?.Get<long?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"end", n => { End = n.GetLongValue(); } },
-                {"maximum", n => { Maximum = n.GetLongValue(); } },
-                {"minimum", n => { Minimum = n.GetLongValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"start", n => { Start = n.GetLongValue(); } },
+                { "end", n => { End = n.GetLongValue(); } },
+                { "maximum", n => { Maximum = n.GetLongValue(); } },
+                { "minimum", n => { Minimum = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "start", n => { Start = n.GetLongValue(); } },
             };
         }
         /// <summary>

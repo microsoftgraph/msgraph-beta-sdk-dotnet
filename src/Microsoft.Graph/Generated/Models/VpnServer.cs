@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// VPN Server definition.
     /// </summary>
-    public class VpnServer : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VpnServer : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Address (IP address, FQDN or URL)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address {
+        public string? Address
+        {
             get { return BackingStore?.Get<string?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public string Address {
+        public string Address
+        {
             get { return BackingStore?.Get<string>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -35,32 +39,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>Default server.</summary>
-        public bool? IsDefaultServer {
+        public bool? IsDefaultServer
+        {
             get { return BackingStore?.Get<bool?>("isDefaultServer"); }
             set { BackingStore?.Set("isDefaultServer", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"address", n => { Address = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"isDefaultServer", n => { IsDefaultServer = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "isDefaultServer", n => { IsDefaultServer = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

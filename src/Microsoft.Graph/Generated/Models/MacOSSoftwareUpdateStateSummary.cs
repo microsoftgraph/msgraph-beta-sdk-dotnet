@@ -4,65 +4,75 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// MacOS software update state summary for a device and user
     /// </summary>
-    public class MacOSSoftwareUpdateStateSummary : Entity, IParsable 
+    public class MacOSSoftwareUpdateStateSummary : Entity, IParsable
     {
         /// <summary>Human readable name of the software update</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Last date time the report for this device and product key was updated.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Product key of the software update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductKey {
+        public string? ProductKey
+        {
             get { return BackingStore?.Get<string?>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
 #nullable restore
 #else
-        public string ProductKey {
+        public string ProductKey
+        {
             get { return BackingStore?.Get<string>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
 #endif
         /// <summary>MacOS Software Update State</summary>
-        public MacOSSoftwareUpdateState? State {
+        public MacOSSoftwareUpdateState? State
+        {
             get { return BackingStore?.Get<MacOSSoftwareUpdateState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>MacOS Software Update Category</summary>
-        public MacOSSoftwareUpdateCategory? UpdateCategory {
+        public MacOSSoftwareUpdateCategory? UpdateCategory
+        {
             get { return BackingStore?.Get<MacOSSoftwareUpdateCategory?>("updateCategory"); }
             set { BackingStore?.Set("updateCategory", value); }
         }
         /// <summary>Version of the software update</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdateVersion {
+        public string? UpdateVersion
+        {
             get { return BackingStore?.Get<string?>("updateVersion"); }
             set { BackingStore?.Set("updateVersion", value); }
         }
 #nullable restore
 #else
-        public string UpdateVersion {
+        public string UpdateVersion
+        {
             get { return BackingStore?.Get<string>("updateVersion"); }
             set { BackingStore?.Set("updateVersion", value); }
         }
@@ -85,12 +95,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"productKey", n => { ProductKey = n.GetStringValue(); } },
-                {"state", n => { State = n.GetEnumValue<MacOSSoftwareUpdateState>(); } },
-                {"updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
-                {"updateVersion", n => { UpdateVersion = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "productKey", n => { ProductKey = n.GetStringValue(); } },
+                { "state", n => { State = n.GetEnumValue<MacOSSoftwareUpdateState>(); } },
+                { "updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
+                { "updateVersion", n => { UpdateVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
+namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType
+{
     #pragma warning disable CS1591
-    public class QueryByPlatformTypePostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class QueryByPlatformTypePostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementResourceAccessProfileBase>? Value {
+        public List<DeviceManagementResourceAccessProfileBase>? Value
+        {
             get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileBase>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementResourceAccessProfileBase> Value {
+        public List<DeviceManagementResourceAccessProfileBase> Value
+        {
             get { return BackingStore?.Get<List<DeviceManagementResourceAccessProfileBase>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>(DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileBase>(DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

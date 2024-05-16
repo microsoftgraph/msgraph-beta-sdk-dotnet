@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Note : OutlookItem, IParsable 
+    public class Note : OutlookItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The attachments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Attachment>? Attachments {
+        public List<Attachment>? Attachments
+        {
             get { return BackingStore?.Get<List<Attachment>?>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
 #nullable restore
 #else
-        public List<Attachment> Attachments {
+        public List<Attachment> Attachments
+        {
             get { return BackingStore?.Get<List<Attachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The body property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemBody? Body {
+        public ItemBody? Body
+        {
             get { return BackingStore?.Get<ItemBody?>("body"); }
             set { BackingStore?.Set("body", value); }
         }
 #nullable restore
 #else
-        public ItemBody Body {
+        public ItemBody Body
+        {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
@@ -40,37 +45,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The extensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions {
+        public List<Extension>? Extensions
+        {
             get { return BackingStore?.Get<List<Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions {
+        public List<Extension> Extensions
+        {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
         /// <summary>The hasAttachments property</summary>
-        public bool? HasAttachments {
+        public bool? HasAttachments
+        {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>The isDeleted property</summary>
-        public bool? IsDeleted {
+        public bool? IsDeleted
+        {
             get { return BackingStore?.Get<bool?>("isDeleted"); }
             set { BackingStore?.Set("isDeleted", value); }
         }
         /// <summary>The multiValueExtendedProperties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
+        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The singleValueExtendedProperties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
+        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The subject property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -128,14 +143,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
-                {"isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
-                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
+                { "attachments", n => { Attachments = n.GetCollectionOfObjectValues<Attachment>(Attachment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "body", n => { Body = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hasAttachments", n => { HasAttachments = n.GetBoolValue(); } },
+                { "isDeleted", n => { IsDeleted = n.GetBoolValue(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnAttributeCollectionExternalUsersSelfServiceSignUp : OnAttributeCollectionHandler, IParsable 
+    public class OnAttributeCollectionExternalUsersSelfServiceSignUp : OnAttributeCollectionHandler, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Required. The configuration for how attributes are displayed in the sign up experience defined by a user flow, like the externalUsersSelfServiceSignupEventsFlow, specifically on the attribute collection page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationAttributeCollectionPage? AttributeCollectionPage {
+        public AuthenticationAttributeCollectionPage? AttributeCollectionPage
+        {
             get { return BackingStore?.Get<AuthenticationAttributeCollectionPage?>("attributeCollectionPage"); }
             set { BackingStore?.Set("attributeCollectionPage", value); }
         }
 #nullable restore
 #else
-        public AuthenticationAttributeCollectionPage AttributeCollectionPage {
+        public AuthenticationAttributeCollectionPage AttributeCollectionPage
+        {
             get { return BackingStore?.Get<AuthenticationAttributeCollectionPage>("attributeCollectionPage"); }
             set { BackingStore?.Set("attributeCollectionPage", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The attributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityUserFlowAttribute>? Attributes {
+        public List<IdentityUserFlowAttribute>? Attributes
+        {
             get { return BackingStore?.Get<List<IdentityUserFlowAttribute>?>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
 #nullable restore
 #else
-        public List<IdentityUserFlowAttribute> Attributes {
+        public List<IdentityUserFlowAttribute> Attributes
+        {
             get { return BackingStore?.Get<List<IdentityUserFlowAttribute>>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attributeCollectionPage", n => { AttributeCollectionPage = n.GetObjectValue<AuthenticationAttributeCollectionPage>(AuthenticationAttributeCollectionPage.CreateFromDiscriminatorValue); } },
-                {"attributes", n => { Attributes = n.GetCollectionOfObjectValues<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributeCollectionPage", n => { AttributeCollectionPage = n.GetObjectValue<AuthenticationAttributeCollectionPage>(AuthenticationAttributeCollectionPage.CreateFromDiscriminatorValue); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

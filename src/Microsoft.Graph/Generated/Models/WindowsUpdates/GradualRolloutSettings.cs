@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class GradualRolloutSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GradualRolloutSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The duration between each set of devices being offered the update. The value is represented in ISO 8601 format for duration. Default value is P1D (one day).</summary>
-        public TimeSpan? DurationBetweenOffers {
+        public TimeSpan? DurationBetweenOffers
+        {
             get { return BackingStore?.Get<TimeSpan?>("durationBetweenOffers"); }
             set { BackingStore?.Set("durationBetweenOffers", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -69,8 +74,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"durationBetweenOffers", n => { DurationBetweenOffers = n.GetTimeSpanValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "durationBetweenOffers", n => { DurationBetweenOffers = n.GetTimeSpanValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

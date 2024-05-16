@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomClaimCondition : CustomClaimConditionBase, IParsable 
+    public class CustomClaimCondition : CustomClaimConditionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The memberOf property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MemberOf {
+        public List<string>? MemberOf
+        {
             get { return BackingStore?.Get<List<string>?>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #nullable restore
 #else
-        public List<string> MemberOf {
+        public List<string> MemberOf
+        {
             get { return BackingStore?.Get<List<string>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
         /// <summary>The userType property</summary>
-        public ClaimConditionUserType? UserType {
+        public ClaimConditionUserType? UserType
+        {
             get { return BackingStore?.Get<ClaimConditionUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"memberOf", n => { MemberOf = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"userType", n => { UserType = n.GetEnumValue<ClaimConditionUserType>(); } },
+                { "memberOf", n => { MemberOf = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "userType", n => { UserType = n.GetEnumValue<ClaimConditionUserType>(); } },
             };
         }
         /// <summary>

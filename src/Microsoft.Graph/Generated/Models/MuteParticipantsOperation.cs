@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MuteParticipantsOperation : CommsOperation, IParsable 
+    public class MuteParticipantsOperation : CommsOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The participants property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Participants {
+        public List<string>? Participants
+        {
             get { return BackingStore?.Get<List<string>?>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
 #nullable restore
 #else
-        public List<string> Participants {
+        public List<string> Participants
+        {
             get { return BackingStore?.Get<List<string>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"participants", n => { Participants = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "participants", n => { Participants = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

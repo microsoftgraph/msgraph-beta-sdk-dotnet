@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Windows 8.1 (and later) devices to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class Windows81VpnConfiguration : WindowsVpnConfiguration, IParsable 
+    public class Windows81VpnConfiguration : WindowsVpnConfiguration, IParsable
     {
         /// <summary>Value indicating whether this policy only applies to Windows 8.1. This property is read-only.</summary>
-        public bool? ApplyOnlyToWindows81 {
+        public bool? ApplyOnlyToWindows81
+        {
             get { return BackingStore?.Get<bool?>("applyOnlyToWindows81"); }
             set { BackingStore?.Set("applyOnlyToWindows81", value); }
         }
         /// <summary>Windows VPN connection type.</summary>
-        public WindowsVpnConnectionType? ConnectionType {
+        public WindowsVpnConnectionType? ConnectionType
+        {
             get { return BackingStore?.Get<WindowsVpnConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Enable split tunneling for the VPN.</summary>
-        public bool? EnableSplitTunneling {
+        public bool? EnableSplitTunneling
+        {
             get { return BackingStore?.Get<bool?>("enableSplitTunneling"); }
             set { BackingStore?.Set("enableSplitTunneling", value); }
         }
         /// <summary>Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LoginGroupOrDomain {
+        public string? LoginGroupOrDomain
+        {
             get { return BackingStore?.Get<string?>("loginGroupOrDomain"); }
             set { BackingStore?.Set("loginGroupOrDomain", value); }
         }
 #nullable restore
 #else
-        public string LoginGroupOrDomain {
+        public string LoginGroupOrDomain
+        {
             get { return BackingStore?.Get<string>("loginGroupOrDomain"); }
             set { BackingStore?.Set("loginGroupOrDomain", value); }
         }
@@ -42,13 +48,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Proxy Server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Windows81VpnProxyServer? ProxyServer {
+        public Windows81VpnProxyServer? ProxyServer
+        {
             get { return BackingStore?.Get<Windows81VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #nullable restore
 #else
-        public Windows81VpnProxyServer ProxyServer {
+        public Windows81VpnProxyServer ProxyServer
+        {
             get { return BackingStore?.Get<Windows81VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
@@ -83,11 +91,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applyOnlyToWindows81", n => { ApplyOnlyToWindows81 = n.GetBoolValue(); } },
-                {"connectionType", n => { ConnectionType = n.GetEnumValue<WindowsVpnConnectionType>(); } },
-                {"enableSplitTunneling", n => { EnableSplitTunneling = n.GetBoolValue(); } },
-                {"loginGroupOrDomain", n => { LoginGroupOrDomain = n.GetStringValue(); } },
-                {"proxyServer", n => { ProxyServer = n.GetObjectValue<Windows81VpnProxyServer>(Windows81VpnProxyServer.CreateFromDiscriminatorValue); } },
+                { "applyOnlyToWindows81", n => { ApplyOnlyToWindows81 = n.GetBoolValue(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<WindowsVpnConnectionType>(); } },
+                { "enableSplitTunneling", n => { EnableSplitTunneling = n.GetBoolValue(); } },
+                { "loginGroupOrDomain", n => { LoginGroupOrDomain = n.GetStringValue(); } },
+                { "proxyServer", n => { ProxyServer = n.GetObjectValue<Windows81VpnProxyServer>(Windows81VpnProxyServer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

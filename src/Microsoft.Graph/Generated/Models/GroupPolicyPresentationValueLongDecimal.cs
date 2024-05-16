@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The entity represents an unsigned long value of a long decimal text box presentation on a policy definition.
     /// </summary>
-    public class GroupPolicyPresentationValueLongDecimal : GroupPolicyPresentationValue, IParsable 
+    public class GroupPolicyPresentationValueLongDecimal : GroupPolicyPresentationValue, IParsable
     {
         /// <summary>An unsigned long value for the associated presentation.</summary>
-        public long? Value {
+        public long? Value
+        {
             get { return BackingStore?.Get<long?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -33,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetLongValue(); } },
+                { "value", n => { Value = n.GetLongValue(); } },
             };
         }
         /// <summary>

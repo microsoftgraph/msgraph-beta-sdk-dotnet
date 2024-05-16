@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable 
+    public class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Version of CSP setting is a part of</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationServiceProviderVersion {
+        public string? ConfigurationServiceProviderVersion
+        {
             get { return BackingStore?.Get<string?>("configurationServiceProviderVersion"); }
             set { BackingStore?.Set("configurationServiceProviderVersion", value); }
         }
 #nullable restore
 #else
-        public string ConfigurationServiceProviderVersion {
+        public string ConfigurationServiceProviderVersion
+        {
             get { return BackingStore?.Get<string>("configurationServiceProviderVersion"); }
             set { BackingStore?.Set("configurationServiceProviderVersion", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Maximum supported version of Windows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MaximumSupportedVersion {
+        public string? MaximumSupportedVersion
+        {
             get { return BackingStore?.Get<string?>("maximumSupportedVersion"); }
             set { BackingStore?.Set("maximumSupportedVersion", value); }
         }
 #nullable restore
 #else
-        public string MaximumSupportedVersion {
+        public string MaximumSupportedVersion
+        {
             get { return BackingStore?.Get<string>("maximumSupportedVersion"); }
             set { BackingStore?.Set("maximumSupportedVersion", value); }
         }
@@ -40,37 +45,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Minimum supported version of Windows</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinimumSupportedVersion {
+        public string? MinimumSupportedVersion
+        {
             get { return BackingStore?.Get<string?>("minimumSupportedVersion"); }
             set { BackingStore?.Set("minimumSupportedVersion", value); }
         }
 #nullable restore
 #else
-        public string MinimumSupportedVersion {
+        public string MinimumSupportedVersion
+        {
             get { return BackingStore?.Get<string>("minimumSupportedVersion"); }
             set { BackingStore?.Set("minimumSupportedVersion", value); }
         }
 #endif
         /// <summary>Required AAD Trust Type</summary>
-        public DeviceManagementConfigurationAzureAdTrustType? RequiredAzureAdTrustType {
+        public DeviceManagementConfigurationAzureAdTrustType? RequiredAzureAdTrustType
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationAzureAdTrustType?>("requiredAzureAdTrustType"); }
             set { BackingStore?.Set("requiredAzureAdTrustType", value); }
         }
         /// <summary>AzureAD setting requirement</summary>
-        public bool? RequiresAzureAd {
+        public bool? RequiresAzureAd
+        {
             get { return BackingStore?.Get<bool?>("requiresAzureAd"); }
             set { BackingStore?.Set("requiresAzureAd", value); }
         }
         /// <summary>List of Windows SKUs that the setting is applicable for</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationWindowsSkus?>? WindowsSkus {
+        public List<DeviceManagementConfigurationWindowsSkus?>? WindowsSkus
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>?>("windowsSkus"); }
             set { BackingStore?.Set("windowsSkus", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationWindowsSkus?> WindowsSkus {
+        public List<DeviceManagementConfigurationWindowsSkus?> WindowsSkus
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>>("windowsSkus"); }
             set { BackingStore?.Set("windowsSkus", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurationServiceProviderVersion", n => { ConfigurationServiceProviderVersion = n.GetStringValue(); } },
-                {"maximumSupportedVersion", n => { MaximumSupportedVersion = n.GetStringValue(); } },
-                {"minimumSupportedVersion", n => { MinimumSupportedVersion = n.GetStringValue(); } },
-                {"requiredAzureAdTrustType", n => { RequiredAzureAdTrustType = n.GetEnumValue<DeviceManagementConfigurationAzureAdTrustType>(); } },
-                {"requiresAzureAd", n => { RequiresAzureAd = n.GetBoolValue(); } },
-                {"windowsSkus", n => { WindowsSkus = n.GetCollectionOfEnumValues<DeviceManagementConfigurationWindowsSkus>()?.ToList(); } },
+                { "configurationServiceProviderVersion", n => { ConfigurationServiceProviderVersion = n.GetStringValue(); } },
+                { "maximumSupportedVersion", n => { MaximumSupportedVersion = n.GetStringValue(); } },
+                { "minimumSupportedVersion", n => { MinimumSupportedVersion = n.GetStringValue(); } },
+                { "requiredAzureAdTrustType", n => { RequiredAzureAdTrustType = n.GetEnumValue<DeviceManagementConfigurationAzureAdTrustType>(); } },
+                { "requiresAzureAd", n => { RequiresAzureAd = n.GetBoolValue(); } },
+                { "windowsSkus", n => { WindowsSkus = n.GetCollectionOfEnumValues<DeviceManagementConfigurationWindowsSkus>()?.ToList(); } },
             };
         }
         /// <summary>

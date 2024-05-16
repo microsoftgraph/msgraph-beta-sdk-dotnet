@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SensitivityPolicySettings : Entity, IParsable 
+    public class SensitivityPolicySettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The applicableTo property</summary>
-        public SensitivityLabelTarget? ApplicableTo {
+        public SensitivityLabelTarget? ApplicableTo
+        {
             get { return BackingStore?.Get<SensitivityLabelTarget?>("applicableTo"); }
             set { BackingStore?.Set("applicableTo", value); }
         }
         /// <summary>The downgradeSensitivityRequiresJustification property</summary>
-        public bool? DowngradeSensitivityRequiresJustification {
+        public bool? DowngradeSensitivityRequiresJustification
+        {
             get { return BackingStore?.Get<bool?>("downgradeSensitivityRequiresJustification"); }
             set { BackingStore?.Set("downgradeSensitivityRequiresJustification", value); }
         }
         /// <summary>The helpWebUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HelpWebUrl {
+        public string? HelpWebUrl
+        {
             get { return BackingStore?.Get<string?>("helpWebUrl"); }
             set { BackingStore?.Set("helpWebUrl", value); }
         }
 #nullable restore
 #else
-        public string HelpWebUrl {
+        public string HelpWebUrl
+        {
             get { return BackingStore?.Get<string>("helpWebUrl"); }
             set { BackingStore?.Set("helpWebUrl", value); }
         }
 #endif
         /// <summary>The isMandatory property</summary>
-        public bool? IsMandatory {
+        public bool? IsMandatory
+        {
             get { return BackingStore?.Get<bool?>("isMandatory"); }
             set { BackingStore?.Set("isMandatory", value); }
         }
@@ -56,10 +62,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicableTo", n => { ApplicableTo = n.GetEnumValue<SensitivityLabelTarget>(); } },
-                {"downgradeSensitivityRequiresJustification", n => { DowngradeSensitivityRequiresJustification = n.GetBoolValue(); } },
-                {"helpWebUrl", n => { HelpWebUrl = n.GetStringValue(); } },
-                {"isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
+                { "applicableTo", n => { ApplicableTo = n.GetEnumValue<SensitivityLabelTarget>(); } },
+                { "downgradeSensitivityRequiresJustification", n => { DowngradeSensitivityRequiresJustification = n.GetBoolValue(); } },
+                { "helpWebUrl", n => { HelpWebUrl = n.GetStringValue(); } },
+                { "isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
             };
         }
         /// <summary>

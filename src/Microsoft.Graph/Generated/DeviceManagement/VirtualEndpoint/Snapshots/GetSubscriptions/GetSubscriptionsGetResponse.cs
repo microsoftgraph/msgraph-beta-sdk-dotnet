@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions
+{
     #pragma warning disable CS1591
-    public class GetSubscriptionsGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetSubscriptionsGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcSubscription>? Value {
+        public List<CloudPcSubscription>? Value
+        {
             get { return BackingStore?.Get<List<CloudPcSubscription>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcSubscription> Value {
+        public List<CloudPcSubscription> Value
+        {
             get { return BackingStore?.Get<List<CloudPcSubscription>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSub
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<CloudPcSubscription>(CloudPcSubscription.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<CloudPcSubscription>(CloudPcSubscription.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

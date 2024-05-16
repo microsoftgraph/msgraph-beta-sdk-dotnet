@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// BIOS configuration and other settings provides customers the ability to configure hardware/bios settings on the enrolled Windows 10/11 Entra ID joined devices by uploading a configuration file generated with their OEM tool (e.g. Dell Command tool). A BIOS configuration policy can be assigned to multiple devices, allowing admins to remotely control a device&apos;s hardware properties (e.g. enable Secure Boot) from the Intune Portal.
     /// </summary>
-    public class HardwareConfiguration : Entity, IParsable 
+    public class HardwareConfiguration : Entity, IParsable
     {
         /// <summary>A list of the Entra user group ids that hardware configuration will be applied to. Only security groups and Office 365 Groups are supported. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HardwareConfigurationAssignment>? Assignments {
+        public List<HardwareConfigurationAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<HardwareConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<HardwareConfigurationAssignment> Assignments {
+        public List<HardwareConfigurationAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<HardwareConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The file content contains custom hardware settings that will be applied to the assigned devices&apos; BIOS. Max allowed file size is 5KB. Represented as bytes. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? ConfigurationFileContent {
+        public byte[]? ConfigurationFileContent
+        {
             get { return BackingStore?.Get<byte[]?>("configurationFileContent"); }
             set { BackingStore?.Set("configurationFileContent", value); }
         }
 #nullable restore
 #else
-        public byte[] ConfigurationFileContent {
+        public byte[] ConfigurationFileContent
+        {
             get { return BackingStore?.Get<byte[]>("configurationFileContent"); }
             set { BackingStore?.Set("configurationFileContent", value); }
         }
 #endif
         /// <summary>The date and time  of when the BIOS configuration profile was created. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default. Read-Only. This property is read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the hardware configuration. Use this to provide context, purpose, applications, etc of the BIOS configuration profile for your organization&apos;s admins. Max length is 1000 characters. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of run states for the hardware configuration across all devices. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HardwareConfigurationDeviceState>? DeviceRunStates {
+        public List<HardwareConfigurationDeviceState>? DeviceRunStates
+        {
             get { return BackingStore?.Get<List<HardwareConfigurationDeviceState>?>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
 #nullable restore
 #else
-        public List<HardwareConfigurationDeviceState> DeviceRunStates {
+        public List<HardwareConfigurationDeviceState> DeviceRunStates
+        {
             get { return BackingStore?.Get<List<HardwareConfigurationDeviceState>>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the hardware BIOS configuration profile. It serves as user-friendly name to identify hardware BIOS configuration profiles. Max length is 150 characters. Required. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -88,42 +100,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The file name for the BIOS configuration profile&apos;s ConfigurationFileContent. Max length is 150 characters. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #endif
         /// <summary>Indicates the supported oems of hardware configuration</summary>
-        public Microsoft.Graph.Beta.Models.HardwareConfigurationFormat? HardwareConfigurationFormat {
+        public Microsoft.Graph.Beta.Models.HardwareConfigurationFormat? HardwareConfigurationFormat
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HardwareConfigurationFormat?>("hardwareConfigurationFormat"); }
             set { BackingStore?.Set("hardwareConfigurationFormat", value); }
         }
         /// <summary>The date and time  of when the BIOS configuration profile was last modified. The value cannot be modified and is automatically populated when the device is enrolled. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default. Read-Only. Read-Only. This property is read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>When TRUE, indicates whether the policy-assigned devices&apos; passwords are disabled. When FALSE, indicates they are enabled. Default is FALSE. Required.</summary>
-        public bool? PerDevicePasswordDisabled {
+        public bool? PerDevicePasswordDisabled
+        {
             get { return BackingStore?.Get<bool?>("perDevicePasswordDisabled"); }
             set { BackingStore?.Set("perDevicePasswordDisabled", value); }
         }
         /// <summary>A list of unique Scope Tag IDs associated with the hardware configuration. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -131,13 +150,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A summary of the results from an attempt to configure hardware settings. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public HardwareConfigurationRunSummary? RunSummary {
+        public HardwareConfigurationRunSummary? RunSummary
+        {
             get { return BackingStore?.Get<HardwareConfigurationRunSummary?>("runSummary"); }
             set { BackingStore?.Set("runSummary", value); }
         }
 #nullable restore
 #else
-        public HardwareConfigurationRunSummary RunSummary {
+        public HardwareConfigurationRunSummary RunSummary
+        {
             get { return BackingStore?.Get<HardwareConfigurationRunSummary>("runSummary"); }
             set { BackingStore?.Set("runSummary", value); }
         }
@@ -145,19 +166,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of run states for the hardware configuration across all users. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HardwareConfigurationUserState>? UserRunStates {
+        public List<HardwareConfigurationUserState>? UserRunStates
+        {
             get { return BackingStore?.Get<List<HardwareConfigurationUserState>?>("userRunStates"); }
             set { BackingStore?.Set("userRunStates", value); }
         }
 #nullable restore
 #else
-        public List<HardwareConfigurationUserState> UserRunStates {
+        public List<HardwareConfigurationUserState> UserRunStates
+        {
             get { return BackingStore?.Get<List<HardwareConfigurationUserState>>("userRunStates"); }
             set { BackingStore?.Set("userRunStates", value); }
         }
 #endif
         /// <summary>The version of the hardware configuration (E.g. 1, 2, 3 ...). This is incremented after a change to the BIOS configuration profile&apos;s settings file name (FileName property), settings file content (ConfigurationFileContent property), or the PerDevicePasswordDisabled property. Read-Only.</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -179,20 +203,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<HardwareConfigurationAssignment>(HardwareConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"configurationFileContent", n => { ConfigurationFileContent = n.GetByteArrayValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<HardwareConfigurationDeviceState>(HardwareConfigurationDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"fileName", n => { FileName = n.GetStringValue(); } },
-                {"hardwareConfigurationFormat", n => { HardwareConfigurationFormat = n.GetEnumValue<HardwareConfigurationFormat>(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"perDevicePasswordDisabled", n => { PerDevicePasswordDisabled = n.GetBoolValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"runSummary", n => { RunSummary = n.GetObjectValue<HardwareConfigurationRunSummary>(HardwareConfigurationRunSummary.CreateFromDiscriminatorValue); } },
-                {"userRunStates", n => { UserRunStates = n.GetCollectionOfObjectValues<HardwareConfigurationUserState>(HardwareConfigurationUserState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<HardwareConfigurationAssignment>(HardwareConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurationFileContent", n => { ConfigurationFileContent = n.GetByteArrayValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceRunStates", n => { DeviceRunStates = n.GetCollectionOfObjectValues<HardwareConfigurationDeviceState>(HardwareConfigurationDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "hardwareConfigurationFormat", n => { HardwareConfigurationFormat = n.GetEnumValue<HardwareConfigurationFormat>(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "perDevicePasswordDisabled", n => { PerDevicePasswordDisabled = n.GetBoolValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "runSummary", n => { RunSummary = n.GetObjectValue<HardwareConfigurationRunSummary>(HardwareConfigurationRunSummary.CreateFromDiscriminatorValue); } },
+                { "userRunStates", n => { UserRunStates = n.GetCollectionOfObjectValues<HardwareConfigurationUserState>(HardwareConfigurationUserState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

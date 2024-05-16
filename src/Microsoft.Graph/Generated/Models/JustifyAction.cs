@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class JustifyAction : InformationProtectionAction, IParsable 
+    public class JustifyAction : InformationProtectionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// VPN Proxy Server.
     /// </summary>
-    public class VpnProxyServer : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VpnProxyServer : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Address {
+        public string? Address
+        {
             get { return BackingStore?.Get<string?>("address"); }
             set { BackingStore?.Set("address", value); }
         }
 #nullable restore
 #else
-        public string Address {
+        public string Address
+        {
             get { return BackingStore?.Get<string>("address"); }
             set { BackingStore?.Set("address", value); }
         }
@@ -33,13 +37,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Proxy&apos;s automatic configuration script url.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AutomaticConfigurationScriptUrl {
+        public string? AutomaticConfigurationScriptUrl
+        {
             get { return BackingStore?.Get<string?>("automaticConfigurationScriptUrl"); }
             set { BackingStore?.Set("automaticConfigurationScriptUrl", value); }
         }
 #nullable restore
 #else
-        public string AutomaticConfigurationScriptUrl {
+        public string AutomaticConfigurationScriptUrl
+        {
             get { return BackingStore?.Get<string>("automaticConfigurationScriptUrl"); }
             set { BackingStore?.Set("automaticConfigurationScriptUrl", value); }
         }
@@ -49,19 +55,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Port. Valid values 0 to 65535</summary>
-        public int? Port {
+        public int? Port
+        {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
@@ -97,10 +106,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"address", n => { Address = n.GetStringValue(); } },
-                {"automaticConfigurationScriptUrl", n => { AutomaticConfigurationScriptUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"port", n => { Port = n.GetIntValue(); } },
+                { "address", n => { Address = n.GetStringValue(); } },
+                { "automaticConfigurationScriptUrl", n => { AutomaticConfigurationScriptUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
             };
         }
         /// <summary>

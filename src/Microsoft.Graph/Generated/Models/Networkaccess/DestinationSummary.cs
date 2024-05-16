@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class DestinationSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DestinationSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of the destinationSummary objects, aggregated by Global Secure Access service.</summary>
-        public long? Count {
+        public long? Count
+        {
             get { return BackingStore?.Get<long?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
         /// <summary>The IP address or FQDN of the destination.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Destination {
+        public string? Destination
+        {
             get { return BackingStore?.Get<string?>("destination"); }
             set { BackingStore?.Set("destination", value); }
         }
 #nullable restore
 #else
-        public string Destination {
+        public string Destination
+        {
             get { return BackingStore?.Get<string>("destination"); }
             set { BackingStore?.Set("destination", value); }
         }
@@ -39,19 +44,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The traffic classification. The allowed values are internet, private, microsoft365, all, and unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"count", n => { Count = n.GetLongValue(); } },
-                {"destination", n => { Destination = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "count", n => { Count = n.GetLongValue(); } },
+                { "destination", n => { Destination = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
             };
         }
         /// <summary>

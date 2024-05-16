@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
+namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate
+{
     #pragma warning disable CS1591
-    public class SelfActivatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SelfActivatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
         /// <summary>The duration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Duration {
+        public string? Duration
+        {
             get { return BackingStore?.Get<string?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
 #nullable restore
 #else
-        public string Duration {
+        public string Duration
+        {
             get { return BackingStore?.Get<string>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
         /// <summary>The reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason {
+        public string? Reason
+        {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #nullable restore
 #else
-        public string Reason {
+        public string Reason
+        {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
         /// <summary>The ticketNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TicketNumber {
+        public string? TicketNumber
+        {
             get { return BackingStore?.Get<string?>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
 #nullable restore
 #else
-        public string TicketNumber {
+        public string TicketNumber
+        {
             get { return BackingStore?.Get<string>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
         /// <summary>The ticketSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TicketSystem {
+        public string? TicketSystem
+        {
             get { return BackingStore?.Get<string?>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
 #nullable restore
 #else
-        public string TicketSystem {
+        public string TicketSystem
+        {
             get { return BackingStore?.Get<string>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item.SelfActivate {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"duration", n => { Duration = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
-                {"ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
+                { "duration", n => { Duration = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
+                { "ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
             };
         }
         /// <summary>

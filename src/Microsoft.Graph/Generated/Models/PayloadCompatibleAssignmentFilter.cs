@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for Payload Compatible Assignment Filter.
     /// </summary>
-    public class PayloadCompatibleAssignmentFilter : DeviceAndAppManagementAssignmentFilter, IParsable 
+    public class PayloadCompatibleAssignmentFilter : DeviceAndAppManagementAssignmentFilter, IParsable
     {
         /// <summary>Represents the payload type AssignmentFilter is being assigned to.</summary>
-        public AssignmentFilterPayloadType? PayloadType {
+        public AssignmentFilterPayloadType? PayloadType
+        {
             get { return BackingStore?.Get<AssignmentFilterPayloadType?>("payloadType"); }
             set { BackingStore?.Set("payloadType", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"payloadType", n => { PayloadType = n.GetEnumValue<AssignmentFilterPayloadType>(); } },
+                { "payloadType", n => { PayloadType = n.GetEnumValue<AssignmentFilterPayloadType>(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Android For Work PKCS certificate profile
     /// </summary>
-    public class AndroidForWorkPkcsCertificateProfile : AndroidForWorkCertificateProfileBase, IParsable 
+    public class AndroidForWorkPkcsCertificateProfile : AndroidForWorkCertificateProfileBase, IParsable
     {
         /// <summary>PKCS Certificate Template Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificateTemplateName {
+        public string? CertificateTemplateName
+        {
             get { return BackingStore?.Get<string?>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
 #nullable restore
 #else
-        public string CertificateTemplateName {
+        public string CertificateTemplateName
+        {
             get { return BackingStore?.Get<string>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>PKCS Certification Authority</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificationAuthority {
+        public string? CertificationAuthority
+        {
             get { return BackingStore?.Get<string?>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
 #nullable restore
 #else
-        public string CertificationAuthority {
+        public string CertificationAuthority
+        {
             get { return BackingStore?.Get<string>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>PKCS Certification Authority Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertificationAuthorityName {
+        public string? CertificationAuthorityName
+        {
             get { return BackingStore?.Get<string?>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
 #nullable restore
 #else
-        public string CertificationAuthorityName {
+        public string CertificationAuthorityName
+        {
             get { return BackingStore?.Get<string>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom String that defines the AAD Attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectAlternativeNameFormatString {
+        public string? SubjectAlternativeNameFormatString
+        {
             get { return BackingStore?.Get<string?>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
 #nullable restore
 #else
-        public string SubjectAlternativeNameFormatString {
+        public string SubjectAlternativeNameFormatString
+        {
             get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
@@ -105,11 +116,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certificateTemplateName", n => { CertificateTemplateName = n.GetStringValue(); } },
-                {"certificationAuthority", n => { CertificationAuthority = n.GetStringValue(); } },
-                {"certificationAuthorityName", n => { CertificationAuthorityName = n.GetStringValue(); } },
-                {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
+                { "certificateTemplateName", n => { CertificateTemplateName = n.GetStringValue(); } },
+                { "certificationAuthority", n => { CertificationAuthority = n.GetStringValue(); } },
+                { "certificationAuthorityName", n => { CertificationAuthorityName = n.GetStringValue(); } },
+                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
             };
         }
         /// <summary>

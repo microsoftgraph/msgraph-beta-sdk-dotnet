@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserSettings : Entity, IParsable 
+    public class UserSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user&apos;s settings for the visibility of merge suggestion for the duplicate contacts in the user&apos;s contact list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ContactMergeSuggestions? ContactMergeSuggestions {
+        public Microsoft.Graph.Beta.Models.ContactMergeSuggestions? ContactMergeSuggestions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContactMergeSuggestions?>("contactMergeSuggestions"); }
             set { BackingStore?.Set("contactMergeSuggestions", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ContactMergeSuggestions ContactMergeSuggestions {
+        public Microsoft.Graph.Beta.Models.ContactMergeSuggestions ContactMergeSuggestions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>("contactMergeSuggestions"); }
             set { BackingStore?.Set("contactMergeSuggestions", value); }
         }
 #endif
         /// <summary>Reflects the Office Delve organization level setting. When set to true, the organization doesn&apos;t have access to Office Delve. This setting is read-only and can only be changed by administrators in the SharePoint admin center.</summary>
-        public bool? ContributionToContentDiscoveryAsOrganizationDisabled {
+        public bool? ContributionToContentDiscoveryAsOrganizationDisabled
+        {
             get { return BackingStore?.Get<bool?>("contributionToContentDiscoveryAsOrganizationDisabled"); }
             set { BackingStore?.Set("contributionToContentDiscoveryAsOrganizationDisabled", value); }
         }
         /// <summary>When set to true, documents in the user&apos;s Office Delve are disabled. Users can control this setting in Office Delve.</summary>
-        public bool? ContributionToContentDiscoveryDisabled {
+        public bool? ContributionToContentDiscoveryDisabled
+        {
             get { return BackingStore?.Get<bool?>("contributionToContentDiscoveryDisabled"); }
             set { BackingStore?.Set("contributionToContentDiscoveryDisabled", value); }
         }
         /// <summary>The user&apos;s settings for the visibility of meeting hour insights, and insights derived between a user and other items in Microsoft 365, such as documents or sites. Get userInsightsSettings through this navigation property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserInsightsSettings? ItemInsights {
+        public UserInsightsSettings? ItemInsights
+        {
             get { return BackingStore?.Get<UserInsightsSettings?>("itemInsights"); }
             set { BackingStore?.Set("itemInsights", value); }
         }
 #nullable restore
 #else
-        public UserInsightsSettings ItemInsights {
+        public UserInsightsSettings ItemInsights
+        {
             get { return BackingStore?.Get<UserInsightsSettings>("itemInsights"); }
             set { BackingStore?.Set("itemInsights", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user&apos;s preferences for languages, regional locale and date/time formatting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings? RegionalAndLanguageSettings {
+        public Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings? RegionalAndLanguageSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings?>("regionalAndLanguageSettings"); }
             set { BackingStore?.Set("regionalAndLanguageSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings RegionalAndLanguageSettings {
+        public Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings RegionalAndLanguageSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>("regionalAndLanguageSettings"); }
             set { BackingStore?.Set("regionalAndLanguageSettings", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The shift preferences for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ShiftPreferences? ShiftPreferences {
+        public Microsoft.Graph.Beta.Models.ShiftPreferences? ShiftPreferences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ShiftPreferences?>("shiftPreferences"); }
             set { BackingStore?.Set("shiftPreferences", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ShiftPreferences ShiftPreferences {
+        public Microsoft.Graph.Beta.Models.ShiftPreferences ShiftPreferences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ShiftPreferences>("shiftPreferences"); }
             set { BackingStore?.Set("shiftPreferences", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The storage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserStorage? Storage {
+        public UserStorage? Storage
+        {
             get { return BackingStore?.Get<UserStorage?>("storage"); }
             set { BackingStore?.Set("storage", value); }
         }
 #nullable restore
 #else
-        public UserStorage Storage {
+        public UserStorage Storage
+        {
             get { return BackingStore?.Get<UserStorage>("storage"); }
             set { BackingStore?.Set("storage", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Windows settings of the user stored in the cloud.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsSetting>? Windows {
+        public List<WindowsSetting>? Windows
+        {
             get { return BackingStore?.Get<List<WindowsSetting>?>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #nullable restore
 #else
-        public List<WindowsSetting> Windows {
+        public List<WindowsSetting> Windows
+        {
             get { return BackingStore?.Get<List<WindowsSetting>>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contactMergeSuggestions", n => { ContactMergeSuggestions = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>(Microsoft.Graph.Beta.Models.ContactMergeSuggestions.CreateFromDiscriminatorValue); } },
-                {"contributionToContentDiscoveryAsOrganizationDisabled", n => { ContributionToContentDiscoveryAsOrganizationDisabled = n.GetBoolValue(); } },
-                {"contributionToContentDiscoveryDisabled", n => { ContributionToContentDiscoveryDisabled = n.GetBoolValue(); } },
-                {"itemInsights", n => { ItemInsights = n.GetObjectValue<UserInsightsSettings>(UserInsightsSettings.CreateFromDiscriminatorValue); } },
-                {"regionalAndLanguageSettings", n => { RegionalAndLanguageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue); } },
-                {"shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShiftPreferences>(Microsoft.Graph.Beta.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
-                {"storage", n => { Storage = n.GetObjectValue<UserStorage>(UserStorage.CreateFromDiscriminatorValue); } },
-                {"windows", n => { Windows = n.GetCollectionOfObjectValues<WindowsSetting>(WindowsSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contactMergeSuggestions", n => { ContactMergeSuggestions = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>(Microsoft.Graph.Beta.Models.ContactMergeSuggestions.CreateFromDiscriminatorValue); } },
+                { "contributionToContentDiscoveryAsOrganizationDisabled", n => { ContributionToContentDiscoveryAsOrganizationDisabled = n.GetBoolValue(); } },
+                { "contributionToContentDiscoveryDisabled", n => { ContributionToContentDiscoveryDisabled = n.GetBoolValue(); } },
+                { "itemInsights", n => { ItemInsights = n.GetObjectValue<UserInsightsSettings>(UserInsightsSettings.CreateFromDiscriminatorValue); } },
+                { "regionalAndLanguageSettings", n => { RegionalAndLanguageSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings>(Microsoft.Graph.Beta.Models.RegionalAndLanguageSettings.CreateFromDiscriminatorValue); } },
+                { "shiftPreferences", n => { ShiftPreferences = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShiftPreferences>(Microsoft.Graph.Beta.Models.ShiftPreferences.CreateFromDiscriminatorValue); } },
+                { "storage", n => { Storage = n.GetObjectValue<UserStorage>(UserStorage.CreateFromDiscriminatorValue); } },
+                { "windows", n => { Windows = n.GetCollectionOfObjectValues<WindowsSetting>(WindowsSetting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

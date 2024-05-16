@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Applicability for a setting that can be targeted on managed Applications by Intune
     /// </summary>
-    public class DeviceManagementConfigurationApplicationSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable 
+    public class DeviceManagementConfigurationApplicationSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementConfigurationApplicationSettingApplicability"/> and sets the default values.

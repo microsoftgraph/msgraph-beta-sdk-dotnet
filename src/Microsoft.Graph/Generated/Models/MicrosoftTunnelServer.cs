@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that represents a single Microsoft Tunnel server
     /// </summary>
-    public class MicrosoftTunnelServer : Entity, IParsable 
+    public class MicrosoftTunnelServer : Entity, IParsable
     {
         /// <summary>The digest of the current agent image running on this server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentImageDigest {
+        public string? AgentImageDigest
+        {
             get { return BackingStore?.Get<string?>("agentImageDigest"); }
             set { BackingStore?.Set("agentImageDigest", value); }
         }
 #nullable restore
 #else
-        public string AgentImageDigest {
+        public string AgentImageDigest
+        {
             get { return BackingStore?.Get<string>("agentImageDigest"); }
             set { BackingStore?.Set("agentImageDigest", value); }
         }
@@ -27,38 +30,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name for the server. This property is required when a server is created and cannot be cleared during updates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates when the server last checked in</summary>
-        public DateTimeOffset? LastCheckinDateTime {
+        public DateTimeOffset? LastCheckinDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckinDateTime"); }
             set { BackingStore?.Set("lastCheckinDateTime", value); }
         }
         /// <summary>The digest of the current server image running on this server</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServerImageDigest {
+        public string? ServerImageDigest
+        {
             get { return BackingStore?.Get<string?>("serverImageDigest"); }
             set { BackingStore?.Set("serverImageDigest", value); }
         }
 #nullable restore
 #else
-        public string ServerImageDigest {
+        public string ServerImageDigest
+        {
             get { return BackingStore?.Get<string>("serverImageDigest"); }
             set { BackingStore?.Set("serverImageDigest", value); }
         }
 #endif
         /// <summary>Enum of possible MicrosoftTunnelServer health status types</summary>
-        public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus {
+        public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus
+        {
             get { return BackingStore?.Get<MicrosoftTunnelServerHealthStatus?>("tunnelServerHealthStatus"); }
             set { BackingStore?.Set("tunnelServerHealthStatus", value); }
         }
@@ -80,11 +89,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"agentImageDigest", n => { AgentImageDigest = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
-                {"serverImageDigest", n => { ServerImageDigest = n.GetStringValue(); } },
-                {"tunnelServerHealthStatus", n => { TunnelServerHealthStatus = n.GetEnumValue<MicrosoftTunnelServerHealthStatus>(); } },
+                { "agentImageDigest", n => { AgentImageDigest = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
+                { "serverImageDigest", n => { ServerImageDigest = n.GetStringValue(); } },
+                { "tunnelServerHealthStatus", n => { TunnelServerHealthStatus = n.GetEnumValue<MicrosoftTunnelServerHealthStatus>(); } },
             };
         }
         /// <summary>

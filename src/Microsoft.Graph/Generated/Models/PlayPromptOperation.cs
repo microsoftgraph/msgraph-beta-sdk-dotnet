@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PlayPromptOperation : CommsOperation, IParsable 
+    public class PlayPromptOperation : CommsOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Possible values are: unknown, completedSuccessfully, mediaOperationCanceled.</summary>
-        public PlayPromptCompletionReason? CompletionReason {
+        public PlayPromptCompletionReason? CompletionReason
+        {
             get { return BackingStore?.Get<PlayPromptCompletionReason?>("completionReason"); }
             set { BackingStore?.Set("completionReason", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"completionReason", n => { CompletionReason = n.GetEnumValue<PlayPromptCompletionReason>(); } },
+                { "completionReason", n => { CompletionReason = n.GetEnumValue<PlayPromptCompletionReason>(); } },
             };
         }
         /// <summary>

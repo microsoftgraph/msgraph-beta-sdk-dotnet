@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Ping {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Ping
+{
     [Obsolete("This class is obsolete. Use PingGetResponse instead.")]
     #pragma warning disable CS1591
-    public class PingResponse : PingGetResponse, IParsable 
+    public class PingResponse : PingGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The security baseline compliance state of a setting for a device
     /// </summary>
-    public class SecurityBaselineSettingState : Entity, IParsable 
+    public class SecurityBaselineSettingState : Entity, IParsable
     {
         /// <summary>The policies that contribute to this setting instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecurityBaselineContributingPolicy>? ContributingPolicies {
+        public List<SecurityBaselineContributingPolicy>? ContributingPolicies
+        {
             get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>?>("contributingPolicies"); }
             set { BackingStore?.Set("contributingPolicies", value); }
         }
 #nullable restore
 #else
-        public List<SecurityBaselineContributingPolicy> ContributingPolicies {
+        public List<SecurityBaselineContributingPolicy> ContributingPolicies
+        {
             get { return BackingStore?.Get<List<SecurityBaselineContributingPolicy>>("contributingPolicies"); }
             set { BackingStore?.Set("contributingPolicies", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The error code if the setting is in error state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode {
+        public string? ErrorCode
+        {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
 #nullable restore
 #else
-        public string ErrorCode {
+        public string ErrorCode
+        {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting category id which this setting belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingCategoryId {
+        public string? SettingCategoryId
+        {
             get { return BackingStore?.Get<string?>("settingCategoryId"); }
             set { BackingStore?.Set("settingCategoryId", value); }
         }
 #nullable restore
 #else
-        public string SettingCategoryId {
+        public string SettingCategoryId
+        {
             get { return BackingStore?.Get<string>("settingCategoryId"); }
             set { BackingStore?.Set("settingCategoryId", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting category name which this setting belongs to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingCategoryName {
+        public string? SettingCategoryName
+        {
             get { return BackingStore?.Get<string?>("settingCategoryName"); }
             set { BackingStore?.Set("settingCategoryName", value); }
         }
 #nullable restore
 #else
-        public string SettingCategoryName {
+        public string SettingCategoryName
+        {
             get { return BackingStore?.Get<string>("settingCategoryName"); }
             set { BackingStore?.Set("settingCategoryName", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting id guid</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingId {
+        public string? SettingId
+        {
             get { return BackingStore?.Get<string?>("settingId"); }
             set { BackingStore?.Set("settingId", value); }
         }
 #nullable restore
 #else
-        public string SettingId {
+        public string SettingId
+        {
             get { return BackingStore?.Get<string>("settingId"); }
             set { BackingStore?.Set("settingId", value); }
         }
@@ -83,13 +94,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting name that is being reported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingName {
+        public string? SettingName
+        {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
 #nullable restore
 #else
-        public string SettingName {
+        public string SettingName
+        {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
@@ -97,19 +110,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policies that contribute to this setting instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SettingSource>? SourcePolicies {
+        public List<SettingSource>? SourcePolicies
+        {
             get { return BackingStore?.Get<List<SettingSource>?>("sourcePolicies"); }
             set { BackingStore?.Set("sourcePolicies", value); }
         }
 #nullable restore
 #else
-        public List<SettingSource> SourcePolicies {
+        public List<SettingSource> SourcePolicies
+        {
             get { return BackingStore?.Get<List<SettingSource>>("sourcePolicies"); }
             set { BackingStore?.Set("sourcePolicies", value); }
         }
 #endif
         /// <summary>Security Baseline Compliance State</summary>
-        public SecurityBaselineComplianceState? State {
+        public SecurityBaselineComplianceState? State
+        {
             get { return BackingStore?.Get<SecurityBaselineComplianceState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -131,14 +147,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"contributingPolicies", n => { ContributingPolicies = n.GetCollectionOfObjectValues<SecurityBaselineContributingPolicy>(SecurityBaselineContributingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
-                {"settingCategoryId", n => { SettingCategoryId = n.GetStringValue(); } },
-                {"settingCategoryName", n => { SettingCategoryName = n.GetStringValue(); } },
-                {"settingId", n => { SettingId = n.GetStringValue(); } },
-                {"settingName", n => { SettingName = n.GetStringValue(); } },
-                {"sourcePolicies", n => { SourcePolicies = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
+                { "contributingPolicies", n => { ContributingPolicies = n.GetCollectionOfObjectValues<SecurityBaselineContributingPolicy>(SecurityBaselineContributingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "settingCategoryId", n => { SettingCategoryId = n.GetStringValue(); } },
+                { "settingCategoryName", n => { SettingCategoryName = n.GetStringValue(); } },
+                { "settingId", n => { SettingId = n.GetStringValue(); } },
+                { "settingName", n => { SettingName = n.GetStringValue(); } },
+                { "sourcePolicies", n => { SourcePolicies = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
             };
         }
         /// <summary>

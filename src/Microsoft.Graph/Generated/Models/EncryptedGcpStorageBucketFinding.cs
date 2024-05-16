@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EncryptedGcpStorageBucketFinding : Finding, IParsable 
+    public class EncryptedGcpStorageBucketFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessibility property</summary>
-        public GcpAccessType? Accessibility {
+        public GcpAccessType? Accessibility
+        {
             get { return BackingStore?.Get<GcpAccessType?>("accessibility"); }
             set { BackingStore?.Set("accessibility", value); }
         }
         /// <summary>The encryptionManagedBy property</summary>
-        public GcpEncryption? EncryptionManagedBy {
+        public GcpEncryption? EncryptionManagedBy
+        {
             get { return BackingStore?.Get<GcpEncryption?>("encryptionManagedBy"); }
             set { BackingStore?.Set("encryptionManagedBy", value); }
         }
         /// <summary>The storageBucket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? StorageBucket {
+        public AuthorizationSystemResource? StorageBucket
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource?>("storageBucket"); }
             set { BackingStore?.Set("storageBucket", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource StorageBucket {
+        public AuthorizationSystemResource StorageBucket
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource>("storageBucket"); }
             set { BackingStore?.Set("storageBucket", value); }
         }
@@ -51,9 +56,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessibility", n => { Accessibility = n.GetEnumValue<GcpAccessType>(); } },
-                {"encryptionManagedBy", n => { EncryptionManagedBy = n.GetEnumValue<GcpEncryption>(); } },
-                {"storageBucket", n => { StorageBucket = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "accessibility", n => { Accessibility = n.GetEnumValue<GcpAccessType>(); } },
+                { "encryptionManagedBy", n => { EncryptionManagedBy = n.GetEnumValue<GcpEncryption>(); } },
+                { "storageBucket", n => { StorageBucket = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

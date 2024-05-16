@@ -4,50 +4,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class Edition : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Edition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The device family targeted by the edition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceFamily {
+        public string? DeviceFamily
+        {
             get { return BackingStore?.Get<string?>("deviceFamily"); }
             set { BackingStore?.Set("deviceFamily", value); }
         }
 #nullable restore
 #else
-        public string DeviceFamily {
+        public string DeviceFamily
+        {
             get { return BackingStore?.Get<string>("deviceFamily"); }
             set { BackingStore?.Set("deviceFamily", value); }
         }
 #endif
         /// <summary>The date and time when the edition reached the end of service. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? EndOfServiceDateTime {
+        public DateTimeOffset? EndOfServiceDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endOfServiceDateTime"); }
             set { BackingStore?.Set("endOfServiceDateTime", value); }
         }
         /// <summary>The date and time when the edition became available to the general customers for the first time. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? GeneralAvailabilityDateTime {
+        public DateTimeOffset? GeneralAvailabilityDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("generalAvailabilityDateTime"); }
             set { BackingStore?.Set("generalAvailabilityDateTime", value); }
         }
         /// <summary>Indicates whether the edition is in service or out of service.</summary>
-        public bool? IsInService {
+        public bool? IsInService
+        {
             get { return BackingStore?.Get<bool?>("isInService"); }
             set { BackingStore?.Set("isInService", value); }
         }
         /// <summary>The name of the edition. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -55,13 +63,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The public name of the edition. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReleasedName {
+        public string? ReleasedName
+        {
             get { return BackingStore?.Get<string?>("releasedName"); }
             set { BackingStore?.Set("releasedName", value); }
         }
 #nullable restore
 #else
-        public string ReleasedName {
+        public string ReleasedName
+        {
             get { return BackingStore?.Get<string>("releasedName"); }
             set { BackingStore?.Set("releasedName", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The servicingPeriods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicingPeriod>? ServicingPeriods {
+        public List<ServicingPeriod>? ServicingPeriods
+        {
             get { return BackingStore?.Get<List<ServicingPeriod>?>("servicingPeriods"); }
             set { BackingStore?.Set("servicingPeriods", value); }
         }
 #nullable restore
 #else
-        public List<ServicingPeriod> ServicingPeriods {
+        public List<ServicingPeriod> ServicingPeriods
+        {
             get { return BackingStore?.Get<List<ServicingPeriod>>("servicingPeriods"); }
             set { BackingStore?.Set("servicingPeriods", value); }
         }
@@ -98,13 +110,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceFamily", n => { DeviceFamily = n.GetStringValue(); } },
-                {"endOfServiceDateTime", n => { EndOfServiceDateTime = n.GetDateTimeOffsetValue(); } },
-                {"generalAvailabilityDateTime", n => { GeneralAvailabilityDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isInService", n => { IsInService = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"releasedName", n => { ReleasedName = n.GetStringValue(); } },
-                {"servicingPeriods", n => { ServicingPeriods = n.GetCollectionOfObjectValues<ServicingPeriod>(ServicingPeriod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceFamily", n => { DeviceFamily = n.GetStringValue(); } },
+                { "endOfServiceDateTime", n => { EndOfServiceDateTime = n.GetDateTimeOffsetValue(); } },
+                { "generalAvailabilityDateTime", n => { GeneralAvailabilityDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isInService", n => { IsInService = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "releasedName", n => { ReleasedName = n.GetStringValue(); } },
+                { "servicingPeriods", n => { ServicingPeriods = n.GetCollectionOfObjectValues<ServicingPeriod>(ServicingPeriod.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

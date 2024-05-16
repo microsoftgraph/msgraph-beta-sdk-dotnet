@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A weblink on the Android Device Owner Managed Home Screen
     /// </summary>
-    public class AndroidDeviceOwnerKioskModeWeblink : AndroidDeviceOwnerKioskModeFolderItem, IParsable 
+    public class AndroidDeviceOwnerKioskModeWeblink : AndroidDeviceOwnerKioskModeFolderItem, IParsable
     {
         /// <summary>Display name for weblink</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Label {
+        public string? Label
+        {
             get { return BackingStore?.Get<string?>("label"); }
             set { BackingStore?.Set("label", value); }
         }
 #nullable restore
 #else
-        public string Label {
+        public string Label
+        {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Link for weblink</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Link {
+        public string? Link
+        {
             get { return BackingStore?.Get<string?>("link"); }
             set { BackingStore?.Set("link", value); }
         }
 #nullable restore
 #else
-        public string Link {
+        public string Link
+        {
             get { return BackingStore?.Get<string>("link"); }
             set { BackingStore?.Set("link", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"label", n => { Label = n.GetStringValue(); } },
-                {"link", n => { Link = n.GetStringValue(); } },
+                { "label", n => { Label = n.GetStringValue(); } },
+                { "link", n => { Link = n.GetStringValue(); } },
             };
         }
         /// <summary>

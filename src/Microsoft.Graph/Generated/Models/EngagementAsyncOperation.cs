@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EngagementAsyncOperation : LongRunningOperation, IParsable 
+    public class EngagementAsyncOperation : LongRunningOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of the long-running operation. The possible values are: createCommunity, unknownFutureValue.</summary>
-        public EngagementAsyncOperationType? OperationType {
+        public EngagementAsyncOperationType? OperationType
+        {
             get { return BackingStore?.Get<EngagementAsyncOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>The ID of the object created or modified as a result of this async operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceId {
+        public string? ResourceId
+        {
             get { return BackingStore?.Get<string?>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
 #nullable restore
 #else
-        public string ResourceId {
+        public string ResourceId
+        {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"operationType", n => { OperationType = n.GetEnumValue<EngagementAsyncOperationType>(); } },
-                {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<EngagementAsyncOperationType>(); } },
+                { "resourceId", n => { ResourceId = n.GetStringValue(); } },
             };
         }
         /// <summary>

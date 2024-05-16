@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants {
+namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants
+{
     #pragma warning disable CS1591
-    public class RevokeGrantsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RevokeGrantsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants {
         /// <summary>The grantees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DriveRecipient>? Grantees {
+        public List<DriveRecipient>? Grantees
+        {
             get { return BackingStore?.Get<List<DriveRecipient>?>("grantees"); }
             set { BackingStore?.Set("grantees", value); }
         }
 #nullable restore
 #else
-        public List<DriveRecipient> Grantees {
+        public List<DriveRecipient> Grantees
+        {
             get { return BackingStore?.Get<List<DriveRecipient>>("grantees"); }
             set { BackingStore?.Set("grantees", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.RevokeGrants {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"grantees", n => { Grantees = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "grantees", n => { Grantees = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class AlertAction : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AlertAction : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actionLink property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionLink {
+        public string? ActionLink
+        {
             get { return BackingStore?.Get<string?>("actionLink"); }
             set { BackingStore?.Set("actionLink", value); }
         }
 #nullable restore
 #else
-        public string ActionLink {
+        public string ActionLink
+        {
             get { return BackingStore?.Get<string>("actionLink"); }
             set { BackingStore?.Set("actionLink", value); }
         }
@@ -27,19 +30,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The actionText property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionText {
+        public string? ActionText
+        {
             get { return BackingStore?.Get<string?>("actionText"); }
             set { BackingStore?.Set("actionText", value); }
         }
 #nullable restore
 #else
-        public string ActionText {
+        public string ActionText
+        {
             get { return BackingStore?.Get<string>("actionText"); }
             set { BackingStore?.Set("actionText", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionLink", n => { ActionLink = n.GetStringValue(); } },
-                {"actionText", n => { ActionText = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "actionLink", n => { ActionLink = n.GetStringValue(); } },
+                { "actionText", n => { ActionText = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

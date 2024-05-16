@@ -5,63 +5,74 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class FormsSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class FormsSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Controls whether users can add images from Bing to forms.</summary>
-        public bool? IsBingImageSearchEnabled {
+        public bool? IsBingImageSearchEnabled
+        {
             get { return BackingStore?.Get<bool?>("isBingImageSearchEnabled"); }
             set { BackingStore?.Set("isBingImageSearchEnabled", value); }
         }
         /// <summary>Controls whether users can send a link to a form to an external user.</summary>
-        public bool? IsExternalSendFormEnabled {
+        public bool? IsExternalSendFormEnabled
+        {
             get { return BackingStore?.Get<bool?>("isExternalSendFormEnabled"); }
             set { BackingStore?.Set("isExternalSendFormEnabled", value); }
         }
         /// <summary>Controls whether users can collaborate on a form layout and structure with an external user.</summary>
-        public bool? IsExternalShareCollaborationEnabled {
+        public bool? IsExternalShareCollaborationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isExternalShareCollaborationEnabled"); }
             set { BackingStore?.Set("isExternalShareCollaborationEnabled", value); }
         }
         /// <summary>Controls whether users can share form results with external users.</summary>
-        public bool? IsExternalShareResultEnabled {
+        public bool? IsExternalShareResultEnabled
+        {
             get { return BackingStore?.Get<bool?>("isExternalShareResultEnabled"); }
             set { BackingStore?.Set("isExternalShareResultEnabled", value); }
         }
         /// <summary>Controls whether users can share form templates with external users.</summary>
-        public bool? IsExternalShareTemplateEnabled {
+        public bool? IsExternalShareTemplateEnabled
+        {
             get { return BackingStore?.Get<bool?>("isExternalShareTemplateEnabled"); }
             set { BackingStore?.Set("isExternalShareTemplateEnabled", value); }
         }
         /// <summary>Controls whether phishing protection is run on forms created by users, blocking the creation of forms if common phishing questions are detected.</summary>
-        public bool? IsInOrgFormsPhishingScanEnabled {
+        public bool? IsInOrgFormsPhishingScanEnabled
+        {
             get { return BackingStore?.Get<bool?>("isInOrgFormsPhishingScanEnabled"); }
             set { BackingStore?.Set("isInOrgFormsPhishingScanEnabled", value); }
         }
         /// <summary>Controls whether the names of users who fill out forms are recorded.</summary>
-        public bool? IsRecordIdentityByDefaultEnabled {
+        public bool? IsRecordIdentityByDefaultEnabled
+        {
             get { return BackingStore?.Get<bool?>("isRecordIdentityByDefaultEnabled"); }
             set { BackingStore?.Set("isRecordIdentityByDefaultEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -92,14 +103,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isBingImageSearchEnabled", n => { IsBingImageSearchEnabled = n.GetBoolValue(); } },
-                {"isExternalSendFormEnabled", n => { IsExternalSendFormEnabled = n.GetBoolValue(); } },
-                {"isExternalShareCollaborationEnabled", n => { IsExternalShareCollaborationEnabled = n.GetBoolValue(); } },
-                {"isExternalShareResultEnabled", n => { IsExternalShareResultEnabled = n.GetBoolValue(); } },
-                {"isExternalShareTemplateEnabled", n => { IsExternalShareTemplateEnabled = n.GetBoolValue(); } },
-                {"isInOrgFormsPhishingScanEnabled", n => { IsInOrgFormsPhishingScanEnabled = n.GetBoolValue(); } },
-                {"isRecordIdentityByDefaultEnabled", n => { IsRecordIdentityByDefaultEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "isBingImageSearchEnabled", n => { IsBingImageSearchEnabled = n.GetBoolValue(); } },
+                { "isExternalSendFormEnabled", n => { IsExternalSendFormEnabled = n.GetBoolValue(); } },
+                { "isExternalShareCollaborationEnabled", n => { IsExternalShareCollaborationEnabled = n.GetBoolValue(); } },
+                { "isExternalShareResultEnabled", n => { IsExternalShareResultEnabled = n.GetBoolValue(); } },
+                { "isExternalShareTemplateEnabled", n => { IsExternalShareTemplateEnabled = n.GetBoolValue(); } },
+                { "isInOrgFormsPhishingScanEnabled", n => { IsInOrgFormsPhishingScanEnabled = n.GetBoolValue(); } },
+                { "isRecordIdentityByDefaultEnabled", n => { IsRecordIdentityByDefaultEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

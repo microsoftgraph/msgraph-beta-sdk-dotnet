@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WebApplicationSegment : ApplicationSegment, IParsable 
+    public class WebApplicationSegment : ApplicationSegment, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If you&apos;re configuring a traffic manager in front of multiple App Proxy application segments, this property contains the user-friendly URL that will point to the traffic manager.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlternateUrl {
+        public string? AlternateUrl
+        {
             get { return BackingStore?.Get<string?>("alternateUrl"); }
             set { BackingStore?.Set("alternateUrl", value); }
         }
 #nullable restore
 #else
-        public string AlternateUrl {
+        public string AlternateUrl
+        {
             get { return BackingStore?.Get<string>("alternateUrl"); }
             set { BackingStore?.Set("alternateUrl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of CORS Rule definitions for a particular application segment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CorsConfiguration_v2>? CorsConfigurations {
+        public List<CorsConfiguration_v2>? CorsConfigurations
+        {
             get { return BackingStore?.Get<List<CorsConfiguration_v2>?>("corsConfigurations"); }
             set { BackingStore?.Set("corsConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<CorsConfiguration_v2> CorsConfigurations {
+        public List<CorsConfiguration_v2> CorsConfigurations
+        {
             get { return BackingStore?.Get<List<CorsConfiguration_v2>>("corsConfigurations"); }
             set { BackingStore?.Set("corsConfigurations", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The published external URL for the application segment; for example, https://intranet.contoso.com/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalUrl {
+        public string? ExternalUrl
+        {
             get { return BackingStore?.Get<string?>("externalUrl"); }
             set { BackingStore?.Set("externalUrl", value); }
         }
 #nullable restore
 #else
-        public string ExternalUrl {
+        public string ExternalUrl
+        {
             get { return BackingStore?.Get<string>("externalUrl"); }
             set { BackingStore?.Set("externalUrl", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The internal URL of the application segment; for example, https://intranet/.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InternalUrl {
+        public string? InternalUrl
+        {
             get { return BackingStore?.Get<string?>("internalUrl"); }
             set { BackingStore?.Set("internalUrl", value); }
         }
 #nullable restore
 #else
-        public string InternalUrl {
+        public string InternalUrl
+        {
             get { return BackingStore?.Get<string>("internalUrl"); }
             set { BackingStore?.Set("internalUrl", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alternateUrl", n => { AlternateUrl = n.GetStringValue(); } },
-                {"corsConfigurations", n => { CorsConfigurations = n.GetCollectionOfObjectValues<CorsConfiguration_v2>(CorsConfiguration_v2.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
-                {"internalUrl", n => { InternalUrl = n.GetStringValue(); } },
+                { "alternateUrl", n => { AlternateUrl = n.GetStringValue(); } },
+                { "corsConfigurations", n => { CorsConfigurations = n.GetCollectionOfObjectValues<CorsConfiguration_v2>(CorsConfiguration_v2.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
+                { "internalUrl", n => { InternalUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

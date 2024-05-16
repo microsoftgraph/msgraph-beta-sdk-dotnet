@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkMicrophoneConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkMicrophoneConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The defaultMicrophone property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? DefaultMicrophone {
+        public TeamworkPeripheral? DefaultMicrophone
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("defaultMicrophone"); }
             set { BackingStore?.Set("defaultMicrophone", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral DefaultMicrophone {
+        public TeamworkPeripheral DefaultMicrophone
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultMicrophone"); }
             set { BackingStore?.Set("defaultMicrophone", value); }
         }
 #endif
         /// <summary>True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.</summary>
-        public bool? IsMicrophoneOptional {
+        public bool? IsMicrophoneOptional
+        {
             get { return BackingStore?.Get<bool?>("isMicrophoneOptional"); }
             set { BackingStore?.Set("isMicrophoneOptional", value); }
         }
         /// <summary>The microphones property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamworkPeripheral>? Microphones {
+        public List<TeamworkPeripheral>? Microphones
+        {
             get { return BackingStore?.Get<List<TeamworkPeripheral>?>("microphones"); }
             set { BackingStore?.Set("microphones", value); }
         }
 #nullable restore
 #else
-        public List<TeamworkPeripheral> Microphones {
+        public List<TeamworkPeripheral> Microphones
+        {
             get { return BackingStore?.Get<List<TeamworkPeripheral>>("microphones"); }
             set { BackingStore?.Set("microphones", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"defaultMicrophone", n => { DefaultMicrophone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
-                {"isMicrophoneOptional", n => { IsMicrophoneOptional = n.GetBoolValue(); } },
-                {"microphones", n => { Microphones = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "defaultMicrophone", n => { DefaultMicrophone = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "isMicrophoneOptional", n => { IsMicrophoneOptional = n.GetBoolValue(); } },
+                { "microphones", n => { Microphones = n.GetCollectionOfObjectValues<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

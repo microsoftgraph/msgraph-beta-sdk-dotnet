@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessWhatIfConditions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessWhatIfConditions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The authenticationFlow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AuthenticationFlow? AuthenticationFlow {
+        public Microsoft.Graph.Beta.Models.AuthenticationFlow? AuthenticationFlow
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationFlow?>("authenticationFlow"); }
             set { BackingStore?.Set("authenticationFlow", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AuthenticationFlow AuthenticationFlow {
+        public Microsoft.Graph.Beta.Models.AuthenticationFlow AuthenticationFlow
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationFlow>("authenticationFlow"); }
             set { BackingStore?.Set("authenticationFlow", value); }
         }
@@ -32,20 +36,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientAppType property</summary>
-        public ConditionalAccessClientApp? ClientAppType {
+        public ConditionalAccessClientApp? ClientAppType
+        {
             get { return BackingStore?.Get<ConditionalAccessClientApp?>("clientAppType"); }
             set { BackingStore?.Set("clientAppType", value); }
         }
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country {
+        public string? Country
+        {
             get { return BackingStore?.Get<string?>("country"); }
             set { BackingStore?.Set("country", value); }
         }
 #nullable restore
 #else
-        public string Country {
+        public string Country
+        {
             get { return BackingStore?.Get<string>("country"); }
             set { BackingStore?.Set("country", value); }
         }
@@ -53,37 +60,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The deviceInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceInfo? DeviceInfo {
+        public Microsoft.Graph.Beta.Models.DeviceInfo? DeviceInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceInfo?>("deviceInfo"); }
             set { BackingStore?.Set("deviceInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceInfo DeviceInfo {
+        public Microsoft.Graph.Beta.Models.DeviceInfo DeviceInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceInfo>("deviceInfo"); }
             set { BackingStore?.Set("deviceInfo", value); }
         }
 #endif
         /// <summary>The devicePlatform property</summary>
-        public ConditionalAccessDevicePlatform? DevicePlatform {
+        public ConditionalAccessDevicePlatform? DevicePlatform
+        {
             get { return BackingStore?.Get<ConditionalAccessDevicePlatform?>("devicePlatform"); }
             set { BackingStore?.Set("devicePlatform", value); }
         }
         /// <summary>The insiderRiskLevel property</summary>
-        public Microsoft.Graph.Beta.Models.InsiderRiskLevel? InsiderRiskLevel {
+        public Microsoft.Graph.Beta.Models.InsiderRiskLevel? InsiderRiskLevel
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InsiderRiskLevel?>("insiderRiskLevel"); }
             set { BackingStore?.Set("insiderRiskLevel", value); }
         }
         /// <summary>The ipAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
@@ -91,29 +104,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The servicePrincipalRiskLevel property</summary>
-        public RiskLevel? ServicePrincipalRiskLevel {
+        public RiskLevel? ServicePrincipalRiskLevel
+        {
             get { return BackingStore?.Get<RiskLevel?>("servicePrincipalRiskLevel"); }
             set { BackingStore?.Set("servicePrincipalRiskLevel", value); }
         }
         /// <summary>The signInRiskLevel property</summary>
-        public RiskLevel? SignInRiskLevel {
+        public RiskLevel? SignInRiskLevel
+        {
             get { return BackingStore?.Get<RiskLevel?>("signInRiskLevel"); }
             set { BackingStore?.Set("signInRiskLevel", value); }
         }
         /// <summary>The userRiskLevel property</summary>
-        public RiskLevel? UserRiskLevel {
+        public RiskLevel? UserRiskLevel
+        {
             get { return BackingStore?.Get<RiskLevel?>("userRiskLevel"); }
             set { BackingStore?.Set("userRiskLevel", value); }
         }
@@ -143,17 +161,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authenticationFlow", n => { AuthenticationFlow = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationFlow>(Microsoft.Graph.Beta.Models.AuthenticationFlow.CreateFromDiscriminatorValue); } },
-                {"clientAppType", n => { ClientAppType = n.GetEnumValue<ConditionalAccessClientApp>(); } },
-                {"country", n => { Country = n.GetStringValue(); } },
-                {"deviceInfo", n => { DeviceInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceInfo>(Microsoft.Graph.Beta.Models.DeviceInfo.CreateFromDiscriminatorValue); } },
-                {"devicePlatform", n => { DevicePlatform = n.GetEnumValue<ConditionalAccessDevicePlatform>(); } },
-                {"insiderRiskLevel", n => { InsiderRiskLevel = n.GetEnumValue<InsiderRiskLevel>(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"servicePrincipalRiskLevel", n => { ServicePrincipalRiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                {"signInRiskLevel", n => { SignInRiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                {"userRiskLevel", n => { UserRiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                { "authenticationFlow", n => { AuthenticationFlow = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationFlow>(Microsoft.Graph.Beta.Models.AuthenticationFlow.CreateFromDiscriminatorValue); } },
+                { "clientAppType", n => { ClientAppType = n.GetEnumValue<ConditionalAccessClientApp>(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "deviceInfo", n => { DeviceInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceInfo>(Microsoft.Graph.Beta.Models.DeviceInfo.CreateFromDiscriminatorValue); } },
+                { "devicePlatform", n => { DevicePlatform = n.GetEnumValue<ConditionalAccessDevicePlatform>(); } },
+                { "insiderRiskLevel", n => { InsiderRiskLevel = n.GetEnumValue<InsiderRiskLevel>(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "servicePrincipalRiskLevel", n => { ServicePrincipalRiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                { "signInRiskLevel", n => { SignInRiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                { "userRiskLevel", n => { UserRiskLevel = n.GetEnumValue<RiskLevel>(); } },
             };
         }
         /// <summary>

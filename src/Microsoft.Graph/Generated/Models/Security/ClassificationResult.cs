@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class ClassificationResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ClassificationResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The confidence level, 0 to 100, of the result.</summary>
-        public int? ConfidenceLevel {
+        public int? ConfidenceLevel
+        {
             get { return BackingStore?.Get<int?>("confidenceLevel"); }
             set { BackingStore?.Set("confidenceLevel", value); }
         }
         /// <summary>The number of instances of the specific information type in the input.</summary>
-        public int? Count {
+        public int? Count
+        {
             get { return BackingStore?.Get<int?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The GUID of the discovered sensitive information type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SensitiveTypeId {
+        public string? SensitiveTypeId
+        {
             get { return BackingStore?.Get<string?>("sensitiveTypeId"); }
             set { BackingStore?.Set("sensitiveTypeId", value); }
         }
 #nullable restore
 #else
-        public string SensitiveTypeId {
+        public string SensitiveTypeId
+        {
             get { return BackingStore?.Get<string>("sensitiveTypeId"); }
             set { BackingStore?.Set("sensitiveTypeId", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"confidenceLevel", n => { ConfidenceLevel = n.GetIntValue(); } },
-                {"count", n => { Count = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sensitiveTypeId", n => { SensitiveTypeId = n.GetStringValue(); } },
+                { "confidenceLevel", n => { ConfidenceLevel = n.GetIntValue(); } },
+                { "count", n => { Count = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "sensitiveTypeId", n => { SensitiveTypeId = n.GetStringValue(); } },
             };
         }
         /// <summary>

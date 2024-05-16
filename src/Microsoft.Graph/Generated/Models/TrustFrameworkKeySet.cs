@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TrustFrameworkKeySet : Entity, IParsable 
+    public class TrustFrameworkKeySet : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of the keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrustFrameworkKey>? Keys {
+        public List<TrustFrameworkKey>? Keys
+        {
             get { return BackingStore?.Get<List<TrustFrameworkKey>?>("keys"); }
             set { BackingStore?.Set("keys", value); }
         }
 #nullable restore
 #else
-        public List<TrustFrameworkKey> Keys {
+        public List<TrustFrameworkKey> Keys
+        {
             get { return BackingStore?.Get<List<TrustFrameworkKey>>("keys"); }
             set { BackingStore?.Set("keys", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of the keys.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TrustFrameworkKey_v2>? KeysV2 {
+        public List<TrustFrameworkKey_v2>? KeysV2
+        {
             get { return BackingStore?.Get<List<TrustFrameworkKey_v2>?>("keys_v2"); }
             set { BackingStore?.Set("keys_v2", value); }
         }
 #nullable restore
 #else
-        public List<TrustFrameworkKey_v2> KeysV2 {
+        public List<TrustFrameworkKey_v2> KeysV2
+        {
             get { return BackingStore?.Get<List<TrustFrameworkKey_v2>>("keys_v2"); }
             set { BackingStore?.Set("keys_v2", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"keys", n => { Keys = n.GetCollectionOfObjectValues<TrustFrameworkKey>(TrustFrameworkKey.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"keys_v2", n => { KeysV2 = n.GetCollectionOfObjectValues<TrustFrameworkKey_v2>(TrustFrameworkKey_v2.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "keys", n => { Keys = n.GetCollectionOfObjectValues<TrustFrameworkKey>(TrustFrameworkKey.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "keys_v2", n => { KeysV2 = n.GetCollectionOfObjectValues<TrustFrameworkKey_v2>(TrustFrameworkKey_v2.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

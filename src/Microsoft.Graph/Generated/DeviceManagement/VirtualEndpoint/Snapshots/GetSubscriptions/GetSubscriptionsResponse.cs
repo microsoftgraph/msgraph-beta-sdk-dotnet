@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions {
+namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions
+{
     [Obsolete("This class is obsolete. Use GetSubscriptionsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetSubscriptionsResponse : GetSubscriptionsGetResponse, IParsable 
+    public class GetSubscriptionsResponse : GetSubscriptionsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

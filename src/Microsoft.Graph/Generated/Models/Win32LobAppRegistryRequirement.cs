@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains registry properties to detect a Win32 App
     /// </summary>
-    public class Win32LobAppRegistryRequirement : Win32LobAppRequirement, IParsable 
+    public class Win32LobAppRegistryRequirement : Win32LobAppRequirement, IParsable
     {
         /// <summary>A value indicating whether this registry path is for checking 32-bit app on 64-bit system</summary>
-        public bool? Check32BitOn64System {
+        public bool? Check32BitOn64System
+        {
             get { return BackingStore?.Get<bool?>("check32BitOn64System"); }
             set { BackingStore?.Set("check32BitOn64System", value); }
         }
         /// <summary>Contains all supported registry data detection type.</summary>
-        public Win32LobAppRegistryDetectionType? DetectionType {
+        public Win32LobAppRegistryDetectionType? DetectionType
+        {
             get { return BackingStore?.Get<Win32LobAppRegistryDetectionType?>("detectionType"); }
             set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The registry key path to detect Win32 Line of Business (LoB) app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? KeyPath {
+        public string? KeyPath
+        {
             get { return BackingStore?.Get<string?>("keyPath"); }
             set { BackingStore?.Set("keyPath", value); }
         }
 #nullable restore
 #else
-        public string KeyPath {
+        public string KeyPath
+        {
             get { return BackingStore?.Get<string>("keyPath"); }
             set { BackingStore?.Set("keyPath", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The registry value name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValueName {
+        public string? ValueName
+        {
             get { return BackingStore?.Get<string?>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
 #nullable restore
 #else
-        public string ValueName {
+        public string ValueName
+        {
             get { return BackingStore?.Get<string>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
-                {"detectionType", n => { DetectionType = n.GetEnumValue<Win32LobAppRegistryDetectionType>(); } },
-                {"keyPath", n => { KeyPath = n.GetStringValue(); } },
-                {"valueName", n => { ValueName = n.GetStringValue(); } },
+                { "check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
+                { "detectionType", n => { DetectionType = n.GetEnumValue<Win32LobAppRegistryDetectionType>(); } },
+                { "keyPath", n => { KeyPath = n.GetStringValue(); } },
+                { "valueName", n => { ValueName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,23 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class B2cAuthenticationMethodsPolicy : Entity, IParsable 
+    public class B2cAuthenticationMethodsPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The tenant admin can configure local accounts using email if the email and password authentication method is enabled.</summary>
-        public bool? IsEmailPasswordAuthenticationEnabled {
+        public bool? IsEmailPasswordAuthenticationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEmailPasswordAuthenticationEnabled"); }
             set { BackingStore?.Set("isEmailPasswordAuthenticationEnabled", value); }
         }
         /// <summary>The tenant admin can configure local accounts using phone number if the phone number and one-time password authentication method is enabled.</summary>
-        public bool? IsPhoneOneTimePasswordAuthenticationEnabled {
+        public bool? IsPhoneOneTimePasswordAuthenticationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isPhoneOneTimePasswordAuthenticationEnabled"); }
             set { BackingStore?.Set("isPhoneOneTimePasswordAuthenticationEnabled", value); }
         }
         /// <summary>The tenant admin can configure local accounts using username if the username and password authentication method is enabled.</summary>
-        public bool? IsUserNameAuthenticationEnabled {
+        public bool? IsUserNameAuthenticationEnabled
+        {
             get { return BackingStore?.Get<bool?>("isUserNameAuthenticationEnabled"); }
             set { BackingStore?.Set("isUserNameAuthenticationEnabled", value); }
         }
@@ -42,9 +46,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isEmailPasswordAuthenticationEnabled", n => { IsEmailPasswordAuthenticationEnabled = n.GetBoolValue(); } },
-                {"isPhoneOneTimePasswordAuthenticationEnabled", n => { IsPhoneOneTimePasswordAuthenticationEnabled = n.GetBoolValue(); } },
-                {"isUserNameAuthenticationEnabled", n => { IsUserNameAuthenticationEnabled = n.GetBoolValue(); } },
+                { "isEmailPasswordAuthenticationEnabled", n => { IsEmailPasswordAuthenticationEnabled = n.GetBoolValue(); } },
+                { "isPhoneOneTimePasswordAuthenticationEnabled", n => { IsPhoneOneTimePasswordAuthenticationEnabled = n.GetBoolValue(); } },
+                { "isUserNameAuthenticationEnabled", n => { IsUserNameAuthenticationEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

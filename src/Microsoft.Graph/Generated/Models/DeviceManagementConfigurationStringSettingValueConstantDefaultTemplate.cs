@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// String Setting Value Constant Default Template
     /// </summary>
-    public class DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate : DeviceManagementConfigurationStringSettingValueDefaultTemplate, IParsable 
+    public class DeviceManagementConfigurationStringSettingValueConstantDefaultTemplate : DeviceManagementConfigurationStringSettingValueDefaultTemplate, IParsable
     {
         /// <summary>Default Constant Value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConstantValue {
+        public string? ConstantValue
+        {
             get { return BackingStore?.Get<string?>("constantValue"); }
             set { BackingStore?.Set("constantValue", value); }
         }
 #nullable restore
 #else
-        public string ConstantValue {
+        public string ConstantValue
+        {
             get { return BackingStore?.Get<string>("constantValue"); }
             set { BackingStore?.Set("constantValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"constantValue", n => { ConstantValue = n.GetStringValue(); } },
+                { "constantValue", n => { ConstantValue = n.GetStringValue(); } },
             };
         }
         /// <summary>

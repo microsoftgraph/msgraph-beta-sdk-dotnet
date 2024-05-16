@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementIntent : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagementIntent : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>A flag indicating whether the management intent is global. Required. Read-only.</summary>
-        public bool? IsGlobal {
+        public bool? IsGlobal
+        {
             get { return BackingStore?.Get<bool?>("isGlobal"); }
             set { BackingStore?.Set("isGlobal", value); }
         }
         /// <summary>The collection of management templates associated with the management intent. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateDetailedInfo>? ManagementTemplates {
+        public List<ManagementTemplateDetailedInfo>? ManagementTemplates
+        {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>?>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateDetailedInfo> ManagementTemplates {
+        public List<ManagementTemplateDetailedInfo> ManagementTemplates
+        {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isGlobal", n => { IsGlobal = n.GetBoolValue(); } },
-                {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplateDetailedInfo>(ManagementTemplateDetailedInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isGlobal", n => { IsGlobal = n.GetBoolValue(); } },
+                { "managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplateDetailedInfo>(ManagementTemplateDetailedInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

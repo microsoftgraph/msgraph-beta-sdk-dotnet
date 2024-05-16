@@ -6,54 +6,63 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.Wipe {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.Wipe
+{
     #pragma warning disable CS1591
-    public class WipePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WipePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keepEnrollmentData property</summary>
-        public bool? KeepEnrollmentData {
+        public bool? KeepEnrollmentData
+        {
             get { return BackingStore?.Get<bool?>("keepEnrollmentData"); }
             set { BackingStore?.Set("keepEnrollmentData", value); }
         }
         /// <summary>The keepUserData property</summary>
-        public bool? KeepUserData {
+        public bool? KeepUserData
+        {
             get { return BackingStore?.Get<bool?>("keepUserData"); }
             set { BackingStore?.Set("keepUserData", value); }
         }
         /// <summary>The macOsUnlockCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MacOsUnlockCode {
+        public string? MacOsUnlockCode
+        {
             get { return BackingStore?.Get<string?>("macOsUnlockCode"); }
             set { BackingStore?.Set("macOsUnlockCode", value); }
         }
 #nullable restore
 #else
-        public string MacOsUnlockCode {
+        public string MacOsUnlockCode
+        {
             get { return BackingStore?.Get<string>("macOsUnlockCode"); }
             set { BackingStore?.Set("macOsUnlockCode", value); }
         }
 #endif
         /// <summary>The obliterationBehavior property</summary>
-        public Microsoft.Graph.Beta.Models.ObliterationBehavior? ObliterationBehavior {
+        public Microsoft.Graph.Beta.Models.ObliterationBehavior? ObliterationBehavior
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ObliterationBehavior?>("obliterationBehavior"); }
             set { BackingStore?.Set("obliterationBehavior", value); }
         }
         /// <summary>The persistEsimDataPlan property</summary>
-        public bool? PersistEsimDataPlan {
+        public bool? PersistEsimDataPlan
+        {
             get { return BackingStore?.Get<bool?>("persistEsimDataPlan"); }
             set { BackingStore?.Set("persistEsimDataPlan", value); }
         }
         /// <summary>The useProtectedWipe property</summary>
-        public bool? UseProtectedWipe {
+        public bool? UseProtectedWipe
+        {
             get { return BackingStore?.Get<bool?>("useProtectedWipe"); }
             set { BackingStore?.Set("useProtectedWipe", value); }
         }
@@ -83,12 +92,12 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.Wipe {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"keepEnrollmentData", n => { KeepEnrollmentData = n.GetBoolValue(); } },
-                {"keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
-                {"macOsUnlockCode", n => { MacOsUnlockCode = n.GetStringValue(); } },
-                {"obliterationBehavior", n => { ObliterationBehavior = n.GetEnumValue<ObliterationBehavior>(); } },
-                {"persistEsimDataPlan", n => { PersistEsimDataPlan = n.GetBoolValue(); } },
-                {"useProtectedWipe", n => { UseProtectedWipe = n.GetBoolValue(); } },
+                { "keepEnrollmentData", n => { KeepEnrollmentData = n.GetBoolValue(); } },
+                { "keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
+                { "macOsUnlockCode", n => { MacOsUnlockCode = n.GetStringValue(); } },
+                { "obliterationBehavior", n => { ObliterationBehavior = n.GetEnumValue<ObliterationBehavior>(); } },
+                { "persistEsimDataPlan", n => { PersistEsimDataPlan = n.GetBoolValue(); } },
+                { "useProtectedWipe", n => { UseProtectedWipe = n.GetBoolValue(); } },
             };
         }
         /// <summary>

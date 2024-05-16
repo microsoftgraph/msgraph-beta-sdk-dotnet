@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml
+{
     #pragma warning disable CS1591
-    public class ValidateXmlPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ValidateXmlPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
         /// <summary>The officeConfigurationXml property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? OfficeConfigurationXml {
+        public byte[]? OfficeConfigurationXml
+        {
             get { return BackingStore?.Get<byte[]?>("officeConfigurationXml"); }
             set { BackingStore?.Set("officeConfigurationXml", value); }
         }
 #nullable restore
 #else
-        public byte[] OfficeConfigurationXml {
+        public byte[] OfficeConfigurationXml
+        {
             get { return BackingStore?.Get<byte[]>("officeConfigurationXml"); }
             set { BackingStore?.Set("officeConfigurationXml", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"officeConfigurationXml", n => { OfficeConfigurationXml = n.GetByteArrayValue(); } },
+                { "officeConfigurationXml", n => { OfficeConfigurationXml = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

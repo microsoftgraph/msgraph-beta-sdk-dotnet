@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class DetectionAction : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DetectionAction : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The alertTemplate property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.AlertTemplate? AlertTemplate {
+        public Microsoft.Graph.Beta.Models.Security.AlertTemplate? AlertTemplate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AlertTemplate?>("alertTemplate"); }
             set { BackingStore?.Set("alertTemplate", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.AlertTemplate AlertTemplate {
+        public Microsoft.Graph.Beta.Models.Security.AlertTemplate AlertTemplate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AlertTemplate>("alertTemplate"); }
             set { BackingStore?.Set("alertTemplate", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Groups to which the custom detection rule applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Security.OrganizationalScope? OrganizationalScope {
+        public Microsoft.Graph.Beta.Models.Security.OrganizationalScope? OrganizationalScope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.OrganizationalScope?>("organizationalScope"); }
             set { BackingStore?.Set("organizationalScope", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Security.OrganizationalScope OrganizationalScope {
+        public Microsoft.Graph.Beta.Models.Security.OrganizationalScope OrganizationalScope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.OrganizationalScope>("organizationalScope"); }
             set { BackingStore?.Set("organizationalScope", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Actions taken on impacted assets as set in the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResponseAction>? ResponseActions {
+        public List<ResponseAction>? ResponseActions
+        {
             get { return BackingStore?.Get<List<ResponseAction>?>("responseActions"); }
             set { BackingStore?.Set("responseActions", value); }
         }
 #nullable restore
 #else
-        public List<ResponseAction> ResponseActions {
+        public List<ResponseAction> ResponseActions
+        {
             get { return BackingStore?.Get<List<ResponseAction>>("responseActions"); }
             set { BackingStore?.Set("responseActions", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"alertTemplate", n => { AlertTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AlertTemplate>(Microsoft.Graph.Beta.Models.Security.AlertTemplate.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"organizationalScope", n => { OrganizationalScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.OrganizationalScope>(Microsoft.Graph.Beta.Models.Security.OrganizationalScope.CreateFromDiscriminatorValue); } },
-                {"responseActions", n => { ResponseActions = n.GetCollectionOfObjectValues<ResponseAction>(ResponseAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertTemplate", n => { AlertTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AlertTemplate>(Microsoft.Graph.Beta.Models.Security.AlertTemplate.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "organizationalScope", n => { OrganizationalScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.OrganizationalScope>(Microsoft.Graph.Beta.Models.Security.OrganizationalScope.CreateFromDiscriminatorValue); } },
+                { "responseActions", n => { ResponseActions = n.GetCollectionOfObjectValues<ResponseAction>(ResponseAction.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

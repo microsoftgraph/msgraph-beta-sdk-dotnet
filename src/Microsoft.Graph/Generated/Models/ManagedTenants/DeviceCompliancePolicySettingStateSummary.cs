@@ -4,36 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class DeviceCompliancePolicySettingStateSummary : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class DeviceCompliancePolicySettingStateSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of devices in a conflict state. Optional. Read-only.</summary>
-        public int? ConflictDeviceCount {
+        public int? ConflictDeviceCount
+        {
             get { return BackingStore?.Get<int?>("conflictDeviceCount"); }
             set { BackingStore?.Set("conflictDeviceCount", value); }
         }
         /// <summary>The number of devices in an error state. Optional. Read-only.</summary>
-        public int? ErrorDeviceCount {
+        public int? ErrorDeviceCount
+        {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }
             set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>The number of devices in a failed state. Optional. Read-only.</summary>
-        public int? FailedDeviceCount {
+        public int? FailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>The identifer for the Microsoft Intune account. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntuneAccountId {
+        public string? IntuneAccountId
+        {
             get { return BackingStore?.Get<string?>("intuneAccountId"); }
             set { BackingStore?.Set("intuneAccountId", value); }
         }
 #nullable restore
 #else
-        public string IntuneAccountId {
+        public string IntuneAccountId
+        {
             get { return BackingStore?.Get<string>("intuneAccountId"); }
             set { BackingStore?.Set("intuneAccountId", value); }
         }
@@ -41,42 +47,49 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The identifier for the Intune setting. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntuneSettingId {
+        public string? IntuneSettingId
+        {
             get { return BackingStore?.Get<string?>("intuneSettingId"); }
             set { BackingStore?.Set("intuneSettingId", value); }
         }
 #nullable restore
 #else
-        public string IntuneSettingId {
+        public string IntuneSettingId
+        {
             get { return BackingStore?.Get<string>("intuneSettingId"); }
             set { BackingStore?.Set("intuneSettingId", value); }
         }
 #endif
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
-        public DateTimeOffset? LastRefreshedDateTime {
+        public DateTimeOffset? LastRefreshedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
             set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>The number of devices in a not applicable state. Optional. Read-only.</summary>
-        public int? NotApplicableDeviceCount {
+        public int? NotApplicableDeviceCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
             set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>The number of devices in a pending state. Optional. Read-only.</summary>
-        public int? PendingDeviceCount {
+        public int? PendingDeviceCount
+        {
             get { return BackingStore?.Get<int?>("pendingDeviceCount"); }
             set { BackingStore?.Set("pendingDeviceCount", value); }
         }
         /// <summary>The type for the device compliance policy. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyType {
+        public string? PolicyType
+        {
             get { return BackingStore?.Get<string?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
 #nullable restore
 #else
-        public string PolicyType {
+        public string PolicyType
+        {
             get { return BackingStore?.Get<string>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
@@ -84,32 +97,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The name for the setting within the device compliance policy. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingName {
+        public string? SettingName
+        {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
 #nullable restore
 #else
-        public string SettingName {
+        public string SettingName
+        {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
 #endif
         /// <summary>The number of devices in a succeeded state. Optional. Read-only.</summary>
-        public int? SucceededDeviceCount {
+        public int? SucceededDeviceCount
+        {
             get { return BackingStore?.Get<int?>("succeededDeviceCount"); }
             set { BackingStore?.Set("succeededDeviceCount", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDisplayName {
+        public string? TenantDisplayName
+        {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TenantDisplayName {
+        public string TenantDisplayName
+        {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
@@ -117,13 +135,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The Microsoft Entra tenant identifier for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -146,19 +166,19 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
-                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
-                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                {"intuneAccountId", n => { IntuneAccountId = n.GetStringValue(); } },
-                {"intuneSettingId", n => { IntuneSettingId = n.GetStringValue(); } },
-                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
-                {"policyType", n => { PolicyType = n.GetStringValue(); } },
-                {"settingName", n => { SettingName = n.GetStringValue(); } },
-                {"succeededDeviceCount", n => { SucceededDeviceCount = n.GetIntValue(); } },
-                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
+                { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                { "intuneAccountId", n => { IntuneAccountId = n.GetStringValue(); } },
+                { "intuneSettingId", n => { IntuneSettingId = n.GetStringValue(); } },
+                { "lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                { "pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
+                { "policyType", n => { PolicyType = n.GetStringValue(); } },
+                { "settingName", n => { SettingName = n.GetStringValue(); } },
+                { "succeededDeviceCount", n => { SucceededDeviceCount = n.GetIntValue(); } },
+                { "tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

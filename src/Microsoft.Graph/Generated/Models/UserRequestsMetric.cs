@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserRequestsMetric : Entity, IParsable 
+    public class UserRequestsMetric : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The country property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Country {
+        public string? Country
+        {
             get { return BackingStore?.Get<string?>("country"); }
             set { BackingStore?.Set("country", value); }
         }
 #nullable restore
 #else
-        public string Country {
+        public string Country
+        {
             get { return BackingStore?.Get<string>("country"); }
             set { BackingStore?.Set("country", value); }
         }
 #endif
         /// <summary>The date of the user insight.</summary>
-        public Date? FactDate {
+        public Date? FactDate
+        {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
         /// <summary>The identityProvider property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityProvider {
+        public string? IdentityProvider
+        {
             get { return BackingStore?.Get<string?>("identityProvider"); }
             set { BackingStore?.Set("identityProvider", value); }
         }
 #nullable restore
 #else
-        public string IdentityProvider {
+        public string IdentityProvider
+        {
             get { return BackingStore?.Get<string>("identityProvider"); }
             set { BackingStore?.Set("identityProvider", value); }
         }
@@ -60,19 +68,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The language property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #endif
         /// <summary>Number of requests to the tenant. Supports $filter (eq).</summary>
-        public long? RequestCount {
+        public long? RequestCount
+        {
             get { return BackingStore?.Get<long?>("requestCount"); }
             set { BackingStore?.Set("requestCount", value); }
         }
@@ -94,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"country", n => { Country = n.GetStringValue(); } },
-                {"factDate", n => { FactDate = n.GetDateValue(); } },
-                {"identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"requestCount", n => { RequestCount = n.GetLongValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "country", n => { Country = n.GetStringValue(); } },
+                { "factDate", n => { FactDate = n.GetDateValue(); } },
+                { "identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "requestCount", n => { RequestCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WindowsDefenderApplicationControlSupplementalPolicyAssignmentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class WindowsDefenderApplicationControlSupplementalPolicyAssignmentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>? Value {
+        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>? Value
+        {
             get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Value {
+        public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Value
+        {
             get { return BackingStore?.Get<List<WindowsDefenderApplicationControlSupplementalPolicyAssignment>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

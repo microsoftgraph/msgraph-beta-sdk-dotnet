@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RelatedThreatIntelligence : RelatedResource, IParsable 
+    public class RelatedThreatIntelligence : RelatedResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The threatCount property</summary>
-        public long? ThreatCount {
+        public long? ThreatCount
+        {
             get { return BackingStore?.Get<long?>("threatCount"); }
             set { BackingStore?.Set("threatCount", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"threatCount", n => { ThreatCount = n.GetLongValue(); } },
+                { "threatCount", n => { ThreatCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

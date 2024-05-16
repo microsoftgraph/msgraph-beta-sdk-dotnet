@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A complex type to store the expedited quality update settings such as release date and days until forced reboot.
     /// </summary>
-    public class ExpeditedWindowsQualityUpdateSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExpeditedWindowsQualityUpdateSettings : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of days after installation that forced reboot will happen.</summary>
-        public int? DaysUntilForcedReboot {
+        public int? DaysUntilForcedReboot
+        {
             get { return BackingStore?.Get<int?>("daysUntilForcedReboot"); }
             set { BackingStore?.Set("daysUntilForcedReboot", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The release date to identify a quality update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QualityUpdateRelease {
+        public string? QualityUpdateRelease
+        {
             get { return BackingStore?.Get<string?>("qualityUpdateRelease"); }
             set { BackingStore?.Set("qualityUpdateRelease", value); }
         }
 #nullable restore
 #else
-        public string QualityUpdateRelease {
+        public string QualityUpdateRelease
+        {
             get { return BackingStore?.Get<string>("qualityUpdateRelease"); }
             set { BackingStore?.Set("qualityUpdateRelease", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"daysUntilForcedReboot", n => { DaysUntilForcedReboot = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"qualityUpdateRelease", n => { QualityUpdateRelease = n.GetStringValue(); } },
+                { "daysUntilForcedReboot", n => { DaysUntilForcedReboot = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "qualityUpdateRelease", n => { QualityUpdateRelease = n.GetStringValue(); } },
             };
         }
         /// <summary>

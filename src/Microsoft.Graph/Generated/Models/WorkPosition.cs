@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WorkPosition : ItemFacet, IParsable 
+    public class WorkPosition : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Categories that the user has associated with this position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Categories {
+        public List<string>? Categories
+        {
             get { return BackingStore?.Get<List<string>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<string> Categories {
+        public List<string> Categories
+        {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Colleagues that are associated with this position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RelatedPerson>? Colleagues {
+        public List<RelatedPerson>? Colleagues
+        {
             get { return BackingStore?.Get<List<RelatedPerson>?>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
 #nullable restore
 #else
-        public List<RelatedPerson> Colleagues {
+        public List<RelatedPerson> Colleagues
+        {
             get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The detail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PositionDetail? Detail {
+        public PositionDetail? Detail
+        {
             get { return BackingStore?.Get<PositionDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #nullable restore
 #else
-        public PositionDetail Detail {
+        public PositionDetail Detail
+        {
             get { return BackingStore?.Get<PositionDetail>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
 #endif
         /// <summary>Denotes whether or not the position is current.</summary>
-        public bool? IsCurrent {
+        public bool? IsCurrent
+        {
             get { return BackingStore?.Get<bool?>("isCurrent"); }
             set { BackingStore?.Set("isCurrent", value); }
         }
         /// <summary>Contains detail of the user&apos;s manager in this position.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RelatedPerson? Manager {
+        public RelatedPerson? Manager
+        {
             get { return BackingStore?.Get<RelatedPerson?>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
 #nullable restore
 #else
-        public RelatedPerson Manager {
+        public RelatedPerson Manager
+        {
             get { return BackingStore?.Get<RelatedPerson>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"detail", n => { Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
-                {"isCurrent", n => { IsCurrent = n.GetBoolValue(); } },
-                {"manager", n => { Manager = n.GetObjectValue<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue); } },
+                { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "colleagues", n => { Colleagues = n.GetCollectionOfObjectValues<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "detail", n => { Detail = n.GetObjectValue<PositionDetail>(PositionDetail.CreateFromDiscriminatorValue); } },
+                { "isCurrent", n => { IsCurrent = n.GetBoolValue(); } },
+                { "manager", n => { Manager = n.GetObjectValue<RelatedPerson>(RelatedPerson.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

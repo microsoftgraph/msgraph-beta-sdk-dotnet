@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class TunnelConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TunnelConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>A key to establish secure connection between the link and VPN tunnel on the edge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreSharedKey {
+        public string? PreSharedKey
+        {
             get { return BackingStore?.Get<string?>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
 #nullable restore
 #else
-        public string PreSharedKey {
+        public string PreSharedKey
+        {
             get { return BackingStore?.Get<string>("preSharedKey"); }
             set { BackingStore?.Set("preSharedKey", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Another key for zone redundant tunnel. Required only when you select zoneRedundancy redindancyTier when creating a deviceLink.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ZoneRedundancyPreSharedKey {
+        public string? ZoneRedundancyPreSharedKey
+        {
             get { return BackingStore?.Get<string?>("zoneRedundancyPreSharedKey"); }
             set { BackingStore?.Set("zoneRedundancyPreSharedKey", value); }
         }
 #nullable restore
 #else
-        public string ZoneRedundancyPreSharedKey {
+        public string ZoneRedundancyPreSharedKey
+        {
             get { return BackingStore?.Get<string>("zoneRedundancyPreSharedKey"); }
             set { BackingStore?.Set("zoneRedundancyPreSharedKey", value); }
         }
@@ -91,9 +99,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
-                {"zoneRedundancyPreSharedKey", n => { ZoneRedundancyPreSharedKey = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
+                { "zoneRedundancyPreSharedKey", n => { ZoneRedundancyPreSharedKey = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked {
+namespace Microsoft.Graph.Beta.Me.IsManagedAppUserBlocked
+{
     [Obsolete("This class is obsolete. Use IsManagedAppUserBlockedGetResponse instead.")]
     #pragma warning disable CS1591
-    public class IsManagedAppUserBlockedResponse : IsManagedAppUserBlockedGetResponse, IParsable 
+    public class IsManagedAppUserBlockedResponse : IsManagedAppUserBlockedGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

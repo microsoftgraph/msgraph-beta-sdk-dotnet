@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Operating System version range.
     /// </summary>
-    public class OperatingSystemVersionRange : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OperatingSystemVersionRange : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of this range (e.g. Valid 1702 builds)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The highest inclusive version that this range contains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HighestVersion {
+        public string? HighestVersion
+        {
             get { return BackingStore?.Get<string?>("highestVersion"); }
             set { BackingStore?.Set("highestVersion", value); }
         }
 #nullable restore
 #else
-        public string HighestVersion {
+        public string HighestVersion
+        {
             get { return BackingStore?.Get<string>("highestVersion"); }
             set { BackingStore?.Set("highestVersion", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The lowest inclusive version that this range contains.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LowestVersion {
+        public string? LowestVersion
+        {
             get { return BackingStore?.Get<string?>("lowestVersion"); }
             set { BackingStore?.Set("lowestVersion", value); }
         }
 #nullable restore
 #else
-        public string LowestVersion {
+        public string LowestVersion
+        {
             get { return BackingStore?.Get<string>("lowestVersion"); }
             set { BackingStore?.Set("lowestVersion", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"highestVersion", n => { HighestVersion = n.GetStringValue(); } },
-                {"lowestVersion", n => { LowestVersion = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "highestVersion", n => { HighestVersion = n.GetStringValue(); } },
+                { "lowestVersion", n => { LowestVersion = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

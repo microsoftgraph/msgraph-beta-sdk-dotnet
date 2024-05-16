@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Local Action Configuration
     /// </summary>
-    public class AndroidDeviceComplianceLocalActionBase : Entity, IParsable 
+    public class AndroidDeviceComplianceLocalActionBase : Entity, IParsable
     {
         /// <summary>Number of minutes to wait till a local action is enforced. Valid values 0 to 2147483647</summary>
-        public int? GracePeriodInMinutes {
+        public int? GracePeriodInMinutes
+        {
             get { return BackingStore?.Get<int?>("gracePeriodInMinutes"); }
             set { BackingStore?.Set("gracePeriodInMinutes", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"gracePeriodInMinutes", n => { GracePeriodInMinutes = n.GetIntValue(); } },
+                { "gracePeriodInMinutes", n => { GracePeriodInMinutes = n.GetIntValue(); } },
             };
         }
         /// <summary>

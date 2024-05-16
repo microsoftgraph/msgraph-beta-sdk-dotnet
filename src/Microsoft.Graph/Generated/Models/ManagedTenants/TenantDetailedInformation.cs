@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class TenantDetailedInformation : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class TenantDetailedInformation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The city where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City {
+        public string? City
+        {
             get { return BackingStore?.Get<string?>("city"); }
             set { BackingStore?.Set("city", value); }
         }
 #nullable restore
 #else
-        public string City {
+        public string City
+        {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The code for the country where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryCode {
+        public string? CountryCode
+        {
             get { return BackingStore?.Get<string?>("countryCode"); }
             set { BackingStore?.Set("countryCode", value); }
         }
 #nullable restore
 #else
-        public string CountryCode {
+        public string CountryCode
+        {
             get { return BackingStore?.Get<string>("countryCode"); }
             set { BackingStore?.Set("countryCode", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The name for the country where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryName {
+        public string? CountryName
+        {
             get { return BackingStore?.Get<string?>("countryName"); }
             set { BackingStore?.Set("countryName", value); }
         }
 #nullable restore
 #else
-        public string CountryName {
+        public string CountryName
+        {
             get { return BackingStore?.Get<string>("countryName"); }
             set { BackingStore?.Set("countryName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The default domain name for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultDomainName {
+        public string? DefaultDomainName
+        {
             get { return BackingStore?.Get<string?>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
 #nullable restore
 #else
-        public string DefaultDomainName {
+        public string DefaultDomainName
+        {
             get { return BackingStore?.Get<string>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The display name for the managed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The business industry associated with the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IndustryName {
+        public string? IndustryName
+        {
             get { return BackingStore?.Get<string?>("industryName"); }
             set { BackingStore?.Set("industryName", value); }
         }
 #nullable restore
 #else
-        public string IndustryName {
+        public string IndustryName
+        {
             get { return BackingStore?.Get<string>("industryName"); }
             set { BackingStore?.Set("industryName", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The region where the managed tenant is located. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region {
+        public string? Region
+        {
             get { return BackingStore?.Get<string?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
 #nullable restore
 #else
-        public string Region {
+        public string Region
+        {
             get { return BackingStore?.Get<string>("region"); }
             set { BackingStore?.Set("region", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The business segment associated with the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SegmentName {
+        public string? SegmentName
+        {
             get { return BackingStore?.Get<string?>("segmentName"); }
             set { BackingStore?.Set("segmentName", value); }
         }
 #nullable restore
 #else
-        public string SegmentName {
+        public string SegmentName
+        {
             get { return BackingStore?.Get<string>("segmentName"); }
             set { BackingStore?.Set("segmentName", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The Microsoft Entra tenant identifier for the managed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -138,13 +157,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The vertical associated with the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VerticalName {
+        public string? VerticalName
+        {
             get { return BackingStore?.Get<string?>("verticalName"); }
             set { BackingStore?.Set("verticalName", value); }
         }
 #nullable restore
 #else
-        public string VerticalName {
+        public string VerticalName
+        {
             get { return BackingStore?.Get<string>("verticalName"); }
             set { BackingStore?.Set("verticalName", value); }
         }
@@ -167,16 +188,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"city", n => { City = n.GetStringValue(); } },
-                {"countryCode", n => { CountryCode = n.GetStringValue(); } },
-                {"countryName", n => { CountryName = n.GetStringValue(); } },
-                {"defaultDomainName", n => { DefaultDomainName = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"industryName", n => { IndustryName = n.GetStringValue(); } },
-                {"region", n => { Region = n.GetStringValue(); } },
-                {"segmentName", n => { SegmentName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"verticalName", n => { VerticalName = n.GetStringValue(); } },
+                { "city", n => { City = n.GetStringValue(); } },
+                { "countryCode", n => { CountryCode = n.GetStringValue(); } },
+                { "countryName", n => { CountryName = n.GetStringValue(); } },
+                { "defaultDomainName", n => { DefaultDomainName = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "industryName", n => { IndustryName = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
+                { "segmentName", n => { SegmentName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "verticalName", n => { VerticalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

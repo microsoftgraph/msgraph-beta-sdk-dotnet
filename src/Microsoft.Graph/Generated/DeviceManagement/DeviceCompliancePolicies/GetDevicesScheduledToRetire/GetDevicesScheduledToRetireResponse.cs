@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire
+{
     [Obsolete("This class is obsolete. Use GetDevicesScheduledToRetireGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetDevicesScheduledToRetireResponse : GetDevicesScheduledToRetireGetResponse, IParsable 
+    public class GetDevicesScheduledToRetireResponse : GetDevicesScheduledToRetireGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

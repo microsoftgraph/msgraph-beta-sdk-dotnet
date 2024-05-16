@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// An abstract base class for all macOS-specific single sign-on extension types.
     /// </summary>
-    public class MacOSSingleSignOnExtension : SingleSignOnExtension, IParsable 
+    public class MacOSSingleSignOnExtension : SingleSignOnExtension, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="MacOSSingleSignOnExtension"/> and sets the default values.

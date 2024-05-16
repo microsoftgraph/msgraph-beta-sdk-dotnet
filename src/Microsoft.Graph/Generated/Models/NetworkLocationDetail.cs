@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class NetworkLocationDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NetworkLocationDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Provides the name of the network used when signing in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NetworkNames {
+        public List<string>? NetworkNames
+        {
             get { return BackingStore?.Get<List<string>?>("networkNames"); }
             set { BackingStore?.Set("networkNames", value); }
         }
 #nullable restore
 #else
-        public List<string> NetworkNames {
+        public List<string> NetworkNames
+        {
             get { return BackingStore?.Get<List<string>>("networkNames"); }
             set { BackingStore?.Set("networkNames", value); }
         }
 #endif
         /// <summary>Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.NetworkType? NetworkType {
+        public Microsoft.Graph.Beta.Models.NetworkType? NetworkType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NetworkType?>("networkType"); }
             set { BackingStore?.Set("networkType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"networkNames", n => { NetworkNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"networkType", n => { NetworkType = n.GetEnumValue<NetworkType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "networkNames", n => { NetworkNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "networkType", n => { NetworkType = n.GetEnumValue<NetworkType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class OutboundProvisioningFlowSet : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class OutboundProvisioningFlowSet : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when the flowSet was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The display name of the flowSet provided by the caller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -31,32 +35,37 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The collection of provisioning filters applicable to all the flows under the given flowSet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IndustryData.Filter? Filter {
+        public Microsoft.Graph.Beta.Models.IndustryData.Filter? Filter
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.Filter?>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IndustryData.Filter Filter {
+        public Microsoft.Graph.Beta.Models.IndustryData.Filter Filter
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.Filter>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
 #endif
         /// <summary>The date and time when the flowSet was most recently changed. The timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisioningFlow>? ProvisioningFlows {
+        public List<ProvisioningFlow>? ProvisioningFlows
+        {
             get { return BackingStore?.Get<List<ProvisioningFlow>?>("provisioningFlows"); }
             set { BackingStore?.Set("provisioningFlows", value); }
         }
 #nullable restore
 #else
-        public List<ProvisioningFlow> ProvisioningFlows {
+        public List<ProvisioningFlow> ProvisioningFlows
+        {
             get { return BackingStore?.Get<List<ProvisioningFlow>>("provisioningFlows"); }
             set { BackingStore?.Set("provisioningFlows", value); }
         }
@@ -79,11 +88,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"filter", n => { Filter = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.Filter>(Microsoft.Graph.Beta.Models.IndustryData.Filter.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"provisioningFlows", n => { ProvisioningFlows = n.GetCollectionOfObjectValues<ProvisioningFlow>(ProvisioningFlow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "filter", n => { Filter = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.Filter>(Microsoft.Graph.Beta.Models.IndustryData.Filter.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "provisioningFlows", n => { ProvisioningFlows = n.GetCollectionOfObjectValues<ProvisioningFlow>(ProvisioningFlow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

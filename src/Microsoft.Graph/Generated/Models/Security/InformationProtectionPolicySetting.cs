@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class InformationProtectionPolicySetting : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class InformationProtectionPolicySetting : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The defaultLabelId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultLabelId {
+        public string? DefaultLabelId
+        {
             get { return BackingStore?.Get<string?>("defaultLabelId"); }
             set { BackingStore?.Set("defaultLabelId", value); }
         }
 #nullable restore
 #else
-        public string DefaultLabelId {
+        public string DefaultLabelId
+        {
             get { return BackingStore?.Get<string>("defaultLabelId"); }
             set { BackingStore?.Set("defaultLabelId", value); }
         }
 #endif
         /// <summary>Exposes whether justification input is required on label downgrade.</summary>
-        public bool? IsDowngradeJustificationRequired {
+        public bool? IsDowngradeJustificationRequired
+        {
             get { return BackingStore?.Get<bool?>("isDowngradeJustificationRequired"); }
             set { BackingStore?.Set("isDowngradeJustificationRequired", value); }
         }
         /// <summary>Exposes whether mandatory labeling is enabled.</summary>
-        public bool? IsMandatory {
+        public bool? IsMandatory
+        {
             get { return BackingStore?.Get<bool?>("isMandatory"); }
             set { BackingStore?.Set("isMandatory", value); }
         }
         /// <summary>Exposes the more information URL that can be configured by the administrator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MoreInfoUrl {
+        public string? MoreInfoUrl
+        {
             get { return BackingStore?.Get<string?>("moreInfoUrl"); }
             set { BackingStore?.Set("moreInfoUrl", value); }
         }
 #nullable restore
 #else
-        public string MoreInfoUrl {
+        public string MoreInfoUrl
+        {
             get { return BackingStore?.Get<string>("moreInfoUrl"); }
             set { BackingStore?.Set("moreInfoUrl", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultLabelId", n => { DefaultLabelId = n.GetStringValue(); } },
-                {"isDowngradeJustificationRequired", n => { IsDowngradeJustificationRequired = n.GetBoolValue(); } },
-                {"isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
-                {"moreInfoUrl", n => { MoreInfoUrl = n.GetStringValue(); } },
+                { "defaultLabelId", n => { DefaultLabelId = n.GetStringValue(); } },
+                { "isDowngradeJustificationRequired", n => { IsDowngradeJustificationRequired = n.GetBoolValue(); } },
+                { "isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
+                { "moreInfoUrl", n => { MoreInfoUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

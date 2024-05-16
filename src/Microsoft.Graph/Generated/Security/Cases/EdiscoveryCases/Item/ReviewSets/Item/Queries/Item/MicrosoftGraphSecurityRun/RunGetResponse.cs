@@ -6,21 +6,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityRun {
+namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityRun
+{
     #pragma warning disable CS1591
-    public class RunGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class RunGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryFile>? Value {
+        public List<EdiscoveryFile>? Value
+        {
             get { return BackingStore?.Get<List<EdiscoveryFile>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryFile> Value {
+        public List<EdiscoveryFile> Value
+        {
             get { return BackingStore?.Get<List<EdiscoveryFile>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -43,7 +46,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<EdiscoveryFile>(EdiscoveryFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<EdiscoveryFile>(EdiscoveryFile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

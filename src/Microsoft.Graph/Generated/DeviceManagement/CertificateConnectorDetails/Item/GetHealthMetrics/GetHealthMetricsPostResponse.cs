@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetrics {
+namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetrics
+{
     #pragma warning disable CS1591
-    public class GetHealthMetricsPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetHealthMetricsPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyLongValuePair>? Value {
+        public List<KeyLongValuePair>? Value
+        {
             get { return BackingStore?.Get<List<KeyLongValuePair>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<KeyLongValuePair> Value {
+        public List<KeyLongValuePair> Value
+        {
             get { return BackingStore?.Get<List<KeyLongValuePair>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<KeyLongValuePair>(KeyLongValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<KeyLongValuePair>(KeyLongValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

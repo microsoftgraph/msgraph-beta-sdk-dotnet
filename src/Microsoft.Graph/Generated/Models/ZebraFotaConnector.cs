@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The Zebra FOTA connector entity that represents the tenant&apos;s authorization status for Intune to call Zebra Update Services.
     /// </summary>
-    public class ZebraFotaConnector : Entity, IParsable 
+    public class ZebraFotaConnector : Entity, IParsable
     {
         /// <summary>Complete account enrollment authorization URL. This corresponds to verificationuricomplete in the Zebra API documentations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnrollmentAuthorizationUrl {
+        public string? EnrollmentAuthorizationUrl
+        {
             get { return BackingStore?.Get<string?>("enrollmentAuthorizationUrl"); }
             set { BackingStore?.Set("enrollmentAuthorizationUrl", value); }
         }
 #nullable restore
 #else
-        public string EnrollmentAuthorizationUrl {
+        public string EnrollmentAuthorizationUrl
+        {
             get { return BackingStore?.Get<string>("enrollmentAuthorizationUrl"); }
             set { BackingStore?.Set("enrollmentAuthorizationUrl", value); }
         }
@@ -27,29 +30,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnrollmentToken {
+        public string? EnrollmentToken
+        {
             get { return BackingStore?.Get<string?>("enrollmentToken"); }
             set { BackingStore?.Set("enrollmentToken", value); }
         }
 #nullable restore
 #else
-        public string EnrollmentToken {
+        public string EnrollmentToken
+        {
             get { return BackingStore?.Get<string>("enrollmentToken"); }
             set { BackingStore?.Set("enrollmentToken", value); }
         }
 #endif
         /// <summary>Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.</summary>
-        public bool? FotaAppsApproved {
+        public bool? FotaAppsApproved
+        {
             get { return BackingStore?.Get<bool?>("fotaAppsApproved"); }
             set { BackingStore?.Set("fotaAppsApproved", value); }
         }
         /// <summary>Date and time when the account was last synched with Zebra</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>Represents various states for Zebra FOTA connector.</summary>
-        public ZebraFotaConnectorState? State {
+        public ZebraFotaConnectorState? State
+        {
             get { return BackingStore?.Get<ZebraFotaConnectorState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -71,11 +79,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enrollmentAuthorizationUrl", n => { EnrollmentAuthorizationUrl = n.GetStringValue(); } },
-                {"enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
-                {"fotaAppsApproved", n => { FotaAppsApproved = n.GetBoolValue(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", n => { State = n.GetEnumValue<ZebraFotaConnectorState>(); } },
+                { "enrollmentAuthorizationUrl", n => { EnrollmentAuthorizationUrl = n.GetStringValue(); } },
+                { "enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
+                { "fotaAppsApproved", n => { FotaAppsApproved = n.GetBoolValue(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "state", n => { State = n.GetEnumValue<ZebraFotaConnectorState>(); } },
             };
         }
         /// <summary>

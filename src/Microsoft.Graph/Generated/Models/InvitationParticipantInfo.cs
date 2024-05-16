@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InvitationParticipantInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class InvitationParticipantInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.EndpointType? EndpointType {
+        public Microsoft.Graph.Beta.Models.EndpointType? EndpointType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }
             set { BackingStore?.Set("endpointType", value); }
         }
         /// <summary>Optional. Whether to hide the participant from the roster.</summary>
-        public bool? Hidden {
+        public bool? Hidden
+        {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Identity {
+        public IdentitySet? Identity
+        {
             get { return BackingStore?.Get<IdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Identity {
+        public IdentitySet Identity
+        {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -58,32 +66,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Optional. The ID of the target participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParticipantId {
+        public string? ParticipantId
+        {
             get { return BackingStore?.Get<string?>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
 #nullable restore
 #else
-        public string ParticipantId {
+        public string ParticipantId
+        {
             get { return BackingStore?.Get<string>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
 #endif
         /// <summary>Optional. Whether to remove them from the main mixer.</summary>
-        public bool? RemoveFromDefaultAudioRoutingGroup {
+        public bool? RemoveFromDefaultAudioRoutingGroup
+        {
             get { return BackingStore?.Get<bool?>("removeFromDefaultAudioRoutingGroup"); }
             set { BackingStore?.Set("removeFromDefaultAudioRoutingGroup", value); }
         }
         /// <summary>Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReplacesCallId {
+        public string? ReplacesCallId
+        {
             get { return BackingStore?.Get<string?>("replacesCallId"); }
             set { BackingStore?.Set("replacesCallId", value); }
         }
 #nullable restore
 #else
-        public string ReplacesCallId {
+        public string ReplacesCallId
+        {
             get { return BackingStore?.Get<string>("replacesCallId"); }
             set { BackingStore?.Set("replacesCallId", value); }
         }
@@ -114,13 +127,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
-                {"hidden", n => { Hidden = n.GetBoolValue(); } },
-                {"identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"participantId", n => { ParticipantId = n.GetStringValue(); } },
-                {"removeFromDefaultAudioRoutingGroup", n => { RemoveFromDefaultAudioRoutingGroup = n.GetBoolValue(); } },
-                {"replacesCallId", n => { ReplacesCallId = n.GetStringValue(); } },
+                { "endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
+                { "hidden", n => { Hidden = n.GetBoolValue(); } },
+                { "identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "participantId", n => { ParticipantId = n.GetStringValue(); } },
+                { "removeFromDefaultAudioRoutingGroup", n => { RemoveFromDefaultAudioRoutingGroup = n.GetBoolValue(); } },
+                { "replacesCallId", n => { ReplacesCallId = n.GetStringValue(); } },
             };
         }
         /// <summary>

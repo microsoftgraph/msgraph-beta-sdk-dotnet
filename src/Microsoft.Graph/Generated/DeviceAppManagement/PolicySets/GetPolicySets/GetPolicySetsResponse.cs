@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets
+{
     [Obsolete("This class is obsolete. Use GetPolicySetsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPolicySetsResponse : GetPolicySetsPostResponse, IParsable 
+    public class GetPolicySetsResponse : GetPolicySetsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

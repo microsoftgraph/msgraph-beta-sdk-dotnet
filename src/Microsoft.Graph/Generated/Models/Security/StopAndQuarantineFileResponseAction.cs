@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class StopAndQuarantineFileResponseAction : ResponseAction, IParsable 
+    public class StopAndQuarantineFileResponseAction : ResponseAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier property</summary>
-        public StopAndQuarantineFileEntityIdentifier? Identifier {
+        public StopAndQuarantineFileEntityIdentifier? Identifier
+        {
             get { return BackingStore?.Get<StopAndQuarantineFileEntityIdentifier?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"identifier", n => { Identifier = n.GetEnumValue<StopAndQuarantineFileEntityIdentifier>(); } },
+                { "identifier", n => { Identifier = n.GetEnumValue<StopAndQuarantineFileEntityIdentifier>(); } },
             };
         }
         /// <summary>

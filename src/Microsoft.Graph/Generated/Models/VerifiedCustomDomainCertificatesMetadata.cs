@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VerifiedCustomDomainCertificatesMetadata : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VerifiedCustomDomainCertificatesMetadata : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expiry date of the custom domain certificate. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ExpiryDate {
+        public DateTimeOffset? ExpiryDate
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expiryDate"); }
             set { BackingStore?.Set("expiryDate", value); }
         }
         /// <summary>The issue date of the custom domain. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? IssueDate {
+        public DateTimeOffset? IssueDate
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("issueDate"); }
             set { BackingStore?.Set("issueDate", value); }
         }
         /// <summary>The issuer name of the custom domain certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerName {
+        public string? IssuerName
+        {
             get { return BackingStore?.Get<string?>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
 #nullable restore
 #else
-        public string IssuerName {
+        public string IssuerName
+        {
             get { return BackingStore?.Get<string>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The subject name of the custom domain certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectName {
+        public string? SubjectName
+        {
             get { return BackingStore?.Get<string?>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
 #nullable restore
 #else
-        public string SubjectName {
+        public string SubjectName
+        {
             get { return BackingStore?.Get<string>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
@@ -72,13 +82,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The thumbprint associated with the custom domain certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Thumbprint {
+        public string? Thumbprint
+        {
             get { return BackingStore?.Get<string?>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
 #nullable restore
 #else
-        public string Thumbprint {
+        public string Thumbprint
+        {
             get { return BackingStore?.Get<string>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expiryDate", n => { ExpiryDate = n.GetDateTimeOffsetValue(); } },
-                {"issueDate", n => { IssueDate = n.GetDateTimeOffsetValue(); } },
-                {"issuerName", n => { IssuerName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"subjectName", n => { SubjectName = n.GetStringValue(); } },
-                {"thumbprint", n => { Thumbprint = n.GetStringValue(); } },
+                { "expiryDate", n => { ExpiryDate = n.GetDateTimeOffsetValue(); } },
+                { "issueDate", n => { IssueDate = n.GetDateTimeOffsetValue(); } },
+                { "issuerName", n => { IssuerName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "subjectName", n => { SubjectName = n.GetStringValue(); } },
+                { "thumbprint", n => { Thumbprint = n.GetStringValue(); } },
             };
         }
         /// <summary>

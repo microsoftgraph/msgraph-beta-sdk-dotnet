@@ -4,52 +4,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Define the rule when the admin wants the devices to be cleaned up.
     /// </summary>
-    public class ManagedDeviceCleanupRule : Entity, IParsable 
+    public class ManagedDeviceCleanupRule : Entity, IParsable
     {
         /// <summary>Indicates the description for the device clean up rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>Define the platform type for which the admin wants to create the device clean up rule</summary>
-        public Microsoft.Graph.Beta.Models.DeviceCleanupRulePlatformType? DeviceCleanupRulePlatformType {
+        public Microsoft.Graph.Beta.Models.DeviceCleanupRulePlatformType? DeviceCleanupRulePlatformType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCleanupRulePlatformType?>("deviceCleanupRulePlatformType"); }
             set { BackingStore?.Set("deviceCleanupRulePlatformType", value); }
         }
         /// <summary>Indicates the number of days when the device has not contacted Intune. Valid values 0 to 2147483647</summary>
-        public int? DeviceInactivityBeforeRetirementInDays {
+        public int? DeviceInactivityBeforeRetirementInDays
+        {
             get { return BackingStore?.Get<int?>("deviceInactivityBeforeRetirementInDays"); }
             set { BackingStore?.Set("deviceInactivityBeforeRetirementInDays", value); }
         }
         /// <summary>Indicates the display name of the device cleanup rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates the date and time when the device cleanup rule was last modified. This property is read-only.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
@@ -71,11 +79,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceCleanupRulePlatformType", n => { DeviceCleanupRulePlatformType = n.GetEnumValue<DeviceCleanupRulePlatformType>(); } },
-                {"deviceInactivityBeforeRetirementInDays", n => { DeviceInactivityBeforeRetirementInDays = n.GetIntValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceCleanupRulePlatformType", n => { DeviceCleanupRulePlatformType = n.GetEnumValue<DeviceCleanupRulePlatformType>(); } },
+                { "deviceInactivityBeforeRetirementInDays", n => { DeviceInactivityBeforeRetirementInDays = n.GetIntValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

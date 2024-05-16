@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OpenShift : ChangeTrackedEntity, IParsable 
+    public class OpenShift : ChangeTrackedEntity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Draft changes in the openShift are only visible to managers until they&apos;re shared.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OpenShiftItem? DraftOpenShift {
+        public OpenShiftItem? DraftOpenShift
+        {
             get { return BackingStore?.Get<OpenShiftItem?>("draftOpenShift"); }
             set { BackingStore?.Set("draftOpenShift", value); }
         }
 #nullable restore
 #else
-        public OpenShiftItem DraftOpenShift {
+        public OpenShiftItem DraftOpenShift
+        {
             get { return BackingStore?.Get<OpenShiftItem>("draftOpenShift"); }
             set { BackingStore?.Set("draftOpenShift", value); }
         }
 #endif
         /// <summary>The openShift is marked for deletion, a process that is finalized when the schedule is shared.</summary>
-        public bool? IsStagedForDeletion {
+        public bool? IsStagedForDeletion
+        {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
         /// <summary>The ID of the schedulingGroup that contains the openShift.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SchedulingGroupId {
+        public string? SchedulingGroupId
+        {
             get { return BackingStore?.Get<string?>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
 #nullable restore
 #else
-        public string SchedulingGroupId {
+        public string SchedulingGroupId
+        {
             get { return BackingStore?.Get<string>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information about the scheduling group to which the shift belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo? SchedulingGroupInfo {
+        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo? SchedulingGroupInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SchedulingGroupInfo?>("schedulingGroupInfo"); }
             set { BackingStore?.Set("schedulingGroupInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo SchedulingGroupInfo {
+        public Microsoft.Graph.Beta.Models.SchedulingGroupInfo SchedulingGroupInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>("schedulingGroupInfo"); }
             set { BackingStore?.Set("schedulingGroupInfo", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The shared version of this openShift that is viewable by both employees and managers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OpenShiftItem? SharedOpenShift {
+        public OpenShiftItem? SharedOpenShift
+        {
             get { return BackingStore?.Get<OpenShiftItem?>("sharedOpenShift"); }
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
 #nullable restore
 #else
-        public OpenShiftItem SharedOpenShift {
+        public OpenShiftItem SharedOpenShift
+        {
             get { return BackingStore?.Get<OpenShiftItem>("sharedOpenShift"); }
             set { BackingStore?.Set("sharedOpenShift", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information of the team that the openShift is in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ShiftsTeamInfo? TeamInfo {
+        public ShiftsTeamInfo? TeamInfo
+        {
             get { return BackingStore?.Get<ShiftsTeamInfo?>("teamInfo"); }
             set { BackingStore?.Set("teamInfo", value); }
         }
 #nullable restore
 #else
-        public ShiftsTeamInfo TeamInfo {
+        public ShiftsTeamInfo TeamInfo
+        {
             get { return BackingStore?.Get<ShiftsTeamInfo>("teamInfo"); }
             set { BackingStore?.Set("teamInfo", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
-                {"isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
-                {"schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
-                {"schedulingGroupInfo", n => { SchedulingGroupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>(Microsoft.Graph.Beta.Models.SchedulingGroupInfo.CreateFromDiscriminatorValue); } },
-                {"sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
-                {"teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
+                { "draftOpenShift", n => { DraftOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
+                { "isStagedForDeletion", n => { IsStagedForDeletion = n.GetBoolValue(); } },
+                { "schedulingGroupId", n => { SchedulingGroupId = n.GetStringValue(); } },
+                { "schedulingGroupInfo", n => { SchedulingGroupInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.SchedulingGroupInfo>(Microsoft.Graph.Beta.Models.SchedulingGroupInfo.CreateFromDiscriminatorValue); } },
+                { "sharedOpenShift", n => { SharedOpenShift = n.GetObjectValue<OpenShiftItem>(OpenShiftItem.CreateFromDiscriminatorValue); } },
+                { "teamInfo", n => { TeamInfo = n.GetObjectValue<ShiftsTeamInfo>(ShiftsTeamInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

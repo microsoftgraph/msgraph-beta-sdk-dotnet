@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class ClassGroupConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ClassGroupConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The different attributes to sync for the class groups. The possible values are: courseTitle, courseCode, courseSubject, courseGradeLevel, courseExternalId, academicSessionTitle, academicSessionExternalId, classCode, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AdditionalClassGroupAttributes?>? AdditionalAttributes {
+        public List<AdditionalClassGroupAttributes?>? AdditionalAttributes
+        {
             get { return BackingStore?.Get<List<AdditionalClassGroupAttributes?>?>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #nullable restore
 #else
-        public List<AdditionalClassGroupAttributes?> AdditionalAttributes {
+        public List<AdditionalClassGroupAttributes?> AdditionalAttributes
+        {
             get { return BackingStore?.Get<List<AdditionalClassGroupAttributes?>>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The additionalOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdditionalClassGroupOptions? AdditionalOptions {
+        public AdditionalClassGroupOptions? AdditionalOptions
+        {
             get { return BackingStore?.Get<AdditionalClassGroupOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
 #nullable restore
 #else
-        public AdditionalClassGroupOptions AdditionalOptions {
+        public AdditionalClassGroupOptions AdditionalOptions
+        {
             get { return BackingStore?.Get<AdditionalClassGroupOptions>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The enrollmentMappings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings? EnrollmentMappings {
+        public Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings? EnrollmentMappings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings?>("enrollmentMappings"); }
             set { BackingStore?.Set("enrollmentMappings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings EnrollmentMappings {
+        public Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings EnrollmentMappings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings>("enrollmentMappings"); }
             set { BackingStore?.Set("enrollmentMappings", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfEnumValues<AdditionalClassGroupAttributes>()?.ToList(); } },
-                {"additionalOptions", n => { AdditionalOptions = n.GetObjectValue<AdditionalClassGroupOptions>(AdditionalClassGroupOptions.CreateFromDiscriminatorValue); } },
-                {"enrollmentMappings", n => { EnrollmentMappings = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings>(Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfEnumValues<AdditionalClassGroupAttributes>()?.ToList(); } },
+                { "additionalOptions", n => { AdditionalOptions = n.GetObjectValue<AdditionalClassGroupOptions>(AdditionalClassGroupOptions.CreateFromDiscriminatorValue); } },
+                { "enrollmentMappings", n => { EnrollmentMappings = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings>(Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

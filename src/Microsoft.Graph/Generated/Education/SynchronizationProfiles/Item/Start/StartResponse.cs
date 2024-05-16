@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
+namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start
+{
     [Obsolete("This class is obsolete. Use StartPostResponse instead.")]
     #pragma warning disable CS1591
-    public class StartResponse : StartPostResponse, IParsable 
+    public class StartResponse : StartPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

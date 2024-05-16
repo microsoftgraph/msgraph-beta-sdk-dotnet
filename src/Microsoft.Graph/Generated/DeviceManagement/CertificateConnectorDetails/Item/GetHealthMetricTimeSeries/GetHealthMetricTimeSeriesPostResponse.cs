@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetricTimeSeries {
+namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item.GetHealthMetricTimeSeries
+{
     #pragma warning disable CS1591
-    public class GetHealthMetricTimeSeriesPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class GetHealthMetricTimeSeriesPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CertificateConnectorHealthMetricValue>? Value {
+        public List<CertificateConnectorHealthMetricValue>? Value
+        {
             get { return BackingStore?.Get<List<CertificateConnectorHealthMetricValue>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<CertificateConnectorHealthMetricValue> Value {
+        public List<CertificateConnectorHealthMetricValue> Value
+        {
             get { return BackingStore?.Get<List<CertificateConnectorHealthMetricValue>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<CertificateConnectorHealthMetricValue>(CertificateConnectorHealthMetricValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<CertificateConnectorHealthMetricValue>(CertificateConnectorHealthMetricValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

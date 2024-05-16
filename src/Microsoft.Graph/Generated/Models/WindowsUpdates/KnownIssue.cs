@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class KnownIssue : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class KnownIssue : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description of the particular known issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,51 +29,59 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The knownIssueHistories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KnownIssueHistoryItem>? KnownIssueHistories {
+        public List<KnownIssueHistoryItem>? KnownIssueHistories
+        {
             get { return BackingStore?.Get<List<KnownIssueHistoryItem>?>("knownIssueHistories"); }
             set { BackingStore?.Set("knownIssueHistories", value); }
         }
 #nullable restore
 #else
-        public List<KnownIssueHistoryItem> KnownIssueHistories {
+        public List<KnownIssueHistoryItem> KnownIssueHistories
+        {
             get { return BackingStore?.Get<List<KnownIssueHistoryItem>>("knownIssueHistories"); }
             set { BackingStore?.Set("knownIssueHistories", value); }
         }
 #endif
         /// <summary>The date and time when the known issue was last updated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Knowledge base article associated with the release when the known issue was first reported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KnowledgeBaseArticle? OriginatingKnowledgeBaseArticle {
+        public KnowledgeBaseArticle? OriginatingKnowledgeBaseArticle
+        {
             get { return BackingStore?.Get<KnowledgeBaseArticle?>("originatingKnowledgeBaseArticle"); }
             set { BackingStore?.Set("originatingKnowledgeBaseArticle", value); }
         }
 #nullable restore
 #else
-        public KnowledgeBaseArticle OriginatingKnowledgeBaseArticle {
+        public KnowledgeBaseArticle OriginatingKnowledgeBaseArticle
+        {
             get { return BackingStore?.Get<KnowledgeBaseArticle>("originatingKnowledgeBaseArticle"); }
             set { BackingStore?.Set("originatingKnowledgeBaseArticle", value); }
         }
 #endif
         /// <summary>The date and time when the known issue was resolved or mitigated. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ResolvedDateTime {
+        public DateTimeOffset? ResolvedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("resolvedDateTime"); }
             set { BackingStore?.Set("resolvedDateTime", value); }
         }
         /// <summary>Knowledge base article associated with the release when the known issue was resolved or mitigated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KnowledgeBaseArticle? ResolvingKnowledgeBaseArticle {
+        public KnowledgeBaseArticle? ResolvingKnowledgeBaseArticle
+        {
             get { return BackingStore?.Get<KnowledgeBaseArticle?>("resolvingKnowledgeBaseArticle"); }
             set { BackingStore?.Set("resolvingKnowledgeBaseArticle", value); }
         }
 #nullable restore
 #else
-        public KnowledgeBaseArticle ResolvingKnowledgeBaseArticle {
+        public KnowledgeBaseArticle ResolvingKnowledgeBaseArticle
+        {
             get { return BackingStore?.Get<KnowledgeBaseArticle>("resolvingKnowledgeBaseArticle"); }
             set { BackingStore?.Set("resolvingKnowledgeBaseArticle", value); }
         }
@@ -78,37 +89,43 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The safeguardHoldIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<int?>? SafeguardHoldIds {
+        public List<int?>? SafeguardHoldIds
+        {
             get { return BackingStore?.Get<List<int?>?>("safeguardHoldIds"); }
             set { BackingStore?.Set("safeguardHoldIds", value); }
         }
 #nullable restore
 #else
-        public List<int?> SafeguardHoldIds {
+        public List<int?> SafeguardHoldIds
+        {
             get { return BackingStore?.Get<List<int?>>("safeguardHoldIds"); }
             set { BackingStore?.Set("safeguardHoldIds", value); }
         }
 #endif
         /// <summary>The date and time when the known issue was first reported. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public WindowsReleaseHealthStatus? Status {
+        public WindowsReleaseHealthStatus? Status
+        {
             get { return BackingStore?.Get<WindowsReleaseHealthStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The title of the known issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -116,13 +133,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The URL to the known issue in the Windows Release Health dashboard on Microsoft 365 admin center.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebViewUrl {
+        public string? WebViewUrl
+        {
             get { return BackingStore?.Get<string?>("webViewUrl"); }
             set { BackingStore?.Set("webViewUrl", value); }
         }
 #nullable restore
 #else
-        public string WebViewUrl {
+        public string WebViewUrl
+        {
             get { return BackingStore?.Get<string>("webViewUrl"); }
             set { BackingStore?.Set("webViewUrl", value); }
         }
@@ -145,17 +164,17 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"knownIssueHistories", n => { KnownIssueHistories = n.GetCollectionOfObjectValues<KnownIssueHistoryItem>(KnownIssueHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"originatingKnowledgeBaseArticle", n => { OriginatingKnowledgeBaseArticle = n.GetObjectValue<KnowledgeBaseArticle>(KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
-                {"resolvedDateTime", n => { ResolvedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resolvingKnowledgeBaseArticle", n => { ResolvingKnowledgeBaseArticle = n.GetObjectValue<KnowledgeBaseArticle>(KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
-                {"safeguardHoldIds", n => { SafeguardHoldIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<WindowsReleaseHealthStatus>(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
-                {"webViewUrl", n => { WebViewUrl = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "knownIssueHistories", n => { KnownIssueHistories = n.GetCollectionOfObjectValues<KnownIssueHistoryItem>(KnownIssueHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "originatingKnowledgeBaseArticle", n => { OriginatingKnowledgeBaseArticle = n.GetObjectValue<KnowledgeBaseArticle>(KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
+                { "resolvedDateTime", n => { ResolvedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "resolvingKnowledgeBaseArticle", n => { ResolvingKnowledgeBaseArticle = n.GetObjectValue<KnowledgeBaseArticle>(KnowledgeBaseArticle.CreateFromDiscriminatorValue); } },
+                { "safeguardHoldIds", n => { SafeguardHoldIds = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<WindowsReleaseHealthStatus>(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "webViewUrl", n => { WebViewUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

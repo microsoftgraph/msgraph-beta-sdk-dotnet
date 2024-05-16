@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class QualityUpdateFilter : WindowsUpdateFilter, IParsable 
+    public class QualityUpdateFilter : WindowsUpdateFilter, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The cadence property</summary>
-        public QualityUpdateCadence? Cadence {
+        public QualityUpdateCadence? Cadence
+        {
             get { return BackingStore?.Get<QualityUpdateCadence?>("cadence"); }
             set { BackingStore?.Set("cadence", value); }
         }
         /// <summary>The classification property</summary>
-        public QualityUpdateClassification? Classification {
+        public QualityUpdateClassification? Classification
+        {
             get { return BackingStore?.Get<QualityUpdateClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cadence", n => { Cadence = n.GetEnumValue<QualityUpdateCadence>(); } },
-                {"classification", n => { Classification = n.GetEnumValue<QualityUpdateClassification>(); } },
+                { "cadence", n => { Cadence = n.GetEnumValue<QualityUpdateCadence>(); } },
+                { "classification", n => { Classification = n.GetEnumValue<QualityUpdateClassification>(); } },
             };
         }
         /// <summary>

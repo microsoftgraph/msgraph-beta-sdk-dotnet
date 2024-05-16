@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The class used to identify a local group for the kiosk configuration
     /// </summary>
-    public class WindowsKioskLocalGroup : WindowsKioskUser, IParsable 
+    public class WindowsKioskLocalGroup : WindowsKioskUser, IParsable
     {
         /// <summary>The name of the local group that will be locked to this kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupName {
+        public string? GroupName
+        {
             get { return BackingStore?.Get<string?>("groupName"); }
             set { BackingStore?.Set("groupName", value); }
         }
 #nullable restore
 #else
-        public string GroupName {
+        public string GroupName
+        {
             get { return BackingStore?.Get<string>("groupName"); }
             set { BackingStore?.Set("groupName", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupName", n => { GroupName = n.GetStringValue(); } },
+                { "groupName", n => { GroupName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RegexReplaceTransformation : CustomClaimTransformation, IParsable 
+    public class RegexReplaceTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The additionalAttributes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SourcedAttribute>? AdditionalAttributes {
+        public List<SourcedAttribute>? AdditionalAttributes
+        {
             get { return BackingStore?.Get<List<SourcedAttribute>?>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #nullable restore
 #else
-        public List<SourcedAttribute> AdditionalAttributes {
+        public List<SourcedAttribute> AdditionalAttributes
+        {
             get { return BackingStore?.Get<List<SourcedAttribute>>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The regex property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Regex {
+        public string? Regex
+        {
             get { return BackingStore?.Get<string?>("regex"); }
             set { BackingStore?.Set("regex", value); }
         }
 #nullable restore
 #else
-        public string Regex {
+        public string Regex
+        {
             get { return BackingStore?.Get<string>("regex"); }
             set { BackingStore?.Set("regex", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The replacement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Replacement {
+        public string? Replacement
+        {
             get { return BackingStore?.Get<string?>("replacement"); }
             set { BackingStore?.Set("replacement", value); }
         }
 #nullable restore
 #else
-        public string Replacement {
+        public string Replacement
+        {
             get { return BackingStore?.Get<string>("replacement"); }
             set { BackingStore?.Set("replacement", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfObjectValues<SourcedAttribute>(SourcedAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"regex", n => { Regex = n.GetStringValue(); } },
-                {"replacement", n => { Replacement = n.GetStringValue(); } },
+                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfObjectValues<SourcedAttribute>(SourcedAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "regex", n => { Regex = n.GetStringValue(); } },
+                { "replacement", n => { Replacement = n.GetStringValue(); } },
             };
         }
         /// <summary>

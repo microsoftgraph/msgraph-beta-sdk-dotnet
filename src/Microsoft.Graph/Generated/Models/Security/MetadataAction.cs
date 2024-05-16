@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class MetadataAction : InformationProtectionAction, IParsable 
+    public class MetadataAction : InformationProtectionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of key-value pairs that should be added to the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? MetadataToAdd {
+        public List<KeyValuePair>? MetadataToAdd
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("metadataToAdd"); }
             set { BackingStore?.Set("metadataToAdd", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> MetadataToAdd {
+        public List<KeyValuePair> MetadataToAdd
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("metadataToAdd"); }
             set { BackingStore?.Set("metadataToAdd", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>A collection of strings that indicate which keys to remove from the file metadata.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MetadataToRemove {
+        public List<string>? MetadataToRemove
+        {
             get { return BackingStore?.Get<List<string>?>("metadataToRemove"); }
             set { BackingStore?.Set("metadataToRemove", value); }
         }
 #nullable restore
 #else
-        public List<string> MetadataToRemove {
+        public List<string> MetadataToRemove
+        {
             get { return BackingStore?.Get<List<string>>("metadataToRemove"); }
             set { BackingStore?.Set("metadataToRemove", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"metadataToAdd", n => { MetadataToAdd = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"metadataToRemove", n => { MetadataToRemove = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "metadataToAdd", n => { MetadataToAdd = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metadataToRemove", n => { MetadataToRemove = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SymantecCodeSigningCertificate : Entity, IParsable 
+    public class SymantecCodeSigningCertificate : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The Windows Symantec Code-Signing Certificate in the raw data format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>The Cert Expiration Date.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The Issuer value for the cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Issuer {
+        public string? Issuer
+        {
             get { return BackingStore?.Get<string?>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
 #nullable restore
 #else
-        public string Issuer {
+        public string Issuer
+        {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Issuer Name for the cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IssuerName {
+        public string? IssuerName
+        {
             get { return BackingStore?.Get<string?>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
 #nullable restore
 #else
-        public string IssuerName {
+        public string IssuerName
+        {
             get { return BackingStore?.Get<string>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
@@ -59,32 +67,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Password required for .pfx file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Password {
+        public string? Password
+        {
             get { return BackingStore?.Get<string?>("password"); }
             set { BackingStore?.Set("password", value); }
         }
 #nullable restore
 #else
-        public string Password {
+        public string Password
+        {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public CertificateStatus? Status {
+        public CertificateStatus? Status
+        {
             get { return BackingStore?.Get<CertificateStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The Subject value for the cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subject {
+        public string? Subject
+        {
             get { return BackingStore?.Get<string?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public string Subject {
+        public string Subject
+        {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
@@ -92,19 +105,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Subject Name for the cert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectName {
+        public string? SubjectName
+        {
             get { return BackingStore?.Get<string?>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
 #nullable restore
 #else
-        public string SubjectName {
+        public string SubjectName
+        {
             get { return BackingStore?.Get<string>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
 #endif
         /// <summary>The Type of the CodeSigning Cert as Symantec Cert.</summary>
-        public DateTimeOffset? UploadDateTime {
+        public DateTimeOffset? UploadDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("uploadDateTime"); }
             set { BackingStore?.Set("uploadDateTime", value); }
         }
@@ -126,15 +142,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"issuer", n => { Issuer = n.GetStringValue(); } },
-                {"issuerName", n => { IssuerName = n.GetStringValue(); } },
-                {"password", n => { Password = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CertificateStatus>(); } },
-                {"subject", n => { Subject = n.GetStringValue(); } },
-                {"subjectName", n => { SubjectName = n.GetStringValue(); } },
-                {"uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "issuer", n => { Issuer = n.GetStringValue(); } },
+                { "issuerName", n => { IssuerName = n.GetStringValue(); } },
+                { "password", n => { Password = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CertificateStatus>(); } },
+                { "subject", n => { Subject = n.GetStringValue(); } },
+                { "subjectName", n => { SubjectName = n.GetStringValue(); } },
+                { "uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

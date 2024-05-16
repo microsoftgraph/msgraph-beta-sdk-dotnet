@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PasswordValidationInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PasswordValidationInformation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies whether the password is valid based on the calculation of the results in the validationResults property. Not nullable. Read-only.</summary>
-        public bool? IsValid {
+        public bool? IsValid
+        {
             get { return BackingStore?.Get<bool?>("isValid"); }
             set { BackingStore?.Set("isValid", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ValidationResult>? ValidationResults {
+        public List<ValidationResult>? ValidationResults
+        {
             get { return BackingStore?.Get<List<ValidationResult>?>("validationResults"); }
             set { BackingStore?.Set("validationResults", value); }
         }
 #nullable restore
 #else
-        public List<ValidationResult> ValidationResults {
+        public List<ValidationResult> ValidationResults
+        {
             get { return BackingStore?.Get<List<ValidationResult>>("validationResults"); }
             set { BackingStore?.Set("validationResults", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"isValid", n => { IsValid = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"validationResults", n => { ValidationResults = n.GetCollectionOfObjectValues<ValidationResult>(ValidationResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isValid", n => { IsValid = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "validationResults", n => { ValidationResults = n.GetCollectionOfObjectValues<ValidationResult>(ValidationResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

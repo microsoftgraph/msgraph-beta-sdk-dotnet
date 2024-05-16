@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Local Action Lock Device Only Configuration
     /// </summary>
-    public class AndroidDeviceComplianceLocalActionLockDevice : AndroidDeviceComplianceLocalActionBase, IParsable 
+    public class AndroidDeviceComplianceLocalActionLockDevice : AndroidDeviceComplianceLocalActionBase, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="AndroidDeviceComplianceLocalActionLockDevice"/> and sets the default values.

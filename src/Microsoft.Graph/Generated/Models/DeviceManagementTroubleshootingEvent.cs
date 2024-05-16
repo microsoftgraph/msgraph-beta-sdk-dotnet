@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Event representing an general failure.
     /// </summary>
-    public class DeviceManagementTroubleshootingEvent : Entity, IParsable 
+    public class DeviceManagementTroubleshootingEvent : Entity, IParsable
     {
         /// <summary>A set of string key and string value pairs which provides additional information on the Troubleshooting event</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? AdditionalInformation {
+        public List<KeyValuePair>? AdditionalInformation
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> AdditionalInformation {
+        public List<KeyValuePair> AdditionalInformation
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Id used for tracing the failure in the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId {
+        public string? CorrelationId
+        {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #nullable restore
 #else
-        public string CorrelationId {
+        public string CorrelationId
+        {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #endif
         /// <summary>Time when the event occurred .</summary>
-        public DateTimeOffset? EventDateTime {
+        public DateTimeOffset? EventDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Event Name corresponding to the Troubleshooting Event. It is an Optional field</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventName {
+        public string? EventName
+        {
             get { return BackingStore?.Get<string?>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
 #nullable restore
 #else
-        public string EventName {
+        public string EventName
+        {
             get { return BackingStore?.Get<string>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails {
+        public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails
+        {
             get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails {
+        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails
+        {
             get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
-                {"eventName", n => { EventName = n.GetStringValue(); } },
-                {"troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
+                { "additionalInformation", n => { AdditionalInformation = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                { "eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                { "eventName", n => { EventName = n.GetStringValue(); } },
+                { "troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

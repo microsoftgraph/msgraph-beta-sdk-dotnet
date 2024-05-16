@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ItemActivityOLD : Entity, IParsable 
+    public class ItemActivityOLD : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActionSet? Action {
+        public ItemActionSet? Action
+        {
             get { return BackingStore?.Get<ItemActionSet?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
 #nullable restore
 #else
-        public ItemActionSet Action {
+        public ItemActionSet Action
+        {
             get { return BackingStore?.Get<ItemActionSet>("action"); }
             set { BackingStore?.Set("action", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Actor {
+        public IdentitySet? Actor
+        {
             get { return BackingStore?.Get<IdentitySet?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Actor {
+        public IdentitySet Actor
+        {
             get { return BackingStore?.Get<IdentitySet>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The driveItem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DriveItem? DriveItem {
+        public Microsoft.Graph.Beta.Models.DriveItem? DriveItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
+        public Microsoft.Graph.Beta.Models.DriveItem DriveItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The listItem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ListItem? ListItem {
+        public Microsoft.Graph.Beta.Models.ListItem? ListItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem?>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ListItem ListItem {
+        public Microsoft.Graph.Beta.Models.ListItem ListItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The times property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemActivityTimeSet? Times {
+        public ItemActivityTimeSet? Times
+        {
             get { return BackingStore?.Get<ItemActivityTimeSet?>("times"); }
             set { BackingStore?.Set("times", value); }
         }
 #nullable restore
 #else
-        public ItemActivityTimeSet Times {
+        public ItemActivityTimeSet Times
+        {
             get { return BackingStore?.Get<ItemActivityTimeSet>("times"); }
             set { BackingStore?.Set("times", value); }
         }
@@ -97,11 +108,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"action", n => { Action = n.GetObjectValue<ItemActionSet>(ItemActionSet.CreateFromDiscriminatorValue); } },
-                {"actor", n => { Actor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
-                {"listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.ListItem>(Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue); } },
-                {"times", n => { Times = n.GetObjectValue<ItemActivityTimeSet>(ItemActivityTimeSet.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetObjectValue<ItemActionSet>(ItemActionSet.CreateFromDiscriminatorValue); } },
+                { "actor", n => { Actor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
+                { "listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.ListItem>(Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue); } },
+                { "times", n => { Times = n.GetObjectValue<ItemActivityTimeSet>(ItemActivityTimeSet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

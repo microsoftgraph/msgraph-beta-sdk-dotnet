@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for device run state of the hardware configuration
     /// </summary>
-    public class HardwareConfigurationDeviceState : Entity, IParsable 
+    public class HardwareConfigurationDeviceState : Entity, IParsable
     {
         /// <summary>A list of identifier strings of different assignment filters applied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignmentFilterIds {
+        public string? AssignmentFilterIds
+        {
             get { return BackingStore?.Get<string?>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
 #nullable restore
 #else
-        public string AssignmentFilterIds {
+        public string AssignmentFilterIds
+        {
             get { return BackingStore?.Get<string>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Error from the hardware configuration execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationError {
+        public string? ConfigurationError
+        {
             get { return BackingStore?.Get<string?>("configurationError"); }
             set { BackingStore?.Set("configurationError", value); }
         }
 #nullable restore
 #else
-        public string ConfigurationError {
+        public string ConfigurationError
+        {
             get { return BackingStore?.Get<string>("configurationError"); }
             set { BackingStore?.Set("configurationError", value); }
         }
@@ -41,56 +46,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Output of the hardware configuration execution</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConfigurationOutput {
+        public string? ConfigurationOutput
+        {
             get { return BackingStore?.Get<string?>("configurationOutput"); }
             set { BackingStore?.Set("configurationOutput", value); }
         }
 #nullable restore
 #else
-        public string ConfigurationOutput {
+        public string ConfigurationOutput
+        {
             get { return BackingStore?.Get<string>("configurationOutput"); }
             set { BackingStore?.Set("configurationOutput", value); }
         }
 #endif
         /// <summary>Indicates the type of execution status of the device management script.</summary>
-        public RunState? ConfigurationState {
+        public RunState? ConfigurationState
+        {
             get { return BackingStore?.Get<RunState?>("configurationState"); }
             set { BackingStore?.Set("configurationState", value); }
         }
         /// <summary>The name of the device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>The Policy internal version</summary>
-        public int? InternalVersion {
+        public int? InternalVersion
+        {
             get { return BackingStore?.Get<int?>("internalVersion"); }
             set { BackingStore?.Set("internalVersion", value); }
         }
         /// <summary>The last timestamp of when the hardware configuration executed</summary>
-        public DateTimeOffset? LastStateUpdateDateTime {
+        public DateTimeOffset? LastStateUpdateDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastStateUpdateDateTime"); }
             set { BackingStore?.Set("lastStateUpdateDateTime", value); }
         }
         /// <summary>Operating system version of the device (E.g. 10.0.19042.1165, 10.0.19042.1288 etc.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsVersion {
+        public string? OsVersion
+        {
             get { return BackingStore?.Get<string?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
 #nullable restore
 #else
-        public string OsVersion {
+        public string OsVersion
+        {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
@@ -98,13 +112,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User Principal Name (UPN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Upn {
+        public string? Upn
+        {
             get { return BackingStore?.Get<string?>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
 #nullable restore
 #else
-        public string Upn {
+        public string Upn
+        {
             get { return BackingStore?.Get<string>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
@@ -112,13 +128,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier of the Entra user associated with the device for which policy is applied. Read-Only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -141,16 +159,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignmentFilterIds", n => { AssignmentFilterIds = n.GetStringValue(); } },
-                {"configurationError", n => { ConfigurationError = n.GetStringValue(); } },
-                {"configurationOutput", n => { ConfigurationOutput = n.GetStringValue(); } },
-                {"configurationState", n => { ConfigurationState = n.GetEnumValue<RunState>(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"internalVersion", n => { InternalVersion = n.GetIntValue(); } },
-                {"lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"upn", n => { Upn = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "assignmentFilterIds", n => { AssignmentFilterIds = n.GetStringValue(); } },
+                { "configurationError", n => { ConfigurationError = n.GetStringValue(); } },
+                { "configurationOutput", n => { ConfigurationOutput = n.GetStringValue(); } },
+                { "configurationState", n => { ConfigurationState = n.GetEnumValue<RunState>(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "internalVersion", n => { InternalVersion = n.GetIntValue(); } },
+                { "lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "osVersion", n => { OsVersion = n.GetStringValue(); } },
+                { "upn", n => { Upn = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

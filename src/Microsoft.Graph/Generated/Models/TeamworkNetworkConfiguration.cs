@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkNetworkConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkNetworkConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The default gateway is the path used to pass information when the destination is unknown to the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultGateway {
+        public string? DefaultGateway
+        {
             get { return BackingStore?.Get<string?>("defaultGateway"); }
             set { BackingStore?.Set("defaultGateway", value); }
         }
 #nullable restore
 #else
-        public string DefaultGateway {
+        public string DefaultGateway
+        {
             get { return BackingStore?.Get<string>("defaultGateway"); }
             set { BackingStore?.Set("defaultGateway", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The network domain of the device, for example, contoso.com.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DomainName {
+        public string? DomainName
+        {
             get { return BackingStore?.Get<string?>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
 #nullable restore
 #else
-        public string DomainName {
+        public string DomainName
+        {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The device name on a network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HostName {
+        public string? HostName
+        {
             get { return BackingStore?.Get<string?>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
 #nullable restore
 #else
-        public string HostName {
+        public string HostName
+        {
             get { return BackingStore?.Get<string>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
@@ -62,37 +70,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The IP address is a numerical label that uniquely identifies every device connected to the internet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #endif
         /// <summary>True if DHCP is enabled.</summary>
-        public bool? IsDhcpEnabled {
+        public bool? IsDhcpEnabled
+        {
             get { return BackingStore?.Get<bool?>("isDhcpEnabled"); }
             set { BackingStore?.Set("isDhcpEnabled", value); }
         }
         /// <summary>True if the PC port is enabled.</summary>
-        public bool? IsPCPortEnabled {
+        public bool? IsPCPortEnabled
+        {
             get { return BackingStore?.Get<bool?>("isPCPortEnabled"); }
             set { BackingStore?.Set("isPCPortEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -100,13 +114,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A primary DNS is the first point of contact for a device that translates the hostname into an IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryDns {
+        public string? PrimaryDns
+        {
             get { return BackingStore?.Get<string?>("primaryDns"); }
             set { BackingStore?.Set("primaryDns", value); }
         }
 #nullable restore
 #else
-        public string PrimaryDns {
+        public string PrimaryDns
+        {
             get { return BackingStore?.Get<string>("primaryDns"); }
             set { BackingStore?.Set("primaryDns", value); }
         }
@@ -114,13 +130,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A secondary DNS is used when the primary DNS is not available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondaryDns {
+        public string? SecondaryDns
+        {
             get { return BackingStore?.Get<string?>("secondaryDns"); }
             set { BackingStore?.Set("secondaryDns", value); }
         }
 #nullable restore
 #else
-        public string SecondaryDns {
+        public string SecondaryDns
+        {
             get { return BackingStore?.Get<string>("secondaryDns"); }
             set { BackingStore?.Set("secondaryDns", value); }
         }
@@ -128,13 +146,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A subnet mask is a number that distinguishes the network address and the host address within an IP address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubnetMask {
+        public string? SubnetMask
+        {
             get { return BackingStore?.Get<string?>("subnetMask"); }
             set { BackingStore?.Set("subnetMask", value); }
         }
 #nullable restore
 #else
-        public string SubnetMask {
+        public string SubnetMask
+        {
             get { return BackingStore?.Get<string>("subnetMask"); }
             set { BackingStore?.Set("subnetMask", value); }
         }
@@ -165,16 +185,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"defaultGateway", n => { DefaultGateway = n.GetStringValue(); } },
-                {"domainName", n => { DomainName = n.GetStringValue(); } },
-                {"hostName", n => { HostName = n.GetStringValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"isDhcpEnabled", n => { IsDhcpEnabled = n.GetBoolValue(); } },
-                {"isPCPortEnabled", n => { IsPCPortEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"primaryDns", n => { PrimaryDns = n.GetStringValue(); } },
-                {"secondaryDns", n => { SecondaryDns = n.GetStringValue(); } },
-                {"subnetMask", n => { SubnetMask = n.GetStringValue(); } },
+                { "defaultGateway", n => { DefaultGateway = n.GetStringValue(); } },
+                { "domainName", n => { DomainName = n.GetStringValue(); } },
+                { "hostName", n => { HostName = n.GetStringValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "isDhcpEnabled", n => { IsDhcpEnabled = n.GetBoolValue(); } },
+                { "isPCPortEnabled", n => { IsPCPortEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "primaryDns", n => { PrimaryDns = n.GetStringValue(); } },
+                { "secondaryDns", n => { SecondaryDns = n.GetStringValue(); } },
+                { "subnetMask", n => { SubnetMask = n.GetStringValue(); } },
             };
         }
         /// <summary>

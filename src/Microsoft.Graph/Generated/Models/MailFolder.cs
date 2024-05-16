@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MailFolder : Entity, IParsable 
+    public class MailFolder : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of immediate child mailFolders in the current mailFolder.</summary>
-        public int? ChildFolderCount {
+        public int? ChildFolderCount
+        {
             get { return BackingStore?.Get<int?>("childFolderCount"); }
             set { BackingStore?.Set("childFolderCount", value); }
         }
         /// <summary>The collection of child folders in the mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MailFolder>? ChildFolders {
+        public List<MailFolder>? ChildFolders
+        {
             get { return BackingStore?.Get<List<MailFolder>?>("childFolders"); }
             set { BackingStore?.Set("childFolders", value); }
         }
 #nullable restore
 #else
-        public List<MailFolder> ChildFolders {
+        public List<MailFolder> ChildFolders
+        {
             get { return BackingStore?.Get<List<MailFolder>>("childFolders"); }
             set { BackingStore?.Set("childFolders", value); }
         }
@@ -32,32 +36,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The mailFolder&apos;s display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Indicates whether the mailFolder is hidden. This property can be set only when creating the folder. Find more information in Hidden mail folders.</summary>
-        public bool? IsHidden {
+        public bool? IsHidden
+        {
             get { return BackingStore?.Get<bool?>("isHidden"); }
             set { BackingStore?.Set("isHidden", value); }
         }
         /// <summary>The collection of rules that apply to the user&apos;s Inbox folder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MessageRule>? MessageRules {
+        public List<MessageRule>? MessageRules
+        {
             get { return BackingStore?.Get<List<MessageRule>?>("messageRules"); }
             set { BackingStore?.Set("messageRules", value); }
         }
 #nullable restore
 #else
-        public List<MessageRule> MessageRules {
+        public List<MessageRule> MessageRules
+        {
             get { return BackingStore?.Get<List<MessageRule>>("messageRules"); }
             set { BackingStore?.Set("messageRules", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of messages in the mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Message>? Messages {
+        public List<Message>? Messages
+        {
             get { return BackingStore?.Get<List<Message>?>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
 #nullable restore
 #else
-        public List<Message> Messages {
+        public List<Message> Messages
+        {
             get { return BackingStore?.Get<List<Message>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
@@ -79,13 +90,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of multi-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
+        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
@@ -93,13 +106,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier for the mailFolder&apos;s parent mailFolder.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentFolderId {
+        public string? ParentFolderId
+        {
             get { return BackingStore?.Get<string?>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
 #nullable restore
 #else
-        public string ParentFolderId {
+        public string ParentFolderId
+        {
             get { return BackingStore?.Get<string>("parentFolderId"); }
             set { BackingStore?.Set("parentFolderId", value); }
         }
@@ -107,37 +122,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of single-value extended properties defined for the mailFolder. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
+        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
         /// <summary>The number of items in the mailFolder.</summary>
-        public int? TotalItemCount {
+        public int? TotalItemCount
+        {
             get { return BackingStore?.Get<int?>("totalItemCount"); }
             set { BackingStore?.Set("totalItemCount", value); }
         }
         /// <summary>The number of items in the mailFolder marked as unread.</summary>
-        public int? UnreadItemCount {
+        public int? UnreadItemCount
+        {
             get { return BackingStore?.Get<int?>("unreadItemCount"); }
             set { BackingStore?.Set("unreadItemCount", value); }
         }
         /// <summary>The userConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserConfiguration>? UserConfigurations {
+        public List<UserConfiguration>? UserConfigurations
+        {
             get { return BackingStore?.Get<List<UserConfiguration>?>("userConfigurations"); }
             set { BackingStore?.Set("userConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<UserConfiguration> UserConfigurations {
+        public List<UserConfiguration> UserConfigurations
+        {
             get { return BackingStore?.Get<List<UserConfiguration>>("userConfigurations"); }
             set { BackingStore?.Set("userConfigurations", value); }
         }
@@ -145,13 +166,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The well-known folder name for the folder. The possible values are listed above. This property is only set for default folders created by Outlook. For other folders, this property is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WellKnownName {
+        public string? WellKnownName
+        {
             get { return BackingStore?.Get<string?>("wellKnownName"); }
             set { BackingStore?.Set("wellKnownName", value); }
         }
 #nullable restore
 #else
-        public string WellKnownName {
+        public string WellKnownName
+        {
             get { return BackingStore?.Get<string>("wellKnownName"); }
             set { BackingStore?.Set("wellKnownName", value); }
         }
@@ -179,19 +202,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"childFolderCount", n => { ChildFolderCount = n.GetIntValue(); } },
-                {"childFolders", n => { ChildFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isHidden", n => { IsHidden = n.GetBoolValue(); } },
-                {"messageRules", n => { MessageRules = n.GetCollectionOfObjectValues<MessageRule>(MessageRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"messages", n => { Messages = n.GetCollectionOfObjectValues<Message>(Message.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
-                {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"totalItemCount", n => { TotalItemCount = n.GetIntValue(); } },
-                {"unreadItemCount", n => { UnreadItemCount = n.GetIntValue(); } },
-                {"userConfigurations", n => { UserConfigurations = n.GetCollectionOfObjectValues<UserConfiguration>(UserConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"wellKnownName", n => { WellKnownName = n.GetStringValue(); } },
+                { "childFolderCount", n => { ChildFolderCount = n.GetIntValue(); } },
+                { "childFolders", n => { ChildFolders = n.GetCollectionOfObjectValues<MailFolder>(MailFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isHidden", n => { IsHidden = n.GetBoolValue(); } },
+                { "messageRules", n => { MessageRules = n.GetCollectionOfObjectValues<MessageRule>(MessageRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "messages", n => { Messages = n.GetCollectionOfObjectValues<Message>(Message.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "totalItemCount", n => { TotalItemCount = n.GetIntValue(); } },
+                { "unreadItemCount", n => { UnreadItemCount = n.GetIntValue(); } },
+                { "userConfigurations", n => { UserConfigurations = n.GetCollectionOfObjectValues<UserConfiguration>(UserConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "wellKnownName", n => { WellKnownName = n.GetStringValue(); } },
             };
         }
         /// <summary>

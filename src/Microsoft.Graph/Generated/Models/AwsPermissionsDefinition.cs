@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsPermissionsDefinition : PermissionsDefinition, IParsable 
+    public class AwsPermissionsDefinition : PermissionsDefinition, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actionInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsPermissionsDefinitionAction? ActionInfo {
+        public AwsPermissionsDefinitionAction? ActionInfo
+        {
             get { return BackingStore?.Get<AwsPermissionsDefinitionAction?>("actionInfo"); }
             set { BackingStore?.Set("actionInfo", value); }
         }
 #nullable restore
 #else
-        public AwsPermissionsDefinitionAction ActionInfo {
+        public AwsPermissionsDefinitionAction ActionInfo
+        {
             get { return BackingStore?.Get<AwsPermissionsDefinitionAction>("actionInfo"); }
             set { BackingStore?.Set("actionInfo", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionInfo", n => { ActionInfo = n.GetObjectValue<AwsPermissionsDefinitionAction>(AwsPermissionsDefinitionAction.CreateFromDiscriminatorValue); } },
+                { "actionInfo", n => { ActionInfo = n.GetObjectValue<AwsPermissionsDefinitionAction>(AwsPermissionsDefinitionAction.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrinterLocation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PrinterLocation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The altitude, in meters, that the printer is located at.</summary>
-        public int? AltitudeInMeters {
+        public int? AltitudeInMeters
+        {
             get { return BackingStore?.Get<int?>("altitudeInMeters"); }
             set { BackingStore?.Set("altitudeInMeters", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The building that the printer is located in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Building {
+        public string? Building
+        {
             get { return BackingStore?.Get<string?>("building"); }
             set { BackingStore?.Set("building", value); }
         }
 #nullable restore
 #else
-        public string Building {
+        public string Building
+        {
             get { return BackingStore?.Get<string>("building"); }
             set { BackingStore?.Set("building", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The city that the printer is located in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City {
+        public string? City
+        {
             get { return BackingStore?.Get<string?>("city"); }
             set { BackingStore?.Set("city", value); }
         }
 #nullable restore
 #else
-        public string City {
+        public string City
+        {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The country or region that the printer is located in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountryOrRegion {
+        public string? CountryOrRegion
+        {
             get { return BackingStore?.Get<string?>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
 #nullable restore
 #else
-        public string CountryOrRegion {
+        public string CountryOrRegion
+        {
             get { return BackingStore?.Get<string>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The floor that the printer is located on. Only numerical values are supported right now.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Floor {
+        public string? Floor
+        {
             get { return BackingStore?.Get<string?>("floor"); }
             set { BackingStore?.Set("floor", value); }
         }
 #nullable restore
 #else
-        public string Floor {
+        public string Floor
+        {
             get { return BackingStore?.Get<string>("floor"); }
             set { BackingStore?.Set("floor", value); }
         }
@@ -81,42 +92,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of the floor that the printer is located on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FloorDescription {
+        public string? FloorDescription
+        {
             get { return BackingStore?.Get<string?>("floorDescription"); }
             set { BackingStore?.Set("floorDescription", value); }
         }
 #nullable restore
 #else
-        public string FloorDescription {
+        public string FloorDescription
+        {
             get { return BackingStore?.Get<string>("floorDescription"); }
             set { BackingStore?.Set("floorDescription", value); }
         }
 #endif
         /// <summary>The floorNumber property</summary>
-        public int? FloorNumber {
+        public int? FloorNumber
+        {
             get { return BackingStore?.Get<int?>("floorNumber"); }
             set { BackingStore?.Set("floorNumber", value); }
         }
         /// <summary>The latitude that the printer is located at.</summary>
-        public double? Latitude {
+        public double? Latitude
+        {
             get { return BackingStore?.Get<double?>("latitude"); }
             set { BackingStore?.Set("latitude", value); }
         }
         /// <summary>The longitude that the printer is located at.</summary>
-        public double? Longitude {
+        public double? Longitude
+        {
             get { return BackingStore?.Get<double?>("longitude"); }
             set { BackingStore?.Set("longitude", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -124,13 +142,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The organizational hierarchy that the printer belongs to. The elements should be in hierarchical order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Organization {
+        public List<string>? Organization
+        {
             get { return BackingStore?.Get<List<string>?>("organization"); }
             set { BackingStore?.Set("organization", value); }
         }
 #nullable restore
 #else
-        public List<string> Organization {
+        public List<string> Organization
+        {
             get { return BackingStore?.Get<List<string>>("organization"); }
             set { BackingStore?.Set("organization", value); }
         }
@@ -138,13 +158,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The postal code that the printer is located in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostalCode {
+        public string? PostalCode
+        {
             get { return BackingStore?.Get<string?>("postalCode"); }
             set { BackingStore?.Set("postalCode", value); }
         }
 #nullable restore
 #else
-        public string PostalCode {
+        public string PostalCode
+        {
             get { return BackingStore?.Get<string>("postalCode"); }
             set { BackingStore?.Set("postalCode", value); }
         }
@@ -152,13 +174,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of the room that the printer is located in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoomDescription {
+        public string? RoomDescription
+        {
             get { return BackingStore?.Get<string?>("roomDescription"); }
             set { BackingStore?.Set("roomDescription", value); }
         }
 #nullable restore
 #else
-        public string RoomDescription {
+        public string RoomDescription
+        {
             get { return BackingStore?.Get<string>("roomDescription"); }
             set { BackingStore?.Set("roomDescription", value); }
         }
@@ -166,32 +190,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The room that the printer is located in. Only numerical values are supported right now.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoomName {
+        public string? RoomName
+        {
             get { return BackingStore?.Get<string?>("roomName"); }
             set { BackingStore?.Set("roomName", value); }
         }
 #nullable restore
 #else
-        public string RoomName {
+        public string RoomName
+        {
             get { return BackingStore?.Get<string>("roomName"); }
             set { BackingStore?.Set("roomName", value); }
         }
 #endif
         /// <summary>The roomNumber property</summary>
-        public int? RoomNumber {
+        public int? RoomNumber
+        {
             get { return BackingStore?.Get<int?>("roomNumber"); }
             set { BackingStore?.Set("roomNumber", value); }
         }
         /// <summary>The site that the printer is located in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Site {
+        public string? Site
+        {
             get { return BackingStore?.Get<string?>("site"); }
             set { BackingStore?.Set("site", value); }
         }
 #nullable restore
 #else
-        public string Site {
+        public string Site
+        {
             get { return BackingStore?.Get<string>("site"); }
             set { BackingStore?.Set("site", value); }
         }
@@ -199,13 +228,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The state or province that the printer is located in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StateOrProvince {
+        public string? StateOrProvince
+        {
             get { return BackingStore?.Get<string?>("stateOrProvince"); }
             set { BackingStore?.Set("stateOrProvince", value); }
         }
 #nullable restore
 #else
-        public string StateOrProvince {
+        public string StateOrProvince
+        {
             get { return BackingStore?.Get<string>("stateOrProvince"); }
             set { BackingStore?.Set("stateOrProvince", value); }
         }
@@ -213,13 +244,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The street address where the printer is located.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StreetAddress {
+        public string? StreetAddress
+        {
             get { return BackingStore?.Get<string?>("streetAddress"); }
             set { BackingStore?.Set("streetAddress", value); }
         }
 #nullable restore
 #else
-        public string StreetAddress {
+        public string StreetAddress
+        {
             get { return BackingStore?.Get<string>("streetAddress"); }
             set { BackingStore?.Set("streetAddress", value); }
         }
@@ -227,13 +260,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The subdivision that the printer is located in. The elements should be in hierarchical order.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Subdivision {
+        public List<string>? Subdivision
+        {
             get { return BackingStore?.Get<List<string>?>("subdivision"); }
             set { BackingStore?.Set("subdivision", value); }
         }
 #nullable restore
 #else
-        public List<string> Subdivision {
+        public List<string> Subdivision
+        {
             get { return BackingStore?.Get<List<string>>("subdivision"); }
             set { BackingStore?.Set("subdivision", value); }
         }
@@ -241,13 +276,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The subunit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Subunit {
+        public List<string>? Subunit
+        {
             get { return BackingStore?.Get<List<string>?>("subunit"); }
             set { BackingStore?.Set("subunit", value); }
         }
 #nullable restore
 #else
-        public List<string> Subunit {
+        public List<string> Subunit
+        {
             get { return BackingStore?.Get<List<string>>("subunit"); }
             set { BackingStore?.Set("subunit", value); }
         }
@@ -278,26 +315,26 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"altitudeInMeters", n => { AltitudeInMeters = n.GetIntValue(); } },
-                {"building", n => { Building = n.GetStringValue(); } },
-                {"city", n => { City = n.GetStringValue(); } },
-                {"countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
-                {"floor", n => { Floor = n.GetStringValue(); } },
-                {"floorDescription", n => { FloorDescription = n.GetStringValue(); } },
-                {"floorNumber", n => { FloorNumber = n.GetIntValue(); } },
-                {"latitude", n => { Latitude = n.GetDoubleValue(); } },
-                {"longitude", n => { Longitude = n.GetDoubleValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"organization", n => { Organization = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"postalCode", n => { PostalCode = n.GetStringValue(); } },
-                {"roomDescription", n => { RoomDescription = n.GetStringValue(); } },
-                {"roomName", n => { RoomName = n.GetStringValue(); } },
-                {"roomNumber", n => { RoomNumber = n.GetIntValue(); } },
-                {"site", n => { Site = n.GetStringValue(); } },
-                {"stateOrProvince", n => { StateOrProvince = n.GetStringValue(); } },
-                {"streetAddress", n => { StreetAddress = n.GetStringValue(); } },
-                {"subdivision", n => { Subdivision = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"subunit", n => { Subunit = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "altitudeInMeters", n => { AltitudeInMeters = n.GetIntValue(); } },
+                { "building", n => { Building = n.GetStringValue(); } },
+                { "city", n => { City = n.GetStringValue(); } },
+                { "countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
+                { "floor", n => { Floor = n.GetStringValue(); } },
+                { "floorDescription", n => { FloorDescription = n.GetStringValue(); } },
+                { "floorNumber", n => { FloorNumber = n.GetIntValue(); } },
+                { "latitude", n => { Latitude = n.GetDoubleValue(); } },
+                { "longitude", n => { Longitude = n.GetDoubleValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "organization", n => { Organization = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "postalCode", n => { PostalCode = n.GetStringValue(); } },
+                { "roomDescription", n => { RoomDescription = n.GetStringValue(); } },
+                { "roomName", n => { RoomName = n.GetStringValue(); } },
+                { "roomNumber", n => { RoomNumber = n.GetIntValue(); } },
+                { "site", n => { Site = n.GetStringValue(); } },
+                { "stateOrProvince", n => { StateOrProvince = n.GetStringValue(); } },
+                { "streetAddress", n => { StreetAddress = n.GetStringValue(); } },
+                { "subdivision", n => { Subdivision = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "subunit", n => { Subunit = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

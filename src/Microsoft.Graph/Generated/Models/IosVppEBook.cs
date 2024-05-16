@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties for iOS Vpp eBook.
     /// </summary>
-    public class IosVppEBook : ManagedEBook, IParsable 
+    public class IosVppEBook : ManagedEBook, IParsable
     {
         /// <summary>The Apple ID associated with Vpp token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppleId {
+        public string? AppleId
+        {
             get { return BackingStore?.Get<string?>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
 #nullable restore
 #else
-        public string AppleId {
+        public string AppleId
+        {
             get { return BackingStore?.Get<string>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Genres.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Genres {
+        public List<string>? Genres
+        {
             get { return BackingStore?.Get<List<string>?>("genres"); }
             set { BackingStore?.Set("genres", value); }
         }
 #nullable restore
 #else
-        public List<string> Genres {
+        public List<string> Genres
+        {
             get { return BackingStore?.Get<List<string>>("genres"); }
             set { BackingStore?.Set("genres", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Language.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Language {
+        public string? Language
+        {
             get { return BackingStore?.Get<string?>("language"); }
             set { BackingStore?.Set("language", value); }
         }
 #nullable restore
 #else
-        public string Language {
+        public string Language
+        {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of Scope Tags for this Entity instance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -69,43 +78,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Seller.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Seller {
+        public string? Seller
+        {
             get { return BackingStore?.Get<string?>("seller"); }
             set { BackingStore?.Set("seller", value); }
         }
 #nullable restore
 #else
-        public string Seller {
+        public string Seller
+        {
             get { return BackingStore?.Get<string>("seller"); }
             set { BackingStore?.Set("seller", value); }
         }
 #endif
         /// <summary>Total license count.</summary>
-        public int? TotalLicenseCount {
+        public int? TotalLicenseCount
+        {
             get { return BackingStore?.Get<int?>("totalLicenseCount"); }
             set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>Used license count.</summary>
-        public int? UsedLicenseCount {
+        public int? UsedLicenseCount
+        {
             get { return BackingStore?.Get<int?>("usedLicenseCount"); }
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
         /// <summary>The Vpp token&apos;s organization name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? VppOrganizationName {
+        public string? VppOrganizationName
+        {
             get { return BackingStore?.Get<string?>("vppOrganizationName"); }
             set { BackingStore?.Set("vppOrganizationName", value); }
         }
 #nullable restore
 #else
-        public string VppOrganizationName {
+        public string VppOrganizationName
+        {
             get { return BackingStore?.Get<string>("vppOrganizationName"); }
             set { BackingStore?.Set("vppOrganizationName", value); }
         }
 #endif
         /// <summary>The Vpp token ID.</summary>
-        public Guid? VppTokenId {
+        public Guid? VppTokenId
+        {
             get { return BackingStore?.Get<Guid?>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
@@ -134,15 +150,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appleId", n => { AppleId = n.GetStringValue(); } },
-                {"genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"language", n => { Language = n.GetStringValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"seller", n => { Seller = n.GetStringValue(); } },
-                {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
-                {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
-                {"vppOrganizationName", n => { VppOrganizationName = n.GetStringValue(); } },
-                {"vppTokenId", n => { VppTokenId = n.GetGuidValue(); } },
+                { "appleId", n => { AppleId = n.GetStringValue(); } },
+                { "genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "language", n => { Language = n.GetStringValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "seller", n => { Seller = n.GetStringValue(); } },
+                { "totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
+                { "usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
+                { "vppOrganizationName", n => { VppOrganizationName = n.GetStringValue(); } },
+                { "vppTokenId", n => { VppTokenId = n.GetGuidValue(); } },
             };
         }
         /// <summary>

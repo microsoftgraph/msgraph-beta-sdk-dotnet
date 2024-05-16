@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AdminWindows : Entity, IParsable 
+    public class AdminWindows : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Entity that acts as a container for all Windows Update for Business deployment service functionalities. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminWindowsUpdates? Updates {
+        public AdminWindowsUpdates? Updates
+        {
             get { return BackingStore?.Get<AdminWindowsUpdates?>("updates"); }
             set { BackingStore?.Set("updates", value); }
         }
 #nullable restore
 #else
-        public AdminWindowsUpdates Updates {
+        public AdminWindowsUpdates Updates
+        {
             get { return BackingStore?.Get<AdminWindowsUpdates>("updates"); }
             set { BackingStore?.Set("updates", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"updates", n => { Updates = n.GetObjectValue<AdminWindowsUpdates>(AdminWindowsUpdates.CreateFromDiscriminatorValue); } },
+                { "updates", n => { Updates = n.GetObjectValue<AdminWindowsUpdates>(AdminWindowsUpdates.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

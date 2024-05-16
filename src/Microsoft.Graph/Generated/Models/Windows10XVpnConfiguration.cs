@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows X VPN configuration profile
     /// </summary>
-    public class Windows10XVpnConfiguration : DeviceManagementResourceAccessProfileBase, IParsable 
+    public class Windows10XVpnConfiguration : DeviceManagementResourceAccessProfileBase, IParsable
     {
         /// <summary>ID to the Authentication Certificate</summary>
-        public Guid? AuthenticationCertificateId {
+        public Guid? AuthenticationCertificateId
+        {
             get { return BackingStore?.Get<Guid?>("authenticationCertificateId"); }
             set { BackingStore?.Set("authenticationCertificateId", value); }
         }
         /// <summary>Custom XML commands that configures the VPN connection. (UTF8 byte encoding)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? CustomXml {
+        public byte[]? CustomXml
+        {
             get { return BackingStore?.Get<byte[]?>("customXml"); }
             set { BackingStore?.Set("customXml", value); }
         }
 #nullable restore
 #else
-        public byte[] CustomXml {
+        public byte[] CustomXml
+        {
             get { return BackingStore?.Get<byte[]>("customXml"); }
             set { BackingStore?.Set("customXml", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom Xml file name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomXmlFileName {
+        public string? CustomXmlFileName
+        {
             get { return BackingStore?.Get<string?>("customXmlFileName"); }
             set { BackingStore?.Set("customXmlFileName", value); }
         }
 #nullable restore
 #else
-        public string CustomXmlFileName {
+        public string CustomXmlFileName
+        {
             get { return BackingStore?.Get<string>("customXmlFileName"); }
             set { BackingStore?.Set("customXmlFileName", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationCertificateId", n => { AuthenticationCertificateId = n.GetGuidValue(); } },
-                {"customXml", n => { CustomXml = n.GetByteArrayValue(); } },
-                {"customXmlFileName", n => { CustomXmlFileName = n.GetStringValue(); } },
+                { "authenticationCertificateId", n => { AuthenticationCertificateId = n.GetGuidValue(); } },
+                { "customXml", n => { CustomXml = n.GetByteArrayValue(); } },
+                { "customXmlFileName", n => { CustomXmlFileName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The entity represents a Boolean value of a checkbox presentation on a policy definition.
     /// </summary>
-    public class GroupPolicyPresentationValueBoolean : GroupPolicyPresentationValue, IParsable 
+    public class GroupPolicyPresentationValueBoolean : GroupPolicyPresentationValue, IParsable
     {
         /// <summary>An boolean value for the associated presentation.</summary>
-        public bool? Value {
+        public bool? Value
+        {
             get { return BackingStore?.Get<bool?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -33,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetBoolValue(); } },
+                { "value", n => { Value = n.GetBoolValue(); } },
             };
         }
         /// <summary>

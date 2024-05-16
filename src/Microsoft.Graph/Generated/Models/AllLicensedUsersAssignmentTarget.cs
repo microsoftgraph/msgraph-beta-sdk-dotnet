@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an assignment to all licensed users in the tenant.
     /// </summary>
-    public class AllLicensedUsersAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable 
+    public class AllLicensedUsersAssignmentTarget : DeviceAndAppManagementAssignmentTarget, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="AllLicensedUsersAssignmentTarget"/> and sets the default values.

@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity representing setting comparison result
     /// </summary>
-    public class DeviceManagementSettingComparison : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementSettingComparison : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Setting comparison result type</summary>
-        public DeviceManagementComparisonResult? ComparisonResult {
+        public DeviceManagementComparisonResult? ComparisonResult
+        {
             get { return BackingStore?.Get<DeviceManagementComparisonResult?>("comparisonResult"); }
             set { BackingStore?.Set("comparisonResult", value); }
         }
         /// <summary>JSON representation of current intent (or) template setting&apos;s value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentValueJson {
+        public string? CurrentValueJson
+        {
             get { return BackingStore?.Get<string?>("currentValueJson"); }
             set { BackingStore?.Set("currentValueJson", value); }
         }
 #nullable restore
 #else
-        public string CurrentValueJson {
+        public string CurrentValueJson
+        {
             get { return BackingStore?.Get<string>("currentValueJson"); }
             set { BackingStore?.Set("currentValueJson", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the setting definition for this instance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefinitionId {
+        public string? DefinitionId
+        {
             get { return BackingStore?.Get<string?>("definitionId"); }
             set { BackingStore?.Set("definitionId", value); }
         }
 #nullable restore
 #else
-        public string DefinitionId {
+        public string DefinitionId
+        {
             get { return BackingStore?.Get<string>("definitionId"); }
             set { BackingStore?.Set("definitionId", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting&apos;s display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>JSON representation of new template setting&apos;s value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewValueJson {
+        public string? NewValueJson
+        {
             get { return BackingStore?.Get<string?>("newValueJson"); }
             set { BackingStore?.Set("newValueJson", value); }
         }
 #nullable restore
 #else
-        public string NewValueJson {
+        public string NewValueJson
+        {
             get { return BackingStore?.Get<string>("newValueJson"); }
             set { BackingStore?.Set("newValueJson", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -133,13 +148,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"comparisonResult", n => { ComparisonResult = n.GetEnumValue<DeviceManagementComparisonResult>(); } },
-                {"currentValueJson", n => { CurrentValueJson = n.GetStringValue(); } },
-                {"definitionId", n => { DefinitionId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"newValueJson", n => { NewValueJson = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "comparisonResult", n => { ComparisonResult = n.GetEnumValue<DeviceManagementComparisonResult>(); } },
+                { "currentValueJson", n => { CurrentValueJson = n.GetStringValue(); } },
+                { "definitionId", n => { DefinitionId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "newValueJson", n => { NewValueJson = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

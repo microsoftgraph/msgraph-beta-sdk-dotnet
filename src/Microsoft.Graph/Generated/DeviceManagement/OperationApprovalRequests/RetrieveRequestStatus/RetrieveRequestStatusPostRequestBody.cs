@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveRequestStatus {
+namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveRequestStatus
+{
     #pragma warning disable CS1591
-    public class RetrieveRequestStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RetrieveRequestStatusPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Retrie
         /// <summary>The entityId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityId {
+        public string? EntityId
+        {
             get { return BackingStore?.Get<string?>("entityId"); }
             set { BackingStore?.Set("entityId", value); }
         }
 #nullable restore
 #else
-        public string EntityId {
+        public string EntityId
+        {
             get { return BackingStore?.Get<string>("entityId"); }
             set { BackingStore?.Set("entityId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Retrie
         /// <summary>The entityType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntityType {
+        public string? EntityType
+        {
             get { return BackingStore?.Get<string?>("entityType"); }
             set { BackingStore?.Set("entityType", value); }
         }
 #nullable restore
 #else
-        public string EntityType {
+        public string EntityType
+        {
             get { return BackingStore?.Get<string>("entityType"); }
             set { BackingStore?.Set("entityType", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Retrie
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"entityId", n => { EntityId = n.GetStringValue(); } },
-                {"entityType", n => { EntityType = n.GetStringValue(); } },
+                { "entityId", n => { EntityId = n.GetStringValue(); } },
+                { "entityType", n => { EntityType = n.GetStringValue(); } },
             };
         }
         /// <summary>

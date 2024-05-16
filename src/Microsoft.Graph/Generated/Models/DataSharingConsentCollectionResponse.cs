@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DataSharingConsentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class DataSharingConsentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DataSharingConsent>? Value {
+        public List<DataSharingConsent>? Value
+        {
             get { return BackingStore?.Get<List<DataSharingConsent>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DataSharingConsent> Value {
+        public List<DataSharingConsent> Value
+        {
             get { return BackingStore?.Get<List<DataSharingConsent>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DataSharingConsent>(DataSharingConsent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<DataSharingConsent>(DataSharingConsent.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

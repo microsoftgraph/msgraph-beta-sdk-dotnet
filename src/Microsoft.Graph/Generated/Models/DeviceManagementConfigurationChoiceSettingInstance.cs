@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Setting instance within policy
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable 
+    public class DeviceManagementConfigurationChoiceSettingInstance : DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>The choiceSettingValue property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationChoiceSettingValue? ChoiceSettingValue {
+        public DeviceManagementConfigurationChoiceSettingValue? ChoiceSettingValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValue?>("choiceSettingValue"); }
             set { BackingStore?.Set("choiceSettingValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationChoiceSettingValue ChoiceSettingValue {
+        public DeviceManagementConfigurationChoiceSettingValue ChoiceSettingValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationChoiceSettingValue>("choiceSettingValue"); }
             set { BackingStore?.Set("choiceSettingValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"choiceSettingValue", n => { ChoiceSettingValue = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValue>(DeviceManagementConfigurationChoiceSettingValue.CreateFromDiscriminatorValue); } },
+                { "choiceSettingValue", n => { ChoiceSettingValue = n.GetObjectValue<DeviceManagementConfigurationChoiceSettingValue>(DeviceManagementConfigurationChoiceSettingValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

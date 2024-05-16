@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The base class for a type of apps
     /// </summary>
-    public class WindowsKioskUWPApp : WindowsKioskAppBase, IParsable 
+    public class WindowsKioskUWPApp : WindowsKioskAppBase, IParsable
     {
         /// <summary>This references an Intune App that will be target to the same assignments as Kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This is the only Application User Model ID (AUMID) that will be available to launch use while in Kiosk Mode</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppUserModelId {
+        public string? AppUserModelId
+        {
             get { return BackingStore?.Get<string?>("appUserModelId"); }
             set { BackingStore?.Set("appUserModelId", value); }
         }
 #nullable restore
 #else
-        public string AppUserModelId {
+        public string AppUserModelId
+        {
             get { return BackingStore?.Get<string>("appUserModelId"); }
             set { BackingStore?.Set("appUserModelId", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This references an contained App from an Intune App</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContainedAppId {
+        public string? ContainedAppId
+        {
             get { return BackingStore?.Get<string?>("containedAppId"); }
             set { BackingStore?.Set("containedAppId", value); }
         }
 #nullable restore
 #else
-        public string ContainedAppId {
+        public string ContainedAppId
+        {
             get { return BackingStore?.Get<string>("containedAppId"); }
             set { BackingStore?.Set("containedAppId", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"appUserModelId", n => { AppUserModelId = n.GetStringValue(); } },
-                {"containedAppId", n => { ContainedAppId = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "appUserModelId", n => { AppUserModelId = n.GetStringValue(); } },
+                { "containedAppId", n => { ContainedAppId = n.GetStringValue(); } },
             };
         }
         /// <summary>

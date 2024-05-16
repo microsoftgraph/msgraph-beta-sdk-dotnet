@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ApplicableContent : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplicableContent : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Catalog entry for the update or content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry? CatalogEntry {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry? CatalogEntry
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry?>("catalogEntry"); }
             set { BackingStore?.Set("catalogEntry", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry CatalogEntry {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry CatalogEntry
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>("catalogEntry"); }
             set { BackingStore?.Set("catalogEntry", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>ID of the catalog entry for the applicable content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CatalogEntryId {
+        public string? CatalogEntryId
+        {
             get { return BackingStore?.Get<string?>("catalogEntryId"); }
             set { BackingStore?.Set("catalogEntryId", value); }
         }
 #nullable restore
 #else
-        public string CatalogEntryId {
+        public string CatalogEntryId
+        {
             get { return BackingStore?.Get<string>("catalogEntryId"); }
             set { BackingStore?.Set("catalogEntryId", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Collection of devices and recommendations for applicable catalog content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ApplicableContentDeviceMatch>? MatchedDevices {
+        public List<ApplicableContentDeviceMatch>? MatchedDevices
+        {
             get { return BackingStore?.Get<List<ApplicableContentDeviceMatch>?>("matchedDevices"); }
             set { BackingStore?.Set("matchedDevices", value); }
         }
 #nullable restore
 #else
-        public List<ApplicableContentDeviceMatch> MatchedDevices {
+        public List<ApplicableContentDeviceMatch> MatchedDevices
+        {
             get { return BackingStore?.Get<List<ApplicableContentDeviceMatch>>("matchedDevices"); }
             set { BackingStore?.Set("matchedDevices", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"catalogEntry", n => { CatalogEntry = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue); } },
-                {"catalogEntryId", n => { CatalogEntryId = n.GetStringValue(); } },
-                {"matchedDevices", n => { MatchedDevices = n.GetCollectionOfObjectValues<ApplicableContentDeviceMatch>(ApplicableContentDeviceMatch.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "catalogEntry", n => { CatalogEntry = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry>(Microsoft.Graph.Beta.Models.WindowsUpdates.CatalogEntry.CreateFromDiscriminatorValue); } },
+                { "catalogEntryId", n => { CatalogEntryId = n.GetStringValue(); } },
+                { "matchedDevices", n => { MatchedDevices = n.GetCollectionOfObjectValues<ApplicableContentDeviceMatch>(ApplicableContentDeviceMatch.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

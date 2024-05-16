@@ -5,31 +5,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public FilteringPolicyAction? Action {
+        public FilteringPolicyAction? Action
+        {
             get { return BackingStore?.Get<FilteringPolicyAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents the version of the Global Secure Access client agent software. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AgentVersion {
+        public string? AgentVersion
+        {
             get { return BackingStore?.Get<string?>("agentVersion"); }
             set { BackingStore?.Set("agentVersion", value); }
         }
 #nullable restore
 #else
-        public string AgentVersion {
+        public string AgentVersion
+        {
             get { return BackingStore?.Get<string>("agentVersion"); }
             set { BackingStore?.Set("agentVersion", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The applicationSnapshot property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot? ApplicationSnapshot {
+        public Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot? ApplicationSnapshot
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot?>("applicationSnapshot"); }
             set { BackingStore?.Set("applicationSnapshot", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot ApplicationSnapshot {
+        public Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot ApplicationSnapshot
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>("applicationSnapshot"); }
             set { BackingStore?.Set("applicationSnapshot", value); }
         }
@@ -53,32 +60,37 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents a unique identifier assigned to a connection. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionId {
+        public string? ConnectionId
+        {
             get { return BackingStore?.Get<string?>("connectionId"); }
             set { BackingStore?.Set("connectionId", value); }
         }
 #nullable restore
 #else
-        public string ConnectionId {
+        public string ConnectionId
+        {
             get { return BackingStore?.Get<string>("connectionId"); }
             set { BackingStore?.Set("connectionId", value); }
         }
 #endif
         /// <summary>Represents the date and time when a network access traffic log entry was created. Supports $filter (eq) and $orderby.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -86,13 +98,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the Fully Qualified Domain Name (FQDN) of the destination host or server in a network communication. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationFQDN {
+        public string? DestinationFQDN
+        {
             get { return BackingStore?.Get<string?>("destinationFQDN"); }
             set { BackingStore?.Set("destinationFQDN", value); }
         }
 #nullable restore
 #else
-        public string DestinationFQDN {
+        public string DestinationFQDN
+        {
             get { return BackingStore?.Get<string>("destinationFQDN"); }
             set { BackingStore?.Set("destinationFQDN", value); }
         }
@@ -100,32 +114,37 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the IP address of the destination host or server in a network communication. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationIp {
+        public string? DestinationIp
+        {
             get { return BackingStore?.Get<string?>("destinationIp"); }
             set { BackingStore?.Set("destinationIp", value); }
         }
 #nullable restore
 #else
-        public string DestinationIp {
+        public string DestinationIp
+        {
             get { return BackingStore?.Get<string>("destinationIp"); }
             set { BackingStore?.Set("destinationIp", value); }
         }
 #endif
         /// <summary>Represents the network port number on the destination host or server in a network communication. Supports $filter (eq) and $orderby.</summary>
-        public int? DestinationPort {
+        public int? DestinationPort
+        {
             get { return BackingStore?.Get<int?>("destinationPort"); }
             set { BackingStore?.Set("destinationPort", value); }
         }
         /// <summary>The destinationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationUrl {
+        public string? DestinationUrl
+        {
             get { return BackingStore?.Get<string?>("destinationUrl"); }
             set { BackingStore?.Set("destinationUrl", value); }
         }
 #nullable restore
 #else
-        public string DestinationUrl {
+        public string DestinationUrl
+        {
             get { return BackingStore?.Get<string>("destinationUrl"); }
             set { BackingStore?.Set("destinationUrl", value); }
         }
@@ -133,32 +152,37 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The destinationWebCategory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WebCategory? DestinationWebCategory {
+        public WebCategory? DestinationWebCategory
+        {
             get { return BackingStore?.Get<WebCategory?>("destinationWebCategory"); }
             set { BackingStore?.Set("destinationWebCategory", value); }
         }
 #nullable restore
 #else
-        public WebCategory DestinationWebCategory {
+        public WebCategory DestinationWebCategory
+        {
             get { return BackingStore?.Get<WebCategory>("destinationWebCategory"); }
             set { BackingStore?.Set("destinationWebCategory", value); }
         }
 #endif
         /// <summary>Represents the category classification of a device within a network infrastructure. The possible values are: client, branch, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory? DeviceCategory {
+        public Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory? DeviceCategory
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.DeviceCategory?>("deviceCategory"); }
             set { BackingStore?.Set("deviceCategory", value); }
         }
         /// <summary>Represents a unique identifier assigned to a device within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -166,13 +190,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceOperatingSystem {
+        public string? DeviceOperatingSystem
+        {
             get { return BackingStore?.Get<string?>("deviceOperatingSystem"); }
             set { BackingStore?.Set("deviceOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public string DeviceOperatingSystem {
+        public string DeviceOperatingSystem
+        {
             get { return BackingStore?.Get<string>("deviceOperatingSystem"); }
             set { BackingStore?.Set("deviceOperatingSystem", value); }
         }
@@ -180,13 +206,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the version or release number of the operating system installed on a device within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceOperatingSystemVersion {
+        public string? DeviceOperatingSystemVersion
+        {
             get { return BackingStore?.Get<string?>("deviceOperatingSystemVersion"); }
             set { BackingStore?.Set("deviceOperatingSystemVersion", value); }
         }
 #nullable restore
 #else
-        public string DeviceOperatingSystemVersion {
+        public string DeviceOperatingSystemVersion
+        {
             get { return BackingStore?.Get<string>("deviceOperatingSystemVersion"); }
             set { BackingStore?.Set("deviceOperatingSystemVersion", value); }
         }
@@ -194,13 +222,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The filteringProfileId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FilteringProfileId {
+        public string? FilteringProfileId
+        {
             get { return BackingStore?.Get<string?>("filteringProfileId"); }
             set { BackingStore?.Set("filteringProfileId", value); }
         }
 #nullable restore
 #else
-        public string FilteringProfileId {
+        public string FilteringProfileId
+        {
             get { return BackingStore?.Get<string>("filteringProfileId"); }
             set { BackingStore?.Set("filteringProfileId", value); }
         }
@@ -208,13 +238,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The filteringProfileName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FilteringProfileName {
+        public string? FilteringProfileName
+        {
             get { return BackingStore?.Get<string?>("filteringProfileName"); }
             set { BackingStore?.Set("filteringProfileName", value); }
         }
 #nullable restore
 #else
-        public string FilteringProfileName {
+        public string FilteringProfileName
+        {
             get { return BackingStore?.Get<string>("filteringProfileName"); }
             set { BackingStore?.Set("filteringProfileName", value); }
         }
@@ -222,13 +254,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the headers included in a network request or response. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.Headers? Headers {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Headers? Headers
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Headers?>("headers"); }
             set { BackingStore?.Set("headers", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.Headers Headers {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Headers Headers
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Headers>("headers"); }
             set { BackingStore?.Set("headers", value); }
         }
@@ -236,32 +270,37 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The initiatingProcessName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatingProcessName {
+        public string? InitiatingProcessName
+        {
             get { return BackingStore?.Get<string?>("initiatingProcessName"); }
             set { BackingStore?.Set("initiatingProcessName", value); }
         }
 #nullable restore
 #else
-        public string InitiatingProcessName {
+        public string InitiatingProcessName
+        {
             get { return BackingStore?.Get<string>("initiatingProcessName"); }
             set { BackingStore?.Set("initiatingProcessName", value); }
         }
 #endif
         /// <summary>Represents the networking protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
-        public NetworkingProtocol? NetworkProtocol {
+        public NetworkingProtocol? NetworkProtocol
+        {
             get { return BackingStore?.Get<NetworkingProtocol?>("networkProtocol"); }
             set { BackingStore?.Set("networkProtocol", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -269,13 +308,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents a unique identifier assigned to a policy. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyId {
+        public string? PolicyId
+        {
             get { return BackingStore?.Get<string?>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
 #nullable restore
 #else
-        public string PolicyId {
+        public string PolicyId
+        {
             get { return BackingStore?.Get<string>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
@@ -283,13 +324,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The policyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyName {
+        public string? PolicyName
+        {
             get { return BackingStore?.Get<string?>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
 #nullable restore
 #else
-        public string PolicyName {
+        public string PolicyName
+        {
             get { return BackingStore?.Get<string>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
@@ -297,13 +340,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents a unique identifier assigned to a policy rule. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyRuleId {
+        public string? PolicyRuleId
+        {
             get { return BackingStore?.Get<string?>("policyRuleId"); }
             set { BackingStore?.Set("policyRuleId", value); }
         }
 #nullable restore
 #else
-        public string PolicyRuleId {
+        public string PolicyRuleId
+        {
             get { return BackingStore?.Get<string>("policyRuleId"); }
             set { BackingStore?.Set("policyRuleId", value); }
         }
@@ -311,13 +356,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The policyRuleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyRuleName {
+        public string? PolicyRuleName
+        {
             get { return BackingStore?.Get<string?>("policyRuleName"); }
             set { BackingStore?.Set("policyRuleName", value); }
         }
 #nullable restore
 #else
-        public string PolicyRuleName {
+        public string PolicyRuleName
+        {
             get { return BackingStore?.Get<string>("policyRuleName"); }
             set { BackingStore?.Set("policyRuleName", value); }
         }
@@ -325,51 +372,59 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The privateAccessDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails? PrivateAccessDetails {
+        public Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails? PrivateAccessDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails?>("privateAccessDetails"); }
             set { BackingStore?.Set("privateAccessDetails", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails PrivateAccessDetails {
+        public Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails PrivateAccessDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>("privateAccessDetails"); }
             set { BackingStore?.Set("privateAccessDetails", value); }
         }
 #endif
         /// <summary>Represents the total number of bytes received in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
-        public long? ReceivedBytes {
+        public long? ReceivedBytes
+        {
             get { return BackingStore?.Get<long?>("receivedBytes"); }
             set { BackingStore?.Set("receivedBytes", value); }
         }
         /// <summary>The resourceTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ResourceTenantId {
+        public string? ResourceTenantId
+        {
             get { return BackingStore?.Get<string?>("resourceTenantId"); }
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #nullable restore
 #else
-        public string ResourceTenantId {
+        public string ResourceTenantId
+        {
             get { return BackingStore?.Get<string>("resourceTenantId"); }
             set { BackingStore?.Set("resourceTenantId", value); }
         }
 #endif
         /// <summary>Represents the total number of bytes sent in a network communication or data transfer. Supports $filter (eq) and $orderby.</summary>
-        public long? SentBytes {
+        public long? SentBytes
+        {
             get { return BackingStore?.Get<long?>("sentBytes"); }
             set { BackingStore?.Set("sentBytes", value); }
         }
         /// <summary>Represents a unique identifier assigned to a session or connection within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SessionId {
+        public string? SessionId
+        {
             get { return BackingStore?.Get<string?>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
 #nullable restore
 #else
-        public string SessionId {
+        public string SessionId
+        {
             get { return BackingStore?.Get<string>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
@@ -377,32 +432,37 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the source IP address in a network communication. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceIp {
+        public string? SourceIp
+        {
             get { return BackingStore?.Get<string?>("sourceIp"); }
             set { BackingStore?.Set("sourceIp", value); }
         }
 #nullable restore
 #else
-        public string SourceIp {
+        public string SourceIp
+        {
             get { return BackingStore?.Get<string>("sourceIp"); }
             set { BackingStore?.Set("sourceIp", value); }
         }
 #endif
         /// <summary>Represents the network port number on the source host or device in a network communication. Supports $filter (eq) and $orderby.</summary>
-        public int? SourcePort {
+        public int? SourcePort
+        {
             get { return BackingStore?.Get<int?>("sourcePort"); }
             set { BackingStore?.Set("sourcePort", value); }
         }
         /// <summary>Represents a unique identifier assigned to a tenant within a network infrastructure. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -410,51 +470,59 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The threatType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThreatType {
+        public string? ThreatType
+        {
             get { return BackingStore?.Get<string?>("threatType"); }
             set { BackingStore?.Set("threatType", value); }
         }
 #nullable restore
 #else
-        public string ThreatType {
+        public string ThreatType
+        {
             get { return BackingStore?.Get<string>("threatType"); }
             set { BackingStore?.Set("threatType", value); }
         }
 #endif
         /// <summary>The trafficType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
         /// <summary>Represents a unique identifier assigned to a specific transaction or operation. Key. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionId {
+        public string? TransactionId
+        {
             get { return BackingStore?.Get<string?>("transactionId"); }
             set { BackingStore?.Set("transactionId", value); }
         }
 #nullable restore
 #else
-        public string TransactionId {
+        public string TransactionId
+        {
             get { return BackingStore?.Get<string>("transactionId"); }
             set { BackingStore?.Set("transactionId", value); }
         }
 #endif
         /// <summary>Represents the transport protocol used for communication.The possible values are: ip, icmp, igmp, ggp, ipv4, tcp, pup, udp, idp, ipv6, ipv6RoutingHeader, ipv6FragmentHeader, ipSecEncapsulatingSecurityPayload, ipSecAuthenticationHeader, icmpV6, ipv6NoNextHeader, ipv6DestinationOptions, nd, raw, ipx, spx, spxII, unknownFutureValue. Supports $filter (eq) and $orderby.</summary>
-        public NetworkingProtocol? TransportProtocol {
+        public NetworkingProtocol? TransportProtocol
+        {
             get { return BackingStore?.Get<NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
         /// <summary>Represents a unique identifier assigned to a user. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -462,13 +530,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Represents the user principal name (UPN) associated with a user. Supports $filter (eq) and $orderby.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -476,13 +546,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The vendorNames property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? VendorNames {
+        public List<string>? VendorNames
+        {
             get { return BackingStore?.Get<List<string>?>("vendorNames"); }
             set { BackingStore?.Set("vendorNames", value); }
         }
 #nullable restore
 #else
-        public List<string> VendorNames {
+        public List<string> VendorNames
+        {
             get { return BackingStore?.Get<List<string>>("vendorNames"); }
             set { BackingStore?.Set("vendorNames", value); }
         }
@@ -513,46 +585,46 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<FilteringPolicyAction>(); } },
-                {"agentVersion", n => { AgentVersion = n.GetStringValue(); } },
-                {"applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
-                {"connectionId", n => { ConnectionId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"destinationFQDN", n => { DestinationFQDN = n.GetStringValue(); } },
-                {"destinationIp", n => { DestinationIp = n.GetStringValue(); } },
-                {"destinationPort", n => { DestinationPort = n.GetIntValue(); } },
-                {"destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
-                {"destinationWebCategory", n => { DestinationWebCategory = n.GetObjectValue<WebCategory>(WebCategory.CreateFromDiscriminatorValue); } },
-                {"deviceCategory", n => { DeviceCategory = n.GetEnumValue<DeviceCategory>(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceOperatingSystem", n => { DeviceOperatingSystem = n.GetStringValue(); } },
-                {"deviceOperatingSystemVersion", n => { DeviceOperatingSystemVersion = n.GetStringValue(); } },
-                {"filteringProfileId", n => { FilteringProfileId = n.GetStringValue(); } },
-                {"filteringProfileName", n => { FilteringProfileName = n.GetStringValue(); } },
-                {"headers", n => { Headers = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Headers>(Microsoft.Graph.Beta.Models.Networkaccess.Headers.CreateFromDiscriminatorValue); } },
-                {"initiatingProcessName", n => { InitiatingProcessName = n.GetStringValue(); } },
-                {"networkProtocol", n => { NetworkProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"policyId", n => { PolicyId = n.GetStringValue(); } },
-                {"policyName", n => { PolicyName = n.GetStringValue(); } },
-                {"policyRuleId", n => { PolicyRuleId = n.GetStringValue(); } },
-                {"policyRuleName", n => { PolicyRuleName = n.GetStringValue(); } },
-                {"privateAccessDetails", n => { PrivateAccessDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>(Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails.CreateFromDiscriminatorValue); } },
-                {"receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
-                {"resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
-                {"sentBytes", n => { SentBytes = n.GetLongValue(); } },
-                {"sessionId", n => { SessionId = n.GetStringValue(); } },
-                {"sourceIp", n => { SourceIp = n.GetStringValue(); } },
-                {"sourcePort", n => { SourcePort = n.GetIntValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"threatType", n => { ThreatType = n.GetStringValue(); } },
-                {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
-                {"transactionId", n => { TransactionId = n.GetStringValue(); } },
-                {"transportProtocol", n => { TransportProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"vendorNames", n => { VendorNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "action", n => { Action = n.GetEnumValue<FilteringPolicyAction>(); } },
+                { "agentVersion", n => { AgentVersion = n.GetStringValue(); } },
+                { "applicationSnapshot", n => { ApplicationSnapshot = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot>(Microsoft.Graph.Beta.Models.Networkaccess.ApplicationSnapshot.CreateFromDiscriminatorValue); } },
+                { "connectionId", n => { ConnectionId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "destinationFQDN", n => { DestinationFQDN = n.GetStringValue(); } },
+                { "destinationIp", n => { DestinationIp = n.GetStringValue(); } },
+                { "destinationPort", n => { DestinationPort = n.GetIntValue(); } },
+                { "destinationUrl", n => { DestinationUrl = n.GetStringValue(); } },
+                { "destinationWebCategory", n => { DestinationWebCategory = n.GetObjectValue<WebCategory>(WebCategory.CreateFromDiscriminatorValue); } },
+                { "deviceCategory", n => { DeviceCategory = n.GetEnumValue<DeviceCategory>(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceOperatingSystem", n => { DeviceOperatingSystem = n.GetStringValue(); } },
+                { "deviceOperatingSystemVersion", n => { DeviceOperatingSystemVersion = n.GetStringValue(); } },
+                { "filteringProfileId", n => { FilteringProfileId = n.GetStringValue(); } },
+                { "filteringProfileName", n => { FilteringProfileName = n.GetStringValue(); } },
+                { "headers", n => { Headers = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Headers>(Microsoft.Graph.Beta.Models.Networkaccess.Headers.CreateFromDiscriminatorValue); } },
+                { "initiatingProcessName", n => { InitiatingProcessName = n.GetStringValue(); } },
+                { "networkProtocol", n => { NetworkProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "policyId", n => { PolicyId = n.GetStringValue(); } },
+                { "policyName", n => { PolicyName = n.GetStringValue(); } },
+                { "policyRuleId", n => { PolicyRuleId = n.GetStringValue(); } },
+                { "policyRuleName", n => { PolicyRuleName = n.GetStringValue(); } },
+                { "privateAccessDetails", n => { PrivateAccessDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails>(Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessDetails.CreateFromDiscriminatorValue); } },
+                { "receivedBytes", n => { ReceivedBytes = n.GetLongValue(); } },
+                { "resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
+                { "sentBytes", n => { SentBytes = n.GetLongValue(); } },
+                { "sessionId", n => { SessionId = n.GetStringValue(); } },
+                { "sourceIp", n => { SourceIp = n.GetStringValue(); } },
+                { "sourcePort", n => { SourcePort = n.GetIntValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "threatType", n => { ThreatType = n.GetStringValue(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "transactionId", n => { TransactionId = n.GetStringValue(); } },
+                { "transportProtocol", n => { TransportProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "vendorNames", n => { VendorNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

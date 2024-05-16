@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.App.Calls.Item.PlayPrompt {
+namespace Microsoft.Graph.Beta.App.Calls.Item.PlayPrompt
+{
     #pragma warning disable CS1591
-    public class PlayPromptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PlayPromptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,32 +23,37 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.PlayPrompt {
         /// <summary>The clientContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientContext {
+        public string? ClientContext
+        {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #nullable restore
 #else
-        public string ClientContext {
+        public string ClientContext
+        {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #endif
         /// <summary>The loop property</summary>
-        public bool? Loop {
+        public bool? Loop
+        {
             get { return BackingStore?.Get<bool?>("loop"); }
             set { BackingStore?.Set("loop", value); }
         }
         /// <summary>The prompts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Prompt>? Prompts {
+        public List<Prompt>? Prompts
+        {
             get { return BackingStore?.Get<List<Prompt>?>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
 #nullable restore
 #else
-        public List<Prompt> Prompts {
+        public List<Prompt> Prompts
+        {
             get { return BackingStore?.Get<List<Prompt>>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.PlayPrompt {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
-                {"loop", n => { Loop = n.GetBoolValue(); } },
-                {"prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "clientContext", n => { ClientContext = n.GetStringValue(); } },
+                { "loop", n => { Loop = n.GetBoolValue(); } },
+                { "prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

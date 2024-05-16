@@ -4,60 +4,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagedDeviceComplianceTrend : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagedDeviceComplianceTrend : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of devices with a compliant status. Required. Read-only.</summary>
-        public int? CompliantDeviceCount {
+        public int? CompliantDeviceCount
+        {
             get { return BackingStore?.Get<int?>("compliantDeviceCount"); }
             set { BackingStore?.Set("compliantDeviceCount", value); }
         }
         /// <summary>The number of devices manged by Configuration Manager. Required. Read-only.</summary>
-        public int? ConfigManagerDeviceCount {
+        public int? ConfigManagerDeviceCount
+        {
             get { return BackingStore?.Get<int?>("configManagerDeviceCount"); }
             set { BackingStore?.Set("configManagerDeviceCount", value); }
         }
         /// <summary>The date and time compliance snapshot was performed. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CountDateTime {
+        public string? CountDateTime
+        {
             get { return BackingStore?.Get<string?>("countDateTime"); }
             set { BackingStore?.Set("countDateTime", value); }
         }
 #nullable restore
 #else
-        public string CountDateTime {
+        public string CountDateTime
+        {
             get { return BackingStore?.Get<string>("countDateTime"); }
             set { BackingStore?.Set("countDateTime", value); }
         }
 #endif
         /// <summary>The number of devices with an error status. Required. Read-only.</summary>
-        public int? ErrorDeviceCount {
+        public int? ErrorDeviceCount
+        {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }
             set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>The number of devices that are in a grace period status. Required. Read-only.</summary>
-        public int? InGracePeriodDeviceCount {
+        public int? InGracePeriodDeviceCount
+        {
             get { return BackingStore?.Get<int?>("inGracePeriodDeviceCount"); }
             set { BackingStore?.Set("inGracePeriodDeviceCount", value); }
         }
         /// <summary>The number of devices that are in a non-compliant status. Required. Read-only.</summary>
-        public int? NoncompliantDeviceCount {
+        public int? NoncompliantDeviceCount
+        {
             get { return BackingStore?.Get<int?>("noncompliantDeviceCount"); }
             set { BackingStore?.Set("noncompliantDeviceCount", value); }
         }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDisplayName {
+        public string? TenantDisplayName
+        {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TenantDisplayName {
+        public string TenantDisplayName
+        {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
@@ -65,19 +75,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The Microsoft Entra tenant identifier for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
         /// <summary>The number of devices in an unknown status. Required. Read-only.</summary>
-        public int? UnknownDeviceCount {
+        public int? UnknownDeviceCount
+        {
             get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
@@ -99,15 +112,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
-                {"configManagerDeviceCount", n => { ConfigManagerDeviceCount = n.GetIntValue(); } },
-                {"countDateTime", n => { CountDateTime = n.GetStringValue(); } },
-                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
-                {"inGracePeriodDeviceCount", n => { InGracePeriodDeviceCount = n.GetIntValue(); } },
-                {"noncompliantDeviceCount", n => { NoncompliantDeviceCount = n.GetIntValue(); } },
-                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
+                { "compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
+                { "configManagerDeviceCount", n => { ConfigManagerDeviceCount = n.GetIntValue(); } },
+                { "countDateTime", n => { CountDateTime = n.GetStringValue(); } },
+                { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                { "inGracePeriodDeviceCount", n => { InGracePeriodDeviceCount = n.GetIntValue(); } },
+                { "noncompliantDeviceCount", n => { NoncompliantDeviceCount = n.GetIntValue(); } },
+                { "tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

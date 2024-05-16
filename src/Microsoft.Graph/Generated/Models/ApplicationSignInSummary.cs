@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ApplicationSignInSummary : Entity, IParsable 
+    public class ApplicationSignInSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Name of the application that the user signed into.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppDisplayName {
+        public string? AppDisplayName
+        {
             get { return BackingStore?.Get<string?>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #nullable restore
 #else
-        public string AppDisplayName {
+        public string AppDisplayName
+        {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
 #endif
         /// <summary>Count of failed sign-ins made by the application.</summary>
-        public long? FailedSignInCount {
+        public long? FailedSignInCount
+        {
             get { return BackingStore?.Get<long?>("failedSignInCount"); }
             set { BackingStore?.Set("failedSignInCount", value); }
         }
         /// <summary>Count of successful sign-ins made by the application.</summary>
-        public long? SuccessfulSignInCount {
+        public long? SuccessfulSignInCount
+        {
             get { return BackingStore?.Get<long?>("successfulSignInCount"); }
             set { BackingStore?.Set("successfulSignInCount", value); }
         }
         /// <summary>Percentage of successful sign-ins made by the application.</summary>
-        public double? SuccessPercentage {
+        public double? SuccessPercentage
+        {
             get { return BackingStore?.Get<double?>("successPercentage"); }
             set { BackingStore?.Set("successPercentage", value); }
         }
@@ -56,10 +62,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
-                {"failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
-                {"successPercentage", n => { SuccessPercentage = n.GetDoubleValue(); } },
-                {"successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },
+                { "appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
+                { "failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
+                { "successPercentage", n => { SuccessPercentage = n.GetDoubleValue(); } },
+                { "successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },
             };
         }
         /// <summary>

@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents the information about the property which is supported in crafting the rule of AssignmentFilter.
     /// </summary>
-    public class AssignmentFilterSupportedProperty : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignmentFilterSupportedProperty : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,32 +23,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The data type of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DataType {
+        public string? DataType
+        {
             get { return BackingStore?.Get<string?>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
 #nullable restore
 #else
-        public string DataType {
+        public string DataType
+        {
             get { return BackingStore?.Get<string>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
 #endif
         /// <summary>Indicates whether the property is a collection type or not.</summary>
-        public bool? IsCollection {
+        public bool? IsCollection
+        {
             get { return BackingStore?.Get<bool?>("isCollection"); }
             set { BackingStore?.Set("isCollection", value); }
         }
         /// <summary>Name of the property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Regex string to do validation on the property value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PropertyRegexConstraint {
+        public string? PropertyRegexConstraint
+        {
             get { return BackingStore?.Get<string?>("propertyRegexConstraint"); }
             set { BackingStore?.Set("propertyRegexConstraint", value); }
         }
 #nullable restore
 #else
-        public string PropertyRegexConstraint {
+        public string PropertyRegexConstraint
+        {
             get { return BackingStore?.Get<string>("propertyRegexConstraint"); }
             set { BackingStore?.Set("propertyRegexConstraint", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of all supported operators on this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignmentFilterOperator?>? SupportedOperators {
+        public List<AssignmentFilterOperator?>? SupportedOperators
+        {
             get { return BackingStore?.Get<List<AssignmentFilterOperator?>?>("supportedOperators"); }
             set { BackingStore?.Set("supportedOperators", value); }
         }
 #nullable restore
 #else
-        public List<AssignmentFilterOperator?> SupportedOperators {
+        public List<AssignmentFilterOperator?> SupportedOperators
+        {
             get { return BackingStore?.Get<List<AssignmentFilterOperator?>>("supportedOperators"); }
             set { BackingStore?.Set("supportedOperators", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of all supported values for this property, empty if everything is supported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedValues {
+        public List<string>? SupportedValues
+        {
             get { return BackingStore?.Get<List<string>?>("supportedValues"); }
             set { BackingStore?.Set("supportedValues", value); }
         }
 #nullable restore
 #else
-        public List<string> SupportedValues {
+        public List<string> SupportedValues
+        {
             get { return BackingStore?.Get<List<string>>("supportedValues"); }
             set { BackingStore?.Set("supportedValues", value); }
         }
@@ -133,13 +148,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dataType", n => { DataType = n.GetStringValue(); } },
-                {"isCollection", n => { IsCollection = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"propertyRegexConstraint", n => { PropertyRegexConstraint = n.GetStringValue(); } },
-                {"supportedOperators", n => { SupportedOperators = n.GetCollectionOfEnumValues<AssignmentFilterOperator>()?.ToList(); } },
-                {"supportedValues", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "dataType", n => { DataType = n.GetStringValue(); } },
+                { "isCollection", n => { IsCollection = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "propertyRegexConstraint", n => { PropertyRegexConstraint = n.GetStringValue(); } },
+                { "supportedOperators", n => { SupportedOperators = n.GetCollectionOfEnumValues<AssignmentFilterOperator>()?.ToList(); } },
+                { "supportedValues", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

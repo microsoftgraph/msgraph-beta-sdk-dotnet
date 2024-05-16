@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class WindowsUpdateFilter : SoftwareUpdateFilter, IParsable 
+    public class WindowsUpdateFilter : SoftwareUpdateFilter, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageResourceRoleScope : Entity, IParsable 
+    public class AccessPackageResourceRoleScope : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole? AccessPackageResourceRole {
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole? AccessPackageResourceRole
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole?>("accessPackageResourceRole"); }
             set { BackingStore?.Set("accessPackageResourceRole", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole {
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceRole AccessPackageResourceRole
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRole"); }
             set { BackingStore?.Set("accessPackageResourceRole", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The accessPackageResourceScope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope? AccessPackageResourceScope {
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope? AccessPackageResourceScope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope?>("accessPackageResourceScope"); }
             set { BackingStore?.Set("accessPackageResourceScope", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope {
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceScope AccessPackageResourceScope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScope"); }
             set { BackingStore?.Set("accessPackageResourceScope", value); }
         }
@@ -40,38 +45,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy {
+        public string? CreatedBy
+        {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public string CreatedBy {
+        public string CreatedBy
+        {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The modifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedBy {
+        public string? ModifiedBy
+        {
             get { return BackingStore?.Get<string?>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
 #nullable restore
 #else
-        public string ModifiedBy {
+        public string ModifiedBy
+        {
             get { return BackingStore?.Get<string>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
 #endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ModifiedDateTime {
+        public DateTimeOffset? ModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
@@ -93,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessPackageResourceRole", n => { AccessPackageResourceRole = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(Microsoft.Graph.Beta.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue); } },
-                {"accessPackageResourceScope", n => { AccessPackageResourceScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(Microsoft.Graph.Beta.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
-                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "accessPackageResourceRole", n => { AccessPackageResourceRole = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(Microsoft.Graph.Beta.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue); } },
+                { "accessPackageResourceScope", n => { AccessPackageResourceScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(Microsoft.Graph.Beta.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
+                { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

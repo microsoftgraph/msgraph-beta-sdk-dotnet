@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BusinessScenario : Entity, IParsable 
+    public class BusinessScenario : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identity of the user who created the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The date and time when the scenario was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Display name of the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -45,32 +51,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The identity of the user who last modified the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy {
+        public IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy {
+        public IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The date and time when the scenario was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Identifiers of applications that are authorized to work with this scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? OwnerAppIds {
+        public List<string>? OwnerAppIds
+        {
             get { return BackingStore?.Get<List<string>?>("ownerAppIds"); }
             set { BackingStore?.Set("ownerAppIds", value); }
         }
 #nullable restore
 #else
-        public List<string> OwnerAppIds {
+        public List<string> OwnerAppIds
+        {
             get { return BackingStore?.Get<List<string>>("ownerAppIds"); }
             set { BackingStore?.Set("ownerAppIds", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Planner content related to the scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BusinessScenarioPlanner? Planner {
+        public BusinessScenarioPlanner? Planner
+        {
             get { return BackingStore?.Get<BusinessScenarioPlanner?>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
 #nullable restore
 #else
-        public BusinessScenarioPlanner Planner {
+        public BusinessScenarioPlanner Planner
+        {
             get { return BackingStore?.Get<BusinessScenarioPlanner>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique name of the scenario. To avoid conflicts, the recommended value for the unique name is a reverse domain name format, owned by the author of the scenario. For example, a scenario authored by Contoso.com would have a unique name that starts with com.contoso.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueName {
+        public string? UniqueName
+        {
             get { return BackingStore?.Get<string?>("uniqueName"); }
             set { BackingStore?.Set("uniqueName", value); }
         }
 #nullable restore
 #else
-        public string UniqueName {
+        public string UniqueName
+        {
             get { return BackingStore?.Get<string>("uniqueName"); }
             set { BackingStore?.Set("uniqueName", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"ownerAppIds", n => { OwnerAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"planner", n => { Planner = n.GetObjectValue<BusinessScenarioPlanner>(BusinessScenarioPlanner.CreateFromDiscriminatorValue); } },
-                {"uniqueName", n => { UniqueName = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "ownerAppIds", n => { OwnerAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "planner", n => { Planner = n.GetObjectValue<BusinessScenarioPlanner>(BusinessScenarioPlanner.CreateFromDiscriminatorValue); } },
+                { "uniqueName", n => { UniqueName = n.GetStringValue(); } },
             };
         }
         /// <summary>

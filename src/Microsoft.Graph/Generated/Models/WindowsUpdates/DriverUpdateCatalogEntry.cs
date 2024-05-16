@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class DriverUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable 
+    public class DriverUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description of the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The classification of the driver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DriverClass {
+        public string? DriverClass
+        {
             get { return BackingStore?.Get<string?>("driverClass"); }
             set { BackingStore?.Set("driverClass", value); }
         }
 #nullable restore
 #else
-        public string DriverClass {
+        public string DriverClass
+        {
             get { return BackingStore?.Get<string>("driverClass"); }
             set { BackingStore?.Set("driverClass", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The manufacturer of the driver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The provider of the driver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Provider {
+        public string? Provider
+        {
             get { return BackingStore?.Get<string?>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
 #nullable restore
 #else
-        public string Provider {
+        public string Provider
+        {
             get { return BackingStore?.Get<string>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The setup information file of the driver.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SetupInformationFile {
+        public string? SetupInformationFile
+        {
             get { return BackingStore?.Get<string?>("setupInformationFile"); }
             set { BackingStore?.Set("setupInformationFile", value); }
         }
 #nullable restore
 #else
-        public string SetupInformationFile {
+        public string SetupInformationFile
+        {
             get { return BackingStore?.Get<string>("setupInformationFile"); }
             set { BackingStore?.Set("setupInformationFile", value); }
         }
@@ -82,19 +93,22 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The unique version of the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #endif
         /// <summary>The date and time when a new version of content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? VersionDateTime {
+        public DateTimeOffset? VersionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("versionDateTime"); }
             set { BackingStore?.Set("versionDateTime", value); }
         }
@@ -123,13 +137,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"driverClass", n => { DriverClass = n.GetStringValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"provider", n => { Provider = n.GetStringValue(); } },
-                {"setupInformationFile", n => { SetupInformationFile = n.GetStringValue(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
-                {"versionDateTime", n => { VersionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "driverClass", n => { DriverClass = n.GetStringValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "provider", n => { Provider = n.GetStringValue(); } },
+                { "setupInformationFile", n => { SetupInformationFile = n.GetStringValue(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
+                { "versionDateTime", n => { VersionDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

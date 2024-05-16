@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkFeaturesConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkFeaturesConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,47 +22,55 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Email address to send logs and feedback.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EmailToSendLogsAndFeedback {
+        public string? EmailToSendLogsAndFeedback
+        {
             get { return BackingStore?.Get<string?>("emailToSendLogsAndFeedback"); }
             set { BackingStore?.Set("emailToSendLogsAndFeedback", value); }
         }
 #nullable restore
 #else
-        public string EmailToSendLogsAndFeedback {
+        public string EmailToSendLogsAndFeedback
+        {
             get { return BackingStore?.Get<string>("emailToSendLogsAndFeedback"); }
             set { BackingStore?.Set("emailToSendLogsAndFeedback", value); }
         }
 #endif
         /// <summary>True if auto screen shared is enabled.</summary>
-        public bool? IsAutoScreenShareEnabled {
+        public bool? IsAutoScreenShareEnabled
+        {
             get { return BackingStore?.Get<bool?>("isAutoScreenShareEnabled"); }
             set { BackingStore?.Set("isAutoScreenShareEnabled", value); }
         }
         /// <summary>True if Bluetooth beaconing is enabled.</summary>
-        public bool? IsBluetoothBeaconingEnabled {
+        public bool? IsBluetoothBeaconingEnabled
+        {
             get { return BackingStore?.Get<bool?>("isBluetoothBeaconingEnabled"); }
             set { BackingStore?.Set("isBluetoothBeaconingEnabled", value); }
         }
         /// <summary>True if hiding meeting names is enabled.</summary>
-        public bool? IsHideMeetingNamesEnabled {
+        public bool? IsHideMeetingNamesEnabled
+        {
             get { return BackingStore?.Get<bool?>("isHideMeetingNamesEnabled"); }
             set { BackingStore?.Set("isHideMeetingNamesEnabled", value); }
         }
         /// <summary>True if sending logs and feedback is enabled.</summary>
-        public bool? IsSendLogsAndFeedbackEnabled {
+        public bool? IsSendLogsAndFeedbackEnabled
+        {
             get { return BackingStore?.Get<bool?>("isSendLogsAndFeedbackEnabled"); }
             set { BackingStore?.Set("isSendLogsAndFeedbackEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,12 +101,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"emailToSendLogsAndFeedback", n => { EmailToSendLogsAndFeedback = n.GetStringValue(); } },
-                {"isAutoScreenShareEnabled", n => { IsAutoScreenShareEnabled = n.GetBoolValue(); } },
-                {"isBluetoothBeaconingEnabled", n => { IsBluetoothBeaconingEnabled = n.GetBoolValue(); } },
-                {"isHideMeetingNamesEnabled", n => { IsHideMeetingNamesEnabled = n.GetBoolValue(); } },
-                {"isSendLogsAndFeedbackEnabled", n => { IsSendLogsAndFeedbackEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "emailToSendLogsAndFeedback", n => { EmailToSendLogsAndFeedback = n.GetStringValue(); } },
+                { "isAutoScreenShareEnabled", n => { IsAutoScreenShareEnabled = n.GetBoolValue(); } },
+                { "isBluetoothBeaconingEnabled", n => { IsBluetoothBeaconingEnabled = n.GetBoolValue(); } },
+                { "isHideMeetingNamesEnabled", n => { IsHideMeetingNamesEnabled = n.GetBoolValue(); } },
+                { "isSendLogsAndFeedbackEnabled", n => { IsSendLogsAndFeedbackEnabled = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

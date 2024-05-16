@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity used to retrieve information about Intune Certificate Connectors.
     /// </summary>
-    public class CertificateConnectorDetails : Entity, IParsable 
+    public class CertificateConnectorDetails : Entity, IParsable
     {
         /// <summary>Connector name (set during enrollment).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorName {
+        public string? ConnectorName
+        {
             get { return BackingStore?.Get<string?>("connectorName"); }
             set { BackingStore?.Set("connectorName", value); }
         }
 #nullable restore
 #else
-        public string ConnectorName {
+        public string ConnectorName
+        {
             get { return BackingStore?.Get<string>("connectorName"); }
             set { BackingStore?.Set("connectorName", value); }
         }
@@ -27,37 +30,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Version of the connector installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectorVersion {
+        public string? ConnectorVersion
+        {
             get { return BackingStore?.Get<string?>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
 #nullable restore
 #else
-        public string ConnectorVersion {
+        public string ConnectorVersion
+        {
             get { return BackingStore?.Get<string>("connectorVersion"); }
             set { BackingStore?.Set("connectorVersion", value); }
         }
 #endif
         /// <summary>Date/time when this connector was enrolled.</summary>
-        public DateTimeOffset? EnrollmentDateTime {
+        public DateTimeOffset? EnrollmentDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("enrollmentDateTime"); }
             set { BackingStore?.Set("enrollmentDateTime", value); }
         }
         /// <summary>Date/time when this connector last connected to the service.</summary>
-        public DateTimeOffset? LastCheckinDateTime {
+        public DateTimeOffset? LastCheckinDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckinDateTime"); }
             set { BackingStore?.Set("lastCheckinDateTime", value); }
         }
         /// <summary>Name of the machine hosting this connector service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MachineName {
+        public string? MachineName
+        {
             get { return BackingStore?.Get<string?>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
 #nullable restore
 #else
-        public string MachineName {
+        public string MachineName
+        {
             get { return BackingStore?.Get<string>("machineName"); }
             set { BackingStore?.Set("machineName", value); }
         }
@@ -80,11 +89,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectorName", n => { ConnectorName = n.GetStringValue(); } },
-                {"connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
-                {"enrollmentDateTime", n => { EnrollmentDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
-                {"machineName", n => { MachineName = n.GetStringValue(); } },
+                { "connectorName", n => { ConnectorName = n.GetStringValue(); } },
+                { "connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
+                { "enrollmentDateTime", n => { EnrollmentDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
+                { "machineName", n => { MachineName = n.GetStringValue(); } },
             };
         }
         /// <summary>

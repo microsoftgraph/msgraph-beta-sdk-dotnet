@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     #pragma warning disable CS1591
-    public class AlertRecord : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class AlertRecord : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The impact of the alert event. Consists of a list of key-value pair and a number followed by the aggregation type. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. 12 affectedCloudPcPercentage means 12% of Cloud PCs are affected. The list of key-value pair indicates the details of the alert impact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact? AlertImpact {
+        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact? AlertImpact
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact?>("alertImpact"); }
             set { BackingStore?.Set("alertImpact", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact {
+        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact>("alertImpact"); }
             set { BackingStore?.Set("alertImpact", value); }
         }
@@ -26,58 +29,68 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The corresponding ID of the alert rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AlertRuleId {
+        public string? AlertRuleId
+        {
             get { return BackingStore?.Get<string?>("alertRuleId"); }
             set { BackingStore?.Set("alertRuleId", value); }
         }
 #nullable restore
 #else
-        public string AlertRuleId {
+        public string AlertRuleId
+        {
             get { return BackingStore?.Get<string>("alertRuleId"); }
             set { BackingStore?.Set("alertRuleId", value); }
         }
 #endif
         /// <summary>The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue, cloudPcInGracePeriodScenario. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: cloudPcInGracePeriodScenario.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate {
+        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate?>("alertRuleTemplate"); }
             set { BackingStore?.Set("alertRuleTemplate", value); }
         }
         /// <summary>The date and time when the alert event was detected. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? DetectedDateTime {
+        public DateTimeOffset? DetectedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("detectedDateTime"); }
             set { BackingStore?.Set("detectedDateTime", value); }
         }
         /// <summary>The display name of the alert record.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date and time when the alert record was last updated. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The date and time when the alert event was resolved. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ResolvedDateTime {
+        public DateTimeOffset? ResolvedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("resolvedDateTime"); }
             set { BackingStore?.Set("resolvedDateTime", value); }
         }
         /// <summary>The severity of the alert event. The possible values are: unknown, informational, warning, critical, unknownFutureValue.</summary>
-        public RuleSeverityType? Severity {
+        public RuleSeverityType? Severity
+        {
             get { return BackingStore?.Get<RuleSeverityType?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The status of the alert record. The possible values are: active, resolved, unknownFutureValue.</summary>
-        public AlertStatusType? Status {
+        public AlertStatusType? Status
+        {
             get { return BackingStore?.Get<AlertStatusType?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -99,15 +112,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"alertImpact", n => { AlertImpact = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact>(Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact.CreateFromDiscriminatorValue); } },
-                {"alertRuleId", n => { AlertRuleId = n.GetStringValue(); } },
-                {"alertRuleTemplate", n => { AlertRuleTemplate = n.GetEnumValue<AlertRuleTemplate>(); } },
-                {"detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"resolvedDateTime", n => { ResolvedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"severity", n => { Severity = n.GetEnumValue<RuleSeverityType>(); } },
-                {"status", n => { Status = n.GetEnumValue<AlertStatusType>(); } },
+                { "alertImpact", n => { AlertImpact = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact>(Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact.CreateFromDiscriminatorValue); } },
+                { "alertRuleId", n => { AlertRuleId = n.GetStringValue(); } },
+                { "alertRuleTemplate", n => { AlertRuleTemplate = n.GetEnumValue<AlertRuleTemplate>(); } },
+                { "detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "resolvedDateTime", n => { ResolvedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "severity", n => { Severity = n.GetEnumValue<RuleSeverityType>(); } },
+                { "status", n => { Status = n.GetEnumValue<AlertStatusType>(); } },
             };
         }
         /// <summary>

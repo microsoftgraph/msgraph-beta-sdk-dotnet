@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WorkbookFormatProtection : Entity, IParsable 
+    public class WorkbookFormatProtection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The formulaHidden property</summary>
-        public bool? FormulaHidden {
+        public bool? FormulaHidden
+        {
             get { return BackingStore?.Get<bool?>("formulaHidden"); }
             set { BackingStore?.Set("formulaHidden", value); }
         }
         /// <summary>The locked property</summary>
-        public bool? Locked {
+        public bool? Locked
+        {
             get { return BackingStore?.Get<bool?>("locked"); }
             set { BackingStore?.Set("locked", value); }
         }
@@ -37,8 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"formulaHidden", n => { FormulaHidden = n.GetBoolValue(); } },
-                {"locked", n => { Locked = n.GetBoolValue(); } },
+                { "formulaHidden", n => { FormulaHidden = n.GetBoolValue(); } },
+                { "locked", n => { Locked = n.GetBoolValue(); } },
             };
         }
         /// <summary>

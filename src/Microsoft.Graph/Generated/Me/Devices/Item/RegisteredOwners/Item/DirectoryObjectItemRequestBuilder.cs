@@ -9,11 +9,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredOwners.Item {
+namespace Microsoft.Graph.Beta.Me.Devices.Item.RegisteredOwners.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \me\devices\{device-id}\registeredOwners\{directoryObject-id}
     /// </summary>
-    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder 
+    public class DirectoryObjectItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Casts the previous resource to endpoint.</summary>
         public GraphEndpointRequestBuilder GraphEndpoint

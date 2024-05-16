@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class Device : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Device : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>A unique device ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -34,37 +38,43 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The display name for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>A value that indicates whether or not the device is compliant.</summary>
-        public bool? IsCompliant {
+        public bool? IsCompliant
+        {
             get { return BackingStore?.Get<bool?>("isCompliant"); }
             set { BackingStore?.Set("isCompliant", value); }
         }
         /// <summary>The most recent access time for the device.</summary>
-        public DateTimeOffset? LastAccessDateTime {
+        public DateTimeOffset? LastAccessDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessDateTime"); }
             set { BackingStore?.Set("lastAccessDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,19 +82,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The operating system on the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OperatingSystem {
+        public string? OperatingSystem
+        {
             get { return BackingStore?.Get<string?>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #nullable restore
 #else
-        public string OperatingSystem {
+        public string OperatingSystem
+        {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
 #endif
         /// <summary>The trafficType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
@@ -114,13 +127,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
-                {"lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
-                {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isCompliant", n => { IsCompliant = n.GetBoolValue(); } },
+                { "lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
             };
         }
         /// <summary>

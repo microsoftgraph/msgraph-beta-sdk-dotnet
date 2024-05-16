@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
     /// </summary>
-    public class IosLobAppProvisioningConfiguration : Entity, IParsable 
+    public class IosLobAppProvisioningConfiguration : Entity, IParsable
     {
         /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosLobAppProvisioningConfigurationAssignment>? Assignments {
+        public List<IosLobAppProvisioningConfigurationAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<IosLobAppProvisioningConfigurationAssignment> Assignments {
+        public List<IosLobAppProvisioningConfigurationAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>DateTime the object was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of device installation states for this mobile app configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfigurationDeviceStatus>? DeviceStatuses {
+        public List<ManagedDeviceMobileAppConfigurationDeviceStatus>? DeviceStatuses
+        {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses {
+        public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses
+        {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
@@ -60,51 +68,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Admin provided name of the device configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Optional profile expiration date and time.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The associated group assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppProvisioningConfigGroupAssignment>? GroupAssignments {
+        public List<MobileAppProvisioningConfigGroupAssignment>? GroupAssignments
+        {
             get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>?>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppProvisioningConfigGroupAssignment> GroupAssignments {
+        public List<MobileAppProvisioningConfigGroupAssignment> GroupAssignments
+        {
             get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
 #endif
         /// <summary>DateTime the object was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Payload {
+        public byte[]? Payload
+        {
             get { return BackingStore?.Get<byte[]?>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
 #nullable restore
 #else
-        public byte[] Payload {
+        public byte[] Payload
+        {
             get { return BackingStore?.Get<byte[]>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
@@ -112,13 +128,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Payload file name (.mobileprovision</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadFileName {
+        public string? PayloadFileName
+        {
             get { return BackingStore?.Get<string?>("payloadFileName"); }
             set { BackingStore?.Set("payloadFileName", value); }
         }
 #nullable restore
 #else
-        public string PayloadFileName {
+        public string PayloadFileName
+        {
             get { return BackingStore?.Get<string>("payloadFileName"); }
             set { BackingStore?.Set("payloadFileName", value); }
         }
@@ -126,13 +144,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of Scope Tags for this iOS LOB app provisioning configuration entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RoleScopeTagIds {
+        public List<string>? RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RoleScopeTagIds {
+        public List<string> RoleScopeTagIds
+        {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
@@ -140,19 +160,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of user installation states for this mobile app configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfigurationUserStatus>? UserStatuses {
+        public List<ManagedDeviceMobileAppConfigurationUserStatus>? UserStatuses
+        {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>?>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses {
+        public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses
+        {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #endif
         /// <summary>Version of the device configuration.</summary>
-        public int? Version {
+        public int? Version
+        {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -174,19 +197,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>(ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"payload", n => { Payload = n.GetByteArrayValue(); } },
-                {"payloadFileName", n => { PayloadFileName = n.GetStringValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>(ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"version", n => { Version = n.GetIntValue(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>(ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "payload", n => { Payload = n.GetByteArrayValue(); } },
+                { "payloadFileName", n => { PayloadFileName = n.GetStringValue(); } },
+                { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>(ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "version", n => { Version = n.GetIntValue(); } },
             };
         }
         /// <summary>

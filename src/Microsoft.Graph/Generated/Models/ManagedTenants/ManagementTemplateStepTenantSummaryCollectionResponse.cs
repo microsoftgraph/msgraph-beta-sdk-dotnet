@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementTemplateStepTenantSummaryCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable 
+    public class ManagementTemplateStepTenantSummaryCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStepTenantSummary>? Value {
+        public List<ManagementTemplateStepTenantSummary>? Value
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStepTenantSummary> Value {
+        public List<ManagementTemplateStepTenantSummary> Value
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ManagementTemplateStepTenantSummary>(ManagementTemplateStepTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ManagementTemplateStepTenantSummary>(ManagementTemplateStepTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ExternalConnection : Entity, IParsable 
+    public class ExternalConnection : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration? Configuration {
+        public Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration? Configuration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration Configuration {
+        public Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration Configuration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalGroup>? Groups {
+        public List<ExternalGroup>? Groups
+        {
             get { return BackingStore?.Get<List<ExternalGroup>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<ExternalGroup> Groups {
+        public List<ExternalGroup> Groups
+        {
             get { return BackingStore?.Get<List<ExternalGroup>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalItem>? Items {
+        public List<ExternalItem>? Items
+        {
             get { return BackingStore?.Get<List<ExternalItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<ExternalItem> Items {
+        public List<ExternalItem> Items
+        {
             get { return BackingStore?.Get<List<ExternalItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -83,13 +94,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectionOperation>? Operations {
+        public List<ConnectionOperation>? Operations
+        {
             get { return BackingStore?.Get<List<ConnectionOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<ConnectionOperation> Operations {
+        public List<ConnectionOperation> Operations
+        {
             get { return BackingStore?.Get<List<ConnectionOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -97,19 +110,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The schema property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Schema? Schema {
+        public Microsoft.Graph.Beta.Models.Schema? Schema
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Schema?>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Schema Schema {
+        public Microsoft.Graph.Beta.Models.Schema Schema
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Schema>("schema"); }
             set { BackingStore?.Set("schema", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public ConnectionState? State {
+        public ConnectionState? State
+        {
             get { return BackingStore?.Get<ConnectionState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
@@ -131,14 +147,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration>(Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"groups", n => { Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<ConnectionOperation>(ConnectionOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"schema", n => { Schema = n.GetObjectValue<Microsoft.Graph.Beta.Models.Schema>(Microsoft.Graph.Beta.Models.Schema.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetEnumValue<ConnectionState>(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration>(Microsoft.Graph.Beta.Models.TeamsUserConfiguration.Configuration.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<ConnectionOperation>(ConnectionOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schema", n => { Schema = n.GetObjectValue<Microsoft.Graph.Beta.Models.Schema>(Microsoft.Graph.Beta.Models.Schema.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<ConnectionState>(); } },
             };
         }
         /// <summary>

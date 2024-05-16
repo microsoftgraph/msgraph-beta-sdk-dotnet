@@ -5,50 +5,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// VPN Security Association Parameters
     /// </summary>
-    public class IosVpnSecurityAssociationParameters : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IosVpnSecurityAssociationParameters : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Lifetime (minutes)</summary>
-        public int? LifetimeInMinutes {
+        public int? LifetimeInMinutes
+        {
             get { return BackingStore?.Get<int?>("lifetimeInMinutes"); }
             set { BackingStore?.Set("lifetimeInMinutes", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Diffie-Hellman Group</summary>
-        public int? SecurityDiffieHellmanGroup {
+        public int? SecurityDiffieHellmanGroup
+        {
             get { return BackingStore?.Get<int?>("securityDiffieHellmanGroup"); }
             set { BackingStore?.Set("securityDiffieHellmanGroup", value); }
         }
         /// <summary>Encryption algorithm. Possible values are: aes256, des, tripleDes, aes128, aes128Gcm, aes256Gcm, aes192, aes192Gcm, chaCha20Poly1305.</summary>
-        public VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm {
+        public VpnEncryptionAlgorithmType? SecurityEncryptionAlgorithm
+        {
             get { return BackingStore?.Get<VpnEncryptionAlgorithmType?>("securityEncryptionAlgorithm"); }
             set { BackingStore?.Set("securityEncryptionAlgorithm", value); }
         }
         /// <summary>Integrity algorithm. Possible values are: sha2256, sha196, sha1160, sha2384, sha2_512, md5.</summary>
-        public VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm {
+        public VpnIntegrityAlgorithmType? SecurityIntegrityAlgorithm
+        {
             get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("securityIntegrityAlgorithm"); }
             set { BackingStore?.Set("securityIntegrityAlgorithm", value); }
         }
@@ -78,11 +86,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"lifetimeInMinutes", n => { LifetimeInMinutes = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"securityDiffieHellmanGroup", n => { SecurityDiffieHellmanGroup = n.GetIntValue(); } },
-                {"securityEncryptionAlgorithm", n => { SecurityEncryptionAlgorithm = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
-                {"securityIntegrityAlgorithm", n => { SecurityIntegrityAlgorithm = n.GetEnumValue<VpnIntegrityAlgorithmType>(); } },
+                { "lifetimeInMinutes", n => { LifetimeInMinutes = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "securityDiffieHellmanGroup", n => { SecurityDiffieHellmanGroup = n.GetIntValue(); } },
+                { "securityEncryptionAlgorithm", n => { SecurityEncryptionAlgorithm = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
+                { "securityIntegrityAlgorithm", n => { SecurityIntegrityAlgorithm = n.GetEnumValue<VpnIntegrityAlgorithmType>(); } },
             };
         }
         /// <summary>

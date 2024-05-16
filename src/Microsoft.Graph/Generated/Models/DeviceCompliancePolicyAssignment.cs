@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Device compliance policy assignment.
     /// </summary>
-    public class DeviceCompliancePolicyAssignment : Entity, IParsable 
+    public class DeviceCompliancePolicyAssignment : Entity, IParsable
     {
         /// <summary>Represents source of assignment.</summary>
-        public DeviceAndAppManagementAssignmentSource? Source {
+        public DeviceAndAppManagementAssignmentSource? Source
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>The identifier of the source of the assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceId {
+        public string? SourceId
+        {
             get { return BackingStore?.Get<string?>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
 #nullable restore
 #else
-        public string SourceId {
+        public string SourceId
+        {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Target for the compliance policy assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target {
+        public DeviceAndAppManagementAssignmentTarget? Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target {
+        public DeviceAndAppManagementAssignmentTarget Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -61,9 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
-                {"sourceId", n => { SourceId = n.GetStringValue(); } },
-                {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
+                { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

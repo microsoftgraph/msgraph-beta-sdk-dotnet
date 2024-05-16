@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class FileThreatSubmission : ThreatSubmission, IParsable 
+    public class FileThreatSubmission : ThreatSubmission, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>It specifies the file name to be submitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
@@ -54,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fileName", n => { FileName = n.GetStringValue(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
             };
         }
         /// <summary>

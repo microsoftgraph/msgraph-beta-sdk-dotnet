@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The result of the triggered device scope action.
     /// </summary>
-    public class DeviceScopeActionResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceScopeActionResult : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceScopeAction {
+        public string? DeviceScopeAction
+        {
             get { return BackingStore?.Get<string?>("deviceScopeAction"); }
             set { BackingStore?.Set("deviceScopeAction", value); }
         }
 #nullable restore
 #else
-        public string DeviceScopeAction {
+        public string DeviceScopeAction
+        {
             get { return BackingStore?.Get<string>("deviceScopeAction"); }
             set { BackingStore?.Set("deviceScopeAction", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier of the device scope the action was triggered on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceScopeId {
+        public string? DeviceScopeId
+        {
             get { return BackingStore?.Get<string?>("deviceScopeId"); }
             set { BackingStore?.Set("deviceScopeId", value); }
         }
 #nullable restore
 #else
-        public string DeviceScopeId {
+        public string DeviceScopeId
+        {
             get { return BackingStore?.Get<string>("deviceScopeId"); }
             set { BackingStore?.Set("deviceScopeId", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The message indicates the reason the device scope action failed to trigger.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailedMessage {
+        public string? FailedMessage
+        {
             get { return BackingStore?.Get<string?>("failedMessage"); }
             set { BackingStore?.Set("failedMessage", value); }
         }
 #nullable restore
 #else
-        public string FailedMessage {
+        public string FailedMessage
+        {
             get { return BackingStore?.Get<string>("failedMessage"); }
             set { BackingStore?.Set("failedMessage", value); }
         }
@@ -63,19 +71,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Indicates the status of the attempted device scope action</summary>
-        public DeviceScopeActionStatus? Status {
+        public DeviceScopeActionStatus? Status
+        {
             get { return BackingStore?.Get<DeviceScopeActionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -105,11 +116,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceScopeAction", n => { DeviceScopeAction = n.GetStringValue(); } },
-                {"deviceScopeId", n => { DeviceScopeId = n.GetStringValue(); } },
-                {"failedMessage", n => { FailedMessage = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<DeviceScopeActionStatus>(); } },
+                { "deviceScopeAction", n => { DeviceScopeAction = n.GetStringValue(); } },
+                { "deviceScopeId", n => { DeviceScopeId = n.GetStringValue(); } },
+                { "failedMessage", n => { FailedMessage = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<DeviceScopeActionStatus>(); } },
             };
         }
         /// <summary>

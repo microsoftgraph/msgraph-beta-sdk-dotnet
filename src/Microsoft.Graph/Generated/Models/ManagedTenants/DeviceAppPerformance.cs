@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class DeviceAppPerformance : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class DeviceAppPerformance : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appFriendlyName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppFriendlyName {
+        public string? AppFriendlyName
+        {
             get { return BackingStore?.Get<string?>("appFriendlyName"); }
             set { BackingStore?.Set("appFriendlyName", value); }
         }
 #nullable restore
 #else
-        public string AppFriendlyName {
+        public string AppFriendlyName
+        {
             get { return BackingStore?.Get<string>("appFriendlyName"); }
             set { BackingStore?.Set("appFriendlyName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The appName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppName {
+        public string? AppName
+        {
             get { return BackingStore?.Get<string?>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
 #nullable restore
 #else
-        public string AppName {
+        public string AppName
+        {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The appPublisher property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppPublisher {
+        public string? AppPublisher
+        {
             get { return BackingStore?.Get<string?>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
 #nullable restore
 #else
-        public string AppPublisher {
+        public string AppPublisher
+        {
             get { return BackingStore?.Get<string>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The appVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppVersion {
+        public string? AppVersion
+        {
             get { return BackingStore?.Get<string?>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
 #nullable restore
 #else
-        public string AppVersion {
+        public string AppVersion
+        {
             get { return BackingStore?.Get<string>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceManufacturer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceManufacturer {
+        public string? DeviceManufacturer
+        {
             get { return BackingStore?.Get<string?>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
 #nullable restore
 #else
-        public string DeviceManufacturer {
+        public string DeviceManufacturer
+        {
             get { return BackingStore?.Get<string>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceModel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceModel {
+        public string? DeviceModel
+        {
             get { return BackingStore?.Get<string?>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
 #nullable restore
 #else
-        public string DeviceModel {
+        public string DeviceModel
+        {
             get { return BackingStore?.Get<string>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
@@ -124,42 +141,49 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The healthStatus property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HealthStatus {
+        public string? HealthStatus
+        {
             get { return BackingStore?.Get<string?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
 #nullable restore
 #else
-        public string HealthStatus {
+        public string HealthStatus
+        {
             get { return BackingStore?.Get<string>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
 #endif
         /// <summary>The isLatestUsedVersion property</summary>
-        public int? IsLatestUsedVersion {
+        public int? IsLatestUsedVersion
+        {
             get { return BackingStore?.Get<int?>("isLatestUsedVersion"); }
             set { BackingStore?.Set("isLatestUsedVersion", value); }
         }
         /// <summary>The isMostUsedVersion property</summary>
-        public int? IsMostUsedVersion {
+        public int? IsMostUsedVersion
+        {
             get { return BackingStore?.Get<int?>("isMostUsedVersion"); }
             set { BackingStore?.Set("isMostUsedVersion", value); }
         }
         /// <summary>The lastUpdatedDateTime property</summary>
-        public DateTimeOffset? LastUpdatedDateTime {
+        public DateTimeOffset? LastUpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The tenantDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDisplayName {
+        public string? TenantDisplayName
+        {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TenantDisplayName {
+        public string TenantDisplayName
+        {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
@@ -167,24 +191,28 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #endif
         /// <summary>The totalAppCrashCount property</summary>
-        public int? TotalAppCrashCount {
+        public int? TotalAppCrashCount
+        {
             get { return BackingStore?.Get<int?>("totalAppCrashCount"); }
             set { BackingStore?.Set("totalAppCrashCount", value); }
         }
         /// <summary>The totalAppFreezeCount property</summary>
-        public int? TotalAppFreezeCount {
+        public int? TotalAppFreezeCount
+        {
             get { return BackingStore?.Get<int?>("totalAppFreezeCount"); }
             set { BackingStore?.Set("totalAppFreezeCount", value); }
         }
@@ -206,22 +234,22 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appFriendlyName", n => { AppFriendlyName = n.GetStringValue(); } },
-                {"appName", n => { AppName = n.GetStringValue(); } },
-                {"appPublisher", n => { AppPublisher = n.GetStringValue(); } },
-                {"appVersion", n => { AppVersion = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
-                {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"healthStatus", n => { HealthStatus = n.GetStringValue(); } },
-                {"isLatestUsedVersion", n => { IsLatestUsedVersion = n.GetIntValue(); } },
-                {"isMostUsedVersion", n => { IsMostUsedVersion = n.GetIntValue(); } },
-                {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"totalAppCrashCount", n => { TotalAppCrashCount = n.GetIntValue(); } },
-                {"totalAppFreezeCount", n => { TotalAppFreezeCount = n.GetIntValue(); } },
+                { "appFriendlyName", n => { AppFriendlyName = n.GetStringValue(); } },
+                { "appName", n => { AppName = n.GetStringValue(); } },
+                { "appPublisher", n => { AppPublisher = n.GetStringValue(); } },
+                { "appVersion", n => { AppVersion = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
+                { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "healthStatus", n => { HealthStatus = n.GetStringValue(); } },
+                { "isLatestUsedVersion", n => { IsLatestUsedVersion = n.GetIntValue(); } },
+                { "isMostUsedVersion", n => { IsMostUsedVersion = n.GetIntValue(); } },
+                { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "totalAppCrashCount", n => { TotalAppCrashCount = n.GetIntValue(); } },
+                { "totalAppFreezeCount", n => { TotalAppFreezeCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

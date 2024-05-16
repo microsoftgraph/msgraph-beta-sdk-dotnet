@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Simple setting collection instance
     /// </summary>
-    public class DeviceManagementConfigurationSimpleSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable 
+    public class DeviceManagementConfigurationSimpleSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>Simple setting collection instance value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSimpleSettingValue>? SimpleSettingCollectionValue {
+        public List<DeviceManagementConfigurationSimpleSettingValue>? SimpleSettingCollectionValue
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSimpleSettingValue>?>("simpleSettingCollectionValue"); }
             set { BackingStore?.Set("simpleSettingCollectionValue", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSimpleSettingValue> SimpleSettingCollectionValue {
+        public List<DeviceManagementConfigurationSimpleSettingValue> SimpleSettingCollectionValue
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSimpleSettingValue>>("simpleSettingCollectionValue"); }
             set { BackingStore?.Set("simpleSettingCollectionValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"simpleSettingCollectionValue", n => { SimpleSettingCollectionValue = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSimpleSettingValue>(DeviceManagementConfigurationSimpleSettingValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "simpleSettingCollectionValue", n => { SimpleSettingCollectionValue = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSimpleSettingValue>(DeviceManagementConfigurationSimpleSettingValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

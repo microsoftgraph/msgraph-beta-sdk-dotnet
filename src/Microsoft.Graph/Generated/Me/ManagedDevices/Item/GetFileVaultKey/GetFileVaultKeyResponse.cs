@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey
+{
     [Obsolete("This class is obsolete. Use GetFileVaultKeyGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetFileVaultKeyResponse : GetFileVaultKeyGetResponse, IParsable 
+    public class GetFileVaultKeyResponse : GetFileVaultKeyGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

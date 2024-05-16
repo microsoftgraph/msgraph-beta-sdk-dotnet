@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ServicePrincipalCreationPolicy : PolicyBase, IParsable 
+    public class ServicePrincipalCreationPolicy : PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The excludes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePrincipalCreationConditionSet>? Excludes {
+        public List<ServicePrincipalCreationConditionSet>? Excludes
+        {
             get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>?>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
 #nullable restore
 #else
-        public List<ServicePrincipalCreationConditionSet> Excludes {
+        public List<ServicePrincipalCreationConditionSet> Excludes
+        {
             get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
@@ -26,19 +29,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The includes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePrincipalCreationConditionSet>? Includes {
+        public List<ServicePrincipalCreationConditionSet>? Includes
+        {
             get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>?>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #nullable restore
 #else
-        public List<ServicePrincipalCreationConditionSet> Includes {
+        public List<ServicePrincipalCreationConditionSet> Includes
+        {
             get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #endif
         /// <summary>The isBuiltIn property</summary>
-        public bool? IsBuiltIn {
+        public bool? IsBuiltIn
+        {
             get { return BackingStore?.Get<bool?>("isBuiltIn"); }
             set { BackingStore?.Set("isBuiltIn", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"excludes", n => { Excludes = n.GetCollectionOfObjectValues<ServicePrincipalCreationConditionSet>(ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"includes", n => { Includes = n.GetCollectionOfObjectValues<ServicePrincipalCreationConditionSet>(ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
+                { "excludes", n => { Excludes = n.GetCollectionOfObjectValues<ServicePrincipalCreationConditionSet>(ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includes", n => { Includes = n.GetCollectionOfObjectValues<ServicePrincipalCreationConditionSet>(ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
             };
         }
         /// <summary>

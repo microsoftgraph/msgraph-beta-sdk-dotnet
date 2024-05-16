@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthenticationAttributeCollectionPage : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AuthenticationAttributeCollectionPage : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The customStringsFileId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomStringsFileId {
+        public string? CustomStringsFileId
+        {
             get { return BackingStore?.Get<string?>("customStringsFileId"); }
             set { BackingStore?.Set("customStringsFileId", value); }
         }
 #nullable restore
 #else
-        public string CustomStringsFileId {
+        public string CustomStringsFileId
+        {
             get { return BackingStore?.Get<string>("customStringsFileId"); }
             set { BackingStore?.Set("customStringsFileId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A collection of displays of the attribute collection page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationAttributeCollectionPageViewConfiguration>? Views {
+        public List<AuthenticationAttributeCollectionPageViewConfiguration>? Views
+        {
             get { return BackingStore?.Get<List<AuthenticationAttributeCollectionPageViewConfiguration>?>("views"); }
             set { BackingStore?.Set("views", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationAttributeCollectionPageViewConfiguration> Views {
+        public List<AuthenticationAttributeCollectionPageViewConfiguration> Views
+        {
             get { return BackingStore?.Get<List<AuthenticationAttributeCollectionPageViewConfiguration>>("views"); }
             set { BackingStore?.Set("views", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"customStringsFileId", n => { CustomStringsFileId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"views", n => { Views = n.GetCollectionOfObjectValues<AuthenticationAttributeCollectionPageViewConfiguration>(AuthenticationAttributeCollectionPageViewConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customStringsFileId", n => { CustomStringsFileId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "views", n => { Views = n.GetCollectionOfObjectValues<AuthenticationAttributeCollectionPageViewConfiguration>(AuthenticationAttributeCollectionPageViewConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

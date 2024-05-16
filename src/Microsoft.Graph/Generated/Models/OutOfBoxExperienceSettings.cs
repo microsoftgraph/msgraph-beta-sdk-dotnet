@@ -5,60 +5,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The Windows Autopilot Deployment Profile settings used by the Autopilot device for out-of-box experience. Supports: $select, $top, $skip. $Search, $orderBy and $filter are not supported. Read-Only. Starting from May 2024 this property will no longer be supported and will be marked as deprecated. Use outOfBoxExperienceSetting instead.
     /// </summary>
-    public class OutOfBoxExperienceSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OutOfBoxExperienceSettings : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceUsageType property</summary>
-        public WindowsDeviceUsageType? DeviceUsageType {
+        public WindowsDeviceUsageType? DeviceUsageType
+        {
             get { return BackingStore?.Get<WindowsDeviceUsageType?>("deviceUsageType"); }
             set { BackingStore?.Set("deviceUsageType", value); }
         }
         /// <summary>If set to true, then the user can&apos;t start over with different account, on company sign-in</summary>
-        public bool? HideEscapeLink {
+        public bool? HideEscapeLink
+        {
             get { return BackingStore?.Get<bool?>("hideEscapeLink"); }
             set { BackingStore?.Set("hideEscapeLink", value); }
         }
         /// <summary>Show or hide EULA to user</summary>
-        public bool? HideEULA {
+        public bool? HideEULA
+        {
             get { return BackingStore?.Get<bool?>("hideEULA"); }
             set { BackingStore?.Set("hideEULA", value); }
         }
         /// <summary>Show or hide privacy settings to user</summary>
-        public bool? HidePrivacySettings {
+        public bool? HidePrivacySettings
+        {
             get { return BackingStore?.Get<bool?>("hidePrivacySettings"); }
             set { BackingStore?.Set("hidePrivacySettings", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>If set, then skip the keyboard selection page if Language and Region are set</summary>
-        public bool? SkipKeyboardSelectionPage {
+        public bool? SkipKeyboardSelectionPage
+        {
             get { return BackingStore?.Get<bool?>("skipKeyboardSelectionPage"); }
             set { BackingStore?.Set("skipKeyboardSelectionPage", value); }
         }
         /// <summary>The userType property</summary>
-        public WindowsUserType? UserType {
+        public WindowsUserType? UserType
+        {
             get { return BackingStore?.Get<WindowsUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
@@ -88,13 +98,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceUsageType", n => { DeviceUsageType = n.GetEnumValue<WindowsDeviceUsageType>(); } },
-                {"hideEULA", n => { HideEULA = n.GetBoolValue(); } },
-                {"hideEscapeLink", n => { HideEscapeLink = n.GetBoolValue(); } },
-                {"hidePrivacySettings", n => { HidePrivacySettings = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"skipKeyboardSelectionPage", n => { SkipKeyboardSelectionPage = n.GetBoolValue(); } },
-                {"userType", n => { UserType = n.GetEnumValue<WindowsUserType>(); } },
+                { "deviceUsageType", n => { DeviceUsageType = n.GetEnumValue<WindowsDeviceUsageType>(); } },
+                { "hideEULA", n => { HideEULA = n.GetBoolValue(); } },
+                { "hideEscapeLink", n => { HideEscapeLink = n.GetBoolValue(); } },
+                { "hidePrivacySettings", n => { HidePrivacySettings = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "skipKeyboardSelectionPage", n => { SkipKeyboardSelectionPage = n.GetBoolValue(); } },
+                { "userType", n => { UserType = n.GetEnumValue<WindowsUserType>(); } },
             };
         }
         /// <summary>

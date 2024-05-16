@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WhatIfAuthenticationContext : ConditionalAccessContext, IParsable 
+    public class WhatIfAuthenticationContext : ConditionalAccessContext, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authenticationContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AuthenticationContext {
+        public string? AuthenticationContext
+        {
             get { return BackingStore?.Get<string?>("authenticationContext"); }
             set { BackingStore?.Set("authenticationContext", value); }
         }
 #nullable restore
 #else
-        public string AuthenticationContext {
+        public string AuthenticationContext
+        {
             get { return BackingStore?.Get<string>("authenticationContext"); }
             set { BackingStore?.Set("authenticationContext", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationContext", n => { AuthenticationContext = n.GetStringValue(); } },
+                { "authenticationContext", n => { AuthenticationContext = n.GetStringValue(); } },
             };
         }
         /// <summary>

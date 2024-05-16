@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing information about the payloads on which filter has been applied.
     /// </summary>
-    public class AssignmentFilterEvaluationStatusDetails : Entity, IParsable 
+    public class AssignmentFilterEvaluationStatusDetails : Entity, IParsable
     {
         /// <summary>PayloadId on which filter has been applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadId {
+        public string? PayloadId
+        {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
 #nullable restore
 #else
-        public string PayloadId {
+        public string PayloadId
+        {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"payloadId", n => { PayloadId = n.GetStringValue(); } },
+                { "payloadId", n => { PayloadId = n.GetStringValue(); } },
             };
         }
         /// <summary>

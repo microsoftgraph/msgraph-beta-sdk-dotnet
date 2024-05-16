@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Report of remote actions initiated on the devices belonging to a certain tenant.
     /// </summary>
-    public class RemoteActionAudit : Entity, IParsable 
+    public class RemoteActionAudit : Entity, IParsable
     {
         /// <summary>Remote actions Intune supports.</summary>
-        public RemoteAction? Action {
+        public RemoteAction? Action
+        {
             get { return BackingStore?.Get<RemoteAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The actionState property</summary>
-        public Microsoft.Graph.Beta.Models.ActionState? ActionState {
+        public Microsoft.Graph.Beta.Models.ActionState? ActionState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
             set { BackingStore?.Set("actionState", value); }
         }
         /// <summary>Intune device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceDisplayName {
+        public string? DeviceDisplayName
+        {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
 #nullable restore
 #else
-        public string DeviceDisplayName {
+        public string DeviceDisplayName
+        {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
@@ -37,13 +42,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>IMEI of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceIMEI {
+        public string? DeviceIMEI
+        {
             get { return BackingStore?.Get<string?>("deviceIMEI"); }
             set { BackingStore?.Set("deviceIMEI", value); }
         }
 #nullable restore
 #else
-        public string DeviceIMEI {
+        public string DeviceIMEI
+        {
             get { return BackingStore?.Get<string>("deviceIMEI"); }
             set { BackingStore?.Set("deviceIMEI", value); }
         }
@@ -51,13 +58,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Upn of the device owner.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceOwnerUserPrincipalName {
+        public string? DeviceOwnerUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("deviceOwnerUserPrincipalName"); }
             set { BackingStore?.Set("deviceOwnerUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string DeviceOwnerUserPrincipalName {
+        public string DeviceOwnerUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("deviceOwnerUserPrincipalName"); }
             set { BackingStore?.Set("deviceOwnerUserPrincipalName", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User who initiated the device action, format is UPN.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InitiatedByUserPrincipalName {
+        public string? InitiatedByUserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("initiatedByUserPrincipalName"); }
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string InitiatedByUserPrincipalName {
+        public string InitiatedByUserPrincipalName
+        {
             get { return BackingStore?.Get<string>("initiatedByUserPrincipalName"); }
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
@@ -79,32 +90,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Action target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #endif
         /// <summary>Time when the action was issued, given in UTC.</summary>
-        public DateTimeOffset? RequestDateTime {
+        public DateTimeOffset? RequestDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>[deprecated] Please use InitiatedByUserPrincipalName instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -127,15 +143,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"action", n => { Action = n.GetEnumValue<RemoteAction>(); } },
-                {"actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
-                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceIMEI", n => { DeviceIMEI = n.GetStringValue(); } },
-                {"deviceOwnerUserPrincipalName", n => { DeviceOwnerUserPrincipalName = n.GetStringValue(); } },
-                {"initiatedByUserPrincipalName", n => { InitiatedByUserPrincipalName = n.GetStringValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
+                { "action", n => { Action = n.GetEnumValue<RemoteAction>(); } },
+                { "actionState", n => { ActionState = n.GetEnumValue<ActionState>(); } },
+                { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                { "deviceIMEI", n => { DeviceIMEI = n.GetStringValue(); } },
+                { "deviceOwnerUserPrincipalName", n => { DeviceOwnerUserPrincipalName = n.GetStringValue(); } },
+                { "initiatedByUserPrincipalName", n => { InitiatedByUserPrincipalName = n.GetStringValue(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

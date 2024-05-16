@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamTemplate : Entity, IParsable 
+    public class TeamTemplate : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A generic representation of a team template definition for a team with a specific structure and configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeamTemplateDefinition>? Definitions {
+        public List<TeamTemplateDefinition>? Definitions
+        {
             get { return BackingStore?.Get<List<TeamTemplateDefinition>?>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
 #nullable restore
 #else
-        public List<TeamTemplateDefinition> Definitions {
+        public List<TeamTemplateDefinition> Definitions
+        {
             get { return BackingStore?.Get<List<TeamTemplateDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"definitions", n => { Definitions = n.GetCollectionOfObjectValues<TeamTemplateDefinition>(TeamTemplateDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "definitions", n => { Definitions = n.GetCollectionOfObjectValues<TeamTemplateDefinition>(TeamTemplateDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

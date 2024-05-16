@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventWebinarRegistrationConfiguration : VirtualEventRegistrationConfiguration, IParsable 
+    public class VirtualEventWebinarRegistrationConfiguration : VirtualEventRegistrationConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The isManualApprovalEnabled property</summary>
-        public bool? IsManualApprovalEnabled {
+        public bool? IsManualApprovalEnabled
+        {
             get { return BackingStore?.Get<bool?>("isManualApprovalEnabled"); }
             set { BackingStore?.Set("isManualApprovalEnabled", value); }
         }
         /// <summary>The isWaitlistEnabled property</summary>
-        public bool? IsWaitlistEnabled {
+        public bool? IsWaitlistEnabled
+        {
             get { return BackingStore?.Get<bool?>("isWaitlistEnabled"); }
             set { BackingStore?.Set("isWaitlistEnabled", value); }
         }
@@ -37,8 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isManualApprovalEnabled", n => { IsManualApprovalEnabled = n.GetBoolValue(); } },
-                {"isWaitlistEnabled", n => { IsWaitlistEnabled = n.GetBoolValue(); } },
+                { "isManualApprovalEnabled", n => { IsManualApprovalEnabled = n.GetBoolValue(); } },
+                { "isWaitlistEnabled", n => { IsWaitlistEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

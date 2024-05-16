@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Android store apps.
     /// </summary>
-    public class AndroidStoreApp : MobileApp, IParsable 
+    public class AndroidStoreApp : MobileApp, IParsable
     {
         /// <summary>The Identity Name. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppIdentifier {
+        public string? AppIdentifier
+        {
             get { return BackingStore?.Get<string?>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
 #nullable restore
 #else
-        public string AppIdentifier {
+        public string AppIdentifier
+        {
             get { return BackingStore?.Get<string>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Android app store URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppStoreUrl {
+        public string? AppStoreUrl
+        {
             get { return BackingStore?.Get<string?>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
 #nullable restore
 #else
-        public string AppStoreUrl {
+        public string AppStoreUrl
+        {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The value for the minimum applicable operating system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+        public AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<AndroidMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
 #nullable restore
 #else
-        public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem {
+        public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem
+        {
             get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The package identifier. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId {
+        public string? PackageId
+        {
             get { return BackingStore?.Get<string?>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
 #nullable restore
 #else
-        public string PackageId {
+        public string PackageId
+        {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
@@ -91,10 +100,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appIdentifier", n => { AppIdentifier = n.GetStringValue(); } },
-                {"appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
-                {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<AndroidMinimumOperatingSystem>(AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
-                {"packageId", n => { PackageId = n.GetStringValue(); } },
+                { "appIdentifier", n => { AppIdentifier = n.GetStringValue(); } },
+                { "appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
+                { "minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<AndroidMinimumOperatingSystem>(AndroidMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
+                { "packageId", n => { PackageId = n.GetStringValue(); } },
             };
         }
         /// <summary>

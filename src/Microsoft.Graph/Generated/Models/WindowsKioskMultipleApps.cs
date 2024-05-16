@@ -4,51 +4,59 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The class used to identify the MultiMode app configuration for the kiosk configuration
     /// </summary>
-    public class WindowsKioskMultipleApps : WindowsKioskAppConfiguration, IParsable 
+    public class WindowsKioskMultipleApps : WindowsKioskAppConfiguration, IParsable
     {
         /// <summary>This setting allows access to Downloads folder in file explorer.</summary>
-        public bool? AllowAccessToDownloadsFolder {
+        public bool? AllowAccessToDownloadsFolder
+        {
             get { return BackingStore?.Get<bool?>("allowAccessToDownloadsFolder"); }
             set { BackingStore?.Set("allowAccessToDownloadsFolder", value); }
         }
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu. This collection can contain a maximum of 128 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsKioskAppBase>? Apps {
+        public List<WindowsKioskAppBase>? Apps
+        {
             get { return BackingStore?.Get<List<WindowsKioskAppBase>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<WindowsKioskAppBase> Apps {
+        public List<WindowsKioskAppBase> Apps
+        {
             get { return BackingStore?.Get<List<WindowsKioskAppBase>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #endif
         /// <summary>This setting indicates that desktop apps are allowed. Default to true.</summary>
-        public bool? DisallowDesktopApps {
+        public bool? DisallowDesktopApps
+        {
             get { return BackingStore?.Get<bool?>("disallowDesktopApps"); }
             set { BackingStore?.Set("disallowDesktopApps", value); }
         }
         /// <summary>This setting allows the admin to specify whether the Task Bar is shown or not.</summary>
-        public bool? ShowTaskBar {
+        public bool? ShowTaskBar
+        {
             get { return BackingStore?.Get<bool?>("showTaskBar"); }
             set { BackingStore?.Set("showTaskBar", value); }
         }
         /// <summary>Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? StartMenuLayoutXml {
+        public byte[]? StartMenuLayoutXml
+        {
             get { return BackingStore?.Get<byte[]?>("startMenuLayoutXml"); }
             set { BackingStore?.Set("startMenuLayoutXml", value); }
         }
 #nullable restore
 #else
-        public byte[] StartMenuLayoutXml {
+        public byte[] StartMenuLayoutXml
+        {
             get { return BackingStore?.Get<byte[]>("startMenuLayoutXml"); }
             set { BackingStore?.Set("startMenuLayoutXml", value); }
         }
@@ -78,11 +86,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowAccessToDownloadsFolder", n => { AllowAccessToDownloadsFolder = n.GetBoolValue(); } },
-                {"apps", n => { Apps = n.GetCollectionOfObjectValues<WindowsKioskAppBase>(WindowsKioskAppBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"disallowDesktopApps", n => { DisallowDesktopApps = n.GetBoolValue(); } },
-                {"showTaskBar", n => { ShowTaskBar = n.GetBoolValue(); } },
-                {"startMenuLayoutXml", n => { StartMenuLayoutXml = n.GetByteArrayValue(); } },
+                { "allowAccessToDownloadsFolder", n => { AllowAccessToDownloadsFolder = n.GetBoolValue(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<WindowsKioskAppBase>(WindowsKioskAppBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "disallowDesktopApps", n => { DisallowDesktopApps = n.GetBoolValue(); } },
+                { "showTaskBar", n => { ShowTaskBar = n.GetBoolValue(); } },
+                { "startMenuLayoutXml", n => { StartMenuLayoutXml = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

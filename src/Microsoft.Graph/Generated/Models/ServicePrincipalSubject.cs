@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ServicePrincipalSubject : ConditionalAccessWhatIfSubject, IParsable 
+    public class ServicePrincipalSubject : ConditionalAccessWhatIfSubject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The servicePrincipalId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServicePrincipalId {
+        public string? ServicePrincipalId
+        {
             get { return BackingStore?.Get<string?>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
 #nullable restore
 #else
-        public string ServicePrincipalId {
+        public string ServicePrincipalId
+        {
             get { return BackingStore?.Get<string>("servicePrincipalId"); }
             set { BackingStore?.Set("servicePrincipalId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
+                { "servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
             };
         }
         /// <summary>

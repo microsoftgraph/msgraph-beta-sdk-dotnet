@@ -5,41 +5,48 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AttackSimulationInfo : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AttackSimulationInfo : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The date and time of the attack simulation.</summary>
-        public DateTimeOffset? AttackSimDateTime {
+        public DateTimeOffset? AttackSimDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("attackSimDateTime"); }
             set { BackingStore?.Set("attackSimDateTime", value); }
         }
         /// <summary>The duration (in time) for the attack simulation.</summary>
-        public TimeSpan? AttackSimDurationTime {
+        public TimeSpan? AttackSimDurationTime
+        {
             get { return BackingStore?.Get<TimeSpan?>("attackSimDurationTime"); }
             set { BackingStore?.Set("attackSimDurationTime", value); }
         }
         /// <summary>The activity ID for the attack simulation.</summary>
-        public Guid? AttackSimId {
+        public Guid? AttackSimId
+        {
             get { return BackingStore?.Get<Guid?>("attackSimId"); }
             set { BackingStore?.Set("attackSimId", value); }
         }
         /// <summary>The unique identifier for the user who got the attack simulation email.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttackSimUserId {
+        public string? AttackSimUserId
+        {
             get { return BackingStore?.Get<string?>("attackSimUserId"); }
             set { BackingStore?.Set("attackSimUserId", value); }
         }
 #nullable restore
 #else
-        public string AttackSimUserId {
+        public string AttackSimUserId
+        {
             get { return BackingStore?.Get<string>("attackSimUserId"); }
             set { BackingStore?.Set("attackSimUserId", value); }
         }
@@ -49,13 +56,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attackSimDateTime", n => { AttackSimDateTime = n.GetDateTimeOffsetValue(); } },
-                {"attackSimDurationTime", n => { AttackSimDurationTime = n.GetTimeSpanValue(); } },
-                {"attackSimId", n => { AttackSimId = n.GetGuidValue(); } },
-                {"attackSimUserId", n => { AttackSimUserId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "attackSimDateTime", n => { AttackSimDateTime = n.GetDateTimeOffsetValue(); } },
+                { "attackSimDurationTime", n => { AttackSimDurationTime = n.GetTimeSpanValue(); } },
+                { "attackSimId", n => { AttackSimId = n.GetGuidValue(); } },
+                { "attackSimUserId", n => { AttackSimUserId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

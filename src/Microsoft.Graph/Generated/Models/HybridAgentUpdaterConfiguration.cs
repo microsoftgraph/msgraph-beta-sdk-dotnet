@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class HybridAgentUpdaterConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class HybridAgentUpdaterConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates if updater configuration will be skipped and the agent will receive an update when the next version of the agent is available.</summary>
-        public bool? AllowUpdateConfigurationOverride {
+        public bool? AllowUpdateConfigurationOverride
+        {
             get { return BackingStore?.Get<bool?>("allowUpdateConfigurationOverride"); }
             set { BackingStore?.Set("allowUpdateConfigurationOverride", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? DeferUpdateDateTime {
+        public DateTimeOffset? DeferUpdateDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deferUpdateDateTime"); }
             set { BackingStore?.Set("deferUpdateDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -44,13 +50,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The updateWindow property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UpdateWindow? UpdateWindow {
+        public Microsoft.Graph.Beta.Models.UpdateWindow? UpdateWindow
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateWindow?>("updateWindow"); }
             set { BackingStore?.Set("updateWindow", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UpdateWindow UpdateWindow {
+        public Microsoft.Graph.Beta.Models.UpdateWindow UpdateWindow
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UpdateWindow>("updateWindow"); }
             set { BackingStore?.Set("updateWindow", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowUpdateConfigurationOverride", n => { AllowUpdateConfigurationOverride = n.GetBoolValue(); } },
-                {"deferUpdateDateTime", n => { DeferUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"updateWindow", n => { UpdateWindow = n.GetObjectValue<Microsoft.Graph.Beta.Models.UpdateWindow>(Microsoft.Graph.Beta.Models.UpdateWindow.CreateFromDiscriminatorValue); } },
+                { "allowUpdateConfigurationOverride", n => { AllowUpdateConfigurationOverride = n.GetBoolValue(); } },
+                { "deferUpdateDateTime", n => { DeferUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "updateWindow", n => { UpdateWindow = n.GetObjectValue<Microsoft.Graph.Beta.Models.UpdateWindow>(Microsoft.Graph.Beta.Models.UpdateWindow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Role Scope Tag
     /// </summary>
-    public class RoleScopeTag : Entity, IParsable 
+    public class RoleScopeTag : Entity, IParsable
     {
         /// <summary>The list of assignments for this Role Scope Tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleScopeTagAutoAssignment>? Assignments {
+        public List<RoleScopeTagAutoAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<RoleScopeTagAutoAssignment> Assignments {
+        public List<RoleScopeTagAutoAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Description of the Role Scope Tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -41,19 +46,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display or friendly name of the Role Scope Tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Description of the Role Scope Tag. This property is read-only.</summary>
-        public bool? IsBuiltIn {
+        public bool? IsBuiltIn
+        {
             get { return BackingStore?.Get<bool?>("isBuiltIn"); }
             set { BackingStore?.Set("isBuiltIn", value); }
         }
@@ -75,10 +83,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<RoleScopeTagAutoAssignment>(RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<RoleScopeTagAutoAssignment>(RoleScopeTagAutoAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
             };
         }
         /// <summary>

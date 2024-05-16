@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RelatedDestination : RelatedResource, IParsable 
+    public class RelatedDestination : RelatedResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fqdn property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fqdn {
+        public string? Fqdn
+        {
             get { return BackingStore?.Get<string?>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
 #nullable restore
 #else
-        public string Fqdn {
+        public string Fqdn
+        {
             get { return BackingStore?.Get<string>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
@@ -26,24 +29,28 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ip {
+        public string? Ip
+        {
             get { return BackingStore?.Get<string?>("ip"); }
             set { BackingStore?.Set("ip", value); }
         }
 #nullable restore
 #else
-        public string Ip {
+        public string Ip
+        {
             get { return BackingStore?.Get<string>("ip"); }
             set { BackingStore?.Set("ip", value); }
         }
 #endif
         /// <summary>The networkingProtocol property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? NetworkingProtocol {
+        public Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? NetworkingProtocol
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("networkingProtocol"); }
             set { BackingStore?.Set("networkingProtocol", value); }
         }
         /// <summary>The port property</summary>
-        public int? Port {
+        public int? Port
+        {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fqdn", n => { Fqdn = n.GetStringValue(); } },
-                {"ip", n => { Ip = n.GetStringValue(); } },
-                {"networkingProtocol", n => { NetworkingProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
-                {"port", n => { Port = n.GetIntValue(); } },
+                { "fqdn", n => { Fqdn = n.GetStringValue(); } },
+                { "ip", n => { Ip = n.GetStringValue(); } },
+                { "networkingProtocol", n => { NetworkingProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
             };
         }
         /// <summary>

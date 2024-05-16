@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MatchingLabel : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MatchingLabel : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The applicationMode property</summary>
-        public Microsoft.Graph.Beta.Models.ApplicationMode? ApplicationMode {
+        public Microsoft.Graph.Beta.Models.ApplicationMode? ApplicationMode
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationMode?>("applicationMode"); }
             set { BackingStore?.Set("applicationMode", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -53,32 +60,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #endif
         /// <summary>The isEndpointProtectionEnabled property</summary>
-        public bool? IsEndpointProtectionEnabled {
+        public bool? IsEndpointProtectionEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEndpointProtectionEnabled"); }
             set { BackingStore?.Set("isEndpointProtectionEnabled", value); }
         }
         /// <summary>The labelActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LabelActionBase>? LabelActions {
+        public List<LabelActionBase>? LabelActions
+        {
             get { return BackingStore?.Get<List<LabelActionBase>?>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
 #nullable restore
 #else
-        public List<LabelActionBase> LabelActions {
+        public List<LabelActionBase> LabelActions
+        {
             get { return BackingStore?.Get<List<LabelActionBase>>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
@@ -86,13 +98,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -100,13 +114,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -114,32 +130,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The policyTip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PolicyTip {
+        public string? PolicyTip
+        {
             get { return BackingStore?.Get<string?>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
 #nullable restore
 #else
-        public string PolicyTip {
+        public string PolicyTip
+        {
             get { return BackingStore?.Get<string>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
 #endif
         /// <summary>The priority property</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The toolTip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToolTip {
+        public string? ToolTip
+        {
             get { return BackingStore?.Get<string?>("toolTip"); }
             set { BackingStore?.Set("toolTip", value); }
         }
 #nullable restore
 #else
-        public string ToolTip {
+        public string ToolTip
+        {
             get { return BackingStore?.Get<string>("toolTip"); }
             set { BackingStore?.Set("toolTip", value); }
         }
@@ -170,17 +191,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"applicationMode", n => { ApplicationMode = n.GetEnumValue<ApplicationMode>(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
-                {"labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<LabelActionBase>(LabelActionBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"policyTip", n => { PolicyTip = n.GetStringValue(); } },
-                {"priority", n => { Priority = n.GetIntValue(); } },
-                {"toolTip", n => { ToolTip = n.GetStringValue(); } },
+                { "applicationMode", n => { ApplicationMode = n.GetEnumValue<ApplicationMode>(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
+                { "labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<LabelActionBase>(LabelActionBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "policyTip", n => { PolicyTip = n.GetStringValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
+                { "toolTip", n => { ToolTip = n.GetStringValue(); } },
             };
         }
         /// <summary>

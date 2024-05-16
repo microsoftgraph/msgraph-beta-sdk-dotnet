@@ -5,31 +5,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RequestorSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RequestorSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether new requests are accepted on this policy.</summary>
-        public bool? AcceptRequests {
+        public bool? AcceptRequests
+        {
             get { return BackingStore?.Get<bool?>("acceptRequests"); }
             set { BackingStore?.Set("acceptRequests", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The users who are allowed to request on this policy, which can be singleUser, groupMembers, and connectedOrganizationMembers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSet>? AllowedRequestors {
+        public List<UserSet>? AllowedRequestors
+        {
             get { return BackingStore?.Get<List<UserSet>?>("allowedRequestors"); }
             set { BackingStore?.Set("allowedRequestors", value); }
         }
 #nullable restore
 #else
-        public List<UserSet> AllowedRequestors {
+        public List<UserSet> AllowedRequestors
+        {
             get { return BackingStore?.Get<List<UserSet>>("allowedRequestors"); }
             set { BackingStore?.Set("allowedRequestors", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Who can request. One of NoSubjects, SpecificDirectorySubjects, SpecificConnectedOrganizationSubjects, AllConfiguredConnectedOrganizationSubjects, AllExistingConnectedOrganizationSubjects, AllExistingDirectoryMemberUsers, AllExistingDirectorySubjects or AllExternalSubjects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ScopeType {
+        public string? ScopeType
+        {
             get { return BackingStore?.Get<string?>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
 #nullable restore
 #else
-        public string ScopeType {
+        public string ScopeType
+        {
             get { return BackingStore?.Get<string>("scopeType"); }
             set { BackingStore?.Set("scopeType", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"acceptRequests", n => { AcceptRequests = n.GetBoolValue(); } },
-                {"allowedRequestors", n => { AllowedRequestors = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"scopeType", n => { ScopeType = n.GetStringValue(); } },
+                { "acceptRequests", n => { AcceptRequests = n.GetBoolValue(); } },
+                { "allowedRequestors", n => { AllowedRequestors = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "scopeType", n => { ScopeType = n.GetStringValue(); } },
             };
         }
         /// <summary>

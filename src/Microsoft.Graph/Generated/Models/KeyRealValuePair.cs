@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A key-value pair with a string key and a real (floating-point) value.
     /// </summary>
-    public class KeyRealValuePair : KeyTypedValuePair, IParsable 
+    public class KeyRealValuePair : KeyTypedValuePair, IParsable
     {
         /// <summary>The real (floating-point) value of the key-value pair.</summary>
-        public double? Value {
+        public double? Value
+        {
             get { return BackingStore?.Get<double?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetDoubleValue(); } },
+                { "value", n => { Value = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The identifier for the deployment an app.
     /// </summary>
-    public class ManagedMobileApp : Entity, IParsable 
+    public class ManagedMobileApp : Entity, IParsable
     {
         /// <summary>The identifier for an app with it&apos;s operating system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.MobileAppIdentifier? MobileAppIdentifier {
+        public Microsoft.Graph.Beta.Models.MobileAppIdentifier? MobileAppIdentifier
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIdentifier?>("mobileAppIdentifier"); }
             set { BackingStore?.Set("mobileAppIdentifier", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.MobileAppIdentifier MobileAppIdentifier {
+        public Microsoft.Graph.Beta.Models.MobileAppIdentifier MobileAppIdentifier
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIdentifier>("mobileAppIdentifier"); }
             set { BackingStore?.Set("mobileAppIdentifier", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Version of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"mobileAppIdentifier", n => { MobileAppIdentifier = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileAppIdentifier>(Microsoft.Graph.Beta.Models.MobileAppIdentifier.CreateFromDiscriminatorValue); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "mobileAppIdentifier", n => { MobileAppIdentifier = n.GetObjectValue<Microsoft.Graph.Beta.Models.MobileAppIdentifier>(Microsoft.Graph.Beta.Models.MobileAppIdentifier.CreateFromDiscriminatorValue); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

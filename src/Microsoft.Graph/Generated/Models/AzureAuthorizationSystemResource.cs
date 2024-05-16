@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AzureAuthorizationSystemResource : AuthorizationSystemResource, IParsable 
+    public class AzureAuthorizationSystemResource : AuthorizationSystemResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The service associated with the resource in an Azure authorization system. This object is auto-expanded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemTypeService? Service {
+        public AuthorizationSystemTypeService? Service
+        {
             get { return BackingStore?.Get<AuthorizationSystemTypeService?>("service"); }
             set { BackingStore?.Set("service", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemTypeService Service {
+        public AuthorizationSystemTypeService Service
+        {
             get { return BackingStore?.Get<AuthorizationSystemTypeService>("service"); }
             set { BackingStore?.Set("service", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"service", n => { Service = n.GetObjectValue<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue); } },
+                { "service", n => { Service = n.GetObjectValue<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup {
+namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup
+{
     [Obsolete("This class is obsolete. Use RenewGroupPostResponse instead.")]
     #pragma warning disable CS1591
-    public class RenewGroupResponse : RenewGroupPostResponse, IParsable 
+    public class RenewGroupResponse : RenewGroupPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

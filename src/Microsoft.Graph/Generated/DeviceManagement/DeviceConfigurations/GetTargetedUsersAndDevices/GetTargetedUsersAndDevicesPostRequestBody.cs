@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices
+{
     #pragma warning disable CS1591
-    public class GetTargetedUsersAndDevicesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GetTargetedUsersAndDevicesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargeted
         /// <summary>The deviceConfigurationIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceConfigurationIds {
+        public List<string>? DeviceConfigurationIds
+        {
             get { return BackingStore?.Get<List<string>?>("deviceConfigurationIds"); }
             set { BackingStore?.Set("deviceConfigurationIds", value); }
         }
 #nullable restore
 #else
-        public List<string> DeviceConfigurationIds {
+        public List<string> DeviceConfigurationIds
+        {
             get { return BackingStore?.Get<List<string>>("deviceConfigurationIds"); }
             set { BackingStore?.Set("deviceConfigurationIds", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargeted
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceConfigurationIds", n => { DeviceConfigurationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "deviceConfigurationIds", n => { DeviceConfigurationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

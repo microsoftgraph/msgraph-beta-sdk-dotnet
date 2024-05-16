@@ -5,50 +5,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents one item in the list of freeze periods for Android Device Owner system updates
     /// </summary>
-    public class AndroidDeviceOwnerSystemUpdateFreezePeriod : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AndroidDeviceOwnerSystemUpdateFreezePeriod : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The day of the end date of the freeze period. Valid values 1 to 31</summary>
-        public int? EndDay {
+        public int? EndDay
+        {
             get { return BackingStore?.Get<int?>("endDay"); }
             set { BackingStore?.Set("endDay", value); }
         }
         /// <summary>The month of the end date of the freeze period. Valid values 1 to 12</summary>
-        public int? EndMonth {
+        public int? EndMonth
+        {
             get { return BackingStore?.Get<int?>("endMonth"); }
             set { BackingStore?.Set("endMonth", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The day of the start date of the freeze period. Valid values 1 to 31</summary>
-        public int? StartDay {
+        public int? StartDay
+        {
             get { return BackingStore?.Get<int?>("startDay"); }
             set { BackingStore?.Set("startDay", value); }
         }
         /// <summary>The month of the start date of the freeze period. Valid values 1 to 12</summary>
-        public int? StartMonth {
+        public int? StartMonth
+        {
             get { return BackingStore?.Get<int?>("startMonth"); }
             set { BackingStore?.Set("startMonth", value); }
         }
@@ -78,11 +86,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"endDay", n => { EndDay = n.GetIntValue(); } },
-                {"endMonth", n => { EndMonth = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startDay", n => { StartDay = n.GetIntValue(); } },
-                {"startMonth", n => { StartMonth = n.GetIntValue(); } },
+                { "endDay", n => { EndDay = n.GetIntValue(); } },
+                { "endMonth", n => { EndMonth = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "startDay", n => { StartDay = n.GetIntValue(); } },
+                { "startMonth", n => { StartMonth = n.GetIntValue(); } },
             };
         }
         /// <summary>

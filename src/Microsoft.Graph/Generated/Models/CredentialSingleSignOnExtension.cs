@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents a Credential-type Single Sign-On extension profile.
     /// </summary>
-    public class CredentialSingleSignOnExtension : SingleSignOnExtension, IParsable 
+    public class CredentialSingleSignOnExtension : SingleSignOnExtension, IParsable
     {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyTypedValuePair>? Configurations {
+        public List<KeyTypedValuePair>? Configurations
+        {
             get { return BackingStore?.Get<List<KeyTypedValuePair>?>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #nullable restore
 #else
-        public List<KeyTypedValuePair> Configurations {
+        public List<KeyTypedValuePair> Configurations
+        {
             get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets a list of hosts or domain names for which the app extension performs SSO.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Domains {
+        public List<string>? Domains
+        {
             get { return BackingStore?.Get<List<string>?>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
 #nullable restore
 #else
-        public List<string> Domains {
+        public List<string> Domains
+        {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExtensionIdentifier {
+        public string? ExtensionIdentifier
+        {
             get { return BackingStore?.Get<string?>("extensionIdentifier"); }
             set { BackingStore?.Set("extensionIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ExtensionIdentifier {
+        public string ExtensionIdentifier
+        {
             get { return BackingStore?.Get<string>("extensionIdentifier"); }
             set { BackingStore?.Set("extensionIdentifier", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets the case-sensitive realm name for this profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Realm {
+        public string? Realm
+        {
             get { return BackingStore?.Get<string?>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
 #nullable restore
 #else
-        public string Realm {
+        public string Realm
+        {
             get { return BackingStore?.Get<string>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets the team ID of the app extension that performs SSO for the specified URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TeamIdentifier {
+        public string? TeamIdentifier
+        {
             get { return BackingStore?.Get<string?>("teamIdentifier"); }
             set { BackingStore?.Set("teamIdentifier", value); }
         }
 #nullable restore
 #else
-        public string TeamIdentifier {
+        public string TeamIdentifier
+        {
             get { return BackingStore?.Get<string>("teamIdentifier"); }
             set { BackingStore?.Set("teamIdentifier", value); }
         }
@@ -105,11 +116,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"extensionIdentifier", n => { ExtensionIdentifier = n.GetStringValue(); } },
-                {"realm", n => { Realm = n.GetStringValue(); } },
-                {"teamIdentifier", n => { TeamIdentifier = n.GetStringValue(); } },
+                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "extensionIdentifier", n => { ExtensionIdentifier = n.GetStringValue(); } },
+                { "realm", n => { Realm = n.GetStringValue(); } },
+                { "teamIdentifier", n => { TeamIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>

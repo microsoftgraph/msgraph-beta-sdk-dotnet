@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PermissionsDefinitionAuthorizationSystemIdentity : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PermissionsDefinitionAuthorizationSystemIdentity : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique ID of the identity within the external system. Prefixed with rsn: if this is a SAML or ED user in AWS. Alternate key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #endif
         /// <summary>The identityType property</summary>
-        public PermissionsDefinitionIdentityType? IdentityType {
+        public PermissionsDefinitionIdentityType? IdentityType
+        {
             get { return BackingStore?.Get<PermissionsDefinitionIdentityType?>("identityType"); }
             set { BackingStore?.Set("identityType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsDefinitionIdentitySource? Source {
+        public PermissionsDefinitionIdentitySource? Source
+        {
             get { return BackingStore?.Get<PermissionsDefinitionIdentitySource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public PermissionsDefinitionIdentitySource Source {
+        public PermissionsDefinitionIdentitySource Source
+        {
             get { return BackingStore?.Get<PermissionsDefinitionIdentitySource>("source"); }
             set { BackingStore?.Set("source", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"identityType", n => { IdentityType = n.GetEnumValue<PermissionsDefinitionIdentityType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"source", n => { Source = n.GetObjectValue<PermissionsDefinitionIdentitySource>(PermissionsDefinitionIdentitySource.CreateFromDiscriminatorValue); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "identityType", n => { IdentityType = n.GetEnumValue<PermissionsDefinitionIdentityType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "source", n => { Source = n.GetObjectValue<PermissionsDefinitionIdentitySource>(PermissionsDefinitionIdentitySource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

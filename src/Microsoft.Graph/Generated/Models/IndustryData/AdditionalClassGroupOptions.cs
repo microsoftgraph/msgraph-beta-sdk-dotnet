@@ -5,39 +5,45 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class AdditionalClassGroupOptions : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AdditionalClassGroupOptions : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether a team should be created for the class group.</summary>
-        public bool? CreateTeam {
+        public bool? CreateTeam
+        {
             get { return BackingStore?.Get<bool?>("createTeam"); }
             set { BackingStore?.Set("createTeam", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Indicates whether the class group display name should be set on create.</summary>
-        public bool? WriteDisplayNameOnCreateOnly {
+        public bool? WriteDisplayNameOnCreateOnly
+        {
             get { return BackingStore?.Get<bool?>("writeDisplayNameOnCreateOnly"); }
             set { BackingStore?.Set("writeDisplayNameOnCreateOnly", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"createTeam", n => { CreateTeam = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"writeDisplayNameOnCreateOnly", n => { WriteDisplayNameOnCreateOnly = n.GetBoolValue(); } },
+                { "createTeam", n => { CreateTeam = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "writeDisplayNameOnCreateOnly", n => { WriteDisplayNameOnCreateOnly = n.GetBoolValue(); } },
             };
         }
         /// <summary>

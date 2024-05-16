@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.FindRooms {
+namespace Microsoft.Graph.Beta.Me.FindRooms
+{
     #pragma warning disable CS1591
-    public class FindRoomsGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class FindRoomsGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EmailAddress>? Value {
+        public List<EmailAddress>? Value
+        {
             get { return BackingStore?.Get<List<EmailAddress>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EmailAddress> Value {
+        public List<EmailAddress> Value
+        {
             get { return BackingStore?.Get<List<EmailAddress>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.FindRooms {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

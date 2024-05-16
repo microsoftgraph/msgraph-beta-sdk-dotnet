@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform {
+namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSupportedPropertiesWithPlatform
+{
     [Obsolete("This class is obsolete. Use GetPlatformSupportedPropertiesWithPlatformGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPlatformSupportedPropertiesWithPlatformResponse : GetPlatformSupportedPropertiesWithPlatformGetResponse, IParsable 
+    public class GetPlatformSupportedPropertiesWithPlatformResponse : GetPlatformSupportedPropertiesWithPlatformGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

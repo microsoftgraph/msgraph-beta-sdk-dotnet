@@ -5,53 +5,61 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// iOS available update version details
     /// </summary>
-    public class IosAvailableUpdateVersion : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IosAvailableUpdateVersion : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expiration date of the update.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The posting date of the update.</summary>
-        public DateTimeOffset? PostingDateTime {
+        public DateTimeOffset? PostingDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("postingDateTime"); }
             set { BackingStore?.Set("postingDateTime", value); }
         }
         /// <summary>The version of the update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductVersion {
+        public string? ProductVersion
+        {
             get { return BackingStore?.Get<string?>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
 #nullable restore
 #else
-        public string ProductVersion {
+        public string ProductVersion
+        {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of supported devices for the update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SupportedDevices {
+        public List<string>? SupportedDevices
+        {
             get { return BackingStore?.Get<List<string>?>("supportedDevices"); }
             set { BackingStore?.Set("supportedDevices", value); }
         }
 #nullable restore
 #else
-        public List<string> SupportedDevices {
+        public List<string> SupportedDevices
+        {
             get { return BackingStore?.Get<List<string>>("supportedDevices"); }
             set { BackingStore?.Set("supportedDevices", value); }
         }
@@ -96,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"postingDateTime", n => { PostingDateTime = n.GetDateTimeOffsetValue(); } },
-                {"productVersion", n => { ProductVersion = n.GetStringValue(); } },
-                {"supportedDevices", n => { SupportedDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "postingDateTime", n => { PostingDateTime = n.GetDateTimeOffsetValue(); } },
+                { "productVersion", n => { ProductVersion = n.GetStringValue(); } },
+                { "supportedDevices", n => { SupportedDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

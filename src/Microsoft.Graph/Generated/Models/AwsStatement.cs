@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsStatement : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AwsStatement : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The AWS actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Actions {
+        public List<string>? Actions
+        {
             get { return BackingStore?.Get<List<string>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<string> Actions {
+        public List<string> Actions
+        {
             get { return BackingStore?.Get<List<string>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The AWS conditions associated with the statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsCondition? Condition {
+        public AwsCondition? Condition
+        {
             get { return BackingStore?.Get<AwsCondition?>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
 #nullable restore
 #else
-        public AwsCondition Condition {
+        public AwsCondition Condition
+        {
             get { return BackingStore?.Get<AwsCondition>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
 #endif
         /// <summary>The effect property</summary>
-        public AwsStatementEffect? Effect {
+        public AwsStatementEffect? Effect
+        {
             get { return BackingStore?.Get<AwsStatementEffect?>("effect"); }
             set { BackingStore?.Set("effect", value); }
         }
         /// <summary>AWS Not Actions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotActions {
+        public List<string>? NotActions
+        {
             get { return BackingStore?.Get<List<string>?>("notActions"); }
             set { BackingStore?.Set("notActions", value); }
         }
 #nullable restore
 #else
-        public List<string> NotActions {
+        public List<string> NotActions
+        {
             get { return BackingStore?.Get<List<string>>("notActions"); }
             set { BackingStore?.Set("notActions", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>AWS Not Resources</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? NotResources {
+        public List<string>? NotResources
+        {
             get { return BackingStore?.Get<List<string>?>("notResources"); }
             set { BackingStore?.Set("notResources", value); }
         }
 #nullable restore
 #else
-        public List<string> NotResources {
+        public List<string> NotResources
+        {
             get { return BackingStore?.Get<List<string>>("notResources"); }
             set { BackingStore?.Set("notResources", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -95,13 +108,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The AWS resources associated with the statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Resources {
+        public List<string>? Resources
+        {
             get { return BackingStore?.Get<List<string>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<string> Resources {
+        public List<string> Resources
+        {
             get { return BackingStore?.Get<List<string>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
@@ -109,13 +124,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The ID of the AWS statement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatementId {
+        public string? StatementId
+        {
             get { return BackingStore?.Get<string?>("statementId"); }
             set { BackingStore?.Set("statementId", value); }
         }
 #nullable restore
 #else
-        public string StatementId {
+        public string StatementId
+        {
             get { return BackingStore?.Get<string>("statementId"); }
             set { BackingStore?.Set("statementId", value); }
         }
@@ -146,14 +163,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"condition", n => { Condition = n.GetObjectValue<AwsCondition>(AwsCondition.CreateFromDiscriminatorValue); } },
-                {"effect", n => { Effect = n.GetEnumValue<AwsStatementEffect>(); } },
-                {"notActions", n => { NotActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"notResources", n => { NotResources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"resources", n => { Resources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"statementId", n => { StatementId = n.GetStringValue(); } },
+                { "actions", n => { Actions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "condition", n => { Condition = n.GetObjectValue<AwsCondition>(AwsCondition.CreateFromDiscriminatorValue); } },
+                { "effect", n => { Effect = n.GetEnumValue<AwsStatementEffect>(); } },
+                { "notActions", n => { NotActions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "notResources", n => { NotResources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "resources", n => { Resources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "statementId", n => { StatementId = n.GetStringValue(); } },
             };
         }
         /// <summary>

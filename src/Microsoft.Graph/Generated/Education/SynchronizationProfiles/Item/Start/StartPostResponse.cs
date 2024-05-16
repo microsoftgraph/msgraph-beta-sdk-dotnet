@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
+namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start
+{
     #pragma warning disable CS1591
-    public class StartPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class StartPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationFileSynchronizationVerificationMessage>? Value {
+        public List<EducationFileSynchronizationVerificationMessage>? Value
+        {
             get { return BackingStore?.Get<List<EducationFileSynchronizationVerificationMessage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<EducationFileSynchronizationVerificationMessage> Value {
+        public List<EducationFileSynchronizationVerificationMessage> Value
+        {
             get { return BackingStore?.Get<List<EducationFileSynchronizationVerificationMessage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<EducationFileSynchronizationVerificationMessage>(EducationFileSynchronizationVerificationMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<EducationFileSynchronizationVerificationMessage>(EducationFileSynchronizationVerificationMessage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SharedDriveItem : BaseItem, IParsable 
+    public class SharedDriveItem : BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Used to access the underlying driveItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DriveItem? DriveItem {
+        public Microsoft.Graph.Beta.Models.DriveItem? DriveItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
+        public Microsoft.Graph.Beta.Models.DriveItem DriveItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("driveItem"); }
             set { BackingStore?.Set("driveItem", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All driveItems contained in the sharing root. This collection cannot be enumerated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DriveItem>? Items {
+        public List<Microsoft.Graph.Beta.Models.DriveItem>? Items
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DriveItem> Items {
+        public List<Microsoft.Graph.Beta.Models.DriveItem> Items
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Used to access the underlying list</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.List? List {
+        public Microsoft.Graph.Beta.Models.List? List
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List?>("list"); }
             set { BackingStore?.Set("list", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.List List {
+        public Microsoft.Graph.Beta.Models.List List
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List>("list"); }
             set { BackingStore?.Set("list", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Used to access the underlying listItem</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ListItem? ListItem {
+        public Microsoft.Graph.Beta.Models.ListItem? ListItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem?>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ListItem ListItem {
+        public Microsoft.Graph.Beta.Models.ListItem ListItem
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ListItem>("listItem"); }
             set { BackingStore?.Set("listItem", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information about the owner of the shared item being referenced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Owner {
+        public IdentitySet? Owner
+        {
             get { return BackingStore?.Get<IdentitySet?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Owner {
+        public IdentitySet Owner
+        {
             get { return BackingStore?.Get<IdentitySet>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Used to access the permission representing the underlying sharing link</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Permission? Permission {
+        public Microsoft.Graph.Beta.Models.Permission? Permission
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Permission?>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Permission Permission {
+        public Microsoft.Graph.Beta.Models.Permission Permission
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Permission>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The root property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DriveItem? Root {
+        public Microsoft.Graph.Beta.Models.DriveItem? Root
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem?>("root"); }
             set { BackingStore?.Set("root", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DriveItem Root {
+        public Microsoft.Graph.Beta.Models.DriveItem Root
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("root"); }
             set { BackingStore?.Set("root", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Used to access the underlying site</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Site? Site {
+        public Microsoft.Graph.Beta.Models.Site? Site
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Site?>("site"); }
             set { BackingStore?.Set("site", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Site Site {
+        public Microsoft.Graph.Beta.Models.Site Site
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Site>("site"); }
             set { BackingStore?.Set("site", value); }
         }
@@ -146,14 +163,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"list", n => { List = n.GetObjectValue<Microsoft.Graph.Beta.Models.List>(Microsoft.Graph.Beta.Models.List.CreateFromDiscriminatorValue); } },
-                {"listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.ListItem>(Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue); } },
-                {"owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"permission", n => { Permission = n.GetObjectValue<Microsoft.Graph.Beta.Models.Permission>(Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue); } },
-                {"root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
-                {"site", n => { Site = n.GetObjectValue<Microsoft.Graph.Beta.Models.Site>(Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue); } },
+                { "driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "list", n => { List = n.GetObjectValue<Microsoft.Graph.Beta.Models.List>(Microsoft.Graph.Beta.Models.List.CreateFromDiscriminatorValue); } },
+                { "listItem", n => { ListItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.ListItem>(Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "permission", n => { Permission = n.GetObjectValue<Microsoft.Graph.Beta.Models.Permission>(Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue); } },
+                { "root", n => { Root = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
+                { "site", n => { Site = n.GetObjectValue<Microsoft.Graph.Beta.Models.Site>(Microsoft.Graph.Beta.Models.Site.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

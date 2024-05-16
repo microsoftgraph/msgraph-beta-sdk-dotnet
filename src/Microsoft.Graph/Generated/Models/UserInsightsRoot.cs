@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserInsightsRoot : Entity, IParsable 
+    public class UserInsightsRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Summaries of daily user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DailyUserInsightMetricsRoot? Daily {
+        public DailyUserInsightMetricsRoot? Daily
+        {
             get { return BackingStore?.Get<DailyUserInsightMetricsRoot?>("daily"); }
             set { BackingStore?.Set("daily", value); }
         }
 #nullable restore
 #else
-        public DailyUserInsightMetricsRoot Daily {
+        public DailyUserInsightMetricsRoot Daily
+        {
             get { return BackingStore?.Get<DailyUserInsightMetricsRoot>("daily"); }
             set { BackingStore?.Set("daily", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Summaries of monthly user activities on apps registered in your tenant that is configured for Microsoft Entra External ID for customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MonthlyUserInsightMetricsRoot? Monthly {
+        public MonthlyUserInsightMetricsRoot? Monthly
+        {
             get { return BackingStore?.Get<MonthlyUserInsightMetricsRoot?>("monthly"); }
             set { BackingStore?.Set("monthly", value); }
         }
 #nullable restore
 #else
-        public MonthlyUserInsightMetricsRoot Monthly {
+        public MonthlyUserInsightMetricsRoot Monthly
+        {
             get { return BackingStore?.Get<MonthlyUserInsightMetricsRoot>("monthly"); }
             set { BackingStore?.Set("monthly", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"daily", n => { Daily = n.GetObjectValue<DailyUserInsightMetricsRoot>(DailyUserInsightMetricsRoot.CreateFromDiscriminatorValue); } },
-                {"monthly", n => { Monthly = n.GetObjectValue<MonthlyUserInsightMetricsRoot>(MonthlyUserInsightMetricsRoot.CreateFromDiscriminatorValue); } },
+                { "daily", n => { Daily = n.GetObjectValue<DailyUserInsightMetricsRoot>(DailyUserInsightMetricsRoot.CreateFromDiscriminatorValue); } },
+                { "monthly", n => { Monthly = n.GetObjectValue<MonthlyUserInsightMetricsRoot>(MonthlyUserInsightMetricsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

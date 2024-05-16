@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Event representing a users device application install status.
     /// </summary>
-    public class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable 
+    public class MobileAppTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable
     {
         /// <summary>Intune application identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApplicationId {
+        public string? ApplicationId
+        {
             get { return BackingStore?.Get<string?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
 #nullable restore
 #else
-        public string ApplicationId {
+        public string ApplicationId
+        {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection property of AppLogUploadRequest.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppLogCollectionRequest>? AppLogCollectionRequests {
+        public List<AppLogCollectionRequest>? AppLogCollectionRequests
+        {
             get { return BackingStore?.Get<List<AppLogCollectionRequest>?>("appLogCollectionRequests"); }
             set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
 #nullable restore
 #else
-        public List<AppLogCollectionRequest> AppLogCollectionRequests {
+        public List<AppLogCollectionRequest> AppLogCollectionRequests
+        {
             get { return BackingStore?.Get<List<AppLogCollectionRequest>>("appLogCollectionRequests"); }
             set { BackingStore?.Set("appLogCollectionRequests", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device identifier created or collected by Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Intune Mobile Application Troubleshooting History Item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppTroubleshootingHistoryItem>? History {
+        public List<MobileAppTroubleshootingHistoryItem>? History
+        {
             get { return BackingStore?.Get<List<MobileAppTroubleshootingHistoryItem>?>("history"); }
             set { BackingStore?.Set("history", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppTroubleshootingHistoryItem> History {
+        public List<MobileAppTroubleshootingHistoryItem> History
+        {
             get { return BackingStore?.Get<List<MobileAppTroubleshootingHistoryItem>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device identifier created or collected by Intune.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceIdentifier {
+        public string? ManagedDeviceIdentifier
+        {
             get { return BackingStore?.Get<string?>("managedDeviceIdentifier"); }
             set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceIdentifier {
+        public string ManagedDeviceIdentifier
+        {
             get { return BackingStore?.Get<string>("managedDeviceIdentifier"); }
             set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
@@ -83,13 +94,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -112,12 +125,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"history", n => { History = n.GetCollectionOfObjectValues<MobileAppTroubleshootingHistoryItem>(MobileAppTroubleshootingHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceIdentifier", n => { ManagedDeviceIdentifier = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "appLogCollectionRequests", n => { AppLogCollectionRequests = n.GetCollectionOfObjectValues<AppLogCollectionRequest>(AppLogCollectionRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "history", n => { History = n.GetCollectionOfObjectValues<MobileAppTroubleshootingHistoryItem>(MobileAppTroubleshootingHistoryItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceIdentifier", n => { ManagedDeviceIdentifier = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

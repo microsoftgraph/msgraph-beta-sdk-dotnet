@@ -4,9 +4,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OverprovisionedUserFinding : IdentityFinding, IParsable 
+    public class OverprovisionedUserFinding : IdentityFinding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

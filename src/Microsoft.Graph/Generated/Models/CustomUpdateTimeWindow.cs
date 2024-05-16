@@ -6,50 +6,58 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Custom update time window
     /// </summary>
-    public class CustomUpdateTimeWindow : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CustomUpdateTimeWindow : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDay property</summary>
-        public DayOfWeekObject? EndDay {
+        public DayOfWeekObject? EndDay
+        {
             get { return BackingStore?.Get<DayOfWeekObject?>("endDay"); }
             set { BackingStore?.Set("endDay", value); }
         }
         /// <summary>End time of the time window</summary>
-        public Time? EndTime {
+        public Time? EndTime
+        {
             get { return BackingStore?.Get<Time?>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The startDay property</summary>
-        public DayOfWeekObject? StartDay {
+        public DayOfWeekObject? StartDay
+        {
             get { return BackingStore?.Get<DayOfWeekObject?>("startDay"); }
             set { BackingStore?.Set("startDay", value); }
         }
         /// <summary>Start time of the time window</summary>
-        public Time? StartTime {
+        public Time? StartTime
+        {
             get { return BackingStore?.Get<Time?>("startTime"); }
             set { BackingStore?.Set("startTime", value); }
         }
@@ -79,11 +87,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"endDay", n => { EndDay = n.GetEnumValue<DayOfWeekObject>(); } },
-                {"endTime", n => { EndTime = n.GetTimeValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startDay", n => { StartDay = n.GetEnumValue<DayOfWeekObject>(); } },
-                {"startTime", n => { StartTime = n.GetTimeValue(); } },
+                { "endDay", n => { EndDay = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "endTime", n => { EndTime = n.GetTimeValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "startDay", n => { StartDay = n.GetEnumValue<DayOfWeekObject>(); } },
+                { "startTime", n => { StartTime = n.GetTimeValue(); } },
             };
         }
         /// <summary>

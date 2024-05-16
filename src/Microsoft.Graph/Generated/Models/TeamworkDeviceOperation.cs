@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkDeviceOperation : Entity, IParsable 
+    public class TeamworkDeviceOperation : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).</summary>
-        public DateTimeOffset? CompletedDateTime {
+        public DateTimeOffset? CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>Identity of the user who created the device operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device operation was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Error details are available only in case of a failed status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OperationError? Error {
+        public OperationError? Error
+        {
             get { return BackingStore?.Get<OperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public OperationError Error {
+        public OperationError Error
+        {
             get { return BackingStore?.Get<OperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
@@ -50,42 +57,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who last modified the device operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastActionBy {
+        public IdentitySet? LastActionBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastActionBy"); }
             set { BackingStore?.Set("lastActionBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastActionBy {
+        public IdentitySet LastActionBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastActionBy"); }
             set { BackingStore?.Set("lastActionBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device operation was last modified.</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The operationType property</summary>
-        public TeamworkDeviceOperationType? OperationType {
+        public TeamworkDeviceOperationType? OperationType
+        {
             get { return BackingStore?.Get<TeamworkDeviceOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>Time at which the operation was started.</summary>
-        public DateTimeOffset? StartedDateTime {
+        public DateTimeOffset? StartedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>The current status of the async operation, for example, Queued, Scheduled, InProgress,  Successful, Cancelled, and Failed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -108,15 +122,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"error", n => { Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
-                {"lastActionBy", n => { LastActionBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operationType", n => { OperationType = n.GetEnumValue<TeamworkDeviceOperationType>(); } },
-                {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetStringValue(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "error", n => { Error = n.GetObjectValue<OperationError>(OperationError.CreateFromDiscriminatorValue); } },
+                { "lastActionBy", n => { LastActionBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<TeamworkDeviceOperationType>(); } },
+                { "startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

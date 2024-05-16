@@ -5,52 +5,60 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessReviewRecurrenceSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AccessReviewRecurrenceSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The duration in days for recurrence.</summary>
-        public int? DurationInDays {
+        public int? DurationInDays
+        {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The count of recurrences, if the value of recurrenceEndType is occurrences, or 0 otherwise.</summary>
-        public int? RecurrenceCount {
+        public int? RecurrenceCount
+        {
             get { return BackingStore?.Get<int?>("recurrenceCount"); }
             set { BackingStore?.Set("recurrenceCount", value); }
         }
         /// <summary>How the recurrence ends. Possible values: never, endBy, occurrences, or recurrenceCount. If it&apos;s never, then there&apos;s no explicit end of the recurrence series. If it&apos;s endBy, then the recurrence ends at a certain date. If it&apos;s occurrences, then the series ends after recurrenceCount instances of the review have completed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurrenceEndType {
+        public string? RecurrenceEndType
+        {
             get { return BackingStore?.Get<string?>("recurrenceEndType"); }
             set { BackingStore?.Set("recurrenceEndType", value); }
         }
 #nullable restore
 #else
-        public string RecurrenceEndType {
+        public string RecurrenceEndType
+        {
             get { return BackingStore?.Get<string>("recurrenceEndType"); }
             set { BackingStore?.Set("recurrenceEndType", value); }
         }
@@ -58,13 +66,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The recurrence interval. Possible values: onetime, weekly, monthly, quarterly, halfyearly or annual.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecurrenceType {
+        public string? RecurrenceType
+        {
             get { return BackingStore?.Get<string?>("recurrenceType"); }
             set { BackingStore?.Set("recurrenceType", value); }
         }
 #nullable restore
 #else
-        public string RecurrenceType {
+        public string RecurrenceType
+        {
             get { return BackingStore?.Get<string>("recurrenceType"); }
             set { BackingStore?.Set("recurrenceType", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"recurrenceCount", n => { RecurrenceCount = n.GetIntValue(); } },
-                {"recurrenceEndType", n => { RecurrenceEndType = n.GetStringValue(); } },
-                {"recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
+                { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "recurrenceCount", n => { RecurrenceCount = n.GetIntValue(); } },
+                { "recurrenceEndType", n => { RecurrenceEndType = n.GetStringValue(); } },
+                { "recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Apple device features configuration profile.
     /// </summary>
-    public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable 
+    public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable
     {
         /// <summary>An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AirPrintDestination>? AirPrintDestinations {
+        public List<AirPrintDestination>? AirPrintDestinations
+        {
             get { return BackingStore?.Get<List<AirPrintDestination>?>("airPrintDestinations"); }
             set { BackingStore?.Set("airPrintDestinations", value); }
         }
 #nullable restore
 #else
-        public List<AirPrintDestination> AirPrintDestinations {
+        public List<AirPrintDestination> AirPrintDestinations
+        {
             get { return BackingStore?.Get<List<AirPrintDestination>>("airPrintDestinations"); }
             set { BackingStore?.Set("airPrintDestinations", value); }
         }
@@ -55,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"airPrintDestinations", n => { AirPrintDestinations = n.GetCollectionOfObjectValues<AirPrintDestination>(AirPrintDestination.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "airPrintDestinations", n => { AirPrintDestinations = n.GetCollectionOfObjectValues<AirPrintDestination>(AirPrintDestination.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

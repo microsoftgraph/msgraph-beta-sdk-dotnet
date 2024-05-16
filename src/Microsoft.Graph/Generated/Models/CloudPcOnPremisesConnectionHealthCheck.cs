@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcOnPremisesConnectionHealthCheck : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcOnPremisesConnectionHealthCheck : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>More details about the health check or the recommended action. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalDetail {
+        public string? AdditionalDetail
+        {
             get { return BackingStore?.Get<string?>("additionalDetail"); }
             set { BackingStore?.Set("additionalDetail", value); }
         }
 #nullable restore
 #else
-        public string AdditionalDetail {
+        public string AdditionalDetail
+        {
             get { return BackingStore?.Get<string>("additionalDetail"); }
             set { BackingStore?.Set("additionalDetail", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The additionalDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalDetails {
+        public string? AdditionalDetails
+        {
             get { return BackingStore?.Get<string?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public string AdditionalDetails {
+        public string AdditionalDetails
+        {
             get { return BackingStore?.Get<string>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier of the health check item-related activities. This identifier can be useful in troubleshooting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CorrelationId {
+        public string? CorrelationId
+        {
             get { return BackingStore?.Get<string?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
 #nullable restore
 #else
-        public string CorrelationId {
+        public string CorrelationId
+        {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
@@ -62,37 +70,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name for this health check item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The end time of the health check item. Read-only.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The type of error that occurred during this health check.</summary>
-        public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType {
+        public CloudPcOnPremisesConnectionHealthCheckErrorType? ErrorType
+        {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionHealthCheckErrorType?>("errorType"); }
             set { BackingStore?.Set("errorType", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -100,24 +114,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The recommended action to fix the corresponding error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecommendedAction {
+        public string? RecommendedAction
+        {
             get { return BackingStore?.Get<string?>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
 #nullable restore
 #else
-        public string RecommendedAction {
+        public string RecommendedAction
+        {
             get { return BackingStore?.Get<string>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
 #endif
         /// <summary>The start time of the health check item. Read-only.</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public CloudPcOnPremisesConnectionStatus? Status {
+        public CloudPcOnPremisesConnectionStatus? Status
+        {
             get { return BackingStore?.Get<CloudPcOnPremisesConnectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -147,16 +165,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"additionalDetail", n => { AdditionalDetail = n.GetStringValue(); } },
-                {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"errorType", n => { ErrorType = n.GetEnumValue<CloudPcOnPremisesConnectionHealthCheckErrorType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
+                { "additionalDetail", n => { AdditionalDetail = n.GetStringValue(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
+                { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "errorType", n => { ErrorType = n.GetEnumValue<CloudPcOnPremisesConnectionHealthCheckErrorType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CloudPcOnPremisesConnectionStatus>(); } },
             };
         }
         /// <summary>

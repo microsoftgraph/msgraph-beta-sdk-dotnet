@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assign {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assign
+{
     #pragma warning disable CS1591
-    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyConfigurationAssignment>? Assignments {
+        public List<GroupPolicyConfigurationAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyConfigurationAssignment> Assignments {
+        public List<GroupPolicyConfigurationAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<GroupPolicyConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.A
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<GroupPolicyConfigurationAssignment>(GroupPolicyConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<GroupPolicyConfigurationAssignment>(GroupPolicyConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

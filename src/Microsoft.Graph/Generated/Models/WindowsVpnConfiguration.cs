@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows VPN configuration profile.
     /// </summary>
-    public class WindowsVpnConfiguration : DeviceConfiguration, IParsable 
+    public class WindowsVpnConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Connection name displayed to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConnectionName {
+        public string? ConnectionName
+        {
             get { return BackingStore?.Get<string?>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
 #nullable restore
 #else
-        public string ConnectionName {
+        public string ConnectionName
+        {
             get { return BackingStore?.Get<string>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom XML commands that configures the VPN connection. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? CustomXml {
+        public byte[]? CustomXml
+        {
             get { return BackingStore?.Get<byte[]?>("customXml"); }
             set { BackingStore?.Set("customXml", value); }
         }
 #nullable restore
 #else
-        public byte[] CustomXml {
+        public byte[] CustomXml
+        {
             get { return BackingStore?.Get<byte[]>("customXml"); }
             set { BackingStore?.Set("customXml", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of VPN Servers on the network. Make sure end users can access these network locations. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VpnServer>? Servers {
+        public List<VpnServer>? Servers
+        {
             get { return BackingStore?.Get<List<VpnServer>?>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
 #nullable restore
 #else
-        public List<VpnServer> Servers {
+        public List<VpnServer> Servers
+        {
             get { return BackingStore?.Get<List<VpnServer>>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
@@ -84,9 +91,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectionName", n => { ConnectionName = n.GetStringValue(); } },
-                {"customXml", n => { CustomXml = n.GetByteArrayValue(); } },
-                {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectionName", n => { ConnectionName = n.GetStringValue(); } },
+                { "customXml", n => { CustomXml = n.GetByteArrayValue(); } },
+                { "servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

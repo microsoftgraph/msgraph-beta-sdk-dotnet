@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal {
+namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotificationToCompanyPortal
+{
     #pragma warning disable CS1591
-    public class SendCustomNotificationToCompanyPortalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SendCustomNotificationToCompanyPortalPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotifica
         /// <summary>The notificationBody property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationBody {
+        public string? NotificationBody
+        {
             get { return BackingStore?.Get<string?>("notificationBody"); }
             set { BackingStore?.Set("notificationBody", value); }
         }
 #nullable restore
 #else
-        public string NotificationBody {
+        public string NotificationBody
+        {
             get { return BackingStore?.Get<string>("notificationBody"); }
             set { BackingStore?.Set("notificationBody", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotifica
         /// <summary>The notificationTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationTitle {
+        public string? NotificationTitle
+        {
             get { return BackingStore?.Get<string?>("notificationTitle"); }
             set { BackingStore?.Set("notificationTitle", value); }
         }
 #nullable restore
 #else
-        public string NotificationTitle {
+        public string NotificationTitle
+        {
             get { return BackingStore?.Get<string>("notificationTitle"); }
             set { BackingStore?.Set("notificationTitle", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SendCustomNotifica
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"notificationBody", n => { NotificationBody = n.GetStringValue(); } },
-                {"notificationTitle", n => { NotificationTitle = n.GetStringValue(); } },
+                { "notificationBody", n => { NotificationBody = n.GetStringValue(); } },
+                { "notificationTitle", n => { NotificationTitle = n.GetStringValue(); } },
             };
         }
         /// <summary>

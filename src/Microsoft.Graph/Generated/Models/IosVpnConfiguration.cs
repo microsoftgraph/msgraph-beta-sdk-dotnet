@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing the configurations in this profile you can instruct the iOS device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class IosVpnConfiguration : AppleVpnConfiguration, IParsable 
+    public class IosVpnConfiguration : AppleVpnConfiguration, IParsable
     {
         /// <summary>Zscaler only. Zscaler cloud which the user is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CloudName {
+        public string? CloudName
+        {
             get { return BackingStore?.Get<string?>("cloudName"); }
             set { BackingStore?.Set("cloudName", value); }
         }
 #nullable restore
 #else
-        public string CloudName {
+        public string CloudName
+        {
             get { return BackingStore?.Get<string>("cloudName"); }
             set { BackingStore?.Set("cloudName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
+        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
+        {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
+        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
+        {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Zscaler only. List of network addresses which are not sent through the Zscaler cloud.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeList {
+        public List<string>? ExcludeList
+        {
             get { return BackingStore?.Get<List<string>?>("excludeList"); }
             set { BackingStore?.Set("excludeList", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeList {
+        public List<string> ExcludeList
+        {
             get { return BackingStore?.Get<List<string>>("excludeList"); }
             set { BackingStore?.Set("excludeList", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IosCertificateProfileBase? IdentityCertificate {
+        public IosCertificateProfileBase? IdentityCertificate
+        {
             get { return BackingStore?.Get<IosCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public IosCertificateProfileBase IdentityCertificate {
+        public IosCertificateProfileBase IdentityCertificate
+        {
             get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
@@ -69,32 +78,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Microsoft Tunnel site ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MicrosoftTunnelSiteId {
+        public string? MicrosoftTunnelSiteId
+        {
             get { return BackingStore?.Get<string?>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
 #nullable restore
 #else
-        public string MicrosoftTunnelSiteId {
+        public string MicrosoftTunnelSiteId
+        {
             get { return BackingStore?.Get<string>("microsoftTunnelSiteId"); }
             set { BackingStore?.Set("microsoftTunnelSiteId", value); }
         }
 #endif
         /// <summary>Zscaler only. Blocks network traffic until the user signs into Zscaler app. &apos;True&apos; means traffic is blocked.</summary>
-        public bool? StrictEnforcement {
+        public bool? StrictEnforcement
+        {
             get { return BackingStore?.Get<bool?>("strictEnforcement"); }
             set { BackingStore?.Set("strictEnforcement", value); }
         }
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? TargetedMobileApps {
+        public List<AppListItem>? TargetedMobileApps
+        {
             get { return BackingStore?.Get<List<AppListItem>?>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> TargetedMobileApps {
+        public List<AppListItem> TargetedMobileApps
+        {
             get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
@@ -102,13 +116,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Zscaler only. Enter a static domain to pre-populate the login field with in the Zscaler app. If this is left empty, the user&apos;s Azure Active Directory domain will be used instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDomain {
+        public string? UserDomain
+        {
             get { return BackingStore?.Get<string?>("userDomain"); }
             set { BackingStore?.Set("userDomain", value); }
         }
 #nullable restore
 #else
-        public string UserDomain {
+        public string UserDomain
+        {
             get { return BackingStore?.Get<string>("userDomain"); }
             set { BackingStore?.Set("userDomain", value); }
         }
@@ -143,14 +159,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cloudName", n => { CloudName = n.GetStringValue(); } },
-                {"derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
-                {"excludeList", n => { ExcludeList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"identityCertificate", n => { IdentityCertificate = n.GetObjectValue<IosCertificateProfileBase>(IosCertificateProfileBase.CreateFromDiscriminatorValue); } },
-                {"microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
-                {"strictEnforcement", n => { StrictEnforcement = n.GetBoolValue(); } },
-                {"targetedMobileApps", n => { TargetedMobileApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userDomain", n => { UserDomain = n.GetStringValue(); } },
+                { "cloudName", n => { CloudName = n.GetStringValue(); } },
+                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
+                { "excludeList", n => { ExcludeList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<IosCertificateProfileBase>(IosCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
+                { "strictEnforcement", n => { StrictEnforcement = n.GetBoolValue(); } },
+                { "targetedMobileApps", n => { TargetedMobileApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userDomain", n => { UserDomain = n.GetStringValue(); } },
             };
         }
         /// <summary>

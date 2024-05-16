@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EncryptedAwsStorageBucketFinding : Finding, IParsable 
+    public class EncryptedAwsStorageBucketFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accessibility property</summary>
-        public AwsAccessType? Accessibility {
+        public AwsAccessType? Accessibility
+        {
             get { return BackingStore?.Get<AwsAccessType?>("accessibility"); }
             set { BackingStore?.Set("accessibility", value); }
         }
         /// <summary>The storageBucket property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? StorageBucket {
+        public AuthorizationSystemResource? StorageBucket
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource?>("storageBucket"); }
             set { BackingStore?.Set("storageBucket", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource StorageBucket {
+        public AuthorizationSystemResource StorageBucket
+        {
             get { return BackingStore?.Get<AuthorizationSystemResource>("storageBucket"); }
             set { BackingStore?.Set("storageBucket", value); }
         }
@@ -46,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessibility", n => { Accessibility = n.GetEnumValue<AwsAccessType>(); } },
-                {"storageBucket", n => { StorageBucket = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "accessibility", n => { Accessibility = n.GetEnumValue<AwsAccessType>(); } },
+                { "storageBucket", n => { StorageBucket = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

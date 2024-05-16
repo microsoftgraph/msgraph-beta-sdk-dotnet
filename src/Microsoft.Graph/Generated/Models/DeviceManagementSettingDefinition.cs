@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity representing the defintion for a given setting
     /// </summary>
-    public class DeviceManagementSettingDefinition : Entity, IParsable 
+    public class DeviceManagementSettingDefinition : Entity, IParsable
     {
         /// <summary>Collection of constraints for the setting value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConstraint>? Constraints {
+        public List<DeviceManagementConstraint>? Constraints
+        {
             get { return BackingStore?.Get<List<DeviceManagementConstraint>?>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConstraint> Constraints {
+        public List<DeviceManagementConstraint> Constraints
+        {
             get { return BackingStore?.Get<List<DeviceManagementConstraint>>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Collection of dependencies on other settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingDependency>? Dependencies {
+        public List<DeviceManagementSettingDependency>? Dependencies
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingDependency>?>("dependencies"); }
             set { BackingStore?.Set("dependencies", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingDependency> Dependencies {
+        public List<DeviceManagementSettingDependency> Dependencies
+        {
             get { return BackingStore?.Get<List<DeviceManagementSettingDependency>>("dependencies"); }
             set { BackingStore?.Set("dependencies", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting&apos;s description</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -55,13 +62,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting&apos;s display name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -69,13 +78,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Url to setting documentation</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentationUrl {
+        public string? DocumentationUrl
+        {
             get { return BackingStore?.Get<string?>("documentationUrl"); }
             set { BackingStore?.Set("documentationUrl", value); }
         }
 #nullable restore
 #else
-        public string DocumentationUrl {
+        public string DocumentationUrl
+        {
             get { return BackingStore?.Get<string>("documentationUrl"); }
             set { BackingStore?.Set("documentationUrl", value); }
         }
@@ -83,13 +94,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>subtitle of the setting header for more details about the category/section</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderSubtitle {
+        public string? HeaderSubtitle
+        {
             get { return BackingStore?.Get<string?>("headerSubtitle"); }
             set { BackingStore?.Set("headerSubtitle", value); }
         }
 #nullable restore
 #else
-        public string HeaderSubtitle {
+        public string HeaderSubtitle
+        {
             get { return BackingStore?.Get<string>("headerSubtitle"); }
             set { BackingStore?.Set("headerSubtitle", value); }
         }
@@ -97,32 +110,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>title of the setting header represents a category/section of a setting/settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? HeaderTitle {
+        public string? HeaderTitle
+        {
             get { return BackingStore?.Get<string?>("headerTitle"); }
             set { BackingStore?.Set("headerTitle", value); }
         }
 #nullable restore
 #else
-        public string HeaderTitle {
+        public string HeaderTitle
+        {
             get { return BackingStore?.Get<string>("headerTitle"); }
             set { BackingStore?.Set("headerTitle", value); }
         }
 #endif
         /// <summary>If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting</summary>
-        public bool? IsTopLevel {
+        public bool? IsTopLevel
+        {
             get { return BackingStore?.Get<bool?>("isTopLevel"); }
             set { BackingStore?.Set("isTopLevel", value); }
         }
         /// <summary>Keywords associated with the setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords {
+        public List<string>? Keywords
+        {
             get { return BackingStore?.Get<List<string>?>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
 #nullable restore
 #else
-        public List<string> Keywords {
+        public List<string> Keywords
+        {
             get { return BackingStore?.Get<List<string>>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
@@ -130,19 +148,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Placeholder text as an example of valid input</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlaceholderText {
+        public string? PlaceholderText
+        {
             get { return BackingStore?.Get<string?>("placeholderText"); }
             set { BackingStore?.Set("placeholderText", value); }
         }
 #nullable restore
 #else
-        public string PlaceholderText {
+        public string PlaceholderText
+        {
             get { return BackingStore?.Get<string>("placeholderText"); }
             set { BackingStore?.Set("placeholderText", value); }
         }
 #endif
         /// <summary>The valueType property</summary>
-        public DeviceManangementIntentValueType? ValueType {
+        public DeviceManangementIntentValueType? ValueType
+        {
             get { return BackingStore?.Get<DeviceManangementIntentValueType?>("valueType"); }
             set { BackingStore?.Set("valueType", value); }
         }
@@ -171,17 +192,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dependencies", n => { Dependencies = n.GetCollectionOfObjectValues<DeviceManagementSettingDependency>(DeviceManagementSettingDependency.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"documentationUrl", n => { DocumentationUrl = n.GetStringValue(); } },
-                {"headerSubtitle", n => { HeaderSubtitle = n.GetStringValue(); } },
-                {"headerTitle", n => { HeaderTitle = n.GetStringValue(); } },
-                {"isTopLevel", n => { IsTopLevel = n.GetBoolValue(); } },
-                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"placeholderText", n => { PlaceholderText = n.GetStringValue(); } },
-                {"valueType", n => { ValueType = n.GetEnumValue<DeviceManangementIntentValueType>(); } },
+                { "constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dependencies", n => { Dependencies = n.GetCollectionOfObjectValues<DeviceManagementSettingDependency>(DeviceManagementSettingDependency.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "documentationUrl", n => { DocumentationUrl = n.GetStringValue(); } },
+                { "headerSubtitle", n => { HeaderSubtitle = n.GetStringValue(); } },
+                { "headerTitle", n => { HeaderTitle = n.GetStringValue(); } },
+                { "isTopLevel", n => { IsTopLevel = n.GetBoolValue(); } },
+                { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "placeholderText", n => { PlaceholderText = n.GetStringValue(); } },
+                { "valueType", n => { ValueType = n.GetEnumValue<DeviceManangementIntentValueType>(); } },
             };
         }
         /// <summary>

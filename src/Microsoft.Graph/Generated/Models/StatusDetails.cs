@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class StatusDetails : StatusBase, IParsable 
+    public class StatusDetails : StatusBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Additional details if there is an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalDetails {
+        public string? AdditionalDetails
+        {
             get { return BackingStore?.Get<string?>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #nullable restore
 #else
-        public string AdditionalDetails {
+        public string AdditionalDetails
+        {
             get { return BackingStore?.Get<string>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
 #endif
         /// <summary>Categorizes the error code. Possible values are Failure, NonServiceFailure, Success.</summary>
-        public ProvisioningStatusErrorCategory? ErrorCategory {
+        public ProvisioningStatusErrorCategory? ErrorCategory
+        {
             get { return BackingStore?.Get<ProvisioningStatusErrorCategory?>("errorCategory"); }
             set { BackingStore?.Set("errorCategory", value); }
         }
         /// <summary>Unique error code if any occurred. Learn more</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode {
+        public string? ErrorCode
+        {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
 #nullable restore
 #else
-        public string ErrorCode {
+        public string ErrorCode
+        {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Summarizes the status and describes why the status happened.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reason {
+        public string? Reason
+        {
             get { return BackingStore?.Get<string?>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
 #nullable restore
 #else
-        public string Reason {
+        public string Reason
+        {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Provides the resolution for the corresponding error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecommendedAction {
+        public string? RecommendedAction
+        {
             get { return BackingStore?.Get<string?>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
 #nullable restore
 #else
-        public string RecommendedAction {
+        public string RecommendedAction
+        {
             get { return BackingStore?.Get<string>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
@@ -95,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
-                {"errorCategory", n => { ErrorCategory = n.GetEnumValue<ProvisioningStatusErrorCategory>(); } },
-                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
-                {"reason", n => { Reason = n.GetStringValue(); } },
-                {"recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
+                { "additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
+                { "errorCategory", n => { ErrorCategory = n.GetEnumValue<ProvisioningStatusErrorCategory>(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "reason", n => { Reason = n.GetStringValue(); } },
+                { "recommendedAction", n => { RecommendedAction = n.GetStringValue(); } },
             };
         }
         /// <summary>

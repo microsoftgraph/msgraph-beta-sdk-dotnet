@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class StorageSettings : Entity, IParsable 
+    public class StorageSettings : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The quota property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedStorageQuota? Quota {
+        public UnifiedStorageQuota? Quota
+        {
             get { return BackingStore?.Get<UnifiedStorageQuota?>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
 #nullable restore
 #else
-        public UnifiedStorageQuota Quota {
+        public UnifiedStorageQuota Quota
+        {
             get { return BackingStore?.Get<UnifiedStorageQuota>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"quota", n => { Quota = n.GetObjectValue<UnifiedStorageQuota>(UnifiedStorageQuota.CreateFromDiscriminatorValue); } },
+                { "quota", n => { Quota = n.GetObjectValue<UnifiedStorageQuota>(UnifiedStorageQuota.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

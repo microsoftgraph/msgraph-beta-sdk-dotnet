@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class DateDrivenRolloutSettings : GradualRolloutSettings, IParsable 
+    public class DateDrivenRolloutSettings : GradualRolloutSettings, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the date before which all devices currently in the deployment are offered the update. Devices added after this date are offered immediately. When the endDateTime isn&apos;t set, all devices in the deployment are offered content at the same time.</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

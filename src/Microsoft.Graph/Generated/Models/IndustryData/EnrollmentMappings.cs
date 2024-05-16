@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class EnrollmentMappings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EnrollmentMappings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The enrollmentMappings member for the class group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SectionRoleReferenceValue>? MemberEnrollmentMappings {
+        public List<SectionRoleReferenceValue>? MemberEnrollmentMappings
+        {
             get { return BackingStore?.Get<List<SectionRoleReferenceValue>?>("memberEnrollmentMappings"); }
             set { BackingStore?.Set("memberEnrollmentMappings", value); }
         }
 #nullable restore
 #else
-        public List<SectionRoleReferenceValue> MemberEnrollmentMappings {
+        public List<SectionRoleReferenceValue> MemberEnrollmentMappings
+        {
             get { return BackingStore?.Get<List<SectionRoleReferenceValue>>("memberEnrollmentMappings"); }
             set { BackingStore?.Set("memberEnrollmentMappings", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The enrollmentMappings owner for the class group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SectionRoleReferenceValue>? OwnerEnrollmentMappings {
+        public List<SectionRoleReferenceValue>? OwnerEnrollmentMappings
+        {
             get { return BackingStore?.Get<List<SectionRoleReferenceValue>?>("ownerEnrollmentMappings"); }
             set { BackingStore?.Set("ownerEnrollmentMappings", value); }
         }
 #nullable restore
 #else
-        public List<SectionRoleReferenceValue> OwnerEnrollmentMappings {
+        public List<SectionRoleReferenceValue> OwnerEnrollmentMappings
+        {
             get { return BackingStore?.Get<List<SectionRoleReferenceValue>>("ownerEnrollmentMappings"); }
             set { BackingStore?.Set("ownerEnrollmentMappings", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"memberEnrollmentMappings", n => { MemberEnrollmentMappings = n.GetCollectionOfObjectValues<SectionRoleReferenceValue>(SectionRoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ownerEnrollmentMappings", n => { OwnerEnrollmentMappings = n.GetCollectionOfObjectValues<SectionRoleReferenceValue>(SectionRoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "memberEnrollmentMappings", n => { MemberEnrollmentMappings = n.GetCollectionOfObjectValues<SectionRoleReferenceValue>(SectionRoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ownerEnrollmentMappings", n => { OwnerEnrollmentMappings = n.GetCollectionOfObjectValues<SectionRoleReferenceValue>(SectionRoleReferenceValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The entity represents an ADML (Administrative Template language) XML file uploaded by Administrator.
     /// </summary>
-    public class GroupPolicyUploadedLanguageFile : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GroupPolicyUploadedLanguageFile : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The contents of the uploaded ADML file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The file name of the uploaded ADML file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Key of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -63,32 +71,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The language code of the uploaded ADML file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageCode {
+        public string? LanguageCode
+        {
             get { return BackingStore?.Get<string?>("languageCode"); }
             set { BackingStore?.Set("languageCode", value); }
         }
 #nullable restore
 #else
-        public string LanguageCode {
+        public string LanguageCode
+        {
             get { return BackingStore?.Get<string>("languageCode"); }
             set { BackingStore?.Set("languageCode", value); }
         }
 #endif
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -119,12 +132,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"fileName", n => { FileName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"languageCode", n => { LanguageCode = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "languageCode", n => { LanguageCode = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

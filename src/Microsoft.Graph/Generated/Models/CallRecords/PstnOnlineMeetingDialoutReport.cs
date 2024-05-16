@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.CallRecords {
+namespace Microsoft.Graph.Beta.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class PstnOnlineMeetingDialoutReport : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PstnOnlineMeetingDialoutReport : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Currency used to calculate the cost of the call. For details, see ISO 4217.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Currency {
+        public string? Currency
+        {
             get { return BackingStore?.Get<string?>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
 #nullable restore
 #else
-        public string Currency {
+        public string Currency
+        {
             get { return BackingStore?.Get<string>("currency"); }
             set { BackingStore?.Set("currency", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Indicates whether the call was Domestic (within a country or region) or International (outside a country or region) based on the user&apos;s location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationContext {
+        public string? DestinationContext
+        {
             get { return BackingStore?.Get<string?>("destinationContext"); }
             set { BackingStore?.Set("destinationContext", value); }
         }
 #nullable restore
 #else
-        public string DestinationContext {
+        public string DestinationContext
+        {
             get { return BackingStore?.Get<string>("destinationContext"); }
             set { BackingStore?.Set("destinationContext", value); }
         }
@@ -48,42 +54,49 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Total costs of all the calls within the selected time range, including call charges and connection fees.</summary>
-        public decimal? TotalCallCharge {
+        public decimal? TotalCallCharge
+        {
             get { return BackingStore?.Get<decimal?>("totalCallCharge"); }
             set { BackingStore?.Set("totalCallCharge", value); }
         }
         /// <summary>Total number of dial-out calls within the selected time range.</summary>
-        public int? TotalCalls {
+        public int? TotalCalls
+        {
             get { return BackingStore?.Get<int?>("totalCalls"); }
             set { BackingStore?.Set("totalCalls", value); }
         }
         /// <summary>Total duration of all the calls within the selected time range, in seconds.</summary>
-        public int? TotalCallSeconds {
+        public int? TotalCallSeconds
+        {
             get { return BackingStore?.Get<int?>("totalCallSeconds"); }
             set { BackingStore?.Set("totalCallSeconds", value); }
         }
         /// <summary>Country code of the user. For details, see ISO 3166-1 alpha-2.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UsageLocation {
+        public string? UsageLocation
+        {
             get { return BackingStore?.Get<string?>("usageLocation"); }
             set { BackingStore?.Set("usageLocation", value); }
         }
 #nullable restore
 #else
-        public string UsageLocation {
+        public string UsageLocation
+        {
             get { return BackingStore?.Get<string>("usageLocation"); }
             set { BackingStore?.Set("usageLocation", value); }
         }
@@ -91,13 +104,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>Display name of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -105,13 +120,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The unique identifier (GUID) of the user in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -119,13 +136,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The user principal name (sign-in name) in Microsoft Entra ID. This is usually the same as the user&apos;s SIP address, and can be same as the user&apos;s e-mail address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -156,16 +175,16 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"currency", n => { Currency = n.GetStringValue(); } },
-                {"destinationContext", n => { DestinationContext = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"totalCallCharge", n => { TotalCallCharge = n.GetDecimalValue(); } },
-                {"totalCallSeconds", n => { TotalCallSeconds = n.GetIntValue(); } },
-                {"totalCalls", n => { TotalCalls = n.GetIntValue(); } },
-                {"usageLocation", n => { UsageLocation = n.GetStringValue(); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "currency", n => { Currency = n.GetStringValue(); } },
+                { "destinationContext", n => { DestinationContext = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "totalCallCharge", n => { TotalCallCharge = n.GetDecimalValue(); } },
+                { "totalCallSeconds", n => { TotalCallSeconds = n.GetIntValue(); } },
+                { "totalCalls", n => { TotalCalls = n.GetIntValue(); } },
+                { "usageLocation", n => { UsageLocation = n.GetStringValue(); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.CreateMigrationReport
+{
     [Obsolete("This class is obsolete. Use CreateMigrationReportPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CreateMigrationReportResponse : CreateMigrationReportPostResponse, IParsable 
+    public class CreateMigrationReportResponse : CreateMigrationReportPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

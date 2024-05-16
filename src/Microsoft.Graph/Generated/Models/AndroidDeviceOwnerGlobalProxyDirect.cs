@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Android Device Owner Global Proxy Direct.
     /// </summary>
-    public class AndroidDeviceOwnerGlobalProxyDirect : AndroidDeviceOwnerGlobalProxy, IParsable 
+    public class AndroidDeviceOwnerGlobalProxyDirect : AndroidDeviceOwnerGlobalProxy, IParsable
     {
         /// <summary>The excluded hosts</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludedHosts {
+        public List<string>? ExcludedHosts
+        {
             get { return BackingStore?.Get<List<string>?>("excludedHosts"); }
             set { BackingStore?.Set("excludedHosts", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludedHosts {
+        public List<string> ExcludedHosts
+        {
             get { return BackingStore?.Get<List<string>>("excludedHosts"); }
             set { BackingStore?.Set("excludedHosts", value); }
         }
@@ -27,19 +30,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The host name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Host {
+        public string? Host
+        {
             get { return BackingStore?.Get<string?>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #nullable restore
 #else
-        public string Host {
+        public string Host
+        {
             get { return BackingStore?.Get<string>("host"); }
             set { BackingStore?.Set("host", value); }
         }
 #endif
         /// <summary>The port</summary>
-        public int? Port {
+        public int? Port
+        {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"excludedHosts", n => { ExcludedHosts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"host", n => { Host = n.GetStringValue(); } },
-                {"port", n => { Port = n.GetIntValue(); } },
+                { "excludedHosts", n => { ExcludedHosts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "host", n => { Host = n.GetStringValue(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
             };
         }
         /// <summary>

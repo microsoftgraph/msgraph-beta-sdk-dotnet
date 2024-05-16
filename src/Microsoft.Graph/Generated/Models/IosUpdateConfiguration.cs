@@ -5,32 +5,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// IOS Update Configuration, allows you to configure time window within week to install iOS updates
     /// </summary>
-    public class IosUpdateConfiguration : DeviceConfiguration, IParsable 
+    public class IosUpdateConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Active Hours End (active hours mean the time window when updates install should not happen)</summary>
-        public Time? ActiveHoursEnd {
+        public Time? ActiveHoursEnd
+        {
             get { return BackingStore?.Get<Time?>("activeHoursEnd"); }
             set { BackingStore?.Set("activeHoursEnd", value); }
         }
         /// <summary>Active Hours Start (active hours mean the time window when updates install should not happen)</summary>
-        public Time? ActiveHoursStart {
+        public Time? ActiveHoursStart
+        {
             get { return BackingStore?.Get<Time?>("activeHoursStart"); }
             set { BackingStore?.Set("activeHoursStart", value); }
         }
         /// <summary>If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows {
+        public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows
+        {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>?>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
 #nullable restore
 #else
-        public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows {
+        public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows
+        {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
@@ -38,48 +43,56 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>If left unspecified, devices will update to the latest version of the OS.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DesiredOsVersion {
+        public string? DesiredOsVersion
+        {
             get { return BackingStore?.Get<string?>("desiredOsVersion"); }
             set { BackingStore?.Set("desiredOsVersion", value); }
         }
 #nullable restore
 #else
-        public string DesiredOsVersion {
+        public string DesiredOsVersion
+        {
             get { return BackingStore?.Get<string>("desiredOsVersion"); }
             set { BackingStore?.Set("desiredOsVersion", value); }
         }
 #endif
         /// <summary>Days before software updates are visible to iOS devices ranging from 0 to 90 inclusive</summary>
-        public int? EnforcedSoftwareUpdateDelayInDays {
+        public int? EnforcedSoftwareUpdateDelayInDays
+        {
             get { return BackingStore?.Get<int?>("enforcedSoftwareUpdateDelayInDays"); }
             set { BackingStore?.Set("enforcedSoftwareUpdateDelayInDays", value); }
         }
         /// <summary>Is setting enabled in UI</summary>
-        public bool? IsEnabled {
+        public bool? IsEnabled
+        {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DayOfWeekObject?>? ScheduledInstallDays {
+        public List<DayOfWeekObject?>? ScheduledInstallDays
+        {
             get { return BackingStore?.Get<List<DayOfWeekObject?>?>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
 #nullable restore
 #else
-        public List<DayOfWeekObject?> ScheduledInstallDays {
+        public List<DayOfWeekObject?> ScheduledInstallDays
+        {
             get { return BackingStore?.Get<List<DayOfWeekObject?>>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
 #endif
         /// <summary>Update schedule type for iOS software updates.</summary>
-        public IosSoftwareUpdateScheduleType? UpdateScheduleType {
+        public IosSoftwareUpdateScheduleType? UpdateScheduleType
+        {
             get { return BackingStore?.Get<IosSoftwareUpdateScheduleType?>("updateScheduleType"); }
             set { BackingStore?.Set("updateScheduleType", value); }
         }
         /// <summary>UTC Time Offset indicated in minutes</summary>
-        public int? UtcTimeOffsetInMinutes {
+        public int? UtcTimeOffsetInMinutes
+        {
             get { return BackingStore?.Get<int?>("utcTimeOffsetInMinutes"); }
             set { BackingStore?.Set("utcTimeOffsetInMinutes", value); }
         }
@@ -108,15 +121,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeHoursEnd", n => { ActiveHoursEnd = n.GetTimeValue(); } },
-                {"activeHoursStart", n => { ActiveHoursStart = n.GetTimeValue(); } },
-                {"customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"desiredOsVersion", n => { DesiredOsVersion = n.GetStringValue(); } },
-                {"enforcedSoftwareUpdateDelayInDays", n => { EnforcedSoftwareUpdateDelayInDays = n.GetIntValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
-                {"updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<IosSoftwareUpdateScheduleType>(); } },
-                {"utcTimeOffsetInMinutes", n => { UtcTimeOffsetInMinutes = n.GetIntValue(); } },
+                { "activeHoursEnd", n => { ActiveHoursEnd = n.GetTimeValue(); } },
+                { "activeHoursStart", n => { ActiveHoursStart = n.GetTimeValue(); } },
+                { "customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "desiredOsVersion", n => { DesiredOsVersion = n.GetStringValue(); } },
+                { "enforcedSoftwareUpdateDelayInDays", n => { EnforcedSoftwareUpdateDelayInDays = n.GetIntValue(); } },
+                { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                { "scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
+                { "updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<IosSoftwareUpdateScheduleType>(); } },
+                { "utcTimeOffsetInMinutes", n => { UtcTimeOffsetInMinutes = n.GetIntValue(); } },
             };
         }
         /// <summary>

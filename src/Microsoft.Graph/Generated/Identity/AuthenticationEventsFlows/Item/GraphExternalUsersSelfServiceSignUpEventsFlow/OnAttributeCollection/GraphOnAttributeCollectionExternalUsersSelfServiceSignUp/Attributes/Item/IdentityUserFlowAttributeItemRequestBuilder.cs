@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.OnAttributeCollection.GraphOnAttributeCollectionExternalUsersSelfServiceSignUp.Attributes.Item {
+namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExternalUsersSelfServiceSignUpEventsFlow.OnAttributeCollection.GraphOnAttributeCollectionExternalUsersSelfServiceSignUp.Attributes.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \identity\authenticationEventsFlows\{authenticationEventsFlow-id}\graph.externalUsersSelfServiceSignUpEventsFlow\onAttributeCollection\graph.onAttributeCollectionExternalUsersSelfServiceSignUp\attributes\{identityUserFlowAttribute-id}
     /// </summary>
-    public class IdentityUserFlowAttributeItemRequestBuilder : BaseRequestBuilder 
+    public class IdentityUserFlowAttributeItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of identityContainer entities.</summary>
         public RefRequestBuilder Ref

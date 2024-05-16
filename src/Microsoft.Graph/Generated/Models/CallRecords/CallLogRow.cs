@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.CallRecords {
+namespace Microsoft.Graph.Beta.Models.CallRecords
+{
     #pragma warning disable CS1591
-    public class CallLogRow : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CallLogRow : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The administrativeUnitInfos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AdministrativeUnitInfo>? AdministrativeUnitInfos {
+        public List<AdministrativeUnitInfo>? AdministrativeUnitInfos
+        {
             get { return BackingStore?.Get<List<AdministrativeUnitInfo>?>("administrativeUnitInfos"); }
             set { BackingStore?.Set("administrativeUnitInfos", value); }
         }
 #nullable restore
 #else
-        public List<AdministrativeUnitInfo> AdministrativeUnitInfos {
+        public List<AdministrativeUnitInfo> AdministrativeUnitInfos
+        {
             get { return BackingStore?.Get<List<AdministrativeUnitInfo>>("administrativeUnitInfos"); }
             set { BackingStore?.Set("administrativeUnitInfos", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The otherPartyCountryCode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OtherPartyCountryCode {
+        public string? OtherPartyCountryCode
+        {
             get { return BackingStore?.Get<string?>("otherPartyCountryCode"); }
             set { BackingStore?.Set("otherPartyCountryCode", value); }
         }
 #nullable restore
 #else
-        public string OtherPartyCountryCode {
+        public string OtherPartyCountryCode
+        {
             get { return BackingStore?.Get<string>("otherPartyCountryCode"); }
             set { BackingStore?.Set("otherPartyCountryCode", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The userDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserDisplayName {
+        public string? UserDisplayName
+        {
             get { return BackingStore?.Get<string?>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
 #nullable restore
 #else
-        public string UserDisplayName {
+        public string UserDisplayName
+        {
             get { return BackingStore?.Get<string>("userDisplayName"); }
             set { BackingStore?.Set("userDisplayName", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         /// <summary>The userPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -148,13 +164,13 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"administrativeUnitInfos", n => { AdministrativeUnitInfos = n.GetCollectionOfObjectValues<AdministrativeUnitInfo>(AdministrativeUnitInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"otherPartyCountryCode", n => { OtherPartyCountryCode = n.GetStringValue(); } },
-                {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "administrativeUnitInfos", n => { AdministrativeUnitInfos = n.GetCollectionOfObjectValues<AdministrativeUnitInfo>(AdministrativeUnitInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "otherPartyCountryCode", n => { OtherPartyCountryCode = n.GetStringValue(); } },
+                { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

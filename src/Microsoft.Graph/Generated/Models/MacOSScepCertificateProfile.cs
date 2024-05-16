@@ -4,32 +4,37 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Mac OS SCEP certificate profile.
     /// </summary>
-    public class MacOSScepCertificateProfile : MacOSCertificateProfileBase, IParsable 
+    public class MacOSScepCertificateProfile : MacOSCertificateProfileBase, IParsable
     {
         /// <summary>AllowAllAppsAccess setting</summary>
-        public bool? AllowAllAppsAccess {
+        public bool? AllowAllAppsAccess
+        {
             get { return BackingStore?.Get<bool?>("allowAllAppsAccess"); }
             set { BackingStore?.Set("allowAllAppsAccess", value); }
         }
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
-        public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
+        public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
             set { BackingStore?.Set("certificateStore", value); }
         }
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames {
+        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames
+        {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
 #nullable restore
 #else
-        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
+        public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames
+        {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
@@ -37,42 +42,49 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtendedKeyUsage>? ExtendedKeyUsages {
+        public List<ExtendedKeyUsage>? ExtendedKeyUsages
+        {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #nullable restore
 #else
-        public List<ExtendedKeyUsage> ExtendedKeyUsages {
+        public List<ExtendedKeyUsage> ExtendedKeyUsages
+        {
             get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #endif
         /// <summary>SCEP Hash Algorithm. Possible values are: sha1, sha2.</summary>
-        public HashAlgorithms? HashAlgorithm {
+        public HashAlgorithms? HashAlgorithm
+        {
             get { return BackingStore?.Get<HashAlgorithms?>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
         /// <summary>Key Size Options.</summary>
-        public Microsoft.Graph.Beta.Models.KeySize? KeySize {
+        public Microsoft.Graph.Beta.Models.KeySize? KeySize
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeySize?>("keySize"); }
             set { BackingStore?.Set("keySize", value); }
         }
         /// <summary>Key Usage Options.</summary>
-        public KeyUsages? KeyUsage {
+        public KeyUsages? KeyUsage
+        {
             get { return BackingStore?.Get<KeyUsages?>("keyUsage"); }
             set { BackingStore?.Set("keyUsage", value); }
         }
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
+        public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
@@ -80,13 +92,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Trusted Root Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MacOSTrustedRootCertificate? RootCertificate {
+        public MacOSTrustedRootCertificate? RootCertificate
+        {
             get { return BackingStore?.Get<MacOSTrustedRootCertificate?>("rootCertificate"); }
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #nullable restore
 #else
-        public MacOSTrustedRootCertificate RootCertificate {
+        public MacOSTrustedRootCertificate RootCertificate
+        {
             get { return BackingStore?.Get<MacOSTrustedRootCertificate>("rootCertificate"); }
             set { BackingStore?.Set("rootCertificate", value); }
         }
@@ -94,13 +108,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>SCEP Server Url(s).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ScepServerUrls {
+        public List<string>? ScepServerUrls
+        {
             get { return BackingStore?.Get<List<string>?>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
 #nullable restore
 #else
-        public List<string> ScepServerUrls {
+        public List<string> ScepServerUrls
+        {
             get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
@@ -108,13 +124,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom String that defines the AAD Attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectAlternativeNameFormatString {
+        public string? SubjectAlternativeNameFormatString
+        {
             get { return BackingStore?.Get<string?>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
 #nullable restore
 #else
-        public string SubjectAlternativeNameFormatString {
+        public string SubjectAlternativeNameFormatString
+        {
             get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
@@ -122,13 +140,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Custom format to use with SubjectNameFormat = Custom. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubjectNameFormatString {
+        public string? SubjectNameFormatString
+        {
             get { return BackingStore?.Get<string?>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
 #nullable restore
 #else
-        public string SubjectNameFormatString {
+        public string SubjectNameFormatString
+        {
             get { return BackingStore?.Get<string>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
@@ -158,18 +178,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowAllAppsAccess", n => { AllowAllAppsAccess = n.GetBoolValue(); } },
-                {"certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
-                {"customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<HashAlgorithms>(); } },
-                {"keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
-                {"keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
-                {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"rootCertificate", n => { RootCertificate = n.GetObjectValue<MacOSTrustedRootCertificate>(MacOSTrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                {"scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
-                {"subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
+                { "allowAllAppsAccess", n => { AllowAllAppsAccess = n.GetBoolValue(); } },
+                { "certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
+                { "customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<HashAlgorithms>(); } },
+                { "keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
+                { "keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
+                { "managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rootCertificate", n => { RootCertificate = n.GetObjectValue<MacOSTrustedRootCertificate>(MacOSTrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
+                { "subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
             };
         }
         /// <summary>

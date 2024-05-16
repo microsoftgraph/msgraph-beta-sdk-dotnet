@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Intent assignment entity
     /// </summary>
-    public class DeviceManagementIntentAssignment : Entity, IParsable 
+    public class DeviceManagementIntentAssignment : Entity, IParsable
     {
         /// <summary>The assignment target</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target {
+        public DeviceAndAppManagementAssignmentTarget? Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target {
+        public DeviceAndAppManagementAssignmentTarget Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagementTemplateCollection : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagementTemplateCollection : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The createdByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedByUserId {
+        public string? CreatedByUserId
+        {
             get { return BackingStore?.Get<string?>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #nullable restore
 #else
-        public string CreatedByUserId {
+        public string CreatedByUserId
+        {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
 #endif
         /// <summary>The createdDateTime property</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -59,32 +67,37 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The lastActionByUserId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastActionByUserId {
+        public string? LastActionByUserId
+        {
             get { return BackingStore?.Get<string?>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #nullable restore
 #else
-        public string LastActionByUserId {
+        public string LastActionByUserId
+        {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
 #endif
         /// <summary>The lastActionDateTime property</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplate>? ManagementTemplates {
+        public List<ManagementTemplate>? ManagementTemplates
+        {
             get { return BackingStore?.Get<List<ManagementTemplate>?>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplate> ManagementTemplates {
+        public List<ManagementTemplate> ManagementTemplates
+        {
             get { return BackingStore?.Get<List<ManagementTemplate>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
@@ -107,13 +120,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

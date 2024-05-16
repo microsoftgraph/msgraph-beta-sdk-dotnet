@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RelatedProcess : RelatedResource, IParsable 
+    public class RelatedProcess : RelatedResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The isSuspicious property</summary>
-        public bool? IsSuspicious {
+        public bool? IsSuspicious
+        {
             get { return BackingStore?.Get<bool?>("isSuspicious"); }
             set { BackingStore?.Set("isSuspicious", value); }
         }
         /// <summary>The processName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProcessName {
+        public string? ProcessName
+        {
             get { return BackingStore?.Get<string?>("processName"); }
             set { BackingStore?.Set("processName", value); }
         }
 #nullable restore
 #else
-        public string ProcessName {
+        public string ProcessName
+        {
             get { return BackingStore?.Get<string>("processName"); }
             set { BackingStore?.Set("processName", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"isSuspicious", n => { IsSuspicious = n.GetBoolValue(); } },
-                {"processName", n => { ProcessName = n.GetStringValue(); } },
+                { "isSuspicious", n => { IsSuspicious = n.GetBoolValue(); } },
+                { "processName", n => { ProcessName = n.GetStringValue(); } },
             };
         }
         /// <summary>

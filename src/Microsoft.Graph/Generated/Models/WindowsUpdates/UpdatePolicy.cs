@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class UpdatePolicy : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class UpdatePolicy : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the audience to target.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeploymentAudience? Audience {
+        public DeploymentAudience? Audience
+        {
             get { return BackingStore?.Get<DeploymentAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
 #nullable restore
 #else
-        public DeploymentAudience Audience {
+        public DeploymentAudience Audience
+        {
             get { return BackingStore?.Get<DeploymentAudience>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Rules for governing the automatic creation of compliance changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ComplianceChangeRule>? ComplianceChangeRules {
+        public List<ComplianceChangeRule>? ComplianceChangeRules
+        {
             get { return BackingStore?.Get<List<ComplianceChangeRule>?>("complianceChangeRules"); }
             set { BackingStore?.Set("complianceChangeRules", value); }
         }
 #nullable restore
 #else
-        public List<ComplianceChangeRule> ComplianceChangeRules {
+        public List<ComplianceChangeRule> ComplianceChangeRules
+        {
             get { return BackingStore?.Get<List<ComplianceChangeRule>>("complianceChangeRules"); }
             set { BackingStore?.Set("complianceChangeRules", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Compliance changes like content approvals which result in the automatic creation of deployments using the audience and deploymentSettings of the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ComplianceChange>? ComplianceChanges {
+        public List<ComplianceChange>? ComplianceChanges
+        {
             get { return BackingStore?.Get<List<ComplianceChange>?>("complianceChanges"); }
             set { BackingStore?.Set("complianceChanges", value); }
         }
 #nullable restore
 #else
-        public List<ComplianceChange> ComplianceChanges {
+        public List<ComplianceChange> ComplianceChanges
+        {
             get { return BackingStore?.Get<List<ComplianceChange>>("complianceChanges"); }
             set { BackingStore?.Set("complianceChanges", value); }
         }
 #endif
         /// <summary>The date and time when the update policy was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Settings for governing how to deploy content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings? DeploymentSettings {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings? DeploymentSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings?>("deploymentSettings"); }
             set { BackingStore?.Set("deploymentSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings DeploymentSettings {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings DeploymentSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>("deploymentSettings"); }
             set { BackingStore?.Set("deploymentSettings", value); }
         }
@@ -88,11 +98,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"audience", n => { Audience = n.GetObjectValue<DeploymentAudience>(DeploymentAudience.CreateFromDiscriminatorValue); } },
-                {"complianceChangeRules", n => { ComplianceChangeRules = n.GetCollectionOfObjectValues<ComplianceChangeRule>(ComplianceChangeRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"complianceChanges", n => { ComplianceChanges = n.GetCollectionOfObjectValues<ComplianceChange>(ComplianceChange.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deploymentSettings", n => { DeploymentSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings.CreateFromDiscriminatorValue); } },
+                { "audience", n => { Audience = n.GetObjectValue<DeploymentAudience>(DeploymentAudience.CreateFromDiscriminatorValue); } },
+                { "complianceChangeRules", n => { ComplianceChangeRules = n.GetCollectionOfObjectValues<ComplianceChangeRule>(ComplianceChangeRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "complianceChanges", n => { ComplianceChanges = n.GetCollectionOfObjectValues<ComplianceChange>(ComplianceChange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deploymentSettings", n => { DeploymentSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

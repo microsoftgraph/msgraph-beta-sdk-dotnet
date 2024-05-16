@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedOperationEvent : Entity, IParsable 
+    public class PrivilegedOperationEvent : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The additionalInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalInformation {
+        public string? AdditionalInformation
+        {
             get { return BackingStore?.Get<string?>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #nullable restore
 #else
-        public string AdditionalInformation {
+        public string AdditionalInformation
+        {
             get { return BackingStore?.Get<string>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
 #endif
         /// <summary>The creationDateTime property</summary>
-        public DateTimeOffset? CreationDateTime {
+        public DateTimeOffset? CreationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("creationDateTime"); }
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The expirationDateTime property</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The referenceKey property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceKey {
+        public string? ReferenceKey
+        {
             get { return BackingStore?.Get<string?>("referenceKey"); }
             set { BackingStore?.Set("referenceKey", value); }
         }
 #nullable restore
 #else
-        public string ReferenceKey {
+        public string ReferenceKey
+        {
             get { return BackingStore?.Get<string>("referenceKey"); }
             set { BackingStore?.Set("referenceKey", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The referenceSystem property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReferenceSystem {
+        public string? ReferenceSystem
+        {
             get { return BackingStore?.Get<string?>("referenceSystem"); }
             set { BackingStore?.Set("referenceSystem", value); }
         }
 #nullable restore
 #else
-        public string ReferenceSystem {
+        public string ReferenceSystem
+        {
             get { return BackingStore?.Get<string>("referenceSystem"); }
             set { BackingStore?.Set("referenceSystem", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The requestorId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestorId {
+        public string? RequestorId
+        {
             get { return BackingStore?.Get<string?>("requestorId"); }
             set { BackingStore?.Set("requestorId", value); }
         }
 #nullable restore
 #else
-        public string RequestorId {
+        public string RequestorId
+        {
             get { return BackingStore?.Get<string>("requestorId"); }
             set { BackingStore?.Set("requestorId", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The requestorName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestorName {
+        public string? RequestorName
+        {
             get { return BackingStore?.Get<string?>("requestorName"); }
             set { BackingStore?.Set("requestorName", value); }
         }
 #nullable restore
 #else
-        public string RequestorName {
+        public string RequestorName
+        {
             get { return BackingStore?.Get<string>("requestorName"); }
             set { BackingStore?.Set("requestorName", value); }
         }
@@ -92,13 +105,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The requestType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestType {
+        public string? RequestType
+        {
             get { return BackingStore?.Get<string?>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
 #nullable restore
 #else
-        public string RequestType {
+        public string RequestType
+        {
             get { return BackingStore?.Get<string>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleId {
+        public string? RoleId
+        {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
 #nullable restore
 #else
-        public string RoleId {
+        public string RoleId
+        {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleName {
+        public string? RoleName
+        {
             get { return BackingStore?.Get<string?>("roleName"); }
             set { BackingStore?.Set("roleName", value); }
         }
 #nullable restore
 #else
-        public string RoleName {
+        public string RoleName
+        {
             get { return BackingStore?.Get<string>("roleName"); }
             set { BackingStore?.Set("roleName", value); }
         }
@@ -134,13 +153,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -148,13 +169,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -162,13 +185,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The userMail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserMail {
+        public string? UserMail
+        {
             get { return BackingStore?.Get<string?>("userMail"); }
             set { BackingStore?.Set("userMail", value); }
         }
 #nullable restore
 #else
-        public string UserMail {
+        public string UserMail
+        {
             get { return BackingStore?.Get<string>("userMail"); }
             set { BackingStore?.Set("userMail", value); }
         }
@@ -176,13 +201,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The userName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -205,20 +232,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
-                {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"referenceKey", n => { ReferenceKey = n.GetStringValue(); } },
-                {"referenceSystem", n => { ReferenceSystem = n.GetStringValue(); } },
-                {"requestType", n => { RequestType = n.GetStringValue(); } },
-                {"requestorId", n => { RequestorId = n.GetStringValue(); } },
-                {"requestorName", n => { RequestorName = n.GetStringValue(); } },
-                {"roleId", n => { RoleId = n.GetStringValue(); } },
-                {"roleName", n => { RoleName = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userMail", n => { UserMail = n.GetStringValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
+                { "additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
+                { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "referenceKey", n => { ReferenceKey = n.GetStringValue(); } },
+                { "referenceSystem", n => { ReferenceSystem = n.GetStringValue(); } },
+                { "requestType", n => { RequestType = n.GetStringValue(); } },
+                { "requestorId", n => { RequestorId = n.GetStringValue(); } },
+                { "requestorName", n => { RequestorName = n.GetStringValue(); } },
+                { "roleId", n => { RoleId = n.GetStringValue(); } },
+                { "roleName", n => { RoleName = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userMail", n => { UserMail = n.GetStringValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

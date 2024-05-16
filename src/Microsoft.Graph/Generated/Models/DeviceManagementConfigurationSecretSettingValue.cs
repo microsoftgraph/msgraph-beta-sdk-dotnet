@@ -4,28 +4,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Graph model for a secret setting value
     /// </summary>
-    public class DeviceManagementConfigurationSecretSettingValue : DeviceManagementConfigurationSimpleSettingValue, IParsable 
+    public class DeviceManagementConfigurationSecretSettingValue : DeviceManagementConfigurationSimpleSettingValue, IParsable
     {
         /// <summary>Value of the secret setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value {
+        public string? Value
+        {
             get { return BackingStore?.Get<string?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public string Value {
+        public string Value
+        {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>type tracking the encryption state of a secret setting value</summary>
-        public DeviceManagementConfigurationSecretSettingValueState? ValueState {
+        public DeviceManagementConfigurationSecretSettingValueState? ValueState
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationSecretSettingValueState?>("valueState"); }
             set { BackingStore?.Set("valueState", value); }
         }
@@ -54,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetStringValue(); } },
-                {"valueState", n => { ValueState = n.GetEnumValue<DeviceManagementConfigurationSecretSettingValueState>(); } },
+                { "value", n => { Value = n.GetStringValue(); } },
+                { "valueState", n => { ValueState = n.GetEnumValue<DeviceManagementConfigurationSecretSettingValueState>(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The entity represents a collection of name/value pairs of a list box presentation on a policy definition.
     /// </summary>
-    public class GroupPolicyPresentationValueList : GroupPolicyPresentationValue, IParsable 
+    public class GroupPolicyPresentationValueList : GroupPolicyPresentationValue, IParsable
     {
         /// <summary>A list of pairs for the associated presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Values {
+        public List<KeyValuePair>? Values
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Values {
+        public List<KeyValuePair> Values
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"values", n => { Values = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

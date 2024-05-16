@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrintDocument : Entity, IParsable 
+    public class PrintDocument : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterDocumentConfiguration? Configuration {
+        public PrinterDocumentConfiguration? Configuration
+        {
             get { return BackingStore?.Get<PrinterDocumentConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public PrinterDocumentConfiguration Configuration {
+        public PrinterDocumentConfiguration Configuration
+        {
             get { return BackingStore?.Get<PrinterDocumentConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The document&apos;s content (MIME) type. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContentType {
+        public string? ContentType
+        {
             get { return BackingStore?.Get<string?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #nullable restore
 #else
-        public string ContentType {
+        public string ContentType
+        {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
@@ -40,29 +45,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The document&apos;s name. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The downloadedDateTime property</summary>
-        public DateTimeOffset? DownloadedDateTime {
+        public DateTimeOffset? DownloadedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("downloadedDateTime"); }
             set { BackingStore?.Set("downloadedDateTime", value); }
         }
         /// <summary>The document&apos;s size in bytes. Read-only.</summary>
-        public long? Size {
+        public long? Size
+        {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>The uploadedDateTime property</summary>
-        public DateTimeOffset? UploadedDateTime {
+        public DateTimeOffset? UploadedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("uploadedDateTime"); }
             set { BackingStore?.Set("uploadedDateTime", value); }
         }
@@ -84,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configuration", n => { Configuration = n.GetObjectValue<PrinterDocumentConfiguration>(PrinterDocumentConfiguration.CreateFromDiscriminatorValue); } },
-                {"contentType", n => { ContentType = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"downloadedDateTime", n => { DownloadedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"size", n => { Size = n.GetLongValue(); } },
-                {"uploadedDateTime", n => { UploadedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<PrinterDocumentConfiguration>(PrinterDocumentConfiguration.CreateFromDiscriminatorValue); } },
+                { "contentType", n => { ContentType = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "downloadedDateTime", n => { DownloadedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "size", n => { Size = n.GetLongValue(); } },
+                { "uploadedDateTime", n => { UploadedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

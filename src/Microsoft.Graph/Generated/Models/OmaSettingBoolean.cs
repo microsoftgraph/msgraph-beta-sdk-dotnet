@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// OMA Settings Boolean definition.
     /// </summary>
-    public class OmaSettingBoolean : OmaSetting, IParsable 
+    public class OmaSettingBoolean : OmaSetting, IParsable
     {
         /// <summary>Value.</summary>
-        public bool? Value {
+        public bool? Value
+        {
             get { return BackingStore?.Get<bool?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetBoolValue(); } },
+                { "value", n => { Value = n.GetBoolValue(); } },
             };
         }
         /// <summary>

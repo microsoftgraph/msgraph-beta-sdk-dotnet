@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkPeripheralHealth : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkPeripheralHealth : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The connected state and time since the peripheral device was connected.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? Connection {
+        public TeamworkConnection? Connection
+        {
             get { return BackingStore?.Get<TeamworkConnection?>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection Connection {
+        public TeamworkConnection Connection
+        {
             get { return BackingStore?.Get<TeamworkConnection>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
 #endif
         /// <summary>True if the peripheral is optional. Used for health computation.</summary>
-        public bool? IsOptional {
+        public bool? IsOptional
+        {
             get { return BackingStore?.Get<bool?>("isOptional"); }
             set { BackingStore?.Set("isOptional", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The peripheral property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheral? Peripheral {
+        public TeamworkPeripheral? Peripheral
+        {
             get { return BackingStore?.Get<TeamworkPeripheral?>("peripheral"); }
             set { BackingStore?.Set("peripheral", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheral Peripheral {
+        public TeamworkPeripheral Peripheral
+        {
             get { return BackingStore?.Get<TeamworkPeripheral>("peripheral"); }
             set { BackingStore?.Set("peripheral", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"connection", n => { Connection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
-                {"isOptional", n => { IsOptional = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"peripheral", n => { Peripheral = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
+                { "connection", n => { Connection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "isOptional", n => { IsOptional = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "peripheral", n => { Peripheral = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

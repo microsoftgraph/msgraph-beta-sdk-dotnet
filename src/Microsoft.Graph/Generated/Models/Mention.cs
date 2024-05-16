@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Mention : Entity, IParsable 
+    public class Mention : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the application where the mention is created. Optional. Not used and defaulted as null for message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Application {
+        public string? Application
+        {
             get { return BackingStore?.Get<string?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #nullable restore
 #else
-        public string Application {
+        public string Application
+        {
             get { return BackingStore?.Get<string>("application"); }
             set { BackingStore?.Set("application", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientReference {
+        public string? ClientReference
+        {
             get { return BackingStore?.Get<string?>("clientReference"); }
             set { BackingStore?.Set("clientReference", value); }
         }
 #nullable restore
 #else
-        public string ClientReference {
+        public string ClientReference
+        {
             get { return BackingStore?.Get<string>("clientReference"); }
             set { BackingStore?.Set("clientReference", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The email information of the user who made the mention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailAddress? CreatedBy {
+        public EmailAddress? CreatedBy
+        {
             get { return BackingStore?.Get<EmailAddress?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailAddress CreatedBy {
+        public EmailAddress CreatedBy
+        {
             get { return BackingStore?.Get<EmailAddress>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The date and time that the mention is created on the client.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeepLink {
+        public string? DeepLink
+        {
             get { return BackingStore?.Get<string?>("deepLink"); }
             set { BackingStore?.Set("deepLink", value); }
         }
 #nullable restore
 #else
-        public string DeepLink {
+        public string DeepLink
+        {
             get { return BackingStore?.Get<string>("deepLink"); }
             set { BackingStore?.Set("deepLink", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The mentioned property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailAddress? Mentioned {
+        public EmailAddress? Mentioned
+        {
             get { return BackingStore?.Get<EmailAddress?>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
 #nullable restore
 #else
-        public EmailAddress Mentioned {
+        public EmailAddress Mentioned
+        {
             get { return BackingStore?.Get<EmailAddress>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
@@ -87,19 +99,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MentionText {
+        public string? MentionText
+        {
             get { return BackingStore?.Get<string?>("mentionText"); }
             set { BackingStore?.Set("mentionText", value); }
         }
 #nullable restore
 #else
-        public string MentionText {
+        public string MentionText
+        {
             get { return BackingStore?.Get<string>("mentionText"); }
             set { BackingStore?.Set("mentionText", value); }
         }
 #endif
         /// <summary>The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.</summary>
-        public DateTimeOffset? ServerCreatedDateTime {
+        public DateTimeOffset? ServerCreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("serverCreatedDateTime"); }
             set { BackingStore?.Set("serverCreatedDateTime", value); }
         }
@@ -121,14 +136,14 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"application", n => { Application = n.GetStringValue(); } },
-                {"clientReference", n => { ClientReference = n.GetStringValue(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deepLink", n => { DeepLink = n.GetStringValue(); } },
-                {"mentionText", n => { MentionText = n.GetStringValue(); } },
-                {"mentioned", n => { Mentioned = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
-                {"serverCreatedDateTime", n => { ServerCreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "application", n => { Application = n.GetStringValue(); } },
+                { "clientReference", n => { ClientReference = n.GetStringValue(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deepLink", n => { DeepLink = n.GetStringValue(); } },
+                { "mentionText", n => { MentionText = n.GetStringValue(); } },
+                { "mentioned", n => { Mentioned = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                { "serverCreatedDateTime", n => { ServerCreatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

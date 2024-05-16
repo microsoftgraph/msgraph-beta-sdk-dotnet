@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod
+{
     [Obsolete("This class is obsolete. Use GetOffice365GroupsActivityStorageWithPeriodGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOffice365GroupsActivityStorageWithPeriodResponse : GetOffice365GroupsActivityStorageWithPeriodGetResponse, IParsable 
+    public class GetOffice365GroupsActivityStorageWithPeriodResponse : GetOffice365GroupsActivityStorageWithPeriodGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

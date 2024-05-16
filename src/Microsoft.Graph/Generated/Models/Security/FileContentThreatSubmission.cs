@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class FileContentThreatSubmission : FileThreatSubmission, IParsable 
+    public class FileContentThreatSubmission : FileThreatSubmission, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>It specifies the file content in base 64 format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileContent {
+        public string? FileContent
+        {
             get { return BackingStore?.Get<string?>("fileContent"); }
             set { BackingStore?.Set("fileContent", value); }
         }
 #nullable restore
 #else
-        public string FileContent {
+        public string FileContent
+        {
             get { return BackingStore?.Get<string>("fileContent"); }
             set { BackingStore?.Set("fileContent", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"fileContent", n => { FileContent = n.GetStringValue(); } },
+                { "fileContent", n => { FileContent = n.GetStringValue(); } },
             };
         }
         /// <summary>

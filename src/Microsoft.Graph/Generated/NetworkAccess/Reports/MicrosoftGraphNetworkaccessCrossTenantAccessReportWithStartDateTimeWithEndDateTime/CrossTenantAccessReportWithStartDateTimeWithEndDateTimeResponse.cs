@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTime {
+namespace Microsoft.Graph.Beta.NetworkAccess.Reports.MicrosoftGraphNetworkaccessCrossTenantAccessReportWithStartDateTimeWithEndDateTime
+{
     [Obsolete("This class is obsolete. Use CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse instead.")]
     #pragma warning disable CS1591
-    public class CrossTenantAccessReportWithStartDateTimeWithEndDateTimeResponse : CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse, IParsable 
+    public class CrossTenantAccessReportWithStartDateTimeWithEndDateTimeResponse : CrossTenantAccessReportWithStartDateTimeWithEndDateTimeGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

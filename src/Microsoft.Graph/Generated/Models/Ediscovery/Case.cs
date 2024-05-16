@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class Case : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Case : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user who closed the case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IdentitySet? ClosedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet? ClosedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("closedBy"); }
             set { BackingStore?.Set("closedBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IdentitySet ClosedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet ClosedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("closedBy"); }
             set { BackingStore?.Set("closedBy", value); }
         }
 #endif
         /// <summary>The date and time when the case was closed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? ClosedDateTime {
+        public DateTimeOffset? ClosedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("closedDateTime"); }
             set { BackingStore?.Set("closedDateTime", value); }
         }
         /// <summary>The date and time when the entity was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Returns a list of case custodian objects for this case.  Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Custodian>? Custodians {
+        public List<Custodian>? Custodians
+        {
             get { return BackingStore?.Get<List<Custodian>?>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
 #nullable restore
 #else
-        public List<Custodian> Custodians {
+        public List<Custodian> Custodians
+        {
             get { return BackingStore?.Get<List<Custodian>>("custodians"); }
             set { BackingStore?.Set("custodians", value); }
         }
@@ -50,13 +57,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The case description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -64,13 +73,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The case name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -78,13 +89,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The external case number for customer reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -92,32 +105,37 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The last user who modified the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The latest date and time when the case was modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Returns a list of case legalHold objects for this case.  Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LegalHold>? LegalHolds {
+        public List<LegalHold>? LegalHolds
+        {
             get { return BackingStore?.Get<List<LegalHold>?>("legalHolds"); }
             set { BackingStore?.Set("legalHolds", value); }
         }
 #nullable restore
 #else
-        public List<LegalHold> LegalHolds {
+        public List<LegalHold> LegalHolds
+        {
             get { return BackingStore?.Get<List<LegalHold>>("legalHolds"); }
             set { BackingStore?.Set("legalHolds", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Returns a list of case noncustodialDataSource objects for this case.  Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NoncustodialDataSource>? NoncustodialDataSources {
+        public List<NoncustodialDataSource>? NoncustodialDataSources
+        {
             get { return BackingStore?.Get<List<NoncustodialDataSource>?>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
 #nullable restore
 #else
-        public List<NoncustodialDataSource> NoncustodialDataSources {
+        public List<NoncustodialDataSource> NoncustodialDataSources
+        {
             get { return BackingStore?.Get<List<NoncustodialDataSource>>("noncustodialDataSources"); }
             set { BackingStore?.Set("noncustodialDataSources", value); }
         }
@@ -139,13 +159,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Returns a list of case operation objects for this case. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CaseOperation>? Operations {
+        public List<CaseOperation>? Operations
+        {
             get { return BackingStore?.Get<List<CaseOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<CaseOperation> Operations {
+        public List<CaseOperation> Operations
+        {
             get { return BackingStore?.Get<List<CaseOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -153,13 +175,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Returns a list of reviewSet objects in the case. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReviewSet>? ReviewSets {
+        public List<ReviewSet>? ReviewSets
+        {
             get { return BackingStore?.Get<List<ReviewSet>?>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
 #nullable restore
 #else
-        public List<ReviewSet> ReviewSets {
+        public List<ReviewSet> ReviewSets
+        {
             get { return BackingStore?.Get<List<ReviewSet>>("reviewSets"); }
             set { BackingStore?.Set("reviewSets", value); }
         }
@@ -167,13 +191,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CaseSettings? Settings {
+        public CaseSettings? Settings
+        {
             get { return BackingStore?.Get<CaseSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public CaseSettings Settings {
+        public CaseSettings Settings
+        {
             get { return BackingStore?.Get<CaseSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -181,32 +207,37 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>Returns a list of sourceCollection objects associated with this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SourceCollection>? SourceCollections {
+        public List<SourceCollection>? SourceCollections
+        {
             get { return BackingStore?.Get<List<SourceCollection>?>("sourceCollections"); }
             set { BackingStore?.Set("sourceCollections", value); }
         }
 #nullable restore
 #else
-        public List<SourceCollection> SourceCollections {
+        public List<SourceCollection> SourceCollections
+        {
             get { return BackingStore?.Get<List<SourceCollection>>("sourceCollections"); }
             set { BackingStore?.Set("sourceCollections", value); }
         }
 #endif
         /// <summary>The case status. Possible values are unknown, active, pendingDelete, closing, closed, and closedWithError. For details, see the following table.</summary>
-        public CaseStatus? Status {
+        public CaseStatus? Status
+        {
             get { return BackingStore?.Get<CaseStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Returns a list of tag objects associated to this case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tag>? Tags {
+        public List<Tag>? Tags
+        {
             get { return BackingStore?.Get<List<Tag>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<Tag> Tags {
+        public List<Tag> Tags
+        {
             get { return BackingStore?.Get<List<Tag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
@@ -229,23 +260,23 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"closedBy", n => { ClosedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"custodians", n => { Custodians = n.GetCollectionOfObjectValues<Custodian>(Custodian.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"legalHolds", n => { LegalHolds = n.GetCollectionOfObjectValues<LegalHold>(LegalHold.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<ReviewSet>(ReviewSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"settings", n => { Settings = n.GetObjectValue<CaseSettings>(CaseSettings.CreateFromDiscriminatorValue); } },
-                {"sourceCollections", n => { SourceCollections = n.GetCollectionOfObjectValues<SourceCollection>(SourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<CaseStatus>(); } },
-                {"tags", n => { Tags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "closedBy", n => { ClosedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "closedDateTime", n => { ClosedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "custodians", n => { Custodians = n.GetCollectionOfObjectValues<Custodian>(Custodian.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "legalHolds", n => { LegalHolds = n.GetCollectionOfObjectValues<LegalHold>(LegalHold.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "noncustodialDataSources", n => { NoncustodialDataSources = n.GetCollectionOfObjectValues<NoncustodialDataSource>(NoncustodialDataSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<CaseOperation>(CaseOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewSets", n => { ReviewSets = n.GetCollectionOfObjectValues<ReviewSet>(ReviewSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<CaseSettings>(CaseSettings.CreateFromDiscriminatorValue); } },
+                { "sourceCollections", n => { SourceCollections = n.GetCollectionOfObjectValues<SourceCollection>(SourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<CaseStatus>(); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

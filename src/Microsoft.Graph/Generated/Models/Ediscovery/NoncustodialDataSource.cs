@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class NoncustodialDataSource : DataSourceContainer, IParsable 
+    public class NoncustodialDataSource : DataSourceContainer, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates if hold is applied to noncustodial data source (such as mailbox or site).</summary>
-        public bool? ApplyHoldToSource {
+        public bool? ApplyHoldToSource
+        {
             get { return BackingStore?.Get<bool?>("applyHoldToSource"); }
             set { BackingStore?.Set("applyHoldToSource", value); }
         }
         /// <summary>User source or SharePoint site data source as noncustodial data source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Ediscovery.DataSource? DataSource {
+        public Microsoft.Graph.Beta.Models.Ediscovery.DataSource? DataSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource?>("dataSource"); }
             set { BackingStore?.Set("dataSource", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Ediscovery.DataSource DataSource {
+        public Microsoft.Graph.Beta.Models.Ediscovery.DataSource DataSource
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>("dataSource"); }
             set { BackingStore?.Set("dataSource", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applyHoldToSource", n => { ApplyHoldToSource = n.GetBoolValue(); } },
-                {"dataSource", n => { DataSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>(Microsoft.Graph.Beta.Models.Ediscovery.DataSource.CreateFromDiscriminatorValue); } },
+                { "applyHoldToSource", n => { ApplyHoldToSource = n.GetBoolValue(); } },
+                { "dataSource", n => { DataSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>(Microsoft.Graph.Beta.Models.Ediscovery.DataSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for Windows10EnrollmentCompletionPageConfiguration PolicySetItem.
     /// </summary>
-    public class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : PolicySetItem, IParsable 
+    public class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : PolicySetItem, IParsable
     {
         /// <summary>Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"priority", n => { Priority = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
             };
         }
         /// <summary>

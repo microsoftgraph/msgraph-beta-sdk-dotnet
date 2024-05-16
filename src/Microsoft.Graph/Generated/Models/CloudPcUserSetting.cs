@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcUserSetting : Entity, IParsable 
+    public class CloudPcUserSetting : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the set of Microsoft 365 groups and security groups in Microsoft Entra ID that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcUserSettingAssignment>? Assignments {
+        public List<CloudPcUserSettingAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcUserSettingAssignment> Assignments {
+        public List<CloudPcUserSettingAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>The date and time the setting was created. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: &apos;2014-01-01T00:00:00Z&apos;.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The crossRegionDisasterRecoverySetting property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcCrossRegionDisasterRecoverySetting? CrossRegionDisasterRecoverySetting {
+        public CloudPcCrossRegionDisasterRecoverySetting? CrossRegionDisasterRecoverySetting
+        {
             get { return BackingStore?.Get<CloudPcCrossRegionDisasterRecoverySetting?>("crossRegionDisasterRecoverySetting"); }
             set { BackingStore?.Set("crossRegionDisasterRecoverySetting", value); }
         }
 #nullable restore
 #else
-        public CloudPcCrossRegionDisasterRecoverySetting CrossRegionDisasterRecoverySetting {
+        public CloudPcCrossRegionDisasterRecoverySetting CrossRegionDisasterRecoverySetting
+        {
             get { return BackingStore?.Get<CloudPcCrossRegionDisasterRecoverySetting>("crossRegionDisasterRecoverySetting"); }
             set { BackingStore?.Set("crossRegionDisasterRecoverySetting", value); }
         }
@@ -45,48 +51,56 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The setting name displayed in the user interface.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The last date and time the setting was modified. The timestamp type represents the date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 looks like this: &apos;2014-01-01T00:00:00Z&apos;.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Indicates whether the local admin option is enabled. Default value is false. To enable the local admin option, change the setting to true. If the local admin option is enabled, the end user can be an admin of the Cloud PC device.</summary>
-        public bool? LocalAdminEnabled {
+        public bool? LocalAdminEnabled
+        {
             get { return BackingStore?.Get<bool?>("localAdminEnabled"); }
             set { BackingStore?.Set("localAdminEnabled", value); }
         }
         /// <summary>Indicates whether an end user is allowed to reset their Cloud PC. When true, the user is allowed to reset their Cloud PC. When false, end-user initiated reset is not allowed. The default value is false.</summary>
-        public bool? ResetEnabled {
+        public bool? ResetEnabled
+        {
             get { return BackingStore?.Get<bool?>("resetEnabled"); }
             set { BackingStore?.Set("resetEnabled", value); }
         }
         /// <summary>Defines how frequently a restore point is created that is, a snapshot is taken) for users&apos; provisioned Cloud PCs (default is 12 hours), and whether the user is allowed to restore their own Cloud PCs to a backup made at a specific point in time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcRestorePointSetting? RestorePointSetting {
+        public CloudPcRestorePointSetting? RestorePointSetting
+        {
             get { return BackingStore?.Get<CloudPcRestorePointSetting?>("restorePointSetting"); }
             set { BackingStore?.Set("restorePointSetting", value); }
         }
 #nullable restore
 #else
-        public CloudPcRestorePointSetting RestorePointSetting {
+        public CloudPcRestorePointSetting RestorePointSetting
+        {
             get { return BackingStore?.Get<CloudPcRestorePointSetting>("restorePointSetting"); }
             set { BackingStore?.Set("restorePointSetting", value); }
         }
 #endif
         /// <summary>The selfServiceEnabled property</summary>
-        public bool? SelfServiceEnabled {
+        public bool? SelfServiceEnabled
+        {
             get { return BackingStore?.Get<bool?>("selfServiceEnabled"); }
             set { BackingStore?.Set("selfServiceEnabled", value); }
         }
@@ -108,15 +122,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcUserSettingAssignment>(CloudPcUserSettingAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"crossRegionDisasterRecoverySetting", n => { CrossRegionDisasterRecoverySetting = n.GetObjectValue<CloudPcCrossRegionDisasterRecoverySetting>(CloudPcCrossRegionDisasterRecoverySetting.CreateFromDiscriminatorValue); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
-                {"resetEnabled", n => { ResetEnabled = n.GetBoolValue(); } },
-                {"restorePointSetting", n => { RestorePointSetting = n.GetObjectValue<CloudPcRestorePointSetting>(CloudPcRestorePointSetting.CreateFromDiscriminatorValue); } },
-                {"selfServiceEnabled", n => { SelfServiceEnabled = n.GetBoolValue(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcUserSettingAssignment>(CloudPcUserSettingAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "crossRegionDisasterRecoverySetting", n => { CrossRegionDisasterRecoverySetting = n.GetObjectValue<CloudPcCrossRegionDisasterRecoverySetting>(CloudPcCrossRegionDisasterRecoverySetting.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
+                { "resetEnabled", n => { ResetEnabled = n.GetBoolValue(); } },
+                { "restorePointSetting", n => { RestorePointSetting = n.GetObjectValue<CloudPcRestorePointSetting>(CloudPcRestorePointSetting.CreateFromDiscriminatorValue); } },
+                { "selfServiceEnabled", n => { SelfServiceEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>

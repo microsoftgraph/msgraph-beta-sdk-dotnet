@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList {
+namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList
+{
     [Obsolete("This class is obsolete. Use ImportAppleDeviceIdentityListPostResponse instead.")]
     #pragma warning disable CS1591
-    public class ImportAppleDeviceIdentityListResponse : ImportAppleDeviceIdentityListPostResponse, IParsable 
+    public class ImportAppleDeviceIdentityListResponse : ImportAppleDeviceIdentityListPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -4,24 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Describes a supersedence relationship between two mobile apps.
     /// </summary>
-    public class MobileAppSupersedence : MobileAppRelationship, IParsable 
+    public class MobileAppSupersedence : MobileAppRelationship, IParsable
     {
         /// <summary>The total number of apps directly or indirectly superseded by the child app. This property is read-only.</summary>
-        public int? SupersededAppCount {
+        public int? SupersededAppCount
+        {
             get { return BackingStore?.Get<int?>("supersededAppCount"); }
             set { BackingStore?.Set("supersededAppCount", value); }
         }
         /// <summary>Indicates the supersedence type associated with a relationship between two mobile apps.</summary>
-        public MobileAppSupersedenceType? SupersedenceType {
+        public MobileAppSupersedenceType? SupersedenceType
+        {
             get { return BackingStore?.Get<MobileAppSupersedenceType?>("supersedenceType"); }
             set { BackingStore?.Set("supersedenceType", value); }
         }
         /// <summary>The total number of apps directly or indirectly superseding the parent app. This property is read-only.</summary>
-        public int? SupersedingAppCount {
+        public int? SupersedingAppCount
+        {
             get { return BackingStore?.Get<int?>("supersedingAppCount"); }
             set { BackingStore?.Set("supersedingAppCount", value); }
         }
@@ -50,9 +54,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"supersededAppCount", n => { SupersededAppCount = n.GetIntValue(); } },
-                {"supersedenceType", n => { SupersedenceType = n.GetEnumValue<MobileAppSupersedenceType>(); } },
-                {"supersedingAppCount", n => { SupersedingAppCount = n.GetIntValue(); } },
+                { "supersededAppCount", n => { SupersededAppCount = n.GetIntValue(); } },
+                { "supersedenceType", n => { SupersedenceType = n.GetEnumValue<MobileAppSupersedenceType>(); } },
+                { "supersedingAppCount", n => { SupersedingAppCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

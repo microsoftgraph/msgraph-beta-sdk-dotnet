@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class PolicyLink : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class PolicyLink : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Networkaccess.Policy? Policy {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Policy? Policy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Policy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Networkaccess.Policy Policy {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Policy Policy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Policy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public Status? State {
+        public Status? State
+        {
             get { return BackingStore?.Get<Status?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -66,9 +72,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"policy", n => { Policy = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Policy>(Microsoft.Graph.Beta.Models.Networkaccess.Policy.CreateFromDiscriminatorValue); } },
-                {"state", n => { State = n.GetEnumValue<Status>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "policy", n => { Policy = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.Policy>(Microsoft.Graph.Beta.Models.Networkaccess.Policy.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetEnumValue<Status>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

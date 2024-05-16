@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint that enforces the enrollment types applied to a setting
     /// </summary>
-    public class DeviceManagementSettingEnrollmentTypeConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingEnrollmentTypeConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>List of enrollment types</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? EnrollmentTypes {
+        public List<string>? EnrollmentTypes
+        {
             get { return BackingStore?.Get<List<string>?>("enrollmentTypes"); }
             set { BackingStore?.Set("enrollmentTypes", value); }
         }
 #nullable restore
 #else
-        public List<string> EnrollmentTypes {
+        public List<string> EnrollmentTypes
+        {
             get { return BackingStore?.Get<List<string>>("enrollmentTypes"); }
             set { BackingStore?.Set("enrollmentTypes", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"enrollmentTypes", n => { EnrollmentTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "enrollmentTypes", n => { EnrollmentTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

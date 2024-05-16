@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Properties of the  String script parameter.
     /// </summary>
-    public class DeviceHealthScriptStringParameter : DeviceHealthScriptParameter, IParsable 
+    public class DeviceHealthScriptStringParameter : DeviceHealthScriptParameter, IParsable
     {
         /// <summary>The default value of string param</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultValue {
+        public string? DefaultValue
+        {
             get { return BackingStore?.Get<string?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public string DefaultValue {
+        public string DefaultValue
+        {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
+                { "defaultValue", n => { DefaultValue = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Schema describing an Android for Work application&apos;s custom configurations.
     /// </summary>
-    public class AndroidForWorkAppConfigurationSchema : Entity, IParsable 
+    public class AndroidForWorkAppConfigurationSchema : Entity, IParsable
     {
         /// <summary>UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? ExampleJson {
+        public byte[]? ExampleJson
+        {
             get { return BackingStore?.Get<byte[]?>("exampleJson"); }
             set { BackingStore?.Set("exampleJson", value); }
         }
 #nullable restore
 #else
-        public byte[] ExampleJson {
+        public byte[] ExampleJson
+        {
             get { return BackingStore?.Get<byte[]>("exampleJson"); }
             set { BackingStore?.Set("exampleJson", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Collection of items each representing a named configuration option in the schema</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidForWorkAppConfigurationSchemaItem>? SchemaItems {
+        public List<AndroidForWorkAppConfigurationSchemaItem>? SchemaItems
+        {
             get { return BackingStore?.Get<List<AndroidForWorkAppConfigurationSchemaItem>?>("schemaItems"); }
             set { BackingStore?.Set("schemaItems", value); }
         }
 #nullable restore
 #else
-        public List<AndroidForWorkAppConfigurationSchemaItem> SchemaItems {
+        public List<AndroidForWorkAppConfigurationSchemaItem> SchemaItems
+        {
             get { return BackingStore?.Get<List<AndroidForWorkAppConfigurationSchemaItem>>("schemaItems"); }
             set { BackingStore?.Set("schemaItems", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"exampleJson", n => { ExampleJson = n.GetByteArrayValue(); } },
-                {"schemaItems", n => { SchemaItems = n.GetCollectionOfObjectValues<AndroidForWorkAppConfigurationSchemaItem>(AndroidForWorkAppConfigurationSchemaItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exampleJson", n => { ExampleJson = n.GetByteArrayValue(); } },
+                { "schemaItems", n => { SchemaItems = n.GetCollectionOfObjectValues<AndroidForWorkAppConfigurationSchemaItem>(AndroidForWorkAppConfigurationSchemaItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

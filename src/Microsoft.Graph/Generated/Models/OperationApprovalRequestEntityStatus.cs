@@ -5,59 +5,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The operationApprovalRequestEntityStatus complex type is used to provide the basic infortmation relating to the status of a request without revealing too much information to the calling user as it may be an object out of scope.
     /// </summary>
-    public class OperationApprovalRequestEntityStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OperationApprovalRequestEntityStatus : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The status of the Entity connected to the OperationApprovalRequest in regard to changes, whether further requests are allowed or if the Entity is locked. When true, a lock is present on the Entity and no approval requests can be currently made for it. When false, the Entity is not locked and approval requests are allowed. Default value is false. Read-only. This property is read-only.</summary>
-        public bool? EntityLocked {
+        public bool? EntityLocked
+        {
             get { return BackingStore?.Get<bool?>("entityLocked"); }
             set { BackingStore?.Set("entityLocked", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Indicates the DateTime when any action on the OperationApprovalRequest is no longer permitted. The value cannot be modified and is automatically populated when the request is created using expiration offset values defined in the service controllers. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default. Read-only. This property is read-only.</summary>
-        public DateTimeOffset? RequestExpirationDateTime {
+        public DateTimeOffset? RequestExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("requestExpirationDateTime"); }
             set { BackingStore?.Set("requestExpirationDateTime", value); }
         }
         /// <summary>The unique identifier of the OperationApprovalRequest. This property cannot be modified and is required when the entity status is created. Read-only. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestId {
+        public string? RequestId
+        {
             get { return BackingStore?.Get<string?>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
 #nullable restore
 #else
-        public string RequestId {
+        public string RequestId
+        {
             get { return BackingStore?.Get<string>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
 #endif
         /// <summary>Indicates the status of the Approval Request. The status of a request will change when an action is successfully performed on it, such as when it is `approved` or `rejected`, or when the request&apos;s expiration DateTime passes and the result is `expired`.</summary>
-        public OperationApprovalRequestStatus? RequestStatus {
+        public OperationApprovalRequestStatus? RequestStatus
+        {
             get { return BackingStore?.Get<OperationApprovalRequestStatus?>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
@@ -87,11 +96,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"entityLocked", n => { EntityLocked = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"requestExpirationDateTime", n => { RequestExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requestId", n => { RequestId = n.GetStringValue(); } },
-                {"requestStatus", n => { RequestStatus = n.GetEnumValue<OperationApprovalRequestStatus>(); } },
+                { "entityLocked", n => { EntityLocked = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "requestExpirationDateTime", n => { RequestExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "requestId", n => { RequestId = n.GetStringValue(); } },
+                { "requestStatus", n => { RequestStatus = n.GetEnumValue<OperationApprovalRequestStatus>(); } },
             };
         }
         /// <summary>

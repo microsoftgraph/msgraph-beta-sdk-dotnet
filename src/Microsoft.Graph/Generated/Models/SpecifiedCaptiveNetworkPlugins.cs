@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Specifies all the Captive network plugins allowed during the IKEv2 AlwaysOn VPN connection
     /// </summary>
-    public class SpecifiedCaptiveNetworkPlugins : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SpecifiedCaptiveNetworkPlugins : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AllowedBundleIdentifiers {
+        public List<string>? AllowedBundleIdentifiers
+        {
             get { return BackingStore?.Get<List<string>?>("allowedBundleIdentifiers"); }
             set { BackingStore?.Set("allowedBundleIdentifiers", value); }
         }
 #nullable restore
 #else
-        public List<string> AllowedBundleIdentifiers {
+        public List<string> AllowedBundleIdentifiers
+        {
             get { return BackingStore?.Get<List<string>>("allowedBundleIdentifiers"); }
             set { BackingStore?.Set("allowedBundleIdentifiers", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowedBundleIdentifiers", n => { AllowedBundleIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowedBundleIdentifiers", n => { AllowedBundleIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

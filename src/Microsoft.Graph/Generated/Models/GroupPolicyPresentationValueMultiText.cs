@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The entity represents a string value of a multi-line text box presentation on a policy definition.
     /// </summary>
-    public class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue, IParsable 
+    public class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue, IParsable
     {
         /// <summary>A collection of non-empty strings for the associated presentation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Values {
+        public List<string>? Values
+        {
             get { return BackingStore?.Get<List<string>?>("values"); }
             set { BackingStore?.Set("values", value); }
         }
 #nullable restore
 #else
-        public List<string> Values {
+        public List<string> Values
+        {
             get { return BackingStore?.Get<List<string>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

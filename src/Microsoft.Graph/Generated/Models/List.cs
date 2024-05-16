@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class List : BaseItem, IParsable 
+    public class List : BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The recent activities that took place within this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemActivityOLD>? Activities {
+        public List<ItemActivityOLD>? Activities
+        {
             get { return BackingStore?.Get<List<ItemActivityOLD>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<ItemActivityOLD> Activities {
+        public List<ItemActivityOLD> Activities
+        {
             get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of field definitions for this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ColumnDefinition>? Columns {
+        public List<ColumnDefinition>? Columns
+        {
             get { return BackingStore?.Get<List<ColumnDefinition>?>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
 #nullable restore
 #else
-        public List<ColumnDefinition> Columns {
+        public List<ColumnDefinition> Columns
+        {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of content types present in this list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ContentType>? ContentTypes {
+        public List<ContentType>? ContentTypes
+        {
             get { return BackingStore?.Get<List<ContentType>?>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
 #nullable restore
 #else
-        public List<ContentType> ContentTypes {
+        public List<ContentType> ContentTypes
+        {
             get { return BackingStore?.Get<List<ContentType>>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayable title of the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Allows access to the list as a drive resource with driveItems. Only present on document libraries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Drive? Drive {
+        public Microsoft.Graph.Beta.Models.Drive? Drive
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive?>("drive"); }
             set { BackingStore?.Set("drive", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Drive Drive {
+        public Microsoft.Graph.Beta.Models.Drive Drive
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive>("drive"); }
             set { BackingStore?.Set("drive", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>All items contained in the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ListItem>? Items {
+        public List<ListItem>? Items
+        {
             get { return BackingStore?.Get<List<ListItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<ListItem> Items {
+        public List<ListItem> Items
+        {
             get { return BackingStore?.Get<List<ListItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains more details about the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ListInfo? ListProp {
+        public ListInfo? ListProp
+        {
             get { return BackingStore?.Get<ListInfo?>("list"); }
             set { BackingStore?.Set("list", value); }
         }
 #nullable restore
 #else
-        public ListInfo ListProp {
+        public ListInfo ListProp
+        {
             get { return BackingStore?.Get<ListInfo>("list"); }
             set { BackingStore?.Set("list", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The collection of long-running operations on the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RichLongRunningOperation>? Operations {
+        public List<RichLongRunningOperation>? Operations
+        {
             get { return BackingStore?.Get<List<RichLongRunningOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<RichLongRunningOperation> Operations {
+        public List<RichLongRunningOperation> Operations
+        {
             get { return BackingStore?.Get<List<RichLongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.SharepointIds? SharepointIds {
+        public Microsoft.Graph.Beta.Models.SharepointIds? SharepointIds
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
+        public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
@@ -138,13 +157,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The set of subscriptions on the list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Subscription>? Subscriptions {
+        public List<Subscription>? Subscriptions
+        {
             get { return BackingStore?.Get<List<Subscription>?>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
 #nullable restore
 #else
-        public List<Subscription> Subscriptions {
+        public List<Subscription> Subscriptions
+        {
             get { return BackingStore?.Get<List<Subscription>>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
@@ -152,13 +173,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>If present, indicates that the list is system-managed. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SystemFacet? System {
+        public SystemFacet? System
+        {
             get { return BackingStore?.Get<SystemFacet?>("system"); }
             set { BackingStore?.Set("system", value); }
         }
 #nullable restore
 #else
-        public SystemFacet System {
+        public SystemFacet System
+        {
             get { return BackingStore?.Get<SystemFacet>("system"); }
             set { BackingStore?.Set("system", value); }
         }
@@ -188,17 +211,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activities", n => { Activities = n.GetCollectionOfObjectValues<ItemActivityOLD>(ItemActivityOLD.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"columns", n => { Columns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"contentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"drive", n => { Drive = n.GetObjectValue<Microsoft.Graph.Beta.Models.Drive>(Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<ListItem>(ListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"list", n => { ListProp = n.GetObjectValue<ListInfo>(ListInfo.CreateFromDiscriminatorValue); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>(RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
-                {"subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<Subscription>(Subscription.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"system", n => { System = n.GetObjectValue<SystemFacet>(SystemFacet.CreateFromDiscriminatorValue); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<ItemActivityOLD>(ItemActivityOLD.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "columns", n => { Columns = n.GetCollectionOfObjectValues<ColumnDefinition>(ColumnDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "contentTypes", n => { ContentTypes = n.GetCollectionOfObjectValues<ContentType>(ContentType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "drive", n => { Drive = n.GetObjectValue<Microsoft.Graph.Beta.Models.Drive>(Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<ListItem>(ListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "list", n => { ListProp = n.GetObjectValue<ListInfo>(ListInfo.CreateFromDiscriminatorValue); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<RichLongRunningOperation>(RichLongRunningOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
+                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<Subscription>(Subscription.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "system", n => { System = n.GetObjectValue<SystemFacet>(SystemFacet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

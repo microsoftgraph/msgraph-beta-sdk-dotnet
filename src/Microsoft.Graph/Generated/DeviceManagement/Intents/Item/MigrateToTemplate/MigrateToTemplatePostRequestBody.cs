@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate {
+namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate
+{
     #pragma warning disable CS1591
-    public class MigrateToTemplatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MigrateToTemplatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,19 +22,22 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate {
         /// <summary>The newTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewTemplateId {
+        public string? NewTemplateId
+        {
             get { return BackingStore?.Get<string?>("newTemplateId"); }
             set { BackingStore?.Set("newTemplateId", value); }
         }
 #nullable restore
 #else
-        public string NewTemplateId {
+        public string NewTemplateId
+        {
             get { return BackingStore?.Get<string>("newTemplateId"); }
             set { BackingStore?.Set("newTemplateId", value); }
         }
 #endif
         /// <summary>The preserveCustomValues property</summary>
-        public bool? PreserveCustomValues {
+        public bool? PreserveCustomValues
+        {
             get { return BackingStore?.Get<bool?>("preserveCustomValues"); }
             set { BackingStore?.Set("preserveCustomValues", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.MigrateToTemplate {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"newTemplateId", n => { NewTemplateId = n.GetStringValue(); } },
-                {"preserveCustomValues", n => { PreserveCustomValues = n.GetBoolValue(); } },
+                { "newTemplateId", n => { NewTemplateId = n.GetStringValue(); } },
+                { "preserveCustomValues", n => { PreserveCustomValues = n.GetBoolValue(); } },
             };
         }
         /// <summary>

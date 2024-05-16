@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the AndroidDeviceOwnerAOSPCompliancePolicy resource.
     /// </summary>
-    public class AospDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable 
+    public class AospDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable
     {
         /// <summary>Minimum Android security patch level.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MinAndroidSecurityPatchLevel {
+        public string? MinAndroidSecurityPatchLevel
+        {
             get { return BackingStore?.Get<string?>("minAndroidSecurityPatchLevel"); }
             set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
         }
 #nullable restore
 #else
-        public string MinAndroidSecurityPatchLevel {
+        public string MinAndroidSecurityPatchLevel
+        {
             get { return BackingStore?.Get<string>("minAndroidSecurityPatchLevel"); }
             set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Maximum Android version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMaximumVersion {
+        public string? OsMaximumVersion
+        {
             get { return BackingStore?.Get<string?>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMaximumVersion {
+        public string OsMaximumVersion
+        {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
@@ -41,44 +46,52 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Minimum Android version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OsMinimumVersion {
+        public string? OsMinimumVersion
+        {
             get { return BackingStore?.Get<string?>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #nullable restore
 #else
-        public string OsMinimumVersion {
+        public string OsMinimumVersion
+        {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
 #endif
         /// <summary>Minimum password length. Valid values 4 to 16</summary>
-        public int? PasswordMinimumLength {
+        public int? PasswordMinimumLength
+        {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }
             set { BackingStore?.Set("passwordMinimumLength", value); }
         }
         /// <summary>Minutes of inactivity before a password is required. Valid values 1 to 8640</summary>
-        public int? PasswordMinutesOfInactivityBeforeLock {
+        public int? PasswordMinutesOfInactivityBeforeLock
+        {
             get { return BackingStore?.Get<int?>("passwordMinutesOfInactivityBeforeLock"); }
             set { BackingStore?.Set("passwordMinutesOfInactivityBeforeLock", value); }
         }
         /// <summary>Require a password to unlock device.</summary>
-        public bool? PasswordRequired {
+        public bool? PasswordRequired
+        {
             get { return BackingStore?.Get<bool?>("passwordRequired"); }
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Type of characters in password. Possible values are: deviceDefault, required, numeric, numericComplex, alphabetic, alphanumeric, alphanumericWithSymbols, lowSecurityBiometric, customPassword.</summary>
-        public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType {
+        public AndroidDeviceOwnerRequiredPasswordType? PasswordRequiredType
+        {
             get { return BackingStore?.Get<AndroidDeviceOwnerRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Devices must not be jailbroken or rooted.</summary>
-        public bool? SecurityBlockJailbrokenDevices {
+        public bool? SecurityBlockJailbrokenDevices
+        {
             get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }
             set { BackingStore?.Set("securityBlockJailbrokenDevices", value); }
         }
         /// <summary>Require encryption on Android devices.</summary>
-        public bool? StorageRequireEncryption {
+        public bool? StorageRequireEncryption
+        {
             get { return BackingStore?.Get<bool?>("storageRequireEncryption"); }
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
@@ -107,15 +120,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"minAndroidSecurityPatchLevel", n => { MinAndroidSecurityPatchLevel = n.GetStringValue(); } },
-                {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
-                {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
-                {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
-                {"passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
-                {"passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordType>(); } },
-                {"securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
-                {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
+                { "minAndroidSecurityPatchLevel", n => { MinAndroidSecurityPatchLevel = n.GetStringValue(); } },
+                { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
+                { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
+                { "passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
+                { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
+                { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidDeviceOwnerRequiredPasswordType>(); } },
+                { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
+                { "storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
             };
         }
         /// <summary>

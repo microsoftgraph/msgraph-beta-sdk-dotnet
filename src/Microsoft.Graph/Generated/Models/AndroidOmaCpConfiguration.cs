@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing a configuration in this profile you can configure Android devices that support OMA-CP.
     /// </summary>
-    public class AndroidOmaCpConfiguration : DeviceConfiguration, IParsable 
+    public class AndroidOmaCpConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? ConfigurationXml {
+        public byte[]? ConfigurationXml
+        {
             get { return BackingStore?.Get<byte[]?>("configurationXml"); }
             set { BackingStore?.Set("configurationXml", value); }
         }
 #nullable restore
 #else
-        public byte[] ConfigurationXml {
+        public byte[] ConfigurationXml
+        {
             get { return BackingStore?.Get<byte[]>("configurationXml"); }
             set { BackingStore?.Set("configurationXml", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurationXml", n => { ConfigurationXml = n.GetByteArrayValue(); } },
+                { "configurationXml", n => { ConfigurationXml = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

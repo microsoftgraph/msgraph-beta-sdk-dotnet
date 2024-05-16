@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class SourceSystemDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class SourceSystemDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the source system. Maximum supported length is 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>A collection of user matching settings by roleGroup.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserMatchingSetting>? UserMatchingSettings {
+        public List<UserMatchingSetting>? UserMatchingSettings
+        {
             get { return BackingStore?.Get<List<UserMatchingSetting>?>("userMatchingSettings"); }
             set { BackingStore?.Set("userMatchingSettings", value); }
         }
 #nullable restore
 #else
-        public List<UserMatchingSetting> UserMatchingSettings {
+        public List<UserMatchingSetting> UserMatchingSettings
+        {
             get { return BackingStore?.Get<List<UserMatchingSetting>>("userMatchingSettings"); }
             set { BackingStore?.Set("userMatchingSettings", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The name of the vendor who supplies the source system. Maximum supported length is 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Vendor {
+        public string? Vendor
+        {
             get { return BackingStore?.Get<string?>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
 #nullable restore
 #else
-        public string Vendor {
+        public string Vendor
+        {
             get { return BackingStore?.Get<string>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"userMatchingSettings", n => { UserMatchingSettings = n.GetCollectionOfObjectValues<UserMatchingSetting>(UserMatchingSetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"vendor", n => { Vendor = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "userMatchingSettings", n => { UserMatchingSettings = n.GetCollectionOfObjectValues<UserMatchingSetting>(UserMatchingSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "vendor", n => { Vendor = n.GetStringValue(); } },
             };
         }
         /// <summary>

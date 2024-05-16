@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for enrollment restriction PolicySetItem.
     /// </summary>
-    public class EnrollmentRestrictionsConfigurationPolicySetItem : PolicySetItem, IParsable 
+    public class EnrollmentRestrictionsConfigurationPolicySetItem : PolicySetItem, IParsable
     {
         /// <summary>Limit of the EnrollmentRestrictionsConfigurationPolicySetItem.</summary>
-        public int? Limit {
+        public int? Limit
+        {
             get { return BackingStore?.Get<int?>("limit"); }
             set { BackingStore?.Set("limit", value); }
         }
         /// <summary>Priority of the EnrollmentRestrictionsConfigurationPolicySetItem.</summary>
-        public int? Priority {
+        public int? Priority
+        {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"limit", n => { Limit = n.GetIntValue(); } },
-                {"priority", n => { Priority = n.GetIntValue(); } },
+                { "limit", n => { Limit = n.GetIntValue(); } },
+                { "priority", n => { Priority = n.GetIntValue(); } },
             };
         }
         /// <summary>

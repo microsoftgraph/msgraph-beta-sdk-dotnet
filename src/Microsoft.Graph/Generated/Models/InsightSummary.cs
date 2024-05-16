@@ -5,76 +5,89 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InsightSummary : Entity, IParsable 
+    public class InsightSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Daily active users.</summary>
-        public long? ActiveUsers {
+        public long? ActiveUsers
+        {
             get { return BackingStore?.Get<long?>("activeUsers"); }
             set { BackingStore?.Set("activeUsers", value); }
         }
         /// <summary>The ID of the Microsoft Entra application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #endif
         /// <summary>Daily authentication completions.</summary>
-        public long? AuthenticationCompletions {
+        public long? AuthenticationCompletions
+        {
             get { return BackingStore?.Get<long?>("authenticationCompletions"); }
             set { BackingStore?.Set("authenticationCompletions", value); }
         }
         /// <summary>Daily authentication requests.</summary>
-        public long? AuthenticationRequests {
+        public long? AuthenticationRequests
+        {
             get { return BackingStore?.Get<long?>("authenticationRequests"); }
             set { BackingStore?.Set("authenticationRequests", value); }
         }
         /// <summary>The date of the insight.</summary>
-        public Date? FactDate {
+        public Date? FactDate
+        {
             get { return BackingStore?.Get<Date?>("factDate"); }
             set { BackingStore?.Set("factDate", value); }
         }
         /// <summary>The platform for the device that the customers used. Supports $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Os {
+        public string? Os
+        {
             get { return BackingStore?.Get<string?>("os"); }
             set { BackingStore?.Set("os", value); }
         }
 #nullable restore
 #else
-        public string Os {
+        public string Os
+        {
             get { return BackingStore?.Get<string>("os"); }
             set { BackingStore?.Set("os", value); }
         }
 #endif
         /// <summary>Daily MFA SMS completions.</summary>
-        public long? SecurityTextCompletions {
+        public long? SecurityTextCompletions
+        {
             get { return BackingStore?.Get<long?>("securityTextCompletions"); }
             set { BackingStore?.Set("securityTextCompletions", value); }
         }
         /// <summary>Daily MFA SMS requests.</summary>
-        public long? SecurityTextRequests {
+        public long? SecurityTextRequests
+        {
             get { return BackingStore?.Get<long?>("securityTextRequests"); }
             set { BackingStore?.Set("securityTextRequests", value); }
         }
         /// <summary>Daily MFA Voice completions.</summary>
-        public long? SecurityVoiceCompletions {
+        public long? SecurityVoiceCompletions
+        {
             get { return BackingStore?.Get<long?>("securityVoiceCompletions"); }
             set { BackingStore?.Set("securityVoiceCompletions", value); }
         }
         /// <summary>Daily MFA Voice requests.</summary>
-        public long? SecurityVoiceRequests {
+        public long? SecurityVoiceRequests
+        {
             get { return BackingStore?.Get<long?>("securityVoiceRequests"); }
             set { BackingStore?.Set("securityVoiceRequests", value); }
         }
@@ -96,16 +109,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeUsers", n => { ActiveUsers = n.GetLongValue(); } },
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"authenticationCompletions", n => { AuthenticationCompletions = n.GetLongValue(); } },
-                {"authenticationRequests", n => { AuthenticationRequests = n.GetLongValue(); } },
-                {"factDate", n => { FactDate = n.GetDateValue(); } },
-                {"os", n => { Os = n.GetStringValue(); } },
-                {"securityTextCompletions", n => { SecurityTextCompletions = n.GetLongValue(); } },
-                {"securityTextRequests", n => { SecurityTextRequests = n.GetLongValue(); } },
-                {"securityVoiceCompletions", n => { SecurityVoiceCompletions = n.GetLongValue(); } },
-                {"securityVoiceRequests", n => { SecurityVoiceRequests = n.GetLongValue(); } },
+                { "activeUsers", n => { ActiveUsers = n.GetLongValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "authenticationCompletions", n => { AuthenticationCompletions = n.GetLongValue(); } },
+                { "authenticationRequests", n => { AuthenticationRequests = n.GetLongValue(); } },
+                { "factDate", n => { FactDate = n.GetDateValue(); } },
+                { "os", n => { Os = n.GetStringValue(); } },
+                { "securityTextCompletions", n => { SecurityTextCompletions = n.GetLongValue(); } },
+                { "securityTextRequests", n => { SecurityTextRequests = n.GetLongValue(); } },
+                { "securityVoiceCompletions", n => { SecurityVoiceCompletions = n.GetLongValue(); } },
+                { "securityVoiceRequests", n => { SecurityVoiceRequests = n.GetLongValue(); } },
             };
         }
         /// <summary>

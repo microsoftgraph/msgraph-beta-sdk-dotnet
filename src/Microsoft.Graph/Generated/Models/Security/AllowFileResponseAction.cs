@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AllowFileResponseAction : ResponseAction, IParsable 
+    public class AllowFileResponseAction : ResponseAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Device groups to which the actions set in the custom detection rule are applied. More information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceGroupNames {
+        public List<string>? DeviceGroupNames
+        {
             get { return BackingStore?.Get<List<string>?>("deviceGroupNames"); }
             set { BackingStore?.Set("deviceGroupNames", value); }
         }
 #nullable restore
 #else
-        public List<string> DeviceGroupNames {
+        public List<string> DeviceGroupNames
+        {
             get { return BackingStore?.Get<List<string>>("deviceGroupNames"); }
             set { BackingStore?.Set("deviceGroupNames", value); }
         }
 #endif
         /// <summary>The identifier property</summary>
-        public FileEntityIdentifier? Identifier {
+        public FileEntityIdentifier? Identifier
+        {
             get { return BackingStore?.Get<FileEntityIdentifier?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceGroupNames", n => { DeviceGroupNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"identifier", n => { Identifier = n.GetEnumValue<FileEntityIdentifier>(); } },
+                { "deviceGroupNames", n => { DeviceGroupNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "identifier", n => { Identifier = n.GetEnumValue<FileEntityIdentifier>(); } },
             };
         }
         /// <summary>

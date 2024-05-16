@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The embedded SIM activation code as provided by the mobile operator.
     /// </summary>
-    public class EmbeddedSIMActivationCode : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EmbeddedSIMActivationCode : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Integrated Circuit Card Identifier (ICCID) for this embedded SIM activation code as provided by the mobile operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IntegratedCircuitCardIdentifier {
+        public string? IntegratedCircuitCardIdentifier
+        {
             get { return BackingStore?.Get<string?>("integratedCircuitCardIdentifier"); }
             set { BackingStore?.Set("integratedCircuitCardIdentifier", value); }
         }
 #nullable restore
 #else
-        public string IntegratedCircuitCardIdentifier {
+        public string IntegratedCircuitCardIdentifier
+        {
             get { return BackingStore?.Get<string>("integratedCircuitCardIdentifier"); }
             set { BackingStore?.Set("integratedCircuitCardIdentifier", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The MatchingIdentifier (MatchingID) as specified in the GSMA Association SGP.22 RSP Technical Specification section 4.1.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MatchingIdentifier {
+        public string? MatchingIdentifier
+        {
             get { return BackingStore?.Get<string?>("matchingIdentifier"); }
             set { BackingStore?.Set("matchingIdentifier", value); }
         }
 #nullable restore
 #else
-        public string MatchingIdentifier {
+        public string MatchingIdentifier
+        {
             get { return BackingStore?.Get<string>("matchingIdentifier"); }
             set { BackingStore?.Set("matchingIdentifier", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The fully qualified domain name of the SM-DP+ server as specified in the GSM Association SPG .22 RSP Technical Specification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SmdpPlusServerAddress {
+        public string? SmdpPlusServerAddress
+        {
             get { return BackingStore?.Get<string?>("smdpPlusServerAddress"); }
             set { BackingStore?.Set("smdpPlusServerAddress", value); }
         }
 #nullable restore
 #else
-        public string SmdpPlusServerAddress {
+        public string SmdpPlusServerAddress
+        {
             get { return BackingStore?.Get<string>("smdpPlusServerAddress"); }
             set { BackingStore?.Set("smdpPlusServerAddress", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"integratedCircuitCardIdentifier", n => { IntegratedCircuitCardIdentifier = n.GetStringValue(); } },
-                {"matchingIdentifier", n => { MatchingIdentifier = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"smdpPlusServerAddress", n => { SmdpPlusServerAddress = n.GetStringValue(); } },
+                { "integratedCircuitCardIdentifier", n => { IntegratedCircuitCardIdentifier = n.GetStringValue(); } },
+                { "matchingIdentifier", n => { MatchingIdentifier = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "smdpPlusServerAddress", n => { SmdpPlusServerAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

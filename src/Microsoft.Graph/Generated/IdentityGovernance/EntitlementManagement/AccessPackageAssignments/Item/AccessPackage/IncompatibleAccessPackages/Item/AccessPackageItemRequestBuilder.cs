@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.IncompatibleAccessPackages.Item {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.Item.AccessPackage.IncompatibleAccessPackages.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \identityGovernance\entitlementManagement\accessPackageAssignments\{accessPackageAssignment-id}\accessPackage\incompatibleAccessPackages\{accessPackage-id}
     /// </summary>
-    public class AccessPackageItemRequestBuilder : BaseRequestBuilder 
+    public class AccessPackageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of identityGovernance entities.</summary>
         public RefRequestBuilder Ref

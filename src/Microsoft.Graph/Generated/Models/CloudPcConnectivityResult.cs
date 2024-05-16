@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcConnectivityResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcConnectivityResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A list of failed health check items. If the status property is available, this property will be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcHealthCheckItem>? FailedHealthCheckItems {
+        public List<CloudPcHealthCheckItem>? FailedHealthCheckItems
+        {
             get { return BackingStore?.Get<List<CloudPcHealthCheckItem>?>("failedHealthCheckItems"); }
             set { BackingStore?.Set("failedHealthCheckItems", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcHealthCheckItem> FailedHealthCheckItems {
+        public List<CloudPcHealthCheckItem> FailedHealthCheckItems
+        {
             get { return BackingStore?.Get<List<CloudPcHealthCheckItem>>("failedHealthCheckItems"); }
             set { BackingStore?.Set("failedHealthCheckItems", value); }
         }
@@ -34,24 +38,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public CloudPcConnectivityStatus? Status {
+        public CloudPcConnectivityStatus? Status
+        {
             get { return BackingStore?.Get<CloudPcConnectivityStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? UpdatedDateTime {
+        public DateTimeOffset? UpdatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("updatedDateTime"); }
             set { BackingStore?.Set("updatedDateTime", value); }
         }
@@ -81,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"failedHealthCheckItems", n => { FailedHealthCheckItems = n.GetCollectionOfObjectValues<CloudPcHealthCheckItem>(CloudPcHealthCheckItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<CloudPcConnectivityStatus>(); } },
-                {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "failedHealthCheckItems", n => { FailedHealthCheckItems = n.GetCollectionOfObjectValues<CloudPcHealthCheckItem>(CloudPcHealthCheckItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<CloudPcConnectivityStatus>(); } },
+                { "updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

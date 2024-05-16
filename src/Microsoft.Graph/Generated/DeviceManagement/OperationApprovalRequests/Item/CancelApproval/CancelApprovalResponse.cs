@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval {
+namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.CancelApproval
+{
     [Obsolete("This class is obsolete. Use CancelApprovalPostResponse instead.")]
     #pragma warning disable CS1591
-    public class CancelApprovalResponse : CancelApprovalPostResponse, IParsable 
+    public class CancelApprovalResponse : CancelApprovalPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

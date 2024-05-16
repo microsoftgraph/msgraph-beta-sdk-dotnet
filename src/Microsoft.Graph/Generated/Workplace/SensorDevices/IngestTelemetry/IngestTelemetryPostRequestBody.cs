@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Workplace.SensorDevices.IngestTelemetry {
+namespace Microsoft.Graph.Beta.Workplace.SensorDevices.IngestTelemetry
+{
     #pragma warning disable CS1591
-    public class IngestTelemetryPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IngestTelemetryPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.IngestTelemetry {
         /// <summary>The telemetry property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkplaceSensorDeviceTelemetry>? Telemetry {
+        public List<WorkplaceSensorDeviceTelemetry>? Telemetry
+        {
             get { return BackingStore?.Get<List<WorkplaceSensorDeviceTelemetry>?>("telemetry"); }
             set { BackingStore?.Set("telemetry", value); }
         }
 #nullable restore
 #else
-        public List<WorkplaceSensorDeviceTelemetry> Telemetry {
+        public List<WorkplaceSensorDeviceTelemetry> Telemetry
+        {
             get { return BackingStore?.Get<List<WorkplaceSensorDeviceTelemetry>>("telemetry"); }
             set { BackingStore?.Set("telemetry", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.Workplace.SensorDevices.IngestTelemetry {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"telemetry", n => { Telemetry = n.GetCollectionOfObjectValues<WorkplaceSensorDeviceTelemetry>(WorkplaceSensorDeviceTelemetry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "telemetry", n => { Telemetry = n.GetCollectionOfObjectValues<WorkplaceSensorDeviceTelemetry>(WorkplaceSensorDeviceTelemetry.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageResourceEnvironment : Entity, IParsable 
+    public class AccessPackageResourceEnvironment : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResource>? AccessPackageResources {
+        public List<AccessPackageResource>? AccessPackageResources
+        {
             get { return BackingStore?.Get<List<AccessPackageResource>?>("accessPackageResources"); }
             set { BackingStore?.Set("accessPackageResources", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResource> AccessPackageResources {
+        public List<AccessPackageResource> AccessPackageResources
+        {
             get { return BackingStore?.Get<List<AccessPackageResource>>("accessPackageResources"); }
             set { BackingStore?.Set("accessPackageResources", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Connection information of an environment used to connect to a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ConnectionInfo? ConnectionInfo {
+        public Microsoft.Graph.Beta.Models.ConnectionInfo? ConnectionInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectionInfo?>("connectionInfo"); }
             set { BackingStore?.Set("connectionInfo", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ConnectionInfo ConnectionInfo {
+        public Microsoft.Graph.Beta.Models.ConnectionInfo ConnectionInfo
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConnectionInfo>("connectionInfo"); }
             set { BackingStore?.Set("connectionInfo", value); }
         }
@@ -40,32 +45,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the user that created this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CreatedBy {
+        public string? CreatedBy
+        {
             get { return BackingStore?.Get<string?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public string CreatedBy {
+        public string CreatedBy
+        {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The date and time that this object was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -73,51 +83,59 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Determines whether this is default environment or not. It is set to true for all static origin systems, such as Microsoft Entra groups and Microsoft Entra Applications.</summary>
-        public bool? IsDefaultEnvironment {
+        public bool? IsDefaultEnvironment
+        {
             get { return BackingStore?.Get<bool?>("isDefaultEnvironment"); }
             set { BackingStore?.Set("isDefaultEnvironment", value); }
         }
         /// <summary>The display name of the entity that last modified this object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ModifiedBy {
+        public string? ModifiedBy
+        {
             get { return BackingStore?.Get<string?>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
 #nullable restore
 #else
-        public string ModifiedBy {
+        public string ModifiedBy
+        {
             get { return BackingStore?.Get<string>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
 #endif
         /// <summary>The date and time that this object was last modified. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ModifiedDateTime {
+        public DateTimeOffset? ModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>The unique identifier of this environment in the origin system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginId {
+        public string? OriginId
+        {
             get { return BackingStore?.Get<string?>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
 #nullable restore
 #else
-        public string OriginId {
+        public string OriginId
+        {
             get { return BackingStore?.Get<string>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
@@ -125,13 +143,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The type of the resource in the origin system, that is, SharePointOnline. Requires $filter (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OriginSystem {
+        public string? OriginSystem
+        {
             get { return BackingStore?.Get<string?>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
 #nullable restore
 #else
-        public string OriginSystem {
+        public string OriginSystem
+        {
             get { return BackingStore?.Get<string>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
@@ -154,17 +174,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"connectionInfo", n => { ConnectionInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectionInfo>(Microsoft.Graph.Beta.Models.ConnectionInfo.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"isDefaultEnvironment", n => { IsDefaultEnvironment = n.GetBoolValue(); } },
-                {"modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
-                {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"originId", n => { OriginId = n.GetStringValue(); } },
-                {"originSystem", n => { OriginSystem = n.GetStringValue(); } },
+                { "accessPackageResources", n => { AccessPackageResources = n.GetCollectionOfObjectValues<AccessPackageResource>(AccessPackageResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectionInfo", n => { ConnectionInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectionInfo>(Microsoft.Graph.Beta.Models.ConnectionInfo.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "isDefaultEnvironment", n => { IsDefaultEnvironment = n.GetBoolValue(); } },
+                { "modifiedBy", n => { ModifiedBy = n.GetStringValue(); } },
+                { "modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "originId", n => { OriginId = n.GetStringValue(); } },
+                { "originSystem", n => { OriginSystem = n.GetStringValue(); } },
             };
         }
         /// <summary>

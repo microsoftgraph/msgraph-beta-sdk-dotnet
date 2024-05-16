@@ -4,52 +4,61 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that represents device setting state summary for an intent
     /// </summary>
-    public class DeviceManagementIntentDeviceSettingStateSummary : Entity, IParsable 
+    public class DeviceManagementIntentDeviceSettingStateSummary : Entity, IParsable
     {
         /// <summary>Number of compliant devices</summary>
-        public int? CompliantCount {
+        public int? CompliantCount
+        {
             get { return BackingStore?.Get<int?>("compliantCount"); }
             set { BackingStore?.Set("compliantCount", value); }
         }
         /// <summary>Number of devices in conflict</summary>
-        public int? ConflictCount {
+        public int? ConflictCount
+        {
             get { return BackingStore?.Get<int?>("conflictCount"); }
             set { BackingStore?.Set("conflictCount", value); }
         }
         /// <summary>Number of error devices</summary>
-        public int? ErrorCount {
+        public int? ErrorCount
+        {
             get { return BackingStore?.Get<int?>("errorCount"); }
             set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Number of non compliant devices</summary>
-        public int? NonCompliantCount {
+        public int? NonCompliantCount
+        {
             get { return BackingStore?.Get<int?>("nonCompliantCount"); }
             set { BackingStore?.Set("nonCompliantCount", value); }
         }
         /// <summary>Number of not applicable devices</summary>
-        public int? NotApplicableCount {
+        public int? NotApplicableCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableCount"); }
             set { BackingStore?.Set("notApplicableCount", value); }
         }
         /// <summary>Number of remediated devices</summary>
-        public int? RemediatedCount {
+        public int? RemediatedCount
+        {
             get { return BackingStore?.Get<int?>("remediatedCount"); }
             set { BackingStore?.Set("remediatedCount", value); }
         }
         /// <summary>Name of a setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingName {
+        public string? SettingName
+        {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
 #nullable restore
 #else
-        public string SettingName {
+        public string SettingName
+        {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
@@ -72,13 +81,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"compliantCount", n => { CompliantCount = n.GetIntValue(); } },
-                {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
-                {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
-                {"nonCompliantCount", n => { NonCompliantCount = n.GetIntValue(); } },
-                {"notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
-                {"remediatedCount", n => { RemediatedCount = n.GetIntValue(); } },
-                {"settingName", n => { SettingName = n.GetStringValue(); } },
+                { "compliantCount", n => { CompliantCount = n.GetIntValue(); } },
+                { "conflictCount", n => { ConflictCount = n.GetIntValue(); } },
+                { "errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                { "nonCompliantCount", n => { NonCompliantCount = n.GetIntValue(); } },
+                { "notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
+                { "remediatedCount", n => { RemediatedCount = n.GetIntValue(); } },
+                { "settingName", n => { SettingName = n.GetStringValue(); } },
             };
         }
         /// <summary>

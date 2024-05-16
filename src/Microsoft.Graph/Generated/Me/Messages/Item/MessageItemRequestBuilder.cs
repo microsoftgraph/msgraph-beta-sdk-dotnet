@@ -25,11 +25,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Threading;
 using System;
-namespace Microsoft.Graph.Beta.Me.Messages.Item {
+namespace Microsoft.Graph.Beta.Me.Messages.Item
+{
     /// <summary>
     /// Provides operations to manage the messages property of the microsoft.graph.user entity.
     /// </summary>
-    public class MessageItemRequestBuilder : BaseRequestBuilder 
+    public class MessageItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.message entity.</summary>
         public AttachmentsRequestBuilder Attachments
@@ -128,8 +129,8 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
         {
         }
         /// <summary>
-        /// Delete eventMessage.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/eventmessage-delete?view=graph-rest-beta" />
+        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,13 +147,13 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/singlevaluelegacyextendedproperty-get?view=graph-rest-beta" />
+        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/message-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Message"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -170,7 +171,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Message>(requestInfo, Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -196,12 +197,12 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                {"XXX", ODataError.CreateFromDiscriminatorValue},
+                { "XXX", ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Message>(requestInfo, Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete eventMessage.
+        /// Delete a message in the specified user&apos;s mailbox, or delete a relationship of the message. For example, you can delete a specific @-mention of the specified user in the message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -220,7 +221,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
             return requestInfo;
         }
         /// <summary>
-        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
+        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -273,11 +274,11 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MessageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class MessageItemRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
         /// <summary>
-        /// You can get a single resource instance expanded with a specific extended property, or a collection of resource instancesthat include extended properties matching a filter. Using the query parameter $expand allows you to get the specified resource instance expanded with a specific extendedproperty. Use a $filter and eq operator on the id property to specify the extended property. This is currently the only way to get the singleValueLegacyExtendedProperty object that represents an extended property. To get resource instances that have certain extended properties, use the $filter query parameter and apply an eq operatoron the id property. In addition, for numeric extended properties, apply one of the following operators on the value property:eq, ne,ge, gt, le, or lt. For string-typed extended properties, apply a contains, startswith, eq, or ne operator on value. Filtering the string name (Name) in the id of an extended property is case-sensitive. Filtering the value property of an extendedproperty is case-insensitive. The following user resources are supported: As well as the following group resources: See Extended properties overview for more information about when to useopen extensions or extended properties, and how to specify extended properties.
+        /// Retrieve the properties and relationships of the message object. For example, you can get a message and expand all the mention instances in the message. For an example, see Example 2. You can use the $value parameter to get the MIME content of a message. For an example, see Example 5. An app can get a message in another user&apos;s mail folder under two conditions: Because the message resource supports extensions, you can also use the GET operation to get custom properties and extension data in a message instance.
         /// </summary>
         public class MessageItemRequestBuilderGetQueryParameters 
         {
@@ -306,14 +307,14 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item {
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MessageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<MessageItemRequestBuilderGetQueryParameters> 
+        public class MessageItemRequestBuilderGetRequestConfiguration : RequestConfiguration<MessageItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MessageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters> 
+        public class MessageItemRequestBuilderPatchRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
         {
         }
     }

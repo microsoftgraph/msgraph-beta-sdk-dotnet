@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class DeploymentAudience : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class DeploymentAudience : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Content eligible to deploy to devices in the audience. Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>? ApplicableContent {
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>? ApplicableContent
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>?>("applicableContent"); }
             set { BackingStore?.Set("applicableContent", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent> ApplicableContent {
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent> ApplicableContent
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>>("applicableContent"); }
             set { BackingStore?.Set("applicableContent", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Specifies the assets to exclude from the audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? Exclusions {
+        public List<UpdatableAsset>? Exclusions
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("exclusions"); }
             set { BackingStore?.Set("exclusions", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> Exclusions {
+        public List<UpdatableAsset> Exclusions
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("exclusions"); }
             set { BackingStore?.Set("exclusions", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Specifies the assets to include in the audience.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? Members {
+        public List<UpdatableAsset>? Members
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>?>("members"); }
             set { BackingStore?.Set("members", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> Members {
+        public List<UpdatableAsset> Members
+        {
             get { return BackingStore?.Get<List<UpdatableAsset>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicableContent", n => { ApplicableContent = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>(Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"exclusions", n => { Exclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"members", n => { Members = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicableContent", n => { ApplicableContent = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent>(Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exclusions", n => { Exclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "members", n => { Members = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

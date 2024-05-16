@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RoleManagement : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RoleManagement : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The cloudPC property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplicationMultiple? CloudPC {
+        public RbacApplicationMultiple? CloudPC
+        {
             get { return BackingStore?.Get<RbacApplicationMultiple?>("cloudPC"); }
             set { BackingStore?.Set("cloudPC", value); }
         }
 #nullable restore
 #else
-        public RbacApplicationMultiple CloudPC {
+        public RbacApplicationMultiple CloudPC
+        {
             get { return BackingStore?.Get<RbacApplicationMultiple>("cloudPC"); }
             set { BackingStore?.Set("cloudPC", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The RbacApplication for Device Management</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplicationMultiple? DeviceManagement {
+        public RbacApplicationMultiple? DeviceManagement
+        {
             get { return BackingStore?.Get<RbacApplicationMultiple?>("deviceManagement"); }
             set { BackingStore?.Set("deviceManagement", value); }
         }
 #nullable restore
 #else
-        public RbacApplicationMultiple DeviceManagement {
+        public RbacApplicationMultiple DeviceManagement
+        {
             get { return BackingStore?.Get<RbacApplicationMultiple>("deviceManagement"); }
             set { BackingStore?.Set("deviceManagement", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The directory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplication? Directory {
+        public RbacApplication? Directory
+        {
             get { return BackingStore?.Get<RbacApplication?>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
 #nullable restore
 #else
-        public RbacApplication Directory {
+        public RbacApplication Directory
+        {
             get { return BackingStore?.Get<RbacApplication>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The enterpriseApps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RbacApplication>? EnterpriseApps {
+        public List<RbacApplication>? EnterpriseApps
+        {
             get { return BackingStore?.Get<List<RbacApplication>?>("enterpriseApps"); }
             set { BackingStore?.Set("enterpriseApps", value); }
         }
 #nullable restore
 #else
-        public List<RbacApplication> EnterpriseApps {
+        public List<RbacApplication> EnterpriseApps
+        {
             get { return BackingStore?.Get<List<RbacApplication>>("enterpriseApps"); }
             set { BackingStore?.Set("enterpriseApps", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The RbacApplication for Entitlement Management</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplication? EntitlementManagement {
+        public RbacApplication? EntitlementManagement
+        {
             get { return BackingStore?.Get<RbacApplication?>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
 #nullable restore
 #else
-        public RbacApplication EntitlementManagement {
+        public RbacApplication EntitlementManagement
+        {
             get { return BackingStore?.Get<RbacApplication>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The exchange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRbacApplication? Exchange {
+        public UnifiedRbacApplication? Exchange
+        {
             get { return BackingStore?.Get<UnifiedRbacApplication?>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
 #nullable restore
 #else
-        public UnifiedRbacApplication Exchange {
+        public UnifiedRbacApplication Exchange
+        {
             get { return BackingStore?.Get<UnifiedRbacApplication>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -141,13 +157,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cloudPC", n => { CloudPC = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
-                {"deviceManagement", n => { DeviceManagement = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
-                {"directory", n => { Directory = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
-                {"enterpriseApps", n => { EnterpriseApps = n.GetCollectionOfObjectValues<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
-                {"exchange", n => { Exchange = n.GetObjectValue<UnifiedRbacApplication>(UnifiedRbacApplication.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "cloudPC", n => { CloudPC = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
+                { "deviceManagement", n => { DeviceManagement = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
+                { "directory", n => { Directory = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
+                { "enterpriseApps", n => { EnterpriseApps = n.GetCollectionOfObjectValues<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<UnifiedRbacApplication>(UnifiedRbacApplication.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationSynchronizationError : Entity, IParsable 
+    public class EducationSynchronizationError : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the sync entity (school, section, student, teacher).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EntryType {
+        public string? EntryType
+        {
             get { return BackingStore?.Get<string?>("entryType"); }
             set { BackingStore?.Set("entryType", value); }
         }
 #nullable restore
 #else
-        public string EntryType {
+        public string EntryType
+        {
             get { return BackingStore?.Get<string>("entryType"); }
             set { BackingStore?.Set("entryType", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents the error code for this error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode {
+        public string? ErrorCode
+        {
             get { return BackingStore?.Get<string?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
 #nullable restore
 #else
-        public string ErrorCode {
+        public string ErrorCode
+        {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Contains a description of the error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorMessage {
+        public string? ErrorMessage
+        {
             get { return BackingStore?.Get<string?>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
 #nullable restore
 #else
-        public string ErrorMessage {
+        public string ErrorMessage
+        {
             get { return BackingStore?.Get<string>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
@@ -54,32 +61,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier for the entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JoiningValue {
+        public string? JoiningValue
+        {
             get { return BackingStore?.Get<string?>("joiningValue"); }
             set { BackingStore?.Set("joiningValue", value); }
         }
 #nullable restore
 #else
-        public string JoiningValue {
+        public string JoiningValue
+        {
             get { return BackingStore?.Get<string>("joiningValue"); }
             set { BackingStore?.Set("joiningValue", value); }
         }
 #endif
         /// <summary>The time of occurrence of this error.</summary>
-        public DateTimeOffset? RecordedDateTime {
+        public DateTimeOffset? RecordedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }
             set { BackingStore?.Set("recordedDateTime", value); }
         }
         /// <summary>The identifier of this error entry.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReportableIdentifier {
+        public string? ReportableIdentifier
+        {
             get { return BackingStore?.Get<string?>("reportableIdentifier"); }
             set { BackingStore?.Set("reportableIdentifier", value); }
         }
 #nullable restore
 #else
-        public string ReportableIdentifier {
+        public string ReportableIdentifier
+        {
             get { return BackingStore?.Get<string>("reportableIdentifier"); }
             set { BackingStore?.Set("reportableIdentifier", value); }
         }
@@ -102,12 +114,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"entryType", n => { EntryType = n.GetStringValue(); } },
-                {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
-                {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                {"joiningValue", n => { JoiningValue = n.GetStringValue(); } },
-                {"recordedDateTime", n => { RecordedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reportableIdentifier", n => { ReportableIdentifier = n.GetStringValue(); } },
+                { "entryType", n => { EntryType = n.GetStringValue(); } },
+                { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
+                { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                { "joiningValue", n => { JoiningValue = n.GetStringValue(); } },
+                { "recordedDateTime", n => { RecordedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "reportableIdentifier", n => { ReportableIdentifier = n.GetStringValue(); } },
             };
         }
         /// <summary>

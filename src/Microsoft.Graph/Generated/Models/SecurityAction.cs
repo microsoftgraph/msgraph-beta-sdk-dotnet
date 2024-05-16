@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SecurityAction : Entity, IParsable 
+    public class SecurityAction : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Reason for invoking this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActionReason {
+        public string? ActionReason
+        {
             get { return BackingStore?.Get<string?>("actionReason"); }
             set { BackingStore?.Set("actionReason", value); }
         }
 #nullable restore
 #else
-        public string ActionReason {
+        public string ActionReason
+        {
             get { return BackingStore?.Get<string>("actionReason"); }
             set { BackingStore?.Set("actionReason", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Application ID of the calling application that submitted (POST) the action. The appId should be extracted from the auth token and not entered manually by the calling application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppId {
+        public string? AppId
+        {
             get { return BackingStore?.Get<string?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
 #nullable restore
 #else
-        public string AppId {
+        public string AppId
+        {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Azure tenant ID of the entity to determine which tenant the entity belongs to (multi-tenancy support). The azureTenantId should be extracted from the auth token and not entered manually by the calling application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureTenantId {
+        public string? AzureTenantId
+        {
             get { return BackingStore?.Get<string?>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #nullable restore
 #else
-        public string AzureTenantId {
+        public string AzureTenantId
+        {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
@@ -54,56 +61,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The clientContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientContext {
+        public string? ClientContext
+        {
             get { return BackingStore?.Get<string?>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #nullable restore
 #else
-        public string ClientContext {
+        public string ClientContext
+        {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
 #endif
         /// <summary>Timestamp when the action was completed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CompletedDateTime {
+        public DateTimeOffset? CompletedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
         /// <summary>Timestamp when the action is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Error info when the action fails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ResultInfo? ErrorInfo {
+        public ResultInfo? ErrorInfo
+        {
             get { return BackingStore?.Get<ResultInfo?>("errorInfo"); }
             set { BackingStore?.Set("errorInfo", value); }
         }
 #nullable restore
 #else
-        public ResultInfo ErrorInfo {
+        public ResultInfo ErrorInfo
+        {
             get { return BackingStore?.Get<ResultInfo>("errorInfo"); }
             set { BackingStore?.Set("errorInfo", value); }
         }
 #endif
         /// <summary>Timestamp when this action was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? LastActionDateTime {
+        public DateTimeOffset? LastActionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>Action name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -111,13 +127,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Collection of parameters (key-value pairs) necessary to invoke the action, for example, URL or fileHash to block.). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Parameters {
+        public List<KeyValuePair>? Parameters
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Parameters {
+        public List<KeyValuePair> Parameters
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
@@ -125,32 +143,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Collection of securityActionState to keep the history of an action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecurityActionState>? States {
+        public List<SecurityActionState>? States
+        {
             get { return BackingStore?.Get<List<SecurityActionState>?>("states"); }
             set { BackingStore?.Set("states", value); }
         }
 #nullable restore
 #else
-        public List<SecurityActionState> States {
+        public List<SecurityActionState> States
+        {
             get { return BackingStore?.Get<List<SecurityActionState>>("states"); }
             set { BackingStore?.Set("states", value); }
         }
 #endif
         /// <summary>Status of the action. Possible values are: NotStarted, Running, Completed, Failed.</summary>
-        public OperationStatus? Status {
+        public OperationStatus? Status
+        {
             get { return BackingStore?.Get<OperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The user principal name of the signed-in user that submitted  (POST) the action. The user should be extracted from the auth token and not entered manually by the calling application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? User {
+        public string? User
+        {
             get { return BackingStore?.Get<string?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public string User {
+        public string User
+        {
             get { return BackingStore?.Get<string>("user"); }
             set { BackingStore?.Set("user", value); }
         }
@@ -158,13 +181,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Complex Type containing details about the Security product/service vendor, provider, and sub-provider (for example, vendor=Microsoft; provider=Windows Defender ATP; sub-provider=AppLocker).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation {
+        public SecurityVendorInformation? VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation {
+        public SecurityVendorInformation VendorInformation
+        {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
@@ -187,20 +212,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionReason", n => { ActionReason = n.GetStringValue(); } },
-                {"appId", n => { AppId = n.GetStringValue(); } },
-                {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
-                {"clientContext", n => { ClientContext = n.GetStringValue(); } },
-                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"errorInfo", n => { ErrorInfo = n.GetObjectValue<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue); } },
-                {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"states", n => { States = n.GetCollectionOfObjectValues<SecurityActionState>(SecurityActionState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
-                {"user", n => { User = n.GetStringValue(); } },
-                {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "actionReason", n => { ActionReason = n.GetStringValue(); } },
+                { "appId", n => { AppId = n.GetStringValue(); } },
+                { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
+                { "clientContext", n => { ClientContext = n.GetStringValue(); } },
+                { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "errorInfo", n => { ErrorInfo = n.GetObjectValue<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue); } },
+                { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "parameters", n => { Parameters = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "states", n => { States = n.GetCollectionOfObjectValues<SecurityActionState>(SecurityActionState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
+                { "user", n => { User = n.GetStringValue(); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

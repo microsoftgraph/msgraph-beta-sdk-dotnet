@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents an ADMX dropdownList element and an ADMX enum element.
     /// </summary>
-    public class GroupPolicyPresentationDropdownList : GroupPolicyUploadedPresentation, IParsable 
+    public class GroupPolicyPresentationDropdownList : GroupPolicyUploadedPresentation, IParsable
     {
         /// <summary>Localized string value identifying the default choice of the list of items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GroupPolicyPresentationDropdownListItem? DefaultItem {
+        public GroupPolicyPresentationDropdownListItem? DefaultItem
+        {
             get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem?>("defaultItem"); }
             set { BackingStore?.Set("defaultItem", value); }
         }
 #nullable restore
 #else
-        public GroupPolicyPresentationDropdownListItem DefaultItem {
+        public GroupPolicyPresentationDropdownListItem DefaultItem
+        {
             get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem>("defaultItem"); }
             set { BackingStore?.Set("defaultItem", value); }
         }
@@ -27,19 +30,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Represents a set of localized display names and their associated values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyPresentationDropdownListItem>? Items {
+        public List<GroupPolicyPresentationDropdownListItem>? Items
+        {
             get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyPresentationDropdownListItem> Items {
+        public List<GroupPolicyPresentationDropdownListItem> Items
+        {
             get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
         /// <summary>Requirement to enter a value in the parameter box. The default value is false.</summary>
-        public bool? Required {
+        public bool? Required
+        {
             get { return BackingStore?.Get<bool?>("required"); }
             set { BackingStore?.Set("required", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultItem", n => { DefaultItem = n.GetObjectValue<GroupPolicyPresentationDropdownListItem>(GroupPolicyPresentationDropdownListItem.CreateFromDiscriminatorValue); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<GroupPolicyPresentationDropdownListItem>(GroupPolicyPresentationDropdownListItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"required", n => { Required = n.GetBoolValue(); } },
+                { "defaultItem", n => { DefaultItem = n.GetObjectValue<GroupPolicyPresentationDropdownListItem>(GroupPolicyPresentationDropdownListItem.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<GroupPolicyPresentationDropdownListItem>(GroupPolicyPresentationDropdownListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "required", n => { Required = n.GetBoolValue(); } },
             };
         }
         /// <summary>

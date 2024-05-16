@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest {
+namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate.GenerateApplePushNotificationCertificateSigningRequest
+{
     [Obsolete("This class is obsolete. Use GenerateApplePushNotificationCertificateSigningRequestPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GenerateApplePushNotificationCertificateSigningRequestResponse : GenerateApplePushNotificationCertificateSigningRequestPostResponse, IParsable 
+    public class GenerateApplePushNotificationCertificateSigningRequestResponse : GenerateApplePushNotificationCertificateSigningRequestPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

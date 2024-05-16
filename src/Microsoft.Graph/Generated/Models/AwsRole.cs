@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsRole : AwsIdentity, IParsable 
+    public class AwsRole : AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The roleType property</summary>
-        public AwsRoleType? RoleType {
+        public AwsRoleType? RoleType
+        {
             get { return BackingStore?.Get<AwsRoleType?>("roleType"); }
             set { BackingStore?.Set("roleType", value); }
         }
         /// <summary>The trustEntityType property</summary>
-        public AwsRoleTrustEntityType? TrustEntityType {
+        public AwsRoleTrustEntityType? TrustEntityType
+        {
             get { return BackingStore?.Get<AwsRoleTrustEntityType?>("trustEntityType"); }
             set { BackingStore?.Set("trustEntityType", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"roleType", n => { RoleType = n.GetEnumValue<AwsRoleType>(); } },
-                {"trustEntityType", n => { TrustEntityType = n.GetEnumValue<AwsRoleTrustEntityType>(); } },
+                { "roleType", n => { RoleType = n.GetEnumValue<AwsRoleType>(); } },
+                { "trustEntityType", n => { TrustEntityType = n.GetEnumValue<AwsRoleTrustEntityType>(); } },
             };
         }
         /// <summary>

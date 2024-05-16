@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+namespace Microsoft.Graph.Beta.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class CustomTaskExtension : Microsoft.Graph.Beta.Models.CustomCalloutExtension, IParsable 
+    public class CustomTaskExtension : Microsoft.Graph.Beta.Models.CustomCalloutExtension, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The callback configuration for a custom task extension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration? CallbackConfiguration {
+        public Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration? CallbackConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration?>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration CallbackConfiguration {
+        public Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration CallbackConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
@@ -26,38 +29,44 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// <summary>The unique identifier of the Microsoft Entra user that created the custom task extension.Supports $filter(eq, ne) and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.User? CreatedBy {
+        public Microsoft.Graph.Beta.Models.User? CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.User CreatedBy {
+        public Microsoft.Graph.Beta.Models.User CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>When the custom task extension was created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The unique identifier of the Microsoft Entra user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.User? LastModifiedBy {
+        public Microsoft.Graph.Beta.Models.User? LastModifiedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.User LastModifiedBy {
+        public Microsoft.Graph.Beta.Models.User LastModifiedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>When the custom extension was last modified.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"callbackConfiguration", n => { CallbackConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration>(Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "callbackConfiguration", n => { CallbackConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration>(Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     /// <summary>
     /// Singleton entity that acts as a container for all device management functionality.
     /// </summary>
-    public class DeviceManagement : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class DeviceManagement : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The date &amp; time when tenant data moved between scaleunits.</summary>
-        public DateTimeOffset? AccountMoveCompletionDateTime {
+        public DateTimeOffset? AccountMoveCompletionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("accountMoveCompletionDateTime"); }
             set { BackingStore?.Set("accountMoveCompletionDateTime", value); }
         }
         /// <summary>Admin consent information.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AdminConsent? AdminConsent {
+        public Microsoft.Graph.Beta.Models.AdminConsent? AdminConsent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsent?>("adminConsent"); }
             set { BackingStore?.Set("adminConsent", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AdminConsent AdminConsent {
+        public Microsoft.Graph.Beta.Models.AdminConsent AdminConsent
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsent>("adminConsent"); }
             set { BackingStore?.Set("adminConsent", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The summary state of ATP onboarding state for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary? AdvancedThreatProtectionOnboardingStateSummary {
+        public Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary? AdvancedThreatProtectionOnboardingStateSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary?>("advancedThreatProtectionOnboardingStateSummary"); }
             set { BackingStore?.Set("advancedThreatProtectionOnboardingStateSummary", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary AdvancedThreatProtectionOnboardingStateSummary {
+        public Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary AdvancedThreatProtectionOnboardingStateSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>("advancedThreatProtectionOnboardingStateSummary"); }
             set { BackingStore?.Set("advancedThreatProtectionOnboardingStateSummary", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Android device owner enrollment profile entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>? AndroidDeviceOwnerEnrollmentProfiles {
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>? AndroidDeviceOwnerEnrollmentProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>?>("androidDeviceOwnerEnrollmentProfiles"); }
             set { BackingStore?.Set("androidDeviceOwnerEnrollmentProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile> AndroidDeviceOwnerEnrollmentProfiles {
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile> AndroidDeviceOwnerEnrollmentProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>>("androidDeviceOwnerEnrollmentProfiles"); }
             set { BackingStore?.Set("androidDeviceOwnerEnrollmentProfiles", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Android for Work app configuration schema entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>? AndroidForWorkAppConfigurationSchemas {
+        public List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>? AndroidForWorkAppConfigurationSchemas
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>?>("androidForWorkAppConfigurationSchemas"); }
             set { BackingStore?.Set("androidForWorkAppConfigurationSchemas", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema> AndroidForWorkAppConfigurationSchemas {
+        public List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema> AndroidForWorkAppConfigurationSchemas
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>>("androidForWorkAppConfigurationSchemas"); }
             set { BackingStore?.Set("androidForWorkAppConfigurationSchemas", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Android for Work enrollment profile entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>? AndroidForWorkEnrollmentProfiles {
+        public List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>? AndroidForWorkEnrollmentProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>?>("androidForWorkEnrollmentProfiles"); }
             set { BackingStore?.Set("androidForWorkEnrollmentProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile> AndroidForWorkEnrollmentProfiles {
+        public List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile> AndroidForWorkEnrollmentProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>>("androidForWorkEnrollmentProfiles"); }
             set { BackingStore?.Set("androidForWorkEnrollmentProfiles", value); }
         }
@@ -88,13 +100,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The singleton Android for Work settings entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AndroidForWorkSettings? AndroidForWorkSettings {
+        public Microsoft.Graph.Beta.Models.AndroidForWorkSettings? AndroidForWorkSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkSettings?>("androidForWorkSettings"); }
             set { BackingStore?.Set("androidForWorkSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AndroidForWorkSettings AndroidForWorkSettings {
+        public Microsoft.Graph.Beta.Models.AndroidForWorkSettings AndroidForWorkSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkSettings>("androidForWorkSettings"); }
             set { BackingStore?.Set("androidForWorkSettings", value); }
         }
@@ -102,13 +116,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The singleton Android managed store account enterprise settings entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings? AndroidManagedStoreAccountEnterpriseSettings {
+        public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings? AndroidManagedStoreAccountEnterpriseSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings?>("androidManagedStoreAccountEnterpriseSettings"); }
             set { BackingStore?.Set("androidManagedStoreAccountEnterpriseSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings AndroidManagedStoreAccountEnterpriseSettings {
+        public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings AndroidManagedStoreAccountEnterpriseSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings>("androidManagedStoreAccountEnterpriseSettings"); }
             set { BackingStore?.Set("androidManagedStoreAccountEnterpriseSettings", value); }
         }
@@ -116,13 +132,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Android Enterprise app configuration schema entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>? AndroidManagedStoreAppConfigurationSchemas {
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>? AndroidManagedStoreAppConfigurationSchemas
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>?>("androidManagedStoreAppConfigurationSchemas"); }
             set { BackingStore?.Set("androidManagedStoreAppConfigurationSchemas", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema> AndroidManagedStoreAppConfigurationSchemas {
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema> AndroidManagedStoreAppConfigurationSchemas
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>>("androidManagedStoreAppConfigurationSchemas"); }
             set { BackingStore?.Set("androidManagedStoreAppConfigurationSchemas", value); }
         }
@@ -130,13 +148,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Apple push notification certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate? ApplePushNotificationCertificate {
+        public Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate? ApplePushNotificationCertificate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate?>("applePushNotificationCertificate"); }
             set { BackingStore?.Set("applePushNotificationCertificate", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate ApplePushNotificationCertificate {
+        public Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate ApplePushNotificationCertificate
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate>("applePushNotificationCertificate"); }
             set { BackingStore?.Set("applePushNotificationCertificate", value); }
         }
@@ -144,13 +164,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Apple user initiated enrollment profiles</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>? AppleUserInitiatedEnrollmentProfiles {
+        public List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>? AppleUserInitiatedEnrollmentProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>?>("appleUserInitiatedEnrollmentProfiles"); }
             set { BackingStore?.Set("appleUserInitiatedEnrollmentProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile> AppleUserInitiatedEnrollmentProfiles {
+        public List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile> AppleUserInitiatedEnrollmentProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>>("appleUserInitiatedEnrollmentProfiles"); }
             set { BackingStore?.Set("appleUserInitiatedEnrollmentProfiles", value); }
         }
@@ -158,13 +180,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of assignment filters</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>? AssignmentFilters {
+        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>? AssignmentFilters
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>?>("assignmentFilters"); }
             set { BackingStore?.Set("assignmentFilters", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter> AssignmentFilters {
+        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter> AssignmentFilters
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>>("assignmentFilters"); }
             set { BackingStore?.Set("assignmentFilters", value); }
         }
@@ -172,13 +196,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Audit Events</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AuditEvent>? AuditEvents {
+        public List<Microsoft.Graph.Beta.Models.AuditEvent>? AuditEvents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuditEvent>?>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AuditEvent> AuditEvents {
+        public List<Microsoft.Graph.Beta.Models.AuditEvent> AuditEvents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuditEvent>>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
@@ -186,13 +212,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of autopilot events for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>? AutopilotEvents {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>? AutopilotEvents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>?>("autopilotEvents"); }
             set { BackingStore?.Set("autopilotEvents", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent> AutopilotEvents {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent> AutopilotEvents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>>("autopilotEvents"); }
             set { BackingStore?.Set("autopilotEvents", value); }
         }
@@ -200,13 +228,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Cart To Class Associations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.CartToClassAssociation>? CartToClassAssociations {
+        public List<Microsoft.Graph.Beta.Models.CartToClassAssociation>? CartToClassAssociations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CartToClassAssociation>?>("cartToClassAssociations"); }
             set { BackingStore?.Set("cartToClassAssociations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.CartToClassAssociation> CartToClassAssociations {
+        public List<Microsoft.Graph.Beta.Models.CartToClassAssociation> CartToClassAssociations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CartToClassAssociation>>("cartToClassAssociations"); }
             set { BackingStore?.Set("cartToClassAssociations", value); }
         }
@@ -214,13 +244,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The available categories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>? Categories {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>? Categories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory> Categories {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory> Categories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
@@ -228,13 +260,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>? CertificateConnectorDetails {
+        public List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>? CertificateConnectorDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>?>("certificateConnectorDetails"); }
             set { BackingStore?.Set("certificateConnectorDetails", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails> CertificateConnectorDetails {
+        public List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails> CertificateConnectorDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>>("certificateConnectorDetails"); }
             set { BackingStore?.Set("certificateConnectorDetails", value); }
         }
@@ -242,13 +276,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of ChromeOSOnboardingSettings settings associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>? ChromeOSOnboardingSettings {
+        public List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>? ChromeOSOnboardingSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>?>("chromeOSOnboardingSettings"); }
             set { BackingStore?.Set("chromeOSOnboardingSettings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings> ChromeOSOnboardingSettings {
+        public List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings> ChromeOSOnboardingSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>>("chromeOSOnboardingSettings"); }
             set { BackingStore?.Set("chromeOSOnboardingSettings", value); }
         }
@@ -256,13 +292,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of CloudPC Connectivity Issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>? CloudPCConnectivityIssues {
+        public List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>? CloudPCConnectivityIssues
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>?>("cloudPCConnectivityIssues"); }
             set { BackingStore?.Set("cloudPCConnectivityIssues", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue> CloudPCConnectivityIssues {
+        public List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue> CloudPCConnectivityIssues
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>>("cloudPCConnectivityIssues"); }
             set { BackingStore?.Set("cloudPCConnectivityIssues", value); }
         }
@@ -270,13 +308,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of co-managed devices report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ManagedDevice>? ComanagedDevices {
+        public List<Microsoft.Graph.Beta.Models.ManagedDevice>? ComanagedDevices
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>?>("comanagedDevices"); }
             set { BackingStore?.Set("comanagedDevices", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ManagedDevice> ComanagedDevices {
+        public List<Microsoft.Graph.Beta.Models.ManagedDevice> ComanagedDevices
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>>("comanagedDevices"); }
             set { BackingStore?.Set("comanagedDevices", value); }
         }
@@ -284,13 +324,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of co-management eligible devices report</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>? ComanagementEligibleDevices {
+        public List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>? ComanagementEligibleDevices
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>?>("comanagementEligibleDevices"); }
             set { BackingStore?.Set("comanagementEligibleDevices", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice> ComanagementEligibleDevices {
+        public List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice> ComanagementEligibleDevices
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>>("comanagementEligibleDevices"); }
             set { BackingStore?.Set("comanagementEligibleDevices", value); }
         }
@@ -298,13 +340,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all compliance categories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>? ComplianceCategories {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>? ComplianceCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>?>("complianceCategories"); }
             set { BackingStore?.Set("complianceCategories", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory> ComplianceCategories {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory> ComplianceCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>>("complianceCategories"); }
             set { BackingStore?.Set("complianceCategories", value); }
         }
@@ -312,13 +356,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of Compliance Management Partners configured by the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>? ComplianceManagementPartners {
+        public List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>? ComplianceManagementPartners
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>?>("complianceManagementPartners"); }
             set { BackingStore?.Set("complianceManagementPartners", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner> ComplianceManagementPartners {
+        public List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner> ComplianceManagementPartners
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>>("complianceManagementPartners"); }
             set { BackingStore?.Set("complianceManagementPartners", value); }
         }
@@ -326,13 +372,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all compliance policies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>? CompliancePolicies {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>? CompliancePolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>?>("compliancePolicies"); }
             set { BackingStore?.Set("compliancePolicies", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy> CompliancePolicies {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy> CompliancePolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>>("compliancePolicies"); }
             set { BackingStore?.Set("compliancePolicies", value); }
         }
@@ -340,13 +388,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all ComplianceSettings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ComplianceSettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ComplianceSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>?>("complianceSettings"); }
             set { BackingStore?.Set("complianceSettings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ComplianceSettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ComplianceSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>>("complianceSettings"); }
             set { BackingStore?.Set("complianceSettings", value); }
         }
@@ -354,13 +404,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings? ConditionalAccessSettings {
+        public Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings? ConditionalAccessSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings?>("conditionalAccessSettings"); }
             set { BackingStore?.Set("conditionalAccessSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings ConditionalAccessSettings {
+        public Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings ConditionalAccessSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings>("conditionalAccessSettings"); }
             set { BackingStore?.Set("conditionalAccessSettings", value); }
         }
@@ -368,13 +420,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A list of ConfigManagerCollection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ConfigManagerCollection>? ConfigManagerCollections {
+        public List<Microsoft.Graph.Beta.Models.ConfigManagerCollection>? ConfigManagerCollections
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConfigManagerCollection>?>("configManagerCollections"); }
             set { BackingStore?.Set("configManagerCollections", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ConfigManagerCollection> ConfigManagerCollections {
+        public List<Microsoft.Graph.Beta.Models.ConfigManagerCollection> ConfigManagerCollections
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConfigManagerCollection>>("configManagerCollections"); }
             set { BackingStore?.Set("configManagerCollections", value); }
         }
@@ -382,13 +436,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all Configuration Categories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>? ConfigurationCategories {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>? ConfigurationCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>?>("configurationCategories"); }
             set { BackingStore?.Set("configurationCategories", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory> ConfigurationCategories {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory> ConfigurationCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>>("configurationCategories"); }
             set { BackingStore?.Set("configurationCategories", value); }
         }
@@ -396,13 +452,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all Configuration policies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>? ConfigurationPolicies {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>? ConfigurationPolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>?>("configurationPolicies"); }
             set { BackingStore?.Set("configurationPolicies", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy> ConfigurationPolicies {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy> ConfigurationPolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>>("configurationPolicies"); }
             set { BackingStore?.Set("configurationPolicies", value); }
         }
@@ -410,13 +468,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all templates</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>? ConfigurationPolicyTemplates {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>? ConfigurationPolicyTemplates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>?>("configurationPolicyTemplates"); }
             set { BackingStore?.Set("configurationPolicyTemplates", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate> ConfigurationPolicyTemplates {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate> ConfigurationPolicyTemplates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>>("configurationPolicyTemplates"); }
             set { BackingStore?.Set("configurationPolicyTemplates", value); }
         }
@@ -424,13 +484,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all ConfigurationSettings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ConfigurationSettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ConfigurationSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>?>("configurationSettings"); }
             set { BackingStore?.Set("configurationSettings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ConfigurationSettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ConfigurationSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>>("configurationSettings"); }
             set { BackingStore?.Set("configurationSettings", value); }
         }
@@ -438,13 +500,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of connector status for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>? ConnectorStatus {
+        public List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>? ConnectorStatus
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>?>("connectorStatus"); }
             set { BackingStore?.Set("connectorStatus", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails> ConnectorStatus {
+        public List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails> ConnectorStatus
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>>("connectorStatus"); }
             set { BackingStore?.Set("connectorStatus", value); }
         }
@@ -452,13 +516,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding? DataProcessorServiceForWindowsFeaturesOnboarding {
+        public Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding? DataProcessorServiceForWindowsFeaturesOnboarding
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding?>("dataProcessorServiceForWindowsFeaturesOnboarding"); }
             set { BackingStore?.Set("dataProcessorServiceForWindowsFeaturesOnboarding", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding DataProcessorServiceForWindowsFeaturesOnboarding {
+        public Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding DataProcessorServiceForWindowsFeaturesOnboarding
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>("dataProcessorServiceForWindowsFeaturesOnboarding"); }
             set { BackingStore?.Set("dataProcessorServiceForWindowsFeaturesOnboarding", value); }
         }
@@ -466,13 +532,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Data sharing consents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DataSharingConsent>? DataSharingConsents {
+        public List<Microsoft.Graph.Beta.Models.DataSharingConsent>? DataSharingConsents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DataSharingConsent>?>("dataSharingConsents"); }
             set { BackingStore?.Set("dataSharingConsents", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DataSharingConsent> DataSharingConsents {
+        public List<Microsoft.Graph.Beta.Models.DataSharingConsent> DataSharingConsents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DataSharingConsent>>("dataSharingConsents"); }
             set { BackingStore?.Set("dataSharingConsents", value); }
         }
@@ -480,13 +548,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>This collections of multiple DEP tokens per-tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DepOnboardingSetting>? DepOnboardingSettings {
+        public List<Microsoft.Graph.Beta.Models.DepOnboardingSetting>? DepOnboardingSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DepOnboardingSetting>?>("depOnboardingSettings"); }
             set { BackingStore?.Set("depOnboardingSettings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DepOnboardingSetting> DepOnboardingSettings {
+        public List<Microsoft.Graph.Beta.Models.DepOnboardingSetting> DepOnboardingSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DepOnboardingSetting>>("depOnboardingSettings"); }
             set { BackingStore?.Set("depOnboardingSettings", value); }
         }
@@ -494,13 +564,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of Derived credential settings associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>? DerivedCredentials {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>? DerivedCredentials
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>?>("derivedCredentials"); }
             set { BackingStore?.Set("derivedCredentials", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings> DerivedCredentials {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings> DerivedCredentials
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>>("derivedCredentials"); }
             set { BackingStore?.Set("derivedCredentials", value); }
         }
@@ -508,13 +580,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of detected apps associated with a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DetectedApp>? DetectedApps {
+        public List<Microsoft.Graph.Beta.Models.DetectedApp>? DetectedApps
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DetectedApp>?>("detectedApps"); }
             set { BackingStore?.Set("detectedApps", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DetectedApp> DetectedApps {
+        public List<Microsoft.Graph.Beta.Models.DetectedApp> DetectedApps
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DetectedApp>>("detectedApps"); }
             set { BackingStore?.Set("detectedApps", value); }
         }
@@ -522,13 +596,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of device categories with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceCategory>? DeviceCategories {
+        public List<Microsoft.Graph.Beta.Models.DeviceCategory>? DeviceCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCategory>?>("deviceCategories"); }
             set { BackingStore?.Set("deviceCategories", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceCategory> DeviceCategories {
+        public List<Microsoft.Graph.Beta.Models.DeviceCategory> DeviceCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCategory>>("deviceCategories"); }
             set { BackingStore?.Set("deviceCategories", value); }
         }
@@ -536,13 +612,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The device compliance policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>? DeviceCompliancePolicies {
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>? DeviceCompliancePolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>?>("deviceCompliancePolicies"); }
             set { BackingStore?.Set("deviceCompliancePolicies", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy> DeviceCompliancePolicies {
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy> DeviceCompliancePolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>>("deviceCompliancePolicies"); }
             set { BackingStore?.Set("deviceCompliancePolicies", value); }
         }
@@ -550,13 +628,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The device compliance state summary for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary? DeviceCompliancePolicyDeviceStateSummary {
+        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary? DeviceCompliancePolicyDeviceStateSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary?>("deviceCompliancePolicyDeviceStateSummary"); }
             set { BackingStore?.Set("deviceCompliancePolicyDeviceStateSummary", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary DeviceCompliancePolicyDeviceStateSummary {
+        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary DeviceCompliancePolicyDeviceStateSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary>("deviceCompliancePolicyDeviceStateSummary"); }
             set { BackingStore?.Set("deviceCompliancePolicyDeviceStateSummary", value); }
         }
@@ -564,32 +644,37 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The summary states of compliance policy settings for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>? DeviceCompliancePolicySettingStateSummaries {
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>? DeviceCompliancePolicySettingStateSummaries
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>?>("deviceCompliancePolicySettingStateSummaries"); }
             set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries {
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>>("deviceCompliancePolicySettingStateSummaries"); }
             set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
 #endif
         /// <summary>The last requested time of device compliance reporting for this account. This property is read-only.</summary>
-        public DateTimeOffset? DeviceComplianceReportSummarizationDateTime {
+        public DateTimeOffset? DeviceComplianceReportSummarizationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deviceComplianceReportSummarizationDateTime"); }
             set { BackingStore?.Set("deviceComplianceReportSummarizationDateTime", value); }
         }
         /// <summary>The list of device compliance scripts associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceComplianceScript>? DeviceComplianceScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceComplianceScript>? DeviceComplianceScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceComplianceScript>?>("deviceComplianceScripts"); }
             set { BackingStore?.Set("deviceComplianceScripts", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceComplianceScript> DeviceComplianceScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceComplianceScript> DeviceComplianceScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceComplianceScript>>("deviceComplianceScripts"); }
             set { BackingStore?.Set("deviceComplianceScripts", value); }
         }
@@ -597,13 +682,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Summary of policies in conflict state for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>? DeviceConfigurationConflictSummary {
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>? DeviceConfigurationConflictSummary
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>?>("deviceConfigurationConflictSummary"); }
             set { BackingStore?.Set("deviceConfigurationConflictSummary", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary> DeviceConfigurationConflictSummary {
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary> DeviceConfigurationConflictSummary
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>>("deviceConfigurationConflictSummary"); }
             set { BackingStore?.Set("deviceConfigurationConflictSummary", value); }
         }
@@ -611,13 +698,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The device configuration device state summary for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary? DeviceConfigurationDeviceStateSummaries {
+        public Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary? DeviceConfigurationDeviceStateSummaries
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary?>("deviceConfigurationDeviceStateSummaries"); }
             set { BackingStore?.Set("deviceConfigurationDeviceStateSummaries", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary DeviceConfigurationDeviceStateSummaries {
+        public Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary DeviceConfigurationDeviceStateSummaries
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>("deviceConfigurationDeviceStateSummaries"); }
             set { BackingStore?.Set("deviceConfigurationDeviceStateSummaries", value); }
         }
@@ -625,13 +714,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Profile Id of the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>? DeviceConfigurationProfiles {
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>? DeviceConfigurationProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>?>("deviceConfigurationProfiles"); }
             set { BackingStore?.Set("deviceConfigurationProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile> DeviceConfigurationProfiles {
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile> DeviceConfigurationProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>>("deviceConfigurationProfiles"); }
             set { BackingStore?.Set("deviceConfigurationProfiles", value); }
         }
@@ -639,13 +730,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Restricted apps violations for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>? DeviceConfigurationRestrictedAppsViolations {
+        public List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>? DeviceConfigurationRestrictedAppsViolations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>?>("deviceConfigurationRestrictedAppsViolations"); }
             set { BackingStore?.Set("deviceConfigurationRestrictedAppsViolations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation> DeviceConfigurationRestrictedAppsViolations {
+        public List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation> DeviceConfigurationRestrictedAppsViolations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>>("deviceConfigurationRestrictedAppsViolations"); }
             set { BackingStore?.Set("deviceConfigurationRestrictedAppsViolations", value); }
         }
@@ -653,13 +746,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The device configurations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceConfiguration>? DeviceConfigurations {
+        public List<Microsoft.Graph.Beta.Models.DeviceConfiguration>? DeviceConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfiguration>?>("deviceConfigurations"); }
             set { BackingStore?.Set("deviceConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceConfiguration> DeviceConfigurations {
+        public List<Microsoft.Graph.Beta.Models.DeviceConfiguration> DeviceConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfiguration>>("deviceConfigurations"); }
             set { BackingStore?.Set("deviceConfigurations", value); }
         }
@@ -667,13 +762,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Summary of all certificates for all devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>? DeviceConfigurationsAllManagedDeviceCertificateStates {
+        public List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>? DeviceConfigurationsAllManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>?>("deviceConfigurationsAllManagedDeviceCertificateStates"); }
             set { BackingStore?.Set("deviceConfigurationsAllManagedDeviceCertificateStates", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState> DeviceConfigurationsAllManagedDeviceCertificateStates {
+        public List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState> DeviceConfigurationsAllManagedDeviceCertificateStates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>>("deviceConfigurationsAllManagedDeviceCertificateStates"); }
             set { BackingStore?.Set("deviceConfigurationsAllManagedDeviceCertificateStates", value); }
         }
@@ -681,13 +778,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The device configuration user state summary for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary? DeviceConfigurationUserStateSummaries {
+        public Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary? DeviceConfigurationUserStateSummaries
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary?>("deviceConfigurationUserStateSummaries"); }
             set { BackingStore?.Set("deviceConfigurationUserStateSummaries", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary DeviceConfigurationUserStateSummaries {
+        public Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary DeviceConfigurationUserStateSummaries
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary>("deviceConfigurationUserStateSummaries"); }
             set { BackingStore?.Set("deviceConfigurationUserStateSummaries", value); }
         }
@@ -695,13 +794,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of device custom attribute shell scripts associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>? DeviceCustomAttributeShellScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>? DeviceCustomAttributeShellScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>?>("deviceCustomAttributeShellScripts"); }
             set { BackingStore?.Set("deviceCustomAttributeShellScripts", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript> DeviceCustomAttributeShellScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript> DeviceCustomAttributeShellScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>>("deviceCustomAttributeShellScripts"); }
             set { BackingStore?.Set("deviceCustomAttributeShellScripts", value); }
         }
@@ -709,13 +810,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of device enrollment configurations</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>? DeviceEnrollmentConfigurations {
+        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>? DeviceEnrollmentConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>?>("deviceEnrollmentConfigurations"); }
             set { BackingStore?.Set("deviceEnrollmentConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration> DeviceEnrollmentConfigurations {
+        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration> DeviceEnrollmentConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>>("deviceEnrollmentConfigurations"); }
             set { BackingStore?.Set("deviceEnrollmentConfigurations", value); }
         }
@@ -723,13 +826,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of device health scripts associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceHealthScript>? DeviceHealthScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceHealthScript>? DeviceHealthScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceHealthScript>?>("deviceHealthScripts"); }
             set { BackingStore?.Set("deviceHealthScripts", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceHealthScript> DeviceHealthScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceHealthScript> DeviceHealthScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceHealthScript>>("deviceHealthScripts"); }
             set { BackingStore?.Set("deviceHealthScripts", value); }
         }
@@ -737,13 +842,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of Device Management Partners configured by the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementPartner>? DeviceManagementPartners {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementPartner>? DeviceManagementPartners
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementPartner>?>("deviceManagementPartners"); }
             set { BackingStore?.Set("deviceManagementPartners", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementPartner> DeviceManagementPartners {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementPartner> DeviceManagementPartners
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementPartner>>("deviceManagementPartners"); }
             set { BackingStore?.Set("deviceManagementPartners", value); }
         }
@@ -751,13 +858,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of device management scripts associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementScript>? DeviceManagementScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScript>? DeviceManagementScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScript>?>("deviceManagementScripts"); }
             set { BackingStore?.Set("deviceManagementScripts", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementScript> DeviceManagementScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScript> DeviceManagementScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScript>>("deviceManagementScripts"); }
             set { BackingStore?.Set("deviceManagementScripts", value); }
         }
@@ -765,13 +874,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Device protection overview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceProtectionOverview? DeviceProtectionOverview {
+        public Microsoft.Graph.Beta.Models.DeviceProtectionOverview? DeviceProtectionOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceProtectionOverview?>("deviceProtectionOverview"); }
             set { BackingStore?.Set("deviceProtectionOverview", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceProtectionOverview DeviceProtectionOverview {
+        public Microsoft.Graph.Beta.Models.DeviceProtectionOverview DeviceProtectionOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceProtectionOverview>("deviceProtectionOverview"); }
             set { BackingStore?.Set("deviceProtectionOverview", value); }
         }
@@ -779,13 +890,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of device shell scripts associated with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceShellScript>? DeviceShellScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceShellScript>? DeviceShellScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceShellScript>?>("deviceShellScripts"); }
             set { BackingStore?.Set("deviceShellScripts", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceShellScript> DeviceShellScripts {
+        public List<Microsoft.Graph.Beta.Models.DeviceShellScript> DeviceShellScripts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceShellScript>>("deviceShellScripts"); }
             set { BackingStore?.Set("deviceShellScripts", value); }
         }
@@ -793,13 +906,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A list of connector objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>? DomainJoinConnectors {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>? DomainJoinConnectors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>?>("domainJoinConnectors"); }
             set { BackingStore?.Set("domainJoinConnectors", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector> DomainJoinConnectors {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector> DomainJoinConnectors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>>("domainJoinConnectors"); }
             set { BackingStore?.Set("domainJoinConnectors", value); }
         }
@@ -807,13 +922,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of elevation requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>? ElevationRequests {
+        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>? ElevationRequests
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>?>("elevationRequests"); }
             set { BackingStore?.Set("elevationRequests", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest> ElevationRequests {
+        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest> ElevationRequests
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>>("elevationRequests"); }
             set { BackingStore?.Set("elevationRequests", value); }
         }
@@ -821,13 +938,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The embedded SIM activation code pools created by this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>? EmbeddedSIMActivationCodePools {
+        public List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>? EmbeddedSIMActivationCodePools
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>?>("embeddedSIMActivationCodePools"); }
             set { BackingStore?.Set("embeddedSIMActivationCodePools", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool> EmbeddedSIMActivationCodePools {
+        public List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool> EmbeddedSIMActivationCodePools
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>>("embeddedSIMActivationCodePools"); }
             set { BackingStore?.Set("embeddedSIMActivationCodePools", value); }
         }
@@ -835,13 +954,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of Exchange Connectors configured by the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>? ExchangeConnectors {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>? ExchangeConnectors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>?>("exchangeConnectors"); }
             set { BackingStore?.Set("exchangeConnectors", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector> ExchangeConnectors {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector> ExchangeConnectors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>>("exchangeConnectors"); }
             set { BackingStore?.Set("exchangeConnectors", value); }
         }
@@ -849,13 +970,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of Exchange On Premisis policies configured by the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>? ExchangeOnPremisesPolicies {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>? ExchangeOnPremisesPolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>?>("exchangeOnPremisesPolicies"); }
             set { BackingStore?.Set("exchangeOnPremisesPolicies", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy> ExchangeOnPremisesPolicies {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy> ExchangeOnPremisesPolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>>("exchangeOnPremisesPolicies"); }
             set { BackingStore?.Set("exchangeOnPremisesPolicies", value); }
         }
@@ -863,13 +986,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The policy which controls mobile device access to Exchange On Premises</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy? ExchangeOnPremisesPolicy {
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy? ExchangeOnPremisesPolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy?>("exchangeOnPremisesPolicy"); }
             set { BackingStore?.Set("exchangeOnPremisesPolicy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy ExchangeOnPremisesPolicy {
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy ExchangeOnPremisesPolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>("exchangeOnPremisesPolicy"); }
             set { BackingStore?.Set("exchangeOnPremisesPolicy", value); }
         }
@@ -877,13 +1002,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The available group policy categories for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyCategory>? GroupPolicyCategories {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyCategory>? GroupPolicyCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyCategory>?>("groupPolicyCategories"); }
             set { BackingStore?.Set("groupPolicyCategories", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyCategory> GroupPolicyCategories {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyCategory> GroupPolicyCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyCategory>>("groupPolicyCategories"); }
             set { BackingStore?.Set("groupPolicyCategories", value); }
         }
@@ -891,13 +1018,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The group policy configurations created by this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>? GroupPolicyConfigurations {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>? GroupPolicyConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>?>("groupPolicyConfigurations"); }
             set { BackingStore?.Set("groupPolicyConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration> GroupPolicyConfigurations {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration> GroupPolicyConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>>("groupPolicyConfigurations"); }
             set { BackingStore?.Set("groupPolicyConfigurations", value); }
         }
@@ -905,13 +1034,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The available group policy definition files for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>? GroupPolicyDefinitionFiles {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>? GroupPolicyDefinitionFiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>?>("groupPolicyDefinitionFiles"); }
             set { BackingStore?.Set("groupPolicyDefinitionFiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile> GroupPolicyDefinitionFiles {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile> GroupPolicyDefinitionFiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>>("groupPolicyDefinitionFiles"); }
             set { BackingStore?.Set("groupPolicyDefinitionFiles", value); }
         }
@@ -919,13 +1050,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The available group policy definitions for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>? GroupPolicyDefinitions {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>? GroupPolicyDefinitions
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>?>("groupPolicyDefinitions"); }
             set { BackingStore?.Set("groupPolicyDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition> GroupPolicyDefinitions {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition> GroupPolicyDefinitions
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>>("groupPolicyDefinitions"); }
             set { BackingStore?.Set("groupPolicyDefinitions", value); }
         }
@@ -933,13 +1066,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A list of Group Policy migration reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>? GroupPolicyMigrationReports {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>? GroupPolicyMigrationReports
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>?>("groupPolicyMigrationReports"); }
             set { BackingStore?.Set("groupPolicyMigrationReports", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport> GroupPolicyMigrationReports {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport> GroupPolicyMigrationReports
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>>("groupPolicyMigrationReports"); }
             set { BackingStore?.Set("groupPolicyMigrationReports", value); }
         }
@@ -947,13 +1082,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A list of Group Policy Object files uploaded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>? GroupPolicyObjectFiles {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>? GroupPolicyObjectFiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>?>("groupPolicyObjectFiles"); }
             set { BackingStore?.Set("groupPolicyObjectFiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile> GroupPolicyObjectFiles {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile> GroupPolicyObjectFiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>>("groupPolicyObjectFiles"); }
             set { BackingStore?.Set("groupPolicyObjectFiles", value); }
         }
@@ -961,13 +1098,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The available group policy uploaded definition files for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>? GroupPolicyUploadedDefinitionFiles {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>? GroupPolicyUploadedDefinitionFiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>?>("groupPolicyUploadedDefinitionFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedDefinitionFiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile> GroupPolicyUploadedDefinitionFiles {
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile> GroupPolicyUploadedDefinitionFiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>>("groupPolicyUploadedDefinitionFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedDefinitionFiles", value); }
         }
@@ -975,13 +1114,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The hardware configurations for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.HardwareConfiguration>? HardwareConfigurations {
+        public List<Microsoft.Graph.Beta.Models.HardwareConfiguration>? HardwareConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwareConfiguration>?>("hardwareConfigurations"); }
             set { BackingStore?.Set("hardwareConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.HardwareConfiguration> HardwareConfigurations {
+        public List<Microsoft.Graph.Beta.Models.HardwareConfiguration> HardwareConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwareConfiguration>>("hardwareConfigurations"); }
             set { BackingStore?.Set("hardwareConfigurations", value); }
         }
@@ -989,13 +1130,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The hardware password info for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>? HardwarePasswordInfo {
+        public List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>? HardwarePasswordInfo
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>?>("hardwarePasswordInfo"); }
             set { BackingStore?.Set("hardwarePasswordInfo", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo> HardwarePasswordInfo {
+        public List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo> HardwarePasswordInfo
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>>("hardwarePasswordInfo"); }
             set { BackingStore?.Set("hardwarePasswordInfo", value); }
         }
@@ -1003,13 +1146,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The imported device identities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>? ImportedDeviceIdentities {
+        public List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>? ImportedDeviceIdentities
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>?>("importedDeviceIdentities"); }
             set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity> ImportedDeviceIdentities {
+        public List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity> ImportedDeviceIdentities
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>>("importedDeviceIdentities"); }
             set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
@@ -1017,13 +1162,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of imported Windows autopilot devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>? ImportedWindowsAutopilotDeviceIdentities {
+        public List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>? ImportedWindowsAutopilotDeviceIdentities
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>?>("importedWindowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities {
+        public List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>>("importedWindowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
         }
@@ -1031,32 +1178,37 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The device management intents</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntent>? Intents {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntent>? Intents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntent>?>("intents"); }
             set { BackingStore?.Set("intents", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntent> Intents {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntent> Intents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntent>>("intents"); }
             set { BackingStore?.Set("intents", value); }
         }
 #endif
-        /// <summary>Intune Account ID for given tenant</summary>
-        public Guid? IntuneAccountId {
+        /// <summary>Intune Account Id for given tenant</summary>
+        public Guid? IntuneAccountId
+        {
             get { return BackingStore?.Get<Guid?>("intuneAccountId"); }
             set { BackingStore?.Set("intuneAccountId", value); }
         }
         /// <summary>intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IntuneBrand? IntuneBrand {
+        public Microsoft.Graph.Beta.Models.IntuneBrand? IntuneBrand
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntuneBrand?>("intuneBrand"); }
             set { BackingStore?.Set("intuneBrand", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IntuneBrand IntuneBrand {
+        public Microsoft.Graph.Beta.Models.IntuneBrand IntuneBrand
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntuneBrand>("intuneBrand"); }
             set { BackingStore?.Set("intuneBrand", value); }
         }
@@ -1064,13 +1216,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Intune branding profiles targeted to AAD groups</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>? IntuneBrandingProfiles {
+        public List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>? IntuneBrandingProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>?>("intuneBrandingProfiles"); }
             set { BackingStore?.Set("intuneBrandingProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile> IntuneBrandingProfiles {
+        public List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile> IntuneBrandingProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>>("intuneBrandingProfiles"); }
             set { BackingStore?.Set("intuneBrandingProfiles", value); }
         }
@@ -1078,37 +1232,43 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The IOS software update installation statuses for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>? IosUpdateStatuses {
+        public List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>? IosUpdateStatuses
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>?>("iosUpdateStatuses"); }
             set { BackingStore?.Set("iosUpdateStatuses", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus> IosUpdateStatuses {
+        public List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus> IosUpdateStatuses
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>>("iosUpdateStatuses"); }
             set { BackingStore?.Set("iosUpdateStatuses", value); }
         }
 #endif
         /// <summary>The last modified time of reporting for this account. This property is read-only.</summary>
-        public DateTimeOffset? LastReportAggregationDateTime {
+        public DateTimeOffset? LastReportAggregationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportAggregationDateTime"); }
             set { BackingStore?.Set("lastReportAggregationDateTime", value); }
         }
         /// <summary>The property to enable Non-MDM managed legacy PC management for this account. This property is read-only.</summary>
-        public bool? LegacyPcManangementEnabled {
+        public bool? LegacyPcManangementEnabled
+        {
             get { return BackingStore?.Get<bool?>("legacyPcManangementEnabled"); }
             set { BackingStore?.Set("legacyPcManangementEnabled", value); }
         }
         /// <summary>The MacOS software update account summaries for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>? MacOSSoftwareUpdateAccountSummaries {
+        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>? MacOSSoftwareUpdateAccountSummaries
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>?>("macOSSoftwareUpdateAccountSummaries"); }
             set { BackingStore?.Set("macOSSoftwareUpdateAccountSummaries", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary> MacOSSoftwareUpdateAccountSummaries {
+        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary> MacOSSoftwareUpdateAccountSummaries
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>>("macOSSoftwareUpdateAccountSummaries"); }
             set { BackingStore?.Set("macOSSoftwareUpdateAccountSummaries", value); }
         }
@@ -1116,13 +1276,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Device cleanup rule V2</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>? ManagedDeviceCleanupRules {
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>? ManagedDeviceCleanupRules
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>?>("managedDeviceCleanupRules"); }
             set { BackingStore?.Set("managedDeviceCleanupRules", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule> ManagedDeviceCleanupRules {
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule> ManagedDeviceCleanupRules
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>>("managedDeviceCleanupRules"); }
             set { BackingStore?.Set("managedDeviceCleanupRules", value); }
         }
@@ -1130,13 +1292,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Device cleanup rule</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings? ManagedDeviceCleanupSettings {
+        public Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings? ManagedDeviceCleanupSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings?>("managedDeviceCleanupSettings"); }
             set { BackingStore?.Set("managedDeviceCleanupSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings ManagedDeviceCleanupSettings {
+        public Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings ManagedDeviceCleanupSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>("managedDeviceCleanupSettings"); }
             set { BackingStore?.Set("managedDeviceCleanupSettings", value); }
         }
@@ -1144,13 +1308,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Encryption report for devices in this account</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>? ManagedDeviceEncryptionStates {
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>? ManagedDeviceEncryptionStates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>?>("managedDeviceEncryptionStates"); }
             set { BackingStore?.Set("managedDeviceEncryptionStates", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState> ManagedDeviceEncryptionStates {
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState> ManagedDeviceEncryptionStates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>>("managedDeviceEncryptionStates"); }
             set { BackingStore?.Set("managedDeviceEncryptionStates", value); }
         }
@@ -1158,13 +1324,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Device overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ManagedDeviceOverview? ManagedDeviceOverview {
+        public Microsoft.Graph.Beta.Models.ManagedDeviceOverview? ManagedDeviceOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceOverview?>("managedDeviceOverview"); }
             set { BackingStore?.Set("managedDeviceOverview", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ManagedDeviceOverview ManagedDeviceOverview {
+        public Microsoft.Graph.Beta.Models.ManagedDeviceOverview ManagedDeviceOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>("managedDeviceOverview"); }
             set { BackingStore?.Set("managedDeviceOverview", value); }
         }
@@ -1172,32 +1340,37 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of managed devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ManagedDevice>? ManagedDevices {
+        public List<Microsoft.Graph.Beta.Models.ManagedDevice>? ManagedDevices
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>?>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ManagedDevice> ManagedDevices {
+        public List<Microsoft.Graph.Beta.Models.ManagedDevice> ManagedDevices
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #endif
-        /// <summary>Maximum number of DEP tokens allowed per-tenant.</summary>
-        public int? MaximumDepTokens {
+        /// <summary>Maximum number of dep tokens allowed per-tenant.</summary>
+        public int? MaximumDepTokens
+        {
             get { return BackingStore?.Get<int?>("maximumDepTokens"); }
             set { BackingStore?.Set("maximumDepTokens", value); }
         }
         /// <summary>Collection of MicrosoftTunnelConfiguration settings associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>? MicrosoftTunnelConfigurations {
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>? MicrosoftTunnelConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>?>("microsoftTunnelConfigurations"); }
             set { BackingStore?.Set("microsoftTunnelConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration> MicrosoftTunnelConfigurations {
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration> MicrosoftTunnelConfigurations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>>("microsoftTunnelConfigurations"); }
             set { BackingStore?.Set("microsoftTunnelConfigurations", value); }
         }
@@ -1205,13 +1378,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of MicrosoftTunnelHealthThreshold settings associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>? MicrosoftTunnelHealthThresholds {
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>? MicrosoftTunnelHealthThresholds
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>?>("microsoftTunnelHealthThresholds"); }
             set { BackingStore?.Set("microsoftTunnelHealthThresholds", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold> MicrosoftTunnelHealthThresholds {
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold> MicrosoftTunnelHealthThresholds
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>>("microsoftTunnelHealthThresholds"); }
             set { BackingStore?.Set("microsoftTunnelHealthThresholds", value); }
         }
@@ -1219,13 +1394,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>? MicrosoftTunnelServerLogCollectionResponses {
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>? MicrosoftTunnelServerLogCollectionResponses
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>?>("microsoftTunnelServerLogCollectionResponses"); }
             set { BackingStore?.Set("microsoftTunnelServerLogCollectionResponses", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse> MicrosoftTunnelServerLogCollectionResponses {
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse> MicrosoftTunnelServerLogCollectionResponses
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>>("microsoftTunnelServerLogCollectionResponses"); }
             set { BackingStore?.Set("microsoftTunnelServerLogCollectionResponses", value); }
         }
@@ -1233,13 +1410,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of MicrosoftTunnelSite settings associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>? MicrosoftTunnelSites {
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>? MicrosoftTunnelSites
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>?>("microsoftTunnelSites"); }
             set { BackingStore?.Set("microsoftTunnelSites", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite> MicrosoftTunnelSites {
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite> MicrosoftTunnelSites
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>>("microsoftTunnelSites"); }
             set { BackingStore?.Set("microsoftTunnelSites", value); }
         }
@@ -1247,13 +1426,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The collection property of MobileAppTroubleshootingEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>? MobileAppTroubleshootingEvents {
+        public List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>? MobileAppTroubleshootingEvents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>?>("mobileAppTroubleshootingEvents"); }
             set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent> MobileAppTroubleshootingEvents {
+        public List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent> MobileAppTroubleshootingEvents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>>("mobileAppTroubleshootingEvents"); }
             set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
         }
@@ -1261,13 +1442,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of Mobile threat Defense connectors configured by the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>? MobileThreatDefenseConnectors {
+        public List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>? MobileThreatDefenseConnectors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>?>("mobileThreatDefenseConnectors"); }
             set { BackingStore?.Set("mobileThreatDefenseConnectors", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector> MobileThreatDefenseConnectors {
+        public List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector> MobileThreatDefenseConnectors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>>("mobileThreatDefenseConnectors"); }
             set { BackingStore?.Set("mobileThreatDefenseConnectors", value); }
         }
@@ -1275,13 +1458,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The monitoring property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring? Monitoring {
+        public Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring? Monitoring
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring?>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring Monitoring {
+        public Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring Monitoring
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
@@ -1289,13 +1474,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The collection of Ndes connectors for this account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.NdesConnector>? NdesConnectors {
+        public List<Microsoft.Graph.Beta.Models.NdesConnector>? NdesConnectors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NdesConnector>?>("ndesConnectors"); }
             set { BackingStore?.Set("ndesConnectors", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.NdesConnector> NdesConnectors {
+        public List<Microsoft.Graph.Beta.Models.NdesConnector> NdesConnectors
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NdesConnector>>("ndesConnectors"); }
             set { BackingStore?.Set("ndesConnectors", value); }
         }
@@ -1303,13 +1490,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Notification Message Templates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>? NotificationMessageTemplates {
+        public List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>? NotificationMessageTemplates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>?>("notificationMessageTemplates"); }
             set { BackingStore?.Set("notificationMessageTemplates", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate> NotificationMessageTemplates {
+        public List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate> NotificationMessageTemplates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>>("notificationMessageTemplates"); }
             set { BackingStore?.Set("notificationMessageTemplates", value); }
         }
@@ -1317,13 +1506,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Operation Approval Policies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>? OperationApprovalPolicies {
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>? OperationApprovalPolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>?>("operationApprovalPolicies"); }
             set { BackingStore?.Set("operationApprovalPolicies", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy> OperationApprovalPolicies {
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy> OperationApprovalPolicies
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>>("operationApprovalPolicies"); }
             set { BackingStore?.Set("operationApprovalPolicies", value); }
         }
@@ -1331,13 +1522,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Operation Approval Requests</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.OperationApprovalRequest>? OperationApprovalRequests {
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalRequest>? OperationApprovalRequests
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalRequest>?>("operationApprovalRequests"); }
             set { BackingStore?.Set("operationApprovalRequests", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.OperationApprovalRequest> OperationApprovalRequests {
+        public List<Microsoft.Graph.Beta.Models.OperationApprovalRequest> OperationApprovalRequests
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OperationApprovalRequest>>("operationApprovalRequests"); }
             set { BackingStore?.Set("operationApprovalRequests", value); }
         }
@@ -1345,13 +1538,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The endpoint privilege management elevation event entity contains elevation details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>? PrivilegeManagementElevations {
+        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>? PrivilegeManagementElevations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>?>("privilegeManagementElevations"); }
             set { BackingStore?.Set("privilegeManagementElevations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation> PrivilegeManagementElevations {
+        public List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation> PrivilegeManagementElevations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>>("privilegeManagementElevations"); }
             set { BackingStore?.Set("privilegeManagementElevations", value); }
         }
@@ -1359,13 +1554,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of device remote action audits with the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.RemoteActionAudit>? RemoteActionAudits {
+        public List<Microsoft.Graph.Beta.Models.RemoteActionAudit>? RemoteActionAudits
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteActionAudit>?>("remoteActionAudits"); }
             set { BackingStore?.Set("remoteActionAudits", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.RemoteActionAudit> RemoteActionAudits {
+        public List<Microsoft.Graph.Beta.Models.RemoteActionAudit> RemoteActionAudits
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteActionAudit>>("remoteActionAudits"); }
             set { BackingStore?.Set("remoteActionAudits", value); }
         }
@@ -1373,13 +1570,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The remote assist partners.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>? RemoteAssistancePartners {
+        public List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>? RemoteAssistancePartners
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>?>("remoteAssistancePartners"); }
             set { BackingStore?.Set("remoteAssistancePartners", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner> RemoteAssistancePartners {
+        public List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner> RemoteAssistancePartners
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>>("remoteAssistancePartners"); }
             set { BackingStore?.Set("remoteAssistancePartners", value); }
         }
@@ -1387,13 +1586,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The remote assistance settings singleton</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.RemoteAssistanceSettings? RemoteAssistanceSettings {
+        public Microsoft.Graph.Beta.Models.RemoteAssistanceSettings? RemoteAssistanceSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings?>("remoteAssistanceSettings"); }
             set { BackingStore?.Set("remoteAssistanceSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.RemoteAssistanceSettings RemoteAssistanceSettings {
+        public Microsoft.Graph.Beta.Models.RemoteAssistanceSettings RemoteAssistanceSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>("remoteAssistanceSettings"); }
             set { BackingStore?.Set("remoteAssistanceSettings", value); }
         }
@@ -1401,13 +1602,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Reports singleton</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceManagementReports? Reports {
+        public Microsoft.Graph.Beta.Models.DeviceManagementReports? Reports
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementReports?>("reports"); }
             set { BackingStore?.Set("reports", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceManagementReports Reports {
+        public Microsoft.Graph.Beta.Models.DeviceManagementReports Reports
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementReports>("reports"); }
             set { BackingStore?.Set("reports", value); }
         }
@@ -1415,13 +1618,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of resource access settings associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>? ResourceAccessProfiles {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>? ResourceAccessProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>?>("resourceAccessProfiles"); }
             set { BackingStore?.Set("resourceAccessProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase> ResourceAccessProfiles {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase> ResourceAccessProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>>("resourceAccessProfiles"); }
             set { BackingStore?.Set("resourceAccessProfiles", value); }
         }
@@ -1429,13 +1634,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Resource Operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ResourceOperation>? ResourceOperations {
+        public List<Microsoft.Graph.Beta.Models.ResourceOperation>? ResourceOperations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceOperation>?>("resourceOperations"); }
             set { BackingStore?.Set("resourceOperations", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ResourceOperation> ResourceOperations {
+        public List<Microsoft.Graph.Beta.Models.ResourceOperation> ResourceOperations
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceOperation>>("resourceOperations"); }
             set { BackingStore?.Set("resourceOperations", value); }
         }
@@ -1443,13 +1650,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all reusable settings that can be referred in a policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>? ReusablePolicySettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>? ReusablePolicySettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>?>("reusablePolicySettings"); }
             set { BackingStore?.Set("reusablePolicySettings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting> ReusablePolicySettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting> ReusablePolicySettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>>("reusablePolicySettings"); }
             set { BackingStore?.Set("reusablePolicySettings", value); }
         }
@@ -1457,13 +1666,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all reusable settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ReusableSettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ReusableSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>?>("reusableSettings"); }
             set { BackingStore?.Set("reusableSettings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ReusableSettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ReusableSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>>("reusableSettings"); }
             set { BackingStore?.Set("reusableSettings", value); }
         }
@@ -1471,13 +1682,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Role Assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>? RoleAssignments {
+        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>? RoleAssignments
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>?>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment> RoleAssignments {
+        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment> RoleAssignments
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
@@ -1485,13 +1698,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Role Definitions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.RoleDefinition>? RoleDefinitions {
+        public List<Microsoft.Graph.Beta.Models.RoleDefinition>? RoleDefinitions
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleDefinition>?>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.RoleDefinition> RoleDefinitions {
+        public List<Microsoft.Graph.Beta.Models.RoleDefinition> RoleDefinitions
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
@@ -1499,13 +1714,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Role Scope Tags.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.RoleScopeTag>? RoleScopeTags {
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTag>? RoleScopeTags
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTag>?>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.RoleScopeTag> RoleScopeTags {
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTag> RoleScopeTags
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTag>>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
@@ -1513,13 +1730,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A list of ServiceNowConnections</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ServiceNowConnection>? ServiceNowConnections {
+        public List<Microsoft.Graph.Beta.Models.ServiceNowConnection>? ServiceNowConnections
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceNowConnection>?>("serviceNowConnections"); }
             set { BackingStore?.Set("serviceNowConnections", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ServiceNowConnection> ServiceNowConnections {
+        public List<Microsoft.Graph.Beta.Models.ServiceNowConnection> ServiceNowConnections
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceNowConnection>>("serviceNowConnections"); }
             set { BackingStore?.Set("serviceNowConnections", value); }
         }
@@ -1527,13 +1746,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The device management intent setting definitions</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>? SettingDefinitions {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>? SettingDefinitions
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>?>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition> SettingDefinitions {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition> SettingDefinitions
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
@@ -1541,13 +1762,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Account level settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.DeviceManagementSettings? Settings {
+        public Microsoft.Graph.Beta.Models.DeviceManagementSettings? Settings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.DeviceManagementSettings Settings {
+        public Microsoft.Graph.Beta.Models.DeviceManagementSettings Settings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -1555,37 +1778,43 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The software update status summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary? SoftwareUpdateStatusSummary {
+        public Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary? SoftwareUpdateStatusSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary?>("softwareUpdateStatusSummary"); }
             set { BackingStore?.Set("softwareUpdateStatusSummary", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary {
+        public Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary"); }
             set { BackingStore?.Set("softwareUpdateStatusSummary", value); }
         }
 #endif
         /// <summary>Tenant mobile device management subscriptions.</summary>
-        public DeviceManagementSubscriptions? Subscriptions {
+        public DeviceManagementSubscriptions? Subscriptions
+        {
             get { return BackingStore?.Get<DeviceManagementSubscriptions?>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
         /// <summary>Tenant mobile device management subscription state.</summary>
-        public DeviceManagementSubscriptionState? SubscriptionState {
+        public DeviceManagementSubscriptionState? SubscriptionState
+        {
             get { return BackingStore?.Get<DeviceManagementSubscriptionState?>("subscriptionState"); }
             set { BackingStore?.Set("subscriptionState", value); }
         }
         /// <summary>The telecom expense management partners.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>? TelecomExpenseManagementPartners {
+        public List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>? TelecomExpenseManagementPartners
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>?>("telecomExpenseManagementPartners"); }
             set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner> TelecomExpenseManagementPartners {
+        public List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner> TelecomExpenseManagementPartners
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>>("telecomExpenseManagementPartners"); }
             set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
         }
@@ -1593,13 +1822,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of setting insights in a template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>? TemplateInsights {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>? TemplateInsights
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>?>("templateInsights"); }
             set { BackingStore?.Set("templateInsights", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition> TemplateInsights {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition> TemplateInsights
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>>("templateInsights"); }
             set { BackingStore?.Set("templateInsights", value); }
         }
@@ -1607,13 +1838,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The available templates</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>? Templates {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>? Templates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>?>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate> Templates {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate> Templates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
@@ -1621,13 +1854,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>List of all TemplateSettings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>? TemplateSettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>? TemplateSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>?>("templateSettings"); }
             set { BackingStore?.Set("templateSettings", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate> TemplateSettings {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate> TemplateSettings
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>>("templateSettings"); }
             set { BackingStore?.Set("templateSettings", value); }
         }
@@ -1635,13 +1870,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>TenantAttach RBAC Enablement</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TenantAttachRBAC? TenantAttachRBAC {
+        public Microsoft.Graph.Beta.Models.TenantAttachRBAC? TenantAttachRBAC
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAttachRBAC?>("tenantAttachRBAC"); }
             set { BackingStore?.Set("tenantAttachRBAC", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TenantAttachRBAC TenantAttachRBAC {
+        public Microsoft.Graph.Beta.Models.TenantAttachRBAC TenantAttachRBAC
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAttachRBAC>("tenantAttachRBAC"); }
             set { BackingStore?.Set("tenantAttachRBAC", value); }
         }
@@ -1649,13 +1886,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The terms and conditions associated with device management of the company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.TermsAndConditions>? TermsAndConditions {
+        public List<Microsoft.Graph.Beta.Models.TermsAndConditions>? TermsAndConditions
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TermsAndConditions>?>("termsAndConditions"); }
             set { BackingStore?.Set("termsAndConditions", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.TermsAndConditions> TermsAndConditions {
+        public List<Microsoft.Graph.Beta.Models.TermsAndConditions> TermsAndConditions
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TermsAndConditions>>("termsAndConditions"); }
             set { BackingStore?.Set("termsAndConditions", value); }
         }
@@ -1663,32 +1902,37 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of troubleshooting events for the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>? TroubleshootingEvents {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>? TroubleshootingEvents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>?>("troubleshootingEvents"); }
             set { BackingStore?.Set("troubleshootingEvents", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent> TroubleshootingEvents {
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent> TroubleshootingEvents
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>>("troubleshootingEvents"); }
             set { BackingStore?.Set("troubleshootingEvents", value); }
         }
 #endif
         /// <summary>When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.</summary>
-        public bool? UnlicensedAdminstratorsEnabled {
+        public bool? UnlicensedAdminstratorsEnabled
+        {
             get { return BackingStore?.Get<bool?>("unlicensedAdminstratorsEnabled"); }
             set { BackingStore?.Set("unlicensedAdminstratorsEnabled", value); }
         }
         /// <summary>The user experience analytics anomaly entity contains anomaly details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>? UserExperienceAnalyticsAnomaly {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>? UserExperienceAnalyticsAnomaly
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>?>("userExperienceAnalyticsAnomaly"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomaly", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly> UserExperienceAnalyticsAnomaly {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly> UserExperienceAnalyticsAnomaly
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>>("userExperienceAnalyticsAnomaly"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomaly", value); }
         }
@@ -1696,13 +1940,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>? UserExperienceAnalyticsAnomalyCorrelationGroupOverview {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>? UserExperienceAnalyticsAnomalyCorrelationGroupOverview
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>?>("userExperienceAnalyticsAnomalyCorrelationGroupOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomalyCorrelationGroupOverview", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview> UserExperienceAnalyticsAnomalyCorrelationGroupOverview {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview> UserExperienceAnalyticsAnomalyCorrelationGroupOverview
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>>("userExperienceAnalyticsAnomalyCorrelationGroupOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomalyCorrelationGroupOverview", value); }
         }
@@ -1710,13 +1956,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The user experience analytics anomaly entity contains device details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>? UserExperienceAnalyticsAnomalyDevice {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>? UserExperienceAnalyticsAnomalyDevice
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>?>("userExperienceAnalyticsAnomalyDevice"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomalyDevice", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice> UserExperienceAnalyticsAnomalyDevice {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice> UserExperienceAnalyticsAnomalyDevice
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>>("userExperienceAnalyticsAnomalyDevice"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomalyDevice", value); }
         }
@@ -1724,13 +1972,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview? UserExperienceAnalyticsAnomalySeverityOverview {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview? UserExperienceAnalyticsAnomalySeverityOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview?>("userExperienceAnalyticsAnomalySeverityOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomalySeverityOverview", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview UserExperienceAnalyticsAnomalySeverityOverview {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview UserExperienceAnalyticsAnomalySeverityOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>("userExperienceAnalyticsAnomalySeverityOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomalySeverityOverview", value); }
         }
@@ -1738,13 +1988,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth Application Performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>? UserExperienceAnalyticsAppHealthApplicationPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>? UserExperienceAnalyticsAppHealthApplicationPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>?>("userExperienceAnalyticsAppHealthApplicationPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance> UserExperienceAnalyticsAppHealthApplicationPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance> UserExperienceAnalyticsAppHealthApplicationPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>>("userExperienceAnalyticsAppHealthApplicationPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformance", value); }
         }
@@ -1752,13 +2004,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth Application Performance by App Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>?>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", value); }
         }
@@ -1766,13 +2020,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth Application Performance by App Version details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>?>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", value); }
         }
@@ -1780,13 +2036,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth Application Performance by App Version Device Id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>?>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", value); }
         }
@@ -1794,13 +2052,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth Application Performance by OS Version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>? UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>? UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>?>("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>>("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", value); }
         }
@@ -1808,13 +2068,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth Model Performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>? UserExperienceAnalyticsAppHealthDeviceModelPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>? UserExperienceAnalyticsAppHealthDeviceModelPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>?>("userExperienceAnalyticsAppHealthDeviceModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDeviceModelPerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance> UserExperienceAnalyticsAppHealthDeviceModelPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance> UserExperienceAnalyticsAppHealthDeviceModelPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>>("userExperienceAnalyticsAppHealthDeviceModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDeviceModelPerformance", value); }
         }
@@ -1822,13 +2084,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth Device Performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>? UserExperienceAnalyticsAppHealthDevicePerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>? UserExperienceAnalyticsAppHealthDevicePerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>?>("userExperienceAnalyticsAppHealthDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance> UserExperienceAnalyticsAppHealthDevicePerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance> UserExperienceAnalyticsAppHealthDevicePerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>>("userExperienceAnalyticsAppHealthDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformance", value); }
         }
@@ -1836,13 +2100,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device performance details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>? UserExperienceAnalyticsAppHealthDevicePerformanceDetails {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>? UserExperienceAnalyticsAppHealthDevicePerformanceDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>?>("userExperienceAnalyticsAppHealthDevicePerformanceDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformanceDetails", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails> UserExperienceAnalyticsAppHealthDevicePerformanceDetails {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails> UserExperienceAnalyticsAppHealthDevicePerformanceDetails
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>>("userExperienceAnalyticsAppHealthDevicePerformanceDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformanceDetails", value); }
         }
@@ -1850,13 +2116,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth OS version Performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>? UserExperienceAnalyticsAppHealthOSVersionPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>? UserExperienceAnalyticsAppHealthOSVersionPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>?>("userExperienceAnalyticsAppHealthOSVersionPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthOSVersionPerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance> UserExperienceAnalyticsAppHealthOSVersionPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance> UserExperienceAnalyticsAppHealthOSVersionPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>>("userExperienceAnalyticsAppHealthOSVersionPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthOSVersionPerformance", value); }
         }
@@ -1864,13 +2132,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics appHealth overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory? UserExperienceAnalyticsAppHealthOverview {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory? UserExperienceAnalyticsAppHealthOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory?>("userExperienceAnalyticsAppHealthOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthOverview", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory UserExperienceAnalyticsAppHealthOverview {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory UserExperienceAnalyticsAppHealthOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>("userExperienceAnalyticsAppHealthOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthOverview", value); }
         }
@@ -1878,13 +2148,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics baselines</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>? UserExperienceAnalyticsBaselines {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>? UserExperienceAnalyticsBaselines
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>?>("userExperienceAnalyticsBaselines"); }
             set { BackingStore?.Set("userExperienceAnalyticsBaselines", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline> UserExperienceAnalyticsBaselines {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline> UserExperienceAnalyticsBaselines
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>>("userExperienceAnalyticsBaselines"); }
             set { BackingStore?.Set("userExperienceAnalyticsBaselines", value); }
         }
@@ -1892,13 +2164,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User Experience Analytics Battery Health App Impact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>? UserExperienceAnalyticsBatteryHealthAppImpact {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>? UserExperienceAnalyticsBatteryHealthAppImpact
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>?>("userExperienceAnalyticsBatteryHealthAppImpact"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthAppImpact", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact> UserExperienceAnalyticsBatteryHealthAppImpact {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact> UserExperienceAnalyticsBatteryHealthAppImpact
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>>("userExperienceAnalyticsBatteryHealthAppImpact"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthAppImpact", value); }
         }
@@ -1906,13 +2180,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User Experience Analytics Battery Health Capacity Details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails? UserExperienceAnalyticsBatteryHealthCapacityDetails {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails? UserExperienceAnalyticsBatteryHealthCapacityDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails?>("userExperienceAnalyticsBatteryHealthCapacityDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthCapacityDetails", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails UserExperienceAnalyticsBatteryHealthCapacityDetails {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails UserExperienceAnalyticsBatteryHealthCapacityDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails>("userExperienceAnalyticsBatteryHealthCapacityDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthCapacityDetails", value); }
         }
@@ -1920,13 +2196,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User Experience Analytics Battery Health Device App Impact</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>? UserExperienceAnalyticsBatteryHealthDeviceAppImpact {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>? UserExperienceAnalyticsBatteryHealthDeviceAppImpact
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>?>("userExperienceAnalyticsBatteryHealthDeviceAppImpact"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceAppImpact", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact> UserExperienceAnalyticsBatteryHealthDeviceAppImpact {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact> UserExperienceAnalyticsBatteryHealthDeviceAppImpact
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>>("userExperienceAnalyticsBatteryHealthDeviceAppImpact"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceAppImpact", value); }
         }
@@ -1934,13 +2212,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User Experience Analytics Battery Health Device Performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>? UserExperienceAnalyticsBatteryHealthDevicePerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>? UserExperienceAnalyticsBatteryHealthDevicePerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>?>("userExperienceAnalyticsBatteryHealthDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDevicePerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance> UserExperienceAnalyticsBatteryHealthDevicePerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance> UserExperienceAnalyticsBatteryHealthDevicePerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>>("userExperienceAnalyticsBatteryHealthDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDevicePerformance", value); }
         }
@@ -1948,13 +2228,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User Experience Analytics Battery Health Device Runtime History</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>? UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>? UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>?>("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory> UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory> UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>>("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory", value); }
         }
@@ -1962,13 +2244,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User Experience Analytics Battery Health Model Performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>? UserExperienceAnalyticsBatteryHealthModelPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>? UserExperienceAnalyticsBatteryHealthModelPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>?>("userExperienceAnalyticsBatteryHealthModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthModelPerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance> UserExperienceAnalyticsBatteryHealthModelPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance> UserExperienceAnalyticsBatteryHealthModelPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>>("userExperienceAnalyticsBatteryHealthModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthModelPerformance", value); }
         }
@@ -1976,13 +2260,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User Experience Analytics Battery Health Os Performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>? UserExperienceAnalyticsBatteryHealthOsPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>? UserExperienceAnalyticsBatteryHealthOsPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>?>("userExperienceAnalyticsBatteryHealthOsPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthOsPerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance> UserExperienceAnalyticsBatteryHealthOsPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance> UserExperienceAnalyticsBatteryHealthOsPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>>("userExperienceAnalyticsBatteryHealthOsPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthOsPerformance", value); }
         }
@@ -1990,13 +2276,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User Experience Analytics Battery Health Runtime Details</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails? UserExperienceAnalyticsBatteryHealthRuntimeDetails {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails? UserExperienceAnalyticsBatteryHealthRuntimeDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails?>("userExperienceAnalyticsBatteryHealthRuntimeDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthRuntimeDetails", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails UserExperienceAnalyticsBatteryHealthRuntimeDetails {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails UserExperienceAnalyticsBatteryHealthRuntimeDetails
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails>("userExperienceAnalyticsBatteryHealthRuntimeDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthRuntimeDetails", value); }
         }
@@ -2004,13 +2292,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics categories</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>? UserExperienceAnalyticsCategories {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>? UserExperienceAnalyticsCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>?>("userExperienceAnalyticsCategories"); }
             set { BackingStore?.Set("userExperienceAnalyticsCategories", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory> UserExperienceAnalyticsCategories {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory> UserExperienceAnalyticsCategories
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>>("userExperienceAnalyticsCategories"); }
             set { BackingStore?.Set("userExperienceAnalyticsCategories", value); }
         }
@@ -2018,13 +2308,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device metric history</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>? UserExperienceAnalyticsDeviceMetricHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>? UserExperienceAnalyticsDeviceMetricHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>?>("userExperienceAnalyticsDeviceMetricHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceMetricHistory", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsDeviceMetricHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsDeviceMetricHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>>("userExperienceAnalyticsDeviceMetricHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceMetricHistory", value); }
         }
@@ -2032,13 +2324,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>? UserExperienceAnalyticsDevicePerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>? UserExperienceAnalyticsDevicePerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>?>("userExperienceAnalyticsDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsDevicePerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance> UserExperienceAnalyticsDevicePerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance> UserExperienceAnalyticsDevicePerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>>("userExperienceAnalyticsDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsDevicePerformance", value); }
         }
@@ -2046,13 +2340,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope? UserExperienceAnalyticsDeviceScope {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope? UserExperienceAnalyticsDeviceScope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope?>("userExperienceAnalyticsDeviceScope"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScope", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope UserExperienceAnalyticsDeviceScope {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope UserExperienceAnalyticsDeviceScope
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>("userExperienceAnalyticsDeviceScope"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScope", value); }
         }
@@ -2060,13 +2356,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>? UserExperienceAnalyticsDeviceScopes {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>? UserExperienceAnalyticsDeviceScopes
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>?>("userExperienceAnalyticsDeviceScopes"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScopes", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope> UserExperienceAnalyticsDeviceScopes {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope> UserExperienceAnalyticsDeviceScopes
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>>("userExperienceAnalyticsDeviceScopes"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScopes", value); }
         }
@@ -2074,13 +2372,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device scores</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>? UserExperienceAnalyticsDeviceScores {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>? UserExperienceAnalyticsDeviceScores
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>?>("userExperienceAnalyticsDeviceScores"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScores", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores> UserExperienceAnalyticsDeviceScores {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores> UserExperienceAnalyticsDeviceScores
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>>("userExperienceAnalyticsDeviceScores"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScores", value); }
         }
@@ -2088,13 +2388,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device Startup History</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>? UserExperienceAnalyticsDeviceStartupHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>? UserExperienceAnalyticsDeviceStartupHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>?>("userExperienceAnalyticsDeviceStartupHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupHistory", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory> UserExperienceAnalyticsDeviceStartupHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory> UserExperienceAnalyticsDeviceStartupHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>>("userExperienceAnalyticsDeviceStartupHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupHistory", value); }
         }
@@ -2102,13 +2404,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device Startup Processes</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>? UserExperienceAnalyticsDeviceStartupProcesses {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>? UserExperienceAnalyticsDeviceStartupProcesses
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>?>("userExperienceAnalyticsDeviceStartupProcesses"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcesses", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess> UserExperienceAnalyticsDeviceStartupProcesses {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess> UserExperienceAnalyticsDeviceStartupProcesses
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>>("userExperienceAnalyticsDeviceStartupProcesses"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcesses", value); }
         }
@@ -2116,13 +2420,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device Startup Process Performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>? UserExperienceAnalyticsDeviceStartupProcessPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>? UserExperienceAnalyticsDeviceStartupProcessPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>?>("userExperienceAnalyticsDeviceStartupProcessPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcessPerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance> UserExperienceAnalyticsDeviceStartupProcessPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance> UserExperienceAnalyticsDeviceStartupProcessPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>>("userExperienceAnalyticsDeviceStartupProcessPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcessPerformance", value); }
         }
@@ -2130,13 +2436,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics devices without cloud identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>? UserExperienceAnalyticsDevicesWithoutCloudIdentity {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>? UserExperienceAnalyticsDevicesWithoutCloudIdentity
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>?>("userExperienceAnalyticsDevicesWithoutCloudIdentity"); }
             set { BackingStore?.Set("userExperienceAnalyticsDevicesWithoutCloudIdentity", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity> UserExperienceAnalyticsDevicesWithoutCloudIdentity {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity> UserExperienceAnalyticsDevicesWithoutCloudIdentity
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>>("userExperienceAnalyticsDevicesWithoutCloudIdentity"); }
             set { BackingStore?.Set("userExperienceAnalyticsDevicesWithoutCloudIdentity", value); }
         }
@@ -2144,13 +2452,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The user experience analytics device events entity contains NRT device timeline event details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>? UserExperienceAnalyticsDeviceTimelineEvent {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>? UserExperienceAnalyticsDeviceTimelineEvent
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>?>("userExperienceAnalyticsDeviceTimelineEvent"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceTimelineEvent", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent> UserExperienceAnalyticsDeviceTimelineEvent {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent> UserExperienceAnalyticsDeviceTimelineEvent
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>>("userExperienceAnalyticsDeviceTimelineEvent"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceTimelineEvent", value); }
         }
@@ -2158,13 +2468,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics impacting process</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>? UserExperienceAnalyticsImpactingProcess {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>? UserExperienceAnalyticsImpactingProcess
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>?>("userExperienceAnalyticsImpactingProcess"); }
             set { BackingStore?.Set("userExperienceAnalyticsImpactingProcess", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess> UserExperienceAnalyticsImpactingProcess {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess> UserExperienceAnalyticsImpactingProcess
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>>("userExperienceAnalyticsImpactingProcess"); }
             set { BackingStore?.Set("userExperienceAnalyticsImpactingProcess", value); }
         }
@@ -2172,13 +2484,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics metric history</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>? UserExperienceAnalyticsMetricHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>? UserExperienceAnalyticsMetricHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>?>("userExperienceAnalyticsMetricHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsMetricHistory", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsMetricHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsMetricHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>>("userExperienceAnalyticsMetricHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsMetricHistory", value); }
         }
@@ -2186,13 +2500,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics model scores</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>? UserExperienceAnalyticsModelScores {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>? UserExperienceAnalyticsModelScores
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>?>("userExperienceAnalyticsModelScores"); }
             set { BackingStore?.Set("userExperienceAnalyticsModelScores", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores> UserExperienceAnalyticsModelScores {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores> UserExperienceAnalyticsModelScores
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>>("userExperienceAnalyticsModelScores"); }
             set { BackingStore?.Set("userExperienceAnalyticsModelScores", value); }
         }
@@ -2200,13 +2516,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics devices not Windows Autopilot ready.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>? UserExperienceAnalyticsNotAutopilotReadyDevice {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>? UserExperienceAnalyticsNotAutopilotReadyDevice
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>?>("userExperienceAnalyticsNotAutopilotReadyDevice"); }
             set { BackingStore?.Set("userExperienceAnalyticsNotAutopilotReadyDevice", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice> UserExperienceAnalyticsNotAutopilotReadyDevice {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice> UserExperienceAnalyticsNotAutopilotReadyDevice
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>>("userExperienceAnalyticsNotAutopilotReadyDevice"); }
             set { BackingStore?.Set("userExperienceAnalyticsNotAutopilotReadyDevice", value); }
         }
@@ -2214,13 +2532,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics overview</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview? UserExperienceAnalyticsOverview {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview? UserExperienceAnalyticsOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview?>("userExperienceAnalyticsOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsOverview", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview UserExperienceAnalyticsOverview {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview UserExperienceAnalyticsOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>("userExperienceAnalyticsOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsOverview", value); }
         }
@@ -2228,13 +2548,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics remote connection</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>? UserExperienceAnalyticsRemoteConnection {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>? UserExperienceAnalyticsRemoteConnection
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>?>("userExperienceAnalyticsRemoteConnection"); }
             set { BackingStore?.Set("userExperienceAnalyticsRemoteConnection", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection> UserExperienceAnalyticsRemoteConnection {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection> UserExperienceAnalyticsRemoteConnection
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>>("userExperienceAnalyticsRemoteConnection"); }
             set { BackingStore?.Set("userExperienceAnalyticsRemoteConnection", value); }
         }
@@ -2242,13 +2564,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics resource performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>? UserExperienceAnalyticsResourcePerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>? UserExperienceAnalyticsResourcePerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>?>("userExperienceAnalyticsResourcePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsResourcePerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance> UserExperienceAnalyticsResourcePerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance> UserExperienceAnalyticsResourcePerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>>("userExperienceAnalyticsResourcePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsResourcePerformance", value); }
         }
@@ -2256,13 +2580,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device Startup Score History</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>? UserExperienceAnalyticsScoreHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>? UserExperienceAnalyticsScoreHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>?>("userExperienceAnalyticsScoreHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsScoreHistory", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory> UserExperienceAnalyticsScoreHistory {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory> UserExperienceAnalyticsScoreHistory
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>>("userExperienceAnalyticsScoreHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsScoreHistory", value); }
         }
@@ -2270,13 +2596,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics device settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings? UserExperienceAnalyticsSettings {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings? UserExperienceAnalyticsSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings?>("userExperienceAnalyticsSettings"); }
             set { BackingStore?.Set("userExperienceAnalyticsSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings UserExperienceAnalyticsSettings {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings UserExperienceAnalyticsSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings>("userExperienceAnalyticsSettings"); }
             set { BackingStore?.Set("userExperienceAnalyticsSettings", value); }
         }
@@ -2284,13 +2612,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics work from anywhere hardware readiness metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric? UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric? UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric?>("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric {
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", value); }
         }
@@ -2298,13 +2628,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>User experience analytics work from anywhere metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>? UserExperienceAnalyticsWorkFromAnywhereMetrics {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>? UserExperienceAnalyticsWorkFromAnywhereMetrics
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>?>("userExperienceAnalyticsWorkFromAnywhereMetrics"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereMetrics", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric> UserExperienceAnalyticsWorkFromAnywhereMetrics {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric> UserExperienceAnalyticsWorkFromAnywhereMetrics
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>>("userExperienceAnalyticsWorkFromAnywhereMetrics"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereMetrics", value); }
         }
@@ -2312,13 +2644,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The user experience analytics work from anywhere model performance</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>? UserExperienceAnalyticsWorkFromAnywhereModelPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>? UserExperienceAnalyticsWorkFromAnywhereModelPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>?>("userExperienceAnalyticsWorkFromAnywhereModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereModelPerformance", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance> UserExperienceAnalyticsWorkFromAnywhereModelPerformance {
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance> UserExperienceAnalyticsWorkFromAnywhereModelPerformance
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>>("userExperienceAnalyticsWorkFromAnywhereModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereModelPerformance", value); }
         }
@@ -2326,13 +2660,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of PFX certificates associated with a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.UserPFXCertificate>? UserPfxCertificates {
+        public List<Microsoft.Graph.Beta.Models.UserPFXCertificate>? UserPfxCertificates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserPFXCertificate>?>("userPfxCertificates"); }
             set { BackingStore?.Set("userPfxCertificates", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.UserPFXCertificate> UserPfxCertificates {
+        public List<Microsoft.Graph.Beta.Models.UserPFXCertificate> UserPfxCertificates
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserPFXCertificate>>("userPfxCertificates"); }
             set { BackingStore?.Set("userPfxCertificates", value); }
         }
@@ -2340,13 +2676,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The virtualEndpoint property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.VirtualEndpoint? VirtualEndpoint {
+        public Microsoft.Graph.Beta.Models.VirtualEndpoint? VirtualEndpoint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEndpoint?>("virtualEndpoint"); }
             set { BackingStore?.Set("virtualEndpoint", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.VirtualEndpoint VirtualEndpoint {
+        public Microsoft.Graph.Beta.Models.VirtualEndpoint VirtualEndpoint
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEndpoint>("virtualEndpoint"); }
             set { BackingStore?.Set("virtualEndpoint", value); }
         }
@@ -2354,13 +2692,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Windows auto pilot deployment profiles</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>? WindowsAutopilotDeploymentProfiles {
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>? WindowsAutopilotDeploymentProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>?>("windowsAutopilotDeploymentProfiles"); }
             set { BackingStore?.Set("windowsAutopilotDeploymentProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile> WindowsAutopilotDeploymentProfiles {
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile> WindowsAutopilotDeploymentProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>>("windowsAutopilotDeploymentProfiles"); }
             set { BackingStore?.Set("windowsAutopilotDeploymentProfiles", value); }
         }
@@ -2368,13 +2708,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Windows autopilot device identities contained collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>? WindowsAutopilotDeviceIdentities {
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>? WindowsAutopilotDeviceIdentities
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>?>("windowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("windowsAutopilotDeviceIdentities", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity> WindowsAutopilotDeviceIdentities {
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity> WindowsAutopilotDeviceIdentities
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>>("windowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("windowsAutopilotDeviceIdentities", value); }
         }
@@ -2382,13 +2724,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Windows autopilot account settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsAutopilotSettings? WindowsAutopilotSettings {
+        public Microsoft.Graph.Beta.Models.WindowsAutopilotSettings? WindowsAutopilotSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsAutopilotSettings?>("windowsAutopilotSettings"); }
             set { BackingStore?.Set("windowsAutopilotSettings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsAutopilotSettings WindowsAutopilotSettings {
+        public Microsoft.Graph.Beta.Models.WindowsAutopilotSettings WindowsAutopilotSettings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsAutopilotSettings>("windowsAutopilotSettings"); }
             set { BackingStore?.Set("windowsAutopilotSettings", value); }
         }
@@ -2396,13 +2740,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A collection of windows driver update profiles</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>? WindowsDriverUpdateProfiles {
+        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>? WindowsDriverUpdateProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>?>("windowsDriverUpdateProfiles"); }
             set { BackingStore?.Set("windowsDriverUpdateProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile> WindowsDriverUpdateProfiles {
+        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile> WindowsDriverUpdateProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>>("windowsDriverUpdateProfiles"); }
             set { BackingStore?.Set("windowsDriverUpdateProfiles", value); }
         }
@@ -2410,13 +2756,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A collection of windows feature update profiles</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>? WindowsFeatureUpdateProfiles {
+        public List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>? WindowsFeatureUpdateProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>?>("windowsFeatureUpdateProfiles"); }
             set { BackingStore?.Set("windowsFeatureUpdateProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile> WindowsFeatureUpdateProfiles {
+        public List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile> WindowsFeatureUpdateProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>>("windowsFeatureUpdateProfiles"); }
             set { BackingStore?.Set("windowsFeatureUpdateProfiles", value); }
         }
@@ -2424,13 +2772,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The windows information protection app learning summaries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>? WindowsInformationProtectionAppLearningSummaries {
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>? WindowsInformationProtectionAppLearningSummaries
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>?>("windowsInformationProtectionAppLearningSummaries"); }
             set { BackingStore?.Set("windowsInformationProtectionAppLearningSummaries", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary> WindowsInformationProtectionAppLearningSummaries {
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary> WindowsInformationProtectionAppLearningSummaries
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>>("windowsInformationProtectionAppLearningSummaries"); }
             set { BackingStore?.Set("windowsInformationProtectionAppLearningSummaries", value); }
         }
@@ -2438,13 +2788,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The windows information protection network learning summaries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>? WindowsInformationProtectionNetworkLearningSummaries {
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>? WindowsInformationProtectionNetworkLearningSummaries
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>?>("windowsInformationProtectionNetworkLearningSummaries"); }
             set { BackingStore?.Set("windowsInformationProtectionNetworkLearningSummaries", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary> WindowsInformationProtectionNetworkLearningSummaries {
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary> WindowsInformationProtectionNetworkLearningSummaries
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>>("windowsInformationProtectionNetworkLearningSummaries"); }
             set { BackingStore?.Set("windowsInformationProtectionNetworkLearningSummaries", value); }
         }
@@ -2452,13 +2804,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The list of affected malware in the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>? WindowsMalwareInformation {
+        public List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>? WindowsMalwareInformation
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>?>("windowsMalwareInformation"); }
             set { BackingStore?.Set("windowsMalwareInformation", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation> WindowsMalwareInformation {
+        public List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation> WindowsMalwareInformation
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>>("windowsMalwareInformation"); }
             set { BackingStore?.Set("windowsMalwareInformation", value); }
         }
@@ -2466,13 +2820,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Malware overview for windows devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsMalwareOverview? WindowsMalwareOverview {
+        public Microsoft.Graph.Beta.Models.WindowsMalwareOverview? WindowsMalwareOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsMalwareOverview?>("windowsMalwareOverview"); }
             set { BackingStore?.Set("windowsMalwareOverview", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsMalwareOverview WindowsMalwareOverview {
+        public Microsoft.Graph.Beta.Models.WindowsMalwareOverview WindowsMalwareOverview
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>("windowsMalwareOverview"); }
             set { BackingStore?.Set("windowsMalwareOverview", value); }
         }
@@ -2480,13 +2836,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A collection of windows quality update profiles</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>? WindowsQualityUpdateProfiles {
+        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>? WindowsQualityUpdateProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>?>("windowsQualityUpdateProfiles"); }
             set { BackingStore?.Set("windowsQualityUpdateProfiles", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile> WindowsQualityUpdateProfiles {
+        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile> WindowsQualityUpdateProfiles
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>>("windowsQualityUpdateProfiles"); }
             set { BackingStore?.Set("windowsQualityUpdateProfiles", value); }
         }
@@ -2494,13 +2852,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>A collection of windows update catalog items (fetaure updates item , quality updates item)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>? WindowsUpdateCatalogItems {
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>? WindowsUpdateCatalogItems
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>?>("windowsUpdateCatalogItems"); }
             set { BackingStore?.Set("windowsUpdateCatalogItems", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem> WindowsUpdateCatalogItems {
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem> WindowsUpdateCatalogItems
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>>("windowsUpdateCatalogItems"); }
             set { BackingStore?.Set("windowsUpdateCatalogItems", value); }
         }
@@ -2508,13 +2868,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The Collection of ZebraFotaArtifacts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>? ZebraFotaArtifacts {
+        public List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>? ZebraFotaArtifacts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>?>("zebraFotaArtifacts"); }
             set { BackingStore?.Set("zebraFotaArtifacts", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact> ZebraFotaArtifacts {
+        public List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact> ZebraFotaArtifacts
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>>("zebraFotaArtifacts"); }
             set { BackingStore?.Set("zebraFotaArtifacts", value); }
         }
@@ -2522,13 +2884,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The singleton ZebraFotaConnector associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ZebraFotaConnector? ZebraFotaConnector {
+        public Microsoft.Graph.Beta.Models.ZebraFotaConnector? ZebraFotaConnector
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaConnector?>("zebraFotaConnector"); }
             set { BackingStore?.Set("zebraFotaConnector", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ZebraFotaConnector ZebraFotaConnector {
+        public Microsoft.Graph.Beta.Models.ZebraFotaConnector ZebraFotaConnector
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaConnector>("zebraFotaConnector"); }
             set { BackingStore?.Set("zebraFotaConnector", value); }
         }
@@ -2536,13 +2900,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Collection of ZebraFotaDeployments associated with account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>? ZebraFotaDeployments {
+        public List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>? ZebraFotaDeployments
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>?>("zebraFotaDeployments"); }
             set { BackingStore?.Set("zebraFotaDeployments", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment> ZebraFotaDeployments {
+        public List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment> ZebraFotaDeployments
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>>("zebraFotaDeployments"); }
             set { BackingStore?.Set("zebraFotaDeployments", value); }
         }
@@ -2565,193 +2931,193 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accountMoveCompletionDateTime", n => { AccountMoveCompletionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"adminConsent", n => { AdminConsent = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminConsent>(Microsoft.Graph.Beta.Models.AdminConsent.CreateFromDiscriminatorValue); } },
-                {"advancedThreatProtectionOnboardingStateSummary", n => { AdvancedThreatProtectionOnboardingStateSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>(Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary.CreateFromDiscriminatorValue); } },
-                {"androidDeviceOwnerEnrollmentProfiles", n => { AndroidDeviceOwnerEnrollmentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"androidForWorkAppConfigurationSchemas", n => { AndroidForWorkAppConfigurationSchemas = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>(Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"androidForWorkEnrollmentProfiles", n => { AndroidForWorkEnrollmentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>(Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"androidForWorkSettings", n => { AndroidForWorkSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidForWorkSettings>(Microsoft.Graph.Beta.Models.AndroidForWorkSettings.CreateFromDiscriminatorValue); } },
-                {"androidManagedStoreAccountEnterpriseSettings", n => { AndroidManagedStoreAccountEnterpriseSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings>(Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings.CreateFromDiscriminatorValue); } },
-                {"androidManagedStoreAppConfigurationSchemas", n => { AndroidManagedStoreAppConfigurationSchemas = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>(Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"applePushNotificationCertificate", n => { ApplePushNotificationCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate>(Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate.CreateFromDiscriminatorValue); } },
-                {"appleUserInitiatedEnrollmentProfiles", n => { AppleUserInitiatedEnrollmentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>(Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignmentFilters", n => { AssignmentFilters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuditEvent>(Microsoft.Graph.Beta.Models.AuditEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"autopilotEvents", n => { AutopilotEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>(Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"cartToClassAssociations", n => { CartToClassAssociations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CartToClassAssociation>(Microsoft.Graph.Beta.Models.CartToClassAssociation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"categories", n => { Categories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>(Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"certificateConnectorDetails", n => { CertificateConnectorDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>(Microsoft.Graph.Beta.Models.CertificateConnectorDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"chromeOSOnboardingSettings", n => { ChromeOSOnboardingSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>(Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"cloudPCConnectivityIssues", n => { CloudPCConnectivityIssues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>(Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"comanagedDevices", n => { ComanagedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"comanagementEligibleDevices", n => { ComanagementEligibleDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>(Microsoft.Graph.Beta.Models.ComanagementEligibleDevice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"complianceCategories", n => { ComplianceCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"complianceManagementPartners", n => { ComplianceManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>(Microsoft.Graph.Beta.Models.ComplianceManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"compliancePolicies", n => { CompliancePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>(Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"complianceSettings", n => { ComplianceSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"conditionalAccessSettings", n => { ConditionalAccessSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings>(Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue); } },
-                {"configManagerCollections", n => { ConfigManagerCollections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConfigManagerCollection>(Microsoft.Graph.Beta.Models.ConfigManagerCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"configurationCategories", n => { ConfigurationCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"configurationPolicies", n => { ConfigurationPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"configurationPolicyTemplates", n => { ConfigurationPolicyTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"configurationSettings", n => { ConfigurationSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"connectorStatus", n => { ConnectorStatus = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>(Microsoft.Graph.Beta.Models.ConnectorStatusDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dataProcessorServiceForWindowsFeaturesOnboarding", n => { DataProcessorServiceForWindowsFeaturesOnboarding = n.GetObjectValue<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>(Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding.CreateFromDiscriminatorValue); } },
-                {"dataSharingConsents", n => { DataSharingConsents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DataSharingConsent>(Microsoft.Graph.Beta.Models.DataSharingConsent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"depOnboardingSettings", n => { DepOnboardingSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DepOnboardingSetting>(Microsoft.Graph.Beta.Models.DepOnboardingSetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"derivedCredentials", n => { DerivedCredentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>(Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"detectedApps", n => { DetectedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DetectedApp>(Microsoft.Graph.Beta.Models.DetectedApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceCategories", n => { DeviceCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCategory>(Microsoft.Graph.Beta.Models.DeviceCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceCompliancePolicies", n => { DeviceCompliancePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceCompliancePolicyDeviceStateSummary", n => { DeviceCompliancePolicyDeviceStateSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary.CreateFromDiscriminatorValue); } },
-                {"deviceCompliancePolicySettingStateSummaries", n => { DeviceCompliancePolicySettingStateSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceComplianceReportSummarizationDateTime", n => { DeviceComplianceReportSummarizationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceComplianceScripts", n => { DeviceComplianceScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceComplianceScript>(Microsoft.Graph.Beta.Models.DeviceComplianceScript.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceConfigurationConflictSummary", n => { DeviceConfigurationConflictSummary = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceConfigurationDeviceStateSummaries", n => { DeviceConfigurationDeviceStateSummaries = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary.CreateFromDiscriminatorValue); } },
-                {"deviceConfigurationProfiles", n => { DeviceConfigurationProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>(Microsoft.Graph.Beta.Models.DeviceConfigurationProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceConfigurationRestrictedAppsViolations", n => { DeviceConfigurationRestrictedAppsViolations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>(Microsoft.Graph.Beta.Models.RestrictedAppsViolation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceConfigurationUserStateSummaries", n => { DeviceConfigurationUserStateSummaries = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary.CreateFromDiscriminatorValue); } },
-                {"deviceConfigurations", n => { DeviceConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfiguration>(Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceConfigurationsAllManagedDeviceCertificateStates", n => { DeviceConfigurationsAllManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>(Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceCustomAttributeShellScripts", n => { DeviceCustomAttributeShellScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>(Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceEnrollmentConfigurations", n => { DeviceEnrollmentConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>(Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceHealthScripts", n => { DeviceHealthScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceHealthScript>(Microsoft.Graph.Beta.Models.DeviceHealthScript.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceManagementPartners", n => { DeviceManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementPartner>(Microsoft.Graph.Beta.Models.DeviceManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceManagementScripts", n => { DeviceManagementScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScript>(Microsoft.Graph.Beta.Models.DeviceManagementScript.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceProtectionOverview", n => { DeviceProtectionOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceProtectionOverview>(Microsoft.Graph.Beta.Models.DeviceProtectionOverview.CreateFromDiscriminatorValue); } },
-                {"deviceShellScripts", n => { DeviceShellScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceShellScript>(Microsoft.Graph.Beta.Models.DeviceShellScript.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"domainJoinConnectors", n => { DomainJoinConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>(Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"elevationRequests", n => { ElevationRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"embeddedSIMActivationCodePools", n => { EmbeddedSIMActivationCodePools = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>(Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"exchangeConnectors", n => { ExchangeConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"exchangeOnPremisesPolicies", n => { ExchangeOnPremisesPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"exchangeOnPremisesPolicy", n => { ExchangeOnPremisesPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue); } },
-                {"groupPolicyCategories", n => { GroupPolicyCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyCategory>(Microsoft.Graph.Beta.Models.GroupPolicyCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"groupPolicyConfigurations", n => { GroupPolicyConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>(Microsoft.Graph.Beta.Models.GroupPolicyConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"groupPolicyDefinitionFiles", n => { GroupPolicyDefinitionFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>(Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"groupPolicyDefinitions", n => { GroupPolicyDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>(Microsoft.Graph.Beta.Models.GroupPolicyDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"groupPolicyMigrationReports", n => { GroupPolicyMigrationReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>(Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"groupPolicyObjectFiles", n => { GroupPolicyObjectFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>(Microsoft.Graph.Beta.Models.GroupPolicyObjectFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"groupPolicyUploadedDefinitionFiles", n => { GroupPolicyUploadedDefinitionFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>(Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hardwareConfigurations", n => { HardwareConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwareConfiguration>(Microsoft.Graph.Beta.Models.HardwareConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hardwarePasswordInfo", n => { HardwarePasswordInfo = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>(Microsoft.Graph.Beta.Models.HardwarePasswordInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"importedDeviceIdentities", n => { ImportedDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"importedWindowsAutopilotDeviceIdentities", n => { ImportedWindowsAutopilotDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"intents", n => { Intents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntent>(Microsoft.Graph.Beta.Models.DeviceManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"intuneAccountId", n => { IntuneAccountId = n.GetGuidValue(); } },
-                {"intuneBrand", n => { IntuneBrand = n.GetObjectValue<Microsoft.Graph.Beta.Models.IntuneBrand>(Microsoft.Graph.Beta.Models.IntuneBrand.CreateFromDiscriminatorValue); } },
-                {"intuneBrandingProfiles", n => { IntuneBrandingProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>(Microsoft.Graph.Beta.Models.IntuneBrandingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"iosUpdateStatuses", n => { IosUpdateStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>(Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastReportAggregationDateTime", n => { LastReportAggregationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"legacyPcManangementEnabled", n => { LegacyPcManangementEnabled = n.GetBoolValue(); } },
-                {"macOSSoftwareUpdateAccountSummaries", n => { MacOSSoftwareUpdateAccountSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceCleanupRules", n => { ManagedDeviceCleanupRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>(Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceCleanupSettings", n => { ManagedDeviceCleanupSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>(Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings.CreateFromDiscriminatorValue); } },
-                {"managedDeviceEncryptionStates", n => { ManagedDeviceEncryptionStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>(Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceOverview", n => { ManagedDeviceOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>(Microsoft.Graph.Beta.Models.ManagedDeviceOverview.CreateFromDiscriminatorValue); } },
-                {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"maximumDepTokens", n => { MaximumDepTokens = n.GetIntValue(); } },
-                {"microsoftTunnelConfigurations", n => { MicrosoftTunnelConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"microsoftTunnelHealthThresholds", n => { MicrosoftTunnelHealthThresholds = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>(Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"microsoftTunnelServerLogCollectionResponses", n => { MicrosoftTunnelServerLogCollectionResponses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>(Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"microsoftTunnelSites", n => { MicrosoftTunnelSites = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>(Microsoft.Graph.Beta.Models.MicrosoftTunnelSite.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"mobileAppTroubleshootingEvents", n => { MobileAppTroubleshootingEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>(Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"mobileThreatDefenseConnectors", n => { MobileThreatDefenseConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>(Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"monitoring", n => { Monitoring = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>(Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring.CreateFromDiscriminatorValue); } },
-                {"ndesConnectors", n => { NdesConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>(Microsoft.Graph.Beta.Models.NdesConnector.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"notificationMessageTemplates", n => { NotificationMessageTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>(Microsoft.Graph.Beta.Models.NotificationMessageTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"operationApprovalPolicies", n => { OperationApprovalPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>(Microsoft.Graph.Beta.Models.OperationApprovalPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"operationApprovalRequests", n => { OperationApprovalRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OperationApprovalRequest>(Microsoft.Graph.Beta.Models.OperationApprovalRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"privilegeManagementElevations", n => { PrivilegeManagementElevations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"remoteActionAudits", n => { RemoteActionAudits = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>(Microsoft.Graph.Beta.Models.RemoteActionAudit.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"remoteAssistancePartners", n => { RemoteAssistancePartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>(Microsoft.Graph.Beta.Models.RemoteAssistancePartner.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"remoteAssistanceSettings", n => { RemoteAssistanceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>(Microsoft.Graph.Beta.Models.RemoteAssistanceSettings.CreateFromDiscriminatorValue); } },
-                {"reports", n => { Reports = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementReports>(Microsoft.Graph.Beta.Models.DeviceManagementReports.CreateFromDiscriminatorValue); } },
-                {"resourceAccessProfiles", n => { ResourceAccessProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>(Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resourceOperations", n => { ResourceOperations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ResourceOperation>(Microsoft.Graph.Beta.Models.ResourceOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"reusablePolicySettings", n => { ReusablePolicySettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>(Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"reusableSettings", n => { ReusableSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleDefinition>(Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTag>(Microsoft.Graph.Beta.Models.RoleScopeTag.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"serviceNowConnections", n => { ServiceNowConnections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceNowConnection>(Microsoft.Graph.Beta.Models.ServiceNowConnection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementSettings>(Microsoft.Graph.Beta.Models.DeviceManagementSettings.CreateFromDiscriminatorValue); } },
-                {"softwareUpdateStatusSummary", n => { SoftwareUpdateStatusSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>(Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary.CreateFromDiscriminatorValue); } },
-                {"subscriptionState", n => { SubscriptionState = n.GetEnumValue<DeviceManagementSubscriptionState>(); } },
-                {"subscriptions", n => { Subscriptions = n.GetEnumValue<DeviceManagementSubscriptions>(); } },
-                {"telecomExpenseManagementPartners", n => { TelecomExpenseManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>(Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"templateInsights", n => { TemplateInsights = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"templateSettings", n => { TemplateSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"templates", n => { Templates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantAttachRBAC", n => { TenantAttachRBAC = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(Microsoft.Graph.Beta.Models.TenantAttachRBAC.CreateFromDiscriminatorValue); } },
-                {"termsAndConditions", n => { TermsAndConditions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermsAndConditions>(Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"troubleshootingEvents", n => { TroubleshootingEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>(Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"unlicensedAdminstratorsEnabled", n => { UnlicensedAdminstratorsEnabled = n.GetBoolValue(); } },
-                {"userExperienceAnalyticsAnomaly", n => { UserExperienceAnalyticsAnomaly = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAnomalyCorrelationGroupOverview", n => { UserExperienceAnalyticsAnomalyCorrelationGroupOverview = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAnomalyDevice", n => { UserExperienceAnalyticsAnomalyDevice = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAnomalySeverityOverview", n => { UserExperienceAnalyticsAnomalySeverityOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsAppHealthApplicationPerformance", n => { UserExperienceAnalyticsAppHealthApplicationPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthDeviceModelPerformance", n => { UserExperienceAnalyticsAppHealthDeviceModelPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthDevicePerformance", n => { UserExperienceAnalyticsAppHealthDevicePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthDevicePerformanceDetails", n => { UserExperienceAnalyticsAppHealthDevicePerformanceDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthOSVersionPerformance", n => { UserExperienceAnalyticsAppHealthOSVersionPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsAppHealthOverview", n => { UserExperienceAnalyticsAppHealthOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsBaselines", n => { UserExperienceAnalyticsBaselines = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsBatteryHealthAppImpact", n => { UserExperienceAnalyticsBatteryHealthAppImpact = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsBatteryHealthCapacityDetails", n => { UserExperienceAnalyticsBatteryHealthCapacityDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsBatteryHealthDeviceAppImpact", n => { UserExperienceAnalyticsBatteryHealthDeviceAppImpact = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsBatteryHealthDevicePerformance", n => { UserExperienceAnalyticsBatteryHealthDevicePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory", n => { UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsBatteryHealthModelPerformance", n => { UserExperienceAnalyticsBatteryHealthModelPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsBatteryHealthOsPerformance", n => { UserExperienceAnalyticsBatteryHealthOsPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsBatteryHealthRuntimeDetails", n => { UserExperienceAnalyticsBatteryHealthRuntimeDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsCategories", n => { UserExperienceAnalyticsCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDeviceMetricHistory", n => { UserExperienceAnalyticsDeviceMetricHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDevicePerformance", n => { UserExperienceAnalyticsDevicePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDeviceScope", n => { UserExperienceAnalyticsDeviceScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsDeviceScopes", n => { UserExperienceAnalyticsDeviceScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDeviceScores", n => { UserExperienceAnalyticsDeviceScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDeviceStartupHistory", n => { UserExperienceAnalyticsDeviceStartupHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDeviceStartupProcessPerformance", n => { UserExperienceAnalyticsDeviceStartupProcessPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDeviceStartupProcesses", n => { UserExperienceAnalyticsDeviceStartupProcesses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDeviceTimelineEvent", n => { UserExperienceAnalyticsDeviceTimelineEvent = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsDevicesWithoutCloudIdentity", n => { UserExperienceAnalyticsDevicesWithoutCloudIdentity = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsImpactingProcess", n => { UserExperienceAnalyticsImpactingProcess = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsMetricHistory", n => { UserExperienceAnalyticsMetricHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsModelScores", n => { UserExperienceAnalyticsModelScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsNotAutopilotReadyDevice", n => { UserExperienceAnalyticsNotAutopilotReadyDevice = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsOverview", n => { UserExperienceAnalyticsOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsRemoteConnection", n => { UserExperienceAnalyticsRemoteConnection = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsResourcePerformance", n => { UserExperienceAnalyticsResourcePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsScoreHistory", n => { UserExperienceAnalyticsScoreHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsSettings", n => { UserExperienceAnalyticsSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", n => { UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsWorkFromAnywhereMetrics", n => { UserExperienceAnalyticsWorkFromAnywhereMetrics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userExperienceAnalyticsWorkFromAnywhereModelPerformance", n => { UserExperienceAnalyticsWorkFromAnywhereModelPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"userPfxCertificates", n => { UserPfxCertificates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserPFXCertificate>(Microsoft.Graph.Beta.Models.UserPFXCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"virtualEndpoint", n => { VirtualEndpoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualEndpoint>(Microsoft.Graph.Beta.Models.VirtualEndpoint.CreateFromDiscriminatorValue); } },
-                {"windowsAutopilotDeploymentProfiles", n => { WindowsAutopilotDeploymentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>(Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsAutopilotDeviceIdentities", n => { WindowsAutopilotDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>(Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsAutopilotSettings", n => { WindowsAutopilotSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsAutopilotSettings>(Microsoft.Graph.Beta.Models.WindowsAutopilotSettings.CreateFromDiscriminatorValue); } },
-                {"windowsDriverUpdateProfiles", n => { WindowsDriverUpdateProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>(Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsFeatureUpdateProfiles", n => { WindowsFeatureUpdateProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>(Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsInformationProtectionAppLearningSummaries", n => { WindowsInformationProtectionAppLearningSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>(Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsInformationProtectionNetworkLearningSummaries", n => { WindowsInformationProtectionNetworkLearningSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>(Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsMalwareInformation", n => { WindowsMalwareInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>(Microsoft.Graph.Beta.Models.WindowsMalwareInformation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsMalwareOverview", n => { WindowsMalwareOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>(Microsoft.Graph.Beta.Models.WindowsMalwareOverview.CreateFromDiscriminatorValue); } },
-                {"windowsQualityUpdateProfiles", n => { WindowsQualityUpdateProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>(Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsUpdateCatalogItems", n => { WindowsUpdateCatalogItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>(Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"zebraFotaArtifacts", n => { ZebraFotaArtifacts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>(Microsoft.Graph.Beta.Models.ZebraFotaArtifact.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"zebraFotaConnector", n => { ZebraFotaConnector = n.GetObjectValue<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue); } },
-                {"zebraFotaDeployments", n => { ZebraFotaDeployments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>(Microsoft.Graph.Beta.Models.ZebraFotaDeployment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accountMoveCompletionDateTime", n => { AccountMoveCompletionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "adminConsent", n => { AdminConsent = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminConsent>(Microsoft.Graph.Beta.Models.AdminConsent.CreateFromDiscriminatorValue); } },
+                { "advancedThreatProtectionOnboardingStateSummary", n => { AdvancedThreatProtectionOnboardingStateSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>(Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary.CreateFromDiscriminatorValue); } },
+                { "androidDeviceOwnerEnrollmentProfiles", n => { AndroidDeviceOwnerEnrollmentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "androidForWorkAppConfigurationSchemas", n => { AndroidForWorkAppConfigurationSchemas = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>(Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "androidForWorkEnrollmentProfiles", n => { AndroidForWorkEnrollmentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>(Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "androidForWorkSettings", n => { AndroidForWorkSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidForWorkSettings>(Microsoft.Graph.Beta.Models.AndroidForWorkSettings.CreateFromDiscriminatorValue); } },
+                { "androidManagedStoreAccountEnterpriseSettings", n => { AndroidManagedStoreAccountEnterpriseSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings>(Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings.CreateFromDiscriminatorValue); } },
+                { "androidManagedStoreAppConfigurationSchemas", n => { AndroidManagedStoreAppConfigurationSchemas = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>(Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applePushNotificationCertificate", n => { ApplePushNotificationCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate>(Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate.CreateFromDiscriminatorValue); } },
+                { "appleUserInitiatedEnrollmentProfiles", n => { AppleUserInitiatedEnrollmentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>(Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentFilters", n => { AssignmentFilters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuditEvent>(Microsoft.Graph.Beta.Models.AuditEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "autopilotEvents", n => { AutopilotEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>(Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cartToClassAssociations", n => { CartToClassAssociations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CartToClassAssociation>(Microsoft.Graph.Beta.Models.CartToClassAssociation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>(Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificateConnectorDetails", n => { CertificateConnectorDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>(Microsoft.Graph.Beta.Models.CertificateConnectorDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "chromeOSOnboardingSettings", n => { ChromeOSOnboardingSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>(Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cloudPCConnectivityIssues", n => { CloudPCConnectivityIssues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>(Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "comanagedDevices", n => { ComanagedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "comanagementEligibleDevices", n => { ComanagementEligibleDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>(Microsoft.Graph.Beta.Models.ComanagementEligibleDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "complianceCategories", n => { ComplianceCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "complianceManagementPartners", n => { ComplianceManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>(Microsoft.Graph.Beta.Models.ComplianceManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "compliancePolicies", n => { CompliancePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>(Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "complianceSettings", n => { ComplianceSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conditionalAccessSettings", n => { ConditionalAccessSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings>(Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue); } },
+                { "configManagerCollections", n => { ConfigManagerCollections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConfigManagerCollection>(Microsoft.Graph.Beta.Models.ConfigManagerCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurationCategories", n => { ConfigurationCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurationPolicies", n => { ConfigurationPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurationPolicyTemplates", n => { ConfigurationPolicyTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurationSettings", n => { ConfigurationSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectorStatus", n => { ConnectorStatus = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConnectorStatusDetails>(Microsoft.Graph.Beta.Models.ConnectorStatusDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dataProcessorServiceForWindowsFeaturesOnboarding", n => { DataProcessorServiceForWindowsFeaturesOnboarding = n.GetObjectValue<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>(Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding.CreateFromDiscriminatorValue); } },
+                { "dataSharingConsents", n => { DataSharingConsents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DataSharingConsent>(Microsoft.Graph.Beta.Models.DataSharingConsent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "depOnboardingSettings", n => { DepOnboardingSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DepOnboardingSetting>(Microsoft.Graph.Beta.Models.DepOnboardingSetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "derivedCredentials", n => { DerivedCredentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>(Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "detectedApps", n => { DetectedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DetectedApp>(Microsoft.Graph.Beta.Models.DetectedApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceCategories", n => { DeviceCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCategory>(Microsoft.Graph.Beta.Models.DeviceCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceCompliancePolicies", n => { DeviceCompliancePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceCompliancePolicyDeviceStateSummary", n => { DeviceCompliancePolicyDeviceStateSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary.CreateFromDiscriminatorValue); } },
+                { "deviceCompliancePolicySettingStateSummaries", n => { DeviceCompliancePolicySettingStateSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>(Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceComplianceReportSummarizationDateTime", n => { DeviceComplianceReportSummarizationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "deviceComplianceScripts", n => { DeviceComplianceScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceComplianceScript>(Microsoft.Graph.Beta.Models.DeviceComplianceScript.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceConfigurationConflictSummary", n => { DeviceConfigurationConflictSummary = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceConfigurationDeviceStateSummaries", n => { DeviceConfigurationDeviceStateSummaries = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary.CreateFromDiscriminatorValue); } },
+                { "deviceConfigurationProfiles", n => { DeviceConfigurationProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationProfile>(Microsoft.Graph.Beta.Models.DeviceConfigurationProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceConfigurationRestrictedAppsViolations", n => { DeviceConfigurationRestrictedAppsViolations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>(Microsoft.Graph.Beta.Models.RestrictedAppsViolation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceConfigurationUserStateSummaries", n => { DeviceConfigurationUserStateSummaries = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary>(Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary.CreateFromDiscriminatorValue); } },
+                { "deviceConfigurations", n => { DeviceConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfiguration>(Microsoft.Graph.Beta.Models.DeviceConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceConfigurationsAllManagedDeviceCertificateStates", n => { DeviceConfigurationsAllManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>(Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceCustomAttributeShellScripts", n => { DeviceCustomAttributeShellScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>(Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceEnrollmentConfigurations", n => { DeviceEnrollmentConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>(Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceHealthScripts", n => { DeviceHealthScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceHealthScript>(Microsoft.Graph.Beta.Models.DeviceHealthScript.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceManagementPartners", n => { DeviceManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementPartner>(Microsoft.Graph.Beta.Models.DeviceManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceManagementScripts", n => { DeviceManagementScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementScript>(Microsoft.Graph.Beta.Models.DeviceManagementScript.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceProtectionOverview", n => { DeviceProtectionOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceProtectionOverview>(Microsoft.Graph.Beta.Models.DeviceProtectionOverview.CreateFromDiscriminatorValue); } },
+                { "deviceShellScripts", n => { DeviceShellScripts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceShellScript>(Microsoft.Graph.Beta.Models.DeviceShellScript.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "domainJoinConnectors", n => { DomainJoinConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>(Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "elevationRequests", n => { ElevationRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "embeddedSIMActivationCodePools", n => { EmbeddedSIMActivationCodePools = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>(Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exchangeConnectors", n => { ExchangeConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exchangeOnPremisesPolicies", n => { ExchangeOnPremisesPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exchangeOnPremisesPolicy", n => { ExchangeOnPremisesPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue); } },
+                { "groupPolicyCategories", n => { GroupPolicyCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyCategory>(Microsoft.Graph.Beta.Models.GroupPolicyCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicyConfigurations", n => { GroupPolicyConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>(Microsoft.Graph.Beta.Models.GroupPolicyConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicyDefinitionFiles", n => { GroupPolicyDefinitionFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>(Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicyDefinitions", n => { GroupPolicyDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>(Microsoft.Graph.Beta.Models.GroupPolicyDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicyMigrationReports", n => { GroupPolicyMigrationReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>(Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicyObjectFiles", n => { GroupPolicyObjectFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>(Microsoft.Graph.Beta.Models.GroupPolicyObjectFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicyUploadedDefinitionFiles", n => { GroupPolicyUploadedDefinitionFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>(Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hardwareConfigurations", n => { HardwareConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwareConfiguration>(Microsoft.Graph.Beta.Models.HardwareConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hardwarePasswordInfo", n => { HardwarePasswordInfo = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>(Microsoft.Graph.Beta.Models.HardwarePasswordInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "importedDeviceIdentities", n => { ImportedDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "importedWindowsAutopilotDeviceIdentities", n => { ImportedWindowsAutopilotDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "intents", n => { Intents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntent>(Microsoft.Graph.Beta.Models.DeviceManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "intuneAccountId", n => { IntuneAccountId = n.GetGuidValue(); } },
+                { "intuneBrand", n => { IntuneBrand = n.GetObjectValue<Microsoft.Graph.Beta.Models.IntuneBrand>(Microsoft.Graph.Beta.Models.IntuneBrand.CreateFromDiscriminatorValue); } },
+                { "intuneBrandingProfiles", n => { IntuneBrandingProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>(Microsoft.Graph.Beta.Models.IntuneBrandingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "iosUpdateStatuses", n => { IosUpdateStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>(Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastReportAggregationDateTime", n => { LastReportAggregationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "legacyPcManangementEnabled", n => { LegacyPcManangementEnabled = n.GetBoolValue(); } },
+                { "macOSSoftwareUpdateAccountSummaries", n => { MacOSSoftwareUpdateAccountSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceCleanupRules", n => { ManagedDeviceCleanupRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule>(Microsoft.Graph.Beta.Models.ManagedDeviceCleanupRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceCleanupSettings", n => { ManagedDeviceCleanupSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>(Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings.CreateFromDiscriminatorValue); } },
+                { "managedDeviceEncryptionStates", n => { ManagedDeviceEncryptionStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>(Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceOverview", n => { ManagedDeviceOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>(Microsoft.Graph.Beta.Models.ManagedDeviceOverview.CreateFromDiscriminatorValue); } },
+                { "managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDevice>(Microsoft.Graph.Beta.Models.ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "maximumDepTokens", n => { MaximumDepTokens = n.GetIntValue(); } },
+                { "microsoftTunnelConfigurations", n => { MicrosoftTunnelConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "microsoftTunnelHealthThresholds", n => { MicrosoftTunnelHealthThresholds = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>(Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "microsoftTunnelServerLogCollectionResponses", n => { MicrosoftTunnelServerLogCollectionResponses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>(Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "microsoftTunnelSites", n => { MicrosoftTunnelSites = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>(Microsoft.Graph.Beta.Models.MicrosoftTunnelSite.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileAppTroubleshootingEvents", n => { MobileAppTroubleshootingEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>(Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileThreatDefenseConnectors", n => { MobileThreatDefenseConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>(Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "monitoring", n => { Monitoring = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>(Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring.CreateFromDiscriminatorValue); } },
+                { "ndesConnectors", n => { NdesConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>(Microsoft.Graph.Beta.Models.NdesConnector.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "notificationMessageTemplates", n => { NotificationMessageTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>(Microsoft.Graph.Beta.Models.NotificationMessageTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operationApprovalPolicies", n => { OperationApprovalPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OperationApprovalPolicy>(Microsoft.Graph.Beta.Models.OperationApprovalPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "operationApprovalRequests", n => { OperationApprovalRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OperationApprovalRequest>(Microsoft.Graph.Beta.Models.OperationApprovalRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "privilegeManagementElevations", n => { PrivilegeManagementElevations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevation>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remoteActionAudits", n => { RemoteActionAudits = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>(Microsoft.Graph.Beta.Models.RemoteActionAudit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remoteAssistancePartners", n => { RemoteAssistancePartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>(Microsoft.Graph.Beta.Models.RemoteAssistancePartner.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remoteAssistanceSettings", n => { RemoteAssistanceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>(Microsoft.Graph.Beta.Models.RemoteAssistanceSettings.CreateFromDiscriminatorValue); } },
+                { "reports", n => { Reports = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementReports>(Microsoft.Graph.Beta.Models.DeviceManagementReports.CreateFromDiscriminatorValue); } },
+                { "resourceAccessProfiles", n => { ResourceAccessProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>(Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceOperations", n => { ResourceOperations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ResourceOperation>(Microsoft.Graph.Beta.Models.ResourceOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reusablePolicySettings", n => { ReusablePolicySettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>(Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reusableSettings", n => { ReusableSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleDefinition>(Microsoft.Graph.Beta.Models.RoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RoleScopeTag>(Microsoft.Graph.Beta.Models.RoleScopeTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "serviceNowConnections", n => { ServiceNowConnections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceNowConnection>(Microsoft.Graph.Beta.Models.ServiceNowConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementSettings>(Microsoft.Graph.Beta.Models.DeviceManagementSettings.CreateFromDiscriminatorValue); } },
+                { "softwareUpdateStatusSummary", n => { SoftwareUpdateStatusSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>(Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary.CreateFromDiscriminatorValue); } },
+                { "subscriptionState", n => { SubscriptionState = n.GetEnumValue<DeviceManagementSubscriptionState>(); } },
+                { "subscriptions", n => { Subscriptions = n.GetEnumValue<DeviceManagementSubscriptions>(); } },
+                { "telecomExpenseManagementPartners", n => { TelecomExpenseManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>(Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templateInsights", n => { TemplateInsights = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templateSettings", n => { TemplateSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "templates", n => { Templates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantAttachRBAC", n => { TenantAttachRBAC = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAttachRBAC>(Microsoft.Graph.Beta.Models.TenantAttachRBAC.CreateFromDiscriminatorValue); } },
+                { "termsAndConditions", n => { TermsAndConditions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermsAndConditions>(Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "troubleshootingEvents", n => { TroubleshootingEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>(Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "unlicensedAdminstratorsEnabled", n => { UnlicensedAdminstratorsEnabled = n.GetBoolValue(); } },
+                { "userExperienceAnalyticsAnomaly", n => { UserExperienceAnalyticsAnomaly = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAnomalyCorrelationGroupOverview", n => { UserExperienceAnalyticsAnomalyCorrelationGroupOverview = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAnomalyDevice", n => { UserExperienceAnalyticsAnomalyDevice = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAnomalySeverityOverview", n => { UserExperienceAnalyticsAnomalySeverityOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview.CreateFromDiscriminatorValue); } },
+                { "userExperienceAnalyticsAppHealthApplicationPerformance", n => { UserExperienceAnalyticsAppHealthApplicationPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthDeviceModelPerformance", n => { UserExperienceAnalyticsAppHealthDeviceModelPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthDevicePerformance", n => { UserExperienceAnalyticsAppHealthDevicePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthDevicePerformanceDetails", n => { UserExperienceAnalyticsAppHealthDevicePerformanceDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthOSVersionPerformance", n => { UserExperienceAnalyticsAppHealthOSVersionPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsAppHealthOverview", n => { UserExperienceAnalyticsAppHealthOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue); } },
+                { "userExperienceAnalyticsBaselines", n => { UserExperienceAnalyticsBaselines = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsBatteryHealthAppImpact", n => { UserExperienceAnalyticsBatteryHealthAppImpact = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsBatteryHealthCapacityDetails", n => { UserExperienceAnalyticsBatteryHealthCapacityDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails.CreateFromDiscriminatorValue); } },
+                { "userExperienceAnalyticsBatteryHealthDeviceAppImpact", n => { UserExperienceAnalyticsBatteryHealthDeviceAppImpact = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsBatteryHealthDevicePerformance", n => { UserExperienceAnalyticsBatteryHealthDevicePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory", n => { UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsBatteryHealthModelPerformance", n => { UserExperienceAnalyticsBatteryHealthModelPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsBatteryHealthOsPerformance", n => { UserExperienceAnalyticsBatteryHealthOsPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsBatteryHealthRuntimeDetails", n => { UserExperienceAnalyticsBatteryHealthRuntimeDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails.CreateFromDiscriminatorValue); } },
+                { "userExperienceAnalyticsCategories", n => { UserExperienceAnalyticsCategories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDeviceMetricHistory", n => { UserExperienceAnalyticsDeviceMetricHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDevicePerformance", n => { UserExperienceAnalyticsDevicePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDeviceScope", n => { UserExperienceAnalyticsDeviceScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope.CreateFromDiscriminatorValue); } },
+                { "userExperienceAnalyticsDeviceScopes", n => { UserExperienceAnalyticsDeviceScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDeviceScores", n => { UserExperienceAnalyticsDeviceScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDeviceStartupHistory", n => { UserExperienceAnalyticsDeviceStartupHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDeviceStartupProcessPerformance", n => { UserExperienceAnalyticsDeviceStartupProcessPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDeviceStartupProcesses", n => { UserExperienceAnalyticsDeviceStartupProcesses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDeviceTimelineEvent", n => { UserExperienceAnalyticsDeviceTimelineEvent = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsDevicesWithoutCloudIdentity", n => { UserExperienceAnalyticsDevicesWithoutCloudIdentity = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsImpactingProcess", n => { UserExperienceAnalyticsImpactingProcess = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsMetricHistory", n => { UserExperienceAnalyticsMetricHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsModelScores", n => { UserExperienceAnalyticsModelScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsNotAutopilotReadyDevice", n => { UserExperienceAnalyticsNotAutopilotReadyDevice = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsOverview", n => { UserExperienceAnalyticsOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview.CreateFromDiscriminatorValue); } },
+                { "userExperienceAnalyticsRemoteConnection", n => { UserExperienceAnalyticsRemoteConnection = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsResourcePerformance", n => { UserExperienceAnalyticsResourcePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsScoreHistory", n => { UserExperienceAnalyticsScoreHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsSettings", n => { UserExperienceAnalyticsSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings.CreateFromDiscriminatorValue); } },
+                { "userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", n => { UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric.CreateFromDiscriminatorValue); } },
+                { "userExperienceAnalyticsWorkFromAnywhereMetrics", n => { UserExperienceAnalyticsWorkFromAnywhereMetrics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userExperienceAnalyticsWorkFromAnywhereModelPerformance", n => { UserExperienceAnalyticsWorkFromAnywhereModelPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userPfxCertificates", n => { UserPfxCertificates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserPFXCertificate>(Microsoft.Graph.Beta.Models.UserPFXCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "virtualEndpoint", n => { VirtualEndpoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualEndpoint>(Microsoft.Graph.Beta.Models.VirtualEndpoint.CreateFromDiscriminatorValue); } },
+                { "windowsAutopilotDeploymentProfiles", n => { WindowsAutopilotDeploymentProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>(Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsAutopilotDeviceIdentities", n => { WindowsAutopilotDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>(Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsAutopilotSettings", n => { WindowsAutopilotSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsAutopilotSettings>(Microsoft.Graph.Beta.Models.WindowsAutopilotSettings.CreateFromDiscriminatorValue); } },
+                { "windowsDriverUpdateProfiles", n => { WindowsDriverUpdateProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>(Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsFeatureUpdateProfiles", n => { WindowsFeatureUpdateProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>(Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsInformationProtectionAppLearningSummaries", n => { WindowsInformationProtectionAppLearningSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>(Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsInformationProtectionNetworkLearningSummaries", n => { WindowsInformationProtectionNetworkLearningSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>(Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsMalwareInformation", n => { WindowsMalwareInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>(Microsoft.Graph.Beta.Models.WindowsMalwareInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsMalwareOverview", n => { WindowsMalwareOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>(Microsoft.Graph.Beta.Models.WindowsMalwareOverview.CreateFromDiscriminatorValue); } },
+                { "windowsQualityUpdateProfiles", n => { WindowsQualityUpdateProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>(Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsUpdateCatalogItems", n => { WindowsUpdateCatalogItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>(Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "zebraFotaArtifacts", n => { ZebraFotaArtifacts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>(Microsoft.Graph.Beta.Models.ZebraFotaArtifact.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "zebraFotaConnector", n => { ZebraFotaConnector = n.GetObjectValue<Microsoft.Graph.Beta.Models.ZebraFotaConnector>(Microsoft.Graph.Beta.Models.ZebraFotaConnector.CreateFromDiscriminatorValue); } },
+                { "zebraFotaDeployments", n => { ZebraFotaDeployments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>(Microsoft.Graph.Beta.Models.ZebraFotaDeployment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

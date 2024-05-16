@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Company : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Company : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The accounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Account>? Accounts {
+        public List<Account>? Accounts
+        {
             get { return BackingStore?.Get<List<Account>?>("accounts"); }
             set { BackingStore?.Set("accounts", value); }
         }
 #nullable restore
 #else
-        public List<Account> Accounts {
+        public List<Account> Accounts
+        {
             get { return BackingStore?.Get<List<Account>>("accounts"); }
             set { BackingStore?.Set("accounts", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The agedAccountsPayable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>? AgedAccountsPayable {
+        public List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>? AgedAccountsPayable
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>?>("agedAccountsPayable"); }
             set { BackingStore?.Set("agedAccountsPayable", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AgedAccountsPayable> AgedAccountsPayable {
+        public List<Microsoft.Graph.Beta.Models.AgedAccountsPayable> AgedAccountsPayable
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsPayable>>("agedAccountsPayable"); }
             set { BackingStore?.Set("agedAccountsPayable", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The agedAccountsReceivable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>? AgedAccountsReceivable {
+        public List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>? AgedAccountsReceivable
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>?>("agedAccountsReceivable"); }
             set { BackingStore?.Set("agedAccountsReceivable", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable> AgedAccountsReceivable {
+        public List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable> AgedAccountsReceivable
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>>("agedAccountsReceivable"); }
             set { BackingStore?.Set("agedAccountsReceivable", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The businessProfileId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessProfileId {
+        public string? BusinessProfileId
+        {
             get { return BackingStore?.Get<string?>("businessProfileId"); }
             set { BackingStore?.Set("businessProfileId", value); }
         }
 #nullable restore
 #else
-        public string BusinessProfileId {
+        public string BusinessProfileId
+        {
             get { return BackingStore?.Get<string>("businessProfileId"); }
             set { BackingStore?.Set("businessProfileId", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The companyInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.CompanyInformation>? CompanyInformation {
+        public List<Microsoft.Graph.Beta.Models.CompanyInformation>? CompanyInformation
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanyInformation>?>("companyInformation"); }
             set { BackingStore?.Set("companyInformation", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.CompanyInformation> CompanyInformation {
+        public List<Microsoft.Graph.Beta.Models.CompanyInformation> CompanyInformation
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanyInformation>>("companyInformation"); }
             set { BackingStore?.Set("companyInformation", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The countriesRegions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CountryRegion>? CountriesRegions {
+        public List<CountryRegion>? CountriesRegions
+        {
             get { return BackingStore?.Get<List<CountryRegion>?>("countriesRegions"); }
             set { BackingStore?.Set("countriesRegions", value); }
         }
 #nullable restore
 #else
-        public List<CountryRegion> CountriesRegions {
+        public List<CountryRegion> CountriesRegions
+        {
             get { return BackingStore?.Get<List<CountryRegion>>("countriesRegions"); }
             set { BackingStore?.Set("countriesRegions", value); }
         }
@@ -104,13 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The currencies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Currency>? Currencies {
+        public List<Currency>? Currencies
+        {
             get { return BackingStore?.Get<List<Currency>?>("currencies"); }
             set { BackingStore?.Set("currencies", value); }
         }
 #nullable restore
 #else
-        public List<Currency> Currencies {
+        public List<Currency> Currencies
+        {
             get { return BackingStore?.Get<List<Currency>>("currencies"); }
             set { BackingStore?.Set("currencies", value); }
         }
@@ -118,13 +134,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The customerPaymentJournals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomerPaymentJournal>? CustomerPaymentJournals {
+        public List<CustomerPaymentJournal>? CustomerPaymentJournals
+        {
             get { return BackingStore?.Get<List<CustomerPaymentJournal>?>("customerPaymentJournals"); }
             set { BackingStore?.Set("customerPaymentJournals", value); }
         }
 #nullable restore
 #else
-        public List<CustomerPaymentJournal> CustomerPaymentJournals {
+        public List<CustomerPaymentJournal> CustomerPaymentJournals
+        {
             get { return BackingStore?.Get<List<CustomerPaymentJournal>>("customerPaymentJournals"); }
             set { BackingStore?.Set("customerPaymentJournals", value); }
         }
@@ -132,13 +150,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The customerPayments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomerPayment>? CustomerPayments {
+        public List<CustomerPayment>? CustomerPayments
+        {
             get { return BackingStore?.Get<List<CustomerPayment>?>("customerPayments"); }
             set { BackingStore?.Set("customerPayments", value); }
         }
 #nullable restore
 #else
-        public List<CustomerPayment> CustomerPayments {
+        public List<CustomerPayment> CustomerPayments
+        {
             get { return BackingStore?.Get<List<CustomerPayment>>("customerPayments"); }
             set { BackingStore?.Set("customerPayments", value); }
         }
@@ -146,13 +166,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The customers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Customer>? Customers {
+        public List<Customer>? Customers
+        {
             get { return BackingStore?.Get<List<Customer>?>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
 #nullable restore
 #else
-        public List<Customer> Customers {
+        public List<Customer> Customers
+        {
             get { return BackingStore?.Get<List<Customer>>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
@@ -160,13 +182,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The dimensions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Dimension>? Dimensions {
+        public List<Dimension>? Dimensions
+        {
             get { return BackingStore?.Get<List<Dimension>?>("dimensions"); }
             set { BackingStore?.Set("dimensions", value); }
         }
 #nullable restore
 #else
-        public List<Dimension> Dimensions {
+        public List<Dimension> Dimensions
+        {
             get { return BackingStore?.Get<List<Dimension>>("dimensions"); }
             set { BackingStore?.Set("dimensions", value); }
         }
@@ -174,13 +198,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The dimensionValues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DimensionValue>? DimensionValues {
+        public List<DimensionValue>? DimensionValues
+        {
             get { return BackingStore?.Get<List<DimensionValue>?>("dimensionValues"); }
             set { BackingStore?.Set("dimensionValues", value); }
         }
 #nullable restore
 #else
-        public List<DimensionValue> DimensionValues {
+        public List<DimensionValue> DimensionValues
+        {
             get { return BackingStore?.Get<List<DimensionValue>>("dimensionValues"); }
             set { BackingStore?.Set("dimensionValues", value); }
         }
@@ -188,13 +214,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The displayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -202,13 +230,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The employees property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Employee>? Employees {
+        public List<Employee>? Employees
+        {
             get { return BackingStore?.Get<List<Employee>?>("employees"); }
             set { BackingStore?.Set("employees", value); }
         }
 #nullable restore
 #else
-        public List<Employee> Employees {
+        public List<Employee> Employees
+        {
             get { return BackingStore?.Get<List<Employee>>("employees"); }
             set { BackingStore?.Set("employees", value); }
         }
@@ -216,32 +246,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The generalLedgerEntries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GeneralLedgerEntry>? GeneralLedgerEntries {
+        public List<GeneralLedgerEntry>? GeneralLedgerEntries
+        {
             get { return BackingStore?.Get<List<GeneralLedgerEntry>?>("generalLedgerEntries"); }
             set { BackingStore?.Set("generalLedgerEntries", value); }
         }
 #nullable restore
 #else
-        public List<GeneralLedgerEntry> GeneralLedgerEntries {
+        public List<GeneralLedgerEntry> GeneralLedgerEntries
+        {
             get { return BackingStore?.Get<List<GeneralLedgerEntry>>("generalLedgerEntries"); }
             set { BackingStore?.Set("generalLedgerEntries", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The itemCategories property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemCategory>? ItemCategories {
+        public List<ItemCategory>? ItemCategories
+        {
             get { return BackingStore?.Get<List<ItemCategory>?>("itemCategories"); }
             set { BackingStore?.Set("itemCategories", value); }
         }
 #nullable restore
 #else
-        public List<ItemCategory> ItemCategories {
+        public List<ItemCategory> ItemCategories
+        {
             get { return BackingStore?.Get<List<ItemCategory>>("itemCategories"); }
             set { BackingStore?.Set("itemCategories", value); }
         }
@@ -249,13 +284,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Item>? Items {
+        public List<Item>? Items
+        {
             get { return BackingStore?.Get<List<Item>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<Item> Items {
+        public List<Item> Items
+        {
             get { return BackingStore?.Get<List<Item>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
@@ -263,13 +300,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The journalLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<JournalLine>? JournalLines {
+        public List<JournalLine>? JournalLines
+        {
             get { return BackingStore?.Get<List<JournalLine>?>("journalLines"); }
             set { BackingStore?.Set("journalLines", value); }
         }
 #nullable restore
 #else
-        public List<JournalLine> JournalLines {
+        public List<JournalLine> JournalLines
+        {
             get { return BackingStore?.Get<List<JournalLine>>("journalLines"); }
             set { BackingStore?.Set("journalLines", value); }
         }
@@ -277,13 +316,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The journals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Journal>? Journals {
+        public List<Journal>? Journals
+        {
             get { return BackingStore?.Get<List<Journal>?>("journals"); }
             set { BackingStore?.Set("journals", value); }
         }
 #nullable restore
 #else
-        public List<Journal> Journals {
+        public List<Journal> Journals
+        {
             get { return BackingStore?.Get<List<Journal>>("journals"); }
             set { BackingStore?.Set("journals", value); }
         }
@@ -291,13 +332,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -305,13 +348,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -319,13 +364,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The paymentMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PaymentMethod>? PaymentMethods {
+        public List<PaymentMethod>? PaymentMethods
+        {
             get { return BackingStore?.Get<List<PaymentMethod>?>("paymentMethods"); }
             set { BackingStore?.Set("paymentMethods", value); }
         }
 #nullable restore
 #else
-        public List<PaymentMethod> PaymentMethods {
+        public List<PaymentMethod> PaymentMethods
+        {
             get { return BackingStore?.Get<List<PaymentMethod>>("paymentMethods"); }
             set { BackingStore?.Set("paymentMethods", value); }
         }
@@ -333,13 +380,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The paymentTerms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PaymentTerm>? PaymentTerms {
+        public List<PaymentTerm>? PaymentTerms
+        {
             get { return BackingStore?.Get<List<PaymentTerm>?>("paymentTerms"); }
             set { BackingStore?.Set("paymentTerms", value); }
         }
 #nullable restore
 #else
-        public List<PaymentTerm> PaymentTerms {
+        public List<PaymentTerm> PaymentTerms
+        {
             get { return BackingStore?.Get<List<PaymentTerm>>("paymentTerms"); }
             set { BackingStore?.Set("paymentTerms", value); }
         }
@@ -347,13 +396,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The picture property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Picture>? Picture {
+        public List<Microsoft.Graph.Beta.Models.Picture>? Picture
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>?>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Picture> Picture {
+        public List<Microsoft.Graph.Beta.Models.Picture> Picture
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Picture>>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
@@ -361,13 +412,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The purchaseInvoiceLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PurchaseInvoiceLine>? PurchaseInvoiceLines {
+        public List<PurchaseInvoiceLine>? PurchaseInvoiceLines
+        {
             get { return BackingStore?.Get<List<PurchaseInvoiceLine>?>("purchaseInvoiceLines"); }
             set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
 #nullable restore
 #else
-        public List<PurchaseInvoiceLine> PurchaseInvoiceLines {
+        public List<PurchaseInvoiceLine> PurchaseInvoiceLines
+        {
             get { return BackingStore?.Get<List<PurchaseInvoiceLine>>("purchaseInvoiceLines"); }
             set { BackingStore?.Set("purchaseInvoiceLines", value); }
         }
@@ -375,13 +428,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The purchaseInvoices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PurchaseInvoice>? PurchaseInvoices {
+        public List<PurchaseInvoice>? PurchaseInvoices
+        {
             get { return BackingStore?.Get<List<PurchaseInvoice>?>("purchaseInvoices"); }
             set { BackingStore?.Set("purchaseInvoices", value); }
         }
 #nullable restore
 #else
-        public List<PurchaseInvoice> PurchaseInvoices {
+        public List<PurchaseInvoice> PurchaseInvoices
+        {
             get { return BackingStore?.Get<List<PurchaseInvoice>>("purchaseInvoices"); }
             set { BackingStore?.Set("purchaseInvoices", value); }
         }
@@ -389,13 +444,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The salesCreditMemoLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesCreditMemoLine>? SalesCreditMemoLines {
+        public List<SalesCreditMemoLine>? SalesCreditMemoLines
+        {
             get { return BackingStore?.Get<List<SalesCreditMemoLine>?>("salesCreditMemoLines"); }
             set { BackingStore?.Set("salesCreditMemoLines", value); }
         }
 #nullable restore
 #else
-        public List<SalesCreditMemoLine> SalesCreditMemoLines {
+        public List<SalesCreditMemoLine> SalesCreditMemoLines
+        {
             get { return BackingStore?.Get<List<SalesCreditMemoLine>>("salesCreditMemoLines"); }
             set { BackingStore?.Set("salesCreditMemoLines", value); }
         }
@@ -403,13 +460,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The salesCreditMemos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesCreditMemo>? SalesCreditMemos {
+        public List<SalesCreditMemo>? SalesCreditMemos
+        {
             get { return BackingStore?.Get<List<SalesCreditMemo>?>("salesCreditMemos"); }
             set { BackingStore?.Set("salesCreditMemos", value); }
         }
 #nullable restore
 #else
-        public List<SalesCreditMemo> SalesCreditMemos {
+        public List<SalesCreditMemo> SalesCreditMemos
+        {
             get { return BackingStore?.Get<List<SalesCreditMemo>>("salesCreditMemos"); }
             set { BackingStore?.Set("salesCreditMemos", value); }
         }
@@ -417,13 +476,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The salesInvoiceLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesInvoiceLine>? SalesInvoiceLines {
+        public List<SalesInvoiceLine>? SalesInvoiceLines
+        {
             get { return BackingStore?.Get<List<SalesInvoiceLine>?>("salesInvoiceLines"); }
             set { BackingStore?.Set("salesInvoiceLines", value); }
         }
 #nullable restore
 #else
-        public List<SalesInvoiceLine> SalesInvoiceLines {
+        public List<SalesInvoiceLine> SalesInvoiceLines
+        {
             get { return BackingStore?.Get<List<SalesInvoiceLine>>("salesInvoiceLines"); }
             set { BackingStore?.Set("salesInvoiceLines", value); }
         }
@@ -431,13 +492,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The salesInvoices property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesInvoice>? SalesInvoices {
+        public List<SalesInvoice>? SalesInvoices
+        {
             get { return BackingStore?.Get<List<SalesInvoice>?>("salesInvoices"); }
             set { BackingStore?.Set("salesInvoices", value); }
         }
 #nullable restore
 #else
-        public List<SalesInvoice> SalesInvoices {
+        public List<SalesInvoice> SalesInvoices
+        {
             get { return BackingStore?.Get<List<SalesInvoice>>("salesInvoices"); }
             set { BackingStore?.Set("salesInvoices", value); }
         }
@@ -445,13 +508,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The salesOrderLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesOrderLine>? SalesOrderLines {
+        public List<SalesOrderLine>? SalesOrderLines
+        {
             get { return BackingStore?.Get<List<SalesOrderLine>?>("salesOrderLines"); }
             set { BackingStore?.Set("salesOrderLines", value); }
         }
 #nullable restore
 #else
-        public List<SalesOrderLine> SalesOrderLines {
+        public List<SalesOrderLine> SalesOrderLines
+        {
             get { return BackingStore?.Get<List<SalesOrderLine>>("salesOrderLines"); }
             set { BackingStore?.Set("salesOrderLines", value); }
         }
@@ -459,13 +524,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The salesOrders property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesOrder>? SalesOrders {
+        public List<SalesOrder>? SalesOrders
+        {
             get { return BackingStore?.Get<List<SalesOrder>?>("salesOrders"); }
             set { BackingStore?.Set("salesOrders", value); }
         }
 #nullable restore
 #else
-        public List<SalesOrder> SalesOrders {
+        public List<SalesOrder> SalesOrders
+        {
             get { return BackingStore?.Get<List<SalesOrder>>("salesOrders"); }
             set { BackingStore?.Set("salesOrders", value); }
         }
@@ -473,13 +540,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The salesQuoteLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesQuoteLine>? SalesQuoteLines {
+        public List<SalesQuoteLine>? SalesQuoteLines
+        {
             get { return BackingStore?.Get<List<SalesQuoteLine>?>("salesQuoteLines"); }
             set { BackingStore?.Set("salesQuoteLines", value); }
         }
 #nullable restore
 #else
-        public List<SalesQuoteLine> SalesQuoteLines {
+        public List<SalesQuoteLine> SalesQuoteLines
+        {
             get { return BackingStore?.Get<List<SalesQuoteLine>>("salesQuoteLines"); }
             set { BackingStore?.Set("salesQuoteLines", value); }
         }
@@ -487,13 +556,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The salesQuotes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesQuote>? SalesQuotes {
+        public List<SalesQuote>? SalesQuotes
+        {
             get { return BackingStore?.Get<List<SalesQuote>?>("salesQuotes"); }
             set { BackingStore?.Set("salesQuotes", value); }
         }
 #nullable restore
 #else
-        public List<SalesQuote> SalesQuotes {
+        public List<SalesQuote> SalesQuotes
+        {
             get { return BackingStore?.Get<List<SalesQuote>>("salesQuotes"); }
             set { BackingStore?.Set("salesQuotes", value); }
         }
@@ -501,13 +572,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The shipmentMethods property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ShipmentMethod>? ShipmentMethods {
+        public List<ShipmentMethod>? ShipmentMethods
+        {
             get { return BackingStore?.Get<List<ShipmentMethod>?>("shipmentMethods"); }
             set { BackingStore?.Set("shipmentMethods", value); }
         }
 #nullable restore
 #else
-        public List<ShipmentMethod> ShipmentMethods {
+        public List<ShipmentMethod> ShipmentMethods
+        {
             get { return BackingStore?.Get<List<ShipmentMethod>>("shipmentMethods"); }
             set { BackingStore?.Set("shipmentMethods", value); }
         }
@@ -515,13 +588,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The systemVersion property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SystemVersion {
+        public string? SystemVersion
+        {
             get { return BackingStore?.Get<string?>("systemVersion"); }
             set { BackingStore?.Set("systemVersion", value); }
         }
 #nullable restore
 #else
-        public string SystemVersion {
+        public string SystemVersion
+        {
             get { return BackingStore?.Get<string>("systemVersion"); }
             set { BackingStore?.Set("systemVersion", value); }
         }
@@ -529,13 +604,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The taxAreas property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaxArea>? TaxAreas {
+        public List<TaxArea>? TaxAreas
+        {
             get { return BackingStore?.Get<List<TaxArea>?>("taxAreas"); }
             set { BackingStore?.Set("taxAreas", value); }
         }
 #nullable restore
 #else
-        public List<TaxArea> TaxAreas {
+        public List<TaxArea> TaxAreas
+        {
             get { return BackingStore?.Get<List<TaxArea>>("taxAreas"); }
             set { BackingStore?.Set("taxAreas", value); }
         }
@@ -543,13 +620,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The taxGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TaxGroup>? TaxGroups {
+        public List<TaxGroup>? TaxGroups
+        {
             get { return BackingStore?.Get<List<TaxGroup>?>("taxGroups"); }
             set { BackingStore?.Set("taxGroups", value); }
         }
 #nullable restore
 #else
-        public List<TaxGroup> TaxGroups {
+        public List<TaxGroup> TaxGroups
+        {
             get { return BackingStore?.Get<List<TaxGroup>>("taxGroups"); }
             set { BackingStore?.Set("taxGroups", value); }
         }
@@ -557,13 +636,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unitsOfMeasure property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnitOfMeasure>? UnitsOfMeasure {
+        public List<UnitOfMeasure>? UnitsOfMeasure
+        {
             get { return BackingStore?.Get<List<UnitOfMeasure>?>("unitsOfMeasure"); }
             set { BackingStore?.Set("unitsOfMeasure", value); }
         }
 #nullable restore
 #else
-        public List<UnitOfMeasure> UnitsOfMeasure {
+        public List<UnitOfMeasure> UnitsOfMeasure
+        {
             get { return BackingStore?.Get<List<UnitOfMeasure>>("unitsOfMeasure"); }
             set { BackingStore?.Set("unitsOfMeasure", value); }
         }
@@ -571,13 +652,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The vendors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Vendor>? Vendors {
+        public List<Vendor>? Vendors
+        {
             get { return BackingStore?.Get<List<Vendor>?>("vendors"); }
             set { BackingStore?.Set("vendors", value); }
         }
 #nullable restore
 #else
-        public List<Vendor> Vendors {
+        public List<Vendor> Vendors
+        {
             get { return BackingStore?.Get<List<Vendor>>("vendors"); }
             set { BackingStore?.Set("vendors", value); }
         }
@@ -608,47 +691,47 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accounts", n => { Accounts = n.GetCollectionOfObjectValues<Account>(Account.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"agedAccountsPayable", n => { AgedAccountsPayable = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AgedAccountsPayable>(Microsoft.Graph.Beta.Models.AgedAccountsPayable.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"agedAccountsReceivable", n => { AgedAccountsReceivable = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>(Microsoft.Graph.Beta.Models.AgedAccountsReceivable.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"businessProfileId", n => { BusinessProfileId = n.GetStringValue(); } },
-                {"companyInformation", n => { CompanyInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CompanyInformation>(Microsoft.Graph.Beta.Models.CompanyInformation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"countriesRegions", n => { CountriesRegions = n.GetCollectionOfObjectValues<CountryRegion>(CountryRegion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"currencies", n => { Currencies = n.GetCollectionOfObjectValues<Currency>(Currency.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customerPaymentJournals", n => { CustomerPaymentJournals = n.GetCollectionOfObjectValues<CustomerPaymentJournal>(CustomerPaymentJournal.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customerPayments", n => { CustomerPayments = n.GetCollectionOfObjectValues<CustomerPayment>(CustomerPayment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"customers", n => { Customers = n.GetCollectionOfObjectValues<Customer>(Customer.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dimensionValues", n => { DimensionValues = n.GetCollectionOfObjectValues<DimensionValue>(DimensionValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dimensions", n => { Dimensions = n.GetCollectionOfObjectValues<Dimension>(Dimension.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"employees", n => { Employees = n.GetCollectionOfObjectValues<Employee>(Employee.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"generalLedgerEntries", n => { GeneralLedgerEntries = n.GetCollectionOfObjectValues<GeneralLedgerEntry>(GeneralLedgerEntry.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"itemCategories", n => { ItemCategories = n.GetCollectionOfObjectValues<ItemCategory>(ItemCategory.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"items", n => { Items = n.GetCollectionOfObjectValues<Item>(Item.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"journalLines", n => { JournalLines = n.GetCollectionOfObjectValues<JournalLine>(JournalLine.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"journals", n => { Journals = n.GetCollectionOfObjectValues<Journal>(Journal.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"paymentMethods", n => { PaymentMethods = n.GetCollectionOfObjectValues<PaymentMethod>(PaymentMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"paymentTerms", n => { PaymentTerms = n.GetCollectionOfObjectValues<PaymentTerm>(PaymentTerm.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<PurchaseInvoiceLine>(PurchaseInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"purchaseInvoices", n => { PurchaseInvoices = n.GetCollectionOfObjectValues<PurchaseInvoice>(PurchaseInvoice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"salesCreditMemoLines", n => { SalesCreditMemoLines = n.GetCollectionOfObjectValues<SalesCreditMemoLine>(SalesCreditMemoLine.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"salesCreditMemos", n => { SalesCreditMemos = n.GetCollectionOfObjectValues<SalesCreditMemo>(SalesCreditMemo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"salesInvoiceLines", n => { SalesInvoiceLines = n.GetCollectionOfObjectValues<SalesInvoiceLine>(SalesInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"salesInvoices", n => { SalesInvoices = n.GetCollectionOfObjectValues<SalesInvoice>(SalesInvoice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"salesOrderLines", n => { SalesOrderLines = n.GetCollectionOfObjectValues<SalesOrderLine>(SalesOrderLine.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"salesOrders", n => { SalesOrders = n.GetCollectionOfObjectValues<SalesOrder>(SalesOrder.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"salesQuoteLines", n => { SalesQuoteLines = n.GetCollectionOfObjectValues<SalesQuoteLine>(SalesQuoteLine.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"salesQuotes", n => { SalesQuotes = n.GetCollectionOfObjectValues<SalesQuote>(SalesQuote.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"shipmentMethods", n => { ShipmentMethods = n.GetCollectionOfObjectValues<ShipmentMethod>(ShipmentMethod.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"systemVersion", n => { SystemVersion = n.GetStringValue(); } },
-                {"taxAreas", n => { TaxAreas = n.GetCollectionOfObjectValues<TaxArea>(TaxArea.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"taxGroups", n => { TaxGroups = n.GetCollectionOfObjectValues<TaxGroup>(TaxGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"unitsOfMeasure", n => { UnitsOfMeasure = n.GetCollectionOfObjectValues<UnitOfMeasure>(UnitOfMeasure.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"vendors", n => { Vendors = n.GetCollectionOfObjectValues<Vendor>(Vendor.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accounts", n => { Accounts = n.GetCollectionOfObjectValues<Account>(Account.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agedAccountsPayable", n => { AgedAccountsPayable = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AgedAccountsPayable>(Microsoft.Graph.Beta.Models.AgedAccountsPayable.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agedAccountsReceivable", n => { AgedAccountsReceivable = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AgedAccountsReceivable>(Microsoft.Graph.Beta.Models.AgedAccountsReceivable.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "businessProfileId", n => { BusinessProfileId = n.GetStringValue(); } },
+                { "companyInformation", n => { CompanyInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CompanyInformation>(Microsoft.Graph.Beta.Models.CompanyInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "countriesRegions", n => { CountriesRegions = n.GetCollectionOfObjectValues<CountryRegion>(CountryRegion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "currencies", n => { Currencies = n.GetCollectionOfObjectValues<Currency>(Currency.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customerPaymentJournals", n => { CustomerPaymentJournals = n.GetCollectionOfObjectValues<CustomerPaymentJournal>(CustomerPaymentJournal.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customerPayments", n => { CustomerPayments = n.GetCollectionOfObjectValues<CustomerPayment>(CustomerPayment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customers", n => { Customers = n.GetCollectionOfObjectValues<Customer>(Customer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dimensionValues", n => { DimensionValues = n.GetCollectionOfObjectValues<DimensionValue>(DimensionValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dimensions", n => { Dimensions = n.GetCollectionOfObjectValues<Dimension>(Dimension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "employees", n => { Employees = n.GetCollectionOfObjectValues<Employee>(Employee.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "generalLedgerEntries", n => { GeneralLedgerEntries = n.GetCollectionOfObjectValues<GeneralLedgerEntry>(GeneralLedgerEntry.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "itemCategories", n => { ItemCategories = n.GetCollectionOfObjectValues<ItemCategory>(ItemCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Item>(Item.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "journalLines", n => { JournalLines = n.GetCollectionOfObjectValues<JournalLine>(JournalLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "journals", n => { Journals = n.GetCollectionOfObjectValues<Journal>(Journal.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "paymentMethods", n => { PaymentMethods = n.GetCollectionOfObjectValues<PaymentMethod>(PaymentMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "paymentTerms", n => { PaymentTerms = n.GetCollectionOfObjectValues<PaymentTerm>(PaymentTerm.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<PurchaseInvoiceLine>(PurchaseInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "purchaseInvoices", n => { PurchaseInvoices = n.GetCollectionOfObjectValues<PurchaseInvoice>(PurchaseInvoice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesCreditMemoLines", n => { SalesCreditMemoLines = n.GetCollectionOfObjectValues<SalesCreditMemoLine>(SalesCreditMemoLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesCreditMemos", n => { SalesCreditMemos = n.GetCollectionOfObjectValues<SalesCreditMemo>(SalesCreditMemo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesInvoiceLines", n => { SalesInvoiceLines = n.GetCollectionOfObjectValues<SalesInvoiceLine>(SalesInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesInvoices", n => { SalesInvoices = n.GetCollectionOfObjectValues<SalesInvoice>(SalesInvoice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesOrderLines", n => { SalesOrderLines = n.GetCollectionOfObjectValues<SalesOrderLine>(SalesOrderLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesOrders", n => { SalesOrders = n.GetCollectionOfObjectValues<SalesOrder>(SalesOrder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesQuoteLines", n => { SalesQuoteLines = n.GetCollectionOfObjectValues<SalesQuoteLine>(SalesQuoteLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesQuotes", n => { SalesQuotes = n.GetCollectionOfObjectValues<SalesQuote>(SalesQuote.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shipmentMethods", n => { ShipmentMethods = n.GetCollectionOfObjectValues<ShipmentMethod>(ShipmentMethod.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "systemVersion", n => { SystemVersion = n.GetStringValue(); } },
+                { "taxAreas", n => { TaxAreas = n.GetCollectionOfObjectValues<TaxArea>(TaxArea.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "taxGroups", n => { TaxGroups = n.GetCollectionOfObjectValues<TaxGroup>(TaxGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "unitsOfMeasure", n => { UnitsOfMeasure = n.GetCollectionOfObjectValues<UnitOfMeasure>(UnitOfMeasure.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "vendors", n => { Vendors = n.GetCollectionOfObjectValues<Vendor>(Vendor.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

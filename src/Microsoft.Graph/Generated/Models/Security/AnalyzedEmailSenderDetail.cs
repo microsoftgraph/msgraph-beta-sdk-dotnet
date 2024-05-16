@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AnalyzedEmailSenderDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AnalyzedEmailSenderDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The sender email address in the mail From header, also known as the envelope sender or the P1 sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromAddress {
+        public string? FromAddress
+        {
             get { return BackingStore?.Get<string?>("fromAddress"); }
             set { BackingStore?.Set("fromAddress", value); }
         }
 #nullable restore
 #else
-        public string FromAddress {
+        public string FromAddress
+        {
             get { return BackingStore?.Get<string>("fromAddress"); }
             set { BackingStore?.Set("fromAddress", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The IPv4 address of the last detected mail server that relayed the message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ipv4 {
+        public string? Ipv4
+        {
             get { return BackingStore?.Get<string?>("ipv4"); }
             set { BackingStore?.Set("ipv4", value); }
         }
 #nullable restore
 #else
-        public string Ipv4 {
+        public string Ipv4
+        {
             get { return BackingStore?.Get<string>("ipv4"); }
             set { BackingStore?.Set("ipv4", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The sender email address in the From header, which is visible to email recipients on their email clients. Also known as P2 sender.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MailFromAddress {
+        public string? MailFromAddress
+        {
             get { return BackingStore?.Get<string?>("mailFromAddress"); }
             set { BackingStore?.Set("mailFromAddress", value); }
         }
 #nullable restore
 #else
-        public string MailFromAddress {
+        public string MailFromAddress
+        {
             get { return BackingStore?.Get<string>("mailFromAddress"); }
             set { BackingStore?.Set("mailFromAddress", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fromAddress", n => { FromAddress = n.GetStringValue(); } },
-                {"ipv4", n => { Ipv4 = n.GetStringValue(); } },
-                {"mailFromAddress", n => { MailFromAddress = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "fromAddress", n => { FromAddress = n.GetStringValue(); } },
+                { "ipv4", n => { Ipv4 = n.GetStringValue(); } },
+                { "mailFromAddress", n => { MailFromAddress = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

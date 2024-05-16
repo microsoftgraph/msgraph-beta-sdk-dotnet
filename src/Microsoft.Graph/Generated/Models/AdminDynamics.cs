@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AdminDynamics : Entity, IParsable 
+    public class AdminDynamics : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The customerVoice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CustomerVoiceSettings? CustomerVoice {
+        public CustomerVoiceSettings? CustomerVoice
+        {
             get { return BackingStore?.Get<CustomerVoiceSettings?>("customerVoice"); }
             set { BackingStore?.Set("customerVoice", value); }
         }
 #nullable restore
 #else
-        public CustomerVoiceSettings CustomerVoice {
+        public CustomerVoiceSettings CustomerVoice
+        {
             get { return BackingStore?.Get<CustomerVoiceSettings>("customerVoice"); }
             set { BackingStore?.Set("customerVoice", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customerVoice", n => { CustomerVoice = n.GetObjectValue<CustomerVoiceSettings>(CustomerVoiceSettings.CreateFromDiscriminatorValue); } },
+                { "customerVoice", n => { CustomerVoice = n.GetObjectValue<CustomerVoiceSettings>(CustomerVoiceSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

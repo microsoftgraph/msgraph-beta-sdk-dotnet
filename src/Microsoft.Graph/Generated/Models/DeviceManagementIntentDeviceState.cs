@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that represents device state for an intent
     /// </summary>
-    public class DeviceManagementIntentDeviceState : Entity, IParsable 
+    public class DeviceManagementIntentDeviceState : Entity, IParsable
     {
         /// <summary>Device name that is being reported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceDisplayName {
+        public string? DeviceDisplayName
+        {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
 #nullable restore
 #else
-        public string DeviceDisplayName {
+        public string DeviceDisplayName
+        {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
@@ -27,37 +30,43 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device id that is being reported</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #endif
         /// <summary>Last modified date time of an intent report</summary>
-        public DateTimeOffset? LastReportedDateTime {
+        public DateTimeOffset? LastReportedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportedDateTime"); }
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>The state property</summary>
-        public ComplianceStatus? State {
+        public ComplianceStatus? State
+        {
             get { return BackingStore?.Get<ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The user name that is being reported on a device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -65,13 +74,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user principal name that is being reported on a device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -94,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

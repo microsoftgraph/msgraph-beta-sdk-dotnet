@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.DeviceManagement {
+namespace Microsoft.Graph.Beta.Models.DeviceManagement
+{
     #pragma warning disable CS1591
-    public class RuleThreshold : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RuleThreshold : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.</summary>
-        public AggregationType? Aggregation {
+        public AggregationType? Aggregation
+        {
             get { return BackingStore?.Get<AggregationType?>("aggregation"); }
             set { BackingStore?.Set("aggregation", value); }
         }
@@ -25,24 +28,28 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.</summary>
-        public OperatorType? Operator {
+        public OperatorType? Operator
+        {
             get { return BackingStore?.Get<OperatorType?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The target threshold value.</summary>
-        public int? Target {
+        public int? Target
+        {
             get { return BackingStore?.Get<int?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"aggregation", n => { Aggregation = n.GetEnumValue<AggregationType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operator", n => { Operator = n.GetEnumValue<OperatorType>(); } },
-                {"target", n => { Target = n.GetIntValue(); } },
+                { "aggregation", n => { Aggregation = n.GetEnumValue<AggregationType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operator", n => { Operator = n.GetEnumValue<OperatorType>(); } },
+                { "target", n => { Target = n.GetIntValue(); } },
             };
         }
         /// <summary>

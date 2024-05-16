@@ -4,51 +4,59 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class IpApplicationSegment : ApplicationSegment, IParsable 
+    public class IpApplicationSegment : ApplicationSegment, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The destinationHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationHost {
+        public string? DestinationHost
+        {
             get { return BackingStore?.Get<string?>("destinationHost"); }
             set { BackingStore?.Set("destinationHost", value); }
         }
 #nullable restore
 #else
-        public string DestinationHost {
+        public string DestinationHost
+        {
             get { return BackingStore?.Get<string>("destinationHost"); }
             set { BackingStore?.Set("destinationHost", value); }
         }
 #endif
         /// <summary>The destinationType property</summary>
-        public PrivateNetworkDestinationType? DestinationType {
+        public PrivateNetworkDestinationType? DestinationType
+        {
             get { return BackingStore?.Get<PrivateNetworkDestinationType?>("destinationType"); }
             set { BackingStore?.Set("destinationType", value); }
         }
         /// <summary>The port property</summary>
-        public int? Port {
+        public int? Port
+        {
             get { return BackingStore?.Get<int?>("port"); }
             set { BackingStore?.Set("port", value); }
         }
         /// <summary>The ports property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ports {
+        public List<string>? Ports
+        {
             get { return BackingStore?.Get<List<string>?>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #nullable restore
 #else
-        public List<string> Ports {
+        public List<string> Ports
+        {
             get { return BackingStore?.Get<List<string>>("ports"); }
             set { BackingStore?.Set("ports", value); }
         }
 #endif
         /// <summary>The protocol property</summary>
-        public PrivateNetworkProtocol? Protocol {
+        public PrivateNetworkProtocol? Protocol
+        {
             get { return BackingStore?.Get<PrivateNetworkProtocol?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"destinationHost", n => { DestinationHost = n.GetStringValue(); } },
-                {"destinationType", n => { DestinationType = n.GetEnumValue<PrivateNetworkDestinationType>(); } },
-                {"port", n => { Port = n.GetIntValue(); } },
-                {"ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"protocol", n => { Protocol = n.GetEnumValue<PrivateNetworkProtocol>(); } },
+                { "destinationHost", n => { DestinationHost = n.GetStringValue(); } },
+                { "destinationType", n => { DestinationType = n.GetEnumValue<PrivateNetworkDestinationType>(); } },
+                { "port", n => { Port = n.GetIntValue(); } },
+                { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<PrivateNetworkProtocol>(); } },
             };
         }
         /// <summary>

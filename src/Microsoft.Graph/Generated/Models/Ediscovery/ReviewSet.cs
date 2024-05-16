@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class ReviewSet : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ReviewSet : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The user who created the review set. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The datetime when the review set was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The review set name. The name is unique with a maximum limit of 64 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// <summary>The queries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReviewSetQuery>? Queries {
+        public List<ReviewSetQuery>? Queries
+        {
             get { return BackingStore?.Get<List<ReviewSetQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #nullable restore
 #else
-        public List<ReviewSetQuery> Queries {
+        public List<ReviewSetQuery> Queries
+        {
             get { return BackingStore?.Get<List<ReviewSetQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"queries", n => { Queries = n.GetCollectionOfObjectValues<ReviewSetQuery>(ReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<ReviewSetQuery>(ReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

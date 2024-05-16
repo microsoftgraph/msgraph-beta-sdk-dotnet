@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.RetrieveApprovableOperations {
+namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalPolicies.RetrieveApprovableOperations
+{
     [Obsolete("This class is obsolete. Use RetrieveApprovableOperationsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class RetrieveApprovableOperationsResponse : RetrieveApprovableOperationsGetResponse, IParsable 
+    public class RetrieveApprovableOperationsResponse : RetrieveApprovableOperationsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

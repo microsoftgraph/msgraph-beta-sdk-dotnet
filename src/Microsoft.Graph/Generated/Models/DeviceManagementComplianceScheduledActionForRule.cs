@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Scheduled Action for Rule
     /// </summary>
-    public class DeviceManagementComplianceScheduledActionForRule : Entity, IParsable 
+    public class DeviceManagementComplianceScheduledActionForRule : Entity, IParsable
     {
         /// <summary>Name of the rule which this scheduled action applies to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RuleName {
+        public string? RuleName
+        {
             get { return BackingStore?.Get<string?>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
 #nullable restore
 #else
-        public string RuleName {
+        public string RuleName
+        {
             get { return BackingStore?.Get<string>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementComplianceActionItem>? ScheduledActionConfigurations {
+        public List<DeviceManagementComplianceActionItem>? ScheduledActionConfigurations
+        {
             get { return BackingStore?.Get<List<DeviceManagementComplianceActionItem>?>("scheduledActionConfigurations"); }
             set { BackingStore?.Set("scheduledActionConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementComplianceActionItem> ScheduledActionConfigurations {
+        public List<DeviceManagementComplianceActionItem> ScheduledActionConfigurations
+        {
             get { return BackingStore?.Get<List<DeviceManagementComplianceActionItem>>("scheduledActionConfigurations"); }
             set { BackingStore?.Set("scheduledActionConfigurations", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"ruleName", n => { RuleName = n.GetStringValue(); } },
-                {"scheduledActionConfigurations", n => { ScheduledActionConfigurations = n.GetCollectionOfObjectValues<DeviceManagementComplianceActionItem>(DeviceManagementComplianceActionItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "ruleName", n => { RuleName = n.GetStringValue(); } },
+                { "scheduledActionConfigurations", n => { ScheduledActionConfigurations = n.GetCollectionOfObjectValues<DeviceManagementComplianceActionItem>(DeviceManagementComplianceActionItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

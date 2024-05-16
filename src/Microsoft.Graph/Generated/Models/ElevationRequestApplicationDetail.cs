@@ -5,29 +5,33 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The details of the application which the user has requested to elevate
     /// </summary>
-    public class ApplicationDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ElevationRequestApplicationDetail : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The path of the file in the request for elevation, for example, %programfiles%/git/cmd</summary>
+        /// <summary>The path of the file in the request for elevation, for example, %programfiles%\git\cmd</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileDescription {
+        public string? FileDescription
+        {
             get { return BackingStore?.Get<string?>("fileDescription"); }
             set { BackingStore?.Set("fileDescription", value); }
         }
 #nullable restore
 #else
-        public string FileDescription {
+        public string FileDescription
+        {
             get { return BackingStore?.Get<string>("fileDescription"); }
             set { BackingStore?.Set("fileDescription", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The SHA256 hash of the file in the request for elevation, for example, &apos;18ee24150dcb1d96752a4d6dd0f20dfd8ba8c38527e40aa8509b7adecf78f9c6&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileHash {
+        public string? FileHash
+        {
             get { return BackingStore?.Get<string?>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
 #nullable restore
 #else
-        public string FileHash {
+        public string FileHash
+        {
             get { return BackingStore?.Get<string>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
         }
@@ -49,27 +55,31 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the file in the request for elevation, for example, git.exe</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #endif
-        /// <summary>The path of the file in the request for elevation, for example, %programfiles%/git/cmd</summary>
+        /// <summary>The path of the file in the request for elevation, for example, %programfiles%\git\cmd</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FilePath {
+        public string? FilePath
+        {
             get { return BackingStore?.Get<string?>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
 #nullable restore
 #else
-        public string FilePath {
+        public string FilePath
+        {
             get { return BackingStore?.Get<string>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The internal name of the application for which elevation request has been made. For example, &apos;git&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductInternalName {
+        public string? ProductInternalName
+        {
             get { return BackingStore?.Get<string?>("productInternalName"); }
             set { BackingStore?.Set("productInternalName", value); }
         }
 #nullable restore
 #else
-        public string ProductInternalName {
+        public string ProductInternalName
+        {
             get { return BackingStore?.Get<string>("productInternalName"); }
             set { BackingStore?.Set("productInternalName", value); }
         }
@@ -105,13 +119,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The product name of the application for which elevation request has been made. For example, &apos;Git&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductName {
+        public string? ProductName
+        {
             get { return BackingStore?.Get<string?>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
 #nullable restore
 #else
-        public string ProductName {
+        public string ProductName
+        {
             get { return BackingStore?.Get<string>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
@@ -119,27 +135,31 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The product version of the application for which elevation request has been made. For example, &apos;2.40.1.0&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductVersion {
+        public string? ProductVersion
+        {
             get { return BackingStore?.Get<string?>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
 #nullable restore
 #else
-        public string ProductVersion {
+        public string ProductVersion
+        {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
 #endif
-        /// <summary>The list of base64 encoded certificate for each signer, for example, string[encodedleafcert1, encodedleafcert2....]</summary>
+        /// <summary>The list of base64 encoded certificate for each signer, for example, string[encoded_leaf_cert1, encoded_leaf_cert2....]</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublisherCert {
+        public string? PublisherCert
+        {
             get { return BackingStore?.Get<string?>("publisherCert"); }
             set { BackingStore?.Set("publisherCert", value); }
         }
 #nullable restore
 #else
-        public string PublisherCert {
+        public string PublisherCert
+        {
             get { return BackingStore?.Get<string>("publisherCert"); }
             set { BackingStore?.Set("publisherCert", value); }
         }
@@ -147,21 +167,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The certificate issuer name of the certificate used to sign the application, for example, &apos;Sectigo Public Code Signing CA R36&apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublisherName {
+        public string? PublisherName
+        {
             get { return BackingStore?.Get<string?>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
 #nullable restore
 #else
-        public string PublisherName {
+        public string PublisherName
+        {
             get { return BackingStore?.Get<string>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApplicationDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="ElevationRequestApplicationDetail"/> and sets the default values.
         /// </summary>
-        public ApplicationDetail()
+        public ElevationRequestApplicationDetail()
         {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
@@ -169,12 +191,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplicationDetail"/></returns>
+        /// <returns>A <see cref="ElevationRequestApplicationDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplicationDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static ElevationRequestApplicationDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplicationDetail();
+            return new ElevationRequestApplicationDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -184,16 +206,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"fileDescription", n => { FileDescription = n.GetStringValue(); } },
-                {"fileHash", n => { FileHash = n.GetStringValue(); } },
-                {"fileName", n => { FileName = n.GetStringValue(); } },
-                {"filePath", n => { FilePath = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"productInternalName", n => { ProductInternalName = n.GetStringValue(); } },
-                {"productName", n => { ProductName = n.GetStringValue(); } },
-                {"productVersion", n => { ProductVersion = n.GetStringValue(); } },
-                {"publisherCert", n => { PublisherCert = n.GetStringValue(); } },
-                {"publisherName", n => { PublisherName = n.GetStringValue(); } },
+                { "fileDescription", n => { FileDescription = n.GetStringValue(); } },
+                { "fileHash", n => { FileHash = n.GetStringValue(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
+                { "filePath", n => { FilePath = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "productInternalName", n => { ProductInternalName = n.GetStringValue(); } },
+                { "productName", n => { ProductName = n.GetStringValue(); } },
+                { "productVersion", n => { ProductVersion = n.GetStringValue(); } },
+                { "publisherCert", n => { PublisherCert = n.GetStringValue(); } },
+                { "publisherName", n => { PublisherName = n.GetStringValue(); } },
             };
         }
         /// <summary>

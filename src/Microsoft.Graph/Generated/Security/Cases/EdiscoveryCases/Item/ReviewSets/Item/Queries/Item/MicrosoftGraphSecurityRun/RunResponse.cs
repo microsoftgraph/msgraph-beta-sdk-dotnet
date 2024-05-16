@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityRun {
+namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphSecurityRun
+{
     [Obsolete("This class is obsolete. Use RunGetResponse instead.")]
     #pragma warning disable CS1591
-    public class RunResponse : RunGetResponse, IParsable 
+    public class RunResponse : RunGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

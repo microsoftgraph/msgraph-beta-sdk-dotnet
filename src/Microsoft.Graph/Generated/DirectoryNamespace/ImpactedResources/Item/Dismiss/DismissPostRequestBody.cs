@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Dismiss {
+namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Dismiss
+{
     #pragma warning disable CS1591
-    public class DismissPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DismissPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Dismiss
         /// <summary>The dismissReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DismissReason {
+        public string? DismissReason
+        {
             get { return BackingStore?.Get<string?>("dismissReason"); }
             set { BackingStore?.Set("dismissReason", value); }
         }
 #nullable restore
 #else
-        public string DismissReason {
+        public string DismissReason
+        {
             get { return BackingStore?.Get<string>("dismissReason"); }
             set { BackingStore?.Set("dismissReason", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item.Dismiss
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dismissReason", n => { DismissReason = n.GetStringValue(); } },
+                { "dismissReason", n => { DismissReason = n.GetStringValue(); } },
             };
         }
         /// <summary>

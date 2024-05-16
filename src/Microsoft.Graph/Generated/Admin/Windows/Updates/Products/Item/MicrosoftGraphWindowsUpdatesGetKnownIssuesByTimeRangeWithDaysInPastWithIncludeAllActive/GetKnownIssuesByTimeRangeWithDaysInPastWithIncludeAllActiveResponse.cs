@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.Item.MicrosoftGraphWindowsUpdatesGetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActive
+{
     [Obsolete("This class is obsolete. Use GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponse : GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse, IParsable 
+    public class GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveResponse : GetKnownIssuesByTimeRangeWithDaysInPastWithIncludeAllActiveGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

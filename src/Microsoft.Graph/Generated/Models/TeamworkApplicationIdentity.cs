@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkApplicationIdentity : Identity, IParsable 
+    public class TeamworkApplicationIdentity : Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Type of application that is referenced. Possible values are: aadApplication, bot, tenantBot, office365Connector, and outgoingWebhook.</summary>
-        public TeamworkApplicationIdentityType? ApplicationIdentityType {
+        public TeamworkApplicationIdentityType? ApplicationIdentityType
+        {
             get { return BackingStore?.Get<TeamworkApplicationIdentityType?>("applicationIdentityType"); }
             set { BackingStore?.Set("applicationIdentityType", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicationIdentityType", n => { ApplicationIdentityType = n.GetEnumValue<TeamworkApplicationIdentityType>(); } },
+                { "applicationIdentityType", n => { ApplicationIdentityType = n.GetEnumValue<TeamworkApplicationIdentityType>(); } },
             };
         }
         /// <summary>

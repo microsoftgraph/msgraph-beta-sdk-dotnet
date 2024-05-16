@@ -5,43 +5,50 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceComplianceScriptRule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceComplianceScriptRule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Data types for rules.</summary>
-        public Microsoft.Graph.Beta.Models.DataType? DataType {
+        public Microsoft.Graph.Beta.Models.DataType? DataType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataType?>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
         /// <summary>Data types for rules.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRuleDataType? DeviceComplianceScriptRuleDataType {
+        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRuleDataType? DeviceComplianceScriptRuleDataType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceComplianceScriptRuleDataType?>("deviceComplianceScriptRuleDataType"); }
             set { BackingStore?.Set("deviceComplianceScriptRuleDataType", value); }
         }
         /// <summary>Operator for rules.</summary>
-        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulOperator? DeviceComplianceScriptRulOperator {
+        public Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulOperator? DeviceComplianceScriptRulOperator
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceComplianceScriptRulOperator?>("deviceComplianceScriptRulOperator"); }
             set { BackingStore?.Set("deviceComplianceScriptRulOperator", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -49,32 +56,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Operand specified in the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Operand {
+        public string? Operand
+        {
             get { return BackingStore?.Get<string?>("operand"); }
             set { BackingStore?.Set("operand", value); }
         }
 #nullable restore
 #else
-        public string Operand {
+        public string Operand
+        {
             get { return BackingStore?.Get<string>("operand"); }
             set { BackingStore?.Set("operand", value); }
         }
 #endif
         /// <summary>Operator for rules.</summary>
-        public Microsoft.Graph.Beta.Models.Operator? Operator {
+        public Microsoft.Graph.Beta.Models.Operator? Operator
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Operator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>Setting name specified in the rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingName {
+        public string? SettingName
+        {
             get { return BackingStore?.Get<string?>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
 #nullable restore
 #else
-        public string SettingName {
+        public string SettingName
+        {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
@@ -105,13 +117,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"dataType", n => { DataType = n.GetEnumValue<DataType>(); } },
-                {"deviceComplianceScriptRulOperator", n => { DeviceComplianceScriptRulOperator = n.GetEnumValue<DeviceComplianceScriptRulOperator>(); } },
-                {"deviceComplianceScriptRuleDataType", n => { DeviceComplianceScriptRuleDataType = n.GetEnumValue<DeviceComplianceScriptRuleDataType>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"operand", n => { Operand = n.GetStringValue(); } },
-                {"operator", n => { Operator = n.GetEnumValue<Operator>(); } },
-                {"settingName", n => { SettingName = n.GetStringValue(); } },
+                { "dataType", n => { DataType = n.GetEnumValue<DataType>(); } },
+                { "deviceComplianceScriptRulOperator", n => { DeviceComplianceScriptRulOperator = n.GetEnumValue<DeviceComplianceScriptRulOperator>(); } },
+                { "deviceComplianceScriptRuleDataType", n => { DeviceComplianceScriptRuleDataType = n.GetEnumValue<DeviceComplianceScriptRuleDataType>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "operand", n => { Operand = n.GetStringValue(); } },
+                { "operator", n => { Operator = n.GetEnumValue<Operator>(); } },
+                { "settingName", n => { SettingName = n.GetStringValue(); } },
             };
         }
         /// <summary>

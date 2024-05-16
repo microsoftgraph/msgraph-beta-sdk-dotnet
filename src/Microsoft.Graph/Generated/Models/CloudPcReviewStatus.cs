@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcReviewStatus : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CloudPcReviewStatus : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureStorageAccountId {
+        public string? AzureStorageAccountId
+        {
             get { return BackingStore?.Get<string?>("azureStorageAccountId"); }
             set { BackingStore?.Set("azureStorageAccountId", value); }
         }
 #nullable restore
 #else
-        public string AzureStorageAccountId {
+        public string AzureStorageAccountId
+        {
             get { return BackingStore?.Get<string>("azureStorageAccountId"); }
             set { BackingStore?.Set("azureStorageAccountId", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureStorageAccountName {
+        public string? AzureStorageAccountName
+        {
             get { return BackingStore?.Get<string?>("azureStorageAccountName"); }
             set { BackingStore?.Set("azureStorageAccountName", value); }
         }
 #nullable restore
 #else
-        public string AzureStorageAccountName {
+        public string AzureStorageAccountName
+        {
             get { return BackingStore?.Get<string>("azureStorageAccountName"); }
             set { BackingStore?.Set("azureStorageAccountName", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AzureStorageContainerName {
+        public string? AzureStorageContainerName
+        {
             get { return BackingStore?.Get<string?>("azureStorageContainerName"); }
             set { BackingStore?.Set("azureStorageContainerName", value); }
         }
 #nullable restore
 #else
-        public string AzureStorageContainerName {
+        public string AzureStorageContainerName
+        {
             get { return BackingStore?.Get<string>("azureStorageContainerName"); }
             set { BackingStore?.Set("azureStorageContainerName", value); }
         }
@@ -60,44 +68,51 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the Cloud PC is set to in review by the administrator.</summary>
-        public bool? InReview {
+        public bool? InReview
+        {
             get { return BackingStore?.Get<bool?>("inReview"); }
             set { BackingStore?.Set("inReview", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? RestorePointDateTime {
+        public DateTimeOffset? RestorePointDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
             set { BackingStore?.Set("restorePointDateTime", value); }
         }
         /// <summary>The specific date and time when the Cloud PC was set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? ReviewStartDateTime {
+        public DateTimeOffset? ReviewStartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewStartDateTime"); }
             set { BackingStore?.Set("reviewStartDateTime", value); }
         }
         /// <summary>The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId {
+        public string? SubscriptionId
+        {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionId {
+        public string SubscriptionId
+        {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
@@ -105,19 +120,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the Azure subscription in which the Cloud PC snapshot is being saved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionName {
+        public string? SubscriptionName
+        {
             get { return BackingStore?.Get<string?>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionName {
+        public string SubscriptionName
+        {
             get { return BackingStore?.Get<string>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
 #endif
         /// <summary>The userAccessLevel property</summary>
-        public CloudPcUserAccessLevel? UserAccessLevel {
+        public CloudPcUserAccessLevel? UserAccessLevel
+        {
             get { return BackingStore?.Get<CloudPcUserAccessLevel?>("userAccessLevel"); }
             set { BackingStore?.Set("userAccessLevel", value); }
         }
@@ -147,16 +165,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"azureStorageAccountId", n => { AzureStorageAccountId = n.GetStringValue(); } },
-                {"azureStorageAccountName", n => { AzureStorageAccountName = n.GetStringValue(); } },
-                {"azureStorageContainerName", n => { AzureStorageContainerName = n.GetStringValue(); } },
-                {"inReview", n => { InReview = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
-                {"reviewStartDateTime", n => { ReviewStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
-                {"subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
-                {"userAccessLevel", n => { UserAccessLevel = n.GetEnumValue<CloudPcUserAccessLevel>(); } },
+                { "azureStorageAccountId", n => { AzureStorageAccountId = n.GetStringValue(); } },
+                { "azureStorageAccountName", n => { AzureStorageAccountName = n.GetStringValue(); } },
+                { "azureStorageContainerName", n => { AzureStorageContainerName = n.GetStringValue(); } },
+                { "inReview", n => { InReview = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
+                { "reviewStartDateTime", n => { ReviewStartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
+                { "userAccessLevel", n => { UserAccessLevel = n.GetEnumValue<CloudPcUserAccessLevel>(); } },
             };
         }
         /// <summary>

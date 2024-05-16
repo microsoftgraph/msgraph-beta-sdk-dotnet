@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represent status details for device and payload and all associated applied filters.
     /// </summary>
-    public class AssignmentFilterStatusDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignmentFilterStatusDetails : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device properties used for filter evaluation during device check-in time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? DeviceProperties {
+        public List<KeyValuePair>? DeviceProperties
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("deviceProperties"); }
             set { BackingStore?.Set("deviceProperties", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> DeviceProperties {
+        public List<KeyValuePair> DeviceProperties
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("deviceProperties"); }
             set { BackingStore?.Set("deviceProperties", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Evaluation result summaries for each filter associated to device and payload</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignmentFilterEvaluationSummary>? EvalutionSummaries {
+        public List<AssignmentFilterEvaluationSummary>? EvalutionSummaries
+        {
             get { return BackingStore?.Get<List<AssignmentFilterEvaluationSummary>?>("evalutionSummaries"); }
             set { BackingStore?.Set("evalutionSummaries", value); }
         }
 #nullable restore
 #else
-        public List<AssignmentFilterEvaluationSummary> EvalutionSummaries {
+        public List<AssignmentFilterEvaluationSummary> EvalutionSummaries
+        {
             get { return BackingStore?.Get<List<AssignmentFilterEvaluationSummary>>("evalutionSummaries"); }
             set { BackingStore?.Set("evalutionSummaries", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique identifier for the device object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique identifier for payload object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadId {
+        public string? PayloadId
+        {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
 #nullable restore
 #else
-        public string PayloadId {
+        public string PayloadId
+        {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique identifier for UserId object. Can be null</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -128,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceProperties", n => { DeviceProperties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"evalutionSummaries", n => { EvalutionSummaries = n.GetCollectionOfObjectValues<AssignmentFilterEvaluationSummary>(AssignmentFilterEvaluationSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"payloadId", n => { PayloadId = n.GetStringValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "deviceProperties", n => { DeviceProperties = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "evalutionSummaries", n => { EvalutionSummaries = n.GetCollectionOfObjectValues<AssignmentFilterEvaluationSummary>(AssignmentFilterEvaluationSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "payloadId", n => { PayloadId = n.GetStringValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

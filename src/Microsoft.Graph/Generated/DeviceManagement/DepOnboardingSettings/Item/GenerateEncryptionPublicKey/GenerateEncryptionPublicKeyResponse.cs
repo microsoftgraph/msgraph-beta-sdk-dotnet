@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey {
+namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GenerateEncryptionPublicKey
+{
     [Obsolete("This class is obsolete. Use GenerateEncryptionPublicKeyPostResponse instead.")]
     #pragma warning disable CS1591
-    public class GenerateEncryptionPublicKeyResponse : GenerateEncryptionPublicKeyPostResponse, IParsable 
+    public class GenerateEncryptionPublicKeyResponse : GenerateEncryptionPublicKeyPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

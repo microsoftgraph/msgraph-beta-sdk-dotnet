@@ -4,18 +4,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationIntegerSettingValueDefinition : DeviceManagementConfigurationSettingValueDefinition, IParsable 
+    public class DeviceManagementConfigurationIntegerSettingValueDefinition : DeviceManagementConfigurationSettingValueDefinition, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Maximum allowed value of the integer</summary>
-        public long? MaximumValue {
+        public long? MaximumValue
+        {
             get { return BackingStore?.Get<long?>("maximumValue"); }
             set { BackingStore?.Set("maximumValue", value); }
         }
         /// <summary>Minimum allowed value of the integer</summary>
-        public long? MinimumValue {
+        public long? MinimumValue
+        {
             get { return BackingStore?.Get<long?>("minimumValue"); }
             set { BackingStore?.Set("minimumValue", value); }
         }
@@ -44,8 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"maximumValue", n => { MaximumValue = n.GetLongValue(); } },
-                {"minimumValue", n => { MinimumValue = n.GetLongValue(); } },
+                { "maximumValue", n => { MaximumValue = n.GetLongValue(); } },
+                { "minimumValue", n => { MinimumValue = n.GetLongValue(); } },
             };
         }
         /// <summary>

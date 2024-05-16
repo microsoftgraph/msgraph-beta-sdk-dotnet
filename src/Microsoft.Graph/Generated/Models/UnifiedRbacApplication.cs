@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UnifiedRbacApplication : Entity, IParsable 
+    public class UnifiedRbacApplication : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Workload-specific scope object that represents the resources for which the principal has been granted access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomAppScope>? CustomAppScopes {
+        public List<CustomAppScope>? CustomAppScopes
+        {
             get { return BackingStore?.Get<List<CustomAppScope>?>("customAppScopes"); }
             set { BackingStore?.Set("customAppScopes", value); }
         }
 #nullable restore
 #else
-        public List<CustomAppScope> CustomAppScopes {
+        public List<CustomAppScope> CustomAppScopes
+        {
             get { return BackingStore?.Get<List<CustomAppScope>>("customAppScopes"); }
             set { BackingStore?.Set("customAppScopes", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Resource that represents a collection of related actions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRbacResourceNamespace>? ResourceNamespaces {
+        public List<UnifiedRbacResourceNamespace>? ResourceNamespaces
+        {
             get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>?>("resourceNamespaces"); }
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRbacResourceNamespace> ResourceNamespaces {
+        public List<UnifiedRbacResourceNamespace> ResourceNamespaces
+        {
             get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>>("resourceNamespaces"); }
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Resource to grant access to users or groups.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleAssignment>? RoleAssignments {
+        public List<UnifiedRoleAssignment>? RoleAssignments
+        {
             get { return BackingStore?.Get<List<UnifiedRoleAssignment>?>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleAssignment> RoleAssignments {
+        public List<UnifiedRoleAssignment> RoleAssignments
+        {
             get { return BackingStore?.Get<List<UnifiedRoleAssignment>>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roles allowed by RBAC providers and the permissions assigned to the roles.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleDefinition>? RoleDefinitions {
+        public List<UnifiedRoleDefinition>? RoleDefinitions
+        {
             get { return BackingStore?.Get<List<UnifiedRoleDefinition>?>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleDefinition> RoleDefinitions {
+        public List<UnifiedRoleDefinition> RoleDefinitions
+        {
             get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Resource to grant access to users or groups that are transitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleAssignment>? TransitiveRoleAssignments {
+        public List<UnifiedRoleAssignment>? TransitiveRoleAssignments
+        {
             get { return BackingStore?.Get<List<UnifiedRoleAssignment>?>("transitiveRoleAssignments"); }
             set { BackingStore?.Set("transitiveRoleAssignments", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleAssignment> TransitiveRoleAssignments {
+        public List<UnifiedRoleAssignment> TransitiveRoleAssignments
+        {
             get { return BackingStore?.Get<List<UnifiedRoleAssignment>>("transitiveRoleAssignments"); }
             set { BackingStore?.Set("transitiveRoleAssignments", value); }
         }
@@ -97,11 +108,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customAppScopes", n => { CustomAppScopes = n.GetCollectionOfObjectValues<CustomAppScope>(CustomAppScope.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"resourceNamespaces", n => { ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>(UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>(UnifiedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"transitiveRoleAssignments", n => { TransitiveRoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>(UnifiedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customAppScopes", n => { CustomAppScopes = n.GetCollectionOfObjectValues<CustomAppScope>(CustomAppScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceNamespaces", n => { ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>(UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>(UnifiedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "transitiveRoleAssignments", n => { TransitiveRoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignment>(UnifiedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

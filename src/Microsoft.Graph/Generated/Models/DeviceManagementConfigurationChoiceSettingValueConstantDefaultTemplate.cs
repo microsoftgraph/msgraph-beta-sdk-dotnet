@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Choice Setting Value Constant Default Template
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate : DeviceManagementConfigurationChoiceSettingValueDefaultTemplate, IParsable 
+    public class DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate : DeviceManagementConfigurationChoiceSettingValueDefaultTemplate, IParsable
     {
         /// <summary>Option Children</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingInstanceTemplate>? Children {
+        public List<DeviceManagementConfigurationSettingInstanceTemplate>? Children
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>?>("children"); }
             set { BackingStore?.Set("children", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingInstanceTemplate> Children {
+        public List<DeviceManagementConfigurationSettingInstanceTemplate> Children
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Default Constant Value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingDefinitionOptionId {
+        public string? SettingDefinitionOptionId
+        {
             get { return BackingStore?.Get<string?>("settingDefinitionOptionId"); }
             set { BackingStore?.Set("settingDefinitionOptionId", value); }
         }
 #nullable restore
 #else
-        public string SettingDefinitionOptionId {
+        public string SettingDefinitionOptionId
+        {
             get { return BackingStore?.Get<string>("settingDefinitionOptionId"); }
             set { BackingStore?.Set("settingDefinitionOptionId", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"children", n => { Children = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingInstanceTemplate>(DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"settingDefinitionOptionId", n => { SettingDefinitionOptionId = n.GetStringValue(); } },
+                { "children", n => { Children = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingInstanceTemplate>(DeviceManagementConfigurationSettingInstanceTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settingDefinitionOptionId", n => { SettingDefinitionOptionId = n.GetStringValue(); } },
             };
         }
         /// <summary>

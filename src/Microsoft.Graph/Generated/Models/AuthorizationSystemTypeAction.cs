@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AuthorizationSystemTypeAction : Entity, IParsable 
+    public class AuthorizationSystemTypeAction : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of action allowed in the authorization system&apos;s service. The possible values are: delete, read, unknownFutureValue. Supports $filter and (eq).</summary>
-        public AuthorizationSystemActionType? ActionType {
+        public AuthorizationSystemActionType? ActionType
+        {
             get { return BackingStore?.Get<AuthorizationSystemActionType?>("actionType"); }
             set { BackingStore?.Set("actionType", value); }
         }
         /// <summary>The display name of an action. Read-only. Supports $filter and (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -31,19 +35,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The resource types in the authorization system&apos;s service where the action can be performed. Supports $filter and (eq).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ResourceTypes {
+        public List<string>? ResourceTypes
+        {
             get { return BackingStore?.Get<List<string>?>("resourceTypes"); }
             set { BackingStore?.Set("resourceTypes", value); }
         }
 #nullable restore
 #else
-        public List<string> ResourceTypes {
+        public List<string> ResourceTypes
+        {
             get { return BackingStore?.Get<List<string>>("resourceTypes"); }
             set { BackingStore?.Set("resourceTypes", value); }
         }
 #endif
         /// <summary>The severity property</summary>
-        public AuthorizationSystemActionSeverity? Severity {
+        public AuthorizationSystemActionSeverity? Severity
+        {
             get { return BackingStore?.Get<AuthorizationSystemActionSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actionType", n => { ActionType = n.GetEnumValue<AuthorizationSystemActionType>(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
-                {"resourceTypes", n => { ResourceTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"severity", n => { Severity = n.GetEnumValue<AuthorizationSystemActionSeverity>(); } },
+                { "actionType", n => { ActionType = n.GetEnumValue<AuthorizationSystemActionType>(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "resourceTypes", n => { ResourceTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "severity", n => { Severity = n.GetEnumValue<AuthorizationSystemActionSeverity>(); } },
             };
         }
         /// <summary>

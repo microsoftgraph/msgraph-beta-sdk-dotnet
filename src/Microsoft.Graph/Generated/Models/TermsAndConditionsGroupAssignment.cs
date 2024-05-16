@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A termsAndConditionsGroupAssignment entity represents the assignment of a given Terms and Conditions (T&amp;C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
     /// </summary>
-    public class TermsAndConditionsGroupAssignment : Entity, IParsable 
+    public class TermsAndConditionsGroupAssignment : Entity, IParsable
     {
         /// <summary>Unique identifier of a group that the T&amp;C policy is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetGroupId {
+        public string? TargetGroupId
+        {
             get { return BackingStore?.Get<string?>("targetGroupId"); }
             set { BackingStore?.Set("targetGroupId", value); }
         }
 #nullable restore
 #else
-        public string TargetGroupId {
+        public string TargetGroupId
+        {
             get { return BackingStore?.Get<string>("targetGroupId"); }
             set { BackingStore?.Set("targetGroupId", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Navigation link to the terms and conditions that are assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.TermsAndConditions? TermsAndConditions {
+        public Microsoft.Graph.Beta.Models.TermsAndConditions? TermsAndConditions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsAndConditions?>("termsAndConditions"); }
             set { BackingStore?.Set("termsAndConditions", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.TermsAndConditions TermsAndConditions {
+        public Microsoft.Graph.Beta.Models.TermsAndConditions TermsAndConditions
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermsAndConditions>("termsAndConditions"); }
             set { BackingStore?.Set("termsAndConditions", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"targetGroupId", n => { TargetGroupId = n.GetStringValue(); } },
-                {"termsAndConditions", n => { TermsAndConditions = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsAndConditions>(Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue); } },
+                { "targetGroupId", n => { TargetGroupId = n.GetStringValue(); } },
+                { "termsAndConditions", n => { TermsAndConditions = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsAndConditions>(Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken {
+namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.UploadDepToken
+{
     #pragma warning disable CS1591
-    public class UploadDepTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UploadDepTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppleId {
+        public string? AppleId
+        {
             get { return BackingStore?.Get<string?>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
 #nullable restore
 #else
-        public string AppleId {
+        public string AppleId
+        {
             get { return BackingStore?.Get<string>("appleId"); }
             set { BackingStore?.Set("appleId", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Uploa
         /// <summary>The depToken property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DepToken {
+        public string? DepToken
+        {
             get { return BackingStore?.Get<string?>("depToken"); }
             set { BackingStore?.Set("depToken", value); }
         }
 #nullable restore
 #else
-        public string DepToken {
+        public string DepToken
+        {
             get { return BackingStore?.Get<string>("depToken"); }
             set { BackingStore?.Set("depToken", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Uploa
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appleId", n => { AppleId = n.GetStringValue(); } },
-                {"depToken", n => { DepToken = n.GetStringValue(); } },
+                { "appleId", n => { AppleId = n.GetStringValue(); } },
+                { "depToken", n => { DepToken = n.GetStringValue(); } },
             };
         }
         /// <summary>

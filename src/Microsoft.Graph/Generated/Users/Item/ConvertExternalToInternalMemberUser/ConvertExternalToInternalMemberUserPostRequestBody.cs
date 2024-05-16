@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser {
+namespace Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser
+{
     #pragma warning disable CS1591
-    public class ConvertExternalToInternalMemberUserPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConvertExternalToInternalMemberUserPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser {
         /// <summary>The mail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Mail {
+        public string? Mail
+        {
             get { return BackingStore?.Get<string?>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
 #nullable restore
 #else
-        public string Mail {
+        public string Mail
+        {
             get { return BackingStore?.Get<string>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser {
         /// <summary>The passwordProfile property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile {
+        public Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordProfile?>("passwordProfile"); }
             set { BackingStore?.Set("passwordProfile", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PasswordProfile PasswordProfile {
+        public Microsoft.Graph.Beta.Models.PasswordProfile PasswordProfile
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordProfile>("passwordProfile"); }
             set { BackingStore?.Set("passwordProfile", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser {
         /// <summary>The userPrincipalName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ConvertExternalToInternalMemberUser {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"mail", n => { Mail = n.GetStringValue(); } },
-                {"passwordProfile", n => { PasswordProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.PasswordProfile>(Microsoft.Graph.Beta.Models.PasswordProfile.CreateFromDiscriminatorValue); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "mail", n => { Mail = n.GetStringValue(); } },
+                { "passwordProfile", n => { PasswordProfile = n.GetObjectValue<Microsoft.Graph.Beta.Models.PasswordProfile>(Microsoft.Graph.Beta.Models.PasswordProfile.CreateFromDiscriminatorValue); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

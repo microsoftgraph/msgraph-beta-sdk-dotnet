@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MeetingRegistrant : MeetingRegistrantBase, IParsable 
+    public class MeetingRegistrant : MeetingRegistrantBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The registrant&apos;s answer to custom questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomQuestionAnswer>? CustomQuestionAnswers {
+        public List<CustomQuestionAnswer>? CustomQuestionAnswers
+        {
             get { return BackingStore?.Get<List<CustomQuestionAnswer>?>("customQuestionAnswers"); }
             set { BackingStore?.Set("customQuestionAnswers", value); }
         }
 #nullable restore
 #else
-        public List<CustomQuestionAnswer> CustomQuestionAnswers {
+        public List<CustomQuestionAnswer> CustomQuestionAnswers
+        {
             get { return BackingStore?.Get<List<CustomQuestionAnswer>>("customQuestionAnswers"); }
             set { BackingStore?.Set("customQuestionAnswers", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The email address of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The first name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstName {
+        public string? FirstName
+        {
             get { return BackingStore?.Get<string?>("firstName"); }
             set { BackingStore?.Set("firstName", value); }
         }
 #nullable restore
 #else
-        public string FirstName {
+        public string FirstName
+        {
             get { return BackingStore?.Get<string>("firstName"); }
             set { BackingStore?.Set("firstName", value); }
         }
@@ -54,24 +61,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The last name of the registrant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LastName {
+        public string? LastName
+        {
             get { return BackingStore?.Get<string?>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
 #nullable restore
 #else
-        public string LastName {
+        public string LastName
+        {
             get { return BackingStore?.Get<string>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
 #endif
         /// <summary>Time in UTC when the registrant registers for the meeting. Read-only.</summary>
-        public DateTimeOffset? RegistrationDateTime {
+        public DateTimeOffset? RegistrationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }
             set { BackingStore?.Set("registrationDateTime", value); }
         }
         /// <summary>The registration status of the registrant. Read-only.</summary>
-        public MeetingRegistrantStatus? Status {
+        public MeetingRegistrantStatus? Status
+        {
             get { return BackingStore?.Get<MeetingRegistrantStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"customQuestionAnswers", n => { CustomQuestionAnswers = n.GetCollectionOfObjectValues<CustomQuestionAnswer>(CustomQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"email", n => { Email = n.GetStringValue(); } },
-                {"firstName", n => { FirstName = n.GetStringValue(); } },
-                {"lastName", n => { LastName = n.GetStringValue(); } },
-                {"registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"status", n => { Status = n.GetEnumValue<MeetingRegistrantStatus>(); } },
+                { "customQuestionAnswers", n => { CustomQuestionAnswers = n.GetCollectionOfObjectValues<CustomQuestionAnswer>(CustomQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "firstName", n => { FirstName = n.GetStringValue(); } },
+                { "lastName", n => { LastName = n.GetStringValue(); } },
+                { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "status", n => { Status = n.GetEnumValue<MeetingRegistrantStatus>(); } },
             };
         }
         /// <summary>

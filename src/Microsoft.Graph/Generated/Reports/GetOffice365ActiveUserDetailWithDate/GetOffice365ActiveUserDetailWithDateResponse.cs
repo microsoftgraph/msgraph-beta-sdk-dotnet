@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithDate {
+namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithDate
+{
     [Obsolete("This class is obsolete. Use GetOffice365ActiveUserDetailWithDateGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetOffice365ActiveUserDetailWithDateResponse : GetOffice365ActiveUserDetailWithDateGetResponse, IParsable 
+    public class GetOffice365ActiveUserDetailWithDateResponse : GetOffice365ActiveUserDetailWithDateGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

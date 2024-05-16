@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RoleSuccessStatistics : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RoleSuccessStatistics : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,47 +22,55 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The permanentFail property</summary>
-        public long? PermanentFail {
+        public long? PermanentFail
+        {
             get { return BackingStore?.Get<long?>("permanentFail"); }
             set { BackingStore?.Set("permanentFail", value); }
         }
         /// <summary>The permanentSuccess property</summary>
-        public long? PermanentSuccess {
+        public long? PermanentSuccess
+        {
             get { return BackingStore?.Get<long?>("permanentSuccess"); }
             set { BackingStore?.Set("permanentSuccess", value); }
         }
         /// <summary>The removeFail property</summary>
-        public long? RemoveFail {
+        public long? RemoveFail
+        {
             get { return BackingStore?.Get<long?>("removeFail"); }
             set { BackingStore?.Set("removeFail", value); }
         }
         /// <summary>The removeSuccess property</summary>
-        public long? RemoveSuccess {
+        public long? RemoveSuccess
+        {
             get { return BackingStore?.Get<long?>("removeSuccess"); }
             set { BackingStore?.Set("removeSuccess", value); }
         }
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleId {
+        public string? RoleId
+        {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
 #nullable restore
 #else
-        public string RoleId {
+        public string RoleId
+        {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
@@ -68,29 +78,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleName {
+        public string? RoleName
+        {
             get { return BackingStore?.Get<string?>("roleName"); }
             set { BackingStore?.Set("roleName", value); }
         }
 #nullable restore
 #else
-        public string RoleName {
+        public string RoleName
+        {
             get { return BackingStore?.Get<string>("roleName"); }
             set { BackingStore?.Set("roleName", value); }
         }
 #endif
         /// <summary>The temporaryFail property</summary>
-        public long? TemporaryFail {
+        public long? TemporaryFail
+        {
             get { return BackingStore?.Get<long?>("temporaryFail"); }
             set { BackingStore?.Set("temporaryFail", value); }
         }
         /// <summary>The temporarySuccess property</summary>
-        public long? TemporarySuccess {
+        public long? TemporarySuccess
+        {
             get { return BackingStore?.Get<long?>("temporarySuccess"); }
             set { BackingStore?.Set("temporarySuccess", value); }
         }
         /// <summary>The unknownFail property</summary>
-        public long? UnknownFail {
+        public long? UnknownFail
+        {
             get { return BackingStore?.Get<long?>("unknownFail"); }
             set { BackingStore?.Set("unknownFail", value); }
         }
@@ -120,16 +135,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"permanentFail", n => { PermanentFail = n.GetLongValue(); } },
-                {"permanentSuccess", n => { PermanentSuccess = n.GetLongValue(); } },
-                {"removeFail", n => { RemoveFail = n.GetLongValue(); } },
-                {"removeSuccess", n => { RemoveSuccess = n.GetLongValue(); } },
-                {"roleId", n => { RoleId = n.GetStringValue(); } },
-                {"roleName", n => { RoleName = n.GetStringValue(); } },
-                {"temporaryFail", n => { TemporaryFail = n.GetLongValue(); } },
-                {"temporarySuccess", n => { TemporarySuccess = n.GetLongValue(); } },
-                {"unknownFail", n => { UnknownFail = n.GetLongValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "permanentFail", n => { PermanentFail = n.GetLongValue(); } },
+                { "permanentSuccess", n => { PermanentSuccess = n.GetLongValue(); } },
+                { "removeFail", n => { RemoveFail = n.GetLongValue(); } },
+                { "removeSuccess", n => { RemoveSuccess = n.GetLongValue(); } },
+                { "roleId", n => { RoleId = n.GetStringValue(); } },
+                { "roleName", n => { RoleName = n.GetStringValue(); } },
+                { "temporaryFail", n => { TemporaryFail = n.GetLongValue(); } },
+                { "temporarySuccess", n => { TemporarySuccess = n.GetLongValue(); } },
+                { "unknownFail", n => { UnknownFail = n.GetLongValue(); } },
             };
         }
         /// <summary>

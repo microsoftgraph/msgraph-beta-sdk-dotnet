@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// VPN Route definition.
     /// </summary>
-    public class VpnRoute : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class VpnRoute : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Destination prefix (IPv4/v6 address).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DestinationPrefix {
+        public string? DestinationPrefix
+        {
             get { return BackingStore?.Get<string?>("destinationPrefix"); }
             set { BackingStore?.Set("destinationPrefix", value); }
         }
 #nullable restore
 #else
-        public string DestinationPrefix {
+        public string DestinationPrefix
+        {
             get { return BackingStore?.Get<string>("destinationPrefix"); }
             set { BackingStore?.Set("destinationPrefix", value); }
         }
@@ -35,19 +39,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Prefix size. (1-32). Valid values 1 to 32</summary>
-        public int? PrefixSize {
+        public int? PrefixSize
+        {
             get { return BackingStore?.Get<int?>("prefixSize"); }
             set { BackingStore?.Set("prefixSize", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"destinationPrefix", n => { DestinationPrefix = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"prefixSize", n => { PrefixSize = n.GetIntValue(); } },
+                { "destinationPrefix", n => { DestinationPrefix = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "prefixSize", n => { PrefixSize = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class RoleMembershipGovernanceCriteria : GovernanceCriteria, IParsable 
+    public class RoleMembershipGovernanceCriteria : GovernanceCriteria, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleId {
+        public string? RoleId
+        {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
 #nullable restore
 #else
-        public string RoleId {
+        public string RoleId
+        {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleTemplateId {
+        public string? RoleTemplateId
+        {
             get { return BackingStore?.Get<string?>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
 #nullable restore
 #else
-        public string RoleTemplateId {
+        public string RoleTemplateId
+        {
             get { return BackingStore?.Get<string>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"roleId", n => { RoleId = n.GetStringValue(); } },
-                {"roleTemplateId", n => { RoleTemplateId = n.GetStringValue(); } },
+                { "roleId", n => { RoleId = n.GetStringValue(); } },
+                { "roleTemplateId", n => { RoleTemplateId = n.GetStringValue(); } },
             };
         }
         /// <summary>

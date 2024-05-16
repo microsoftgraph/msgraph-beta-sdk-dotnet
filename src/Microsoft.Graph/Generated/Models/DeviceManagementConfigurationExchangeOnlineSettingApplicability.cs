@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Applicability for an Exchange Online Setting
     /// </summary>
-    public class DeviceManagementConfigurationExchangeOnlineSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable 
+    public class DeviceManagementConfigurationExchangeOnlineSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="DeviceManagementConfigurationExchangeOnlineSettingApplicability"/> and sets the default values.

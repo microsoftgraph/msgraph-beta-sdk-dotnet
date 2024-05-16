@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps {
+namespace Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps
+{
     [Obsolete("This class is obsolete. Use GetManagedDevicesWithFailedOrPendingAppsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetManagedDevicesWithFailedOrPendingAppsResponse : GetManagedDevicesWithFailedOrPendingAppsGetResponse, IParsable 
+    public class GetManagedDevicesWithFailedOrPendingAppsResponse : GetManagedDevicesWithFailedOrPendingAppsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

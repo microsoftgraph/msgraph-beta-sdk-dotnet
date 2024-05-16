@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationRedirectSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable 
+    public class DeviceManagementConfigurationRedirectSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A deep link that points to the specific location in the Intune console where feature support must be managed from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeepLink {
+        public string? DeepLink
+        {
             get { return BackingStore?.Get<string?>("deepLink"); }
             set { BackingStore?.Set("deepLink", value); }
         }
 #nullable restore
 #else
-        public string DeepLink {
+        public string DeepLink
+        {
             get { return BackingStore?.Get<string>("deepLink"); }
             set { BackingStore?.Set("deepLink", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A message that explains that clicking the link will redirect the user to a supported page to manage the settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectMessage {
+        public string? RedirectMessage
+        {
             get { return BackingStore?.Get<string?>("redirectMessage"); }
             set { BackingStore?.Set("redirectMessage", value); }
         }
 #nullable restore
 #else
-        public string RedirectMessage {
+        public string RedirectMessage
+        {
             get { return BackingStore?.Get<string>("redirectMessage"); }
             set { BackingStore?.Set("redirectMessage", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the reason for redirecting the user to an alternative location in the console.  For example: WiFi profiles are not supported in the settings catalog and must be created with a template policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RedirectReason {
+        public string? RedirectReason
+        {
             get { return BackingStore?.Get<string?>("redirectReason"); }
             set { BackingStore?.Set("redirectReason", value); }
         }
 #nullable restore
 #else
-        public string RedirectReason {
+        public string RedirectReason
+        {
             get { return BackingStore?.Get<string>("redirectReason"); }
             set { BackingStore?.Set("redirectReason", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deepLink", n => { DeepLink = n.GetStringValue(); } },
-                {"redirectMessage", n => { RedirectMessage = n.GetStringValue(); } },
-                {"redirectReason", n => { RedirectReason = n.GetStringValue(); } },
+                { "deepLink", n => { DeepLink = n.GetStringValue(); } },
+                { "redirectMessage", n => { RedirectMessage = n.GetStringValue(); } },
+                { "redirectReason", n => { RedirectReason = n.GetStringValue(); } },
             };
         }
         /// <summary>

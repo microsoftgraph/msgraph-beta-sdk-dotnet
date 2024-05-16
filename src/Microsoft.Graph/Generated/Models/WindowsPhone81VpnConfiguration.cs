@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Windows Phone 8.1 to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class WindowsPhone81VpnConfiguration : Windows81VpnConfiguration, IParsable 
+    public class WindowsPhone81VpnConfiguration : Windows81VpnConfiguration, IParsable
     {
         /// <summary>VPN Authentication Method.</summary>
-        public VpnAuthenticationMethod? AuthenticationMethod {
+        public VpnAuthenticationMethod? AuthenticationMethod
+        {
             get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Bypass VPN on company Wi-Fi.</summary>
-        public bool? BypassVpnOnCompanyWifi {
+        public bool? BypassVpnOnCompanyWifi
+        {
             get { return BackingStore?.Get<bool?>("bypassVpnOnCompanyWifi"); }
             set { BackingStore?.Set("bypassVpnOnCompanyWifi", value); }
         }
         /// <summary>Bypass VPN on home Wi-Fi.</summary>
-        public bool? BypassVpnOnHomeWifi {
+        public bool? BypassVpnOnHomeWifi
+        {
             get { return BackingStore?.Get<bool?>("bypassVpnOnHomeWifi"); }
             set { BackingStore?.Set("bypassVpnOnHomeWifi", value); }
         }
         /// <summary>DNS suffix search list.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DnsSuffixSearchList {
+        public List<string>? DnsSuffixSearchList
+        {
             get { return BackingStore?.Get<List<string>?>("dnsSuffixSearchList"); }
             set { BackingStore?.Set("dnsSuffixSearchList", value); }
         }
 #nullable restore
 #else
-        public List<string> DnsSuffixSearchList {
+        public List<string> DnsSuffixSearchList
+        {
             get { return BackingStore?.Get<List<string>>("dnsSuffixSearchList"); }
             set { BackingStore?.Set("dnsSuffixSearchList", value); }
         }
@@ -42,19 +48,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsPhone81CertificateProfileBase? IdentityCertificate {
+        public WindowsPhone81CertificateProfileBase? IdentityCertificate
+        {
             get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public WindowsPhone81CertificateProfileBase IdentityCertificate {
+        public WindowsPhone81CertificateProfileBase IdentityCertificate
+        {
             get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #endif
         /// <summary>Remember user credentials.</summary>
-        public bool? RememberUserCredentials {
+        public bool? RememberUserCredentials
+        {
             get { return BackingStore?.Get<bool?>("rememberUserCredentials"); }
             set { BackingStore?.Set("rememberUserCredentials", value); }
         }
@@ -83,12 +92,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
-                {"bypassVpnOnCompanyWifi", n => { BypassVpnOnCompanyWifi = n.GetBoolValue(); } },
-                {"bypassVpnOnHomeWifi", n => { BypassVpnOnHomeWifi = n.GetBoolValue(); } },
-                {"dnsSuffixSearchList", n => { DnsSuffixSearchList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"identityCertificate", n => { IdentityCertificate = n.GetObjectValue<WindowsPhone81CertificateProfileBase>(WindowsPhone81CertificateProfileBase.CreateFromDiscriminatorValue); } },
-                {"rememberUserCredentials", n => { RememberUserCredentials = n.GetBoolValue(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
+                { "bypassVpnOnCompanyWifi", n => { BypassVpnOnCompanyWifi = n.GetBoolValue(); } },
+                { "bypassVpnOnHomeWifi", n => { BypassVpnOnHomeWifi = n.GetBoolValue(); } },
+                { "dnsSuffixSearchList", n => { DnsSuffixSearchList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<WindowsPhone81CertificateProfileBase>(WindowsPhone81CertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "rememberUserCredentials", n => { RememberUserCredentials = n.GetBoolValue(); } },
             };
         }
         /// <summary>

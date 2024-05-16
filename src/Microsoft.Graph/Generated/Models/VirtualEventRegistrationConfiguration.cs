@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VirtualEventRegistrationConfiguration : Entity, IParsable 
+    public class VirtualEventRegistrationConfiguration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Total capacity of the virtual event.</summary>
-        public int? Capacity {
+        public int? Capacity
+        {
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
         /// <summary>Registration questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventRegistrationQuestionBase>? Questions {
+        public List<VirtualEventRegistrationQuestionBase>? Questions
+        {
             get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionBase>?>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventRegistrationQuestionBase> Questions {
+        public List<VirtualEventRegistrationQuestionBase> Questions
+        {
             get { return BackingStore?.Get<List<VirtualEventRegistrationQuestionBase>>("questions"); }
             set { BackingStore?.Set("questions", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Registration URL of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationWebUrl {
+        public string? RegistrationWebUrl
+        {
             get { return BackingStore?.Get<string?>("registrationWebUrl"); }
             set { BackingStore?.Set("registrationWebUrl", value); }
         }
 #nullable restore
 #else
-        public string RegistrationWebUrl {
+        public string RegistrationWebUrl
+        {
             get { return BackingStore?.Get<string>("registrationWebUrl"); }
             set { BackingStore?.Set("registrationWebUrl", value); }
         }
@@ -65,9 +71,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"capacity", n => { Capacity = n.GetIntValue(); } },
-                {"questions", n => { Questions = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestionBase>(VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"registrationWebUrl", n => { RegistrationWebUrl = n.GetStringValue(); } },
+                { "capacity", n => { Capacity = n.GetIntValue(); } },
+                { "questions", n => { Questions = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestionBase>(VirtualEventRegistrationQuestionBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registrationWebUrl", n => { RegistrationWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

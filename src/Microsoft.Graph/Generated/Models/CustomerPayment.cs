@@ -6,36 +6,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CustomerPayment : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CustomerPayment : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The amount property</summary>
-        public decimal? Amount {
+        public decimal? Amount
+        {
             get { return BackingStore?.Get<decimal?>("amount"); }
             set { BackingStore?.Set("amount", value); }
         }
         /// <summary>The appliesToInvoiceId property</summary>
-        public Guid? AppliesToInvoiceId {
+        public Guid? AppliesToInvoiceId
+        {
             get { return BackingStore?.Get<Guid?>("appliesToInvoiceId"); }
             set { BackingStore?.Set("appliesToInvoiceId", value); }
         }
         /// <summary>The appliesToInvoiceNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppliesToInvoiceNumber {
+        public string? AppliesToInvoiceNumber
+        {
             get { return BackingStore?.Get<string?>("appliesToInvoiceNumber"); }
             set { BackingStore?.Set("appliesToInvoiceNumber", value); }
         }
 #nullable restore
 #else
-        public string AppliesToInvoiceNumber {
+        public string AppliesToInvoiceNumber
+        {
             get { return BackingStore?.Get<string>("appliesToInvoiceNumber"); }
             set { BackingStore?.Set("appliesToInvoiceNumber", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The contactId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContactId {
+        public string? ContactId
+        {
             get { return BackingStore?.Get<string?>("contactId"); }
             set { BackingStore?.Set("contactId", value); }
         }
 #nullable restore
 #else
-        public string ContactId {
+        public string ContactId
+        {
             get { return BackingStore?.Get<string>("contactId"); }
             set { BackingStore?.Set("contactId", value); }
         }
@@ -73,32 +83,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The customer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Customer? Customer {
+        public Microsoft.Graph.Beta.Models.Customer? Customer
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer?>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Customer Customer {
+        public Microsoft.Graph.Beta.Models.Customer Customer
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Customer>("customer"); }
             set { BackingStore?.Set("customer", value); }
         }
 #endif
         /// <summary>The customerId property</summary>
-        public Guid? CustomerId {
+        public Guid? CustomerId
+        {
             get { return BackingStore?.Get<Guid?>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>The customerNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerNumber {
+        public string? CustomerNumber
+        {
             get { return BackingStore?.Get<string?>("customerNumber"); }
             set { BackingStore?.Set("customerNumber", value); }
         }
 #nullable restore
 #else
-        public string CustomerNumber {
+        public string CustomerNumber
+        {
             get { return BackingStore?.Get<string>("customerNumber"); }
             set { BackingStore?.Set("customerNumber", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The documentNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentNumber {
+        public string? DocumentNumber
+        {
             get { return BackingStore?.Get<string?>("documentNumber"); }
             set { BackingStore?.Set("documentNumber", value); }
         }
 #nullable restore
 #else
-        public string DocumentNumber {
+        public string DocumentNumber
+        {
             get { return BackingStore?.Get<string>("documentNumber"); }
             set { BackingStore?.Set("documentNumber", value); }
         }
@@ -134,62 +153,72 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The externalDocumentNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalDocumentNumber {
+        public string? ExternalDocumentNumber
+        {
             get { return BackingStore?.Get<string?>("externalDocumentNumber"); }
             set { BackingStore?.Set("externalDocumentNumber", value); }
         }
 #nullable restore
 #else
-        public string ExternalDocumentNumber {
+        public string ExternalDocumentNumber
+        {
             get { return BackingStore?.Get<string>("externalDocumentNumber"); }
             set { BackingStore?.Set("externalDocumentNumber", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The journalDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalDisplayName {
+        public string? JournalDisplayName
+        {
             get { return BackingStore?.Get<string?>("journalDisplayName"); }
             set { BackingStore?.Set("journalDisplayName", value); }
         }
 #nullable restore
 #else
-        public string JournalDisplayName {
+        public string JournalDisplayName
+        {
             get { return BackingStore?.Get<string>("journalDisplayName"); }
             set { BackingStore?.Set("journalDisplayName", value); }
         }
 #endif
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The lineNumber property</summary>
-        public int? LineNumber {
+        public int? LineNumber
+        {
             get { return BackingStore?.Get<int?>("lineNumber"); }
             set { BackingStore?.Set("lineNumber", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The postingDate property</summary>
-        public Date? PostingDate {
+        public Date? PostingDate
+        {
             get { return BackingStore?.Get<Date?>("postingDate"); }
             set { BackingStore?.Set("postingDate", value); }
         }
@@ -219,23 +248,23 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"amount", n => { Amount = n.GetDecimalValue(); } },
-                {"appliesToInvoiceId", n => { AppliesToInvoiceId = n.GetGuidValue(); } },
-                {"appliesToInvoiceNumber", n => { AppliesToInvoiceNumber = n.GetStringValue(); } },
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"contactId", n => { ContactId = n.GetStringValue(); } },
-                {"customer", n => { Customer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Customer>(Microsoft.Graph.Beta.Models.Customer.CreateFromDiscriminatorValue); } },
-                {"customerId", n => { CustomerId = n.GetGuidValue(); } },
-                {"customerNumber", n => { CustomerNumber = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"documentNumber", n => { DocumentNumber = n.GetStringValue(); } },
-                {"externalDocumentNumber", n => { ExternalDocumentNumber = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"journalDisplayName", n => { JournalDisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lineNumber", n => { LineNumber = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"postingDate", n => { PostingDate = n.GetDateValue(); } },
+                { "amount", n => { Amount = n.GetDecimalValue(); } },
+                { "appliesToInvoiceId", n => { AppliesToInvoiceId = n.GetGuidValue(); } },
+                { "appliesToInvoiceNumber", n => { AppliesToInvoiceNumber = n.GetStringValue(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "contactId", n => { ContactId = n.GetStringValue(); } },
+                { "customer", n => { Customer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Customer>(Microsoft.Graph.Beta.Models.Customer.CreateFromDiscriminatorValue); } },
+                { "customerId", n => { CustomerId = n.GetGuidValue(); } },
+                { "customerNumber", n => { CustomerNumber = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "documentNumber", n => { DocumentNumber = n.GetStringValue(); } },
+                { "externalDocumentNumber", n => { ExternalDocumentNumber = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "journalDisplayName", n => { JournalDisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lineNumber", n => { LineNumber = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "postingDate", n => { PostingDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

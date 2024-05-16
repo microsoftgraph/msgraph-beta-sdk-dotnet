@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ProgramControl : Entity, IParsable 
+    public class ProgramControl : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The controlId of the control, in particular the identifier of an access review. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ControlId {
+        public string? ControlId
+        {
             get { return BackingStore?.Get<string?>("controlId"); }
             set { BackingStore?.Set("controlId", value); }
         }
 #nullable restore
 #else
-        public string ControlId {
+        public string ControlId
+        {
             get { return BackingStore?.Get<string>("controlId"); }
             set { BackingStore?.Set("controlId", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The programControlType identifies the type of program control - for example, a control linking to guest access reviews. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ControlTypeId {
+        public string? ControlTypeId
+        {
             get { return BackingStore?.Get<string?>("controlTypeId"); }
             set { BackingStore?.Set("controlTypeId", value); }
         }
 #nullable restore
 #else
-        public string ControlTypeId {
+        public string ControlTypeId
+        {
             get { return BackingStore?.Get<string>("controlTypeId"); }
             set { BackingStore?.Set("controlTypeId", value); }
         }
 #endif
         /// <summary>The creation date and time of the program control.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The name of the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user who created the program control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? Owner {
+        public UserIdentity? Owner
+        {
             get { return BackingStore?.Get<UserIdentity?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public UserIdentity Owner {
+        public UserIdentity Owner
+        {
             get { return BackingStore?.Get<UserIdentity>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The program this control is part of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Program? Program {
+        public Microsoft.Graph.Beta.Models.Program? Program
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Program?>("program"); }
             set { BackingStore?.Set("program", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Program Program {
+        public Microsoft.Graph.Beta.Models.Program Program
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Program>("program"); }
             set { BackingStore?.Set("program", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The programId of the program this control is a part of. Required on create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProgramId {
+        public string? ProgramId
+        {
             get { return BackingStore?.Get<string?>("programId"); }
             set { BackingStore?.Set("programId", value); }
         }
 #nullable restore
 #else
-        public string ProgramId {
+        public string ProgramId
+        {
             get { return BackingStore?.Get<string>("programId"); }
             set { BackingStore?.Set("programId", value); }
         }
@@ -101,13 +115,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The resource, a group or an app, targeted by this program control&apos;s access review.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProgramResource? Resource {
+        public ProgramResource? Resource
+        {
             get { return BackingStore?.Get<ProgramResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public ProgramResource Resource {
+        public ProgramResource Resource
+        {
             get { return BackingStore?.Get<ProgramResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
@@ -115,13 +131,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The life cycle status of the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Status {
+        public string? Status
+        {
             get { return BackingStore?.Get<string?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public string Status {
+        public string Status
+        {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -144,15 +162,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"controlId", n => { ControlId = n.GetStringValue(); } },
-                {"controlTypeId", n => { ControlTypeId = n.GetStringValue(); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"owner", n => { Owner = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
-                {"program", n => { Program = n.GetObjectValue<Microsoft.Graph.Beta.Models.Program>(Microsoft.Graph.Beta.Models.Program.CreateFromDiscriminatorValue); } },
-                {"programId", n => { ProgramId = n.GetStringValue(); } },
-                {"resource", n => { Resource = n.GetObjectValue<ProgramResource>(ProgramResource.CreateFromDiscriminatorValue); } },
-                {"status", n => { Status = n.GetStringValue(); } },
+                { "controlId", n => { ControlId = n.GetStringValue(); } },
+                { "controlTypeId", n => { ControlTypeId = n.GetStringValue(); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "owner", n => { Owner = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "program", n => { Program = n.GetObjectValue<Microsoft.Graph.Beta.Models.Program>(Microsoft.Graph.Beta.Models.Program.CreateFromDiscriminatorValue); } },
+                { "programId", n => { ProgramId = n.GetStringValue(); } },
+                { "resource", n => { Resource = n.GetObjectValue<ProgramResource>(ProgramResource.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetStringValue(); } },
             };
         }
         /// <summary>

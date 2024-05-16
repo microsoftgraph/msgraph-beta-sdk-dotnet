@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TranslationLanguageOverride : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TranslationLanguageOverride : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The language to apply the override.Returned by default. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageTag {
+        public string? LanguageTag
+        {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
 #nullable restore
 #else
-        public string LanguageTag {
+        public string LanguageTag
+        {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
@@ -34,19 +38,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The translation override behavior for the language, if any.Returned by default. Not nullable.</summary>
-        public Microsoft.Graph.Beta.Models.TranslationBehavior? TranslationBehavior {
+        public Microsoft.Graph.Beta.Models.TranslationBehavior? TranslationBehavior
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationBehavior?>("translationBehavior"); }
             set { BackingStore?.Set("translationBehavior", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"translationBehavior", n => { TranslationBehavior = n.GetEnumValue<TranslationBehavior>(); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "translationBehavior", n => { TranslationBehavior = n.GetEnumValue<TranslationBehavior>(); } },
             };
         }
         /// <summary>

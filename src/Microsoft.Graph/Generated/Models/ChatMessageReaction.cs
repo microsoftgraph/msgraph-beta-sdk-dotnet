@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ChatMessageReaction : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChatMessageReaction : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The hosted content URL for the custom reaction type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReactionContentUrl {
+        public string? ReactionContentUrl
+        {
             get { return BackingStore?.Get<string?>("reactionContentUrl"); }
             set { BackingStore?.Set("reactionContentUrl", value); }
         }
 #nullable restore
 #else
-        public string ReactionContentUrl {
+        public string ReactionContentUrl
+        {
             get { return BackingStore?.Get<string>("reactionContentUrl"); }
             set { BackingStore?.Set("reactionContentUrl", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Supported values are Unicode characters and custom. Some backward-compatible reaction types include like, angry, sad, laugh, heart, and surprised.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ReactionType {
+        public string? ReactionType
+        {
             get { return BackingStore?.Get<string?>("reactionType"); }
             set { BackingStore?.Set("reactionType", value); }
         }
 #nullable restore
 #else
-        public string ReactionType {
+        public string ReactionType
+        {
             get { return BackingStore?.Get<string>("reactionType"); }
             set { BackingStore?.Set("reactionType", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ChatMessageReactionIdentitySet? User {
+        public ChatMessageReactionIdentitySet? User
+        {
             get { return BackingStore?.Get<ChatMessageReactionIdentitySet?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public ChatMessageReactionIdentitySet User {
+        public ChatMessageReactionIdentitySet User
+        {
             get { return BackingStore?.Get<ChatMessageReactionIdentitySet>("user"); }
             set { BackingStore?.Set("user", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"reactionContentUrl", n => { ReactionContentUrl = n.GetStringValue(); } },
-                {"reactionType", n => { ReactionType = n.GetStringValue(); } },
-                {"user", n => { User = n.GetObjectValue<ChatMessageReactionIdentitySet>(ChatMessageReactionIdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "reactionContentUrl", n => { ReactionContentUrl = n.GetStringValue(); } },
+                { "reactionType", n => { ReactionType = n.GetStringValue(); } },
+                { "user", n => { User = n.GetObjectValue<ChatMessageReactionIdentitySet>(ChatMessageReactionIdentitySet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

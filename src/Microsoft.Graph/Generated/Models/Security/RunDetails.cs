@@ -5,58 +5,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class RunDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RunDetails : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.</summary>
-        public HuntingRuleErrorCode? ErrorCode {
+        public HuntingRuleErrorCode? ErrorCode
+        {
             get { return BackingStore?.Get<HuntingRuleErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Reason for failure when the custom detection last ran and failed. See the table below.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailureReason {
+        public string? FailureReason
+        {
             get { return BackingStore?.Get<string?>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
 #nullable restore
 #else
-        public string FailureReason {
+        public string FailureReason
+        {
             get { return BackingStore?.Get<string>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
 #endif
         /// <summary>Timestamp when the custom detection was last run.</summary>
-        public DateTimeOffset? LastRunDateTime {
+        public DateTimeOffset? LastRunDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRunDateTime"); }
             set { BackingStore?.Set("lastRunDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.</summary>
-        public HuntingRuleRunStatus? Status {
+        public HuntingRuleRunStatus? Status
+        {
             get { return BackingStore?.Get<HuntingRuleRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"errorCode", n => { ErrorCode = n.GetEnumValue<HuntingRuleErrorCode>(); } },
-                {"failureReason", n => { FailureReason = n.GetStringValue(); } },
-                {"lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<HuntingRuleRunStatus>(); } },
+                { "errorCode", n => { ErrorCode = n.GetEnumValue<HuntingRuleErrorCode>(); } },
+                { "failureReason", n => { FailureReason = n.GetStringValue(); } },
+                { "lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<HuntingRuleRunStatus>(); } },
             };
         }
         /// <summary>

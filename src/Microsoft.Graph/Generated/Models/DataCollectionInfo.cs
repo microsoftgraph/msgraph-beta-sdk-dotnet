@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DataCollectionInfo : Entity, IParsable 
+    public class DataCollectionInfo : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The entitlements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EntitlementsDataCollectionInfo? Entitlements {
+        public EntitlementsDataCollectionInfo? Entitlements
+        {
             get { return BackingStore?.Get<EntitlementsDataCollectionInfo?>("entitlements"); }
             set { BackingStore?.Set("entitlements", value); }
         }
 #nullable restore
 #else
-        public EntitlementsDataCollectionInfo Entitlements {
+        public EntitlementsDataCollectionInfo Entitlements
+        {
             get { return BackingStore?.Get<EntitlementsDataCollectionInfo>("entitlements"); }
             set { BackingStore?.Set("entitlements", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"entitlements", n => { Entitlements = n.GetObjectValue<EntitlementsDataCollectionInfo>(EntitlementsDataCollectionInfo.CreateFromDiscriminatorValue); } },
+                { "entitlements", n => { Entitlements = n.GetObjectValue<EntitlementsDataCollectionInfo>(EntitlementsDataCollectionInfo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

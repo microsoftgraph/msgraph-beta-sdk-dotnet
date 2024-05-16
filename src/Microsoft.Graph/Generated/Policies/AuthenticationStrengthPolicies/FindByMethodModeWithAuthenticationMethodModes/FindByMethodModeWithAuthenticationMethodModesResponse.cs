@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes {
+namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes
+{
     [Obsolete("This class is obsolete. Use FindByMethodModeWithAuthenticationMethodModesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FindByMethodModeWithAuthenticationMethodModesResponse : FindByMethodModeWithAuthenticationMethodModesGetResponse, IParsable 
+    public class FindByMethodModeWithAuthenticationMethodModesResponse : FindByMethodModeWithAuthenticationMethodModesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

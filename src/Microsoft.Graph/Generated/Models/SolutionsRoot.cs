@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SolutionsRoot : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SolutionsRoot : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The bookingBusinesses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingBusiness>? BookingBusinesses {
+        public List<BookingBusiness>? BookingBusinesses
+        {
             get { return BackingStore?.Get<List<BookingBusiness>?>("bookingBusinesses"); }
             set { BackingStore?.Set("bookingBusinesses", value); }
         }
 #nullable restore
 #else
-        public List<BookingBusiness> BookingBusinesses {
+        public List<BookingBusiness> BookingBusinesses
+        {
             get { return BackingStore?.Get<List<BookingBusiness>>("bookingBusinesses"); }
             set { BackingStore?.Set("bookingBusinesses", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The bookingCurrencies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingCurrency>? BookingCurrencies {
+        public List<BookingCurrency>? BookingCurrencies
+        {
             get { return BackingStore?.Get<List<BookingCurrency>?>("bookingCurrencies"); }
             set { BackingStore?.Set("bookingCurrencies", value); }
         }
 #nullable restore
 #else
-        public List<BookingCurrency> BookingCurrencies {
+        public List<BookingCurrency> BookingCurrencies
+        {
             get { return BackingStore?.Get<List<BookingCurrency>>("bookingCurrencies"); }
             set { BackingStore?.Set("bookingCurrencies", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The businessScenarios property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BusinessScenario>? BusinessScenarios {
+        public List<BusinessScenario>? BusinessScenarios
+        {
             get { return BackingStore?.Get<List<BusinessScenario>?>("businessScenarios"); }
             set { BackingStore?.Set("businessScenarios", value); }
         }
 #nullable restore
 #else
-        public List<BusinessScenario> BusinessScenarios {
+        public List<BusinessScenario> BusinessScenarios
+        {
             get { return BackingStore?.Get<List<BusinessScenario>>("businessScenarios"); }
             set { BackingStore?.Set("businessScenarios", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The virtualEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventsRoot? VirtualEvents {
+        public VirtualEventsRoot? VirtualEvents
+        {
             get { return BackingStore?.Get<VirtualEventsRoot?>("virtualEvents"); }
             set { BackingStore?.Set("virtualEvents", value); }
         }
 #nullable restore
 #else
-        public VirtualEventsRoot VirtualEvents {
+        public VirtualEventsRoot VirtualEvents
+        {
             get { return BackingStore?.Get<VirtualEventsRoot>("virtualEvents"); }
             set { BackingStore?.Set("virtualEvents", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<BookingBusiness>(BookingBusiness.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<BookingCurrency>(BookingCurrency.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"businessScenarios", n => { BusinessScenarios = n.GetCollectionOfObjectValues<BusinessScenario>(BusinessScenario.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"virtualEvents", n => { VirtualEvents = n.GetObjectValue<VirtualEventsRoot>(VirtualEventsRoot.CreateFromDiscriminatorValue); } },
+                { "bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<BookingBusiness>(BookingBusiness.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<BookingCurrency>(BookingCurrency.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "businessScenarios", n => { BusinessScenarios = n.GetCollectionOfObjectValues<BusinessScenario>(BusinessScenario.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "virtualEvents", n => { VirtualEvents = n.GetObjectValue<VirtualEventsRoot>(VirtualEventsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

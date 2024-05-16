@@ -21,13 +21,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Entity : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Entity : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -36,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier for an entity. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id {
+        public string? Id
+        {
             get { return BackingStore?.Get<string?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
 #nullable restore
 #else
-        public string Id {
+        public string Id
+        {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
@@ -50,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -1349,6 +1355,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.profile" => new Profile(),
                 "#microsoft.graph.profileCardProperty" => new ProfileCardProperty(),
                 "#microsoft.graph.profilePhoto" => new ProfilePhoto(),
+                "#microsoft.graph.profileSource" => new ProfileSource(),
                 "#microsoft.graph.program" => new Program(),
                 "#microsoft.graph.programControl" => new ProgramControl(),
                 "#microsoft.graph.programControlType" => new ProgramControlType(),
@@ -1420,7 +1427,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.sectionGroup" => new SectionGroup(),
                 "#microsoft.graph.secureScore" => new SecureScore(),
                 "#microsoft.graph.secureScoreControlProfile" => new SecureScoreControlProfile(),
-                "#microsoft.graph.security" => new Microsoft.Graph.Beta.Models.Security.Security(),
                 "#microsoft.graph.security.alert" => new Microsoft.Graph.Beta.Models.Security.Alert(),
                 "#microsoft.graph.security.analyzedEmail" => new AnalyzedEmail(),
                 "#microsoft.graph.security.article" => new Article(),
@@ -2009,8 +2015,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"id", n => { Id = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

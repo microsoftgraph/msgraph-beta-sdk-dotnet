@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.AllMessages {
+namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.AllMessages
+{
     #pragma warning disable CS1591
-    public class AllMessagesGetResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class AllMessagesGetResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ChatMessage>? Value {
+        public List<ChatMessage>? Value
+        {
             get { return BackingStore?.Get<List<ChatMessage>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ChatMessage> Value {
+        public List<ChatMessage> Value
+        {
             get { return BackingStore?.Get<List<ChatMessage>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.AllMessages {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

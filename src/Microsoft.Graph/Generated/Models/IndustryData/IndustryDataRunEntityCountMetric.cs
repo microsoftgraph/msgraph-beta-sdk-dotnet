@@ -5,44 +5,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class IndustryDataRunEntityCountMetric : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IndustryDataRunEntityCountMetric : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The count of entries for the entity marked as Active.</summary>
-        public int? Active {
+        public int? Active
+        {
             get { return BackingStore?.Get<int?>("active"); }
             set { BackingStore?.Set("active", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The count of entries for the entity marked as Inactive.</summary>
-        public int? Inactive {
+        public int? Inactive
+        {
             get { return BackingStore?.Get<int?>("inactive"); }
             set { BackingStore?.Set("inactive", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Total count of the entity.</summary>
-        public int? Total {
+        public int? Total
+        {
             get { return BackingStore?.Get<int?>("total"); }
             set { BackingStore?.Set("total", value); }
         }
@@ -72,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"active", n => { Active = n.GetIntValue(); } },
-                {"inactive", n => { Inactive = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"total", n => { Total = n.GetIntValue(); } },
+                { "active", n => { Active = n.GetIntValue(); } },
+                { "inactive", n => { Inactive = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "total", n => { Total = n.GetIntValue(); } },
             };
         }
         /// <summary>

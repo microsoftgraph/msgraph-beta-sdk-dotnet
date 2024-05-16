@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.Item.MicrosoftGraphManagedTenantsApply {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions.Item.MicrosoftGraphManagedTenantsApply
+{
     #pragma warning disable CS1591
-    public class ApplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ApplyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,32 +22,37 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>The excludeGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeGroups {
+        public List<string>? ExcludeGroups
+        {
             get { return BackingStore?.Get<List<string>?>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeGroups {
+        public List<string> ExcludeGroups
+        {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
 #endif
         /// <summary>The includeAllUsers property</summary>
-        public bool? IncludeAllUsers {
+        public bool? IncludeAllUsers
+        {
             get { return BackingStore?.Get<bool?>("includeAllUsers"); }
             set { BackingStore?.Set("includeAllUsers", value); }
         }
         /// <summary>The includeGroups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeGroups {
+        public List<string>? IncludeGroups
+        {
             get { return BackingStore?.Get<List<string>?>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeGroups {
+        public List<string> IncludeGroups
+        {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>The managementTemplateId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagementTemplateId {
+        public string? ManagementTemplateId
+        {
             get { return BackingStore?.Get<string?>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
 #nullable restore
 #else
-        public string ManagementTemplateId {
+        public string ManagementTemplateId
+        {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>The tenantGroupId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantGroupId {
+        public string? TenantGroupId
+        {
             get { return BackingStore?.Get<string?>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
 #nullable restore
 #else
-        public string TenantGroupId {
+        public string TenantGroupId
+        {
             get { return BackingStore?.Get<string>("tenantGroupId"); }
             set { BackingStore?.Set("tenantGroupId", value); }
         }
@@ -81,13 +92,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// <summary>The tenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantId {
+        public string? TenantId
+        {
             get { return BackingStore?.Get<string?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
 #nullable restore
 #else
-        public string TenantId {
+        public string TenantId
+        {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
@@ -118,12 +131,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeAllUsers", n => { IncludeAllUsers = n.GetBoolValue(); } },
-                {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
-                {"tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                { "excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeAllUsers", n => { IncludeAllUsers = n.GetBoolValue(); } },
+                { "includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
+                { "tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
+                { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
         /// <summary>

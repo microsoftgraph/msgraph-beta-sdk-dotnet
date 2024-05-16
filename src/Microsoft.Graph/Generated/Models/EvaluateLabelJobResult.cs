@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EvaluateLabelJobResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class EvaluateLabelJobResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The responsiblePolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ResponsiblePolicy? ResponsiblePolicy {
+        public Microsoft.Graph.Beta.Models.ResponsiblePolicy? ResponsiblePolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponsiblePolicy?>("responsiblePolicy"); }
             set { BackingStore?.Set("responsiblePolicy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ResponsiblePolicy ResponsiblePolicy {
+        public Microsoft.Graph.Beta.Models.ResponsiblePolicy ResponsiblePolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResponsiblePolicy>("responsiblePolicy"); }
             set { BackingStore?.Set("responsiblePolicy", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The responsibleSensitiveTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ResponsibleSensitiveType>? ResponsibleSensitiveTypes {
+        public List<ResponsibleSensitiveType>? ResponsibleSensitiveTypes
+        {
             get { return BackingStore?.Get<List<ResponsibleSensitiveType>?>("responsibleSensitiveTypes"); }
             set { BackingStore?.Set("responsibleSensitiveTypes", value); }
         }
 #nullable restore
 #else
-        public List<ResponsibleSensitiveType> ResponsibleSensitiveTypes {
+        public List<ResponsibleSensitiveType> ResponsibleSensitiveTypes
+        {
             get { return BackingStore?.Get<List<ResponsibleSensitiveType>>("responsibleSensitiveTypes"); }
             set { BackingStore?.Set("responsibleSensitiveTypes", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The sensitivityLabel property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MatchingLabel? SensitivityLabel {
+        public MatchingLabel? SensitivityLabel
+        {
             get { return BackingStore?.Get<MatchingLabel?>("sensitivityLabel"); }
             set { BackingStore?.Set("sensitivityLabel", value); }
         }
 #nullable restore
 #else
-        public MatchingLabel SensitivityLabel {
+        public MatchingLabel SensitivityLabel
+        {
             get { return BackingStore?.Get<MatchingLabel>("sensitivityLabel"); }
             set { BackingStore?.Set("sensitivityLabel", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"responsiblePolicy", n => { ResponsiblePolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResponsiblePolicy>(Microsoft.Graph.Beta.Models.ResponsiblePolicy.CreateFromDiscriminatorValue); } },
-                {"responsibleSensitiveTypes", n => { ResponsibleSensitiveTypes = n.GetCollectionOfObjectValues<ResponsibleSensitiveType>(ResponsibleSensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sensitivityLabel", n => { SensitivityLabel = n.GetObjectValue<MatchingLabel>(MatchingLabel.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "responsiblePolicy", n => { ResponsiblePolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResponsiblePolicy>(Microsoft.Graph.Beta.Models.ResponsiblePolicy.CreateFromDiscriminatorValue); } },
+                { "responsibleSensitiveTypes", n => { ResponsibleSensitiveTypes = n.GetCollectionOfObjectValues<ResponsibleSensitiveType>(ResponsibleSensitiveType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sensitivityLabel", n => { SensitivityLabel = n.GetObjectValue<MatchingLabel>(MatchingLabel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationIdentityCreationConfiguration : EducationIdentitySynchronizationConfiguration, IParsable 
+    public class EducationIdentityCreationConfiguration : EducationIdentitySynchronizationConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The userDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationIdentityDomain>? UserDomains {
+        public List<EducationIdentityDomain>? UserDomains
+        {
             get { return BackingStore?.Get<List<EducationIdentityDomain>?>("userDomains"); }
             set { BackingStore?.Set("userDomains", value); }
         }
 #nullable restore
 #else
-        public List<EducationIdentityDomain> UserDomains {
+        public List<EducationIdentityDomain> UserDomains
+        {
             get { return BackingStore?.Get<List<EducationIdentityDomain>>("userDomains"); }
             set { BackingStore?.Set("userDomains", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"userDomains", n => { UserDomains = n.GetCollectionOfObjectValues<EducationIdentityDomain>(EducationIdentityDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userDomains", n => { UserDomains = n.GetCollectionOfObjectValues<EducationIdentityDomain>(EducationIdentityDomain.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

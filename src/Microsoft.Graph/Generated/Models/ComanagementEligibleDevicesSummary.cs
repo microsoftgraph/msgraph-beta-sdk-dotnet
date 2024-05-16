@@ -5,59 +5,69 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ComanagementEligibleDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ComanagementEligibleDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Count of devices already Co-Managed</summary>
-        public int? ComanagedCount {
+        public int? ComanagedCount
+        {
             get { return BackingStore?.Get<int?>("comanagedCount"); }
             set { BackingStore?.Set("comanagedCount", value); }
         }
         /// <summary>Count of devices eligible for Co-Management but not yet joined to Azure Active Directory</summary>
-        public int? EligibleButNotAzureAdJoinedCount {
+        public int? EligibleButNotAzureAdJoinedCount
+        {
             get { return BackingStore?.Get<int?>("eligibleButNotAzureAdJoinedCount"); }
             set { BackingStore?.Set("eligibleButNotAzureAdJoinedCount", value); }
         }
         /// <summary>Count of devices fully eligible for Co-Management</summary>
-        public int? EligibleCount {
+        public int? EligibleCount
+        {
             get { return BackingStore?.Get<int?>("eligibleCount"); }
             set { BackingStore?.Set("eligibleCount", value); }
         }
         /// <summary>Count of devices ineligible for Co-Management</summary>
-        public int? IneligibleCount {
+        public int? IneligibleCount
+        {
             get { return BackingStore?.Get<int?>("ineligibleCount"); }
             set { BackingStore?.Set("ineligibleCount", value); }
         }
         /// <summary>Count of devices that will be eligible for Co-Management after an OS update</summary>
-        public int? NeedsOsUpdateCount {
+        public int? NeedsOsUpdateCount
+        {
             get { return BackingStore?.Get<int?>("needsOsUpdateCount"); }
             set { BackingStore?.Set("needsOsUpdateCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999</summary>
-        public int? ScheduledForEnrollmentCount {
+        public int? ScheduledForEnrollmentCount
+        {
             get { return BackingStore?.Get<int?>("scheduledForEnrollmentCount"); }
             set { BackingStore?.Set("scheduledForEnrollmentCount", value); }
         }
@@ -87,13 +97,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"comanagedCount", n => { ComanagedCount = n.GetIntValue(); } },
-                {"eligibleButNotAzureAdJoinedCount", n => { EligibleButNotAzureAdJoinedCount = n.GetIntValue(); } },
-                {"eligibleCount", n => { EligibleCount = n.GetIntValue(); } },
-                {"ineligibleCount", n => { IneligibleCount = n.GetIntValue(); } },
-                {"needsOsUpdateCount", n => { NeedsOsUpdateCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"scheduledForEnrollmentCount", n => { ScheduledForEnrollmentCount = n.GetIntValue(); } },
+                { "comanagedCount", n => { ComanagedCount = n.GetIntValue(); } },
+                { "eligibleButNotAzureAdJoinedCount", n => { EligibleButNotAzureAdJoinedCount = n.GetIntValue(); } },
+                { "eligibleCount", n => { EligibleCount = n.GetIntValue(); } },
+                { "ineligibleCount", n => { IneligibleCount = n.GetIntValue(); } },
+                { "needsOsUpdateCount", n => { NeedsOsUpdateCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "scheduledForEnrollmentCount", n => { ScheduledForEnrollmentCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

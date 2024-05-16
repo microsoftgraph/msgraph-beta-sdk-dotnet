@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserSubject : ConditionalAccessWhatIfSubject, IParsable 
+    public class UserSubject : ConditionalAccessWhatIfSubject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The externalTenantId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalTenantId {
+        public string? ExternalTenantId
+        {
             get { return BackingStore?.Get<string?>("externalTenantId"); }
             set { BackingStore?.Set("externalTenantId", value); }
         }
 #nullable restore
 #else
-        public string ExternalTenantId {
+        public string ExternalTenantId
+        {
             get { return BackingStore?.Get<string>("externalTenantId"); }
             set { BackingStore?.Set("externalTenantId", value); }
         }
 #endif
         /// <summary>The externalUserType property</summary>
-        public ConditionalAccessGuestOrExternalUserTypes? ExternalUserType {
+        public ConditionalAccessGuestOrExternalUserTypes? ExternalUserType
+        {
             get { return BackingStore?.Get<ConditionalAccessGuestOrExternalUserTypes?>("externalUserType"); }
             set { BackingStore?.Set("externalUserType", value); }
         }
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -67,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"externalTenantId", n => { ExternalTenantId = n.GetStringValue(); } },
-                {"externalUserType", n => { ExternalUserType = n.GetEnumValue<ConditionalAccessGuestOrExternalUserTypes>(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "externalTenantId", n => { ExternalTenantId = n.GetStringValue(); } },
+                { "externalUserType", n => { ExternalUserType = n.GetEnumValue<ConditionalAccessGuestOrExternalUserTypes>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

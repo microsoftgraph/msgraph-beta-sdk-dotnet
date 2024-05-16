@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ItemPublication : ItemFacet, IParsable 
+    public class ItemPublication : ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description of the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -27,32 +30,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Title of the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date that the publication was published.</summary>
-        public Date? PublishedDate {
+        public Date? PublishedDate
+        {
             get { return BackingStore?.Get<Date?>("publishedDate"); }
             set { BackingStore?.Set("publishedDate", value); }
         }
         /// <summary>Publication or publisher for the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Publisher {
+        public string? Publisher
+        {
             get { return BackingStore?.Get<string?>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
 #nullable restore
 #else
-        public string Publisher {
+        public string Publisher
+        {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>URL referencing a thumbnail of the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ThumbnailUrl {
+        public string? ThumbnailUrl
+        {
             get { return BackingStore?.Get<string?>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
 #nullable restore
 #else
-        public string ThumbnailUrl {
+        public string ThumbnailUrl
+        {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
@@ -74,13 +84,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>URL referencing the publication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebUrl {
+        public string? WebUrl
+        {
             get { return BackingStore?.Get<string?>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
 #nullable restore
 #else
-        public string WebUrl {
+        public string WebUrl
+        {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
@@ -110,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"publishedDate", n => { PublishedDate = n.GetDateValue(); } },
-                {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
-                {"webUrl", n => { WebUrl = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "publishedDate", n => { PublishedDate = n.GetDateValue(); } },
+                { "publisher", n => { Publisher = n.GetStringValue(); } },
+                { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
+                { "webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

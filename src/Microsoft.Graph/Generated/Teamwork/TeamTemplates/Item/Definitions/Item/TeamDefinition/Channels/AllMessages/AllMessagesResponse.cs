@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.AllMessages {
+namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.AllMessages
+{
     [Obsolete("This class is obsolete. Use AllMessagesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AllMessagesResponse : AllMessagesGetResponse, IParsable 
+    public class AllMessagesResponse : AllMessagesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

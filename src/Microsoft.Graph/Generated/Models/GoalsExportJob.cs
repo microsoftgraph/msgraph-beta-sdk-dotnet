@@ -4,40 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class GoalsExportJob : LongRunningOperation, IParsable 
+    public class GoalsExportJob : LongRunningOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content of the goalsExportJob.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? Content {
+        public byte[]? Content
+        {
             get { return BackingStore?.Get<byte[]?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public byte[] Content {
+        public byte[] Content
+        {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
         /// <summary>The date and time of expiry of the result of the operation.</summary>
-        public DateTimeOffset? ExpirationDateTime {
+        public DateTimeOffset? ExpirationDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The unique identifier of the explorer view to be exported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExplorerViewId {
+        public string? ExplorerViewId
+        {
             get { return BackingStore?.Get<string?>("explorerViewId"); }
             set { BackingStore?.Set("explorerViewId", value); }
         }
 #nullable restore
 #else
-        public string ExplorerViewId {
+        public string ExplorerViewId
+        {
             get { return BackingStore?.Get<string>("explorerViewId"); }
             set { BackingStore?.Set("explorerViewId", value); }
         }
@@ -45,13 +51,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier of the viva goals organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GoalsOrganizationId {
+        public string? GoalsOrganizationId
+        {
             get { return BackingStore?.Get<string?>("goalsOrganizationId"); }
             set { BackingStore?.Set("goalsOrganizationId", value); }
         }
 #nullable restore
 #else
-        public string GoalsOrganizationId {
+        public string GoalsOrganizationId
+        {
             get { return BackingStore?.Get<string>("goalsOrganizationId"); }
             set { BackingStore?.Set("goalsOrganizationId", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetByteArrayValue(); } },
-                {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"explorerViewId", n => { ExplorerViewId = n.GetStringValue(); } },
-                {"goalsOrganizationId", n => { GoalsOrganizationId = n.GetStringValue(); } },
+                { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                { "explorerViewId", n => { ExplorerViewId = n.GetStringValue(); } },
+                { "goalsOrganizationId", n => { GoalsOrganizationId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ManagedTenant : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ManagedTenant : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Aggregate view of device compliance policies across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AggregatedPolicyCompliance>? AggregatedPolicyCompliances {
+        public List<AggregatedPolicyCompliance>? AggregatedPolicyCompliances
+        {
             get { return BackingStore?.Get<List<AggregatedPolicyCompliance>?>("aggregatedPolicyCompliances"); }
             set { BackingStore?.Set("aggregatedPolicyCompliances", value); }
         }
 #nullable restore
 #else
-        public List<AggregatedPolicyCompliance> AggregatedPolicyCompliances {
+        public List<AggregatedPolicyCompliance> AggregatedPolicyCompliances
+        {
             get { return BackingStore?.Get<List<AggregatedPolicyCompliance>>("aggregatedPolicyCompliances"); }
             set { BackingStore?.Set("aggregatedPolicyCompliances", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The appPerformances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppPerformance>? AppPerformances {
+        public List<AppPerformance>? AppPerformances
+        {
             get { return BackingStore?.Get<List<AppPerformance>?>("appPerformances"); }
             set { BackingStore?.Set("appPerformances", value); }
         }
 #nullable restore
 #else
-        public List<AppPerformance> AppPerformances {
+        public List<AppPerformance> AppPerformances
+        {
             get { return BackingStore?.Get<List<AppPerformance>>("appPerformances"); }
             set { BackingStore?.Set("appPerformances", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of audit events across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuditEvent>? AuditEvents {
+        public List<AuditEvent>? AuditEvents
+        {
             get { return BackingStore?.Get<List<AuditEvent>?>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
 #nullable restore
 #else
-        public List<AuditEvent> AuditEvents {
+        public List<AuditEvent> AuditEvents
+        {
             get { return BackingStore?.Get<List<AuditEvent>>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of cloud PC connections across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcConnection>? CloudPcConnections {
+        public List<CloudPcConnection>? CloudPcConnections
+        {
             get { return BackingStore?.Get<List<CloudPcConnection>?>("cloudPcConnections"); }
             set { BackingStore?.Set("cloudPcConnections", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcConnection> CloudPcConnections {
+        public List<CloudPcConnection> CloudPcConnections
+        {
             get { return BackingStore?.Get<List<CloudPcConnection>>("cloudPcConnections"); }
             set { BackingStore?.Set("cloudPcConnections", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of cloud PC devices across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcDevice>? CloudPcDevices {
+        public List<CloudPcDevice>? CloudPcDevices
+        {
             get { return BackingStore?.Get<List<CloudPcDevice>?>("cloudPcDevices"); }
             set { BackingStore?.Set("cloudPcDevices", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcDevice> CloudPcDevices {
+        public List<CloudPcDevice> CloudPcDevices
+        {
             get { return BackingStore?.Get<List<CloudPcDevice>>("cloudPcDevices"); }
             set { BackingStore?.Set("cloudPcDevices", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Overview of cloud PC information across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcOverview>? CloudPcsOverview {
+        public List<CloudPcOverview>? CloudPcsOverview
+        {
             get { return BackingStore?.Get<List<CloudPcOverview>?>("cloudPcsOverview"); }
             set { BackingStore?.Set("cloudPcsOverview", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcOverview> CloudPcsOverview {
+        public List<CloudPcOverview> CloudPcsOverview
+        {
             get { return BackingStore?.Get<List<CloudPcOverview>>("cloudPcsOverview"); }
             set { BackingStore?.Set("cloudPcsOverview", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Aggregate view of conditional access policy coverage across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessPolicyCoverage>? ConditionalAccessPolicyCoverages {
+        public List<ConditionalAccessPolicyCoverage>? ConditionalAccessPolicyCoverages
+        {
             get { return BackingStore?.Get<List<ConditionalAccessPolicyCoverage>?>("conditionalAccessPolicyCoverages"); }
             set { BackingStore?.Set("conditionalAccessPolicyCoverages", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessPolicyCoverage> ConditionalAccessPolicyCoverages {
+        public List<ConditionalAccessPolicyCoverage> ConditionalAccessPolicyCoverages
+        {
             get { return BackingStore?.Get<List<ConditionalAccessPolicyCoverage>>("conditionalAccessPolicyCoverages"); }
             set { BackingStore?.Set("conditionalAccessPolicyCoverages", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CredentialUserRegistrationsSummary>? CredentialUserRegistrationsSummaries {
+        public List<CredentialUserRegistrationsSummary>? CredentialUserRegistrationsSummaries
+        {
             get { return BackingStore?.Get<List<CredentialUserRegistrationsSummary>?>("credentialUserRegistrationsSummaries"); }
             set { BackingStore?.Set("credentialUserRegistrationsSummaries", value); }
         }
 #nullable restore
 #else
-        public List<CredentialUserRegistrationsSummary> CredentialUserRegistrationsSummaries {
+        public List<CredentialUserRegistrationsSummary> CredentialUserRegistrationsSummaries
+        {
             get { return BackingStore?.Get<List<CredentialUserRegistrationsSummary>>("credentialUserRegistrationsSummaries"); }
             set { BackingStore?.Set("credentialUserRegistrationsSummaries", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceAppPerformances property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceAppPerformance>? DeviceAppPerformances {
+        public List<DeviceAppPerformance>? DeviceAppPerformances
+        {
             get { return BackingStore?.Get<List<DeviceAppPerformance>?>("deviceAppPerformances"); }
             set { BackingStore?.Set("deviceAppPerformances", value); }
         }
 #nullable restore
 #else
-        public List<DeviceAppPerformance> DeviceAppPerformances {
+        public List<DeviceAppPerformance> DeviceAppPerformances
+        {
             get { return BackingStore?.Get<List<DeviceAppPerformance>>("deviceAppPerformances"); }
             set { BackingStore?.Set("deviceAppPerformances", value); }
         }
@@ -138,13 +157,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Summary information for device compliance policy setting states across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceCompliancePolicySettingStateSummary>? DeviceCompliancePolicySettingStateSummaries {
+        public List<DeviceCompliancePolicySettingStateSummary>? DeviceCompliancePolicySettingStateSummaries
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>?>("deviceCompliancePolicySettingStateSummaries"); }
             set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
 #nullable restore
 #else
-        public List<DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries {
+        public List<DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries
+        {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>("deviceCompliancePolicySettingStateSummaries"); }
             set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
@@ -152,13 +173,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The deviceHealthStatuses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceHealthStatus>? DeviceHealthStatuses {
+        public List<DeviceHealthStatus>? DeviceHealthStatuses
+        {
             get { return BackingStore?.Get<List<DeviceHealthStatus>?>("deviceHealthStatuses"); }
             set { BackingStore?.Set("deviceHealthStatuses", value); }
         }
 #nullable restore
 #else
-        public List<DeviceHealthStatus> DeviceHealthStatuses {
+        public List<DeviceHealthStatus> DeviceHealthStatuses
+        {
             get { return BackingStore?.Get<List<DeviceHealthStatus>>("deviceHealthStatuses"); }
             set { BackingStore?.Set("deviceHealthStatuses", value); }
         }
@@ -166,13 +189,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of compliance for managed devices across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceCompliance>? ManagedDeviceCompliances {
+        public List<ManagedDeviceCompliance>? ManagedDeviceCompliances
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCompliance>?>("managedDeviceCompliances"); }
             set { BackingStore?.Set("managedDeviceCompliances", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceCompliance> ManagedDeviceCompliances {
+        public List<ManagedDeviceCompliance> ManagedDeviceCompliances
+        {
             get { return BackingStore?.Get<List<ManagedDeviceCompliance>>("managedDeviceCompliances"); }
             set { BackingStore?.Set("managedDeviceCompliances", value); }
         }
@@ -180,13 +205,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Trend insights for device compliance across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceComplianceTrend>? ManagedDeviceComplianceTrends {
+        public List<ManagedDeviceComplianceTrend>? ManagedDeviceComplianceTrends
+        {
             get { return BackingStore?.Get<List<ManagedDeviceComplianceTrend>?>("managedDeviceComplianceTrends"); }
             set { BackingStore?.Set("managedDeviceComplianceTrends", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceComplianceTrend> ManagedDeviceComplianceTrends {
+        public List<ManagedDeviceComplianceTrend> ManagedDeviceComplianceTrends
+        {
             get { return BackingStore?.Get<List<ManagedDeviceComplianceTrend>>("managedDeviceComplianceTrends"); }
             set { BackingStore?.Set("managedDeviceComplianceTrends", value); }
         }
@@ -194,13 +221,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managedTenantAlertLogs property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantAlertLog>? ManagedTenantAlertLogs {
+        public List<ManagedTenantAlertLog>? ManagedTenantAlertLogs
+        {
             get { return BackingStore?.Get<List<ManagedTenantAlertLog>?>("managedTenantAlertLogs"); }
             set { BackingStore?.Set("managedTenantAlertLogs", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantAlertLog> ManagedTenantAlertLogs {
+        public List<ManagedTenantAlertLog> ManagedTenantAlertLogs
+        {
             get { return BackingStore?.Get<List<ManagedTenantAlertLog>>("managedTenantAlertLogs"); }
             set { BackingStore?.Set("managedTenantAlertLogs", value); }
         }
@@ -208,13 +237,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managedTenantAlertRuleDefinitions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantAlertRuleDefinition>? ManagedTenantAlertRuleDefinitions {
+        public List<ManagedTenantAlertRuleDefinition>? ManagedTenantAlertRuleDefinitions
+        {
             get { return BackingStore?.Get<List<ManagedTenantAlertRuleDefinition>?>("managedTenantAlertRuleDefinitions"); }
             set { BackingStore?.Set("managedTenantAlertRuleDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantAlertRuleDefinition> ManagedTenantAlertRuleDefinitions {
+        public List<ManagedTenantAlertRuleDefinition> ManagedTenantAlertRuleDefinitions
+        {
             get { return BackingStore?.Get<List<ManagedTenantAlertRuleDefinition>>("managedTenantAlertRuleDefinitions"); }
             set { BackingStore?.Set("managedTenantAlertRuleDefinitions", value); }
         }
@@ -222,13 +253,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managedTenantAlertRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantAlertRule>? ManagedTenantAlertRules {
+        public List<ManagedTenantAlertRule>? ManagedTenantAlertRules
+        {
             get { return BackingStore?.Get<List<ManagedTenantAlertRule>?>("managedTenantAlertRules"); }
             set { BackingStore?.Set("managedTenantAlertRules", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantAlertRule> ManagedTenantAlertRules {
+        public List<ManagedTenantAlertRule> ManagedTenantAlertRules
+        {
             get { return BackingStore?.Get<List<ManagedTenantAlertRule>>("managedTenantAlertRules"); }
             set { BackingStore?.Set("managedTenantAlertRules", value); }
         }
@@ -236,13 +269,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managedTenantAlerts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantAlert>? ManagedTenantAlerts {
+        public List<ManagedTenantAlert>? ManagedTenantAlerts
+        {
             get { return BackingStore?.Get<List<ManagedTenantAlert>?>("managedTenantAlerts"); }
             set { BackingStore?.Set("managedTenantAlerts", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantAlert> ManagedTenantAlerts {
+        public List<ManagedTenantAlert> ManagedTenantAlerts
+        {
             get { return BackingStore?.Get<List<ManagedTenantAlert>>("managedTenantAlerts"); }
             set { BackingStore?.Set("managedTenantAlerts", value); }
         }
@@ -250,13 +285,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managedTenantApiNotifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantApiNotification>? ManagedTenantApiNotifications {
+        public List<ManagedTenantApiNotification>? ManagedTenantApiNotifications
+        {
             get { return BackingStore?.Get<List<ManagedTenantApiNotification>?>("managedTenantApiNotifications"); }
             set { BackingStore?.Set("managedTenantApiNotifications", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantApiNotification> ManagedTenantApiNotifications {
+        public List<ManagedTenantApiNotification> ManagedTenantApiNotifications
+        {
             get { return BackingStore?.Get<List<ManagedTenantApiNotification>>("managedTenantApiNotifications"); }
             set { BackingStore?.Set("managedTenantApiNotifications", value); }
         }
@@ -264,13 +301,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managedTenantEmailNotifications property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantEmailNotification>? ManagedTenantEmailNotifications {
+        public List<ManagedTenantEmailNotification>? ManagedTenantEmailNotifications
+        {
             get { return BackingStore?.Get<List<ManagedTenantEmailNotification>?>("managedTenantEmailNotifications"); }
             set { BackingStore?.Set("managedTenantEmailNotifications", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantEmailNotification> ManagedTenantEmailNotifications {
+        public List<ManagedTenantEmailNotification> ManagedTenantEmailNotifications
+        {
             get { return BackingStore?.Get<List<ManagedTenantEmailNotification>>("managedTenantEmailNotifications"); }
             set { BackingStore?.Set("managedTenantEmailNotifications", value); }
         }
@@ -278,13 +317,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managedTenantTicketingEndpoints property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedTenantTicketingEndpoint>? ManagedTenantTicketingEndpoints {
+        public List<ManagedTenantTicketingEndpoint>? ManagedTenantTicketingEndpoints
+        {
             get { return BackingStore?.Get<List<ManagedTenantTicketingEndpoint>?>("managedTenantTicketingEndpoints"); }
             set { BackingStore?.Set("managedTenantTicketingEndpoints", value); }
         }
 #nullable restore
 #else
-        public List<ManagedTenantTicketingEndpoint> ManagedTenantTicketingEndpoints {
+        public List<ManagedTenantTicketingEndpoint> ManagedTenantTicketingEndpoints
+        {
             get { return BackingStore?.Get<List<ManagedTenantTicketingEndpoint>>("managedTenantTicketingEndpoints"); }
             set { BackingStore?.Set("managedTenantTicketingEndpoints", value); }
         }
@@ -292,13 +333,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of baseline management actions across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementAction>? ManagementActions {
+        public List<ManagementAction>? ManagementActions
+        {
             get { return BackingStore?.Get<List<ManagementAction>?>("managementActions"); }
             set { BackingStore?.Set("managementActions", value); }
         }
 #nullable restore
 #else
-        public List<ManagementAction> ManagementActions {
+        public List<ManagementAction> ManagementActions
+        {
             get { return BackingStore?.Get<List<ManagementAction>>("managementActions"); }
             set { BackingStore?.Set("managementActions", value); }
         }
@@ -306,13 +349,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The tenant level status of management actions across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementActionTenantDeploymentStatus>? ManagementActionTenantDeploymentStatuses {
+        public List<ManagementActionTenantDeploymentStatus>? ManagementActionTenantDeploymentStatuses
+        {
             get { return BackingStore?.Get<List<ManagementActionTenantDeploymentStatus>?>("managementActionTenantDeploymentStatuses"); }
             set { BackingStore?.Set("managementActionTenantDeploymentStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagementActionTenantDeploymentStatus> ManagementActionTenantDeploymentStatuses {
+        public List<ManagementActionTenantDeploymentStatus> ManagementActionTenantDeploymentStatuses
+        {
             get { return BackingStore?.Get<List<ManagementActionTenantDeploymentStatus>>("managementActionTenantDeploymentStatuses"); }
             set { BackingStore?.Set("managementActionTenantDeploymentStatuses", value); }
         }
@@ -320,13 +365,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of baseline management intents across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementIntent>? ManagementIntents {
+        public List<ManagementIntent>? ManagementIntents
+        {
             get { return BackingStore?.Get<List<ManagementIntent>?>("managementIntents"); }
             set { BackingStore?.Set("managementIntents", value); }
         }
 #nullable restore
 #else
-        public List<ManagementIntent> ManagementIntents {
+        public List<ManagementIntent> ManagementIntents
+        {
             get { return BackingStore?.Get<List<ManagementIntent>>("managementIntents"); }
             set { BackingStore?.Set("managementIntents", value); }
         }
@@ -334,13 +381,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateCollections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateCollection>? ManagementTemplateCollections {
+        public List<ManagementTemplateCollection>? ManagementTemplateCollections
+        {
             get { return BackingStore?.Get<List<ManagementTemplateCollection>?>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateCollection> ManagementTemplateCollections {
+        public List<ManagementTemplateCollection> ManagementTemplateCollections
+        {
             get { return BackingStore?.Get<List<ManagementTemplateCollection>>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
@@ -348,13 +397,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateCollectionTenantSummaries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateCollectionTenantSummary>? ManagementTemplateCollectionTenantSummaries {
+        public List<ManagementTemplateCollectionTenantSummary>? ManagementTemplateCollectionTenantSummaries
+        {
             get { return BackingStore?.Get<List<ManagementTemplateCollectionTenantSummary>?>("managementTemplateCollectionTenantSummaries"); }
             set { BackingStore?.Set("managementTemplateCollectionTenantSummaries", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateCollectionTenantSummary> ManagementTemplateCollectionTenantSummaries {
+        public List<ManagementTemplateCollectionTenantSummary> ManagementTemplateCollectionTenantSummaries
+        {
             get { return BackingStore?.Get<List<ManagementTemplateCollectionTenantSummary>>("managementTemplateCollectionTenantSummaries"); }
             set { BackingStore?.Set("managementTemplateCollectionTenantSummaries", value); }
         }
@@ -362,13 +413,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of baseline management templates across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplate>? ManagementTemplates {
+        public List<ManagementTemplate>? ManagementTemplates
+        {
             get { return BackingStore?.Get<List<ManagementTemplate>?>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplate> ManagementTemplates {
+        public List<ManagementTemplate> ManagementTemplates
+        {
             get { return BackingStore?.Get<List<ManagementTemplate>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
@@ -376,13 +429,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateSteps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStep>? ManagementTemplateSteps {
+        public List<ManagementTemplateStep>? ManagementTemplateSteps
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStep>?>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStep> ManagementTemplateSteps {
+        public List<ManagementTemplateStep> ManagementTemplateSteps
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStep>>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
         }
@@ -390,13 +445,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateStepTenantSummaries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStepTenantSummary>? ManagementTemplateStepTenantSummaries {
+        public List<ManagementTemplateStepTenantSummary>? ManagementTemplateStepTenantSummaries
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>?>("managementTemplateStepTenantSummaries"); }
             set { BackingStore?.Set("managementTemplateStepTenantSummaries", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStepTenantSummary> ManagementTemplateStepTenantSummaries {
+        public List<ManagementTemplateStepTenantSummary> ManagementTemplateStepTenantSummaries
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>>("managementTemplateStepTenantSummaries"); }
             set { BackingStore?.Set("managementTemplateStepTenantSummaries", value); }
         }
@@ -404,13 +461,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The managementTemplateStepVersions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStepVersion>? ManagementTemplateStepVersions {
+        public List<ManagementTemplateStepVersion>? ManagementTemplateStepVersions
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>?>("managementTemplateStepVersions"); }
             set { BackingStore?.Set("managementTemplateStepVersions", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStepVersion> ManagementTemplateStepVersions {
+        public List<ManagementTemplateStepVersion> ManagementTemplateStepVersions
+        {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("managementTemplateStepVersions"); }
             set { BackingStore?.Set("managementTemplateStepVersions", value); }
         }
@@ -418,13 +477,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of role assignments to a signed-in user for a managed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MyRole>? MyRoles {
+        public List<MyRole>? MyRoles
+        {
             get { return BackingStore?.Get<List<MyRole>?>("myRoles"); }
             set { BackingStore?.Set("myRoles", value); }
         }
 #nullable restore
 #else
-        public List<MyRole> MyRoles {
+        public List<MyRole> MyRoles
+        {
             get { return BackingStore?.Get<List<MyRole>>("myRoles"); }
             set { BackingStore?.Set("myRoles", value); }
         }
@@ -432,13 +493,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of a logical grouping of managed tenants used by the multi-tenant management platform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantGroup>? TenantGroups {
+        public List<TenantGroup>? TenantGroups
+        {
             get { return BackingStore?.Get<List<TenantGroup>?>("tenantGroups"); }
             set { BackingStore?.Set("tenantGroups", value); }
         }
 #nullable restore
 #else
-        public List<TenantGroup> TenantGroups {
+        public List<TenantGroup> TenantGroups
+        {
             get { return BackingStore?.Get<List<TenantGroup>>("tenantGroups"); }
             set { BackingStore?.Set("tenantGroups", value); }
         }
@@ -446,13 +509,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of tenants associated with the managing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tenant>? Tenants {
+        public List<Tenant>? Tenants
+        {
             get { return BackingStore?.Get<List<Tenant>?>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
 #nullable restore
 #else
-        public List<Tenant> Tenants {
+        public List<Tenant> Tenants
+        {
             get { return BackingStore?.Get<List<Tenant>>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
@@ -460,13 +525,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of tenant level customized information across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantCustomizedInformation>? TenantsCustomizedInformation {
+        public List<TenantCustomizedInformation>? TenantsCustomizedInformation
+        {
             get { return BackingStore?.Get<List<TenantCustomizedInformation>?>("tenantsCustomizedInformation"); }
             set { BackingStore?.Set("tenantsCustomizedInformation", value); }
         }
 #nullable restore
 #else
-        public List<TenantCustomizedInformation> TenantsCustomizedInformation {
+        public List<TenantCustomizedInformation> TenantsCustomizedInformation
+        {
             get { return BackingStore?.Get<List<TenantCustomizedInformation>>("tenantsCustomizedInformation"); }
             set { BackingStore?.Set("tenantsCustomizedInformation", value); }
         }
@@ -474,13 +541,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection tenant level detailed information across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantDetailedInformation>? TenantsDetailedInformation {
+        public List<TenantDetailedInformation>? TenantsDetailedInformation
+        {
             get { return BackingStore?.Get<List<TenantDetailedInformation>?>("tenantsDetailedInformation"); }
             set { BackingStore?.Set("tenantsDetailedInformation", value); }
         }
 #nullable restore
 #else
-        public List<TenantDetailedInformation> TenantsDetailedInformation {
+        public List<TenantDetailedInformation> TenantsDetailedInformation
+        {
             get { return BackingStore?.Get<List<TenantDetailedInformation>>("tenantsDetailedInformation"); }
             set { BackingStore?.Set("tenantsDetailedInformation", value); }
         }
@@ -488,13 +557,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The collection of tenant tags across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantTag>? TenantTags {
+        public List<TenantTag>? TenantTags
+        {
             get { return BackingStore?.Get<List<TenantTag>?>("tenantTags"); }
             set { BackingStore?.Set("tenantTags", value); }
         }
 #nullable restore
 #else
-        public List<TenantTag> TenantTags {
+        public List<TenantTag> TenantTags
+        {
             get { return BackingStore?.Get<List<TenantTag>>("tenantTags"); }
             set { BackingStore?.Set("tenantTags", value); }
         }
@@ -502,13 +573,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsDeviceMalwareState>? WindowsDeviceMalwareStates {
+        public List<WindowsDeviceMalwareState>? WindowsDeviceMalwareStates
+        {
             get { return BackingStore?.Get<List<WindowsDeviceMalwareState>?>("windowsDeviceMalwareStates"); }
             set { BackingStore?.Set("windowsDeviceMalwareStates", value); }
         }
 #nullable restore
 #else
-        public List<WindowsDeviceMalwareState> WindowsDeviceMalwareStates {
+        public List<WindowsDeviceMalwareState> WindowsDeviceMalwareStates
+        {
             get { return BackingStore?.Get<List<WindowsDeviceMalwareState>>("windowsDeviceMalwareStates"); }
             set { BackingStore?.Set("windowsDeviceMalwareStates", value); }
         }
@@ -516,13 +589,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsProtectionState>? WindowsProtectionStates {
+        public List<WindowsProtectionState>? WindowsProtectionStates
+        {
             get { return BackingStore?.Get<List<WindowsProtectionState>?>("windowsProtectionStates"); }
             set { BackingStore?.Set("windowsProtectionStates", value); }
         }
 #nullable restore
 #else
-        public List<WindowsProtectionState> WindowsProtectionStates {
+        public List<WindowsProtectionState> WindowsProtectionStates
+        {
             get { return BackingStore?.Get<List<WindowsProtectionState>>("windowsProtectionStates"); }
             set { BackingStore?.Set("windowsProtectionStates", value); }
         }
@@ -545,43 +620,43 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"aggregatedPolicyCompliances", n => { AggregatedPolicyCompliances = n.GetCollectionOfObjectValues<AggregatedPolicyCompliance>(AggregatedPolicyCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"appPerformances", n => { AppPerformances = n.GetCollectionOfObjectValues<AppPerformance>(AppPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<AuditEvent>(AuditEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"cloudPcConnections", n => { CloudPcConnections = n.GetCollectionOfObjectValues<CloudPcConnection>(CloudPcConnection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"cloudPcDevices", n => { CloudPcDevices = n.GetCollectionOfObjectValues<CloudPcDevice>(CloudPcDevice.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"cloudPcsOverview", n => { CloudPcsOverview = n.GetCollectionOfObjectValues<CloudPcOverview>(CloudPcOverview.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"conditionalAccessPolicyCoverages", n => { ConditionalAccessPolicyCoverages = n.GetCollectionOfObjectValues<ConditionalAccessPolicyCoverage>(ConditionalAccessPolicyCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"credentialUserRegistrationsSummaries", n => { CredentialUserRegistrationsSummaries = n.GetCollectionOfObjectValues<CredentialUserRegistrationsSummary>(CredentialUserRegistrationsSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceAppPerformances", n => { DeviceAppPerformances = n.GetCollectionOfObjectValues<DeviceAppPerformance>(DeviceAppPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceCompliancePolicySettingStateSummaries", n => { DeviceCompliancePolicySettingStateSummaries = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>(DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deviceHealthStatuses", n => { DeviceHealthStatuses = n.GetCollectionOfObjectValues<DeviceHealthStatus>(DeviceHealthStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceComplianceTrends", n => { ManagedDeviceComplianceTrends = n.GetCollectionOfObjectValues<ManagedDeviceComplianceTrend>(ManagedDeviceComplianceTrend.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceCompliances", n => { ManagedDeviceCompliances = n.GetCollectionOfObjectValues<ManagedDeviceCompliance>(ManagedDeviceCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedTenantAlertLogs", n => { ManagedTenantAlertLogs = n.GetCollectionOfObjectValues<ManagedTenantAlertLog>(ManagedTenantAlertLog.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedTenantAlertRuleDefinitions", n => { ManagedTenantAlertRuleDefinitions = n.GetCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>(ManagedTenantAlertRuleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedTenantAlertRules", n => { ManagedTenantAlertRules = n.GetCollectionOfObjectValues<ManagedTenantAlertRule>(ManagedTenantAlertRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedTenantAlerts", n => { ManagedTenantAlerts = n.GetCollectionOfObjectValues<ManagedTenantAlert>(ManagedTenantAlert.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedTenantApiNotifications", n => { ManagedTenantApiNotifications = n.GetCollectionOfObjectValues<ManagedTenantApiNotification>(ManagedTenantApiNotification.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedTenantEmailNotifications", n => { ManagedTenantEmailNotifications = n.GetCollectionOfObjectValues<ManagedTenantEmailNotification>(ManagedTenantEmailNotification.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedTenantTicketingEndpoints", n => { ManagedTenantTicketingEndpoints = n.GetCollectionOfObjectValues<ManagedTenantTicketingEndpoint>(ManagedTenantTicketingEndpoint.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementActionTenantDeploymentStatuses", n => { ManagementActionTenantDeploymentStatuses = n.GetCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>(ManagementActionTenantDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementActions", n => { ManagementActions = n.GetCollectionOfObjectValues<ManagementAction>(ManagementAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntent>(ManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementTemplateCollectionTenantSummaries", n => { ManagementTemplateCollectionTenantSummaries = n.GetCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>(ManagementTemplateCollectionTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementTemplateCollections", n => { ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementTemplateStepTenantSummaries", n => { ManagementTemplateStepTenantSummaries = n.GetCollectionOfObjectValues<ManagementTemplateStepTenantSummary>(ManagementTemplateStepTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementTemplateStepVersions", n => { ManagementTemplateStepVersions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"myRoles", n => { MyRoles = n.GetCollectionOfObjectValues<MyRole>(MyRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantGroups", n => { TenantGroups = n.GetCollectionOfObjectValues<TenantGroup>(TenantGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantTags", n => { TenantTags = n.GetCollectionOfObjectValues<TenantTag>(TenantTag.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenants", n => { Tenants = n.GetCollectionOfObjectValues<Tenant>(Tenant.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantsCustomizedInformation", n => { TenantsCustomizedInformation = n.GetCollectionOfObjectValues<TenantCustomizedInformation>(TenantCustomizedInformation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tenantsDetailedInformation", n => { TenantsDetailedInformation = n.GetCollectionOfObjectValues<TenantDetailedInformation>(TenantDetailedInformation.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsDeviceMalwareStates", n => { WindowsDeviceMalwareStates = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"windowsProtectionStates", n => { WindowsProtectionStates = n.GetCollectionOfObjectValues<WindowsProtectionState>(WindowsProtectionState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "aggregatedPolicyCompliances", n => { AggregatedPolicyCompliances = n.GetCollectionOfObjectValues<AggregatedPolicyCompliance>(AggregatedPolicyCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appPerformances", n => { AppPerformances = n.GetCollectionOfObjectValues<AppPerformance>(AppPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "auditEvents", n => { AuditEvents = n.GetCollectionOfObjectValues<AuditEvent>(AuditEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cloudPcConnections", n => { CloudPcConnections = n.GetCollectionOfObjectValues<CloudPcConnection>(CloudPcConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cloudPcDevices", n => { CloudPcDevices = n.GetCollectionOfObjectValues<CloudPcDevice>(CloudPcDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cloudPcsOverview", n => { CloudPcsOverview = n.GetCollectionOfObjectValues<CloudPcOverview>(CloudPcOverview.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conditionalAccessPolicyCoverages", n => { ConditionalAccessPolicyCoverages = n.GetCollectionOfObjectValues<ConditionalAccessPolicyCoverage>(ConditionalAccessPolicyCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "credentialUserRegistrationsSummaries", n => { CredentialUserRegistrationsSummaries = n.GetCollectionOfObjectValues<CredentialUserRegistrationsSummary>(CredentialUserRegistrationsSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceAppPerformances", n => { DeviceAppPerformances = n.GetCollectionOfObjectValues<DeviceAppPerformance>(DeviceAppPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceCompliancePolicySettingStateSummaries", n => { DeviceCompliancePolicySettingStateSummaries = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>(DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceHealthStatuses", n => { DeviceHealthStatuses = n.GetCollectionOfObjectValues<DeviceHealthStatus>(DeviceHealthStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceComplianceTrends", n => { ManagedDeviceComplianceTrends = n.GetCollectionOfObjectValues<ManagedDeviceComplianceTrend>(ManagedDeviceComplianceTrend.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceCompliances", n => { ManagedDeviceCompliances = n.GetCollectionOfObjectValues<ManagedDeviceCompliance>(ManagedDeviceCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedTenantAlertLogs", n => { ManagedTenantAlertLogs = n.GetCollectionOfObjectValues<ManagedTenantAlertLog>(ManagedTenantAlertLog.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedTenantAlertRuleDefinitions", n => { ManagedTenantAlertRuleDefinitions = n.GetCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>(ManagedTenantAlertRuleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedTenantAlertRules", n => { ManagedTenantAlertRules = n.GetCollectionOfObjectValues<ManagedTenantAlertRule>(ManagedTenantAlertRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedTenantAlerts", n => { ManagedTenantAlerts = n.GetCollectionOfObjectValues<ManagedTenantAlert>(ManagedTenantAlert.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedTenantApiNotifications", n => { ManagedTenantApiNotifications = n.GetCollectionOfObjectValues<ManagedTenantApiNotification>(ManagedTenantApiNotification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedTenantEmailNotifications", n => { ManagedTenantEmailNotifications = n.GetCollectionOfObjectValues<ManagedTenantEmailNotification>(ManagedTenantEmailNotification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedTenantTicketingEndpoints", n => { ManagedTenantTicketingEndpoints = n.GetCollectionOfObjectValues<ManagedTenantTicketingEndpoint>(ManagedTenantTicketingEndpoint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementActionTenantDeploymentStatuses", n => { ManagementActionTenantDeploymentStatuses = n.GetCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>(ManagementActionTenantDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementActions", n => { ManagementActions = n.GetCollectionOfObjectValues<ManagementAction>(ManagementAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntent>(ManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplateCollectionTenantSummaries", n => { ManagementTemplateCollectionTenantSummaries = n.GetCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>(ManagementTemplateCollectionTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplateCollections", n => { ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplateStepTenantSummaries", n => { ManagementTemplateStepTenantSummaries = n.GetCollectionOfObjectValues<ManagementTemplateStepTenantSummary>(ManagementTemplateStepTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplateStepVersions", n => { ManagementTemplateStepVersions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "myRoles", n => { MyRoles = n.GetCollectionOfObjectValues<MyRole>(MyRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantGroups", n => { TenantGroups = n.GetCollectionOfObjectValues<TenantGroup>(TenantGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantTags", n => { TenantTags = n.GetCollectionOfObjectValues<TenantTag>(TenantTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenants", n => { Tenants = n.GetCollectionOfObjectValues<Tenant>(Tenant.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantsCustomizedInformation", n => { TenantsCustomizedInformation = n.GetCollectionOfObjectValues<TenantCustomizedInformation>(TenantCustomizedInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenantsDetailedInformation", n => { TenantsDetailedInformation = n.GetCollectionOfObjectValues<TenantDetailedInformation>(TenantDetailedInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsDeviceMalwareStates", n => { WindowsDeviceMalwareStates = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "windowsProtectionStates", n => { WindowsProtectionStates = n.GetCollectionOfObjectValues<WindowsProtectionState>(WindowsProtectionState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

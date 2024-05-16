@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The entity represents an group policy operation.
     /// </summary>
-    public class GroupPolicyOperation : Entity, IParsable 
+    public class GroupPolicyOperation : Entity, IParsable
     {
         /// <summary>The date and time the entity was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Type of Group Policy operation status.</summary>
-        public GroupPolicyOperationStatus? OperationStatus {
+        public GroupPolicyOperationStatus? OperationStatus
+        {
             get { return BackingStore?.Get<GroupPolicyOperationStatus?>("operationStatus"); }
             set { BackingStore?.Set("operationStatus", value); }
         }
         /// <summary>Type of Group Policy operation.</summary>
-        public GroupPolicyOperationType? OperationType {
+        public GroupPolicyOperationType? OperationType
+        {
             get { return BackingStore?.Get<GroupPolicyOperationType?>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
         /// <summary>The group policy operation status detail.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StatusDetails {
+        public string? StatusDetails
+        {
             get { return BackingStore?.Get<string?>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
 #nullable restore
 #else
-        public string StatusDetails {
+        public string StatusDetails
+        {
             get { return BackingStore?.Get<string>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
@@ -57,10 +63,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"operationStatus", n => { OperationStatus = n.GetEnumValue<GroupPolicyOperationStatus>(); } },
-                {"operationType", n => { OperationType = n.GetEnumValue<GroupPolicyOperationType>(); } },
-                {"statusDetails", n => { StatusDetails = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "operationStatus", n => { OperationStatus = n.GetEnumValue<GroupPolicyOperationStatus>(); } },
+                { "operationType", n => { OperationType = n.GetEnumValue<GroupPolicyOperationType>(); } },
+                { "statusDetails", n => { StatusDetails = n.GetStringValue(); } },
             };
         }
         /// <summary>

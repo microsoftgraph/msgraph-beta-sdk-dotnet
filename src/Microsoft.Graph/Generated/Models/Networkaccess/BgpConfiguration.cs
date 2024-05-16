@@ -5,18 +5,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class BgpConfiguration : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BgpConfiguration : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Specifies the ASN of the BGP.</summary>
-        public int? Asn {
+        public int? Asn
+        {
             get { return BackingStore?.Get<int?>("asn"); }
             set { BackingStore?.Set("asn", value); }
         }
@@ -25,13 +28,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The ipAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpAddress {
+        public string? IpAddress
+        {
             get { return BackingStore?.Get<string?>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
 #nullable restore
 #else
-        public string IpAddress {
+        public string IpAddress
+        {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Specifies the BGP IP address of peer (Microsoft, in this case).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LocalIpAddress {
+        public string? LocalIpAddress
+        {
             get { return BackingStore?.Get<string?>("localIpAddress"); }
             set { BackingStore?.Set("localIpAddress", value); }
         }
 #nullable restore
 #else
-        public string LocalIpAddress {
+        public string LocalIpAddress
+        {
             get { return BackingStore?.Get<string>("localIpAddress"); }
             set { BackingStore?.Set("localIpAddress", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Specifies the BGP IP address of customer&apos;s on-premise VPN router configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PeerIpAddress {
+        public string? PeerIpAddress
+        {
             get { return BackingStore?.Get<string?>("peerIpAddress"); }
             set { BackingStore?.Set("peerIpAddress", value); }
         }
 #nullable restore
 #else
-        public string PeerIpAddress {
+        public string PeerIpAddress
+        {
             get { return BackingStore?.Get<string>("peerIpAddress"); }
             set { BackingStore?.Set("peerIpAddress", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"asn", n => { Asn = n.GetIntValue(); } },
-                {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"localIpAddress", n => { LocalIpAddress = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"peerIpAddress", n => { PeerIpAddress = n.GetStringValue(); } },
+                { "asn", n => { Asn = n.GetIntValue(); } },
+                { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                { "localIpAddress", n => { LocalIpAddress = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "peerIpAddress", n => { PeerIpAddress = n.GetStringValue(); } },
             };
         }
         /// <summary>

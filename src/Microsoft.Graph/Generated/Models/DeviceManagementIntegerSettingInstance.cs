@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A setting instance representing an integer value
     /// </summary>
-    public class DeviceManagementIntegerSettingInstance : DeviceManagementSettingInstance, IParsable 
+    public class DeviceManagementIntegerSettingInstance : DeviceManagementSettingInstance, IParsable
     {
         /// <summary>The integer value</summary>
-        public int? Value {
+        public int? Value
+        {
             get { return BackingStore?.Get<int?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetIntValue(); } },
+                { "value", n => { Value = n.GetIntValue(); } },
             };
         }
         /// <summary>

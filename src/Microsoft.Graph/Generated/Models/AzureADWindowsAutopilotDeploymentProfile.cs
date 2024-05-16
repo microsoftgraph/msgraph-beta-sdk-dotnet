@@ -4,11 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows Autopilot Deployment Profile
     /// </summary>
-    public class AzureADWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable 
+    public class AzureADWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable
     {
         /// <summary>
         /// Instantiates a new <see cref="AzureADWindowsAutopilotDeploymentProfile"/> and sets the default values.

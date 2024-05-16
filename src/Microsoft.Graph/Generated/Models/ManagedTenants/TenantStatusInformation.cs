@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class TenantStatusInformation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TenantStatusInformation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus? DelegatedPrivilegeStatus {
+        public Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus? DelegatedPrivilegeStatus
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.DelegatedPrivilegeStatus?>("delegatedPrivilegeStatus"); }
             set { BackingStore?.Set("delegatedPrivilegeStatus", value); }
         }
         /// <summary>The date and time the delegated admin privileges status was updated. Optional. Read-only.</summary>
-        public DateTimeOffset? LastDelegatedPrivilegeRefreshDateTime {
+        public DateTimeOffset? LastDelegatedPrivilegeRefreshDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastDelegatedPrivilegeRefreshDateTime"); }
             set { BackingStore?.Set("lastDelegatedPrivilegeRefreshDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -44,61 +50,71 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The identifier for the account that offboarded the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OffboardedByUserId {
+        public string? OffboardedByUserId
+        {
             get { return BackingStore?.Get<string?>("offboardedByUserId"); }
             set { BackingStore?.Set("offboardedByUserId", value); }
         }
 #nullable restore
 #else
-        public string OffboardedByUserId {
+        public string OffboardedByUserId
+        {
             get { return BackingStore?.Get<string>("offboardedByUserId"); }
             set { BackingStore?.Set("offboardedByUserId", value); }
         }
 #endif
         /// <summary>The date and time when the managed tenant was offboarded. Optional. Read-only.</summary>
-        public DateTimeOffset? OffboardedDateTime {
+        public DateTimeOffset? OffboardedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("offboardedDateTime"); }
             set { BackingStore?.Set("offboardedDateTime", value); }
         }
         /// <summary>The identifier for the account that onboarded the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OnboardedByUserId {
+        public string? OnboardedByUserId
+        {
             get { return BackingStore?.Get<string?>("onboardedByUserId"); }
             set { BackingStore?.Set("onboardedByUserId", value); }
         }
 #nullable restore
 #else
-        public string OnboardedByUserId {
+        public string OnboardedByUserId
+        {
             get { return BackingStore?.Get<string>("onboardedByUserId"); }
             set { BackingStore?.Set("onboardedByUserId", value); }
         }
 #endif
         /// <summary>The date and time when the managed tenant was onboarded. Optional. Read-only.</summary>
-        public DateTimeOffset? OnboardedDateTime {
+        public DateTimeOffset? OnboardedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("onboardedDateTime"); }
             set { BackingStore?.Set("onboardedDateTime", value); }
         }
         /// <summary>The onboarding status for the managed tenant.. Possible values are: ineligible, inProcess, active, inactive, unknownFutureValue. Optional. Read-only.</summary>
-        public TenantOnboardingStatus? OnboardingStatus {
+        public TenantOnboardingStatus? OnboardingStatus
+        {
             get { return BackingStore?.Get<TenantOnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>Organization&apos;s onboarding eligibility reason in Microsoft 365 Lighthouse.. Possible values are: none, contractType, delegatedAdminPrivileges,usersCount,license and unknownFutureValue. Optional. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason {
+        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason? TenantOnboardingEligibilityReason
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantOnboardingEligibilityReason?>("tenantOnboardingEligibilityReason"); }
             set { BackingStore?.Set("tenantOnboardingEligibilityReason", value); }
         }
         /// <summary>The collection of workload statues for the managed tenant. Optional. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkloadStatus>? WorkloadStatuses {
+        public List<WorkloadStatus>? WorkloadStatuses
+        {
             get { return BackingStore?.Get<List<WorkloadStatus>?>("workloadStatuses"); }
             set { BackingStore?.Set("workloadStatuses", value); }
         }
 #nullable restore
 #else
-        public List<WorkloadStatus> WorkloadStatuses {
+        public List<WorkloadStatus> WorkloadStatuses
+        {
             get { return BackingStore?.Get<List<WorkloadStatus>>("workloadStatuses"); }
             set { BackingStore?.Set("workloadStatuses", value); }
         }
@@ -129,16 +145,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"delegatedPrivilegeStatus", n => { DelegatedPrivilegeStatus = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
-                {"lastDelegatedPrivilegeRefreshDateTime", n => { LastDelegatedPrivilegeRefreshDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"offboardedByUserId", n => { OffboardedByUserId = n.GetStringValue(); } },
-                {"offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardedByUserId", n => { OnboardedByUserId = n.GetStringValue(); } },
-                {"onboardedDateTime", n => { OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<TenantOnboardingStatus>(); } },
-                {"tenantOnboardingEligibilityReason", n => { TenantOnboardingEligibilityReason = n.GetEnumValue<TenantOnboardingEligibilityReason>(); } },
-                {"workloadStatuses", n => { WorkloadStatuses = n.GetCollectionOfObjectValues<WorkloadStatus>(WorkloadStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "delegatedPrivilegeStatus", n => { DelegatedPrivilegeStatus = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
+                { "lastDelegatedPrivilegeRefreshDateTime", n => { LastDelegatedPrivilegeRefreshDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "offboardedByUserId", n => { OffboardedByUserId = n.GetStringValue(); } },
+                { "offboardedDateTime", n => { OffboardedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "onboardedByUserId", n => { OnboardedByUserId = n.GetStringValue(); } },
+                { "onboardedDateTime", n => { OnboardedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<TenantOnboardingStatus>(); } },
+                { "tenantOnboardingEligibilityReason", n => { TenantOnboardingEligibilityReason = n.GetEnumValue<TenantOnboardingEligibilityReason>(); } },
+                { "workloadStatuses", n => { WorkloadStatuses = n.GetCollectionOfObjectValues<WorkloadStatus>(WorkloadStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

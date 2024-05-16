@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class InformationProtectionLabel : Entity, IParsable 
+    public class InformationProtectionLabel : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The color that the UI should display for the label, if configured.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Color {
+        public string? Color
+        {
             get { return BackingStore?.Get<string?>("color"); }
             set { BackingStore?.Set("color", value); }
         }
 #nullable restore
 #else
-        public string Color {
+        public string Color
+        {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The admin-defined description for the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #endif
         /// <summary>Indicates whether the label is active or not. Active labels should be hidden or disabled in UI.</summary>
-        public bool? IsActive {
+        public bool? IsActive
+        {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>The plaintext name of the label.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -59,32 +67,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The parent label associated with a child label. Null if label has no parent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ParentLabelDetails? Parent {
+        public ParentLabelDetails? Parent
+        {
             get { return BackingStore?.Get<ParentLabelDetails?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #nullable restore
 #else
-        public ParentLabelDetails Parent {
+        public ParentLabelDetails Parent
+        {
             get { return BackingStore?.Get<ParentLabelDetails>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #endif
         /// <summary>The sensitivity value of the label, where lower is less sensitive.</summary>
-        public int? Sensitivity {
+        public int? Sensitivity
+        {
             get { return BackingStore?.Get<int?>("sensitivity"); }
             set { BackingStore?.Set("sensitivity", value); }
         }
         /// <summary>The tooltip that should be displayed for the label in a UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tooltip {
+        public string? Tooltip
+        {
             get { return BackingStore?.Get<string?>("tooltip"); }
             set { BackingStore?.Set("tooltip", value); }
         }
 #nullable restore
 #else
-        public string Tooltip {
+        public string Tooltip
+        {
             get { return BackingStore?.Get<string>("tooltip"); }
             set { BackingStore?.Set("tooltip", value); }
         }
@@ -107,13 +120,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"color", n => { Color = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"isActive", n => { IsActive = n.GetBoolValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"parent", n => { Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
-                {"sensitivity", n => { Sensitivity = n.GetIntValue(); } },
-                {"tooltip", n => { Tooltip = n.GetStringValue(); } },
+                { "color", n => { Color = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "isActive", n => { IsActive = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "parent", n => { Parent = n.GetObjectValue<ParentLabelDetails>(ParentLabelDetails.CreateFromDiscriminatorValue); } },
+                { "sensitivity", n => { Sensitivity = n.GetIntValue(); } },
+                { "tooltip", n => { Tooltip = n.GetStringValue(); } },
             };
         }
         /// <summary>

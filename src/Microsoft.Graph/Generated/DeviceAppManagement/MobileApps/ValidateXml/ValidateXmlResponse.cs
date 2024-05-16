@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
+namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml
+{
     [Obsolete("This class is obsolete. Use ValidateXmlPostResponse instead.")]
     #pragma warning disable CS1591
-    public class ValidateXmlResponse : ValidateXmlPostResponse, IParsable 
+    public class ValidateXmlResponse : ValidateXmlPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

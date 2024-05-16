@@ -5,37 +5,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Represents per-process privacy preferences.
     /// </summary>
-    public class MacOSPrivacyAccessControlItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MacOSPrivacyAccessControlItem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Possible values of a property</summary>
-        public Enablement? Accessibility {
+        public Enablement? Accessibility
+        {
             get { return BackingStore?.Get<Enablement?>("accessibility"); }
             set { BackingStore?.Set("accessibility", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? AddressBook {
+        public Enablement? AddressBook
+        {
             get { return BackingStore?.Get<Enablement?>("addressBook"); }
             set { BackingStore?.Set("addressBook", value); }
         }
         /// <summary>Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSAppleEventReceiver>? AppleEventsAllowedReceivers {
+        public List<MacOSAppleEventReceiver>? AppleEventsAllowedReceivers
+        {
             get { return BackingStore?.Get<List<MacOSAppleEventReceiver>?>("appleEventsAllowedReceivers"); }
             set { BackingStore?.Set("appleEventsAllowedReceivers", value); }
         }
 #nullable restore
 #else
-        public List<MacOSAppleEventReceiver> AppleEventsAllowedReceivers {
+        public List<MacOSAppleEventReceiver> AppleEventsAllowedReceivers
+        {
             get { return BackingStore?.Get<List<MacOSAppleEventReceiver>>("appleEventsAllowedReceivers"); }
             set { BackingStore?.Set("appleEventsAllowedReceivers", value); }
         }
@@ -43,40 +49,47 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Block access to camera app.</summary>
-        public bool? BlockCamera {
+        public bool? BlockCamera
+        {
             get { return BackingStore?.Get<bool?>("blockCamera"); }
             set { BackingStore?.Set("blockCamera", value); }
         }
         /// <summary>Block the app or process from listening to events from input devices such as mouse, keyboard, and trackpad.Requires macOS 10.15 or later.</summary>
-        public bool? BlockListenEvent {
+        public bool? BlockListenEvent
+        {
             get { return BackingStore?.Get<bool?>("blockListenEvent"); }
             set { BackingStore?.Set("blockListenEvent", value); }
         }
         /// <summary>Block access to microphone.</summary>
-        public bool? BlockMicrophone {
+        public bool? BlockMicrophone
+        {
             get { return BackingStore?.Get<bool?>("blockMicrophone"); }
             set { BackingStore?.Set("blockMicrophone", value); }
         }
         /// <summary>Block app from capturing contents of system display. Requires macOS 10.15 or later.</summary>
-        public bool? BlockScreenCapture {
+        public bool? BlockScreenCapture
+        {
             get { return BackingStore?.Get<bool?>("blockScreenCapture"); }
             set { BackingStore?.Set("blockScreenCapture", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? Calendar {
+        public Enablement? Calendar
+        {
             get { return BackingStore?.Get<Enablement?>("calendar"); }
             set { BackingStore?.Set("calendar", value); }
         }
         /// <summary>Enter the code requirement, which can be obtained with the command &apos;codesign –display -r –&apos; in the Terminal app. Include everything after &apos;=&gt;&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CodeRequirement {
+        public string? CodeRequirement
+        {
             get { return BackingStore?.Get<string?>("codeRequirement"); }
             set { BackingStore?.Set("codeRequirement", value); }
         }
 #nullable restore
 #else
-        public string CodeRequirement {
+        public string CodeRequirement
+        {
             get { return BackingStore?.Get<string>("codeRequirement"); }
             set { BackingStore?.Set("codeRequirement", value); }
         }
@@ -84,117 +97,138 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the app, process, or executable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Possible values of a property</summary>
-        public Enablement? FileProviderPresence {
+        public Enablement? FileProviderPresence
+        {
             get { return BackingStore?.Get<Enablement?>("fileProviderPresence"); }
             set { BackingStore?.Set("fileProviderPresence", value); }
         }
         /// <summary>The bundle ID or path of the app, process, or executable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Identifier {
+        public string? Identifier
+        {
             get { return BackingStore?.Get<string?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
 #nullable restore
 #else
-        public string Identifier {
+        public string Identifier
+        {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
 #endif
         /// <summary>Process identifier types for MacOS Privacy Preferences</summary>
-        public MacOSProcessIdentifierType? IdentifierType {
+        public MacOSProcessIdentifierType? IdentifierType
+        {
             get { return BackingStore?.Get<MacOSProcessIdentifierType?>("identifierType"); }
             set { BackingStore?.Set("identifierType", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? MediaLibrary {
+        public Enablement? MediaLibrary
+        {
             get { return BackingStore?.Get<Enablement?>("mediaLibrary"); }
             set { BackingStore?.Set("mediaLibrary", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Possible values of a property</summary>
-        public Enablement? Photos {
+        public Enablement? Photos
+        {
             get { return BackingStore?.Get<Enablement?>("photos"); }
             set { BackingStore?.Set("photos", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? PostEvent {
+        public Enablement? PostEvent
+        {
             get { return BackingStore?.Get<Enablement?>("postEvent"); }
             set { BackingStore?.Set("postEvent", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? Reminders {
+        public Enablement? Reminders
+        {
             get { return BackingStore?.Get<Enablement?>("reminders"); }
             set { BackingStore?.Set("reminders", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SpeechRecognition {
+        public Enablement? SpeechRecognition
+        {
             get { return BackingStore?.Get<Enablement?>("speechRecognition"); }
             set { BackingStore?.Set("speechRecognition", value); }
         }
         /// <summary>Statically validates the code requirement. Use this setting if the process invalidates its dynamic code signature.</summary>
-        public bool? StaticCodeValidation {
+        public bool? StaticCodeValidation
+        {
             get { return BackingStore?.Get<bool?>("staticCodeValidation"); }
             set { BackingStore?.Set("staticCodeValidation", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SystemPolicyAllFiles {
+        public Enablement? SystemPolicyAllFiles
+        {
             get { return BackingStore?.Get<Enablement?>("systemPolicyAllFiles"); }
             set { BackingStore?.Set("systemPolicyAllFiles", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SystemPolicyDesktopFolder {
+        public Enablement? SystemPolicyDesktopFolder
+        {
             get { return BackingStore?.Get<Enablement?>("systemPolicyDesktopFolder"); }
             set { BackingStore?.Set("systemPolicyDesktopFolder", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SystemPolicyDocumentsFolder {
+        public Enablement? SystemPolicyDocumentsFolder
+        {
             get { return BackingStore?.Get<Enablement?>("systemPolicyDocumentsFolder"); }
             set { BackingStore?.Set("systemPolicyDocumentsFolder", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SystemPolicyDownloadsFolder {
+        public Enablement? SystemPolicyDownloadsFolder
+        {
             get { return BackingStore?.Get<Enablement?>("systemPolicyDownloadsFolder"); }
             set { BackingStore?.Set("systemPolicyDownloadsFolder", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SystemPolicyNetworkVolumes {
+        public Enablement? SystemPolicyNetworkVolumes
+        {
             get { return BackingStore?.Get<Enablement?>("systemPolicyNetworkVolumes"); }
             set { BackingStore?.Set("systemPolicyNetworkVolumes", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SystemPolicyRemovableVolumes {
+        public Enablement? SystemPolicyRemovableVolumes
+        {
             get { return BackingStore?.Get<Enablement?>("systemPolicyRemovableVolumes"); }
             set { BackingStore?.Set("systemPolicyRemovableVolumes", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SystemPolicySystemAdminFiles {
+        public Enablement? SystemPolicySystemAdminFiles
+        {
             get { return BackingStore?.Get<Enablement?>("systemPolicySystemAdminFiles"); }
             set { BackingStore?.Set("systemPolicySystemAdminFiles", value); }
         }
@@ -224,33 +258,33 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"accessibility", n => { Accessibility = n.GetEnumValue<Enablement>(); } },
-                {"addressBook", n => { AddressBook = n.GetEnumValue<Enablement>(); } },
-                {"appleEventsAllowedReceivers", n => { AppleEventsAllowedReceivers = n.GetCollectionOfObjectValues<MacOSAppleEventReceiver>(MacOSAppleEventReceiver.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"blockCamera", n => { BlockCamera = n.GetBoolValue(); } },
-                {"blockListenEvent", n => { BlockListenEvent = n.GetBoolValue(); } },
-                {"blockMicrophone", n => { BlockMicrophone = n.GetBoolValue(); } },
-                {"blockScreenCapture", n => { BlockScreenCapture = n.GetBoolValue(); } },
-                {"calendar", n => { Calendar = n.GetEnumValue<Enablement>(); } },
-                {"codeRequirement", n => { CodeRequirement = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"fileProviderPresence", n => { FileProviderPresence = n.GetEnumValue<Enablement>(); } },
-                {"identifier", n => { Identifier = n.GetStringValue(); } },
-                {"identifierType", n => { IdentifierType = n.GetEnumValue<MacOSProcessIdentifierType>(); } },
-                {"mediaLibrary", n => { MediaLibrary = n.GetEnumValue<Enablement>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"photos", n => { Photos = n.GetEnumValue<Enablement>(); } },
-                {"postEvent", n => { PostEvent = n.GetEnumValue<Enablement>(); } },
-                {"reminders", n => { Reminders = n.GetEnumValue<Enablement>(); } },
-                {"speechRecognition", n => { SpeechRecognition = n.GetEnumValue<Enablement>(); } },
-                {"staticCodeValidation", n => { StaticCodeValidation = n.GetBoolValue(); } },
-                {"systemPolicyAllFiles", n => { SystemPolicyAllFiles = n.GetEnumValue<Enablement>(); } },
-                {"systemPolicyDesktopFolder", n => { SystemPolicyDesktopFolder = n.GetEnumValue<Enablement>(); } },
-                {"systemPolicyDocumentsFolder", n => { SystemPolicyDocumentsFolder = n.GetEnumValue<Enablement>(); } },
-                {"systemPolicyDownloadsFolder", n => { SystemPolicyDownloadsFolder = n.GetEnumValue<Enablement>(); } },
-                {"systemPolicyNetworkVolumes", n => { SystemPolicyNetworkVolumes = n.GetEnumValue<Enablement>(); } },
-                {"systemPolicyRemovableVolumes", n => { SystemPolicyRemovableVolumes = n.GetEnumValue<Enablement>(); } },
-                {"systemPolicySystemAdminFiles", n => { SystemPolicySystemAdminFiles = n.GetEnumValue<Enablement>(); } },
+                { "accessibility", n => { Accessibility = n.GetEnumValue<Enablement>(); } },
+                { "addressBook", n => { AddressBook = n.GetEnumValue<Enablement>(); } },
+                { "appleEventsAllowedReceivers", n => { AppleEventsAllowedReceivers = n.GetCollectionOfObjectValues<MacOSAppleEventReceiver>(MacOSAppleEventReceiver.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "blockCamera", n => { BlockCamera = n.GetBoolValue(); } },
+                { "blockListenEvent", n => { BlockListenEvent = n.GetBoolValue(); } },
+                { "blockMicrophone", n => { BlockMicrophone = n.GetBoolValue(); } },
+                { "blockScreenCapture", n => { BlockScreenCapture = n.GetBoolValue(); } },
+                { "calendar", n => { Calendar = n.GetEnumValue<Enablement>(); } },
+                { "codeRequirement", n => { CodeRequirement = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "fileProviderPresence", n => { FileProviderPresence = n.GetEnumValue<Enablement>(); } },
+                { "identifier", n => { Identifier = n.GetStringValue(); } },
+                { "identifierType", n => { IdentifierType = n.GetEnumValue<MacOSProcessIdentifierType>(); } },
+                { "mediaLibrary", n => { MediaLibrary = n.GetEnumValue<Enablement>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "photos", n => { Photos = n.GetEnumValue<Enablement>(); } },
+                { "postEvent", n => { PostEvent = n.GetEnumValue<Enablement>(); } },
+                { "reminders", n => { Reminders = n.GetEnumValue<Enablement>(); } },
+                { "speechRecognition", n => { SpeechRecognition = n.GetEnumValue<Enablement>(); } },
+                { "staticCodeValidation", n => { StaticCodeValidation = n.GetBoolValue(); } },
+                { "systemPolicyAllFiles", n => { SystemPolicyAllFiles = n.GetEnumValue<Enablement>(); } },
+                { "systemPolicyDesktopFolder", n => { SystemPolicyDesktopFolder = n.GetEnumValue<Enablement>(); } },
+                { "systemPolicyDocumentsFolder", n => { SystemPolicyDocumentsFolder = n.GetEnumValue<Enablement>(); } },
+                { "systemPolicyDownloadsFolder", n => { SystemPolicyDownloadsFolder = n.GetEnumValue<Enablement>(); } },
+                { "systemPolicyNetworkVolumes", n => { SystemPolicyNetworkVolumes = n.GetEnumValue<Enablement>(); } },
+                { "systemPolicyRemovableVolumes", n => { SystemPolicyRemovableVolumes = n.GetEnumValue<Enablement>(); } },
+                { "systemPolicySystemAdminFiles", n => { SystemPolicySystemAdminFiles = n.GetEnumValue<Enablement>(); } },
             };
         }
         /// <summary>

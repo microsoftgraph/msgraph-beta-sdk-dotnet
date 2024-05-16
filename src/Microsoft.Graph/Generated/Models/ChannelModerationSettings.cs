@@ -5,23 +5,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ChannelModerationSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ChannelModerationSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates whether bots are allowed to post messages.</summary>
-        public bool? AllowNewMessageFromBots {
+        public bool? AllowNewMessageFromBots
+        {
             get { return BackingStore?.Get<bool?>("allowNewMessageFromBots"); }
             set { BackingStore?.Set("allowNewMessageFromBots", value); }
         }
         /// <summary>Indicates whether connectors are allowed to post messages.</summary>
-        public bool? AllowNewMessageFromConnectors {
+        public bool? AllowNewMessageFromConnectors
+        {
             get { return BackingStore?.Get<bool?>("allowNewMessageFromConnectors"); }
             set { BackingStore?.Set("allowNewMessageFromConnectors", value); }
         }
@@ -30,24 +34,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Indicates who is allowed to reply to the teams channel. Possible values are: everyone, authorAndModerators, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.ReplyRestriction? ReplyRestriction {
+        public Microsoft.Graph.Beta.Models.ReplyRestriction? ReplyRestriction
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReplyRestriction?>("replyRestriction"); }
             set { BackingStore?.Set("replyRestriction", value); }
         }
         /// <summary>Indicates who is allowed to post messages to teams channel. Possible values are: everyone, everyoneExceptGuests, moderators, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.UserNewMessageRestriction? UserNewMessageRestriction {
+        public Microsoft.Graph.Beta.Models.UserNewMessageRestriction? UserNewMessageRestriction
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserNewMessageRestriction?>("userNewMessageRestriction"); }
             set { BackingStore?.Set("userNewMessageRestriction", value); }
         }
@@ -77,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowNewMessageFromBots", n => { AllowNewMessageFromBots = n.GetBoolValue(); } },
-                {"allowNewMessageFromConnectors", n => { AllowNewMessageFromConnectors = n.GetBoolValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"replyRestriction", n => { ReplyRestriction = n.GetEnumValue<ReplyRestriction>(); } },
-                {"userNewMessageRestriction", n => { UserNewMessageRestriction = n.GetEnumValue<UserNewMessageRestriction>(); } },
+                { "allowNewMessageFromBots", n => { AllowNewMessageFromBots = n.GetBoolValue(); } },
+                { "allowNewMessageFromConnectors", n => { AllowNewMessageFromConnectors = n.GetBoolValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "replyRestriction", n => { ReplyRestriction = n.GetEnumValue<ReplyRestriction>(); } },
+                { "userNewMessageRestriction", n => { UserNewMessageRestriction = n.GetEnumValue<UserNewMessageRestriction>(); } },
             };
         }
         /// <summary>

@@ -6,51 +6,59 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class JournalLine : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class JournalLine : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Account? Account {
+        public Microsoft.Graph.Beta.Models.Account? Account
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Account Account {
+        public Microsoft.Graph.Beta.Models.Account Account
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #endif
         /// <summary>The accountId property</summary>
-        public Guid? AccountId {
+        public Guid? AccountId
+        {
             get { return BackingStore?.Get<Guid?>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
         /// <summary>The accountNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountNumber {
+        public string? AccountNumber
+        {
             get { return BackingStore?.Get<string?>("accountNumber"); }
             set { BackingStore?.Set("accountNumber", value); }
         }
 #nullable restore
 #else
-        public string AccountNumber {
+        public string AccountNumber
+        {
             get { return BackingStore?.Get<string>("accountNumber"); }
             set { BackingStore?.Set("accountNumber", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The amount property</summary>
-        public decimal? Amount {
+        public decimal? Amount
+        {
             get { return BackingStore?.Get<decimal?>("amount"); }
             set { BackingStore?.Set("amount", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The comment property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Comment {
+        public string? Comment
+        {
             get { return BackingStore?.Get<string?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public string Comment {
+        public string Comment
+        {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
@@ -73,13 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -87,13 +99,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The documentNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DocumentNumber {
+        public string? DocumentNumber
+        {
             get { return BackingStore?.Get<string?>("documentNumber"); }
             set { BackingStore?.Set("documentNumber", value); }
         }
 #nullable restore
 #else
-        public string DocumentNumber {
+        public string DocumentNumber
+        {
             get { return BackingStore?.Get<string>("documentNumber"); }
             set { BackingStore?.Set("documentNumber", value); }
         }
@@ -101,62 +115,72 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The externalDocumentNumber property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalDocumentNumber {
+        public string? ExternalDocumentNumber
+        {
             get { return BackingStore?.Get<string?>("externalDocumentNumber"); }
             set { BackingStore?.Set("externalDocumentNumber", value); }
         }
 #nullable restore
 #else
-        public string ExternalDocumentNumber {
+        public string ExternalDocumentNumber
+        {
             get { return BackingStore?.Get<string>("externalDocumentNumber"); }
             set { BackingStore?.Set("externalDocumentNumber", value); }
         }
 #endif
         /// <summary>The id property</summary>
-        public Guid? Id {
+        public Guid? Id
+        {
             get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The journalDisplayName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JournalDisplayName {
+        public string? JournalDisplayName
+        {
             get { return BackingStore?.Get<string?>("journalDisplayName"); }
             set { BackingStore?.Set("journalDisplayName", value); }
         }
 #nullable restore
 #else
-        public string JournalDisplayName {
+        public string JournalDisplayName
+        {
             get { return BackingStore?.Get<string>("journalDisplayName"); }
             set { BackingStore?.Set("journalDisplayName", value); }
         }
 #endif
         /// <summary>The lastModifiedDateTime property</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The lineNumber property</summary>
-        public int? LineNumber {
+        public int? LineNumber
+        {
             get { return BackingStore?.Get<int?>("lineNumber"); }
             set { BackingStore?.Set("lineNumber", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The postingDate property</summary>
-        public Date? PostingDate {
+        public Date? PostingDate
+        {
             get { return BackingStore?.Get<Date?>("postingDate"); }
             set { BackingStore?.Set("postingDate", value); }
         }
@@ -186,20 +210,20 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"accountId", n => { AccountId = n.GetGuidValue(); } },
-                {"accountNumber", n => { AccountNumber = n.GetStringValue(); } },
-                {"amount", n => { Amount = n.GetDecimalValue(); } },
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"documentNumber", n => { DocumentNumber = n.GetStringValue(); } },
-                {"externalDocumentNumber", n => { ExternalDocumentNumber = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetGuidValue(); } },
-                {"journalDisplayName", n => { JournalDisplayName = n.GetStringValue(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lineNumber", n => { LineNumber = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"postingDate", n => { PostingDate = n.GetDateValue(); } },
+                { "account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
+                { "accountId", n => { AccountId = n.GetGuidValue(); } },
+                { "accountNumber", n => { AccountNumber = n.GetStringValue(); } },
+                { "amount", n => { Amount = n.GetDecimalValue(); } },
+                { "comment", n => { Comment = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "documentNumber", n => { DocumentNumber = n.GetStringValue(); } },
+                { "externalDocumentNumber", n => { ExternalDocumentNumber = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetGuidValue(); } },
+                { "journalDisplayName", n => { JournalDisplayName = n.GetStringValue(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lineNumber", n => { LineNumber = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "postingDate", n => { PostingDate = n.GetDateValue(); } },
             };
         }
         /// <summary>

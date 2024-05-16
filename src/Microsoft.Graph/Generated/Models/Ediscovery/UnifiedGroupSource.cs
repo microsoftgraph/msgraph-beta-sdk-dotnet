@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Ediscovery {
+namespace Microsoft.Graph.Beta.Models.Ediscovery
+{
     #pragma warning disable CS1591
-    public class UnifiedGroupSource : DataSource, IParsable 
+    public class UnifiedGroupSource : DataSource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The group property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Group? Group {
+        public Microsoft.Graph.Beta.Models.Group? Group
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group?>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Group Group {
+        public Microsoft.Graph.Beta.Models.Group Group
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>("group"); }
             set { BackingStore?.Set("group", value); }
         }
 #endif
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
-        public SourceType? IncludedSources {
+        public SourceType? IncludedSources
+        {
             get { return BackingStore?.Get<SourceType?>("includedSources"); }
             set { BackingStore?.Set("includedSources", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"group", n => { Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
-                {"includedSources", n => { IncludedSources = n.GetEnumValue<SourceType>(); } },
+                { "group", n => { Group = n.GetObjectValue<Microsoft.Graph.Beta.Models.Group>(Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue); } },
+                { "includedSources", n => { IncludedSources = n.GetEnumValue<SourceType>(); } },
             };
         }
         /// <summary>

@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Object containing detailed information about the error and its remediation.
     /// </summary>
-    public class DeviceManagementTroubleshootingErrorDetails : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementTroubleshootingErrorDetails : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The context property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Context {
+        public string? Context
+        {
             get { return BackingStore?.Get<string?>("context"); }
             set { BackingStore?.Set("context", value); }
         }
 #nullable restore
 #else
-        public string Context {
+        public string Context
+        {
             get { return BackingStore?.Get<string>("context"); }
             set { BackingStore?.Set("context", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The failure property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Failure {
+        public string? Failure
+        {
             get { return BackingStore?.Get<string?>("failure"); }
             set { BackingStore?.Set("failure", value); }
         }
 #nullable restore
 #else
-        public string Failure {
+        public string Failure
+        {
             get { return BackingStore?.Get<string>("failure"); }
             set { BackingStore?.Set("failure", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The detailed description of what went wrong.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FailureDetails {
+        public string? FailureDetails
+        {
             get { return BackingStore?.Get<string?>("failureDetails"); }
             set { BackingStore?.Set("failureDetails", value); }
         }
 #nullable restore
 #else
-        public string FailureDetails {
+        public string FailureDetails
+        {
             get { return BackingStore?.Get<string>("failureDetails"); }
             set { BackingStore?.Set("failureDetails", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -77,13 +87,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The detailed description of how to remediate this issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Remediation {
+        public string? Remediation
+        {
             get { return BackingStore?.Get<string?>("remediation"); }
             set { BackingStore?.Set("remediation", value); }
         }
 #nullable restore
 #else
-        public string Remediation {
+        public string Remediation
+        {
             get { return BackingStore?.Get<string>("remediation"); }
             set { BackingStore?.Set("remediation", value); }
         }
@@ -91,13 +103,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Links to helpful documentation about this failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementTroubleshootingErrorResource>? Resources {
+        public List<DeviceManagementTroubleshootingErrorResource>? Resources
+        {
             get { return BackingStore?.Get<List<DeviceManagementTroubleshootingErrorResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementTroubleshootingErrorResource> Resources {
+        public List<DeviceManagementTroubleshootingErrorResource> Resources
+        {
             get { return BackingStore?.Get<List<DeviceManagementTroubleshootingErrorResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
@@ -128,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"context", n => { Context = n.GetStringValue(); } },
-                {"failure", n => { Failure = n.GetStringValue(); } },
-                {"failureDetails", n => { FailureDetails = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"remediation", n => { Remediation = n.GetStringValue(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>(DeviceManagementTroubleshootingErrorResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "context", n => { Context = n.GetStringValue(); } },
+                { "failure", n => { Failure = n.GetStringValue(); } },
+                { "failureDetails", n => { FailureDetails = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "remediation", n => { Remediation = n.GetStringValue(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>(DeviceManagementTroubleshootingErrorResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

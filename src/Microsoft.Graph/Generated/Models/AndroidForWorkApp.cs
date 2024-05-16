@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties and inherited properties for Android for Work (AFW) Apps.
     /// </summary>
-    public class AndroidForWorkApp : MobileApp, IParsable 
+    public class AndroidForWorkApp : MobileApp, IParsable
     {
         /// <summary>The Identity Name. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppIdentifier {
+        public string? AppIdentifier
+        {
             get { return BackingStore?.Get<string?>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
 #nullable restore
 #else
-        public string AppIdentifier {
+        public string AppIdentifier
+        {
             get { return BackingStore?.Get<string>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Play for Work Store app URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AppStoreUrl {
+        public string? AppStoreUrl
+        {
             get { return BackingStore?.Get<string?>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
 #nullable restore
 #else
-        public string AppStoreUrl {
+        public string AppStoreUrl
+        {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
@@ -41,24 +46,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The package identifier. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PackageId {
+        public string? PackageId
+        {
             get { return BackingStore?.Get<string?>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
 #nullable restore
 #else
-        public string PackageId {
+        public string PackageId
+        {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
 #endif
         /// <summary>The total number of VPP licenses.</summary>
-        public int? TotalLicenseCount {
+        public int? TotalLicenseCount
+        {
             get { return BackingStore?.Get<int?>("totalLicenseCount"); }
             set { BackingStore?.Set("totalLicenseCount", value); }
         }
         /// <summary>The number of VPP licenses in use.</summary>
-        public int? UsedLicenseCount {
+        public int? UsedLicenseCount
+        {
             get { return BackingStore?.Get<int?>("usedLicenseCount"); }
             set { BackingStore?.Set("usedLicenseCount", value); }
         }
@@ -87,11 +96,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appIdentifier", n => { AppIdentifier = n.GetStringValue(); } },
-                {"appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
-                {"packageId", n => { PackageId = n.GetStringValue(); } },
-                {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
-                {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
+                { "appIdentifier", n => { AppIdentifier = n.GetStringValue(); } },
+                { "appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
+                { "packageId", n => { PackageId = n.GetStringValue(); } },
+                { "totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
+                { "usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

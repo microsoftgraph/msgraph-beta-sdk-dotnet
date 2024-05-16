@@ -6,33 +6,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.OverrideComplianceState {
+namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.OverrideComplianceState
+{
     #pragma warning disable CS1591
-    public class OverrideComplianceStatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OverrideComplianceStatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Administrator configured device compliance state Enum</summary>
-        public AdministratorConfiguredDeviceComplianceState? ComplianceState {
+        public AdministratorConfiguredDeviceComplianceState? ComplianceState
+        {
             get { return BackingStore?.Get<AdministratorConfiguredDeviceComplianceState?>("complianceState"); }
             set { BackingStore?.Set("complianceState", value); }
         }
         /// <summary>The remediationUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RemediationUrl {
+        public string? RemediationUrl
+        {
             get { return BackingStore?.Get<string?>("remediationUrl"); }
             set { BackingStore?.Set("remediationUrl", value); }
         }
 #nullable restore
 #else
-        public string RemediationUrl {
+        public string RemediationUrl
+        {
             get { return BackingStore?.Get<string>("remediationUrl"); }
             set { BackingStore?.Set("remediationUrl", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.OverrideComp
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"complianceState", n => { ComplianceState = n.GetEnumValue<AdministratorConfiguredDeviceComplianceState>(); } },
-                {"remediationUrl", n => { RemediationUrl = n.GetStringValue(); } },
+                { "complianceState", n => { ComplianceState = n.GetEnumValue<AdministratorConfiguredDeviceComplianceState>(); } },
+                { "remediationUrl", n => { RemediationUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

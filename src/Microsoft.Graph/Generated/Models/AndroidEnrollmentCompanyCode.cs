@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class to hold specialty enrollment data used for enrolling via Google&apos;s Android Management API, such as Token, Url, and QR code content
     /// </summary>
-    public class AndroidEnrollmentCompanyCode : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AndroidEnrollmentCompanyCode : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Enrollment Token used by the User to enroll their device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EnrollmentToken {
+        public string? EnrollmentToken
+        {
             get { return BackingStore?.Get<string?>("enrollmentToken"); }
             set { BackingStore?.Set("enrollmentToken", value); }
         }
 #nullable restore
 #else
-        public string EnrollmentToken {
+        public string EnrollmentToken
+        {
             get { return BackingStore?.Get<string>("enrollmentToken"); }
             set { BackingStore?.Set("enrollmentToken", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>String used to generate a QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QrCodeContent {
+        public string? QrCodeContent
+        {
             get { return BackingStore?.Get<string?>("qrCodeContent"); }
             set { BackingStore?.Set("qrCodeContent", value); }
         }
 #nullable restore
 #else
-        public string QrCodeContent {
+        public string QrCodeContent
+        {
             get { return BackingStore?.Get<string>("qrCodeContent"); }
             set { BackingStore?.Set("qrCodeContent", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Generated QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? QrCodeImage {
+        public MimeContent? QrCodeImage
+        {
             get { return BackingStore?.Get<MimeContent?>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
 #nullable restore
 #else
-        public MimeContent QrCodeImage {
+        public MimeContent QrCodeImage
+        {
             get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"qrCodeContent", n => { QrCodeContent = n.GetStringValue(); } },
-                {"qrCodeImage", n => { QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "enrollmentToken", n => { EnrollmentToken = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "qrCodeContent", n => { QrCodeContent = n.GetStringValue(); } },
+                { "qrCodeImage", n => { QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

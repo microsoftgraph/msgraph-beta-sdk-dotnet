@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains track information for Android Managed Store apps.
     /// </summary>
-    public class AndroidManagedStoreAppTrack : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AndroidManagedStoreAppTrack : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Friendly name for track. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrackAlias {
+        public string? TrackAlias
+        {
             get { return BackingStore?.Get<string?>("trackAlias"); }
             set { BackingStore?.Set("trackAlias", value); }
         }
 #nullable restore
 #else
-        public string TrackAlias {
+        public string TrackAlias
+        {
             get { return BackingStore?.Get<string>("trackAlias"); }
             set { BackingStore?.Set("trackAlias", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Unique track identifier. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrackId {
+        public string? TrackId
+        {
             get { return BackingStore?.Get<string?>("trackId"); }
             set { BackingStore?.Set("trackId", value); }
         }
 #nullable restore
 #else
-        public string TrackId {
+        public string TrackId
+        {
             get { return BackingStore?.Get<string>("trackId"); }
             set { BackingStore?.Set("trackId", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"trackAlias", n => { TrackAlias = n.GetStringValue(); } },
-                {"trackId", n => { TrackId = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "trackAlias", n => { TrackAlias = n.GetStringValue(); } },
+                { "trackId", n => { TrackId = n.GetStringValue(); } },
             };
         }
         /// <summary>

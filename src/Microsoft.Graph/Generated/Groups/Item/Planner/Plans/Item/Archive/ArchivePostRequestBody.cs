@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Archive {
+namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Archive
+{
     #pragma warning disable CS1591
-    public class ArchivePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ArchivePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Archive {
         /// <summary>The justification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Justification {
+        public string? Justification
+        {
             get { return BackingStore?.Get<string?>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
 #nullable restore
 #else
-        public string Justification {
+        public string Justification
+        {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Planner.Plans.Item.Archive {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"justification", n => { Justification = n.GetStringValue(); } },
+                { "justification", n => { Justification = n.GetStringValue(); } },
             };
         }
         /// <summary>

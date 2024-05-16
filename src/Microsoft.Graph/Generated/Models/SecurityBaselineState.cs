@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Security baseline state for a device.
     /// </summary>
-    public class SecurityBaselineState : Entity, IParsable 
+    public class SecurityBaselineState : Entity, IParsable
     {
         /// <summary>The display name of the security baseline</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The security baseline template id</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecurityBaselineTemplateId {
+        public string? SecurityBaselineTemplateId
+        {
             get { return BackingStore?.Get<string?>("securityBaselineTemplateId"); }
             set { BackingStore?.Set("securityBaselineTemplateId", value); }
         }
 #nullable restore
 #else
-        public string SecurityBaselineTemplateId {
+        public string SecurityBaselineTemplateId
+        {
             get { return BackingStore?.Get<string>("securityBaselineTemplateId"); }
             set { BackingStore?.Set("securityBaselineTemplateId", value); }
         }
@@ -41,32 +46,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The security baseline state for different settings for a device</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SecurityBaselineSettingState>? SettingStates {
+        public List<SecurityBaselineSettingState>? SettingStates
+        {
             get { return BackingStore?.Get<List<SecurityBaselineSettingState>?>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
 #nullable restore
 #else
-        public List<SecurityBaselineSettingState> SettingStates {
+        public List<SecurityBaselineSettingState> SettingStates
+        {
             get { return BackingStore?.Get<List<SecurityBaselineSettingState>>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
 #endif
         /// <summary>Security Baseline Compliance State</summary>
-        public SecurityBaselineComplianceState? State {
+        public SecurityBaselineComplianceState? State
+        {
             get { return BackingStore?.Get<SecurityBaselineComplianceState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User Principal Name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -89,11 +99,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"securityBaselineTemplateId", n => { SecurityBaselineTemplateId = n.GetStringValue(); } },
-                {"settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<SecurityBaselineSettingState>(SecurityBaselineSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "securityBaselineTemplateId", n => { SecurityBaselineTemplateId = n.GetStringValue(); } },
+                { "settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<SecurityBaselineSettingState>(SecurityBaselineSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

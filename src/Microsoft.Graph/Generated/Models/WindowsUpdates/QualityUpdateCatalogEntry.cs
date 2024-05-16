@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable 
+    public class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The catalog name of the content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CatalogName {
+        public string? CatalogName
+        {
             get { return BackingStore?.Get<string?>("catalogName"); }
             set { BackingStore?.Set("catalogName", value); }
         }
 #nullable restore
 #else
-        public string CatalogName {
+        public string CatalogName
+        {
             get { return BackingStore?.Get<string>("catalogName"); }
             set { BackingStore?.Set("catalogName", value); }
         }
@@ -26,56 +29,65 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Severity information of the Common Vulnerabilities and Exposures associated with the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public QualityUpdateCveSeverityInformation? CveSeverityInformation {
+        public QualityUpdateCveSeverityInformation? CveSeverityInformation
+        {
             get { return BackingStore?.Get<QualityUpdateCveSeverityInformation?>("cveSeverityInformation"); }
             set { BackingStore?.Set("cveSeverityInformation", value); }
         }
 #nullable restore
 #else
-        public QualityUpdateCveSeverityInformation CveSeverityInformation {
+        public QualityUpdateCveSeverityInformation CveSeverityInformation
+        {
             get { return BackingStore?.Get<QualityUpdateCveSeverityInformation>("cveSeverityInformation"); }
             set { BackingStore?.Set("cveSeverityInformation", value); }
         }
 #endif
         /// <summary>Indicates whether the content can be deployed as an expedited quality update. Read-only.</summary>
-        public bool? IsExpeditable {
+        public bool? IsExpeditable
+        {
             get { return BackingStore?.Get<bool?>("isExpeditable"); }
             set { BackingStore?.Set("isExpeditable", value); }
         }
         /// <summary>The operating system product revisions that are released as part of this quality update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProductRevision>? ProductRevisions {
+        public List<ProductRevision>? ProductRevisions
+        {
             get { return BackingStore?.Get<List<ProductRevision>?>("productRevisions"); }
             set { BackingStore?.Set("productRevisions", value); }
         }
 #nullable restore
 #else
-        public List<ProductRevision> ProductRevisions {
+        public List<ProductRevision> ProductRevisions
+        {
             get { return BackingStore?.Get<List<ProductRevision>>("productRevisions"); }
             set { BackingStore?.Set("productRevisions", value); }
         }
 #endif
         /// <summary>The publishing cadence of the quality update. Possible values are: monthly, outOfBand, unknownFutureValue. Read-only.</summary>
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence? QualityUpdateCadence {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence? QualityUpdateCadence
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence?>("qualityUpdateCadence"); }
             set { BackingStore?.Set("qualityUpdateCadence", value); }
         }
         /// <summary>The qualityUpdateClassification property</summary>
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification? QualityUpdateClassification {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification? QualityUpdateClassification
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification?>("qualityUpdateClassification"); }
             set { BackingStore?.Set("qualityUpdateClassification", value); }
         }
         /// <summary>The short name of the content. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShortName {
+        public string? ShortName
+        {
             get { return BackingStore?.Get<string?>("shortName"); }
             set { BackingStore?.Set("shortName", value); }
         }
 #nullable restore
 #else
-        public string ShortName {
+        public string ShortName
+        {
             get { return BackingStore?.Get<string>("shortName"); }
             set { BackingStore?.Set("shortName", value); }
         }
@@ -105,13 +117,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"catalogName", n => { CatalogName = n.GetStringValue(); } },
-                {"cveSeverityInformation", n => { CveSeverityInformation = n.GetObjectValue<QualityUpdateCveSeverityInformation>(QualityUpdateCveSeverityInformation.CreateFromDiscriminatorValue); } },
-                {"isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
-                {"productRevisions", n => { ProductRevisions = n.GetCollectionOfObjectValues<ProductRevision>(ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"qualityUpdateCadence", n => { QualityUpdateCadence = n.GetEnumValue<QualityUpdateCadence>(); } },
-                {"qualityUpdateClassification", n => { QualityUpdateClassification = n.GetEnumValue<QualityUpdateClassification>(); } },
-                {"shortName", n => { ShortName = n.GetStringValue(); } },
+                { "catalogName", n => { CatalogName = n.GetStringValue(); } },
+                { "cveSeverityInformation", n => { CveSeverityInformation = n.GetObjectValue<QualityUpdateCveSeverityInformation>(QualityUpdateCveSeverityInformation.CreateFromDiscriminatorValue); } },
+                { "isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
+                { "productRevisions", n => { ProductRevisions = n.GetCollectionOfObjectValues<ProductRevision>(ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "qualityUpdateCadence", n => { QualityUpdateCadence = n.GetEnumValue<QualityUpdateCadence>(); } },
+                { "qualityUpdateClassification", n => { QualityUpdateClassification = n.GetEnumValue<QualityUpdateClassification>(); } },
+                { "shortName", n => { ShortName = n.GetStringValue(); } },
             };
         }
         /// <summary>

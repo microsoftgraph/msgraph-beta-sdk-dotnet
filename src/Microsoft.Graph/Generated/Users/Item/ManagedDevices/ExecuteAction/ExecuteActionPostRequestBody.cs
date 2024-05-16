@@ -6,18 +6,21 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
+namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction
+{
     #pragma warning disable CS1591
-    public class ExecuteActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExecuteActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actionName property</summary>
-        public ManagedDeviceRemoteAction? ActionName {
+        public ManagedDeviceRemoteAction? ActionName
+        {
             get { return BackingStore?.Get<ManagedDeviceRemoteAction?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
         /// <summary>The carrierUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CarrierUrl {
+        public string? CarrierUrl
+        {
             get { return BackingStore?.Get<string?>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
 #nullable restore
 #else
-        public string CarrierUrl {
+        public string CarrierUrl
+        {
             get { return BackingStore?.Get<string>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
         /// <summary>The deprovisionReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeprovisionReason {
+        public string? DeprovisionReason
+        {
             get { return BackingStore?.Get<string?>("deprovisionReason"); }
             set { BackingStore?.Set("deprovisionReason", value); }
         }
 #nullable restore
 #else
-        public string DeprovisionReason {
+        public string DeprovisionReason
+        {
             get { return BackingStore?.Get<string>("deprovisionReason"); }
             set { BackingStore?.Set("deprovisionReason", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
         /// <summary>The deviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceIds {
+        public List<string>? DeviceIds
+        {
             get { return BackingStore?.Get<List<string>?>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
 #nullable restore
 #else
-        public List<string> DeviceIds {
+        public List<string> DeviceIds
+        {
             get { return BackingStore?.Get<List<string>>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
@@ -68,37 +77,43 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
         /// <summary>The deviceName property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceName {
+        public string? DeviceName
+        {
             get { return BackingStore?.Get<string?>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #nullable restore
 #else
-        public string DeviceName {
+        public string DeviceName
+        {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
 #endif
         /// <summary>The keepEnrollmentData property</summary>
-        public bool? KeepEnrollmentData {
+        public bool? KeepEnrollmentData
+        {
             get { return BackingStore?.Get<bool?>("keepEnrollmentData"); }
             set { BackingStore?.Set("keepEnrollmentData", value); }
         }
         /// <summary>The keepUserData property</summary>
-        public bool? KeepUserData {
+        public bool? KeepUserData
+        {
             get { return BackingStore?.Get<bool?>("keepUserData"); }
             set { BackingStore?.Set("keepUserData", value); }
         }
         /// <summary>The notificationBody property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationBody {
+        public string? NotificationBody
+        {
             get { return BackingStore?.Get<string?>("notificationBody"); }
             set { BackingStore?.Set("notificationBody", value); }
         }
 #nullable restore
 #else
-        public string NotificationBody {
+        public string NotificationBody
+        {
             get { return BackingStore?.Get<string>("notificationBody"); }
             set { BackingStore?.Set("notificationBody", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
         /// <summary>The notificationTitle property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationTitle {
+        public string? NotificationTitle
+        {
             get { return BackingStore?.Get<string?>("notificationTitle"); }
             set { BackingStore?.Set("notificationTitle", value); }
         }
 #nullable restore
 #else
-        public string NotificationTitle {
+        public string NotificationTitle
+        {
             get { return BackingStore?.Get<string>("notificationTitle"); }
             set { BackingStore?.Set("notificationTitle", value); }
         }
@@ -120,19 +137,22 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
         /// <summary>The organizationalUnitPath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationalUnitPath {
+        public string? OrganizationalUnitPath
+        {
             get { return BackingStore?.Get<string?>("organizationalUnitPath"); }
             set { BackingStore?.Set("organizationalUnitPath", value); }
         }
 #nullable restore
 #else
-        public string OrganizationalUnitPath {
+        public string OrganizationalUnitPath
+        {
             get { return BackingStore?.Get<string>("organizationalUnitPath"); }
             set { BackingStore?.Set("organizationalUnitPath", value); }
         }
 #endif
         /// <summary>The persistEsimDataPlan property</summary>
-        public bool? PersistEsimDataPlan {
+        public bool? PersistEsimDataPlan
+        {
             get { return BackingStore?.Get<bool?>("persistEsimDataPlan"); }
             set { BackingStore?.Set("persistEsimDataPlan", value); }
         }
@@ -162,17 +182,17 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.ExecuteAction {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionName", n => { ActionName = n.GetEnumValue<ManagedDeviceRemoteAction>(); } },
-                {"carrierUrl", n => { CarrierUrl = n.GetStringValue(); } },
-                {"deprovisionReason", n => { DeprovisionReason = n.GetStringValue(); } },
-                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"deviceName", n => { DeviceName = n.GetStringValue(); } },
-                {"keepEnrollmentData", n => { KeepEnrollmentData = n.GetBoolValue(); } },
-                {"keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
-                {"notificationBody", n => { NotificationBody = n.GetStringValue(); } },
-                {"notificationTitle", n => { NotificationTitle = n.GetStringValue(); } },
-                {"organizationalUnitPath", n => { OrganizationalUnitPath = n.GetStringValue(); } },
-                {"persistEsimDataPlan", n => { PersistEsimDataPlan = n.GetBoolValue(); } },
+                { "actionName", n => { ActionName = n.GetEnumValue<ManagedDeviceRemoteAction>(); } },
+                { "carrierUrl", n => { CarrierUrl = n.GetStringValue(); } },
+                { "deprovisionReason", n => { DeprovisionReason = n.GetStringValue(); } },
+                { "deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "deviceName", n => { DeviceName = n.GetStringValue(); } },
+                { "keepEnrollmentData", n => { KeepEnrollmentData = n.GetBoolValue(); } },
+                { "keepUserData", n => { KeepUserData = n.GetBoolValue(); } },
+                { "notificationBody", n => { NotificationBody = n.GetStringValue(); } },
+                { "notificationTitle", n => { NotificationTitle = n.GetStringValue(); } },
+                { "organizationalUnitPath", n => { OrganizationalUnitPath = n.GetStringValue(); } },
+                { "persistEsimDataPlan", n => { PersistEsimDataPlan = n.GetBoolValue(); } },
             };
         }
         /// <summary>

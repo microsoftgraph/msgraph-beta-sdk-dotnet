@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions {
+namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions
+{
     #pragma warning disable CS1591
-    public class SetScheduledActionsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SetScheduledActionsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetSched
         /// <summary>The scheduledActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementComplianceScheduledActionForRule>? ScheduledActions {
+        public List<DeviceManagementComplianceScheduledActionForRule>? ScheduledActions
+        {
             get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>?>("scheduledActions"); }
             set { BackingStore?.Set("scheduledActions", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementComplianceScheduledActionForRule> ScheduledActions {
+        public List<DeviceManagementComplianceScheduledActionForRule> ScheduledActions
+        {
             get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>>("scheduledActions"); }
             set { BackingStore?.Set("scheduledActions", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetSched
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"scheduledActions", n => { ScheduledActions = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>(DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scheduledActions", n => { ScheduledActions = n.GetCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>(DeviceManagementComplianceScheduledActionForRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

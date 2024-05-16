@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TrainingCampaignReport : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TrainingCampaignReport : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The overview of the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSimulationDetails>? CampaignUsers {
+        public List<UserSimulationDetails>? CampaignUsers
+        {
             get { return BackingStore?.Get<List<UserSimulationDetails>?>("campaignUsers"); }
             set { BackingStore?.Set("campaignUsers", value); }
         }
 #nullable restore
 #else
-        public List<UserSimulationDetails> CampaignUsers {
+        public List<UserSimulationDetails> CampaignUsers
+        {
             get { return BackingStore?.Get<List<UserSimulationDetails>>("campaignUsers"); }
             set { BackingStore?.Set("campaignUsers", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The overview property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TrainingCampaignReportOverview? Overview {
+        public TrainingCampaignReportOverview? Overview
+        {
             get { return BackingStore?.Get<TrainingCampaignReportOverview?>("overview"); }
             set { BackingStore?.Set("overview", value); }
         }
 #nullable restore
 #else
-        public TrainingCampaignReportOverview Overview {
+        public TrainingCampaignReportOverview Overview
+        {
             get { return BackingStore?.Get<TrainingCampaignReportOverview>("overview"); }
             set { BackingStore?.Set("overview", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"campaignUsers", n => { CampaignUsers = n.GetCollectionOfObjectValues<UserSimulationDetails>(UserSimulationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"overview", n => { Overview = n.GetObjectValue<TrainingCampaignReportOverview>(TrainingCampaignReportOverview.CreateFromDiscriminatorValue); } },
+                { "campaignUsers", n => { CampaignUsers = n.GetCollectionOfObjectValues<UserSimulationDetails>(UserSimulationDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "overview", n => { Overview = n.GetObjectValue<TrainingCampaignReportOverview>(TrainingCampaignReportOverview.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

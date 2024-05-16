@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ServiceLevelAgreementRoot : Entity, IParsable 
+    public class ServiceLevelAgreementRoot : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Collects the Microsoft Entra SLA attainment for each month for a Microsoft Entra tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.AzureADAuthentication? AzureADAuthentication {
+        public Microsoft.Graph.Beta.Models.AzureADAuthentication? AzureADAuthentication
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureADAuthentication?>("azureADAuthentication"); }
             set { BackingStore?.Set("azureADAuthentication", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.AzureADAuthentication AzureADAuthentication {
+        public Microsoft.Graph.Beta.Models.AzureADAuthentication AzureADAuthentication
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureADAuthentication>("azureADAuthentication"); }
             set { BackingStore?.Set("azureADAuthentication", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureADAuthentication", n => { AzureADAuthentication = n.GetObjectValue<Microsoft.Graph.Beta.Models.AzureADAuthentication>(Microsoft.Graph.Beta.Models.AzureADAuthentication.CreateFromDiscriminatorValue); } },
+                { "azureADAuthentication", n => { AzureADAuthentication = n.GetObjectValue<Microsoft.Graph.Beta.Models.AzureADAuthentication>(Microsoft.Graph.Beta.Models.AzureADAuthentication.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkDeviceConfiguration : Entity, IParsable 
+    public class TeamworkDeviceConfiguration : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkCameraConfiguration? CameraConfiguration {
+        public TeamworkCameraConfiguration? CameraConfiguration
+        {
             get { return BackingStore?.Get<TeamworkCameraConfiguration?>("cameraConfiguration"); }
             set { BackingStore?.Set("cameraConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkCameraConfiguration CameraConfiguration {
+        public TeamworkCameraConfiguration CameraConfiguration
+        {
             get { return BackingStore?.Get<TeamworkCameraConfiguration>("cameraConfiguration"); }
             set { BackingStore?.Set("cameraConfiguration", value); }
         }
@@ -26,32 +29,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who created the device configuration document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device configuration document was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The display configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDisplayConfiguration? DisplayConfiguration {
+        public TeamworkDisplayConfiguration? DisplayConfiguration
+        {
             get { return BackingStore?.Get<TeamworkDisplayConfiguration?>("displayConfiguration"); }
             set { BackingStore?.Set("displayConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkDisplayConfiguration DisplayConfiguration {
+        public TeamworkDisplayConfiguration DisplayConfiguration
+        {
             get { return BackingStore?.Get<TeamworkDisplayConfiguration>("displayConfiguration"); }
             set { BackingStore?.Set("displayConfiguration", value); }
         }
@@ -59,13 +67,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The hardware configuration. Applicable only for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkHardwareConfiguration? HardwareConfiguration {
+        public TeamworkHardwareConfiguration? HardwareConfiguration
+        {
             get { return BackingStore?.Get<TeamworkHardwareConfiguration?>("hardwareConfiguration"); }
             set { BackingStore?.Set("hardwareConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkHardwareConfiguration HardwareConfiguration {
+        public TeamworkHardwareConfiguration HardwareConfiguration
+        {
             get { return BackingStore?.Get<TeamworkHardwareConfiguration>("hardwareConfiguration"); }
             set { BackingStore?.Set("hardwareConfiguration", value); }
         }
@@ -73,32 +83,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identity of the user who last modified the device configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy {
+        public IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy {
+        public IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>The UTC date and time when the device configuration was last modified.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The microphone configuration. Applicable only for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkMicrophoneConfiguration? MicrophoneConfiguration {
+        public TeamworkMicrophoneConfiguration? MicrophoneConfiguration
+        {
             get { return BackingStore?.Get<TeamworkMicrophoneConfiguration?>("microphoneConfiguration"); }
             set { BackingStore?.Set("microphoneConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkMicrophoneConfiguration MicrophoneConfiguration {
+        public TeamworkMicrophoneConfiguration MicrophoneConfiguration
+        {
             get { return BackingStore?.Get<TeamworkMicrophoneConfiguration>("microphoneConfiguration"); }
             set { BackingStore?.Set("microphoneConfiguration", value); }
         }
@@ -106,13 +121,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Information related to software versions for the device, such as firmware, operating system, Teams client, and admin agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDeviceSoftwareVersions? SoftwareVersions {
+        public TeamworkDeviceSoftwareVersions? SoftwareVersions
+        {
             get { return BackingStore?.Get<TeamworkDeviceSoftwareVersions?>("softwareVersions"); }
             set { BackingStore?.Set("softwareVersions", value); }
         }
 #nullable restore
 #else
-        public TeamworkDeviceSoftwareVersions SoftwareVersions {
+        public TeamworkDeviceSoftwareVersions SoftwareVersions
+        {
             get { return BackingStore?.Get<TeamworkDeviceSoftwareVersions>("softwareVersions"); }
             set { BackingStore?.Set("softwareVersions", value); }
         }
@@ -120,13 +137,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The speaker configuration. Applicable only for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkSpeakerConfiguration? SpeakerConfiguration {
+        public TeamworkSpeakerConfiguration? SpeakerConfiguration
+        {
             get { return BackingStore?.Get<TeamworkSpeakerConfiguration?>("speakerConfiguration"); }
             set { BackingStore?.Set("speakerConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkSpeakerConfiguration SpeakerConfiguration {
+        public TeamworkSpeakerConfiguration SpeakerConfiguration
+        {
             get { return BackingStore?.Get<TeamworkSpeakerConfiguration>("speakerConfiguration"); }
             set { BackingStore?.Set("speakerConfiguration", value); }
         }
@@ -134,13 +153,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The system configuration. Not applicable for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkSystemConfiguration? SystemConfiguration {
+        public TeamworkSystemConfiguration? SystemConfiguration
+        {
             get { return BackingStore?.Get<TeamworkSystemConfiguration?>("systemConfiguration"); }
             set { BackingStore?.Set("systemConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkSystemConfiguration SystemConfiguration {
+        public TeamworkSystemConfiguration SystemConfiguration
+        {
             get { return BackingStore?.Get<TeamworkSystemConfiguration>("systemConfiguration"); }
             set { BackingStore?.Set("systemConfiguration", value); }
         }
@@ -148,13 +169,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The Teams client configuration. Applicable only for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkTeamsClientConfiguration? TeamsClientConfiguration {
+        public TeamworkTeamsClientConfiguration? TeamsClientConfiguration
+        {
             get { return BackingStore?.Get<TeamworkTeamsClientConfiguration?>("teamsClientConfiguration"); }
             set { BackingStore?.Set("teamsClientConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkTeamsClientConfiguration TeamsClientConfiguration {
+        public TeamworkTeamsClientConfiguration TeamsClientConfiguration
+        {
             get { return BackingStore?.Get<TeamworkTeamsClientConfiguration>("teamsClientConfiguration"); }
             set { BackingStore?.Set("teamsClientConfiguration", value); }
         }
@@ -177,18 +200,18 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cameraConfiguration", n => { CameraConfiguration = n.GetObjectValue<TeamworkCameraConfiguration>(TeamworkCameraConfiguration.CreateFromDiscriminatorValue); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"displayConfiguration", n => { DisplayConfiguration = n.GetObjectValue<TeamworkDisplayConfiguration>(TeamworkDisplayConfiguration.CreateFromDiscriminatorValue); } },
-                {"hardwareConfiguration", n => { HardwareConfiguration = n.GetObjectValue<TeamworkHardwareConfiguration>(TeamworkHardwareConfiguration.CreateFromDiscriminatorValue); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"microphoneConfiguration", n => { MicrophoneConfiguration = n.GetObjectValue<TeamworkMicrophoneConfiguration>(TeamworkMicrophoneConfiguration.CreateFromDiscriminatorValue); } },
-                {"softwareVersions", n => { SoftwareVersions = n.GetObjectValue<TeamworkDeviceSoftwareVersions>(TeamworkDeviceSoftwareVersions.CreateFromDiscriminatorValue); } },
-                {"speakerConfiguration", n => { SpeakerConfiguration = n.GetObjectValue<TeamworkSpeakerConfiguration>(TeamworkSpeakerConfiguration.CreateFromDiscriminatorValue); } },
-                {"systemConfiguration", n => { SystemConfiguration = n.GetObjectValue<TeamworkSystemConfiguration>(TeamworkSystemConfiguration.CreateFromDiscriminatorValue); } },
-                {"teamsClientConfiguration", n => { TeamsClientConfiguration = n.GetObjectValue<TeamworkTeamsClientConfiguration>(TeamworkTeamsClientConfiguration.CreateFromDiscriminatorValue); } },
+                { "cameraConfiguration", n => { CameraConfiguration = n.GetObjectValue<TeamworkCameraConfiguration>(TeamworkCameraConfiguration.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "displayConfiguration", n => { DisplayConfiguration = n.GetObjectValue<TeamworkDisplayConfiguration>(TeamworkDisplayConfiguration.CreateFromDiscriminatorValue); } },
+                { "hardwareConfiguration", n => { HardwareConfiguration = n.GetObjectValue<TeamworkHardwareConfiguration>(TeamworkHardwareConfiguration.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "microphoneConfiguration", n => { MicrophoneConfiguration = n.GetObjectValue<TeamworkMicrophoneConfiguration>(TeamworkMicrophoneConfiguration.CreateFromDiscriminatorValue); } },
+                { "softwareVersions", n => { SoftwareVersions = n.GetObjectValue<TeamworkDeviceSoftwareVersions>(TeamworkDeviceSoftwareVersions.CreateFromDiscriminatorValue); } },
+                { "speakerConfiguration", n => { SpeakerConfiguration = n.GetObjectValue<TeamworkSpeakerConfiguration>(TeamworkSpeakerConfiguration.CreateFromDiscriminatorValue); } },
+                { "systemConfiguration", n => { SystemConfiguration = n.GetObjectValue<TeamworkSystemConfiguration>(TeamworkSystemConfiguration.CreateFromDiscriminatorValue); } },
+                { "teamsClientConfiguration", n => { TeamsClientConfiguration = n.GetObjectValue<TeamworkTeamsClientConfiguration>(TeamworkTeamsClientConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

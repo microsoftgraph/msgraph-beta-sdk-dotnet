@@ -5,38 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview {
+namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview
+{
     #pragma warning disable CS1591
-    public class PreviewPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class PreviewPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The allowEdit property</summary>
-        public bool? AllowEdit {
+        public bool? AllowEdit
+        {
             get { return BackingStore?.Get<bool?>("allowEdit"); }
             set { BackingStore?.Set("allowEdit", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The chromeless property</summary>
-        public bool? Chromeless {
+        public bool? Chromeless
+        {
             get { return BackingStore?.Get<bool?>("chromeless"); }
             set { BackingStore?.Set("chromeless", value); }
         }
         /// <summary>The page property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Page {
+        public string? Page
+        {
             get { return BackingStore?.Get<string?>("page"); }
             set { BackingStore?.Set("page", value); }
         }
 #nullable restore
 #else
-        public string Page {
+        public string Page
+        {
             get { return BackingStore?.Get<string>("page"); }
             set { BackingStore?.Set("page", value); }
         }
@@ -44,19 +50,22 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview {
         /// <summary>The viewer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Viewer {
+        public string? Viewer
+        {
             get { return BackingStore?.Get<string?>("viewer"); }
             set { BackingStore?.Set("viewer", value); }
         }
 #nullable restore
 #else
-        public string Viewer {
+        public string Viewer
+        {
             get { return BackingStore?.Get<string>("viewer"); }
             set { BackingStore?.Set("viewer", value); }
         }
 #endif
         /// <summary>The zoom property</summary>
-        public double? Zoom {
+        public double? Zoom
+        {
             get { return BackingStore?.Get<double?>("zoom"); }
             set { BackingStore?.Set("zoom", value); }
         }
@@ -86,11 +95,11 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Preview {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowEdit", n => { AllowEdit = n.GetBoolValue(); } },
-                {"chromeless", n => { Chromeless = n.GetBoolValue(); } },
-                {"page", n => { Page = n.GetStringValue(); } },
-                {"viewer", n => { Viewer = n.GetStringValue(); } },
-                {"zoom", n => { Zoom = n.GetDoubleValue(); } },
+                { "allowEdit", n => { AllowEdit = n.GetBoolValue(); } },
+                { "chromeless", n => { Chromeless = n.GetBoolValue(); } },
+                { "page", n => { Page = n.GetStringValue(); } },
+                { "viewer", n => { Viewer = n.GetStringValue(); } },
+                { "zoom", n => { Zoom = n.GetDoubleValue(); } },
             };
         }
         /// <summary>

@@ -6,27 +6,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues {
+namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues
+{
     #pragma warning disable CS1591
-    public class UpdateDefinitionValuesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateDefinitionValuesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The added property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyDefinitionValue>? Added {
+        public List<GroupPolicyDefinitionValue>? Added
+        {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("added"); }
             set { BackingStore?.Set("added", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyDefinitionValue> Added {
+        public List<GroupPolicyDefinitionValue> Added
+        {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("added"); }
             set { BackingStore?.Set("added", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         /// <summary>The deletedIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeletedIds {
+        public List<string>? DeletedIds
+        {
             get { return BackingStore?.Get<List<string>?>("deletedIds"); }
             set { BackingStore?.Set("deletedIds", value); }
         }
 #nullable restore
 #else
-        public List<string> DeletedIds {
+        public List<string> DeletedIds
+        {
             get { return BackingStore?.Get<List<string>>("deletedIds"); }
             set { BackingStore?.Set("deletedIds", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         /// <summary>The updated property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyDefinitionValue>? Updated {
+        public List<GroupPolicyDefinitionValue>? Updated
+        {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>?>("updated"); }
             set { BackingStore?.Set("updated", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyDefinitionValue> Updated {
+        public List<GroupPolicyDefinitionValue> Updated
+        {
             get { return BackingStore?.Get<List<GroupPolicyDefinitionValue>>("updated"); }
             set { BackingStore?.Set("updated", value); }
         }
@@ -86,9 +94,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.U
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"added", n => { Added = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deletedIds", n => { DeletedIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"updated", n => { Updated = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "added", n => { Added = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deletedIds", n => { DeletedIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "updated", n => { Updated = n.GetCollectionOfObjectValues<GroupPolicyDefinitionValue>(GroupPolicyDefinitionValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

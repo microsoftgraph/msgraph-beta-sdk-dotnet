@@ -4,54 +4,64 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties, inherited properties and actions for an MDM mobile app configuration device status summary.
     /// </summary>
-    public class ManagedDeviceMobileAppConfigurationDeviceSummary : Entity, IParsable 
+    public class ManagedDeviceMobileAppConfigurationDeviceSummary : Entity, IParsable
     {
         /// <summary>Version of the policy for that overview</summary>
-        public int? ConfigurationVersion {
+        public int? ConfigurationVersion
+        {
             get { return BackingStore?.Get<int?>("configurationVersion"); }
             set { BackingStore?.Set("configurationVersion", value); }
         }
         /// <summary>Number of devices in conflict</summary>
-        public int? ConflictCount {
+        public int? ConflictCount
+        {
             get { return BackingStore?.Get<int?>("conflictCount"); }
             set { BackingStore?.Set("conflictCount", value); }
         }
         /// <summary>Number of error devices</summary>
-        public int? ErrorCount {
+        public int? ErrorCount
+        {
             get { return BackingStore?.Get<int?>("errorCount"); }
             set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Number of failed devices</summary>
-        public int? FailedCount {
+        public int? FailedCount
+        {
             get { return BackingStore?.Get<int?>("failedCount"); }
             set { BackingStore?.Set("failedCount", value); }
         }
         /// <summary>Last update time</summary>
-        public DateTimeOffset? LastUpdateDateTime {
+        public DateTimeOffset? LastUpdateDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
         /// <summary>Number of not applicable devices</summary>
-        public int? NotApplicableCount {
+        public int? NotApplicableCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableCount"); }
             set { BackingStore?.Set("notApplicableCount", value); }
         }
         /// <summary>Number of not applicable devices due to mismatch platform and policy</summary>
-        public int? NotApplicablePlatformCount {
+        public int? NotApplicablePlatformCount
+        {
             get { return BackingStore?.Get<int?>("notApplicablePlatformCount"); }
             set { BackingStore?.Set("notApplicablePlatformCount", value); }
         }
         /// <summary>Number of pending devices</summary>
-        public int? PendingCount {
+        public int? PendingCount
+        {
             get { return BackingStore?.Get<int?>("pendingCount"); }
             set { BackingStore?.Set("pendingCount", value); }
         }
         /// <summary>Number of succeeded devices</summary>
-        public int? SuccessCount {
+        public int? SuccessCount
+        {
             get { return BackingStore?.Get<int?>("successCount"); }
             set { BackingStore?.Set("successCount", value); }
         }
@@ -73,15 +83,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"configurationVersion", n => { ConfigurationVersion = n.GetIntValue(); } },
-                {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
-                {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
-                {"failedCount", n => { FailedCount = n.GetIntValue(); } },
-                {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
-                {"notApplicablePlatformCount", n => { NotApplicablePlatformCount = n.GetIntValue(); } },
-                {"pendingCount", n => { PendingCount = n.GetIntValue(); } },
-                {"successCount", n => { SuccessCount = n.GetIntValue(); } },
+                { "configurationVersion", n => { ConfigurationVersion = n.GetIntValue(); } },
+                { "conflictCount", n => { ConflictCount = n.GetIntValue(); } },
+                { "errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                { "failedCount", n => { FailedCount = n.GetIntValue(); } },
+                { "lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
+                { "notApplicablePlatformCount", n => { NotApplicablePlatformCount = n.GetIntValue(); } },
+                { "pendingCount", n => { PendingCount = n.GetIntValue(); } },
+                { "successCount", n => { SuccessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

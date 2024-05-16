@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BusinessScenarioPlanReference : Entity, IParsable 
+    public class BusinessScenarioPlanReference : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The title property of the plannerPlan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"title", n => { Title = n.GetStringValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class EdiscoveryFile : FileObject, IParsable 
+    public class EdiscoveryFile : FileObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Custodians associated with the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryCustodian? Custodian {
+        public EdiscoveryCustodian? Custodian
+        {
             get { return BackingStore?.Get<EdiscoveryCustodian?>("custodian"); }
             set { BackingStore?.Set("custodian", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryCustodian Custodian {
+        public EdiscoveryCustodian Custodian
+        {
             get { return BackingStore?.Get<EdiscoveryCustodian>("custodian"); }
             set { BackingStore?.Set("custodian", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Tags associated with the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? Tags {
+        public List<EdiscoveryReviewTag>? Tags
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> Tags {
+        public List<EdiscoveryReviewTag> Tags
+        {
             get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"custodian", n => { Custodian = n.GetObjectValue<EdiscoveryCustodian>(EdiscoveryCustodian.CreateFromDiscriminatorValue); } },
-                {"tags", n => { Tags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "custodian", n => { Custodian = n.GetObjectValue<EdiscoveryCustodian>(EdiscoveryCustodian.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

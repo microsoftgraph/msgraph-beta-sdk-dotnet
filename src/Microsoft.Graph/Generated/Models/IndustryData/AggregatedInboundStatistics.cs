@@ -5,87 +5,101 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class AggregatedInboundStatistics : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AggregatedInboundStatistics : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The aggregate count of errors encountered by activities during this run.</summary>
-        public int? Errors {
+        public int? Errors
+        {
             get { return BackingStore?.Get<int?>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
         /// <summary>The aggregate count of active inbound groups processed during the run.</summary>
-        public int? Groups {
+        public int? Groups
+        {
             get { return BackingStore?.Get<int?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
         /// <summary>The aggregate count of active people matched to a Microsoft Entra user, by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IndustryDataRunRoleCountMetric>? MatchedPeopleByRole {
+        public List<IndustryDataRunRoleCountMetric>? MatchedPeopleByRole
+        {
             get { return BackingStore?.Get<List<IndustryDataRunRoleCountMetric>?>("matchedPeopleByRole"); }
             set { BackingStore?.Set("matchedPeopleByRole", value); }
         }
 #nullable restore
 #else
-        public List<IndustryDataRunRoleCountMetric> MatchedPeopleByRole {
+        public List<IndustryDataRunRoleCountMetric> MatchedPeopleByRole
+        {
             get { return BackingStore?.Get<List<IndustryDataRunRoleCountMetric>>("matchedPeopleByRole"); }
             set { BackingStore?.Set("matchedPeopleByRole", value); }
         }
 #endif
         /// <summary>The aggregate count of active inbound memberships processed during the run.</summary>
-        public int? Memberships {
+        public int? Memberships
+        {
             get { return BackingStore?.Get<int?>("memberships"); }
             set { BackingStore?.Set("memberships", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The aggregate count of active inbound organizations processed during the run.</summary>
-        public int? Organizations {
+        public int? Organizations
+        {
             get { return BackingStore?.Get<int?>("organizations"); }
             set { BackingStore?.Set("organizations", value); }
         }
         /// <summary>The aggregate count of active inbound people processed during the run.</summary>
-        public int? People {
+        public int? People
+        {
             get { return BackingStore?.Get<int?>("people"); }
             set { BackingStore?.Set("people", value); }
         }
         /// <summary>The aggregate count of active people not matched to a Microsoft Entra user, by role.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IndustryDataRunRoleCountMetric>? UnmatchedPeopleByRole {
+        public List<IndustryDataRunRoleCountMetric>? UnmatchedPeopleByRole
+        {
             get { return BackingStore?.Get<List<IndustryDataRunRoleCountMetric>?>("unmatchedPeopleByRole"); }
             set { BackingStore?.Set("unmatchedPeopleByRole", value); }
         }
 #nullable restore
 #else
-        public List<IndustryDataRunRoleCountMetric> UnmatchedPeopleByRole {
+        public List<IndustryDataRunRoleCountMetric> UnmatchedPeopleByRole
+        {
             get { return BackingStore?.Get<List<IndustryDataRunRoleCountMetric>>("unmatchedPeopleByRole"); }
             set { BackingStore?.Set("unmatchedPeopleByRole", value); }
         }
 #endif
         /// <summary>The aggregate count of warnings generated by activities during this run.</summary>
-        public int? Warnings {
+        public int? Warnings
+        {
             get { return BackingStore?.Get<int?>("warnings"); }
             set { BackingStore?.Set("warnings", value); }
         }
@@ -115,15 +129,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"errors", n => { Errors = n.GetIntValue(); } },
-                {"groups", n => { Groups = n.GetIntValue(); } },
-                {"matchedPeopleByRole", n => { MatchedPeopleByRole = n.GetCollectionOfObjectValues<IndustryDataRunRoleCountMetric>(IndustryDataRunRoleCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"memberships", n => { Memberships = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"organizations", n => { Organizations = n.GetIntValue(); } },
-                {"people", n => { People = n.GetIntValue(); } },
-                {"unmatchedPeopleByRole", n => { UnmatchedPeopleByRole = n.GetCollectionOfObjectValues<IndustryDataRunRoleCountMetric>(IndustryDataRunRoleCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"warnings", n => { Warnings = n.GetIntValue(); } },
+                { "errors", n => { Errors = n.GetIntValue(); } },
+                { "groups", n => { Groups = n.GetIntValue(); } },
+                { "matchedPeopleByRole", n => { MatchedPeopleByRole = n.GetCollectionOfObjectValues<IndustryDataRunRoleCountMetric>(IndustryDataRunRoleCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "memberships", n => { Memberships = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "organizations", n => { Organizations = n.GetIntValue(); } },
+                { "people", n => { People = n.GetIntValue(); } },
+                { "unmatchedPeopleByRole", n => { UnmatchedPeopleByRole = n.GetCollectionOfObjectValues<IndustryDataRunRoleCountMetric>(IndustryDataRunRoleCountMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "warnings", n => { Warnings = n.GetIntValue(); } },
             };
         }
         /// <summary>

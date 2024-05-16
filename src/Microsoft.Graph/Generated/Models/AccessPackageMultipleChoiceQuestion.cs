@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AccessPackageMultipleChoiceQuestion : AccessPackageQuestion, IParsable 
+    public class AccessPackageMultipleChoiceQuestion : AccessPackageQuestion, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether requestor can select multiple choices as their answer.</summary>
-        public bool? AllowsMultipleSelection {
+        public bool? AllowsMultipleSelection
+        {
             get { return BackingStore?.Get<bool?>("allowsMultipleSelection"); }
             set { BackingStore?.Set("allowsMultipleSelection", value); }
         }
         /// <summary>List of answer choices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAnswerChoice>? Choices {
+        public List<AccessPackageAnswerChoice>? Choices
+        {
             get { return BackingStore?.Get<List<AccessPackageAnswerChoice>?>("choices"); }
             set { BackingStore?.Set("choices", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAnswerChoice> Choices {
+        public List<AccessPackageAnswerChoice> Choices
+        {
             get { return BackingStore?.Get<List<AccessPackageAnswerChoice>>("choices"); }
             set { BackingStore?.Set("choices", value); }
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowsMultipleSelection", n => { AllowsMultipleSelection = n.GetBoolValue(); } },
-                {"choices", n => { Choices = n.GetCollectionOfObjectValues<AccessPackageAnswerChoice>(AccessPackageAnswerChoice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "allowsMultipleSelection", n => { AllowsMultipleSelection = n.GetBoolValue(); } },
+                { "choices", n => { Choices = n.GetCollectionOfObjectValues<AccessPackageAnswerChoice>(AccessPackageAnswerChoice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

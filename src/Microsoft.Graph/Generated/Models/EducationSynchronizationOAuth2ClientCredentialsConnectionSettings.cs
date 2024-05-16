@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : EducationSynchronizationConnectionSettings, IParsable 
+    public class EducationSynchronizationOAuth2ClientCredentialsConnectionSettings : EducationSynchronizationConnectionSettings, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The scope of the access request (see RFC6749).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Scope {
+        public string? Scope
+        {
             get { return BackingStore?.Get<string?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
 #nullable restore
 #else
-        public string Scope {
+        public string Scope
+        {
             get { return BackingStore?.Get<string>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The URL to get access tokens for the data provider.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TokenUrl {
+        public string? TokenUrl
+        {
             get { return BackingStore?.Get<string?>("tokenUrl"); }
             set { BackingStore?.Set("tokenUrl", value); }
         }
 #nullable restore
 #else
-        public string TokenUrl {
+        public string TokenUrl
+        {
             get { return BackingStore?.Get<string>("tokenUrl"); }
             set { BackingStore?.Set("tokenUrl", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"scope", n => { Scope = n.GetStringValue(); } },
-                {"tokenUrl", n => { TokenUrl = n.GetStringValue(); } },
+                { "scope", n => { Scope = n.GetStringValue(); } },
+                { "tokenUrl", n => { TokenUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

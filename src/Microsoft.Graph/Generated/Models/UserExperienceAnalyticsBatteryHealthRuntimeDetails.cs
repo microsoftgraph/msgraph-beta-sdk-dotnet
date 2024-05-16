@@ -4,34 +4,40 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// The user experience analytics battery health runtime entity contains count of devices broken down into 3 categories - devices with runtime &gt; 5 hours, devices with runtime 3-5 hours and devices with runtime &lt; 3 hours.This API provides the count of devices in these 3 categories.
     /// </summary>
-    public class UserExperienceAnalyticsBatteryHealthRuntimeDetails : Entity, IParsable 
+    public class UserExperienceAnalyticsBatteryHealthRuntimeDetails : Entity, IParsable
     {
         /// <summary>Number of active devices within the tenant. Valid values 0 to 2147483647</summary>
-        public int? ActiveDevices {
+        public int? ActiveDevices
+        {
             get { return BackingStore?.Get<int?>("activeDevices"); }
             set { BackingStore?.Set("activeDevices", value); }
         }
         /// <summary>Number of devices whose active runtime is greater than 3 hours but lesser than 5 hours. Valid values 0 to 2147483647</summary>
-        public int? BatteryRuntimeFair {
+        public int? BatteryRuntimeFair
+        {
             get { return BackingStore?.Get<int?>("batteryRuntimeFair"); }
             set { BackingStore?.Set("batteryRuntimeFair", value); }
         }
         /// <summary>Number of devices  whose active runtime is greater than 5 hours. Valid values 0 to 2147483647</summary>
-        public int? BatteryRuntimeGood {
+        public int? BatteryRuntimeGood
+        {
             get { return BackingStore?.Get<int?>("batteryRuntimeGood"); }
             set { BackingStore?.Set("batteryRuntimeGood", value); }
         }
         /// <summary>Number of devices whose active runtime is lesser than 3 hours. Valid values 0 to 2147483647</summary>
-        public int? BatteryRuntimePoor {
+        public int? BatteryRuntimePoor
+        {
             get { return BackingStore?.Get<int?>("batteryRuntimePoor"); }
             set { BackingStore?.Set("batteryRuntimePoor", value); }
         }
         /// <summary>Recorded date time of this runtime details instance.</summary>
-        public DateTimeOffset? LastRefreshedDateTime {
+        public DateTimeOffset? LastRefreshedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
             set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
@@ -53,11 +59,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
-                {"batteryRuntimeFair", n => { BatteryRuntimeFair = n.GetIntValue(); } },
-                {"batteryRuntimeGood", n => { BatteryRuntimeGood = n.GetIntValue(); } },
-                {"batteryRuntimePoor", n => { BatteryRuntimePoor = n.GetIntValue(); } },
-                {"lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "activeDevices", n => { ActiveDevices = n.GetIntValue(); } },
+                { "batteryRuntimeFair", n => { BatteryRuntimeFair = n.GetIntValue(); } },
+                { "batteryRuntimeGood", n => { BatteryRuntimeGood = n.GetIntValue(); } },
+                { "batteryRuntimePoor", n => { BatteryRuntimePoor = n.GetIntValue(); } },
+                { "lastRefreshedDateTime", n => { LastRefreshedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

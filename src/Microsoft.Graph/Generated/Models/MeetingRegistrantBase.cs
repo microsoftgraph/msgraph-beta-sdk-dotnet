@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MeetingRegistrantBase : Entity, IParsable 
+    public class MeetingRegistrantBase : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A unique web URL for the registrant to join the meeting. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JoinWebUrl {
+        public string? JoinWebUrl
+        {
             get { return BackingStore?.Get<string?>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
 #nullable restore
 #else
-        public string JoinWebUrl {
+        public string JoinWebUrl
+        {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
@@ -47,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
+                { "joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>

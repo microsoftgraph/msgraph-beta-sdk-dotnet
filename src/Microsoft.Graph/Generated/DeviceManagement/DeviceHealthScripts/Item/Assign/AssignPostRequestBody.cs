@@ -6,13 +6,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assign {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assign
+{
     #pragma warning disable CS1591
-    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AssignPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -21,13 +23,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assign 
         /// <summary>The deviceHealthScriptAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceHealthScriptAssignment>? DeviceHealthScriptAssignments {
+        public List<DeviceHealthScriptAssignment>? DeviceHealthScriptAssignments
+        {
             get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>?>("deviceHealthScriptAssignments"); }
             set { BackingStore?.Set("deviceHealthScriptAssignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceHealthScriptAssignment> DeviceHealthScriptAssignments {
+        public List<DeviceHealthScriptAssignment> DeviceHealthScriptAssignments
+        {
             get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>>("deviceHealthScriptAssignments"); }
             set { BackingStore?.Set("deviceHealthScriptAssignments", value); }
         }
@@ -58,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assign 
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceHealthScriptAssignments", n => { DeviceHealthScriptAssignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceHealthScriptAssignments", n => { DeviceHealthScriptAssignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

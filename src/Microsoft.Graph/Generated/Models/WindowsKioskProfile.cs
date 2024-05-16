@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WindowsKioskProfile : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WindowsKioskProfile : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The app base class used to identify the application info for the kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsKioskAppConfiguration? AppConfiguration {
+        public WindowsKioskAppConfiguration? AppConfiguration
+        {
             get { return BackingStore?.Get<WindowsKioskAppConfiguration?>("appConfiguration"); }
             set { BackingStore?.Set("appConfiguration", value); }
         }
 #nullable restore
 #else
-        public WindowsKioskAppConfiguration AppConfiguration {
+        public WindowsKioskAppConfiguration AppConfiguration
+        {
             get { return BackingStore?.Get<WindowsKioskAppConfiguration>("appConfiguration"); }
             set { BackingStore?.Set("appConfiguration", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Key of the entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileId {
+        public string? ProfileId
+        {
             get { return BackingStore?.Get<string?>("profileId"); }
             set { BackingStore?.Set("profileId", value); }
         }
 #nullable restore
 #else
-        public string ProfileId {
+        public string ProfileId
+        {
             get { return BackingStore?.Get<string>("profileId"); }
             set { BackingStore?.Set("profileId", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProfileName {
+        public string? ProfileName
+        {
             get { return BackingStore?.Get<string?>("profileName"); }
             set { BackingStore?.Set("profileName", value); }
         }
 #nullable restore
 #else
-        public string ProfileName {
+        public string ProfileName
+        {
             get { return BackingStore?.Get<string>("profileName"); }
             set { BackingStore?.Set("profileName", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user accounts that will be locked to this kiosk configuration. This collection can contain a maximum of 100 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsKioskUser>? UserAccountsConfiguration {
+        public List<WindowsKioskUser>? UserAccountsConfiguration
+        {
             get { return BackingStore?.Get<List<WindowsKioskUser>?>("userAccountsConfiguration"); }
             set { BackingStore?.Set("userAccountsConfiguration", value); }
         }
 #nullable restore
 #else
-        public List<WindowsKioskUser> UserAccountsConfiguration {
+        public List<WindowsKioskUser> UserAccountsConfiguration
+        {
             get { return BackingStore?.Get<List<WindowsKioskUser>>("userAccountsConfiguration"); }
             set { BackingStore?.Set("userAccountsConfiguration", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"appConfiguration", n => { AppConfiguration = n.GetObjectValue<WindowsKioskAppConfiguration>(WindowsKioskAppConfiguration.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"profileId", n => { ProfileId = n.GetStringValue(); } },
-                {"profileName", n => { ProfileName = n.GetStringValue(); } },
-                {"userAccountsConfiguration", n => { UserAccountsConfiguration = n.GetCollectionOfObjectValues<WindowsKioskUser>(WindowsKioskUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appConfiguration", n => { AppConfiguration = n.GetObjectValue<WindowsKioskAppConfiguration>(WindowsKioskAppConfiguration.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "profileId", n => { ProfileId = n.GetStringValue(); } },
+                { "profileName", n => { ProfileName = n.GetStringValue(); } },
+                { "userAccountsConfiguration", n => { UserAccountsConfiguration = n.GetCollectionOfObjectValues<WindowsKioskUser>(WindowsKioskUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

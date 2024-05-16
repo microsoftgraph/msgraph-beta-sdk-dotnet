@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomAppConfiguration resource.
     /// </summary>
-    public class MacOSCustomAppConfiguration : DeviceConfiguration, IParsable 
+    public class MacOSCustomAppConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>Bundle id for targeting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BundleId {
+        public string? BundleId
+        {
             get { return BackingStore?.Get<string?>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
 #nullable restore
 #else
-        public string BundleId {
+        public string BundleId
+        {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Configuration xml. (UTF8 encoded byte array)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? ConfigurationXml {
+        public byte[]? ConfigurationXml
+        {
             get { return BackingStore?.Get<byte[]?>("configurationXml"); }
             set { BackingStore?.Set("configurationXml", value); }
         }
 #nullable restore
 #else
-        public byte[] ConfigurationXml {
+        public byte[] ConfigurationXml
+        {
             get { return BackingStore?.Get<byte[]>("configurationXml"); }
             set { BackingStore?.Set("configurationXml", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Configuration file name (.plist</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FileName {
+        public string? FileName
+        {
             get { return BackingStore?.Get<string?>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
 #nullable restore
 #else
-        public string FileName {
+        public string FileName
+        {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bundleId", n => { BundleId = n.GetStringValue(); } },
-                {"configurationXml", n => { ConfigurationXml = n.GetByteArrayValue(); } },
-                {"fileName", n => { FileName = n.GetStringValue(); } },
+                { "bundleId", n => { BundleId = n.GetStringValue(); } },
+                { "configurationXml", n => { ConfigurationXml = n.GetByteArrayValue(); } },
+                { "fileName", n => { FileName = n.GetStringValue(); } },
             };
         }
         /// <summary>

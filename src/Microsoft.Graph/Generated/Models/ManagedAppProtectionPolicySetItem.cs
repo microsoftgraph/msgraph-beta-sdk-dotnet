@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for managed app protection PolicySetItem.
     /// </summary>
-    public class ManagedAppProtectionPolicySetItem : PolicySetItem, IParsable 
+    public class ManagedAppProtectionPolicySetItem : PolicySetItem, IParsable
     {
         /// <summary>TargetedAppManagementLevels of the ManagedAppPolicySetItem.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetedAppManagementLevels {
+        public string? TargetedAppManagementLevels
+        {
             get { return BackingStore?.Get<string?>("targetedAppManagementLevels"); }
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
 #nullable restore
 #else
-        public string TargetedAppManagementLevels {
+        public string TargetedAppManagementLevels
+        {
             get { return BackingStore?.Get<string>("targetedAppManagementLevels"); }
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetStringValue(); } },
+                { "targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetStringValue(); } },
             };
         }
         /// <summary>

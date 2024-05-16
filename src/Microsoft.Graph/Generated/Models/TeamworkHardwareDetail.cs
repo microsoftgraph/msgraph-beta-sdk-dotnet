@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class TeamworkHardwareDetail : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class TeamworkHardwareDetail : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>MAC address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MacAddresses {
+        public List<string>? MacAddresses
+        {
             get { return BackingStore?.Get<List<string>?>("macAddresses"); }
             set { BackingStore?.Set("macAddresses", value); }
         }
 #nullable restore
 #else
-        public List<string> MacAddresses {
+        public List<string> MacAddresses
+        {
             get { return BackingStore?.Get<List<string>>("macAddresses"); }
             set { BackingStore?.Set("macAddresses", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device manufacturer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Devie model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Model {
+        public string? Model
+        {
             get { return BackingStore?.Get<string?>("model"); }
             set { BackingStore?.Set("model", value); }
         }
 #nullable restore
 #else
-        public string Model {
+        public string Model
+        {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Device serial number.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SerialNumber {
+        public string? SerialNumber
+        {
             get { return BackingStore?.Get<string?>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
 #nullable restore
 #else
-        public string SerialNumber {
+        public string SerialNumber
+        {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UniqueId {
+        public string? UniqueId
+        {
             get { return BackingStore?.Get<string?>("uniqueId"); }
             set { BackingStore?.Set("uniqueId", value); }
         }
 #nullable restore
 #else
-        public string UniqueId {
+        public string UniqueId
+        {
             get { return BackingStore?.Get<string>("uniqueId"); }
             set { BackingStore?.Set("uniqueId", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"macAddresses", n => { MacAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"model", n => { Model = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                {"uniqueId", n => { UniqueId = n.GetStringValue(); } },
+                { "macAddresses", n => { MacAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "model", n => { Model = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "serialNumber", n => { SerialNumber = n.GetStringValue(); } },
+                { "uniqueId", n => { UniqueId = n.GetStringValue(); } },
             };
         }
         /// <summary>

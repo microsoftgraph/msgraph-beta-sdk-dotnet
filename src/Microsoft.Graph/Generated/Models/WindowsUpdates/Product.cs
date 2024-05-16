@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class Product : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class Product : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents an edition of a particular Windows product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Edition>? Editions {
+        public List<Edition>? Editions
+        {
             get { return BackingStore?.Get<List<Edition>?>("editions"); }
             set { BackingStore?.Set("editions", value); }
         }
 #nullable restore
 #else
-        public List<Edition> Editions {
+        public List<Edition> Editions
+        {
             get { return BackingStore?.Get<List<Edition>>("editions"); }
             set { BackingStore?.Set("editions", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The friendly names of the product. For example, Version 22H2 (OS build 22621). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? FriendlyNames {
+        public List<string>? FriendlyNames
+        {
             get { return BackingStore?.Get<List<string>?>("friendlyNames"); }
             set { BackingStore?.Set("friendlyNames", value); }
         }
 #nullable restore
 #else
-        public List<string> FriendlyNames {
+        public List<string> FriendlyNames
+        {
             get { return BackingStore?.Get<List<string>>("friendlyNames"); }
             set { BackingStore?.Set("friendlyNames", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The name of the product group. For example, Windows 11. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupName {
+        public string? GroupName
+        {
             get { return BackingStore?.Get<string?>("groupName"); }
             set { BackingStore?.Set("groupName", value); }
         }
 #nullable restore
 #else
-        public string GroupName {
+        public string GroupName
+        {
             get { return BackingStore?.Get<string>("groupName"); }
             set { BackingStore?.Set("groupName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Represents a known issue related to a Windows product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KnownIssue>? KnownIssues {
+        public List<KnownIssue>? KnownIssues
+        {
             get { return BackingStore?.Get<List<KnownIssue>?>("knownIssues"); }
             set { BackingStore?.Set("knownIssues", value); }
         }
 #nullable restore
 #else
-        public List<KnownIssue> KnownIssues {
+        public List<KnownIssue> KnownIssues
+        {
             get { return BackingStore?.Get<List<KnownIssue>>("knownIssues"); }
             set { BackingStore?.Set("knownIssues", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>The name of the product. For example, Windows 11, version 22H2. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Represents a product revision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProductRevision>? Revisions {
+        public List<ProductRevision>? Revisions
+        {
             get { return BackingStore?.Get<List<ProductRevision>?>("revisions"); }
             set { BackingStore?.Set("revisions", value); }
         }
 #nullable restore
 #else
-        public List<ProductRevision> Revisions {
+        public List<ProductRevision> Revisions
+        {
             get { return BackingStore?.Get<List<ProductRevision>>("revisions"); }
             set { BackingStore?.Set("revisions", value); }
         }
@@ -111,12 +124,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"editions", n => { Editions = n.GetCollectionOfObjectValues<Edition>(Edition.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"friendlyNames", n => { FriendlyNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"groupName", n => { GroupName = n.GetStringValue(); } },
-                {"knownIssues", n => { KnownIssues = n.GetCollectionOfObjectValues<KnownIssue>(KnownIssue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"revisions", n => { Revisions = n.GetCollectionOfObjectValues<ProductRevision>(ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "editions", n => { Editions = n.GetCollectionOfObjectValues<Edition>(Edition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "friendlyNames", n => { FriendlyNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "groupName", n => { GroupName = n.GetStringValue(); } },
+                { "knownIssues", n => { KnownIssues = n.GetCollectionOfObjectValues<KnownIssue>(KnownIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "revisions", n => { Revisions = n.GetCollectionOfObjectValues<ProductRevision>(ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class IndustryDataActivityStatistics : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class IndustryDataActivityStatistics : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier for the activity that is being reported on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ActivityId {
+        public string? ActivityId
+        {
             get { return BackingStore?.Get<string?>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
 #nullable restore
 #else
-        public string ActivityId {
+        public string ActivityId
+        {
             get { return BackingStore?.Get<string>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The display name of the underlying flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -48,19 +54,22 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The status property</summary>
-        public IndustryDataActivityStatus? Status {
+        public IndustryDataActivityStatus? Status
+        {
             get { return BackingStore?.Get<IndustryDataActivityStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
@@ -95,10 +104,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"activityId", n => { ActivityId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<IndustryDataActivityStatus>(); } },
+                { "activityId", n => { ActivityId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<IndustryDataActivityStatus>(); } },
             };
         }
         /// <summary>

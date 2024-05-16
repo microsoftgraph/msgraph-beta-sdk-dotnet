@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WorkplaceSensor : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class WorkplaceSensor : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the sensor. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier of the place that the sensor detects. If the device is installed in a room equipped with a mailbox, this property should match the ExternalDirectoryObjectId or Microsoft Entra object ID of the room mailbox. If the sensor detects the same place as the location of the device, the property can be omitted. The default value is the place identifier of the device. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlaceId {
+        public string? PlaceId
+        {
             get { return BackingStore?.Get<string?>("placeId"); }
             set { BackingStore?.Set("placeId", value); }
         }
 #nullable restore
 #else
-        public string PlaceId {
+        public string PlaceId
+        {
             get { return BackingStore?.Get<string>("placeId"); }
             set { BackingStore?.Set("placeId", value); }
         }
@@ -62,19 +70,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user-defined unique identifier of the sensor on the device. If the device has multiple sensors of the same type, the property must be provided to identify each sensor. If the device has only one sensor of a type, the property can be omitted. The default value is the sensor type. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SensorId {
+        public string? SensorId
+        {
             get { return BackingStore?.Get<string?>("sensorId"); }
             set { BackingStore?.Set("sensorId", value); }
         }
 #nullable restore
 #else
-        public string SensorId {
+        public string SensorId
+        {
             get { return BackingStore?.Get<string>("sensorId"); }
             set { BackingStore?.Set("sensorId", value); }
         }
 #endif
         /// <summary>The sensorType property</summary>
-        public WorkplaceSensorType? SensorType {
+        public WorkplaceSensorType? SensorType
+        {
             get { return BackingStore?.Get<WorkplaceSensorType?>("sensorType"); }
             set { BackingStore?.Set("sensorType", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"placeId", n => { PlaceId = n.GetStringValue(); } },
-                {"sensorId", n => { SensorId = n.GetStringValue(); } },
-                {"sensorType", n => { SensorType = n.GetEnumValue<WorkplaceSensorType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "placeId", n => { PlaceId = n.GetStringValue(); } },
+                { "sensorId", n => { SensorId = n.GetStringValue(); } },
+                { "sensorType", n => { SensorType = n.GetEnumValue<WorkplaceSensorType>(); } },
             };
         }
         /// <summary>

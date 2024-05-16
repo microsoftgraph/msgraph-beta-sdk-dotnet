@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class Endpoint : DirectoryObject, IParsable 
+    public class Endpoint : DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Describes the capability that is associated with this resource. (for example, Messages, Conversations, etc.) Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Capability {
+        public string? Capability
+        {
             get { return BackingStore?.Get<string?>("capability"); }
             set { BackingStore?.Set("capability", value); }
         }
 #nullable restore
 #else
-        public string Capability {
+        public string Capability
+        {
             get { return BackingStore?.Get<string>("capability"); }
             set { BackingStore?.Set("capability", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Application id of the publishing underlying service. Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderId {
+        public string? ProviderId
+        {
             get { return BackingStore?.Get<string?>("providerId"); }
             set { BackingStore?.Set("providerId", value); }
         }
 #nullable restore
 #else
-        public string ProviderId {
+        public string ProviderId
+        {
             get { return BackingStore?.Get<string>("providerId"); }
             set { BackingStore?.Set("providerId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Name of the publishing underlying service. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderName {
+        public string? ProviderName
+        {
             get { return BackingStore?.Get<string?>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
 #nullable restore
 #else
-        public string ProviderName {
+        public string ProviderName
+        {
             get { return BackingStore?.Get<string>("providerName"); }
             set { BackingStore?.Set("providerName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>For Microsoft 365 groups, this is set to a well-known name for the resource (for example, Yammer.FeedURL etc.). Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProviderResourceId {
+        public string? ProviderResourceId
+        {
             get { return BackingStore?.Get<string?>("providerResourceId"); }
             set { BackingStore?.Set("providerResourceId", value); }
         }
 #nullable restore
 #else
-        public string ProviderResourceId {
+        public string ProviderResourceId
+        {
             get { return BackingStore?.Get<string>("providerResourceId"); }
             set { BackingStore?.Set("providerResourceId", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>URL of the published resource. Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri {
+        public string? Uri
+        {
             get { return BackingStore?.Get<string?>("uri"); }
             set { BackingStore?.Set("uri", value); }
         }
 #nullable restore
 #else
-        public string Uri {
+        public string Uri
+        {
             get { return BackingStore?.Get<string>("uri"); }
             set { BackingStore?.Set("uri", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"capability", n => { Capability = n.GetStringValue(); } },
-                {"providerId", n => { ProviderId = n.GetStringValue(); } },
-                {"providerName", n => { ProviderName = n.GetStringValue(); } },
-                {"providerResourceId", n => { ProviderResourceId = n.GetStringValue(); } },
-                {"uri", n => { Uri = n.GetStringValue(); } },
+                { "capability", n => { Capability = n.GetStringValue(); } },
+                { "providerId", n => { ProviderId = n.GetStringValue(); } },
+                { "providerName", n => { ProviderName = n.GetStringValue(); } },
+                { "providerResourceId", n => { ProviderResourceId = n.GetStringValue(); } },
+                { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
         /// <summary>

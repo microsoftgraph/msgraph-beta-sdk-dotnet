@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class OnPremisesCurrentExportData : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class OnPremisesCurrentExportData : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the onPremises client machine that ran the last export.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientMachineName {
+        public string? ClientMachineName
+        {
             get { return BackingStore?.Get<string?>("clientMachineName"); }
             set { BackingStore?.Set("clientMachineName", value); }
         }
 #nullable restore
 #else
-        public string ClientMachineName {
+        public string ClientMachineName
+        {
             get { return BackingStore?.Get<string>("clientMachineName"); }
             set { BackingStore?.Set("clientMachineName", value); }
         }
@@ -34,58 +38,68 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The count of pending adds from on-premises directory.</summary>
-        public int? PendingObjectsAddition {
+        public int? PendingObjectsAddition
+        {
             get { return BackingStore?.Get<int?>("pendingObjectsAddition"); }
             set { BackingStore?.Set("pendingObjectsAddition", value); }
         }
         /// <summary>The count of pending deletes from on-premises directory.</summary>
-        public int? PendingObjectsDeletion {
+        public int? PendingObjectsDeletion
+        {
             get { return BackingStore?.Get<int?>("pendingObjectsDeletion"); }
             set { BackingStore?.Set("pendingObjectsDeletion", value); }
         }
         /// <summary>The count of pending updates from on-premises directory.</summary>
-        public int? PendingObjectsUpdate {
+        public int? PendingObjectsUpdate
+        {
             get { return BackingStore?.Get<int?>("pendingObjectsUpdate"); }
             set { BackingStore?.Set("pendingObjectsUpdate", value); }
         }
         /// <summary>The name of the dirsync service account that is configured to connect to the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ServiceAccount {
+        public string? ServiceAccount
+        {
             get { return BackingStore?.Get<string?>("serviceAccount"); }
             set { BackingStore?.Set("serviceAccount", value); }
         }
 #nullable restore
 #else
-        public string ServiceAccount {
+        public string ServiceAccount
+        {
             get { return BackingStore?.Get<string>("serviceAccount"); }
             set { BackingStore?.Set("serviceAccount", value); }
         }
 #endif
         /// <summary>The count of updated links during the current directory sync export run.</summary>
-        public long? SuccessfulLinksProvisioningCount {
+        public long? SuccessfulLinksProvisioningCount
+        {
             get { return BackingStore?.Get<long?>("successfulLinksProvisioningCount"); }
             set { BackingStore?.Set("successfulLinksProvisioningCount", value); }
         }
         /// <summary>The count of objects that were successfully provisioned during the current directory sync export run.</summary>
-        public int? SuccessfulObjectsProvisioningCount {
+        public int? SuccessfulObjectsProvisioningCount
+        {
             get { return BackingStore?.Get<int?>("successfulObjectsProvisioningCount"); }
             set { BackingStore?.Set("successfulObjectsProvisioningCount", value); }
         }
         /// <summary>The total number of objects in the AAD Connector Space.</summary>
-        public int? TotalConnectorSpaceObjects {
+        public int? TotalConnectorSpaceObjects
+        {
             get { return BackingStore?.Get<int?>("totalConnectorSpaceObjects"); }
             set { BackingStore?.Set("totalConnectorSpaceObjects", value); }
         }
@@ -115,15 +129,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"clientMachineName", n => { ClientMachineName = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"pendingObjectsAddition", n => { PendingObjectsAddition = n.GetIntValue(); } },
-                {"pendingObjectsDeletion", n => { PendingObjectsDeletion = n.GetIntValue(); } },
-                {"pendingObjectsUpdate", n => { PendingObjectsUpdate = n.GetIntValue(); } },
-                {"serviceAccount", n => { ServiceAccount = n.GetStringValue(); } },
-                {"successfulLinksProvisioningCount", n => { SuccessfulLinksProvisioningCount = n.GetLongValue(); } },
-                {"successfulObjectsProvisioningCount", n => { SuccessfulObjectsProvisioningCount = n.GetIntValue(); } },
-                {"totalConnectorSpaceObjects", n => { TotalConnectorSpaceObjects = n.GetIntValue(); } },
+                { "clientMachineName", n => { ClientMachineName = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "pendingObjectsAddition", n => { PendingObjectsAddition = n.GetIntValue(); } },
+                { "pendingObjectsDeletion", n => { PendingObjectsDeletion = n.GetIntValue(); } },
+                { "pendingObjectsUpdate", n => { PendingObjectsUpdate = n.GetIntValue(); } },
+                { "serviceAccount", n => { ServiceAccount = n.GetStringValue(); } },
+                { "successfulLinksProvisioningCount", n => { SuccessfulLinksProvisioningCount = n.GetLongValue(); } },
+                { "successfulObjectsProvisioningCount", n => { SuccessfulObjectsProvisioningCount = n.GetIntValue(); } },
+                { "totalConnectorSpaceObjects", n => { TotalConnectorSpaceObjects = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+namespace Microsoft.Graph.Beta.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class CustomTaskExtensionCallbackConfiguration : Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration, IParsable 
+    public class CustomTaskExtensionCallbackConfiguration : Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authorizedApps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.Application>? AuthorizedApps {
+        public List<Microsoft.Graph.Beta.Models.Application>? AuthorizedApps
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Application>?>("authorizedApps"); }
             set { BackingStore?.Set("authorizedApps", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.Application> AuthorizedApps {
+        public List<Microsoft.Graph.Beta.Models.Application> AuthorizedApps
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Application>>("authorizedApps"); }
             set { BackingStore?.Set("authorizedApps", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"authorizedApps", n => { AuthorizedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Application>(Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authorizedApps", n => { AuthorizedApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Application>(Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class Setting : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class Setting : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The display name for the setting. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The value for the setting serialized as string of JSON. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? JsonValue {
+        public string? JsonValue
+        {
             get { return BackingStore?.Get<string?>("jsonValue"); }
             set { BackingStore?.Set("jsonValue", value); }
         }
 #nullable restore
 #else
-        public string JsonValue {
+        public string JsonValue
+        {
             get { return BackingStore?.Get<string>("jsonValue"); }
             set { BackingStore?.Set("jsonValue", value); }
         }
@@ -48,38 +54,44 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>A flag indicating whether the setting can be override existing configurations when applied. Required. Read-only.</summary>
-        public bool? OverwriteAllowed {
+        public bool? OverwriteAllowed
+        {
             get { return BackingStore?.Get<bool?>("overwriteAllowed"); }
             set { BackingStore?.Set("overwriteAllowed", value); }
         }
         /// <summary>The settingId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SettingId {
+        public string? SettingId
+        {
             get { return BackingStore?.Get<string?>("settingId"); }
             set { BackingStore?.Set("settingId", value); }
         }
 #nullable restore
 #else
-        public string SettingId {
+        public string SettingId
+        {
             get { return BackingStore?.Get<string>("settingId"); }
             set { BackingStore?.Set("settingId", value); }
         }
 #endif
         /// <summary>The valueType property</summary>
-        public ManagementParameterValueType? ValueType {
+        public ManagementParameterValueType? ValueType
+        {
             get { return BackingStore?.Get<ManagementParameterValueType?>("valueType"); }
             set { BackingStore?.Set("valueType", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"jsonValue", n => { JsonValue = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"overwriteAllowed", n => { OverwriteAllowed = n.GetBoolValue(); } },
-                {"settingId", n => { SettingId = n.GetStringValue(); } },
-                {"valueType", n => { ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "jsonValue", n => { JsonValue = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "overwriteAllowed", n => { OverwriteAllowed = n.GetBoolValue(); } },
+                { "settingId", n => { SettingId = n.GetStringValue(); } },
+                { "valueType", n => { ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
             };
         }
         /// <summary>

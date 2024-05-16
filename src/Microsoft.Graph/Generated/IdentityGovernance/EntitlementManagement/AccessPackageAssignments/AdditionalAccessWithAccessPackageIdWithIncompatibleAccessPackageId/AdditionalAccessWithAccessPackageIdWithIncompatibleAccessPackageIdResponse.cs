@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId {
+namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId
+{
     [Obsolete("This class is obsolete. Use AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse instead.")]
     #pragma warning disable CS1591
-    public class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse : AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse, IParsable 
+    public class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse : AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AzureADJoinPolicy : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AzureADJoinPolicy : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Determines if Microsoft Entra join is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceRegistrationMembership? AllowedToJoin {
+        public DeviceRegistrationMembership? AllowedToJoin
+        {
             get { return BackingStore?.Get<DeviceRegistrationMembership?>("allowedToJoin"); }
             set { BackingStore?.Set("allowedToJoin", value); }
         }
 #nullable restore
 #else
-        public DeviceRegistrationMembership AllowedToJoin {
+        public DeviceRegistrationMembership AllowedToJoin
+        {
             get { return BackingStore?.Get<DeviceRegistrationMembership>("allowedToJoin"); }
             set { BackingStore?.Set("allowedToJoin", value); }
         }
@@ -32,20 +36,23 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determines if administrators can modify this policy.</summary>
-        public bool? IsAdminConfigurable {
+        public bool? IsAdminConfigurable
+        {
             get { return BackingStore?.Get<bool?>("isAdminConfigurable"); }
             set { BackingStore?.Set("isAdminConfigurable", value); }
         }
         /// <summary>The localAdmins property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocalAdminSettings? LocalAdmins {
+        public LocalAdminSettings? LocalAdmins
+        {
             get { return BackingStore?.Get<LocalAdminSettings?>("localAdmins"); }
             set { BackingStore?.Set("localAdmins", value); }
         }
 #nullable restore
 #else
-        public LocalAdminSettings LocalAdmins {
+        public LocalAdminSettings LocalAdmins
+        {
             get { return BackingStore?.Get<LocalAdminSettings>("localAdmins"); }
             set { BackingStore?.Set("localAdmins", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowedToJoin", n => { AllowedToJoin = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
-                {"isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
-                {"localAdmins", n => { LocalAdmins = n.GetObjectValue<LocalAdminSettings>(LocalAdminSettings.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowedToJoin", n => { AllowedToJoin = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
+                { "isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
+                { "localAdmins", n => { LocalAdmins = n.GetObjectValue<LocalAdminSettings>(LocalAdminSettings.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

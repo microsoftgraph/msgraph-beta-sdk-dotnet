@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SensitiveContentLocation : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SensitiveContentLocation : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The confidence property</summary>
-        public int? Confidence {
+        public int? Confidence
+        {
             get { return BackingStore?.Get<int?>("confidence"); }
             set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>The evidences property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SensitiveContentEvidence>? Evidences {
+        public List<SensitiveContentEvidence>? Evidences
+        {
             get { return BackingStore?.Get<List<SensitiveContentEvidence>?>("evidences"); }
             set { BackingStore?.Set("evidences", value); }
         }
 #nullable restore
 #else
-        public List<SensitiveContentEvidence> Evidences {
+        public List<SensitiveContentEvidence> Evidences
+        {
             get { return BackingStore?.Get<List<SensitiveContentEvidence>>("evidences"); }
             set { BackingStore?.Set("evidences", value); }
         }
@@ -39,38 +44,44 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The idMatch property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdMatch {
+        public string? IdMatch
+        {
             get { return BackingStore?.Get<string?>("idMatch"); }
             set { BackingStore?.Set("idMatch", value); }
         }
 #nullable restore
 #else
-        public string IdMatch {
+        public string IdMatch
+        {
             get { return BackingStore?.Get<string>("idMatch"); }
             set { BackingStore?.Set("idMatch", value); }
         }
 #endif
         /// <summary>The length property</summary>
-        public int? Length {
+        public int? Length
+        {
             get { return BackingStore?.Get<int?>("length"); }
             set { BackingStore?.Set("length", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The offset property</summary>
-        public int? Offset {
+        public int? Offset
+        {
             get { return BackingStore?.Get<int?>("offset"); }
             set { BackingStore?.Set("offset", value); }
         }
@@ -100,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"confidence", n => { Confidence = n.GetIntValue(); } },
-                {"evidences", n => { Evidences = n.GetCollectionOfObjectValues<SensitiveContentEvidence>(SensitiveContentEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"idMatch", n => { IdMatch = n.GetStringValue(); } },
-                {"length", n => { Length = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"offset", n => { Offset = n.GetIntValue(); } },
+                { "confidence", n => { Confidence = n.GetIntValue(); } },
+                { "evidences", n => { Evidences = n.GetCollectionOfObjectValues<SensitiveContentEvidence>(SensitiveContentEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "idMatch", n => { IdMatch = n.GetStringValue(); } },
+                { "length", n => { Length = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "offset", n => { Offset = n.GetIntValue(); } },
             };
         }
         /// <summary>

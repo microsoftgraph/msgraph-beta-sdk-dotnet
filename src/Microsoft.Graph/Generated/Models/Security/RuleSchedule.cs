@@ -5,33 +5,38 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class RuleSchedule : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class RuleSchedule : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Timestamp of the custom detection rule&apos;s next scheduled run.</summary>
-        public DateTimeOffset? NextRunDateTime {
+        public DateTimeOffset? NextRunDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("nextRunDateTime"); }
             set { BackingStore?.Set("nextRunDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>How often the detection rule is set to run. The allowed values are: 0, 1H, 3H, 12H, or 24H. &apos;0&apos; signifies the rule is run continuously.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Period {
+        public string? Period
+        {
             get { return BackingStore?.Get<string?>("period"); }
             set { BackingStore?.Set("period", value); }
         }
 #nullable restore
 #else
-        public string Period {
+        public string Period
+        {
             get { return BackingStore?.Get<string>("period"); }
             set { BackingStore?.Set("period", value); }
         }
@@ -76,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"period", n => { Period = n.GetStringValue(); } },
+                { "nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "period", n => { Period = n.GetStringValue(); } },
             };
         }
         /// <summary>

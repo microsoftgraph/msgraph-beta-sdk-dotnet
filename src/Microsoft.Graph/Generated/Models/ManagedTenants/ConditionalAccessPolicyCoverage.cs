@@ -4,45 +4,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+namespace Microsoft.Graph.Beta.Models.ManagedTenants
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessPolicyCoverage : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ConditionalAccessPolicyCoverage : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConditionalAccessPolicyState {
+        public string? ConditionalAccessPolicyState
+        {
             get { return BackingStore?.Get<string?>("conditionalAccessPolicyState"); }
             set { BackingStore?.Set("conditionalAccessPolicyState", value); }
         }
 #nullable restore
 #else
-        public string ConditionalAccessPolicyState {
+        public string ConditionalAccessPolicyState
+        {
             get { return BackingStore?.Get<string>("conditionalAccessPolicyState"); }
             set { BackingStore?.Set("conditionalAccessPolicyState", value); }
         }
 #endif
         /// <summary>The date and time the conditional access policy was last modified. Required. Read-only.</summary>
-        public DateTimeOffset? LatestPolicyModifiedDateTime {
+        public DateTimeOffset? LatestPolicyModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("latestPolicyModifiedDateTime"); }
             set { BackingStore?.Set("latestPolicyModifiedDateTime", value); }
         }
         /// <summary>A flag indicating whether the conditional access policy requires device compliance. Required. Read-only.</summary>
-        public bool? RequiresDeviceCompliance {
+        public bool? RequiresDeviceCompliance
+        {
             get { return BackingStore?.Get<bool?>("requiresDeviceCompliance"); }
             set { BackingStore?.Set("requiresDeviceCompliance", value); }
         }
         /// <summary>The display name for the managed tenant. Required. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TenantDisplayName {
+        public string? TenantDisplayName
+        {
             get { return BackingStore?.Get<string?>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
 #nullable restore
 #else
-        public string TenantDisplayName {
+        public string TenantDisplayName
+        {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
@@ -65,10 +72,10 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conditionalAccessPolicyState", n => { ConditionalAccessPolicyState = n.GetStringValue(); } },
-                {"latestPolicyModifiedDateTime", n => { LatestPolicyModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"requiresDeviceCompliance", n => { RequiresDeviceCompliance = n.GetBoolValue(); } },
-                {"tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
+                { "conditionalAccessPolicyState", n => { ConditionalAccessPolicyState = n.GetStringValue(); } },
+                { "latestPolicyModifiedDateTime", n => { LatestPolicyModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "requiresDeviceCompliance", n => { RequiresDeviceCompliance = n.GetBoolValue(); } },
+                { "tenantDisplayName", n => { TenantDisplayName = n.GetStringValue(); } },
             };
         }
         /// <summary>

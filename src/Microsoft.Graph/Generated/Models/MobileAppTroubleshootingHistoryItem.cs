@@ -5,34 +5,39 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// History Item contained in the Mobile App Troubleshooting Event.
     /// </summary>
-    public class MobileAppTroubleshootingHistoryItem : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MobileAppTroubleshootingHistoryItem : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Time when the history item occurred.</summary>
-        public DateTimeOffset? OccurrenceDateTime {
+        public DateTimeOffset? OccurrenceDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("occurrenceDateTime"); }
             set { BackingStore?.Set("occurrenceDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails {
+        public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails
+        {
             get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails {
+        public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails
+        {
             get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
@@ -86,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"occurrenceDateTime", n => { OccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
+                { "occurrenceDateTime", n => { OccurrenceDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "troubleshootingErrorDetails", n => { TroubleshootingErrorDetails = n.GetObjectValue<DeviceManagementTroubleshootingErrorDetails>(DeviceManagementTroubleshootingErrorDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

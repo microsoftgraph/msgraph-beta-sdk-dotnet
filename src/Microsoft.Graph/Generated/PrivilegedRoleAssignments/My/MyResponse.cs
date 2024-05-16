@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My {
+namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.My
+{
     [Obsolete("This class is obsolete. Use MyGetResponse instead.")]
     #pragma warning disable CS1591
-    public class MyResponse : MyGetResponse, IParsable 
+    public class MyResponse : MyGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

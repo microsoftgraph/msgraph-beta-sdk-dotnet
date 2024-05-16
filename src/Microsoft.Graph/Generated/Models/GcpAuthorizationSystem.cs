@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class GcpAuthorizationSystem : AuthorizationSystem, IParsable 
+    public class GcpAuthorizationSystem : AuthorizationSystem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of actions for service in authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpAuthorizationSystemTypeAction>? Actions {
+        public List<GcpAuthorizationSystemTypeAction>? Actions
+        {
             get { return BackingStore?.Get<List<GcpAuthorizationSystemTypeAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<GcpAuthorizationSystemTypeAction> Actions {
+        public List<GcpAuthorizationSystemTypeAction> Actions
+        {
             get { return BackingStore?.Get<List<GcpAuthorizationSystemTypeAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Identities in the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GcpAssociatedIdentities? AssociatedIdentities {
+        public GcpAssociatedIdentities? AssociatedIdentities
+        {
             get { return BackingStore?.Get<GcpAssociatedIdentities?>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #nullable restore
 #else
-        public GcpAssociatedIdentities AssociatedIdentities {
+        public GcpAssociatedIdentities AssociatedIdentities
+        {
             get { return BackingStore?.Get<GcpAssociatedIdentities>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Resources associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpAuthorizationSystemResource>? Resources {
+        public List<GcpAuthorizationSystemResource>? Resources
+        {
             get { return BackingStore?.Get<List<GcpAuthorizationSystemResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<GcpAuthorizationSystemResource> Resources {
+        public List<GcpAuthorizationSystemResource> Resources
+        {
             get { return BackingStore?.Get<List<GcpAuthorizationSystemResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Roles associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpRole>? Roles {
+        public List<GcpRole>? Roles
+        {
             get { return BackingStore?.Get<List<GcpRole>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<GcpRole> Roles {
+        public List<GcpRole> Roles
+        {
             get { return BackingStore?.Get<List<GcpRole>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Services associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemTypeService>? Services {
+        public List<AuthorizationSystemTypeService>? Services
+        {
             get { return BackingStore?.Get<List<AuthorizationSystemTypeService>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemTypeService> Services {
+        public List<AuthorizationSystemTypeService> Services
+        {
             get { return BackingStore?.Get<List<AuthorizationSystemTypeService>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"actions", n => { Actions = n.GetCollectionOfObjectValues<GcpAuthorizationSystemTypeAction>(GcpAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<GcpAssociatedIdentities>(GcpAssociatedIdentities.CreateFromDiscriminatorValue); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<GcpAuthorizationSystemResource>(GcpAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"roles", n => { Roles = n.GetCollectionOfObjectValues<GcpRole>(GcpRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"services", n => { Services = n.GetCollectionOfObjectValues<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<GcpAuthorizationSystemTypeAction>(GcpAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<GcpAssociatedIdentities>(GcpAssociatedIdentities.CreateFromDiscriminatorValue); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<GcpAuthorizationSystemResource>(GcpAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<GcpRole>(GcpRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "services", n => { Services = n.GetCollectionOfObjectValues<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

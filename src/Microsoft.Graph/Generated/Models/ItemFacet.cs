@@ -4,85 +4,114 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ItemFacet : Entity, IParsable 
+    public class ItemFacet : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
-        public Microsoft.Graph.Beta.Models.AllowedAudiences? AllowedAudiences {
+        public Microsoft.Graph.Beta.Models.AllowedAudiences? AllowedAudiences
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowedAudiences?>("allowedAudiences"); }
             set { BackingStore?.Set("allowedAudiences", value); }
         }
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy {
+        public IdentitySet? CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy {
+        public IdentitySet CreatedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
         /// <summary>Provides the dateTimeOffset for when the entity was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Contains inference detail if the entity is inferred by the creating or modifying application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InferenceData? Inference {
+        public InferenceData? Inference
+        {
             get { return BackingStore?.Get<InferenceData?>("inference"); }
             set { BackingStore?.Set("inference", value); }
         }
 #nullable restore
 #else
-        public InferenceData Inference {
+        public InferenceData Inference
+        {
             get { return BackingStore?.Get<InferenceData>("inference"); }
             set { BackingStore?.Set("inference", value); }
         }
 #endif
         /// <summary>The isSearchable property</summary>
-        public bool? IsSearchable {
+        public bool? IsSearchable
+        {
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The lastModifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy {
+        public IdentitySet? LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy {
+        public IdentitySet LastModifiedBy
+        {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
         /// <summary>Provides the dateTimeOffset for when the entity was created.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Where the values within an entity originated if synced from another service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PersonDataSources? Source {
+        public PersonDataSources? Source
+        {
             get { return BackingStore?.Get<PersonDataSources?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public PersonDataSources Source {
+        public PersonDataSources Source
+        {
             get { return BackingStore?.Get<PersonDataSources>("source"); }
             set { BackingStore?.Set("source", value); }
+        }
+#endif
+        /// <summary>The sources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<ProfileSourceAnnotation>? Sources
+        {
+            get { return BackingStore?.Get<List<ProfileSourceAnnotation>?>("sources"); }
+            set { BackingStore?.Set("sources", value); }
+        }
+#nullable restore
+#else
+        public List<ProfileSourceAnnotation> Sources
+        {
+            get { return BackingStore?.Get<List<ProfileSourceAnnotation>>("sources"); }
+            set { BackingStore?.Set("sources", value); }
         }
 #endif
         /// <summary>
@@ -127,14 +156,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"allowedAudiences", n => { AllowedAudiences = n.GetEnumValue<AllowedAudiences>(); } },
-                {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"inference", n => { Inference = n.GetObjectValue<InferenceData>(InferenceData.CreateFromDiscriminatorValue); } },
-                {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"source", n => { Source = n.GetObjectValue<PersonDataSources>(PersonDataSources.CreateFromDiscriminatorValue); } },
+                { "allowedAudiences", n => { AllowedAudiences = n.GetEnumValue<AllowedAudiences>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "inference", n => { Inference = n.GetObjectValue<InferenceData>(InferenceData.CreateFromDiscriminatorValue); } },
+                { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "source", n => { Source = n.GetObjectValue<PersonDataSources>(PersonDataSources.CreateFromDiscriminatorValue); } },
+                { "sources", n => { Sources = n.GetCollectionOfObjectValues<ProfileSourceAnnotation>(ProfileSourceAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -153,6 +183,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteObjectValue<PersonDataSources>("source", Source);
+            writer.WriteCollectionOfObjectValues<ProfileSourceAnnotation>("sources", Sources);
         }
     }
 }

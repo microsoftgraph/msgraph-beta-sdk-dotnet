@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsActionsPermissionsDefinitionAction : AwsPermissionsDefinitionAction, IParsable 
+    public class AwsActionsPermissionsDefinitionAction : AwsPermissionsDefinitionAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines AWS statements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AssignToRoleId {
+        public string? AssignToRoleId
+        {
             get { return BackingStore?.Get<string?>("assignToRoleId"); }
             set { BackingStore?.Set("assignToRoleId", value); }
         }
 #nullable restore
 #else
-        public string AssignToRoleId {
+        public string AssignToRoleId
+        {
             get { return BackingStore?.Get<string>("assignToRoleId"); }
             set { BackingStore?.Set("assignToRoleId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The statements property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsStatement>? Statements {
+        public List<AwsStatement>? Statements
+        {
             get { return BackingStore?.Get<List<AwsStatement>?>("statements"); }
             set { BackingStore?.Set("statements", value); }
         }
 #nullable restore
 #else
-        public List<AwsStatement> Statements {
+        public List<AwsStatement> Statements
+        {
             get { return BackingStore?.Get<List<AwsStatement>>("statements"); }
             set { BackingStore?.Set("statements", value); }
         }
@@ -62,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"assignToRoleId", n => { AssignToRoleId = n.GetStringValue(); } },
-                {"statements", n => { Statements = n.GetCollectionOfObjectValues<AwsStatement>(AwsStatement.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignToRoleId", n => { AssignToRoleId = n.GetStringValue(); } },
+                { "statements", n => { Statements = n.GetCollectionOfObjectValues<AwsStatement>(AwsStatement.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

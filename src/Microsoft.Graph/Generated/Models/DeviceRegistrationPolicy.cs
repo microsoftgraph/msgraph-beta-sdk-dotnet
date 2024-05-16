@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceRegistrationPolicy : Entity, IParsable 
+    public class DeviceRegistrationPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureADJoinPolicy? AzureADJoin {
+        public AzureADJoinPolicy? AzureADJoin
+        {
             get { return BackingStore?.Get<AzureADJoinPolicy?>("azureADJoin"); }
             set { BackingStore?.Set("azureADJoin", value); }
         }
 #nullable restore
 #else
-        public AzureADJoinPolicy AzureADJoin {
+        public AzureADJoinPolicy AzureADJoin
+        {
             get { return BackingStore?.Get<AzureADJoinPolicy>("azureADJoin"); }
             set { BackingStore?.Set("azureADJoin", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureADRegistrationPolicy? AzureADRegistration {
+        public AzureADRegistrationPolicy? AzureADRegistration
+        {
             get { return BackingStore?.Get<AzureADRegistrationPolicy?>("azureADRegistration"); }
             set { BackingStore?.Set("azureADRegistration", value); }
         }
 #nullable restore
 #else
-        public AzureADRegistrationPolicy AzureADRegistration {
+        public AzureADRegistrationPolicy AzureADRegistration
+        {
             get { return BackingStore?.Get<AzureADRegistrationPolicy>("azureADRegistration"); }
             set { BackingStore?.Set("azureADRegistration", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The description of the device registration policy. It&apos;s always set to Tenant-wide policy that manages intial provisioning controls using quota restrictions, additional authentication and authorization checks. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the device registration policy. It&apos;s always set to Device Registration Policy. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -68,24 +77,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Specifies the setting for Local Admin Password Solution (LAPS) within your organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocalAdminPasswordSettings? LocalAdminPassword {
+        public LocalAdminPasswordSettings? LocalAdminPassword
+        {
             get { return BackingStore?.Get<LocalAdminPasswordSettings?>("localAdminPassword"); }
             set { BackingStore?.Set("localAdminPassword", value); }
         }
 #nullable restore
 #else
-        public LocalAdminPasswordSettings LocalAdminPassword {
+        public LocalAdminPasswordSettings LocalAdminPassword
+        {
             get { return BackingStore?.Get<LocalAdminPasswordSettings>("localAdminPassword"); }
             set { BackingStore?.Set("localAdminPassword", value); }
         }
 #endif
         /// <summary>The multiFactorAuthConfiguration property</summary>
-        public Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration? MultiFactorAuthConfiguration {
+        public Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration? MultiFactorAuthConfiguration
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration?>("multiFactorAuthConfiguration"); }
             set { BackingStore?.Set("multiFactorAuthConfiguration", value); }
         }
         /// <summary>Specifies the maximum number of devices that a user can have within your organization before blocking new device registrations. The default value is set to 50. If this property isn&apos;t specified during the policy update operation, it&apos;s automatically reset to 0 to indicate that users aren&apos;t allowed to join any devices.</summary>
-        public int? UserDeviceQuota {
+        public int? UserDeviceQuota
+        {
             get { return BackingStore?.Get<int?>("userDeviceQuota"); }
             set { BackingStore?.Set("userDeviceQuota", value); }
         }
@@ -107,13 +120,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"azureADJoin", n => { AzureADJoin = n.GetObjectValue<AzureADJoinPolicy>(AzureADJoinPolicy.CreateFromDiscriminatorValue); } },
-                {"azureADRegistration", n => { AzureADRegistration = n.GetObjectValue<AzureADRegistrationPolicy>(AzureADRegistrationPolicy.CreateFromDiscriminatorValue); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"localAdminPassword", n => { LocalAdminPassword = n.GetObjectValue<LocalAdminPasswordSettings>(LocalAdminPasswordSettings.CreateFromDiscriminatorValue); } },
-                {"multiFactorAuthConfiguration", n => { MultiFactorAuthConfiguration = n.GetEnumValue<MultiFactorAuthConfiguration>(); } },
-                {"userDeviceQuota", n => { UserDeviceQuota = n.GetIntValue(); } },
+                { "azureADJoin", n => { AzureADJoin = n.GetObjectValue<AzureADJoinPolicy>(AzureADJoinPolicy.CreateFromDiscriminatorValue); } },
+                { "azureADRegistration", n => { AzureADRegistration = n.GetObjectValue<AzureADRegistrationPolicy>(AzureADRegistrationPolicy.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "localAdminPassword", n => { LocalAdminPassword = n.GetObjectValue<LocalAdminPasswordSettings>(LocalAdminPasswordSettings.CreateFromDiscriminatorValue); } },
+                { "multiFactorAuthConfiguration", n => { MultiFactorAuthConfiguration = n.GetEnumValue<MultiFactorAuthConfiguration>(); } },
+                { "userDeviceQuota", n => { UserDeviceQuota = n.GetIntValue(); } },
             };
         }
         /// <summary>

@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class HardDeleteResponseAction : ResponseAction, IParsable 
+    public class HardDeleteResponseAction : ResponseAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identifier property</summary>
-        public EmailEntityIdentifier? Identifier {
+        public EmailEntityIdentifier? Identifier
+        {
             get { return BackingStore?.Get<EmailEntityIdentifier?>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"identifier", n => { Identifier = n.GetEnumValue<EmailEntityIdentifier>(); } },
+                { "identifier", n => { Identifier = n.GetEnumValue<EmailEntityIdentifier>(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsExternalSystemAccessRoleFinding : Finding, IParsable 
+    public class AwsExternalSystemAccessRoleFinding : Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The IDs of the accounts that this role is able to access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AccessibleSystemIds {
+        public List<string>? AccessibleSystemIds
+        {
             get { return BackingStore?.Get<List<string>?>("accessibleSystemIds"); }
             set { BackingStore?.Set("accessibleSystemIds", value); }
         }
 #nullable restore
 #else
-        public List<string> AccessibleSystemIds {
+        public List<string> AccessibleSystemIds
+        {
             get { return BackingStore?.Get<List<string>>("accessibleSystemIds"); }
             set { BackingStore?.Set("accessibleSystemIds", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The permissionsCreepIndex property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex? PermissionsCreepIndex {
+        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex? PermissionsCreepIndex
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsCreepIndex?>("permissionsCreepIndex"); }
             set { BackingStore?.Set("permissionsCreepIndex", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex PermissionsCreepIndex {
+        public Microsoft.Graph.Beta.Models.PermissionsCreepIndex PermissionsCreepIndex
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex"); }
             set { BackingStore?.Set("permissionsCreepIndex", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The role property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsRole? Role {
+        public AwsRole? Role
+        {
             get { return BackingStore?.Get<AwsRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
 #nullable restore
 #else
-        public AwsRole Role {
+        public AwsRole Role
+        {
             get { return BackingStore?.Get<AwsRole>("role"); }
             set { BackingStore?.Set("role", value); }
         }
@@ -69,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"accessibleSystemIds", n => { AccessibleSystemIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
-                {"role", n => { Role = n.GetObjectValue<AwsRole>(AwsRole.CreateFromDiscriminatorValue); } },
+                { "accessibleSystemIds", n => { AccessibleSystemIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
+                { "role", n => { Role = n.GetObjectValue<AwsRole>(AwsRole.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

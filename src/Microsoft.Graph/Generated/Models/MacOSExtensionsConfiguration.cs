@@ -4,41 +4,47 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// MacOS extensions configuration profile.
     /// </summary>
-    public class MacOSExtensionsConfiguration : DeviceConfiguration, IParsable 
+    public class MacOSExtensionsConfiguration : DeviceConfiguration, IParsable
     {
         /// <summary>All kernel extensions validly signed by the team identifiers in this list will be allowed to load.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? KernelExtensionAllowedTeamIdentifiers {
+        public List<string>? KernelExtensionAllowedTeamIdentifiers
+        {
             get { return BackingStore?.Get<List<string>?>("kernelExtensionAllowedTeamIdentifiers"); }
             set { BackingStore?.Set("kernelExtensionAllowedTeamIdentifiers", value); }
         }
 #nullable restore
 #else
-        public List<string> KernelExtensionAllowedTeamIdentifiers {
+        public List<string> KernelExtensionAllowedTeamIdentifiers
+        {
             get { return BackingStore?.Get<List<string>>("kernelExtensionAllowedTeamIdentifiers"); }
             set { BackingStore?.Set("kernelExtensionAllowedTeamIdentifiers", value); }
         }
 #endif
         /// <summary>If set to true, users can approve additional kernel extensions not explicitly allowed by configurations profiles.</summary>
-        public bool? KernelExtensionOverridesAllowed {
+        public bool? KernelExtensionOverridesAllowed
+        {
             get { return BackingStore?.Get<bool?>("kernelExtensionOverridesAllowed"); }
             set { BackingStore?.Set("kernelExtensionOverridesAllowed", value); }
         }
         /// <summary>A list of kernel extensions that will be allowed to load. . This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSKernelExtension>? KernelExtensionsAllowed {
+        public List<MacOSKernelExtension>? KernelExtensionsAllowed
+        {
             get { return BackingStore?.Get<List<MacOSKernelExtension>?>("kernelExtensionsAllowed"); }
             set { BackingStore?.Set("kernelExtensionsAllowed", value); }
         }
 #nullable restore
 #else
-        public List<MacOSKernelExtension> KernelExtensionsAllowed {
+        public List<MacOSKernelExtension> KernelExtensionsAllowed
+        {
             get { return BackingStore?.Get<List<MacOSKernelExtension>>("kernelExtensionsAllowed"); }
             set { BackingStore?.Set("kernelExtensionsAllowed", value); }
         }
@@ -46,13 +52,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets a list of allowed macOS system extensions. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSSystemExtension>? SystemExtensionsAllowed {
+        public List<MacOSSystemExtension>? SystemExtensionsAllowed
+        {
             get { return BackingStore?.Get<List<MacOSSystemExtension>?>("systemExtensionsAllowed"); }
             set { BackingStore?.Set("systemExtensionsAllowed", value); }
         }
 #nullable restore
 #else
-        public List<MacOSSystemExtension> SystemExtensionsAllowed {
+        public List<MacOSSystemExtension> SystemExtensionsAllowed
+        {
             get { return BackingStore?.Get<List<MacOSSystemExtension>>("systemExtensionsAllowed"); }
             set { BackingStore?.Set("systemExtensionsAllowed", value); }
         }
@@ -60,13 +68,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets a list of allowed team identifiers. Any system extension signed with any of the specified team identifiers will be approved.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SystemExtensionsAllowedTeamIdentifiers {
+        public List<string>? SystemExtensionsAllowedTeamIdentifiers
+        {
             get { return BackingStore?.Get<List<string>?>("systemExtensionsAllowedTeamIdentifiers"); }
             set { BackingStore?.Set("systemExtensionsAllowedTeamIdentifiers", value); }
         }
 #nullable restore
 #else
-        public List<string> SystemExtensionsAllowedTeamIdentifiers {
+        public List<string> SystemExtensionsAllowedTeamIdentifiers
+        {
             get { return BackingStore?.Get<List<string>>("systemExtensionsAllowedTeamIdentifiers"); }
             set { BackingStore?.Set("systemExtensionsAllowedTeamIdentifiers", value); }
         }
@@ -74,19 +84,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Gets or sets a list of allowed macOS system extension types. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSSystemExtensionTypeMapping>? SystemExtensionsAllowedTypes {
+        public List<MacOSSystemExtensionTypeMapping>? SystemExtensionsAllowedTypes
+        {
             get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>?>("systemExtensionsAllowedTypes"); }
             set { BackingStore?.Set("systemExtensionsAllowedTypes", value); }
         }
 #nullable restore
 #else
-        public List<MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes {
+        public List<MacOSSystemExtensionTypeMapping> SystemExtensionsAllowedTypes
+        {
             get { return BackingStore?.Get<List<MacOSSystemExtensionTypeMapping>>("systemExtensionsAllowedTypes"); }
             set { BackingStore?.Set("systemExtensionsAllowedTypes", value); }
         }
 #endif
         /// <summary>Gets or sets whether to allow the user to approve additional system extensions not explicitly allowed by configuration profiles.</summary>
-        public bool? SystemExtensionsBlockOverride {
+        public bool? SystemExtensionsBlockOverride
+        {
             get { return BackingStore?.Get<bool?>("systemExtensionsBlockOverride"); }
             set { BackingStore?.Set("systemExtensionsBlockOverride", value); }
         }
@@ -115,13 +128,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"kernelExtensionAllowedTeamIdentifiers", n => { KernelExtensionAllowedTeamIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"kernelExtensionOverridesAllowed", n => { KernelExtensionOverridesAllowed = n.GetBoolValue(); } },
-                {"kernelExtensionsAllowed", n => { KernelExtensionsAllowed = n.GetCollectionOfObjectValues<MacOSKernelExtension>(MacOSKernelExtension.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"systemExtensionsAllowed", n => { SystemExtensionsAllowed = n.GetCollectionOfObjectValues<MacOSSystemExtension>(MacOSSystemExtension.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"systemExtensionsAllowedTeamIdentifiers", n => { SystemExtensionsAllowedTeamIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"systemExtensionsAllowedTypes", n => { SystemExtensionsAllowedTypes = n.GetCollectionOfObjectValues<MacOSSystemExtensionTypeMapping>(MacOSSystemExtensionTypeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"systemExtensionsBlockOverride", n => { SystemExtensionsBlockOverride = n.GetBoolValue(); } },
+                { "kernelExtensionAllowedTeamIdentifiers", n => { KernelExtensionAllowedTeamIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "kernelExtensionOverridesAllowed", n => { KernelExtensionOverridesAllowed = n.GetBoolValue(); } },
+                { "kernelExtensionsAllowed", n => { KernelExtensionsAllowed = n.GetCollectionOfObjectValues<MacOSKernelExtension>(MacOSKernelExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "systemExtensionsAllowed", n => { SystemExtensionsAllowed = n.GetCollectionOfObjectValues<MacOSSystemExtension>(MacOSSystemExtension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "systemExtensionsAllowedTeamIdentifiers", n => { SystemExtensionsAllowedTeamIdentifiers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "systemExtensionsAllowedTypes", n => { SystemExtensionsAllowedTypes = n.GetCollectionOfObjectValues<MacOSSystemExtensionTypeMapping>(MacOSSystemExtensionTypeMapping.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "systemExtensionsBlockOverride", n => { SystemExtensionsBlockOverride = n.GetBoolValue(); } },
             };
         }
         /// <summary>

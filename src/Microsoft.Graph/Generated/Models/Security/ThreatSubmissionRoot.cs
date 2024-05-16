@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class ThreatSubmissionRoot : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ThreatSubmissionRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The emailThreats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EmailThreatSubmission>? EmailThreats {
+        public List<EmailThreatSubmission>? EmailThreats
+        {
             get { return BackingStore?.Get<List<EmailThreatSubmission>?>("emailThreats"); }
             set { BackingStore?.Set("emailThreats", value); }
         }
 #nullable restore
 #else
-        public List<EmailThreatSubmission> EmailThreats {
+        public List<EmailThreatSubmission> EmailThreats
+        {
             get { return BackingStore?.Get<List<EmailThreatSubmission>>("emailThreats"); }
             set { BackingStore?.Set("emailThreats", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The emailThreatSubmissionPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EmailThreatSubmissionPolicy>? EmailThreatSubmissionPolicies {
+        public List<EmailThreatSubmissionPolicy>? EmailThreatSubmissionPolicies
+        {
             get { return BackingStore?.Get<List<EmailThreatSubmissionPolicy>?>("emailThreatSubmissionPolicies"); }
             set { BackingStore?.Set("emailThreatSubmissionPolicies", value); }
         }
 #nullable restore
 #else
-        public List<EmailThreatSubmissionPolicy> EmailThreatSubmissionPolicies {
+        public List<EmailThreatSubmissionPolicy> EmailThreatSubmissionPolicies
+        {
             get { return BackingStore?.Get<List<EmailThreatSubmissionPolicy>>("emailThreatSubmissionPolicies"); }
             set { BackingStore?.Set("emailThreatSubmissionPolicies", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The fileThreats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FileThreatSubmission>? FileThreats {
+        public List<FileThreatSubmission>? FileThreats
+        {
             get { return BackingStore?.Get<List<FileThreatSubmission>?>("fileThreats"); }
             set { BackingStore?.Set("fileThreats", value); }
         }
 #nullable restore
 #else
-        public List<FileThreatSubmission> FileThreats {
+        public List<FileThreatSubmission> FileThreats
+        {
             get { return BackingStore?.Get<List<FileThreatSubmission>>("fileThreats"); }
             set { BackingStore?.Set("fileThreats", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The urlThreats property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UrlThreatSubmission>? UrlThreats {
+        public List<UrlThreatSubmission>? UrlThreats
+        {
             get { return BackingStore?.Get<List<UrlThreatSubmission>?>("urlThreats"); }
             set { BackingStore?.Set("urlThreats", value); }
         }
 #nullable restore
 #else
-        public List<UrlThreatSubmission> UrlThreats {
+        public List<UrlThreatSubmission> UrlThreats
+        {
             get { return BackingStore?.Get<List<UrlThreatSubmission>>("urlThreats"); }
             set { BackingStore?.Set("urlThreats", value); }
         }
@@ -83,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"emailThreatSubmissionPolicies", n => { EmailThreatSubmissionPolicies = n.GetCollectionOfObjectValues<EmailThreatSubmissionPolicy>(EmailThreatSubmissionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"emailThreats", n => { EmailThreats = n.GetCollectionOfObjectValues<EmailThreatSubmission>(EmailThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"fileThreats", n => { FileThreats = n.GetCollectionOfObjectValues<FileThreatSubmission>(FileThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"urlThreats", n => { UrlThreats = n.GetCollectionOfObjectValues<UrlThreatSubmission>(UrlThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emailThreatSubmissionPolicies", n => { EmailThreatSubmissionPolicies = n.GetCollectionOfObjectValues<EmailThreatSubmissionPolicy>(EmailThreatSubmissionPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emailThreats", n => { EmailThreats = n.GetCollectionOfObjectValues<EmailThreatSubmission>(EmailThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fileThreats", n => { FileThreats = n.GetCollectionOfObjectValues<FileThreatSubmission>(FileThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "urlThreats", n => { UrlThreats = n.GetCollectionOfObjectValues<UrlThreatSubmission>(UrlThreatSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

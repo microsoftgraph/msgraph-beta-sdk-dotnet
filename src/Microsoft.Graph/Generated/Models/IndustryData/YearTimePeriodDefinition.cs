@@ -5,45 +5,52 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class YearTimePeriodDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class YearTimePeriodDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the year. Maximum supported length is 100 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The last day of the year using ISO 8601 format for date.</summary>
-        public Date? EndDate {
+        public Date? EndDate
+        {
             get { return BackingStore?.Get<Date?>("endDate"); }
             set { BackingStore?.Set("endDate", value); }
         }
         /// <summary>The first day of the year using ISO 8601 format for date.</summary>
-        public Date? StartDate {
+        public Date? StartDate
+        {
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>The year property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public YearReferenceValue? Year {
+        public YearReferenceValue? Year
+        {
             get { return BackingStore?.Get<YearReferenceValue?>("year"); }
             set { BackingStore?.Set("year", value); }
         }
 #nullable restore
 #else
-        public YearReferenceValue Year {
+        public YearReferenceValue Year
+        {
             get { return BackingStore?.Get<YearReferenceValue>("year"); }
             set { BackingStore?.Set("year", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"endDate", n => { EndDate = n.GetDateValue(); } },
-                {"startDate", n => { StartDate = n.GetDateValue(); } },
-                {"year", n => { Year = n.GetObjectValue<YearReferenceValue>(YearReferenceValue.CreateFromDiscriminatorValue); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "endDate", n => { EndDate = n.GetDateValue(); } },
+                { "startDate", n => { StartDate = n.GetDateValue(); } },
+                { "year", n => { Year = n.GetObjectValue<YearReferenceValue>(YearReferenceValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

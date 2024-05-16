@@ -4,19 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Constraint enforcing the permitted value range for an integer setting
     /// </summary>
-    public class DeviceManagementSettingIntegerConstraint : DeviceManagementConstraint, IParsable 
+    public class DeviceManagementSettingIntegerConstraint : DeviceManagementConstraint, IParsable
     {
         /// <summary>The maximum permitted value</summary>
-        public int? MaximumValue {
+        public int? MaximumValue
+        {
             get { return BackingStore?.Get<int?>("maximumValue"); }
             set { BackingStore?.Set("maximumValue", value); }
         }
         /// <summary>The minimum permitted value</summary>
-        public int? MinimumValue {
+        public int? MinimumValue
+        {
             get { return BackingStore?.Get<int?>("minimumValue"); }
             set { BackingStore?.Set("minimumValue", value); }
         }
@@ -45,8 +48,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"maximumValue", n => { MaximumValue = n.GetIntValue(); } },
-                {"minimumValue", n => { MinimumValue = n.GetIntValue(); } },
+                { "maximumValue", n => { MaximumValue = n.GetIntValue(); } },
+                { "minimumValue", n => { MinimumValue = n.GetIntValue(); } },
             };
         }
         /// <summary>

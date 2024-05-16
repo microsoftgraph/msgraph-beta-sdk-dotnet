@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+namespace Microsoft.Graph.Beta.Models.IdentityGovernance
+{
     #pragma warning disable CS1591
-    public class AttributeChangeTrigger : WorkflowExecutionTrigger, IParsable 
+    public class AttributeChangeTrigger : WorkflowExecutionTrigger, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The trigger attribute being changed that triggers the workflowexecutiontrigger of a workflow.)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TriggerAttribute>? TriggerAttributes {
+        public List<TriggerAttribute>? TriggerAttributes
+        {
             get { return BackingStore?.Get<List<TriggerAttribute>?>("triggerAttributes"); }
             set { BackingStore?.Set("triggerAttributes", value); }
         }
 #nullable restore
 #else
-        public List<TriggerAttribute> TriggerAttributes {
+        public List<TriggerAttribute> TriggerAttributes
+        {
             get { return BackingStore?.Get<List<TriggerAttribute>>("triggerAttributes"); }
             set { BackingStore?.Set("triggerAttributes", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"triggerAttributes", n => { TriggerAttributes = n.GetCollectionOfObjectValues<TriggerAttribute>(TriggerAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "triggerAttributes", n => { TriggerAttributes = n.GetCollectionOfObjectValues<TriggerAttribute>(TriggerAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

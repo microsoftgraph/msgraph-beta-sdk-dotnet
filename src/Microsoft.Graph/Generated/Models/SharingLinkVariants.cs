@@ -5,31 +5,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SharingLinkVariants : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SharingLinkVariants : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Indicates the most permissive role with which an address bar link can be created. The possible values are: none, view, edit, manageList, review, restrictedView, submitOnly, unknownFutureValue.</summary>
-        public SharingRole? AddressBarLinkPermission {
+        public SharingRole? AddressBarLinkPermission
+        {
             get { return BackingStore?.Get<SharingRole?>("addressBarLinkPermission"); }
             set { BackingStore?.Set("addressBarLinkPermission", value); }
         }
         /// <summary>Indicates whether a link can be embedded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? AllowEmbed {
+        public SharingOperationStatus? AllowEmbed
+        {
             get { return BackingStore?.Get<SharingOperationStatus?>("allowEmbed"); }
             set { BackingStore?.Set("allowEmbed", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus AllowEmbed {
+        public SharingOperationStatus AllowEmbed
+        {
             get { return BackingStore?.Get<SharingOperationStatus>("allowEmbed"); }
             set { BackingStore?.Set("allowEmbed", value); }
         }
@@ -39,13 +44,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -53,13 +60,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates whether a link can be password protected, meaning that link users would need to enter a password to access the item for which the sharing link is produced. Creating a passwordProtected link for the first time requires providing a password.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? PasswordProtected {
+        public SharingOperationStatus? PasswordProtected
+        {
             get { return BackingStore?.Get<SharingOperationStatus?>("passwordProtected"); }
             set { BackingStore?.Set("passwordProtected", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus PasswordProtected {
+        public SharingOperationStatus PasswordProtected
+        {
             get { return BackingStore?.Get<SharingOperationStatus>("passwordProtected"); }
             set { BackingStore?.Set("passwordProtected", value); }
         }
@@ -67,13 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates whether a link requires identity authentication for recipients. Users can be verified through either an email address or identity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharingOperationStatus? RequiresAuthentication {
+        public SharingOperationStatus? RequiresAuthentication
+        {
             get { return BackingStore?.Get<SharingOperationStatus?>("requiresAuthentication"); }
             set { BackingStore?.Set("requiresAuthentication", value); }
         }
 #nullable restore
 #else
-        public SharingOperationStatus RequiresAuthentication {
+        public SharingOperationStatus RequiresAuthentication
+        {
             get { return BackingStore?.Get<SharingOperationStatus>("requiresAuthentication"); }
             set { BackingStore?.Set("requiresAuthentication", value); }
         }
@@ -104,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addressBarLinkPermission", n => { AddressBarLinkPermission = n.GetEnumValue<SharingRole>(); } },
-                {"allowEmbed", n => { AllowEmbed = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"passwordProtected", n => { PasswordProtected = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
-                {"requiresAuthentication", n => { RequiresAuthentication = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "addressBarLinkPermission", n => { AddressBarLinkPermission = n.GetEnumValue<SharingRole>(); } },
+                { "allowEmbed", n => { AllowEmbed = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "passwordProtected", n => { PasswordProtected = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
+                { "requiresAuthentication", n => { RequiresAuthentication = n.GetObjectValue<SharingOperationStatus>(SharingOperationStatus.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

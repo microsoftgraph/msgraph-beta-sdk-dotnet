@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WorkplaceSensorDevice : Entity, IParsable 
+    public class WorkplaceSensorDevice : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The user-defined unique identifier of the device provided at the time of creation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The display name of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -54,13 +61,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The IPv4 address of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpV4Address {
+        public string? IpV4Address
+        {
             get { return BackingStore?.Get<string?>("ipV4Address"); }
             set { BackingStore?.Set("ipV4Address", value); }
         }
 #nullable restore
 #else
-        public string IpV4Address {
+        public string IpV4Address
+        {
             get { return BackingStore?.Get<string>("ipV4Address"); }
             set { BackingStore?.Set("ipV4Address", value); }
         }
@@ -68,13 +77,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The IPv6 address of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IpV6Address {
+        public string? IpV6Address
+        {
             get { return BackingStore?.Get<string?>("ipV6Address"); }
             set { BackingStore?.Set("ipV6Address", value); }
         }
 #nullable restore
 #else
-        public string IpV6Address {
+        public string IpV6Address
+        {
             get { return BackingStore?.Get<string>("ipV6Address"); }
             set { BackingStore?.Set("ipV6Address", value); }
         }
@@ -82,13 +93,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The MAC address of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MacAddress {
+        public string? MacAddress
+        {
             get { return BackingStore?.Get<string?>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
 #nullable restore
 #else
-        public string MacAddress {
+        public string MacAddress
+        {
             get { return BackingStore?.Get<string>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
@@ -96,13 +109,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The manufacturer of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Manufacturer {
+        public string? Manufacturer
+        {
             get { return BackingStore?.Get<string?>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
 #nullable restore
 #else
-        public string Manufacturer {
+        public string Manufacturer
+        {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
@@ -110,13 +125,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The unique identifier of the place where the device is located. If the device is installed in a room equipped with a mailbox, this property should match the ExternalDirectoryObjectId or Microsoft Entra object ID of the room mailbox.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PlaceId {
+        public string? PlaceId
+        {
             get { return BackingStore?.Get<string?>("placeId"); }
             set { BackingStore?.Set("placeId", value); }
         }
 #nullable restore
 #else
-        public string PlaceId {
+        public string PlaceId
+        {
             get { return BackingStore?.Get<string>("placeId"); }
             set { BackingStore?.Set("placeId", value); }
         }
@@ -124,13 +141,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, and more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkplaceSensor>? Sensors {
+        public List<WorkplaceSensor>? Sensors
+        {
             get { return BackingStore?.Get<List<WorkplaceSensor>?>("sensors"); }
             set { BackingStore?.Set("sensors", value); }
         }
 #nullable restore
 #else
-        public List<WorkplaceSensor> Sensors {
+        public List<WorkplaceSensor> Sensors
+        {
             get { return BackingStore?.Get<List<WorkplaceSensor>>("sensors"); }
             set { BackingStore?.Set("sensors", value); }
         }
@@ -138,13 +157,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A list of custom tags associated with the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Tags {
+        public List<string>? Tags
+        {
             get { return BackingStore?.Get<List<string>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<string> Tags {
+        public List<string> Tags
+        {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
@@ -167,16 +188,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"ipV4Address", n => { IpV4Address = n.GetStringValue(); } },
-                {"ipV6Address", n => { IpV6Address = n.GetStringValue(); } },
-                {"macAddress", n => { MacAddress = n.GetStringValue(); } },
-                {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"placeId", n => { PlaceId = n.GetStringValue(); } },
-                {"sensors", n => { Sensors = n.GetCollectionOfObjectValues<WorkplaceSensor>(WorkplaceSensor.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "ipV4Address", n => { IpV4Address = n.GetStringValue(); } },
+                { "ipV6Address", n => { IpV6Address = n.GetStringValue(); } },
+                { "macAddress", n => { MacAddress = n.GetStringValue(); } },
+                { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
+                { "placeId", n => { PlaceId = n.GetStringValue(); } },
+                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<WorkplaceSensor>(WorkplaceSensor.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

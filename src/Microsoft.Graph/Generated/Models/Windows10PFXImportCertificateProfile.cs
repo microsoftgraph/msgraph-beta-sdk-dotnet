@@ -4,14 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Deprecated
     /// </summary>
-    public class Windows10PFXImportCertificateProfile : DeviceConfiguration, IParsable 
+    public class Windows10PFXImportCertificateProfile : DeviceConfiguration, IParsable
     {
         /// <summary>Key Storage Provider (KSP) Import Options.</summary>
-        public KeyStorageProviderOption? KeyStorageProvider {
+        public KeyStorageProviderOption? KeyStorageProvider
+        {
             get { return BackingStore?.Get<KeyStorageProviderOption?>("keyStorageProvider"); }
             set { BackingStore?.Set("keyStorageProvider", value); }
         }
@@ -40,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"keyStorageProvider", n => { KeyStorageProvider = n.GetEnumValue<KeyStorageProviderOption>(); } },
+                { "keyStorageProvider", n => { KeyStorageProvider = n.GetEnumValue<KeyStorageProviderOption>(); } },
             };
         }
         /// <summary>

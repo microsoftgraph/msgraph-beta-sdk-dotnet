@@ -4,27 +4,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
     /// </summary>
-    public class TargetedManagedAppConfiguration : ManagedAppConfiguration, IParsable 
+    public class TargetedManagedAppConfiguration : ManagedAppConfiguration, IParsable
     {
         /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
-        public TargetedManagedAppGroupType? AppGroupType {
+        public TargetedManagedAppGroupType? AppGroupType
+        {
             get { return BackingStore?.Get<TargetedManagedAppGroupType?>("appGroupType"); }
             set { BackingStore?.Set("appGroupType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps {
+        public List<ManagedMobileApp>? Apps
+        {
             get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps {
+        public List<ManagedMobileApp> Apps
+        {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
@@ -32,43 +36,50 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppPolicyAssignment>? Assignments {
+        public List<TargetedManagedAppPolicyAssignment>? Assignments
+        {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppPolicyAssignment> Assignments {
+        public List<TargetedManagedAppPolicyAssignment> Assignments
+        {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Count of apps to which the current policy is deployed.</summary>
-        public int? DeployedAppCount {
+        public int? DeployedAppCount
+        {
             get { return BackingStore?.Get<int?>("deployedAppCount"); }
             set { BackingStore?.Set("deployedAppCount", value); }
         }
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedAppPolicyDeploymentSummary? DeploymentSummary {
+        public ManagedAppPolicyDeploymentSummary? DeploymentSummary
+        {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary {
+        public ManagedAppPolicyDeploymentSummary DeploymentSummary
+        {
             get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #endif
         /// <summary>Indicates if the policy is deployed to any inclusion groups or not.</summary>
-        public bool? IsAssigned {
+        public bool? IsAssigned
+        {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
             set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>Management levels for apps</summary>
-        public AppManagementLevel? TargetedAppManagementLevels {
+        public AppManagementLevel? TargetedAppManagementLevels
+        {
             get { return BackingStore?.Get<AppManagementLevel?>("targetedAppManagementLevels"); }
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
@@ -97,13 +108,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
-                {"apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
-                {"deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
-                {"isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
-                {"targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<AppManagementLevel>(); } },
+                { "appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
+                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
+                { "targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<AppManagementLevel>(); } },
             };
         }
         /// <summary>

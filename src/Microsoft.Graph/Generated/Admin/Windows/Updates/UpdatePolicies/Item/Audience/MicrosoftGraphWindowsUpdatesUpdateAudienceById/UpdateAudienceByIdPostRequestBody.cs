@@ -5,40 +5,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudienceById {
+namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudienceById
+{
     #pragma warning disable CS1591
-    public class UpdateAudienceByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class UpdateAudienceByIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The addExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AddExclusions {
+        public List<string>? AddExclusions
+        {
             get { return BackingStore?.Get<List<string>?>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
 #nullable restore
 #else
-        public List<string> AddExclusions {
+        public List<string> AddExclusions
+        {
             get { return BackingStore?.Get<List<string>>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The addMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AddMembers {
+        public List<string>? AddMembers
+        {
             get { return BackingStore?.Get<List<string>?>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
 #nullable restore
 #else
-        public List<string> AddMembers {
+        public List<string> AddMembers
+        {
             get { return BackingStore?.Get<List<string>>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         /// <summary>The memberEntityType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MemberEntityType {
+        public string? MemberEntityType
+        {
             get { return BackingStore?.Get<string?>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
 #nullable restore
 #else
-        public string MemberEntityType {
+        public string MemberEntityType
+        {
             get { return BackingStore?.Get<string>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         /// <summary>The removeExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemoveExclusions {
+        public List<string>? RemoveExclusions
+        {
             get { return BackingStore?.Get<List<string>?>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
 #nullable restore
 #else
-        public List<string> RemoveExclusions {
+        public List<string> RemoveExclusions
+        {
             get { return BackingStore?.Get<List<string>>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         /// <summary>The removeMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RemoveMembers {
+        public List<string>? RemoveMembers
+        {
             get { return BackingStore?.Get<List<string>?>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
 #nullable restore
 #else
-        public List<string> RemoveMembers {
+        public List<string> RemoveMembers
+        {
             get { return BackingStore?.Get<List<string>>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Audienc
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"addExclusions", n => { AddExclusions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"addMembers", n => { AddMembers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
-                {"removeExclusions", n => { RemoveExclusions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"removeMembers", n => { RemoveMembers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "addExclusions", n => { AddExclusions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "addMembers", n => { AddMembers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
+                { "removeExclusions", n => { RemoveExclusions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "removeMembers", n => { RemoveMembers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

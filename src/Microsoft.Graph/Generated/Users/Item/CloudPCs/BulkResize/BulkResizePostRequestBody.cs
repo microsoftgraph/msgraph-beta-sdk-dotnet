@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize {
+namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize
+{
     #pragma warning disable CS1591
-    public class BulkResizePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class BulkResizePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize {
         /// <summary>The cloudPcIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CloudPcIds {
+        public List<string>? CloudPcIds
+        {
             get { return BackingStore?.Get<List<string>?>("cloudPcIds"); }
             set { BackingStore?.Set("cloudPcIds", value); }
         }
 #nullable restore
 #else
-        public List<string> CloudPcIds {
+        public List<string> CloudPcIds
+        {
             get { return BackingStore?.Get<List<string>>("cloudPcIds"); }
             set { BackingStore?.Set("cloudPcIds", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize {
         /// <summary>The targetServicePlanId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TargetServicePlanId {
+        public string? TargetServicePlanId
+        {
             get { return BackingStore?.Get<string?>("targetServicePlanId"); }
             set { BackingStore?.Set("targetServicePlanId", value); }
         }
 #nullable restore
 #else
-        public string TargetServicePlanId {
+        public string TargetServicePlanId
+        {
             get { return BackingStore?.Get<string>("targetServicePlanId"); }
             set { BackingStore?.Set("targetServicePlanId", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.BulkResize {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"targetServicePlanId", n => { TargetServicePlanId = n.GetStringValue(); } },
+                { "cloudPcIds", n => { CloudPcIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "targetServicePlanId", n => { TargetServicePlanId = n.GetStringValue(); } },
             };
         }
         /// <summary>

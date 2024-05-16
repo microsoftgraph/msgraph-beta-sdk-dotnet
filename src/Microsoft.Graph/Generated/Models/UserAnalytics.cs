@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class UserAnalytics : Entity, IParsable 
+    public class UserAnalytics : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.ActivityStatistics>? ActivityStatistics {
+        public List<Microsoft.Graph.Beta.Models.ActivityStatistics>? ActivityStatistics
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityStatistics>?>("activityStatistics"); }
             set { BackingStore?.Set("activityStatistics", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.ActivityStatistics> ActivityStatistics {
+        public List<Microsoft.Graph.Beta.Models.ActivityStatistics> ActivityStatistics
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityStatistics>>("activityStatistics"); }
             set { BackingStore?.Set("activityStatistics", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The current settings for a user to use the analytics API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.Settings? Settings {
+        public Microsoft.Graph.Beta.Models.Settings? Settings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Settings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.Settings Settings {
+        public Microsoft.Graph.Beta.Models.Settings Settings
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Settings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActivityStatistics>(Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Settings>(Microsoft.Graph.Beta.Models.Settings.CreateFromDiscriminatorValue); } },
+                { "activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActivityStatistics>(Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Settings>(Microsoft.Graph.Beta.Models.Settings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

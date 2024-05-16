@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ConditionalAccessDevices : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConditionalAccessDevices : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Filter that defines the dynamic-device-syntax rule to include/exclude devices. A filter can use device properties (such as extension attributes) to include/exclude them. Cannot be set if includeDevices or excludeDevices is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessFilter? DeviceFilter {
+        public ConditionalAccessFilter? DeviceFilter
+        {
             get { return BackingStore?.Get<ConditionalAccessFilter?>("deviceFilter"); }
             set { BackingStore?.Set("deviceFilter", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessFilter DeviceFilter {
+        public ConditionalAccessFilter DeviceFilter
+        {
             get { return BackingStore?.Get<ConditionalAccessFilter>("deviceFilter"); }
             set { BackingStore?.Set("deviceFilter", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>States excluded from the scope of the policy. Possible values: Compliant, DomainJoined. Cannot be set if deviceFIlter is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeDevices {
+        public List<string>? ExcludeDevices
+        {
             get { return BackingStore?.Get<List<string>?>("excludeDevices"); }
             set { BackingStore?.Set("excludeDevices", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeDevices {
+        public List<string> ExcludeDevices
+        {
             get { return BackingStore?.Get<List<string>>("excludeDevices"); }
             set { BackingStore?.Set("excludeDevices", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The excludeDeviceStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeDeviceStates {
+        public List<string>? ExcludeDeviceStates
+        {
             get { return BackingStore?.Get<List<string>?>("excludeDeviceStates"); }
             set { BackingStore?.Set("excludeDeviceStates", value); }
         }
 #nullable restore
 #else
-        public List<string> ExcludeDeviceStates {
+        public List<string> ExcludeDeviceStates
+        {
             get { return BackingStore?.Get<List<string>>("excludeDeviceStates"); }
             set { BackingStore?.Set("excludeDeviceStates", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>States in the scope of the policy. All is the only allowed value. Cannot be set if deviceFilter is set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeDevices {
+        public List<string>? IncludeDevices
+        {
             get { return BackingStore?.Get<List<string>?>("includeDevices"); }
             set { BackingStore?.Set("includeDevices", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeDevices {
+        public List<string> IncludeDevices
+        {
             get { return BackingStore?.Get<List<string>>("includeDevices"); }
             set { BackingStore?.Set("includeDevices", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The includeDeviceStates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? IncludeDeviceStates {
+        public List<string>? IncludeDeviceStates
+        {
             get { return BackingStore?.Get<List<string>?>("includeDeviceStates"); }
             set { BackingStore?.Set("includeDeviceStates", value); }
         }
 #nullable restore
 #else
-        public List<string> IncludeDeviceStates {
+        public List<string> IncludeDeviceStates
+        {
             get { return BackingStore?.Get<List<string>>("includeDeviceStates"); }
             set { BackingStore?.Set("includeDeviceStates", value); }
         }
@@ -90,13 +102,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -127,12 +141,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceFilter", n => { DeviceFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
-                {"excludeDeviceStates", n => { ExcludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"excludeDevices", n => { ExcludeDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeDeviceStates", n => { IncludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includeDevices", n => { IncludeDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "deviceFilter", n => { DeviceFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
+                { "excludeDeviceStates", n => { ExcludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "excludeDevices", n => { ExcludeDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeDeviceStates", n => { IncludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "includeDevices", n => { IncludeDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

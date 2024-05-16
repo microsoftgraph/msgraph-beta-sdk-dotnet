@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AdminTodo : Entity, IParsable 
+    public class AdminTodo : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TodoSettings? Settings {
+        public TodoSettings? Settings
+        {
             get { return BackingStore?.Get<TodoSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public TodoSettings Settings {
+        public TodoSettings Settings
+        {
             get { return BackingStore?.Get<TodoSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"settings", n => { Settings = n.GetObjectValue<TodoSettings>(TodoSettings.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<TodoSettings>(TodoSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DocumentComment : Entity, IParsable 
+    public class DocumentComment : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Content {
+        public string? Content
+        {
             get { return BackingStore?.Get<string?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public string Content {
+        public string Content
+        {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The replies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DocumentCommentReply>? Replies {
+        public List<DocumentCommentReply>? Replies
+        {
             get { return BackingStore?.Get<List<DocumentCommentReply>?>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
 #nullable restore
 #else
-        public List<DocumentCommentReply> Replies {
+        public List<DocumentCommentReply> Replies
+        {
             get { return BackingStore?.Get<List<DocumentCommentReply>>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"content", n => { Content = n.GetStringValue(); } },
-                {"replies", n => { Replies = n.GetCollectionOfObjectValues<DocumentCommentReply>(DocumentCommentReply.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "content", n => { Content = n.GetStringValue(); } },
+                { "replies", n => { Replies = n.GetCollectionOfObjectValues<DocumentCommentReply>(DocumentCommentReply.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

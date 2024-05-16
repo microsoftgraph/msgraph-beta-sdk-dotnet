@@ -4,39 +4,46 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Entity that represents device state summary for an intent
     /// </summary>
-    public class DeviceManagementIntentDeviceStateSummary : Entity, IParsable 
+    public class DeviceManagementIntentDeviceStateSummary : Entity, IParsable
     {
         /// <summary>Number of devices in conflict</summary>
-        public int? ConflictCount {
+        public int? ConflictCount
+        {
             get { return BackingStore?.Get<int?>("conflictCount"); }
             set { BackingStore?.Set("conflictCount", value); }
         }
         /// <summary>Number of error devices</summary>
-        public int? ErrorCount {
+        public int? ErrorCount
+        {
             get { return BackingStore?.Get<int?>("errorCount"); }
             set { BackingStore?.Set("errorCount", value); }
         }
         /// <summary>Number of failed devices</summary>
-        public int? FailedCount {
+        public int? FailedCount
+        {
             get { return BackingStore?.Get<int?>("failedCount"); }
             set { BackingStore?.Set("failedCount", value); }
         }
         /// <summary>Number of not applicable devices</summary>
-        public int? NotApplicableCount {
+        public int? NotApplicableCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableCount"); }
             set { BackingStore?.Set("notApplicableCount", value); }
         }
         /// <summary>Number of not applicable devices due to mismatch platform and policy</summary>
-        public int? NotApplicablePlatformCount {
+        public int? NotApplicablePlatformCount
+        {
             get { return BackingStore?.Get<int?>("notApplicablePlatformCount"); }
             set { BackingStore?.Set("notApplicablePlatformCount", value); }
         }
         /// <summary>Number of succeeded devices</summary>
-        public int? SuccessCount {
+        public int? SuccessCount
+        {
             get { return BackingStore?.Get<int?>("successCount"); }
             set { BackingStore?.Set("successCount", value); }
         }
@@ -58,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"conflictCount", n => { ConflictCount = n.GetIntValue(); } },
-                {"errorCount", n => { ErrorCount = n.GetIntValue(); } },
-                {"failedCount", n => { FailedCount = n.GetIntValue(); } },
-                {"notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
-                {"notApplicablePlatformCount", n => { NotApplicablePlatformCount = n.GetIntValue(); } },
-                {"successCount", n => { SuccessCount = n.GetIntValue(); } },
+                { "conflictCount", n => { ConflictCount = n.GetIntValue(); } },
+                { "errorCount", n => { ErrorCount = n.GetIntValue(); } },
+                { "failedCount", n => { FailedCount = n.GetIntValue(); } },
+                { "notApplicableCount", n => { NotApplicableCount = n.GetIntValue(); } },
+                { "notApplicablePlatformCount", n => { NotApplicablePlatformCount = n.GetIntValue(); } },
+                { "successCount", n => { SuccessCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

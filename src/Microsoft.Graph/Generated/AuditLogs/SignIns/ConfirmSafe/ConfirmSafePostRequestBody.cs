@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
+namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe
+{
     #pragma warning disable CS1591
-    public class ConfirmSafePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConfirmSafePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
         /// <summary>The requestIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RequestIds {
+        public List<string>? RequestIds
+        {
             get { return BackingStore?.Get<List<string>?>("requestIds"); }
             set { BackingStore?.Set("requestIds", value); }
         }
 #nullable restore
 #else
-        public List<string> RequestIds {
+        public List<string> RequestIds
+        {
             get { return BackingStore?.Get<List<string>>("requestIds"); }
             set { BackingStore?.Set("requestIds", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"requestIds", n => { RequestIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "requestIds", n => { RequestIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

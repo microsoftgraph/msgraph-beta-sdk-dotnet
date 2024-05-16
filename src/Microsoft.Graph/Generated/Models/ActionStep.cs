@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ActionStep : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ActionStep : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A link to the documentation or Microsoft Entra admin center page that is associated with the action step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.ActionUrl? ActionUrl {
+        public Microsoft.Graph.Beta.Models.ActionUrl? ActionUrl
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl?>("actionUrl"); }
             set { BackingStore?.Set("actionUrl", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.ActionUrl ActionUrl {
+        public Microsoft.Graph.Beta.Models.ActionUrl ActionUrl
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>("actionUrl"); }
             set { BackingStore?.Set("actionUrl", value); }
         }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -34,32 +38,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Indicates the position for this action in the order of the collection of actions to be taken.</summary>
-        public long? StepNumber {
+        public long? StepNumber
+        {
             get { return BackingStore?.Get<long?>("stepNumber"); }
             set { BackingStore?.Set("stepNumber", value); }
         }
         /// <summary>Friendly description of the action to take.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text {
+        public string? Text
+        {
             get { return BackingStore?.Get<string?>("text"); }
             set { BackingStore?.Set("text", value); }
         }
 #nullable restore
 #else
-        public string Text {
+        public string Text
+        {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
@@ -90,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionUrl", n => { ActionUrl = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"stepNumber", n => { StepNumber = n.GetLongValue(); } },
-                {"text", n => { Text = n.GetStringValue(); } },
+                { "actionUrl", n => { ActionUrl = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionUrl>(Microsoft.Graph.Beta.Models.ActionUrl.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "stepNumber", n => { StepNumber = n.GetLongValue(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
             };
         }
         /// <summary>

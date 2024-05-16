@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class IdentityContainer : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class IdentityContainer : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents potential issues within a customer&apos;s Microsoft Defender for Identity configuration that Microsoft Defender for Identity identified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HealthIssue>? HealthIssues {
+        public List<HealthIssue>? HealthIssues
+        {
             get { return BackingStore?.Get<List<HealthIssue>?>("healthIssues"); }
             set { BackingStore?.Set("healthIssues", value); }
         }
 #nullable restore
 #else
-        public List<HealthIssue> HealthIssues {
+        public List<HealthIssue> HealthIssues
+        {
             get { return BackingStore?.Get<List<HealthIssue>>("healthIssues"); }
             set { BackingStore?.Set("healthIssues", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The sensors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Sensor>? Sensors {
+        public List<Sensor>? Sensors
+        {
             get { return BackingStore?.Get<List<Sensor>?>("sensors"); }
             set { BackingStore?.Set("sensors", value); }
         }
 #nullable restore
 #else
-        public List<Sensor> Sensors {
+        public List<Sensor> Sensors
+        {
             get { return BackingStore?.Get<List<Sensor>>("sensors"); }
             set { BackingStore?.Set("sensors", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<HealthIssue>(HealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sensors", n => { Sensors = n.GetCollectionOfObjectValues<Sensor>(Sensor.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<HealthIssue>(HealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<Sensor>(Sensor.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

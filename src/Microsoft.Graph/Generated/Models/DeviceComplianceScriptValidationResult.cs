@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceComplianceScriptValidationResult : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceComplianceScriptValidationResult : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Errors in json for the script for rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceComplianceScriptRuleError>? RuleErrors {
+        public List<DeviceComplianceScriptRuleError>? RuleErrors
+        {
             get { return BackingStore?.Get<List<DeviceComplianceScriptRuleError>?>("ruleErrors"); }
             set { BackingStore?.Set("ruleErrors", value); }
         }
 #nullable restore
 #else
-        public List<DeviceComplianceScriptRuleError> RuleErrors {
+        public List<DeviceComplianceScriptRuleError> RuleErrors
+        {
             get { return BackingStore?.Get<List<DeviceComplianceScriptRuleError>>("ruleErrors"); }
             set { BackingStore?.Set("ruleErrors", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Parsed rules from json.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceComplianceScriptRule>? Rules {
+        public List<DeviceComplianceScriptRule>? Rules
+        {
             get { return BackingStore?.Get<List<DeviceComplianceScriptRule>?>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
 #nullable restore
 #else
-        public List<DeviceComplianceScriptRule> Rules {
+        public List<DeviceComplianceScriptRule> Rules
+        {
             get { return BackingStore?.Get<List<DeviceComplianceScriptRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Errors in json for the script.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceComplianceScriptError>? ScriptErrors {
+        public List<DeviceComplianceScriptError>? ScriptErrors
+        {
             get { return BackingStore?.Get<List<DeviceComplianceScriptError>?>("scriptErrors"); }
             set { BackingStore?.Set("scriptErrors", value); }
         }
 #nullable restore
 #else
-        public List<DeviceComplianceScriptError> ScriptErrors {
+        public List<DeviceComplianceScriptError> ScriptErrors
+        {
             get { return BackingStore?.Get<List<DeviceComplianceScriptError>>("scriptErrors"); }
             set { BackingStore?.Set("scriptErrors", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ruleErrors", n => { RuleErrors = n.GetCollectionOfObjectValues<DeviceComplianceScriptRuleError>(DeviceComplianceScriptRuleError.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"rules", n => { Rules = n.GetCollectionOfObjectValues<DeviceComplianceScriptRule>(DeviceComplianceScriptRule.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"scriptErrors", n => { ScriptErrors = n.GetCollectionOfObjectValues<DeviceComplianceScriptError>(DeviceComplianceScriptError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ruleErrors", n => { RuleErrors = n.GetCollectionOfObjectValues<DeviceComplianceScriptRuleError>(DeviceComplianceScriptRuleError.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rules", n => { Rules = n.GetCollectionOfObjectValues<DeviceComplianceScriptRule>(DeviceComplianceScriptRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "scriptErrors", n => { ScriptErrors = n.GetCollectionOfObjectValues<DeviceComplianceScriptError>(DeviceComplianceScriptError.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,27 +5,31 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Choice Setting Value Definition Template
     /// </summary>
-    public class DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class DeviceManagementConfigurationChoiceSettingValueDefinitionTemplate : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Choice Setting Allowed Options</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationOptionDefinitionTemplate>? AllowedOptions {
+        public List<DeviceManagementConfigurationOptionDefinitionTemplate>? AllowedOptions
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinitionTemplate>?>("allowedOptions"); }
             set { BackingStore?.Set("allowedOptions", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationOptionDefinitionTemplate> AllowedOptions {
+        public List<DeviceManagementConfigurationOptionDefinitionTemplate> AllowedOptions
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinitionTemplate>>("allowedOptions"); }
             set { BackingStore?.Set("allowedOptions", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -72,8 +78,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"allowedOptions", n => { AllowedOptions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationOptionDefinitionTemplate>(DeviceManagementConfigurationOptionDefinitionTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "allowedOptions", n => { AllowedOptions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationOptionDefinitionTemplate>(DeviceManagementConfigurationOptionDefinitionTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

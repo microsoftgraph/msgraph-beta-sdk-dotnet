@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class RemoteNetwork : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class RemoteNetwork : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the connectivity details of all device links associated with a remote network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RemoteNetworkConnectivityConfiguration? ConnectivityConfiguration {
+        public RemoteNetworkConnectivityConfiguration? ConnectivityConfiguration
+        {
             get { return BackingStore?.Get<RemoteNetworkConnectivityConfiguration?>("connectivityConfiguration"); }
             set { BackingStore?.Set("connectivityConfiguration", value); }
         }
 #nullable restore
 #else
-        public RemoteNetworkConnectivityConfiguration ConnectivityConfiguration {
+        public RemoteNetworkConnectivityConfiguration ConnectivityConfiguration
+        {
             get { return BackingStore?.Get<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration"); }
             set { BackingStore?.Set("connectivityConfiguration", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Each unique CPE device associated with a remote network is specified. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceLink>? DeviceLinks {
+        public List<DeviceLink>? DeviceLinks
+        {
             get { return BackingStore?.Get<List<DeviceLink>?>("deviceLinks"); }
             set { BackingStore?.Set("deviceLinks", value); }
         }
 #nullable restore
 #else
-        public List<DeviceLink> DeviceLinks {
+        public List<DeviceLink> DeviceLinks
+        {
             get { return BackingStore?.Get<List<DeviceLink>>("deviceLinks"); }
             set { BackingStore?.Set("deviceLinks", value); }
         }
@@ -40,51 +45,59 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>Each forwarding profile associated with a remote network is specified. Supports $expand and $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ForwardingProfile>? ForwardingProfiles {
+        public List<ForwardingProfile>? ForwardingProfiles
+        {
             get { return BackingStore?.Get<List<ForwardingProfile>?>("forwardingProfiles"); }
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #nullable restore
 #else
-        public List<ForwardingProfile> ForwardingProfiles {
+        public List<ForwardingProfile> ForwardingProfiles
+        {
             get { return BackingStore?.Get<List<ForwardingProfile>>("forwardingProfiles"); }
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #endif
         /// <summary>last modified time.</summary>
-        public DateTimeOffset? LastModifiedDateTime {
+        public DateTimeOffset? LastModifiedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name {
+        public string? Name
+        {
             get { return BackingStore?.Get<string?>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #nullable restore
 #else
-        public string Name {
+        public string Name
+        {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
 #endif
         /// <summary>The region property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.Region? Region {
+        public Microsoft.Graph.Beta.Models.Networkaccess.Region? Region
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.Region?>("region"); }
             set { BackingStore?.Set("region", value); }
         }
         /// <summary>Remote network version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -107,13 +120,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"connectivityConfiguration", n => { ConnectivityConfiguration = n.GetObjectValue<RemoteNetworkConnectivityConfiguration>(RemoteNetworkConnectivityConfiguration.CreateFromDiscriminatorValue); } },
-                {"deviceLinks", n => { DeviceLinks = n.GetCollectionOfObjectValues<DeviceLink>(DeviceLink.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<ForwardingProfile>(ForwardingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"name", n => { Name = n.GetStringValue(); } },
-                {"region", n => { Region = n.GetEnumValue<Region>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "connectivityConfiguration", n => { ConnectivityConfiguration = n.GetObjectValue<RemoteNetworkConnectivityConfiguration>(RemoteNetworkConnectivityConfiguration.CreateFromDiscriminatorValue); } },
+                { "deviceLinks", n => { DeviceLinks = n.GetCollectionOfObjectValues<DeviceLink>(DeviceLink.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<ForwardingProfile>(ForwardingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetEnumValue<Region>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsAssociatedIdentities : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AwsAssociatedIdentities : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The all property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsIdentity>? All {
+        public List<AwsIdentity>? All
+        {
             get { return BackingStore?.Get<List<AwsIdentity>?>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #nullable restore
 #else
-        public List<AwsIdentity> All {
+        public List<AwsIdentity> All
+        {
             get { return BackingStore?.Get<List<AwsIdentity>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsRole>? Roles {
+        public List<AwsRole>? Roles
+        {
             get { return BackingStore?.Get<List<AwsRole>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<AwsRole> Roles {
+        public List<AwsRole> Roles
+        {
             get { return BackingStore?.Get<List<AwsRole>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsUser>? Users {
+        public List<AwsUser>? Users
+        {
             get { return BackingStore?.Get<List<AwsUser>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<AwsUser> Users {
+        public List<AwsUser> Users
+        {
             get { return BackingStore?.Get<List<AwsUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
@@ -99,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"all", n => { All = n.GetCollectionOfObjectValues<AwsIdentity>(AwsIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"roles", n => { Roles = n.GetCollectionOfObjectValues<AwsRole>(AwsRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"users", n => { Users = n.GetCollectionOfObjectValues<AwsUser>(AwsUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "all", n => { All = n.GetCollectionOfObjectValues<AwsIdentity>(AwsIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<AwsRole>(AwsRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<AwsUser>(AwsUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

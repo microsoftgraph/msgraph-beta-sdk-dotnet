@@ -4,37 +4,43 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A security configuration task.
     /// </summary>
-    public class SecurityConfigurationTask : DeviceAppManagementTask, IParsable 
+    public class SecurityConfigurationTask : DeviceAppManagementTask, IParsable
     {
         /// <summary>The endpoint security configuration applicable platform.</summary>
-        public EndpointSecurityConfigurationApplicablePlatform? ApplicablePlatform {
+        public EndpointSecurityConfigurationApplicablePlatform? ApplicablePlatform
+        {
             get { return BackingStore?.Get<EndpointSecurityConfigurationApplicablePlatform?>("applicablePlatform"); }
             set { BackingStore?.Set("applicablePlatform", value); }
         }
         /// <summary>The endpoint security policy type.</summary>
-        public EndpointSecurityConfigurationType? EndpointSecurityPolicy {
+        public EndpointSecurityConfigurationType? EndpointSecurityPolicy
+        {
             get { return BackingStore?.Get<EndpointSecurityConfigurationType?>("endpointSecurityPolicy"); }
             set { BackingStore?.Set("endpointSecurityPolicy", value); }
         }
         /// <summary>The endpoint security policy profile type.</summary>
-        public EndpointSecurityConfigurationProfileType? EndpointSecurityPolicyProfile {
+        public EndpointSecurityConfigurationProfileType? EndpointSecurityPolicyProfile
+        {
             get { return BackingStore?.Get<EndpointSecurityConfigurationProfileType?>("endpointSecurityPolicyProfile"); }
             set { BackingStore?.Set("endpointSecurityPolicyProfile", value); }
         }
         /// <summary>Information about the mitigation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Insights {
+        public string? Insights
+        {
             get { return BackingStore?.Get<string?>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
 #nullable restore
 #else
-        public string Insights {
+        public string Insights
+        {
             get { return BackingStore?.Get<string>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
@@ -42,32 +48,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The intended settings and their values.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? IntendedSettings {
+        public List<KeyValuePair>? IntendedSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>?>("intendedSettings"); }
             set { BackingStore?.Set("intendedSettings", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> IntendedSettings {
+        public List<KeyValuePair> IntendedSettings
+        {
             get { return BackingStore?.Get<List<KeyValuePair>>("intendedSettings"); }
             set { BackingStore?.Set("intendedSettings", value); }
         }
 #endif
         /// <summary>The number of vulnerable devices. Valid values 0 to 65536</summary>
-        public int? ManagedDeviceCount {
+        public int? ManagedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("managedDeviceCount"); }
             set { BackingStore?.Set("managedDeviceCount", value); }
         }
         /// <summary>The vulnerable managed devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VulnerableManagedDevice>? ManagedDevices {
+        public List<VulnerableManagedDevice>? ManagedDevices
+        {
             get { return BackingStore?.Get<List<VulnerableManagedDevice>?>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
 #nullable restore
 #else
-        public List<VulnerableManagedDevice> ManagedDevices {
+        public List<VulnerableManagedDevice> ManagedDevices
+        {
             get { return BackingStore?.Get<List<VulnerableManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
@@ -97,13 +108,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"applicablePlatform", n => { ApplicablePlatform = n.GetEnumValue<EndpointSecurityConfigurationApplicablePlatform>(); } },
-                {"endpointSecurityPolicy", n => { EndpointSecurityPolicy = n.GetEnumValue<EndpointSecurityConfigurationType>(); } },
-                {"endpointSecurityPolicyProfile", n => { EndpointSecurityPolicyProfile = n.GetEnumValue<EndpointSecurityConfigurationProfileType>(); } },
-                {"insights", n => { Insights = n.GetStringValue(); } },
-                {"intendedSettings", n => { IntendedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"managedDeviceCount", n => { ManagedDeviceCount = n.GetIntValue(); } },
-                {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<VulnerableManagedDevice>(VulnerableManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicablePlatform", n => { ApplicablePlatform = n.GetEnumValue<EndpointSecurityConfigurationApplicablePlatform>(); } },
+                { "endpointSecurityPolicy", n => { EndpointSecurityPolicy = n.GetEnumValue<EndpointSecurityConfigurationType>(); } },
+                { "endpointSecurityPolicyProfile", n => { EndpointSecurityPolicyProfile = n.GetEnumValue<EndpointSecurityConfigurationProfileType>(); } },
+                { "insights", n => { Insights = n.GetStringValue(); } },
+                { "intendedSettings", n => { IntendedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managedDeviceCount", n => { ManagedDeviceCount = n.GetIntValue(); } },
+                { "managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<VulnerableManagedDevice>(VulnerableManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

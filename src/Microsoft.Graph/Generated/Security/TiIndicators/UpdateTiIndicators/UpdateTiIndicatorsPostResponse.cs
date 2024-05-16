@@ -5,21 +5,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
+namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators
+{
     #pragma warning disable CS1591
-    public class UpdateTiIndicatorsPostResponse : BaseCollectionPaginationCountResponse, IParsable 
+    public class UpdateTiIndicatorsPostResponse : BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TiIndicator>? Value {
+        public List<TiIndicator>? Value
+        {
             get { return BackingStore?.Get<List<TiIndicator>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<TiIndicator> Value {
+        public List<TiIndicator> Value
+        {
             get { return BackingStore?.Get<List<TiIndicator>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
@@ -42,7 +45,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<TiIndicator>(TiIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<TiIndicator>(TiIndicator.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

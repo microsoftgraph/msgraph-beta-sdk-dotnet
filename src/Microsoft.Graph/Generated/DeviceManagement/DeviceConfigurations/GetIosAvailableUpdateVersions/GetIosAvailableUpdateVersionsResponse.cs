@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions {
+namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions
+{
     [Obsolete("This class is obsolete. Use GetIosAvailableUpdateVersionsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetIosAvailableUpdateVersionsResponse : GetIosAvailableUpdateVersionsGetResponse, IParsable 
+    public class GetIosAvailableUpdateVersionsResponse : GetIosAvailableUpdateVersionsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

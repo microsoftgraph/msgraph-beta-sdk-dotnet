@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class SiteSettings : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class SiteSettings : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The language tag for the language used on this site.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LanguageTag {
+        public string? LanguageTag
+        {
             get { return BackingStore?.Get<string?>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
 #nullable restore
 #else
-        public string LanguageTag {
+        public string LanguageTag
+        {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Indicates the time offset for the time zone of the site from Coordinated Universal Time (UTC).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TimeZone {
+        public string? TimeZone
+        {
             get { return BackingStore?.Get<string?>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
 #nullable restore
 #else
-        public string TimeZone {
+        public string TimeZone
+        {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
@@ -85,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"timeZone", n => { TimeZone = n.GetStringValue(); } },
+                { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "timeZone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
         /// <summary>

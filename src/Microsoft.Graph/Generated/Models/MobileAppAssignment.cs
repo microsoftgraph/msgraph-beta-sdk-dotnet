@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A class containing the properties used for Group Assignment of a Mobile App.
     /// </summary>
-    public class MobileAppAssignment : Entity, IParsable 
+    public class MobileAppAssignment : Entity, IParsable
     {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>
-        public InstallIntent? Intent {
+        public InstallIntent? Intent
+        {
             get { return BackingStore?.Get<InstallIntent?>("intent"); }
             set { BackingStore?.Set("intent", value); }
         }
         /// <summary>The settings for target assignment defined by the admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MobileAppAssignmentSettings? Settings {
+        public MobileAppAssignmentSettings? Settings
+        {
             get { return BackingStore?.Get<MobileAppAssignmentSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public MobileAppAssignmentSettings Settings {
+        public MobileAppAssignmentSettings Settings
+        {
             get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Represents source of assignment.</summary>
-        public DeviceAndAppManagementAssignmentSource? Source {
+        public DeviceAndAppManagementAssignmentSource? Source
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>The identifier of the source of the assignment. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceId {
+        public string? SourceId
+        {
             get { return BackingStore?.Get<string?>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
 #nullable restore
 #else
-        public string SourceId {
+        public string SourceId
+        {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
@@ -51,13 +58,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The target group assignment defined by the admin.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target {
+        public DeviceAndAppManagementAssignmentTarget? Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target {
+        public DeviceAndAppManagementAssignmentTarget Target
+        {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
@@ -80,11 +89,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"intent", n => { Intent = n.GetEnumValue<InstallIntent>(); } },
-                {"settings", n => { Settings = n.GetObjectValue<MobileAppAssignmentSettings>(MobileAppAssignmentSettings.CreateFromDiscriminatorValue); } },
-                {"source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
-                {"sourceId", n => { SourceId = n.GetStringValue(); } },
-                {"target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "intent", n => { Intent = n.GetEnumValue<InstallIntent>(); } },
+                { "settings", n => { Settings = n.GetObjectValue<MobileAppAssignmentSettings>(MobileAppAssignmentSettings.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetEnumValue<DeviceAndAppManagementAssignmentSource>(); } },
+                { "sourceId", n => { SourceId = n.GetStringValue(); } },
+                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

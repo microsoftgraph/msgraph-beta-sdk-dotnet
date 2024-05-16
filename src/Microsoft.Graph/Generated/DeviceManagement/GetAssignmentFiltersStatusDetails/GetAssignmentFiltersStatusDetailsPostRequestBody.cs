@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails {
+namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetails
+{
     #pragma warning disable CS1591
-    public class GetAssignmentFiltersStatusDetailsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class GetAssignmentFiltersStatusDetailsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The assignmentFilterIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AssignmentFilterIds {
+        public List<string>? AssignmentFilterIds
+        {
             get { return BackingStore?.Get<List<string>?>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
 #nullable restore
 #else
-        public List<string> AssignmentFilterIds {
+        public List<string> AssignmentFilterIds
+        {
             get { return BackingStore?.Get<List<string>>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         /// <summary>The managedDeviceId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ManagedDeviceId {
+        public string? ManagedDeviceId
+        {
             get { return BackingStore?.Get<string?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
 #nullable restore
 #else
-        public string ManagedDeviceId {
+        public string ManagedDeviceId
+        {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
@@ -48,37 +54,43 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         /// <summary>The payloadId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PayloadId {
+        public string? PayloadId
+        {
             get { return BackingStore?.Get<string?>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
 #nullable restore
 #else
-        public string PayloadId {
+        public string PayloadId
+        {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
 #endif
         /// <summary>The skip property</summary>
-        public int? Skip {
+        public int? Skip
+        {
             get { return BackingStore?.Get<int?>("skip"); }
             set { BackingStore?.Set("skip", value); }
         }
         /// <summary>The top property</summary>
-        public int? Top {
+        public int? Top
+        {
             get { return BackingStore?.Get<int?>("top"); }
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -109,12 +121,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
-                {"payloadId", n => { PayloadId = n.GetStringValue(); } },
-                {"skip", n => { Skip = n.GetIntValue(); } },
-                {"top", n => { Top = n.GetIntValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                { "payloadId", n => { PayloadId = n.GetStringValue(); } },
+                { "skip", n => { Skip = n.GetIntValue(); } },
+                { "top", n => { Top = n.GetIntValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class WindowsUpdateState : Entity, IParsable 
+    public class WindowsUpdateState : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Device display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceDisplayName {
+        public string? DeviceDisplayName
+        {
             get { return BackingStore?.Get<string?>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
 #nullable restore
 #else
-        public string DeviceDisplayName {
+        public string DeviceDisplayName
+        {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The id of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DeviceId {
+        public string? DeviceId
+        {
             get { return BackingStore?.Get<string?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
 #nullable restore
 #else
-        public string DeviceId {
+        public string DeviceId
+        {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
@@ -40,56 +45,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The current feature update version of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FeatureUpdateVersion {
+        public string? FeatureUpdateVersion
+        {
             get { return BackingStore?.Get<string?>("featureUpdateVersion"); }
             set { BackingStore?.Set("featureUpdateVersion", value); }
         }
 #nullable restore
 #else
-        public string FeatureUpdateVersion {
+        public string FeatureUpdateVersion
+        {
             get { return BackingStore?.Get<string>("featureUpdateVersion"); }
             set { BackingStore?.Set("featureUpdateVersion", value); }
         }
 #endif
         /// <summary>The date time that the Windows Update Agent did a successful scan.</summary>
-        public DateTimeOffset? LastScanDateTime {
+        public DateTimeOffset? LastScanDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastScanDateTime"); }
             set { BackingStore?.Set("lastScanDateTime", value); }
         }
         /// <summary>Last date time that the device sync with with Microsoft Intune.</summary>
-        public DateTimeOffset? LastSyncDateTime {
+        public DateTimeOffset? LastSyncDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The Quality Update Version of the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QualityUpdateVersion {
+        public string? QualityUpdateVersion
+        {
             get { return BackingStore?.Get<string?>("qualityUpdateVersion"); }
             set { BackingStore?.Set("qualityUpdateVersion", value); }
         }
 #nullable restore
 #else
-        public string QualityUpdateVersion {
+        public string QualityUpdateVersion
+        {
             get { return BackingStore?.Get<string>("qualityUpdateVersion"); }
             set { BackingStore?.Set("qualityUpdateVersion", value); }
         }
 #endif
         /// <summary>Windows update for business configuration device states</summary>
-        public WindowsUpdateStatus? Status {
+        public WindowsUpdateStatus? Status
+        {
             get { return BackingStore?.Get<WindowsUpdateStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The id of the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -97,13 +111,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User principal name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
@@ -126,15 +142,15 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
-                {"featureUpdateVersion", n => { FeatureUpdateVersion = n.GetStringValue(); } },
-                {"lastScanDateTime", n => { LastScanDateTime = n.GetDateTimeOffsetValue(); } },
-                {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                {"qualityUpdateVersion", n => { QualityUpdateVersion = n.GetStringValue(); } },
-                {"status", n => { Status = n.GetEnumValue<WindowsUpdateStatus>(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "deviceDisplayName", n => { DeviceDisplayName = n.GetStringValue(); } },
+                { "deviceId", n => { DeviceId = n.GetStringValue(); } },
+                { "featureUpdateVersion", n => { FeatureUpdateVersion = n.GetStringValue(); } },
+                { "lastScanDateTime", n => { LastScanDateTime = n.GetDateTimeOffsetValue(); } },
+                { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
+                { "qualityUpdateVersion", n => { QualityUpdateVersion = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetEnumValue<WindowsUpdateStatus>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>

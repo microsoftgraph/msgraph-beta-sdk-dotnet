@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.MicrosoftGraphManagedTenantsTenantSearch {
+namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.MicrosoftGraphManagedTenantsTenantSearch
+{
     [Obsolete("This class is obsolete. Use TenantSearchPostResponse instead.")]
     #pragma warning disable CS1591
-    public class TenantSearchResponse : TenantSearchPostResponse, IParsable 
+    public class TenantSearchResponse : TenantSearchPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

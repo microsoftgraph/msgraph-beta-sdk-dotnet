@@ -5,60 +5,70 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A ConfigManager policy summary.
     /// </summary>
-    public class ConfigManagerPolicySummary : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ConfigManagerPolicySummary : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The number of devices evaluated to be compliant by the policy.</summary>
-        public int? CompliantDeviceCount {
+        public int? CompliantDeviceCount
+        {
             get { return BackingStore?.Get<int?>("compliantDeviceCount"); }
             set { BackingStore?.Set("compliantDeviceCount", value); }
         }
         /// <summary>The number of devices that have have been remediated by the policy.</summary>
-        public int? EnforcedDeviceCount {
+        public int? EnforcedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("enforcedDeviceCount"); }
             set { BackingStore?.Set("enforcedDeviceCount", value); }
         }
         /// <summary>The number of devices that failed to be evaluated by the policy.</summary>
-        public int? FailedDeviceCount {
+        public int? FailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>The number of devices evaluated to be noncompliant by the policy.</summary>
-        public int? NonCompliantDeviceCount {
+        public int? NonCompliantDeviceCount
+        {
             get { return BackingStore?.Get<int?>("nonCompliantDeviceCount"); }
             set { BackingStore?.Set("nonCompliantDeviceCount", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The number of devices that have acknowledged the policy but are pending evaluation.</summary>
-        public int? PendingDeviceCount {
+        public int? PendingDeviceCount
+        {
             get { return BackingStore?.Get<int?>("pendingDeviceCount"); }
             set { BackingStore?.Set("pendingDeviceCount", value); }
         }
         /// <summary>The number of devices targeted by the policy.</summary>
-        public int? TargetedDeviceCount {
+        public int? TargetedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("targetedDeviceCount"); }
             set { BackingStore?.Set("targetedDeviceCount", value); }
         }
@@ -88,13 +98,13 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
-                {"enforcedDeviceCount", n => { EnforcedDeviceCount = n.GetIntValue(); } },
-                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                {"nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
-                {"targetedDeviceCount", n => { TargetedDeviceCount = n.GetIntValue(); } },
+                { "compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
+                { "enforcedDeviceCount", n => { EnforcedDeviceCount = n.GetIntValue(); } },
+                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                { "nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
+                { "targetedDeviceCount", n => { TargetedDeviceCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

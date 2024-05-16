@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken {
+namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterpriseSettings.CreateGooglePlayWebToken
+{
     #pragma warning disable CS1591
-    public class CreateGooglePlayWebTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CreateGooglePlayWebTokenPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>The parentUri property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParentUri {
+        public string? ParentUri
+        {
             get { return BackingStore?.Get<string?>("parentUri"); }
             set { BackingStore?.Set("parentUri", value); }
         }
 #nullable restore
 #else
-        public string ParentUri {
+        public string ParentUri
+        {
             get { return BackingStore?.Get<string>("parentUri"); }
             set { BackingStore?.Set("parentUri", value); }
         }
@@ -57,7 +61,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"parentUri", n => { ParentUri = n.GetStringValue(); } },
+                { "parentUri", n => { ParentUri = n.GetStringValue(); } },
             };
         }
         /// <summary>

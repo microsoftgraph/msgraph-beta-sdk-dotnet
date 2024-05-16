@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Singleton entity that acts as a container for all reports functionality.
     /// </summary>
-    public class DeviceManagementReports : Entity, IParsable 
+    public class DeviceManagementReports : Entity, IParsable
     {
         /// <summary>Entity representing the configuration of a cached report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementCachedReportConfiguration>? CachedReportConfigurations {
+        public List<DeviceManagementCachedReportConfiguration>? CachedReportConfigurations
+        {
             get { return BackingStore?.Get<List<DeviceManagementCachedReportConfiguration>?>("cachedReportConfigurations"); }
             set { BackingStore?.Set("cachedReportConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementCachedReportConfiguration> CachedReportConfigurations {
+        public List<DeviceManagementCachedReportConfiguration> CachedReportConfigurations
+        {
             get { return BackingStore?.Get<List<DeviceManagementCachedReportConfiguration>>("cachedReportConfigurations"); }
             set { BackingStore?.Set("cachedReportConfigurations", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Entity representing a job to export a report.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementExportJob>? ExportJobs {
+        public List<DeviceManagementExportJob>? ExportJobs
+        {
             get { return BackingStore?.Get<List<DeviceManagementExportJob>?>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementExportJob> ExportJobs {
+        public List<DeviceManagementExportJob> ExportJobs
+        {
             get { return BackingStore?.Get<List<DeviceManagementExportJob>>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
@@ -56,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"cachedReportConfigurations", n => { CachedReportConfigurations = n.GetCollectionOfObjectValues<DeviceManagementCachedReportConfiguration>(DeviceManagementCachedReportConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"exportJobs", n => { ExportJobs = n.GetCollectionOfObjectValues<DeviceManagementExportJob>(DeviceManagementExportJob.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "cachedReportConfigurations", n => { CachedReportConfigurations = n.GetCollectionOfObjectValues<DeviceManagementCachedReportConfiguration>(DeviceManagementCachedReportConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exportJobs", n => { ExportJobs = n.GetCollectionOfObjectValues<DeviceManagementExportJob>(DeviceManagementExportJob.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

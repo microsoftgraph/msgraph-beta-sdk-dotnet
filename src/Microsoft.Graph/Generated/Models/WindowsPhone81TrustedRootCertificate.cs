@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Windows Phone 8.1+ Trusted Root Certificate configuration profile
     /// </summary>
-    public class WindowsPhone81TrustedRootCertificate : DeviceConfiguration, IParsable 
+    public class WindowsPhone81TrustedRootCertificate : DeviceConfiguration, IParsable
     {
         /// <summary>File name to display in UI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CertFileName {
+        public string? CertFileName
+        {
             get { return BackingStore?.Get<string?>("certFileName"); }
             set { BackingStore?.Set("certFileName", value); }
         }
 #nullable restore
 #else
-        public string CertFileName {
+        public string CertFileName
+        {
             get { return BackingStore?.Get<string>("certFileName"); }
             set { BackingStore?.Set("certFileName", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Trusted Root Certificate</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public byte[]? TrustedRootCertificate {
+        public byte[]? TrustedRootCertificate
+        {
             get { return BackingStore?.Get<byte[]?>("trustedRootCertificate"); }
             set { BackingStore?.Set("trustedRootCertificate", value); }
         }
 #nullable restore
 #else
-        public byte[] TrustedRootCertificate {
+        public byte[] TrustedRootCertificate
+        {
             get { return BackingStore?.Get<byte[]>("trustedRootCertificate"); }
             set { BackingStore?.Set("trustedRootCertificate", value); }
         }
@@ -63,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"certFileName", n => { CertFileName = n.GetStringValue(); } },
-                {"trustedRootCertificate", n => { TrustedRootCertificate = n.GetByteArrayValue(); } },
+                { "certFileName", n => { CertFileName = n.GetStringValue(); } },
+                { "trustedRootCertificate", n => { TrustedRootCertificate = n.GetByteArrayValue(); } },
             };
         }
         /// <summary>

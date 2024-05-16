@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Android Device Owner Global Proxy Auto Config.
     /// </summary>
-    public class AndroidDeviceOwnerGlobalProxyAutoConfig : AndroidDeviceOwnerGlobalProxy, IParsable 
+    public class AndroidDeviceOwnerGlobalProxyAutoConfig : AndroidDeviceOwnerGlobalProxy, IParsable
     {
         /// <summary>The proxy auto-config URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProxyAutoConfigURL {
+        public string? ProxyAutoConfigURL
+        {
             get { return BackingStore?.Get<string?>("proxyAutoConfigURL"); }
             set { BackingStore?.Set("proxyAutoConfigURL", value); }
         }
 #nullable restore
 #else
-        public string ProxyAutoConfigURL {
+        public string ProxyAutoConfigURL
+        {
             get { return BackingStore?.Get<string>("proxyAutoConfigURL"); }
             set { BackingStore?.Set("proxyAutoConfigURL", value); }
         }
@@ -49,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"proxyAutoConfigURL", n => { ProxyAutoConfigURL = n.GetStringValue(); } },
+                { "proxyAutoConfigURL", n => { ProxyAutoConfigURL = n.GetStringValue(); } },
             };
         }
         /// <summary>

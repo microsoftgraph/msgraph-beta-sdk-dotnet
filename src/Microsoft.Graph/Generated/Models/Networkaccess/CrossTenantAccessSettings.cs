@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class CrossTenantAccessSettings : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class CrossTenantAccessSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The networkPacketTaggingStatus property</summary>
-        public Status? NetworkPacketTaggingStatus {
+        public Status? NetworkPacketTaggingStatus
+        {
             get { return BackingStore?.Get<Status?>("networkPacketTaggingStatus"); }
             set { BackingStore?.Set("networkPacketTaggingStatus", value); }
         }
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"networkPacketTaggingStatus", n => { NetworkPacketTaggingStatus = n.GetEnumValue<Status>(); } },
+                { "networkPacketTaggingStatus", n => { NetworkPacketTaggingStatus = n.GetEnumValue<Status>(); } },
             };
         }
         /// <summary>

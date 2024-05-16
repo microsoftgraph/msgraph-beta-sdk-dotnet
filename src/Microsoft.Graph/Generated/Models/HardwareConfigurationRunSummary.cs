@@ -4,74 +4,88 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for the run summary of a hardware configuration script.
     /// </summary>
-    public class HardwareConfigurationRunSummary : Entity, IParsable 
+    public class HardwareConfigurationRunSummary : Entity, IParsable
     {
         /// <summary>Number of devices for which hardware configuration state is error</summary>
-        public int? ErrorDeviceCount {
+        public int? ErrorDeviceCount
+        {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }
             set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Number of users for which hardware configuration state is error</summary>
-        public int? ErrorUserCount {
+        public int? ErrorUserCount
+        {
             get { return BackingStore?.Get<int?>("errorUserCount"); }
             set { BackingStore?.Set("errorUserCount", value); }
         }
         /// <summary>Number of devices for which hardware configuration found an issue</summary>
-        public int? FailedDeviceCount {
+        public int? FailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Number of users for which hardware configuration found an issue</summary>
-        public int? FailedUserCount {
+        public int? FailedUserCount
+        {
             get { return BackingStore?.Get<int?>("failedUserCount"); }
             set { BackingStore?.Set("failedUserCount", value); }
         }
         /// <summary>Last run time for the configuration across all devices</summary>
-        public DateTimeOffset? LastRunDateTime {
+        public DateTimeOffset? LastRunDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRunDateTime"); }
             set { BackingStore?.Set("lastRunDateTime", value); }
         }
         /// <summary>Number of devices for which hardware configuration state is not applicable</summary>
-        public int? NotApplicableDeviceCount {
+        public int? NotApplicableDeviceCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
             set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>Number of users for which hardware configuration state is not applicable</summary>
-        public int? NotApplicableUserCount {
+        public int? NotApplicableUserCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableUserCount"); }
             set { BackingStore?.Set("notApplicableUserCount", value); }
         }
         /// <summary>Number of devices for which hardware configuration is in pending state</summary>
-        public int? PendingDeviceCount {
+        public int? PendingDeviceCount
+        {
             get { return BackingStore?.Get<int?>("pendingDeviceCount"); }
             set { BackingStore?.Set("pendingDeviceCount", value); }
         }
         /// <summary>Number of users for which hardware configuration is in pending state</summary>
-        public int? PendingUserCount {
+        public int? PendingUserCount
+        {
             get { return BackingStore?.Get<int?>("pendingUserCount"); }
             set { BackingStore?.Set("pendingUserCount", value); }
         }
         /// <summary>Number of devices for which hardware configured without any issue</summary>
-        public int? SuccessfulDeviceCount {
+        public int? SuccessfulDeviceCount
+        {
             get { return BackingStore?.Get<int?>("successfulDeviceCount"); }
             set { BackingStore?.Set("successfulDeviceCount", value); }
         }
         /// <summary>Number of users for which hardware configured without any issue</summary>
-        public int? SuccessfulUserCount {
+        public int? SuccessfulUserCount
+        {
             get { return BackingStore?.Get<int?>("successfulUserCount"); }
             set { BackingStore?.Set("successfulUserCount", value); }
         }
         /// <summary>Number of devices for which hardware configuration state is unknown</summary>
-        public int? UnknownDeviceCount {
+        public int? UnknownDeviceCount
+        {
             get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>Number of users for which hardware configuration state is unknown</summary>
-        public int? UnknownUserCount {
+        public int? UnknownUserCount
+        {
             get { return BackingStore?.Get<int?>("unknownUserCount"); }
             set { BackingStore?.Set("unknownUserCount", value); }
         }
@@ -93,19 +107,19 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
-                {"errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
-                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                {"failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
-                {"lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
-                {"pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
-                {"pendingUserCount", n => { PendingUserCount = n.GetIntValue(); } },
-                {"successfulDeviceCount", n => { SuccessfulDeviceCount = n.GetIntValue(); } },
-                {"successfulUserCount", n => { SuccessfulUserCount = n.GetIntValue(); } },
-                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
-                {"unknownUserCount", n => { UnknownUserCount = n.GetIntValue(); } },
+                { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                { "errorUserCount", n => { ErrorUserCount = n.GetIntValue(); } },
+                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                { "failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
+                { "lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                { "notApplicableUserCount", n => { NotApplicableUserCount = n.GetIntValue(); } },
+                { "pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
+                { "pendingUserCount", n => { PendingUserCount = n.GetIntValue(); } },
+                { "successfulDeviceCount", n => { SuccessfulDeviceCount = n.GetIntValue(); } },
+                { "successfulUserCount", n => { SuccessfulUserCount = n.GetIntValue(); } },
+                { "unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
+                { "unknownUserCount", n => { UnknownUserCount = n.GetIntValue(); } },
             };
         }
         /// <summary>

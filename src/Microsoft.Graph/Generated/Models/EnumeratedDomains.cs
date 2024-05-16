@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class EnumeratedDomains : ValidatingDomains, IParsable 
+    public class EnumeratedDomains : ValidatingDomains, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of federated or managed root domains that Microsoft Entra ID validates.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DomainNames {
+        public List<string>? DomainNames
+        {
             get { return BackingStore?.Get<List<string>?>("domainNames"); }
             set { BackingStore?.Set("domainNames", value); }
         }
 #nullable restore
 #else
-        public List<string> DomainNames {
+        public List<string> DomainNames
+        {
             get { return BackingStore?.Get<List<string>>("domainNames"); }
             set { BackingStore?.Set("domainNames", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"domainNames", n => { DomainNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "domainNames", n => { DomainNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

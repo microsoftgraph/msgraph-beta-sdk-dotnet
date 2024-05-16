@@ -4,46 +4,53 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// A Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs
     /// </summary>
-    public class DeviceManagementDomainJoinConnector : Entity, IParsable 
+    public class DeviceManagementDomainJoinConnector : Entity, IParsable
     {
         /// <summary>The connector display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>Last time connector contacted Intune.</summary>
-        public DateTimeOffset? LastConnectionDateTime {
+        public DateTimeOffset? LastConnectionDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastConnectionDateTime"); }
             set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
         /// <summary>The ODJ request states.</summary>
-        public DeviceManagementDomainJoinConnectorState? State {
+        public DeviceManagementDomainJoinConnectorState? State
+        {
             get { return BackingStore?.Get<DeviceManagementDomainJoinConnectorState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The version of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version {
+        public string? Version
+        {
             get { return BackingStore?.Get<string?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
 #nullable restore
 #else
-        public string Version {
+        public string Version
+        {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
@@ -66,10 +73,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"state", n => { State = n.GetEnumValue<DeviceManagementDomainJoinConnectorState>(); } },
-                {"version", n => { Version = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
+                { "state", n => { State = n.GetEnumValue<DeviceManagementDomainJoinConnectorState>(); } },
+                { "version", n => { Version = n.GetStringValue(); } },
             };
         }
         /// <summary>

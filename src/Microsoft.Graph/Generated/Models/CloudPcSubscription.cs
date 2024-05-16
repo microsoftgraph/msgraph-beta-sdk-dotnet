@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcSubscription : Entity, IParsable 
+    public class CloudPcSubscription : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId {
+        public string? SubscriptionId
+        {
             get { return BackingStore?.Get<string?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionId {
+        public string SubscriptionId
+        {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionName {
+        public string? SubscriptionName
+        {
             get { return BackingStore?.Get<string?>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
 #nullable restore
 #else
-        public string SubscriptionName {
+        public string SubscriptionName
+        {
             get { return BackingStore?.Get<string>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
-                {"subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
+                { "subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
+                { "subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
             };
         }
         /// <summary>

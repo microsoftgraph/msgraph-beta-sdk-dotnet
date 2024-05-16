@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class BusinessScenarioGroupTarget : BusinessScenarioTaskTargetBase, IParsable 
+    public class BusinessScenarioGroupTarget : BusinessScenarioTaskTargetBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The unique identifier for the group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId {
+        public string? GroupId
+        {
             get { return BackingStore?.Get<string?>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
 #nullable restore
 #else
-        public string GroupId {
+        public string GroupId
+        {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"groupId", n => { GroupId = n.GetStringValue(); } },
+                { "groupId", n => { GroupId = n.GetStringValue(); } },
             };
         }
         /// <summary>

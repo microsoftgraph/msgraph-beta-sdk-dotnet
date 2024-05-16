@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class MessageRecipient : Entity, IParsable 
+    public class MessageRecipient : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The deliveryStatus property</summary>
-        public MessageStatus? DeliveryStatus {
+        public MessageStatus? DeliveryStatus
+        {
             get { return BackingStore?.Get<MessageStatus?>("deliveryStatus"); }
             set { BackingStore?.Set("deliveryStatus", value); }
         }
         /// <summary>The events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MessageEvent>? Events {
+        public List<MessageEvent>? Events
+        {
             get { return BackingStore?.Get<List<MessageEvent>?>("events"); }
             set { BackingStore?.Set("events", value); }
         }
 #nullable restore
 #else
-        public List<MessageEvent> Events {
+        public List<MessageEvent> Events
+        {
             get { return BackingStore?.Get<List<MessageEvent>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The recipientEmail property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecipientEmail {
+        public string? RecipientEmail
+        {
             get { return BackingStore?.Get<string?>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
 #nullable restore
 #else
-        public string RecipientEmail {
+        public string RecipientEmail
+        {
             get { return BackingStore?.Get<string>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"deliveryStatus", n => { DeliveryStatus = n.GetEnumValue<MessageStatus>(); } },
-                {"events", n => { Events = n.GetCollectionOfObjectValues<MessageEvent>(MessageEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
+                { "deliveryStatus", n => { DeliveryStatus = n.GetEnumValue<MessageStatus>(); } },
+                { "events", n => { Events = n.GetCollectionOfObjectValues<MessageEvent>(MessageEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
             };
         }
         /// <summary>

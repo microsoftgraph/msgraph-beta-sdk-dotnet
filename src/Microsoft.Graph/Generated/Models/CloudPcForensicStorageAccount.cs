@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class CloudPcForensicStorageAccount : Entity, IParsable 
+    public class CloudPcForensicStorageAccount : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of the storage account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageAccountId {
+        public string? StorageAccountId
+        {
             get { return BackingStore?.Get<string?>("storageAccountId"); }
             set { BackingStore?.Set("storageAccountId", value); }
         }
 #nullable restore
 #else
-        public string StorageAccountId {
+        public string StorageAccountId
+        {
             get { return BackingStore?.Get<string>("storageAccountId"); }
             set { BackingStore?.Set("storageAccountId", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The name of the storage account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? StorageAccountName {
+        public string? StorageAccountName
+        {
             get { return BackingStore?.Get<string?>("storageAccountName"); }
             set { BackingStore?.Set("storageAccountName", value); }
         }
 #nullable restore
 #else
-        public string StorageAccountName {
+        public string StorageAccountName
+        {
             get { return BackingStore?.Get<string>("storageAccountName"); }
             set { BackingStore?.Set("storageAccountName", value); }
         }
@@ -55,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"storageAccountId", n => { StorageAccountId = n.GetStringValue(); } },
-                {"storageAccountName", n => { StorageAccountName = n.GetStringValue(); } },
+                { "storageAccountId", n => { StorageAccountId = n.GetStringValue(); } },
+                { "storageAccountName", n => { StorageAccountName = n.GetStringValue(); } },
             };
         }
         /// <summary>

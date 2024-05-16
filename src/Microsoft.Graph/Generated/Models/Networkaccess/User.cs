@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Networkaccess {
+namespace Microsoft.Graph.Beta.Models.Networkaccess
+{
     #pragma warning disable CS1591
-    public class User : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class User : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,51 +22,59 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>User display Name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
         /// <summary>The date and time of the most recent access.</summary>
-        public DateTimeOffset? LastAccessDateTime {
+        public DateTimeOffset? LastAccessDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAccessDateTime"); }
             set { BackingStore?.Set("lastAccessDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>The trafficType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
         }
         /// <summary>The ID for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -72,19 +82,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         /// <summary>A unique identifier that is associated with a user in a system or directory. Typically, this value is an email address that is used for user authentication and identification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserPrincipalName {
+        public string? UserPrincipalName
+        {
             get { return BackingStore?.Get<string?>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #nullable restore
 #else
-        public string UserPrincipalName {
+        public string UserPrincipalName
+        {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
 #endif
         /// <summary>The userType property</summary>
-        public Microsoft.Graph.Beta.Models.Networkaccess.UserType? UserType {
+        public Microsoft.Graph.Beta.Models.Networkaccess.UserType? UserType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.UserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
@@ -114,13 +127,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"userType", n => { UserType = n.GetEnumValue<UserType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
+                { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                { "userType", n => { UserType = n.GetEnumValue<UserType>(); } },
             };
         }
         /// <summary>

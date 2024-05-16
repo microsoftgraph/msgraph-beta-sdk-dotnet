@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class AlertTemplate : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class AlertTemplate : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Category assigned to the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category {
+        public string? Category
+        {
             get { return BackingStore?.Get<string?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
 #nullable restore
 #else
-        public string Category {
+        public string Category
+        {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Description of the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description {
+        public string? Description
+        {
             get { return BackingStore?.Get<string?>("description"); }
             set { BackingStore?.Set("description", value); }
         }
 #nullable restore
 #else
-        public string Description {
+        public string Description
+        {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Which asset or assets were impacted based on the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImpactedAsset>? ImpactedAssets {
+        public List<ImpactedAsset>? ImpactedAssets
+        {
             get { return BackingStore?.Get<List<ImpactedAsset>?>("impactedAssets"); }
             set { BackingStore?.Set("impactedAssets", value); }
         }
 #nullable restore
 #else
-        public List<ImpactedAsset> ImpactedAssets {
+        public List<ImpactedAsset> ImpactedAssets
+        {
             get { return BackingStore?.Get<List<ImpactedAsset>>("impactedAssets"); }
             set { BackingStore?.Set("impactedAssets", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>MITRE technique assigned to the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MitreTechniques {
+        public List<string>? MitreTechniques
+        {
             get { return BackingStore?.Get<List<string>?>("mitreTechniques"); }
             set { BackingStore?.Set("mitreTechniques", value); }
         }
 #nullable restore
 #else
-        public List<string> MitreTechniques {
+        public List<string> MitreTechniques
+        {
             get { return BackingStore?.Get<List<string>>("mitreTechniques"); }
             set { BackingStore?.Set("mitreTechniques", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -90,32 +102,37 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Recommended actions to mitigate the threat related to the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RecommendedActions {
+        public string? RecommendedActions
+        {
             get { return BackingStore?.Get<string?>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
 #nullable restore
 #else
-        public string RecommendedActions {
+        public string RecommendedActions
+        {
             get { return BackingStore?.Get<string>("recommendedActions"); }
             set { BackingStore?.Set("recommendedActions", value); }
         }
 #endif
         /// <summary>The severity property</summary>
-        public AlertSeverity? Severity {
+        public AlertSeverity? Severity
+        {
             get { return BackingStore?.Get<AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>Name of the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title {
+        public string? Title
+        {
             get { return BackingStore?.Get<string?>("title"); }
             set { BackingStore?.Set("title", value); }
         }
 #nullable restore
 #else
-        public string Title {
+        public string Title
+        {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
@@ -146,14 +163,14 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"category", n => { Category = n.GetStringValue(); } },
-                {"description", n => { Description = n.GetStringValue(); } },
-                {"impactedAssets", n => { ImpactedAssets = n.GetCollectionOfObjectValues<ImpactedAsset>(ImpactedAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
-                {"severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
-                {"title", n => { Title = n.GetStringValue(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "impactedAssets", n => { ImpactedAssets = n.GetCollectionOfObjectValues<ImpactedAsset>(ImpactedAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
+                { "severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>

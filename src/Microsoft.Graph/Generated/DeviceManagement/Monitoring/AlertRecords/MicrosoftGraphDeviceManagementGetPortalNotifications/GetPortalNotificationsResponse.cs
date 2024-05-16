@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications {
+namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.MicrosoftGraphDeviceManagementGetPortalNotifications
+{
     [Obsolete("This class is obsolete. Use GetPortalNotificationsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetPortalNotificationsResponse : GetPortalNotificationsGetResponse, IParsable 
+    public class GetPortalNotificationsResponse : GetPortalNotificationsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>

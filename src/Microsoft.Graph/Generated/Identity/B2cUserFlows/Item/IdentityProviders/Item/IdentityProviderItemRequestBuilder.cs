@@ -6,11 +6,12 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System;
-namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item {
+namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.Item
+{
     /// <summary>
     /// Builds and executes requests for operations under \identity\b2cUserFlows\{b2cIdentityUserFlow-id}\identityProviders\{identityProvider-id}
     /// </summary>
-    public class IdentityProviderItemRequestBuilder : BaseRequestBuilder 
+    public class IdentityProviderItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the collection of identityContainer entities.</summary>
         public RefRequestBuilder Ref

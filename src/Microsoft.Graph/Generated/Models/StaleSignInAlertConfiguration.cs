@@ -4,13 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class StaleSignInAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable 
+    public class StaleSignInAlertConfiguration : UnifiedRoleManagementAlertConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of days to look back from current timestamp within which the account hasn&apos;t signed in.</summary>
-        public TimeSpan? Duration {
+        public TimeSpan? Duration
+        {
             get { return BackingStore?.Get<TimeSpan?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"duration", n => { Duration = n.GetTimeSpanValue(); } },
+                { "duration", n => { Duration = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

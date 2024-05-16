@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class AdministrativeUnitProvisioningFlow : ProvisioningFlow, IParsable 
+    public class AdministrativeUnitProvisioningFlow : ProvisioningFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The creationOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdminUnitCreationOptions? CreationOptions {
+        public AdminUnitCreationOptions? CreationOptions
+        {
             get { return BackingStore?.Get<AdminUnitCreationOptions?>("creationOptions"); }
             set { BackingStore?.Set("creationOptions", value); }
         }
 #nullable restore
 #else
-        public AdminUnitCreationOptions CreationOptions {
+        public AdminUnitCreationOptions CreationOptions
+        {
             get { return BackingStore?.Get<AdminUnitCreationOptions>("creationOptions"); }
             set { BackingStore?.Set("creationOptions", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"creationOptions", n => { CreationOptions = n.GetObjectValue<AdminUnitCreationOptions>(AdminUnitCreationOptions.CreateFromDiscriminatorValue); } },
+                { "creationOptions", n => { CreationOptions = n.GetObjectValue<AdminUnitCreationOptions>(AdminUnitCreationOptions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

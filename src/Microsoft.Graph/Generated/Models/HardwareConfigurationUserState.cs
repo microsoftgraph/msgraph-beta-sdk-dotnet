@@ -4,57 +4,67 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Contains properties for User state of the hardware configuration
     /// </summary>
-    public class HardwareConfigurationUserState : Entity, IParsable 
+    public class HardwareConfigurationUserState : Entity, IParsable
     {
         /// <summary>Error device count for specific user.</summary>
-        public int? ErrorDeviceCount {
+        public int? ErrorDeviceCount
+        {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }
             set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Failed device count for specific user.</summary>
-        public int? FailedDeviceCount {
+        public int? FailedDeviceCount
+        {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
             set { BackingStore?.Set("failedDeviceCount", value); }
         }
         /// <summary>Last timestamp when the hardware configuration executed</summary>
-        public DateTimeOffset? LastStateUpdateDateTime {
+        public DateTimeOffset? LastStateUpdateDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("lastStateUpdateDateTime"); }
             set { BackingStore?.Set("lastStateUpdateDateTime", value); }
         }
         /// <summary>Not applicable device count for specific user.</summary>
-        public int? NotApplicableDeviceCount {
+        public int? NotApplicableDeviceCount
+        {
             get { return BackingStore?.Get<int?>("notApplicableDeviceCount"); }
             set { BackingStore?.Set("notApplicableDeviceCount", value); }
         }
         /// <summary>Pending device count for specific user.</summary>
-        public int? PendingDeviceCount {
+        public int? PendingDeviceCount
+        {
             get { return BackingStore?.Get<int?>("pendingDeviceCount"); }
             set { BackingStore?.Set("pendingDeviceCount", value); }
         }
         /// <summary>Success device count for specific user.</summary>
-        public int? SuccessfulDeviceCount {
+        public int? SuccessfulDeviceCount
+        {
             get { return BackingStore?.Get<int?>("successfulDeviceCount"); }
             set { BackingStore?.Set("successfulDeviceCount", value); }
         }
         /// <summary>Unknown device count for specific user.</summary>
-        public int? UnknownDeviceCount {
+        public int? UnknownDeviceCount
+        {
             get { return BackingStore?.Get<int?>("unknownDeviceCount"); }
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>User Principal Name (UPN).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Upn {
+        public string? Upn
+        {
             get { return BackingStore?.Get<string?>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
 #nullable restore
 #else
-        public string Upn {
+        public string Upn
+        {
             get { return BackingStore?.Get<string>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
@@ -62,13 +72,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User Email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserEmail {
+        public string? UserEmail
+        {
             get { return BackingStore?.Get<string?>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
 #nullable restore
 #else
-        public string UserEmail {
+        public string UserEmail
+        {
             get { return BackingStore?.Get<string>("userEmail"); }
             set { BackingStore?.Set("userEmail", value); }
         }
@@ -76,13 +88,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>User name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserName {
+        public string? UserName
+        {
             get { return BackingStore?.Get<string?>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
 #nullable restore
 #else
-        public string UserName {
+        public string UserName
+        {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
@@ -105,16 +119,16 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
-                {"failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
-                {"lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
-                {"pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
-                {"successfulDeviceCount", n => { SuccessfulDeviceCount = n.GetIntValue(); } },
-                {"unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
-                {"upn", n => { Upn = n.GetStringValue(); } },
-                {"userEmail", n => { UserEmail = n.GetStringValue(); } },
-                {"userName", n => { UserName = n.GetStringValue(); } },
+                { "errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
+                { "failedDeviceCount", n => { FailedDeviceCount = n.GetIntValue(); } },
+                { "lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                { "notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },
+                { "pendingDeviceCount", n => { PendingDeviceCount = n.GetIntValue(); } },
+                { "successfulDeviceCount", n => { SuccessfulDeviceCount = n.GetIntValue(); } },
+                { "unknownDeviceCount", n => { UnknownDeviceCount = n.GetIntValue(); } },
+                { "upn", n => { Upn = n.GetStringValue(); } },
+                { "userEmail", n => { UserEmail = n.GetStringValue(); } },
+                { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
         /// <summary>

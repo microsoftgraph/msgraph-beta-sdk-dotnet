@@ -4,26 +4,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AwsPolicy : Entity, IParsable 
+    public class AwsPolicy : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The awsPolicyType property</summary>
-        public Microsoft.Graph.Beta.Models.AwsPolicyType? AwsPolicyType {
+        public Microsoft.Graph.Beta.Models.AwsPolicyType? AwsPolicyType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsPolicyType?>("awsPolicyType"); }
             set { BackingStore?.Set("awsPolicyType", value); }
         }
         /// <summary>The display name for the AWS policy. Read-only. Supports $filter and (eq,contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName {
+        public string? DisplayName
+        {
             get { return BackingStore?.Get<string?>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
 #nullable restore
 #else
-        public string DisplayName {
+        public string DisplayName
+        {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
@@ -31,13 +35,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The base64 encoded identifier for the AWS policy as defined by AWS. Read-only. Alternate key. Supports $filter and eq.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId {
+        public string? ExternalId
+        {
             get { return BackingStore?.Get<string?>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
 #nullable restore
 #else
-        public string ExternalId {
+        public string ExternalId
+        {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
@@ -60,9 +66,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"awsPolicyType", n => { AwsPolicyType = n.GetEnumValue<AwsPolicyType>(); } },
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalId", n => { ExternalId = n.GetStringValue(); } },
+                { "awsPolicyType", n => { AwsPolicyType = n.GetEnumValue<AwsPolicyType>(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "externalId", n => { ExternalId = n.GetStringValue(); } },
             };
         }
         /// <summary>

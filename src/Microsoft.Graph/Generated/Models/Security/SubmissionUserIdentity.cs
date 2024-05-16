@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.Security {
+namespace Microsoft.Graph.Beta.Models.Security
+{
     #pragma warning disable CS1591
-    public class SubmissionUserIdentity : Microsoft.Graph.Beta.Models.Identity, IParsable 
+    public class SubmissionUserIdentity : Microsoft.Graph.Beta.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The email of user who is making the submission when logged in (delegated token case).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email {
+        public string? Email
+        {
             get { return BackingStore?.Get<string?>("email"); }
             set { BackingStore?.Set("email", value); }
         }
 #nullable restore
 #else
-        public string Email {
+        public string Email
+        {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"email", n => { Email = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetStringValue(); } },
             };
         }
         /// <summary>

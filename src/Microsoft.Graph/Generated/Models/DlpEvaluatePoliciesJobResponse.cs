@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DlpEvaluatePoliciesJobResponse : JobResponseBase, IParsable 
+    public class DlpEvaluatePoliciesJobResponse : JobResponseBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DlpPoliciesJobResult? Result {
+        public DlpPoliciesJobResult? Result
+        {
             get { return BackingStore?.Get<DlpPoliciesJobResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #nullable restore
 #else
-        public DlpPoliciesJobResult Result {
+        public DlpPoliciesJobResult Result
+        {
             get { return BackingStore?.Get<DlpPoliciesJobResult>("result"); }
             set { BackingStore?.Set("result", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"result", n => { Result = n.GetObjectValue<DlpPoliciesJobResult>(DlpPoliciesJobResult.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<DlpPoliciesJobResult>(DlpPoliciesJobResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

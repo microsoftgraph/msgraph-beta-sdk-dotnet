@@ -5,19 +5,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Blocked actions on the company portal as per platform and device ownership types
     /// </summary>
-    public class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Action on a device that can be executed in the Company Portal</summary>
-        public CompanyPortalAction? Action {
+        public CompanyPortalAction? Action
+        {
             get { return BackingStore?.Get<CompanyPortalAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -26,24 +29,28 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
         /// <summary>Owner type of device.</summary>
-        public Microsoft.Graph.Beta.Models.OwnerType? OwnerType {
+        public Microsoft.Graph.Beta.Models.OwnerType? OwnerType
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OwnerType?>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>Supported platform types.</summary>
-        public DevicePlatformType? Platform {
+        public DevicePlatformType? Platform
+        {
             get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
@@ -73,10 +80,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"action", n => { Action = n.GetEnumValue<CompanyPortalAction>(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
-                {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                { "action", n => { Action = n.GetEnumValue<CompanyPortalAction>(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
             };
         }
         /// <summary>

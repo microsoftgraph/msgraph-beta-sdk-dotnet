@@ -4,22 +4,25 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     /// <summary>
     /// Integer Setting Value Template
     /// </summary>
-    public class DeviceManagementConfigurationIntegerSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable 
+    public class DeviceManagementConfigurationIntegerSettingValueTemplate : DeviceManagementConfigurationSimpleSettingValueTemplate, IParsable
     {
         /// <summary>Integer Setting Value Default Template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate? DefaultValue {
+        public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate? DefaultValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate?>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate DefaultValue {
+        public DeviceManagementConfigurationIntegerSettingValueDefaultTemplate DefaultValue
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
@@ -27,13 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Recommended value definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RecommendedValueDefinition {
+        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RecommendedValueDefinition
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate?>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RecommendedValueDefinition {
+        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RecommendedValueDefinition
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("recommendedValueDefinition"); }
             set { BackingStore?.Set("recommendedValueDefinition", value); }
         }
@@ -41,13 +46,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Required value definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RequiredValueDefinition {
+        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate? RequiredValueDefinition
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate?>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RequiredValueDefinition {
+        public DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate RequiredValueDefinition
+        {
             get { return BackingStore?.Get<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>("requiredValueDefinition"); }
             set { BackingStore?.Set("requiredValueDefinition", value); }
         }
@@ -77,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>(DeviceManagementConfigurationIntegerSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
-                {"recommendedValueDefinition", n => { RecommendedValueDefinition = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
-                {"requiredValueDefinition", n => { RequiredValueDefinition = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
+                { "defaultValue", n => { DefaultValue = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefaultTemplate>(DeviceManagementConfigurationIntegerSettingValueDefaultTemplate.CreateFromDiscriminatorValue); } },
+                { "recommendedValueDefinition", n => { RecommendedValueDefinition = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
+                { "requiredValueDefinition", n => { RequiredValueDefinition = n.GetObjectValue<DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate>(DeviceManagementConfigurationIntegerSettingValueDefinitionTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

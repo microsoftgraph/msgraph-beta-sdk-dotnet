@@ -4,36 +4,42 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
+namespace Microsoft.Graph.Beta.Models.WindowsUpdates
+{
     #pragma warning disable CS1591
-    public class ComplianceChange : Microsoft.Graph.Beta.Models.Entity, IParsable 
+    public class ComplianceChange : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when a compliance change was created.</summary>
-        public DateTimeOffset? CreatedDateTime {
+        public DateTimeOffset? CreatedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>True indicates that a compliance change is revoked, preventing further application. Revoking a compliance change is a final action.</summary>
-        public bool? IsRevoked {
+        public bool? IsRevoked
+        {
             get { return BackingStore?.Get<bool?>("isRevoked"); }
             set { BackingStore?.Set("isRevoked", value); }
         }
         /// <summary>The date and time when the compliance change was revoked.</summary>
-        public DateTimeOffset? RevokedDateTime {
+        public DateTimeOffset? RevokedDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("revokedDateTime"); }
             set { BackingStore?.Set("revokedDateTime", value); }
         }
         /// <summary>The policy this compliance change is a member of.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy? UpdatePolicy {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy? UpdatePolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy?>("updatePolicy"); }
             set { BackingStore?.Set("updatePolicy", value); }
         }
 #nullable restore
 #else
-        public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy UpdatePolicy {
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy UpdatePolicy
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>("updatePolicy"); }
             set { BackingStore?.Set("updatePolicy", value); }
         }
@@ -61,10 +67,10 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"isRevoked", n => { IsRevoked = n.GetBoolValue(); } },
-                {"revokedDateTime", n => { RevokedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"updatePolicy", n => { UpdatePolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue); } },
+                { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "isRevoked", n => { IsRevoked = n.GetBoolValue(); } },
+                { "revokedDateTime", n => { RevokedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "updatePolicy", n => { UpdatePolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatePolicy.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

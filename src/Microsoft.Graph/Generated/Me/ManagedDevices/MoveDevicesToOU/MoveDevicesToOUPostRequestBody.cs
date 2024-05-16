@@ -5,13 +5,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Me.ManagedDevices.MoveDevicesToOU {
+namespace Microsoft.Graph.Beta.Me.ManagedDevices.MoveDevicesToOU
+{
     #pragma warning disable CS1591
-    public class MoveDevicesToOUPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class MoveDevicesToOUPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
@@ -20,13 +22,15 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.MoveDevicesToOU {
         /// <summary>The deviceIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Guid?>? DeviceIds {
+        public List<Guid?>? DeviceIds
+        {
             get { return BackingStore?.Get<List<Guid?>?>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
 #nullable restore
 #else
-        public List<Guid?> DeviceIds {
+        public List<Guid?> DeviceIds
+        {
             get { return BackingStore?.Get<List<Guid?>>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
@@ -34,13 +38,15 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.MoveDevicesToOU {
         /// <summary>The organizationalUnitPath property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OrganizationalUnitPath {
+        public string? OrganizationalUnitPath
+        {
             get { return BackingStore?.Get<string?>("organizationalUnitPath"); }
             set { BackingStore?.Set("organizationalUnitPath", value); }
         }
 #nullable restore
 #else
-        public string OrganizationalUnitPath {
+        public string OrganizationalUnitPath
+        {
             get { return BackingStore?.Get<string>("organizationalUnitPath"); }
             set { BackingStore?.Set("organizationalUnitPath", value); }
         }
@@ -71,8 +77,8 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.MoveDevicesToOU {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
-                {"organizationalUnitPath", n => { OrganizationalUnitPath = n.GetStringValue(); } },
+                { "deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                { "organizationalUnitPath", n => { OrganizationalUnitPath = n.GetStringValue(); } },
             };
         }
         /// <summary>

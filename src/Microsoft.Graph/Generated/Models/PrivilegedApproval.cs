@@ -4,31 +4,36 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class PrivilegedApproval : Entity, IParsable 
+    public class PrivilegedApproval : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The approvalDuration property</summary>
-        public TimeSpan? ApprovalDuration {
+        public TimeSpan? ApprovalDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("approvalDuration"); }
             set { BackingStore?.Set("approvalDuration", value); }
         }
         /// <summary>The approvalState property</summary>
-        public Microsoft.Graph.Beta.Models.ApprovalState? ApprovalState {
+        public Microsoft.Graph.Beta.Models.ApprovalState? ApprovalState
+        {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApprovalState?>("approvalState"); }
             set { BackingStore?.Set("approvalState", value); }
         }
         /// <summary>The approvalType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApprovalType {
+        public string? ApprovalType
+        {
             get { return BackingStore?.Get<string?>("approvalType"); }
             set { BackingStore?.Set("approvalType", value); }
         }
 #nullable restore
 #else
-        public string ApprovalType {
+        public string ApprovalType
+        {
             get { return BackingStore?.Get<string>("approvalType"); }
             set { BackingStore?.Set("approvalType", value); }
         }
@@ -36,32 +41,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The approverReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApproverReason {
+        public string? ApproverReason
+        {
             get { return BackingStore?.Get<string?>("approverReason"); }
             set { BackingStore?.Set("approverReason", value); }
         }
 #nullable restore
 #else
-        public string ApproverReason {
+        public string ApproverReason
+        {
             get { return BackingStore?.Get<string>("approverReason"); }
             set { BackingStore?.Set("approverReason", value); }
         }
 #endif
         /// <summary>The endDateTime property</summary>
-        public DateTimeOffset? EndDateTime {
+        public DateTimeOffset? EndDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRoleAssignmentRequest? Request {
+        public PrivilegedRoleAssignmentRequest? Request
+        {
             get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest?>("request"); }
             set { BackingStore?.Set("request", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRoleAssignmentRequest Request {
+        public PrivilegedRoleAssignmentRequest Request
+        {
             get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest>("request"); }
             set { BackingStore?.Set("request", value); }
         }
@@ -69,13 +79,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The requestorReason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RequestorReason {
+        public string? RequestorReason
+        {
             get { return BackingStore?.Get<string?>("requestorReason"); }
             set { BackingStore?.Set("requestorReason", value); }
         }
 #nullable restore
 #else
-        public string RequestorReason {
+        public string RequestorReason
+        {
             get { return BackingStore?.Get<string>("requestorReason"); }
             set { BackingStore?.Set("requestorReason", value); }
         }
@@ -83,13 +95,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RoleId {
+        public string? RoleId
+        {
             get { return BackingStore?.Get<string?>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
 #nullable restore
 #else
-        public string RoleId {
+        public string RoleId
+        {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
@@ -97,32 +111,37 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRole? RoleInfo {
+        public PrivilegedRole? RoleInfo
+        {
             get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRole RoleInfo {
+        public PrivilegedRole RoleInfo
+        {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #endif
         /// <summary>The startDateTime property</summary>
-        public DateTimeOffset? StartDateTime {
+        public DateTimeOffset? StartDateTime
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The userId property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId {
+        public string? UserId
+        {
             get { return BackingStore?.Get<string?>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
 #nullable restore
 #else
-        public string UserId {
+        public string UserId
+        {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
@@ -145,17 +164,17 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"approvalDuration", n => { ApprovalDuration = n.GetTimeSpanValue(); } },
-                {"approvalState", n => { ApprovalState = n.GetEnumValue<ApprovalState>(); } },
-                {"approvalType", n => { ApprovalType = n.GetStringValue(); } },
-                {"approverReason", n => { ApproverReason = n.GetStringValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                {"request", n => { Request = n.GetObjectValue<PrivilegedRoleAssignmentRequest>(PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
-                {"requestorReason", n => { RequestorReason = n.GetStringValue(); } },
-                {"roleId", n => { RoleId = n.GetStringValue(); } },
-                {"roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
-                {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"userId", n => { UserId = n.GetStringValue(); } },
+                { "approvalDuration", n => { ApprovalDuration = n.GetTimeSpanValue(); } },
+                { "approvalState", n => { ApprovalState = n.GetEnumValue<ApprovalState>(); } },
+                { "approvalType", n => { ApprovalType = n.GetStringValue(); } },
+                { "approverReason", n => { ApproverReason = n.GetStringValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                { "request", n => { Request = n.GetObjectValue<PrivilegedRoleAssignmentRequest>(PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
+                { "requestorReason", n => { RequestorReason = n.GetStringValue(); } },
+                { "roleId", n => { RoleId = n.GetStringValue(); } },
+                { "roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
+                { "userId", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>

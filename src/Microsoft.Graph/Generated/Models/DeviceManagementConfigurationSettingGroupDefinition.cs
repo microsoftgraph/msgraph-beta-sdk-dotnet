@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class DeviceManagementConfigurationSettingGroupDefinition : DeviceManagementConfigurationSettingDefinition, IParsable 
+    public class DeviceManagementConfigurationSettingGroupDefinition : DeviceManagementConfigurationSettingDefinition, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Dependent child settings to this group of settings</summary>
+        /// <summary>Dependent child settings to this group of settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ChildIds {
+        public List<string>? ChildIds
+        {
             get { return BackingStore?.Get<List<string>?>("childIds"); }
             set { BackingStore?.Set("childIds", value); }
         }
 #nullable restore
 #else
-        public List<string> ChildIds {
+        public List<string> ChildIds
+        {
             get { return BackingStore?.Get<List<string>>("childIds"); }
             set { BackingStore?.Set("childIds", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of child settings that depend on this setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy {
+        public List<DeviceManagementConfigurationSettingDependedOnBy>? DependedOnBy
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>?>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy {
+        public List<DeviceManagementConfigurationSettingDependedOnBy> DependedOnBy
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDependedOnBy>>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
@@ -40,13 +45,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>List of Dependencies for the setting group</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationDependentOn>? DependentOn {
+        public List<DeviceManagementConfigurationDependentOn>? DependentOn
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>?>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationDependentOn> DependentOn {
+        public List<DeviceManagementConfigurationDependentOn> DependentOn
+        {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationDependentOn>>("dependentOn"); }
             set { BackingStore?.Set("dependentOn", value); }
         }
@@ -74,9 +81,9 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"childIds", n => { ChildIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"dependedOnBy", n => { DependedOnBy = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDependedOnBy>(DeviceManagementConfigurationSettingDependedOnBy.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"dependentOn", n => { DependentOn = n.GetCollectionOfObjectValues<DeviceManagementConfigurationDependentOn>(DeviceManagementConfigurationDependentOn.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "childIds", n => { ChildIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "dependedOnBy", n => { DependedOnBy = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDependedOnBy>(DeviceManagementConfigurationSettingDependedOnBy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dependentOn", n => { DependentOn = n.GetCollectionOfObjectValues<DeviceManagementConfigurationDependentOn>(DeviceManagementConfigurationDependentOn.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

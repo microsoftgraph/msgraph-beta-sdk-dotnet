@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class AzureADAuthentication : Entity, IParsable 
+    public class AzureADAuthentication : Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A list of monthly serviceLevelAgreementAttainment objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceLevelAgreementAttainment>? Attainments {
+        public List<ServiceLevelAgreementAttainment>? Attainments
+        {
             get { return BackingStore?.Get<List<ServiceLevelAgreementAttainment>?>("attainments"); }
             set { BackingStore?.Set("attainments", value); }
         }
 #nullable restore
 #else
-        public List<ServiceLevelAgreementAttainment> Attainments {
+        public List<ServiceLevelAgreementAttainment> Attainments
+        {
             get { return BackingStore?.Get<List<ServiceLevelAgreementAttainment>>("attainments"); }
             set { BackingStore?.Set("attainments", value); }
         }
@@ -41,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"attainments", n => { Attainments = n.GetCollectionOfObjectValues<ServiceLevelAgreementAttainment>(ServiceLevelAgreementAttainment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attainments", n => { Attainments = n.GetCollectionOfObjectValues<ServiceLevelAgreementAttainment>(ServiceLevelAgreementAttainment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

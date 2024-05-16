@@ -6,26 +6,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+namespace Microsoft.Graph.Beta.Models.ExternalConnectors
+{
     #pragma warning disable CS1591
-    public class External : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class External : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents an onboarded AWS account, Azure subscription, or GCP project that Microsoft Entra Permissions Management will collect and analyze permissions and actions on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Microsoft.Graph.Beta.Models.AuthorizationSystem>? AuthorizationSystems {
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystem>? AuthorizationSystems
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystem>?>("authorizationSystems"); }
             set { BackingStore?.Set("authorizationSystems", value); }
         }
 #nullable restore
 #else
-        public List<Microsoft.Graph.Beta.Models.AuthorizationSystem> AuthorizationSystems {
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystem> AuthorizationSystems
+        {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystem>>("authorizationSystems"); }
             set { BackingStore?.Set("authorizationSystems", value); }
         }
@@ -35,13 +39,15 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>The connections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalConnection>? Connections {
+        public List<ExternalConnection>? Connections
+        {
             get { return BackingStore?.Get<List<ExternalConnection>?>("connections"); }
             set { BackingStore?.Set("connections", value); }
         }
 #nullable restore
 #else
-        public List<ExternalConnection> Connections {
+        public List<ExternalConnection> Connections
+        {
             get { return BackingStore?.Get<List<ExternalConnection>>("connections"); }
             set { BackingStore?.Set("connections", value); }
         }
@@ -49,13 +55,15 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>The industryData property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IndustryDataRoot? IndustryData {
+        public IndustryDataRoot? IndustryData
+        {
             get { return BackingStore?.Get<IndustryDataRoot?>("industryData"); }
             set { BackingStore?.Set("industryData", value); }
         }
 #nullable restore
 #else
-        public IndustryDataRoot IndustryData {
+        public IndustryDataRoot IndustryData
+        {
             get { return BackingStore?.Get<IndustryDataRoot>("industryData"); }
             set { BackingStore?.Set("industryData", value); }
         }
@@ -63,13 +71,15 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -100,10 +110,10 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"authorizationSystems", n => { AuthorizationSystems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"connections", n => { Connections = n.GetCollectionOfObjectValues<ExternalConnection>(ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"industryData", n => { IndustryData = n.GetObjectValue<IndustryDataRoot>(IndustryDataRoot.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "authorizationSystems", n => { AuthorizationSystems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystem>(Microsoft.Graph.Beta.Models.AuthorizationSystem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connections", n => { Connections = n.GetCollectionOfObjectValues<ExternalConnection>(ExternalConnection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "industryData", n => { IndustryData = n.GetObjectValue<IndustryDataRoot>(IndustryDataRoot.CreateFromDiscriminatorValue); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>

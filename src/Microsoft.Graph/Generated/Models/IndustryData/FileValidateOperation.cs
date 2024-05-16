@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models.IndustryData {
+namespace Microsoft.Graph.Beta.Models.IndustryData
+{
     #pragma warning disable CS1591
-    public class FileValidateOperation : ValidateOperation, IParsable 
+    public class FileValidateOperation : ValidateOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Set of files validated by the validate operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ValidatedFiles {
+        public List<string>? ValidatedFiles
+        {
             get { return BackingStore?.Get<List<string>?>("validatedFiles"); }
             set { BackingStore?.Set("validatedFiles", value); }
         }
 #nullable restore
 #else
-        public List<string> ValidatedFiles {
+        public List<string> ValidatedFiles
+        {
             get { return BackingStore?.Get<List<string>>("validatedFiles"); }
             set { BackingStore?.Set("validatedFiles", value); }
         }
@@ -48,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"validatedFiles", n => { ValidatedFiles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "validatedFiles", n => { ValidatedFiles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

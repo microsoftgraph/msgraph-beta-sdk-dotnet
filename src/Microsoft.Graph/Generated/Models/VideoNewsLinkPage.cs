@@ -4,21 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class VideoNewsLinkPage : BaseSitePage, IParsable 
+    public class VideoNewsLinkPage : BaseSitePage, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The bannerImageWebUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BannerImageWebUrl {
+        public string? BannerImageWebUrl
+        {
             get { return BackingStore?.Get<string?>("bannerImageWebUrl"); }
             set { BackingStore?.Set("bannerImageWebUrl", value); }
         }
 #nullable restore
 #else
-        public string BannerImageWebUrl {
+        public string BannerImageWebUrl
+        {
             get { return BackingStore?.Get<string>("bannerImageWebUrl"); }
             set { BackingStore?.Set("bannerImageWebUrl", value); }
         }
@@ -26,13 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The newsSharepointIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharepointIds? NewsSharepointIds {
+        public SharepointIds? NewsSharepointIds
+        {
             get { return BackingStore?.Get<SharepointIds?>("newsSharepointIds"); }
             set { BackingStore?.Set("newsSharepointIds", value); }
         }
 #nullable restore
 #else
-        public SharepointIds NewsSharepointIds {
+        public SharepointIds NewsSharepointIds
+        {
             get { return BackingStore?.Get<SharepointIds>("newsSharepointIds"); }
             set { BackingStore?.Set("newsSharepointIds", value); }
         }
@@ -40,19 +45,22 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The newsWebUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NewsWebUrl {
+        public string? NewsWebUrl
+        {
             get { return BackingStore?.Get<string?>("newsWebUrl"); }
             set { BackingStore?.Set("newsWebUrl", value); }
         }
 #nullable restore
 #else
-        public string NewsWebUrl {
+        public string NewsWebUrl
+        {
             get { return BackingStore?.Get<string>("newsWebUrl"); }
             set { BackingStore?.Set("newsWebUrl", value); }
         }
 #endif
         /// <summary>The videoDuration property</summary>
-        public TimeSpan? VideoDuration {
+        public TimeSpan? VideoDuration
+        {
             get { return BackingStore?.Get<TimeSpan?>("videoDuration"); }
             set { BackingStore?.Set("videoDuration", value); }
         }
@@ -74,10 +82,10 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                {"bannerImageWebUrl", n => { BannerImageWebUrl = n.GetStringValue(); } },
-                {"newsSharepointIds", n => { NewsSharepointIds = n.GetObjectValue<SharepointIds>(SharepointIds.CreateFromDiscriminatorValue); } },
-                {"newsWebUrl", n => { NewsWebUrl = n.GetStringValue(); } },
-                {"videoDuration", n => { VideoDuration = n.GetTimeSpanValue(); } },
+                { "bannerImageWebUrl", n => { BannerImageWebUrl = n.GetStringValue(); } },
+                { "newsSharepointIds", n => { NewsSharepointIds = n.GetObjectValue<SharepointIds>(SharepointIds.CreateFromDiscriminatorValue); } },
+                { "newsWebUrl", n => { NewsWebUrl = n.GetStringValue(); } },
+                { "videoDuration", n => { VideoDuration = n.GetTimeSpanValue(); } },
             };
         }
         /// <summary>

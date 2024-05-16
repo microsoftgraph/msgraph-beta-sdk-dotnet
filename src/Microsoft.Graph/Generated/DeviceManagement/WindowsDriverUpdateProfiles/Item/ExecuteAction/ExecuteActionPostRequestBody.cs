@@ -6,38 +6,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction {
+namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction
+{
     #pragma warning disable CS1591
-    public class ExecuteActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ExecuteActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>An enum type to represent approval actions of single or list of drivers.</summary>
-        public DriverApprovalAction? ActionName {
+        public DriverApprovalAction? ActionName
+        {
             get { return BackingStore?.Get<DriverApprovalAction?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deploymentDate property</summary>
-        public DateTimeOffset? DeploymentDate {
+        public DateTimeOffset? DeploymentDate
+        {
             get { return BackingStore?.Get<DateTimeOffset?>("deploymentDate"); }
             set { BackingStore?.Set("deploymentDate", value); }
         }
         /// <summary>The driverIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DriverIds {
+        public List<string>? DriverIds
+        {
             get { return BackingStore?.Get<List<string>?>("driverIds"); }
             set { BackingStore?.Set("driverIds", value); }
         }
 #nullable restore
 #else
-        public List<string> DriverIds {
+        public List<string> DriverIds
+        {
             get { return BackingStore?.Get<List<string>>("driverIds"); }
             set { BackingStore?.Set("driverIds", value); }
         }
@@ -68,9 +74,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"actionName", n => { ActionName = n.GetEnumValue<DriverApprovalAction>(); } },
-                {"deploymentDate", n => { DeploymentDate = n.GetDateTimeOffsetValue(); } },
-                {"driverIds", n => { DriverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "actionName", n => { ActionName = n.GetEnumValue<DriverApprovalAction>(); } },
+                { "deploymentDate", n => { DeploymentDate = n.GetDateTimeOffsetValue(); } },
+                { "driverIds", n => { DriverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

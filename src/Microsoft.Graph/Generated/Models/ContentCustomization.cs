@@ -5,26 +5,30 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-namespace Microsoft.Graph.Beta.Models {
+namespace Microsoft.Graph.Beta.Models
+{
     #pragma warning disable CS1591
-    public class ContentCustomization : IAdditionalDataHolder, IBackedModel, IParsable 
+    public class ContentCustomization : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData {
+        public IDictionary<string, object> AdditionalData
+        {
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents the content options of External Identities to be customized throughout the authentication flow for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? AttributeCollection {
+        public List<KeyValue>? AttributeCollection
+        {
             get { return BackingStore?.Get<List<KeyValue>?>("attributeCollection"); }
             set { BackingStore?.Set("attributeCollection", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> AttributeCollection {
+        public List<KeyValue> AttributeCollection
+        {
             get { return BackingStore?.Get<List<KeyValue>>("attributeCollection"); }
             set { BackingStore?.Set("attributeCollection", value); }
         }
@@ -32,13 +36,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>A relative URL for the content options of External Identities to be customized throughout the authentication flow for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AttributeCollectionRelativeUrl {
+        public string? AttributeCollectionRelativeUrl
+        {
             get { return BackingStore?.Get<string?>("attributeCollectionRelativeUrl"); }
             set { BackingStore?.Set("attributeCollectionRelativeUrl", value); }
         }
 #nullable restore
 #else
-        public string AttributeCollectionRelativeUrl {
+        public string AttributeCollectionRelativeUrl
+        {
             get { return BackingStore?.Get<string>("attributeCollectionRelativeUrl"); }
             set { BackingStore?.Set("attributeCollectionRelativeUrl", value); }
         }
@@ -48,13 +54,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The OdataType property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? OdataType {
+        public string? OdataType
+        {
             get { return BackingStore?.Get<string?>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
 #nullable restore
 #else
-        public string OdataType {
+        public string OdataType
+        {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -62,13 +70,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The registrationCampaign property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? RegistrationCampaign {
+        public List<KeyValue>? RegistrationCampaign
+        {
             get { return BackingStore?.Get<List<KeyValue>?>("registrationCampaign"); }
             set { BackingStore?.Set("registrationCampaign", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> RegistrationCampaign {
+        public List<KeyValue> RegistrationCampaign
+        {
             get { return BackingStore?.Get<List<KeyValue>>("registrationCampaign"); }
             set { BackingStore?.Set("registrationCampaign", value); }
         }
@@ -76,13 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>The registrationCampaignRelativeUrl property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationCampaignRelativeUrl {
+        public string? RegistrationCampaignRelativeUrl
+        {
             get { return BackingStore?.Get<string?>("registrationCampaignRelativeUrl"); }
             set { BackingStore?.Set("registrationCampaignRelativeUrl", value); }
         }
 #nullable restore
 #else
-        public string RegistrationCampaignRelativeUrl {
+        public string RegistrationCampaignRelativeUrl
+        {
             get { return BackingStore?.Get<string>("registrationCampaignRelativeUrl"); }
             set { BackingStore?.Set("registrationCampaignRelativeUrl", value); }
         }
@@ -113,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models {
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                {"attributeCollection", n => { AttributeCollection = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"attributeCollectionRelativeUrl", n => { AttributeCollectionRelativeUrl = n.GetStringValue(); } },
-                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"registrationCampaign", n => { RegistrationCampaign = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"registrationCampaignRelativeUrl", n => { RegistrationCampaignRelativeUrl = n.GetStringValue(); } },
+                { "attributeCollection", n => { AttributeCollection = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributeCollectionRelativeUrl", n => { AttributeCollectionRelativeUrl = n.GetStringValue(); } },
+                { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "registrationCampaign", n => { RegistrationCampaign = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "registrationCampaignRelativeUrl", n => { RegistrationCampaignRelativeUrl = n.GetStringValue(); } },
             };
         }
         /// <summary>
