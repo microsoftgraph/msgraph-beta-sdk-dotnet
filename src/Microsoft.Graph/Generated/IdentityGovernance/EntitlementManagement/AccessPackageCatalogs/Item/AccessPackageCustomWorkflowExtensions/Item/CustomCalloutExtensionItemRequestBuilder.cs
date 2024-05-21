@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentworkflowextension-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/accesspackageassignmentrequestworkflowextension-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomCalloutExtension"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an accessPackageAssignmentWorkflowExtension object.
+        /// Read the properties and relationships of an accessPackageAssignmentRequestWorkflowExtension object.
         /// </summary>
         public class CustomCalloutExtensionItemRequestBuilderGetQueryParameters 
         {

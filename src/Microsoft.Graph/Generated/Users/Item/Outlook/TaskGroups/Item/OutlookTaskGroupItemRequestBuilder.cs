@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get taskGroups from users
+        /// The user&apos;s Outlook task groups. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OutlookTaskGroup"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get taskGroups from users
+        /// The user&apos;s Outlook task groups. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.Item
         {
         }
         /// <summary>
-        /// Get taskGroups from users
+        /// The user&apos;s Outlook task groups. Read-only. Nullable.
         /// </summary>
         public class OutlookTaskGroupItemRequestBuilderGetQueryParameters 
         {

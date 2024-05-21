@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The rarelyUsedTenantCount property</summary>
+        /// <summary>The number of tenants that are rarely used.</summary>
         public int? RarelyUsedTenantCount
         {
             get { return BackingStore?.Get<int?>("rarelyUsedTenantCount"); }

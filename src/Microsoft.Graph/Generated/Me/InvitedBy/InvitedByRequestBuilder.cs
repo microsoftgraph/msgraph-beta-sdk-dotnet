@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.InvitedBy
         {
         }
         /// <summary>
-        /// Get invitedBy from me
+        /// The user or service principal that invited the user.
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Me.InvitedBy
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get invitedBy from me
+        /// The user or service principal that invited the user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Me.InvitedBy
             return new InvitedByRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get invitedBy from me
+        /// The user or service principal that invited the user.
         /// </summary>
         public class InvitedByRequestBuilderGetQueryParameters 
         {

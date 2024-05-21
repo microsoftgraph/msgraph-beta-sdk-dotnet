@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups
         {
         }
         /// <summary>
-        /// Get taskGroups from users
+        /// The user&apos;s Outlook task groups. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OutlookTaskGroupCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups
             return await RequestAdapter.SendAsync<OutlookTaskGroup>(requestInfo, OutlookTaskGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get taskGroups from users
+        /// The user&apos;s Outlook task groups. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups
             return new TaskGroupsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get taskGroups from users
+        /// The user&apos;s Outlook task groups. Read-only. Nullable.
         /// </summary>
         public class TaskGroupsRequestBuilderGetQueryParameters 
         {

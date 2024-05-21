@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
         {
         }
         /// <summary>
-        /// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+        /// For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessPackageAssignment>(requestInfo, Microsoft.Graph.Beta.Models.AccessPackageAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+        /// For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Assignme
             return new AccessPackageAssignmentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.
+        /// For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.
         /// </summary>
         public class AccessPackageAssignmentRequestBuilderGetQueryParameters 
         {

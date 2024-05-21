@@ -57,8 +57,8 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a schema for an externalConnection.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-schema-update?view=graph-rest-beta" />
+        /// Create the schema for a Microsoft Search connection.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/externalconnectors-externalconnection-patch-schema?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.Schema"/></returns>
         /// <param name="body">The request body</param>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Schema
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a schema for an externalConnection.
+        /// Create the schema for a Microsoft Search connection.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

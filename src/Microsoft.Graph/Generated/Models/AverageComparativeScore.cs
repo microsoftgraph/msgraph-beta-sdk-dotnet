@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The averageScore property</summary>
+        /// <summary>Average score within a specified basis.</summary>
         public double? AverageScore
         {
             get { return BackingStore?.Get<double?>("averageScore"); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The basis property</summary>
+        /// <summary>Scope type (by AllTenants, TotalSeats, IndustryTypes).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Basis

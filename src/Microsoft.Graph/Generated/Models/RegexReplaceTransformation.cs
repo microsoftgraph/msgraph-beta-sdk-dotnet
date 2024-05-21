@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class RegexReplaceTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additionalAttributes property</summary>
+        /// <summary>Additional attributes that can be referenced within the replacement string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SourcedAttribute>? AdditionalAttributes
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #endif
-        /// <summary>The regex property</summary>
+        /// <summary>The regular expression to be applied on the input directory attribute or constant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Regex
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("regex", value); }
         }
 #endif
-        /// <summary>The replacement property</summary>
+        /// <summary>The transformation output replacement pattern with regular expression output group and input parameter group reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Replacement

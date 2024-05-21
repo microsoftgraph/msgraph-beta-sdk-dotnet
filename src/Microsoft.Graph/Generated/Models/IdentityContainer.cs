@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationEventListeners", value); }
         }
 #endif
-        /// <summary>Represents the entry point for self-service sign up and sign in user flows in both Microsoft Entra workforce and customer tenants.</summary>
+        /// <summary>Represents the entry point for self-service sign-up and sign-in user flows in both Microsoft Entra workforce and external tenants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<AuthenticationEventsFlow>? AuthenticationEventsFlows

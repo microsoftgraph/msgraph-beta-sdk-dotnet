@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("identity", value); }
         }
 #endif
-        /// <summary>Other detail information of the presenter.</summary>
+        /// <summary>Other detail information of the presenter. This property returns null when the virtual event type is virtualEventTownhall.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public VirtualEventPresenterDetails? PresenterDetails

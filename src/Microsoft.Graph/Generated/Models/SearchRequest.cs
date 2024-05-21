@@ -245,7 +245,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sortProperties", value); }
         }
 #endif
-        /// <summary>The stored_fields property</summary>
+        /// <summary>This is now replaced by the fields property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? StoredFields

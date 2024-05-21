@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<AgentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The supportedPublishingTypes property</summary>
+        /// <summary>Possible values are: applicationProxy, exchangeOnline, authentication, provisioning, adAdministration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OnPremisesPublishingType?>? SupportedPublishingTypes

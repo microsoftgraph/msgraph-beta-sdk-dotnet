@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
         {
         }
         /// <summary>
-        /// Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+        /// Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualevent-list-presenters?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventPresenterCollectionResponse"/></returns>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
             return await RequestAdapter.SendAsync<VirtualEventPresenterCollectionResponse>(requestInfo, VirtualEventPresenterCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new virtualEventPresenter object on a virtual event.  Currently the supported virtual event type is virtualEventTownhall.
+        /// Create a new virtualEventPresenter object on a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualevent-post-presenters?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventPresenter"/></returns>
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
             return await RequestAdapter.SendAsync<VirtualEventPresenter>(requestInfo, VirtualEventPresenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+        /// Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
             return requestInfo;
         }
         /// <summary>
-        /// Create a new virtualEventPresenter object on a virtual event.  Currently the supported virtual event type is virtualEventTownhall.
+        /// Create a new virtualEventPresenter object on a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.Presenters
             return new PresentersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event type is virtualEventTownhall.
+        /// Get the list of all virtualEventPresenter objects associated with a virtual event. Currently the supported virtual event types are: virtualEventTownhall, virtualEventWebinar.
         /// </summary>
         public class PresentersRequestBuilderGetQueryParameters 
         {

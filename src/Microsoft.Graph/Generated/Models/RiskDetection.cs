@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
         }
-        /// <summary>The riskType property</summary>
+        /// <summary>List of risk event types.Note: This property is deprecated. Use riskEventType instead.</summary>
         public Microsoft.Graph.Beta.Models.RiskEventType? RiskType
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskEventType?>("riskType"); }

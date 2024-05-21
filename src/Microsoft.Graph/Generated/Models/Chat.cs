@@ -38,6 +38,12 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("installedApps", value); }
         }
 #endif
+        /// <summary>Indicates whether the chat is hidden for all its members. Read-only.</summary>
+        public bool? IsHiddenForAllMembers
+        {
+            get { return BackingStore?.Get<bool?>("isHiddenForAllMembers"); }
+            set { BackingStore?.Set("isHiddenForAllMembers", value); }
+        }
         /// <summary>Preview of the last message sent in the chat. Null if no messages have been sent in the chat. Currently, only the list chats operation supports this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -257,6 +263,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "chatType", n => { ChatType = n.GetEnumValue<ChatType>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "installedApps", n => { InstalledApps = n.GetCollectionOfObjectValues<TeamsAppInstallation>(TeamsAppInstallation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "isHiddenForAllMembers", n => { IsHiddenForAllMembers = n.GetBoolValue(); } },
                 { "lastMessagePreview", n => { LastMessagePreview = n.GetObjectValue<ChatMessageInfo>(ChatMessageInfo.CreateFromDiscriminatorValue); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<ConversationMember>(ConversationMember.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -283,6 +290,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteEnumValue<ChatType>("chatType", ChatType);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteCollectionOfObjectValues<TeamsAppInstallation>("installedApps", InstalledApps);
+            writer.WriteBoolValue("isHiddenForAllMembers", IsHiddenForAllMembers);
             writer.WriteObjectValue<ChatMessageInfo>("lastMessagePreview", LastMessagePreview);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteCollectionOfObjectValues<ConversationMember>("members", Members);

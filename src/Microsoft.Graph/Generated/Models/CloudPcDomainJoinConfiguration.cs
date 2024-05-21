@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("regionName", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue. The type property is deprecated and will stop returning data on January 31, 2024. Going forward, use the domainJoinType property.</summary>
         public CloudPcDomainJoinType? Type
         {
             get { return BackingStore?.Get<CloudPcDomainJoinType?>("type"); }

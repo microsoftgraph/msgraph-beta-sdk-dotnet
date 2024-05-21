@@ -42,6 +42,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
+        /// <summary>The autopatch property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public CloudPcProvisioningPolicyAutopatch? Autopatch
+        {
+            get { return BackingStore?.Get<CloudPcProvisioningPolicyAutopatch?>("autopatch"); }
+            set { BackingStore?.Set("autopatch", value); }
+        }
+#nullable restore
+#else
+        public CloudPcProvisioningPolicyAutopatch Autopatch
+        {
+            get { return BackingStore?.Get<CloudPcProvisioningPolicyAutopatch>("autopatch"); }
+            set { BackingStore?.Set("autopatch", value); }
+        }
+#endif
         /// <summary>The display name of the Cloud PC group that the Cloud PCs reside in. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,22 +120,6 @@ namespace Microsoft.Graph.Beta.Models
         {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
-        }
-#endif
-        /// <summary>The domainJoinConfiguration property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public CloudPcDomainJoinConfiguration? DomainJoinConfiguration
-        {
-            get { return BackingStore?.Get<CloudPcDomainJoinConfiguration?>("domainJoinConfiguration"); }
-            set { BackingStore?.Set("domainJoinConfiguration", value); }
-        }
-#nullable restore
-#else
-        public CloudPcDomainJoinConfiguration DomainJoinConfiguration
-        {
-            get { return BackingStore?.Get<CloudPcDomainJoinConfiguration>("domainJoinConfiguration"); }
-            set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
 #endif
         /// <summary>Specifies a list ordered by priority on how Cloud PCs join Microsoft Entra ID (Azure AD). Supports $select.</summary>
@@ -216,22 +216,6 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("microsoftManagedDesktop", value); }
         }
 #endif
-        /// <summary>The onPremisesConnectionId property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? OnPremisesConnectionId
-        {
-            get { return BackingStore?.Get<string?>("onPremisesConnectionId"); }
-            set { BackingStore?.Set("onPremisesConnectionId", value); }
-        }
-#nullable restore
-#else
-        public string OnPremisesConnectionId
-        {
-            get { return BackingStore?.Get<string>("onPremisesConnectionId"); }
-            set { BackingStore?.Set("onPremisesConnectionId", value); }
-        }
-#endif
         /// <summary>Specifies the type of licenses to be used when provisioning Cloud PCs using this policy. The possible values are dedicated, shared, unknownFutureValue, sharedByUser, sharedByEntraGroup. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: sharedByUser, sharedByEntraGroup. The shared member is deprecated and will stop returning on April 30, 2027; going forward, use the sharedByUser member. For example, a dedicated service plan can be assigned to only one user and provision only one Cloud PC. The shared and sharedByUser plans require customers to purchase a shared service plan. Each shared license purchased can enable up to three Cloud PCs, with only one user signed in at a time. The sharedByEntraGroup plan also requires the purchase of a shared service plan. Each shared license under this plan can enable one Cloud PC, which is shared for the group according to the assignments of this policy. By default, the license type is dedicated if the provisioningType isn&apos;t specified when you create the cloudPcProvisioningPolicy. You can&apos;t change this property after the cloudPcProvisioningPolicy is created.</summary>
         public CloudPcProvisioningType? ProvisioningType
         {
@@ -270,7 +254,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("windowsSetting", value); }
         }
 #endif
-        /// <summary>The windowsSettings property</summary>
+        /// <summary>Specific Windows settings to configure during the creation of Cloud PCs for this provisioning policy. Supports $select. The windowsSettings property is deprecated and will stop returning data on January 31, 2024. Going forward, use the windowsSetting property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CloudPcWindowsSettings? WindowsSettings
@@ -306,11 +290,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "alternateResourceUrl", n => { AlternateResourceUrl = n.GetStringValue(); } },
                 { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>(CloudPcProvisioningPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "autopatch", n => { Autopatch = n.GetObjectValue<CloudPcProvisioningPolicyAutopatch>(CloudPcProvisioningPolicyAutopatch.CreateFromDiscriminatorValue); } },
                 { "cloudPcGroupDisplayName", n => { CloudPcGroupDisplayName = n.GetStringValue(); } },
                 { "cloudPcNamingTemplate", n => { CloudPcNamingTemplate = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
                 { "domainJoinConfigurations", n => { DomainJoinConfigurations = n.GetCollectionOfObjectValues<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enableSingleSignOn", n => { EnableSingleSignOn = n.GetBoolValue(); } },
                 { "gracePeriodInHours", n => { GracePeriodInHours = n.GetIntValue(); } },
@@ -320,7 +304,6 @@ namespace Microsoft.Graph.Beta.Models
                 { "localAdminEnabled", n => { LocalAdminEnabled = n.GetBoolValue(); } },
                 { "managedBy", n => { ManagedBy = n.GetEnumValue<CloudPcManagementService>(); } },
                 { "microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
-                { "onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
                 { "provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
                 { "scopeIds", n => { ScopeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "windowsSetting", n => { WindowsSetting = n.GetObjectValue<CloudPcWindowsSetting>(CloudPcWindowsSetting.CreateFromDiscriminatorValue); } },
@@ -337,11 +320,11 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("alternateResourceUrl", AlternateResourceUrl);
             writer.WriteCollectionOfObjectValues<CloudPcProvisioningPolicyAssignment>("assignments", Assignments);
+            writer.WriteObjectValue<CloudPcProvisioningPolicyAutopatch>("autopatch", Autopatch);
             writer.WriteStringValue("cloudPcGroupDisplayName", CloudPcGroupDisplayName);
             writer.WriteStringValue("cloudPcNamingTemplate", CloudPcNamingTemplate);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<CloudPcDomainJoinConfiguration>("domainJoinConfiguration", DomainJoinConfiguration);
             writer.WriteCollectionOfObjectValues<CloudPcDomainJoinConfiguration>("domainJoinConfigurations", DomainJoinConfigurations);
             writer.WriteBoolValue("enableSingleSignOn", EnableSingleSignOn);
             writer.WriteIntValue("gracePeriodInHours", GracePeriodInHours);
@@ -351,7 +334,6 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("localAdminEnabled", LocalAdminEnabled);
             writer.WriteEnumValue<CloudPcManagementService>("managedBy", ManagedBy);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
-            writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
             writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteCollectionOfPrimitiveValues<string>("scopeIds", ScopeIds);
             writer.WriteObjectValue<CloudPcWindowsSetting>("windowsSetting", WindowsSetting);

@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Resources.Item.Content
         {
         }
         /// <summary>
-        /// Delete content for the navigation property resources in me
+        /// The content of the resource.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Resources.Item.Content
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update content for the navigation property resources in me
+        /// The content of the resource.
         /// </summary>
         /// <returns>A <see cref="OnenoteResource"/></returns>
         /// <param name="body">Binary request body</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Resources.Item.Content
             return await RequestAdapter.SendAsync<OnenoteResource>(requestInfo, OnenoteResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete content for the navigation property resources in me
+        /// The content of the resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.Resources.Item.Content
             return requestInfo;
         }
         /// <summary>
-        /// Update content for the navigation property resources in me
+        /// The content of the resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

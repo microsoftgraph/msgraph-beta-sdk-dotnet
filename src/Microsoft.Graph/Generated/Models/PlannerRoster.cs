@@ -10,6 +10,22 @@ namespace Microsoft.Graph.Beta.Models
     public class PlannerRoster : Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The assignedSensitivityLabel property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public SensitivityLabelAssignment? AssignedSensitivityLabel
+        {
+            get { return BackingStore?.Get<SensitivityLabelAssignment?>("assignedSensitivityLabel"); }
+            set { BackingStore?.Set("assignedSensitivityLabel", value); }
+        }
+#nullable restore
+#else
+        public SensitivityLabelAssignment AssignedSensitivityLabel
+        {
+            get { return BackingStore?.Get<SensitivityLabelAssignment>("assignedSensitivityLabel"); }
+            set { BackingStore?.Set("assignedSensitivityLabel", value); }
+        }
+#endif
         /// <summary>Retrieves the members of the plannerRoster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "assignedSensitivityLabel", n => { AssignedSensitivityLabel = n.GetObjectValue<SensitivityLabelAssignment>(SensitivityLabelAssignment.CreateFromDiscriminatorValue); } },
                 { "members", n => { Members = n.GetCollectionOfObjectValues<PlannerRosterMember>(PlannerRosterMember.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "plans", n => { Plans = n.GetCollectionOfObjectValues<PlannerPlan>(PlannerPlan.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -72,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<SensitivityLabelAssignment>("assignedSensitivityLabel", AssignedSensitivityLabel);
             writer.WriteCollectionOfObjectValues<PlannerRosterMember>("members", Members);
             writer.WriteCollectionOfObjectValues<PlannerPlan>("plans", Plans);
         }

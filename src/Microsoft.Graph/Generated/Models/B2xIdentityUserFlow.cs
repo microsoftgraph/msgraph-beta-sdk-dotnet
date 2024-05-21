@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("apiConnectorConfiguration", value); }
         }
 #endif
-        /// <summary>The identityProviders property</summary>
+        /// <summary>The identity providers included in the user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<IdentityProvider>? IdentityProviders

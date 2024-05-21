@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class ValueBasedAttribute : CustomClaimAttributeBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The value property</summary>
+        /// <summary>The static value to be used an the attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value

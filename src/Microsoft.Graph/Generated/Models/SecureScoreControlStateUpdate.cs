@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The assignedTo property</summary>
+        /// <summary>Assign the control to the user who will take the action</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AssignedTo
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The comment property</summary>
+        /// <summary>Provides optional comment about the control</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Comment
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>State of the control can be modified using PATCH command(Ex: ignored, thirdParty etc)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? State
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("state", value); }
         }
 #endif
-        /// <summary>The updatedBy property</summary>
+        /// <summary>ID of the user who updated tenant state</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? UpdatedBy
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("updatedBy", value); }
         }
 #endif
-        /// <summary>The updatedDateTime property</summary>
+        /// <summary>Time at which control state was updated</summary>
         public DateTimeOffset? UpdatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("updatedDateTime"); }

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("azureTenantId", value); }
         }
 #endif
-        /// <summary>The clientContext property</summary>
+        /// <summary>Unique client context string. Can have a maximum of 256 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ClientContext

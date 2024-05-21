@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public class EdiscoveryExportOperation : CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The azureBlobContainer property</summary>
+        /// <summary>The name of the Azure storage location where the export is stored. This only applies to exports stored in your own Azure storage location. The azureBlobContainer property is deprecated and will stop returning data on April 30th, 2023.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureBlobContainer
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
 #endif
-        /// <summary>The azureBlobToken property</summary>
+        /// <summary>The SAS token for the Azure storage location.  This only applies to exports stored in your own Azure storage location. The azureBlobToken property is deprecated and will stop returning data on April 30, 2023.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AzureBlobToken
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The exportFileMetadata property</summary>
+        /// <summary>Contains the properties for an export file metadata, including downloadUrl, fileName, and size. If you export to an Azure storage location, this property returns empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>? ExportFileMetadata
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
         }
-        /// <summary>The outputFolderId property</summary>
+        /// <summary>The output folder ID. The outputFolderId property is deprecated and will stop returning data on April 30, 2023.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutputFolderId

@@ -42,6 +42,22 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("agents", value); }
         }
 #endif
+        /// <summary>The applicationSegments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<IpApplicationSegment>? ApplicationSegments
+        {
+            get { return BackingStore?.Get<List<IpApplicationSegment>?>("applicationSegments"); }
+            set { BackingStore?.Set("applicationSegments", value); }
+        }
+#nullable restore
+#else
+        public List<IpApplicationSegment> ApplicationSegments
+        {
+            get { return BackingStore?.Get<List<IpApplicationSegment>>("applicationSegments"); }
+            set { BackingStore?.Set("applicationSegments", value); }
+        }
+#endif
         /// <summary>List of existing connectorGroup objects for applications published through Application Proxy. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,6 +154,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "agents", n => { Agents = n.GetCollectionOfObjectValues<OnPremisesAgent>(OnPremisesAgent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "applicationSegments", n => { ApplicationSegments = n.GetCollectionOfObjectValues<IpApplicationSegment>(IpApplicationSegment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "connectorGroups", n => { ConnectorGroups = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "connectors", n => { Connectors = n.GetCollectionOfObjectValues<Connector>(Connector.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hybridAgentUpdaterConfiguration", n => { HybridAgentUpdaterConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>(Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration.CreateFromDiscriminatorValue); } },
@@ -156,6 +173,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<OnPremisesAgentGroup>("agentGroups", AgentGroups);
             writer.WriteCollectionOfObjectValues<OnPremisesAgent>("agents", Agents);
+            writer.WriteCollectionOfObjectValues<IpApplicationSegment>("applicationSegments", ApplicationSegments);
             writer.WriteCollectionOfObjectValues<ConnectorGroup>("connectorGroups", ConnectorGroups);
             writer.WriteCollectionOfObjectValues<Connector>("connectors", Connectors);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>("hybridAgentUpdaterConfiguration", HybridAgentUpdaterConfiguration);

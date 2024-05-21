@@ -10,6 +10,22 @@ namespace Microsoft.Graph.Beta.Models
     public class Fido2AuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<PasskeyAuthenticationMethodTarget>? IncludeTargets
+        {
+            get { return BackingStore?.Get<List<PasskeyAuthenticationMethodTarget>?>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
+        }
+#nullable restore
+#else
+        public List<PasskeyAuthenticationMethodTarget> IncludeTargets
+        {
+            get { return BackingStore?.Get<List<PasskeyAuthenticationMethodTarget>>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
+        }
+#endif
         /// <summary>Determines whether attestation must be enforced for FIDO2 security key registration.</summary>
         public bool? IsAttestationEnforced
         {
@@ -63,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<PasskeyAuthenticationMethodTarget>(PasskeyAuthenticationMethodTarget.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isAttestationEnforced", n => { IsAttestationEnforced = n.GetBoolValue(); } },
                 { "isSelfServiceRegistrationAllowed", n => { IsSelfServiceRegistrationAllowed = n.GetBoolValue(); } },
                 { "keyRestrictions", n => { KeyRestrictions = n.GetObjectValue<Fido2KeyRestrictions>(Fido2KeyRestrictions.CreateFromDiscriminatorValue); } },
@@ -76,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<PasskeyAuthenticationMethodTarget>("includeTargets", IncludeTargets);
             writer.WriteBoolValue("isAttestationEnforced", IsAttestationEnforced);
             writer.WriteBoolValue("isSelfServiceRegistrationAllowed", IsSelfServiceRegistrationAllowed);
             writer.WriteObjectValue<Fido2KeyRestrictions>("keyRestrictions", KeyRestrictions);

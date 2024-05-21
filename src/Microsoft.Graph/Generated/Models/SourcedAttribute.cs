@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class SourcedAttribute : CustomClaimAttributeBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The id property</summary>
+        /// <summary>The identifier of the attribute on the specified source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id
@@ -26,13 +26,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("id", value); }
         }
 #endif
-        /// <summary>The isExtensionAttribute property</summary>
+        /// <summary>A flag that indicates if the name specified is that of an extension attribute.</summary>
         public bool? IsExtensionAttribute
         {
             get { return BackingStore?.Get<bool?>("isExtensionAttribute"); }
             set { BackingStore?.Set("isExtensionAttribute", value); }
         }
-        /// <summary>The source property</summary>
+        /// <summary>The source where the claim is going to retrieve its value. Valid sources include user, application, resource, audience and company.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Source

@@ -34,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.microsoftAuthenticatorAuthenticationMethodTarget" => new MicrosoftAuthenticatorAuthenticationMethodTarget(),
+                "#microsoft.graph.passkeyAuthenticationMethodTarget" => new PasskeyAuthenticationMethodTarget(),
                 "#microsoft.graph.smsAuthenticationMethodTarget" => new SmsAuthenticationMethodTarget(),
                 "#microsoft.graph.voiceAuthenticationMethodTarget" => new VoiceAuthenticationMethodTarget(),
                 _ => new AuthenticationMethodTarget(),

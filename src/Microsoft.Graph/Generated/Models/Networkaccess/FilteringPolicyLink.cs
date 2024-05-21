@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             get { return BackingStore?.Get<Status?>("loggingState"); }
             set { BackingStore?.Set("loggingState", value); }
         }
-        /// <summary>The priority property</summary>
+        /// <summary>Provides an integer priority level for each instance of a URL filtering policy linked to a profile. Required.</summary>
         public long? Priority
         {
             get { return BackingStore?.Get<long?>("priority"); }

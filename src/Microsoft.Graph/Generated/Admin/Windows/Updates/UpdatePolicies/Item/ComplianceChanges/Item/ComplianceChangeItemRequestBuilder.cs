@@ -39,8 +39,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
         {
         }
         /// <summary>
-        /// Delete a contentApproval object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-delete?view=graph-rest-beta" />
+        /// Delete a complianceChange object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of a contentApproval object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-contentapproval-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of a complianceChange object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/windowsupdates-compliancechange-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ComplianceChange"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return await RequestAdapter.SendAsync<ComplianceChange>(requestInfo, ComplianceChange.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a contentApproval object.
+        /// Delete a complianceChange object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of a contentApproval object.
+        /// Read the properties and relationships of a complianceChange object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -188,7 +188,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatePolicies.Item.Complia
         {
         }
         /// <summary>
-        /// Read the properties and relationships of a contentApproval object.
+        /// Read the properties and relationships of a complianceChange object.
         /// </summary>
         public class ComplianceChangeItemRequestBuilderGetQueryParameters 
         {

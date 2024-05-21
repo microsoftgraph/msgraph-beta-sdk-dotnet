@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<TransformationTrimType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
-        /// <summary>The value property</summary>
+        /// <summary>The value to be used as part of the transformation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value

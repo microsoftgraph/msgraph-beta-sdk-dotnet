@@ -92,8 +92,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item
             return await RequestAdapter.SendAsync<IndustryDataConnector>(requestInfo, IndustryDataConnector.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of an azureDataLakeConnector object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-azuredatalakeconnector-update?view=graph-rest-beta" />
+        /// Update the properties of an industryDataConnector object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-industrydataconnector-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="IndustryDataConnector"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.DataConnectors.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of an azureDataLakeConnector object.
+        /// Update the properties of an industryDataConnector object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

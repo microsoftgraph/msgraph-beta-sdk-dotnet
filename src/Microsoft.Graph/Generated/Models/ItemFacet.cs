@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("source", value); }
         }
 #endif
-        /// <summary>The sources property</summary>
+        /// <summary>Where the values within an entity originated if synced from another source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<ProfileSourceAnnotation>? Sources

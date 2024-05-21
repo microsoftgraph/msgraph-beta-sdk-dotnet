@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class VirtualEventSession : OnlineMeetingBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The endDateTime property</summary>
+        /// <summary>The virtual event session end time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? EndDateTime
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("registrations", value); }
         }
 #endif
-        /// <summary>The startDateTime property</summary>
+        /// <summary>The virtual event session start time.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? StartDateTime

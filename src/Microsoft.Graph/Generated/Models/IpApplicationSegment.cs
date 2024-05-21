@@ -10,6 +10,22 @@ namespace Microsoft.Graph.Beta.Models
     public class IpApplicationSegment : ApplicationSegment, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The application property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.Application? Application
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Application?>("application"); }
+            set { BackingStore?.Set("application", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.Application Application
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Application>("application"); }
+            set { BackingStore?.Set("application", value); }
+        }
+#endif
         /// <summary>The destinationHost property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "application", n => { Application = n.GetObjectValue<Microsoft.Graph.Beta.Models.Application>(Microsoft.Graph.Beta.Models.Application.CreateFromDiscriminatorValue); } },
                 { "destinationHost", n => { DestinationHost = n.GetStringValue(); } },
                 { "destinationType", n => { DestinationType = n.GetEnumValue<PrivateNetworkDestinationType>(); } },
                 { "port", n => { Port = n.GetIntValue(); } },
@@ -100,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Application>("application", Application);
             writer.WriteStringValue("destinationHost", DestinationHost);
             writer.WriteEnumValue<PrivateNetworkDestinationType>("destinationType", DestinationType);
             writer.WriteIntValue("port", Port);

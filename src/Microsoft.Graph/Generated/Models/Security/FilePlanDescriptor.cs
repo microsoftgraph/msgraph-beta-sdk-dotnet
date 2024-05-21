@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public class FilePlanDescriptor : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Represents the file plan descriptor of type authority applied to a particular retention label.</summary>
+        /// <summary>The authority property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public FilePlanAuthority? Authority
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("categoryTemplate", value); }
         }
 #endif
-        /// <summary>Represents the file plan descriptor of type citation applied to a particular retention label.</summary>
+        /// <summary>The citation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public FilePlanCitation? Citation
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("citationTemplate", value); }
         }
 #endif
-        /// <summary>Represents the file plan descriptor of type department applied to a particular retention label.</summary>
+        /// <summary>The department property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public FilePlanDepartment? Department
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("departmentTemplate", value); }
         }
 #endif
-        /// <summary>Represents the file plan descriptor of type filePlanReference applied to a particular retention label.</summary>
+        /// <summary>The filePlanReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.Security.FilePlanReference? FilePlanReference

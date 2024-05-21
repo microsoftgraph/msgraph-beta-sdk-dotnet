@@ -42,6 +42,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             set { BackingStore?.Set("deletedItems", value); }
         }
 #endif
+        /// <summary>The insight container holding workflow insight summaries for a tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.Insights? Insights
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights?>("insights"); }
+            set { BackingStore?.Set("insights", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.Insights Insights
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>("insights"); }
+            set { BackingStore?.Set("insights", value); }
+        }
+#endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -126,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             {
                 { "customTaskExtensions", n => { CustomTaskExtensions = n.GetCollectionOfObjectValues<CustomTaskExtension>(CustomTaskExtension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deletedItems", n => { DeletedItems = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeletedItemContainer>(Microsoft.Graph.Beta.Models.DeletedItemContainer.CreateFromDiscriminatorValue); } },
+                { "insights", n => { Insights = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>(Microsoft.Graph.Beta.Models.IdentityGovernance.Insights.CreateFromDiscriminatorValue); } },
                 { "settings", n => { Settings = n.GetObjectValue<LifecycleManagementSettings>(LifecycleManagementSettings.CreateFromDiscriminatorValue); } },
                 { "taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<TaskDefinition>(TaskDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<WorkflowTemplate>(WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -142,6 +159,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<CustomTaskExtension>("customTaskExtensions", CustomTaskExtensions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeletedItemContainer>("deletedItems", DeletedItems);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.Insights>("insights", Insights);
             writer.WriteObjectValue<LifecycleManagementSettings>("settings", Settings);
             writer.WriteCollectionOfObjectValues<TaskDefinition>("taskDefinitions", TaskDefinitions);
             writer.WriteCollectionOfObjectValues<Workflow>("workflows", Workflows);

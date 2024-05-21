@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsU
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// List of relationships for this mobile app.
+        /// The set of direct relationships for this app.
         /// </summary>
         /// <returns>A <see cref="MobileAppRelationship"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsU
             return requestInfo;
         }
         /// <summary>
-        /// List of relationships for this mobile app.
+        /// The set of direct relationships for this app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphWindowsU
         {
         }
         /// <summary>
-        /// List of relationships for this mobile app.
+        /// The set of direct relationships for this app.
         /// </summary>
         public class MobileAppRelationshipItemRequestBuilderGetQueryParameters 
         {

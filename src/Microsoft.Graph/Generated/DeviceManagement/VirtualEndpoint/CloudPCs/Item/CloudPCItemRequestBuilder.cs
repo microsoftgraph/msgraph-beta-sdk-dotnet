@@ -14,7 +14,9 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Resize;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetrieveReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.RetryPartnerAgentInstallation;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.SetReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Start;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Stop;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot;
@@ -110,10 +112,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item
         {
             get => new RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to call the retrieveReviewStatus method.</summary>
+        public RetrieveReviewStatusRequestBuilder RetrieveReviewStatus
+        {
+            get => new RetrieveReviewStatusRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
         public RetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation
         {
             get => new RetryPartnerAgentInstallationRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the setReviewStatus method.</summary>
+        public SetReviewStatusRequestBuilder SetReviewStatus
+        {
+            get => new SetReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the start method.</summary>
         public StartRequestBuilder Start

@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isArchived"); }
             set { BackingStore?.Set("isArchived", value); }
         }
-        /// <summary>The owner property</summary>
+        /// <summary>Use the container property instead. ID of the group that owns the plan. After it&apos;s set, this property can’t be updated. This property doesn&apos;t return a valid group ID if the container of the plan isn&apos;t a group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Owner

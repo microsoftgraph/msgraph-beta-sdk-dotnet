@@ -64,6 +64,38 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastName", value); }
         }
 #endif
+        /// <summary>The preferredLanguage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreferredLanguage
+        {
+            get { return BackingStore?.Get<string?>("preferredLanguage"); }
+            set { BackingStore?.Set("preferredLanguage", value); }
+        }
+#nullable restore
+#else
+        public string PreferredLanguage
+        {
+            get { return BackingStore?.Get<string>("preferredLanguage"); }
+            set { BackingStore?.Set("preferredLanguage", value); }
+        }
+#endif
+        /// <summary>The preferredTimezone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreferredTimezone
+        {
+            get { return BackingStore?.Get<string?>("preferredTimezone"); }
+            set { BackingStore?.Set("preferredTimezone", value); }
+        }
+#nullable restore
+#else
+        public string PreferredTimezone
+        {
+            get { return BackingStore?.Get<string>("preferredTimezone"); }
+            set { BackingStore?.Set("preferredTimezone", value); }
+        }
+#endif
         /// <summary>Date and time when the registrant registers for the virtual event. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RegistrationDateTime
         {
@@ -146,6 +178,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
+                { "preferredLanguage", n => { PreferredLanguage = n.GetStringValue(); } },
+                { "preferredTimezone", n => { PreferredTimezone = n.GetStringValue(); } },
                 { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "registrationQuestionAnswers", n => { RegistrationQuestionAnswers = n.GetCollectionOfObjectValues<VirtualEventRegistrationQuestionAnswer>(VirtualEventRegistrationQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<VirtualEventSession>(VirtualEventSession.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -165,6 +199,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("lastName", LastName);
+            writer.WriteStringValue("preferredLanguage", PreferredLanguage);
+            writer.WriteStringValue("preferredTimezone", PreferredTimezone);
             writer.WriteDateTimeOffsetValue("registrationDateTime", RegistrationDateTime);
             writer.WriteCollectionOfObjectValues<VirtualEventRegistrationQuestionAnswer>("registrationQuestionAnswers", RegistrationQuestionAnswers);
             writer.WriteCollectionOfObjectValues<VirtualEventSession>("sessions", Sessions);

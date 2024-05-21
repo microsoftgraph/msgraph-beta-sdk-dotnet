@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
             set { BackingStore?.Set("feedback", value); }
         }
 #endif
-        /// <summary>The identity property</summary>
+        /// <summary>Identity associated with the endpoint. The identity property is deprecated and will stop returning data on June 30, 2026. Going forward, use the associatedIdentity property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? Identity

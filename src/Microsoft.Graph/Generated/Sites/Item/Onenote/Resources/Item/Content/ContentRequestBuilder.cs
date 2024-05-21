@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Resources.Item.Content
         {
         }
         /// <summary>
-        /// Get content for the navigation property resources from sites
+        /// The content of the resource.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Resources.Item.Content
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update content for the navigation property resources in sites
+        /// The content of the resource.
         /// </summary>
         /// <returns>A <see cref="OnenoteResource"/></returns>
         /// <param name="body">Binary request body</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Resources.Item.Content
             return await RequestAdapter.SendAsync<OnenoteResource>(requestInfo, OnenoteResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get content for the navigation property resources from sites
+        /// The content of the resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Resources.Item.Content
             return requestInfo;
         }
         /// <summary>
-        /// Update content for the navigation property resources in sites
+        /// The content of the resource.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

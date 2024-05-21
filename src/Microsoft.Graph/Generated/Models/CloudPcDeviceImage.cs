@@ -121,7 +121,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<CloudPcDeviceImageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The statusDetails property</summary>
+        /// <summary>The details of the status of the image that indicates why the upload failed, if applicable. Possible values are: internalServerError, sourceImageNotFound, osVersionNotSupported, sourceImageInvalid, sourceImageNotGeneralized, unknownFutureValue, vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: vmAlreadyAzureAdJoined, paidSourceImageNotSupport, sourceImageNotSupportCustomizeVMName, sourceImageSizeExceedsLimitation. Read-only. The statusDetails property is deprecated and will stop returning data on January 31, 2024. Going forward, use the errorCode property.</summary>
         public CloudPcDeviceImageStatusDetails? StatusDetails
         {
             get { return BackingStore?.Get<CloudPcDeviceImageStatusDetails?>("statusDetails"); }

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
     public class NetworkAccessTraffic : IAdditionalDataHolder, IBackedModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action property</summary>
+        /// <summary>Indicates what action to take based on filtering policies. The possible values are: block, allow.</summary>
         public FilteringPolicyAction? Action
         {
             get { return BackingStore?.Get<FilteringPolicyAction?>("action"); }

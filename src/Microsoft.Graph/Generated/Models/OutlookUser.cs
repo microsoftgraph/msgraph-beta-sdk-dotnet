@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("masterCategories", value); }
         }
 #endif
-        /// <summary>The taskFolders property</summary>
+        /// <summary>The user&apos;s Outlook task folders. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OutlookTaskFolder>? TaskFolders
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("taskFolders", value); }
         }
 #endif
-        /// <summary>The taskGroups property</summary>
+        /// <summary>The user&apos;s Outlook task groups. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OutlookTaskGroup>? TaskGroups
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("taskGroups", value); }
         }
 #endif
-        /// <summary>The tasks property</summary>
+        /// <summary>The user&apos;s Outlook tasks. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<OutlookTask>? Tasks

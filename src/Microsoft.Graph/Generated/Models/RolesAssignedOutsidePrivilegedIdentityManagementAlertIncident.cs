@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assigneeUserPrincipalName", value); }
         }
 #endif
-        /// <summary>The assignmentCreatedDateTime property</summary>
+        /// <summary>Date and time of assignment creation.</summary>
         public DateTimeOffset? AssignmentCreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("assignmentCreatedDateTime"); }

@@ -39,6 +39,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewSt
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        [Obsolete("The setCloudPcReviewStatus API is deprecated and will stop returning data on Apr 30, 2024. Please use the new setReviewStatus API as of 2024-01/setCloudPcReviewStatus")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(SetCloudPcReviewStatusPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,6 +63,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewSt
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("The setCloudPcReviewStatus API is deprecated and will stop returning data on Apr 30, 2024. Please use the new setReviewStatus API as of 2024-01/setCloudPcReviewStatus")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public RequestInformation ToPostRequestInformation(SetCloudPcReviewStatusPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
@@ -83,6 +85,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetCloudPcReviewSt
         /// </summary>
         /// <returns>A <see cref="SetCloudPcReviewStatusRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
+        [Obsolete("The setCloudPcReviewStatus API is deprecated and will stop returning data on Apr 30, 2024. Please use the new setReviewStatus API as of 2024-01/setCloudPcReviewStatus")]
         public SetCloudPcReviewStatusRequestBuilder WithUrl(string rawUrl)
         {
             return new SetCloudPcReviewStatusRequestBuilder(rawUrl, RequestAdapter);

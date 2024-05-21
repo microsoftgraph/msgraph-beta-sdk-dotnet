@@ -262,7 +262,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("mobilePhone", value); }
         }
 #endif
-        /// <summary>The officeLocation property</summary>
+        /// <summary>The office location for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OfficeLocation

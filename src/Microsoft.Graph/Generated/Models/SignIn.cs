@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("appliedEventListeners", value); }
         }
 #endif
-        /// <summary>The appTokenProtectionStatus property</summary>
+        /// <summary>Token protection creates a cryptographically secure tie between the token and the device it&apos;s issued to. This field indicates whether the app token was bound to the device.</summary>
         public TokenProtectionStatus? AppTokenProtectionStatus
         {
             get { return BackingStore?.Get<TokenProtectionStatus?>("appTokenProtectionStatus"); }
@@ -482,7 +482,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("managedServiceIdentity", value); }
         }
 #endif
-        /// <summary>The mfaDetail property</summary>
+        /// <summary>This property is deprecated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.MfaDetail? MfaDetail

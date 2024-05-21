@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("restorePointSetting", value); }
         }
 #endif
-        /// <summary>The selfServiceEnabled property</summary>
+        /// <summary>Indicates whether the self-service option is enabled. Default value is false. To enable the self-service option, change the setting to true. If the self-service option is enabled, the end user is allowed to perform some self-service operations, such as upgrading the Cloud PC through the end user portal. The selfServiceEnabled property is deprecated and will stop returning data on December 1, 2023.</summary>
         public bool? SelfServiceEnabled
         {
             get { return BackingStore?.Get<bool?>("selfServiceEnabled"); }

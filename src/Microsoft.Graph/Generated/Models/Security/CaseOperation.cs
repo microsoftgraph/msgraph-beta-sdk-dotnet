@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.Security
     public class CaseOperation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
+        /// <summary>The type of action the operation represents. Possible values are: contentExport, applyTags, convertToPdf, index, estimateStatistics, addToReviewSet, holdUpdate, unknownFutureValue, purgeData, exportReport, exportResult. You must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: purgeData, exportReport, exportResult.</summary>
         public CaseAction? Action
         {
             get { return BackingStore?.Get<CaseAction?>("action"); }

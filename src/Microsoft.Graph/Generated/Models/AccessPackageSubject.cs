@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("objectId", value); }
         }
 #endif
-        /// <summary>The onPremisesSecurityIdentifier property</summary>
+        /// <summary>A string representation of the principal&apos;s security identifier, if known, or null if the subject doesn&apos;t have a security identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OnPremisesSecurityIdentifier

@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The frequencyInHours property</summary>
+        /// <summary>The time interval in hours to take snapshots (restore points) of a Cloud PC automatically. Possible values are 4, 6, 12, 16, and 24. The default frequency is 12 hours. The frequencyInHours property is deprecated and will stop returning data on January 31, 2024. Going forward, use the frequencyType property.</summary>
         public int? FrequencyInHours
         {
             get { return BackingStore?.Get<int?>("frequencyInHours"); }

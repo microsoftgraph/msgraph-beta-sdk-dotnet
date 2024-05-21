@@ -33,7 +33,8 @@ namespace Microsoft.Graph.Beta.Users.Item.InvitedBy
         {
         }
         /// <summary>
-        /// Get invitedBy from users
+        /// Get the user or servicePrincipal that invited the specified user into the tenant.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-invitedby?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InvitedBy
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get invitedBy from users
+        /// Get the user or servicePrincipal that invited the specified user into the tenant.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -84,7 +85,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InvitedBy
             return new InvitedByRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get invitedBy from users
+        /// Get the user or servicePrincipal that invited the specified user into the tenant.
         /// </summary>
         public class InvitedByRequestBuilderGetQueryParameters 
         {

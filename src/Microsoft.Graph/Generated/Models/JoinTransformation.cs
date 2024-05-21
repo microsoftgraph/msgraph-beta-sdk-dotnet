@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("input2", value); }
         }
 #endif
-        /// <summary>The separator property</summary>
+        /// <summary>The separator value to be used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Separator

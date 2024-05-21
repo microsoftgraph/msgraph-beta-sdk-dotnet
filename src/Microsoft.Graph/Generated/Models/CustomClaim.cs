@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class CustomClaim : CustomClaimBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The name property</summary>
+        /// <summary>The name of the claim to be emitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("name", value); }
         }
 #endif
-        /// <summary>The namespace property</summary>
+        /// <summary>An optional namespace to be included as part of the claim name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Namespace
@@ -42,13 +42,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("namespace", value); }
         }
 #endif
-        /// <summary>The samlAttributeNameFormat property</summary>
+        /// <summary>If specified, it sets the nameFormat attribute associated with the claim in the SAML response. The possible values are: unspecified, uri, basic, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.SamlAttributeNameFormat? SamlAttributeNameFormat
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SamlAttributeNameFormat?>("samlAttributeNameFormat"); }
             set { BackingStore?.Set("samlAttributeNameFormat", value); }
         }
-        /// <summary>The tokenFormat property</summary>
+        /// <summary>List of token formats for which this claim should be emitted. The possible values are: saml,jwt, unknownFutureValue</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.TokenFormat?>? TokenFormat

@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get authenticationStrengths from identity
+        /// DEPRECATED. See the authenticationStrength relationship instead.
         /// </summary>
         /// <returns>A <see cref="AuthenticationStrengthRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             return requestInfo;
         }
         /// <summary>
-        /// Get authenticationStrengths from identity
+        /// DEPRECATED. See the authenticationStrength relationship instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         {
         }
         /// <summary>
-        /// Get authenticationStrengths from identity
+        /// DEPRECATED. See the authenticationStrength relationship instead.
         /// </summary>
         public class AuthenticationStrengthsRequestBuilderGetQueryParameters 
         {
