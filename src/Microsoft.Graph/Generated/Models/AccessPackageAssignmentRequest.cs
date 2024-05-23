@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accessPackage", value); }
         }
 #endif
-        /// <summary>For a requestType of UserAdd or AdminAdd, this is an access package assignment requested to be created.  For a requestType of UserRemove, AdminRemove or SystemRemove, this has the id property of an existing assignment to be removed.  Supports $expand.</summary>
+        /// <summary>For a requestType of UserAdd or AdminAdd, an access package assignment requested to be created. For a requestType of UserRemove, AdminRemove, or SystemRemove, this property has the id property of an existing assignment to be removed. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.AccessPackageAssignment? AccessPackageAssignment
@@ -102,13 +102,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("customExtensionHandlerInstances", value); }
         }
 #endif
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>True if the request is not to be processed for assignment.</summary>
+        /// <summary>True if the request isn&apos;t to be processed for assignment.</summary>
         public bool? IsValidationOnly
         {
             get { return BackingStore?.Get<bool?>("isValidationOnly"); }
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requestor", value); }
         }
 #endif
-        /// <summary>One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted or Scheduled. Read-only.</summary>
+        /// <summary>One of PendingApproval, Canceled,  Denied, Delivering, Delivered, PartiallyDelivered, DeliveryFailed, Submitted, or Scheduled. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestState
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requestStatus", value); }
         }
 #endif
-        /// <summary>One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.</summary>
+        /// <summary>One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove, or SystemRemove. A request from the user has a requestType of UserAdd, UserUpdate, or UserRemove. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RequestType
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
-        /// <summary>The details of the verifiable credential that was presented by the requestor, such as the issuer and claims. Read-only.</summary>
+        /// <summary>The details of the verifiable credential that the requestor presented, such as the issuer and claims. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VerifiedCredentialData>? VerifiedCredentialsData

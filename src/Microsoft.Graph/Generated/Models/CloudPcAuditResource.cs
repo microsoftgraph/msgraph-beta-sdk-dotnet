@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceType", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>The type of the audit resource. The type property is deprecated and will stop returning data on May 8, 2024. Going forward, use the resourceType property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type

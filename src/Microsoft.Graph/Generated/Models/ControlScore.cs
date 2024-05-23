@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The controlCategory property</summary>
+        /// <summary>Control action category (Identity, Data, Device, Apps, Infrastructure).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ControlCategory
@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("controlCategory", value); }
         }
 #endif
-        /// <summary>The controlName property</summary>
+        /// <summary>Control unique name</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ControlName
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("controlName", value); }
         }
 #endif
-        /// <summary>The description property</summary>
+        /// <summary>Description of the control.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The score property</summary>
+        /// <summary>Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).</summary>
         public double? Score
         {
             get { return BackingStore?.Get<double?>("score"); }

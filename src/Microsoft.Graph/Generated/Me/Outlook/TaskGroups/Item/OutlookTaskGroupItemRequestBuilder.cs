@@ -40,7 +40,8 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item
         {
         }
         /// <summary>
-        /// Delete navigation property taskGroups for me
+        /// Delete the specified outlookTaskGroup.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskgroup-delete?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -88,7 +89,8 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item
             return await RequestAdapter.SendAsync<OutlookTaskGroup>(requestInfo, OutlookTaskGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property taskGroups in me
+        /// Update the writable properties of an Outlook task group. You can&apos;t modify the name of the default task group, &apos;My Tasks&apos;.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/outlooktaskgroup-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="OutlookTaskGroup"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +116,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item
             return await RequestAdapter.SendAsync<OutlookTaskGroup>(requestInfo, OutlookTaskGroup.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete navigation property taskGroups for me
+        /// Delete the specified outlookTaskGroup.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -154,7 +156,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskGroups.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property taskGroups in me
+        /// Update the writable properties of an Outlook task group. You can&apos;t modify the name of the default task group, &apos;My Tasks&apos;.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<SamlNameIDFormat?>("nameIdFormat"); }
             set { BackingStore?.Set("nameIdFormat", value); }
         }
-        /// <summary>The serviceProviderNameQualifier property</summary>
+        /// <summary>Allows the specification of a service provider name qualifier reflected in the sAML response. The value provided must match one of the service provider names configured for the application and is only applicable for IdP-initiated applications (the sign-on URL should be empty for the IdP-initiated applications), in all other cases this value is ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ServiceProviderNameQualifier

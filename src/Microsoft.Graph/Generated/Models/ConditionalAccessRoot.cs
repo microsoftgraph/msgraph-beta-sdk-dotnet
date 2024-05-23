@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("authenticationStrength", value); }
         }
 #endif
-        /// <summary>The authenticationStrengths property</summary>
+        /// <summary>DEPRECATED. See the authenticationStrength relationship instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AuthenticationStrengthRoot? AuthenticationStrengths

@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Agents;
+using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ApplicationSegments;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.PublishedResources;
@@ -30,6 +31,11 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item
         public AgentsRequestBuilder Agents
         {
             get => new AgentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the applicationSegments property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
+        public ApplicationSegmentsRequestBuilder ApplicationSegments
+        {
+            get => new ApplicationSegmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         public ConnectorGroupsRequestBuilder ConnectorGroups

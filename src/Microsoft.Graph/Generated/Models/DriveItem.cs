@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("children", value); }
         }
 #endif
-        /// <summary>The content property</summary>
+        /// <summary>The content stream, if the item represents a file. The content property will have a potentially breaking change in behavior in the future. It will stream content directly instead of redirecting. To proactively opt in to the new behavior ahead of time, use the contentStream property instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Content

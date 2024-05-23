@@ -10,13 +10,13 @@ namespace Microsoft.Graph.Beta.Models.Security
     public class EdiscoverySearchExportOperation : CaseOperation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The additionalOptions property</summary>
+        /// <summary>The additional items to include in the export. The possible values are: none, teamsAndYammerConversations, cloudAttachments, allDocumentVersions, subfolderContents, listAttachments, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.AdditionalOptions? AdditionalOptions
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AdditionalOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The name of export provided by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>The displayName property</summary>
+        /// <summary>The description of the export by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -48,13 +48,13 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The exportCriteria property</summary>
+        /// <summary>Items to be included in the export. The possible values are: searchHits, partiallyIndexed, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.ExportCriteria? ExportCriteria
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportCriteria?>("exportCriteria"); }
             set { BackingStore?.Set("exportCriteria", value); }
         }
-        /// <summary>The exportFileMetadata property</summary>
+        /// <summary>Contains the properties for an export file metadata, including downloadUrl, fileName, and size.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.Security.ExportFileMetadata>? ExportFileMetadata
@@ -70,25 +70,25 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("exportFileMetadata", value); }
         }
 #endif
-        /// <summary>The exportFormat property</summary>
+        /// <summary>Format of the emails of the export. The possible values are: pst, msg, eml, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.ExportFormat? ExportFormat
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportFormat?>("exportFormat"); }
             set { BackingStore?.Set("exportFormat", value); }
         }
-        /// <summary>The exportLocation property</summary>
+        /// <summary>Location scope for partially indexed items. You can choose to include partially indexed items only in responsive locations with search hits or in all targeted locations. The possible values are: responsiveLocations, nonresponsiveLocations, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.ExportLocation? ExportLocation
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ExportLocation?>("exportLocation"); }
             set { BackingStore?.Set("exportLocation", value); }
         }
-        /// <summary>The exportSingleItems property</summary>
+        /// <summary>Indicates whether to export single items.</summary>
         public bool? ExportSingleItems
         {
             get { return BackingStore?.Get<bool?>("exportSingleItems"); }
             set { BackingStore?.Set("exportSingleItems", value); }
         }
-        /// <summary>The search property</summary>
+        /// <summary>The eDiscovery searches under each case.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public EdiscoverySearch? Search

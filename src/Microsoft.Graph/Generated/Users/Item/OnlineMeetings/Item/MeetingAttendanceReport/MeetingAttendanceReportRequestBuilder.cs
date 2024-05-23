@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceR
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get meetingAttendanceReport from users
+        /// The attendance report of the latest online meeting session. Read-only.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingAttendanceReport"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceR
             return requestInfo;
         }
         /// <summary>
-        /// Get meetingAttendanceReport from users
+        /// The attendance report of the latest online meeting session. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceR
         {
         }
         /// <summary>
-        /// Get meetingAttendanceReport from users
+        /// The attendance report of the latest online meeting session. Read-only.
         /// </summary>
         public class MeetingAttendanceReportRequestBuilderGetQueryParameters 
         {

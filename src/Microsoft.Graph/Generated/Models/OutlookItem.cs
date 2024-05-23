@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class OutlookItem : Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The categories property</summary>
+        /// <summary>The categories associated with the item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Categories
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("categories", value); }
         }
 #endif
-        /// <summary>The changeKey property</summary>
+        /// <summary>Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ChangeKey

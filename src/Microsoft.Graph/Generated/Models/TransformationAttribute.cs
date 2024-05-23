@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The treatAsMultiValue property</summary>
+        /// <summary>This flag is only relevant in the case where the attribute is multivalued. By default, transformations are only applied to the first element in a multi-valued claim, however setting this flag to true ensures the transformation is applied to all values, resulting in a multivalued output.</summary>
         public bool? TreatAsMultiValue
         {
             get { return BackingStore?.Get<bool?>("treatAsMultiValue"); }

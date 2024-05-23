@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("excludeDevices", value); }
         }
 #endif
-        /// <summary>The excludeDeviceStates property</summary>
+        /// <summary>States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ExcludeDeviceStates
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("includeDevices", value); }
         }
 #endif
-        /// <summary>The includeDeviceStates property</summary>
+        /// <summary>States in the scope of the policy. All is the only allowed value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? IncludeDeviceStates

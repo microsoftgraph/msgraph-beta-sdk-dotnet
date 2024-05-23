@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<RiskDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
-        /// <summary>The eventTypes property</summary>
+        /// <summary>List of risk event types. Deprecated. Use riskEventType instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RiskEventType?>? EventTypes
@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The riskEventTypes property</summary>
+        /// <summary>The type of risk event detected. The possible values are: anonymizedIPAddress, investigationsThreatIntelligence, investigationsThreatIntelligenceSigninLinked,leakedCredentials, maliciousIPAddress, maliciousIPAddressValidCredentialsBlockedIP, malwareInfectedIPAddress, mcasImpossibleTravel, mcasSuspiciousInboxManipulationRules, suspiciousAPITraffic, suspiciousIPAddress,   unfamiliarFeatures, unlikelyTravel. For more information about each value, see Risk types and detection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? RiskEventTypes

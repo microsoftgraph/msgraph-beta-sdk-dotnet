@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("custodianSources", value); }
         }
 #endif
-        /// <summary>When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
+        /// <summary>When specified, the collection spans across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
         public Microsoft.Graph.Beta.Models.Security.DataSourceScopes? DataSourceScopes
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DataSourceScopes?>("dataSourceScopes"); }

@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+        /// The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
         /// </summary>
         /// <returns>A <see cref="TenantReference"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
             return requestInfo;
         }
         /// <summary>
-        /// The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+        /// The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Ite
         {
         }
         /// <summary>
-        /// The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.
+        /// The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.
         /// </summary>
         public class TenantReferenceTenantItemRequestBuilderGetQueryParameters 
         {

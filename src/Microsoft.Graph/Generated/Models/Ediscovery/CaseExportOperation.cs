@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             get { return BackingStore?.Get<ExportFileStructure?>("exportStructure"); }
             set { BackingStore?.Set("exportStructure", value); }
         }
-        /// <summary>The outputFolderId property</summary>
+        /// <summary>The output folder ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? OutputFolderId

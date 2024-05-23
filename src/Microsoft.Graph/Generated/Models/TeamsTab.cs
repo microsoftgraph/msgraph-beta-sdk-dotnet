@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("teamsApp", value); }
         }
 #endif
-        /// <summary>The teamsAppId property</summary>
+        /// <summary>App definition identifier of the tab. This value can&apos;t be changed after tab creation. Because this property is deprecated, we recommend expanding teamsApp to retrieve the application that is linked to the tab.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TeamsAppId

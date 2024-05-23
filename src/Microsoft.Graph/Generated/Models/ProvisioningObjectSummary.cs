@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class ProvisioningObjectSummary : Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The action property</summary>
+        /// <summary>Indicates the activity name or the operation name (for example, Create user, Add member to group). For a list of activities logged, refer to Microsoft Entra activity list. This is deprecated. Please use provisioningAction instead. Supports $filter (eq, contains).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Action
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sourceSystem", value); }
         }
 #endif
-        /// <summary>The statusInfo property</summary>
+        /// <summary>Details of provisioning status. This is deprecated. Please use provisioningStatusInfo instead. Supports $filter (eq, contains) for status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public StatusBase? StatusInfo

@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("claimsMappingPolicies", value); }
         }
 #endif
-        /// <summary>The claimsPolicy property</summary>
+        /// <summary>A claims policy that allows application admins to customize the claims that will be emitted in tokens affected by this policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CustomClaimsPolicy? ClaimsPolicy

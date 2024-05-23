@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks
         {
         }
         /// <summary>
-        /// Get tasks from users
+        /// The user&apos;s Outlook tasks. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OutlookTaskCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks
             return await RequestAdapter.SendAsync<OutlookTask>(requestInfo, OutlookTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tasks from users
+        /// The user&apos;s Outlook tasks. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.Tasks
             return new TasksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get tasks from users
+        /// The user&apos;s Outlook tasks. Read-only. Nullable.
         /// </summary>
         public class TasksRequestBuilderGetQueryParameters 
         {

@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("servicePlans", value); }
         }
 #endif
-        /// <summary>The sharedUseServicePlans property</summary>
+        /// <summary>Cloud PC shared-use service plans. The sharedUseServicePlans relationship is deprecated and stopped returning data on October 8, 2023. Going forward, use the frontLineServicePlans relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<CloudPcSharedUseServicePlan>? SharedUseServicePlans

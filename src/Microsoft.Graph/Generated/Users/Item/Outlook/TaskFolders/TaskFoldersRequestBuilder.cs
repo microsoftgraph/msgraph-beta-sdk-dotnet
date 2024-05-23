@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders
         {
         }
         /// <summary>
-        /// Get taskFolders from users
+        /// The user&apos;s Outlook task folders. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="OutlookTaskFolderCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders
             return await RequestAdapter.SendAsync<OutlookTaskFolder>(requestInfo, OutlookTaskFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get taskFolders from users
+        /// The user&apos;s Outlook task folders. Read-only. Nullable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders
             return new TaskFoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get taskFolders from users
+        /// The user&apos;s Outlook task folders. Read-only. Nullable.
         /// </summary>
         public class TaskFoldersRequestBuilderGetQueryParameters 
         {

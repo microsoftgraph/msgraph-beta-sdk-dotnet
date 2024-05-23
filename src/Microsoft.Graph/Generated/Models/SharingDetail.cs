@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("sharedDateTime"); }
             set { BackingStore?.Set("sharedDateTime", value); }
         }
-        /// <summary>The sharingReference property</summary>
+        /// <summary>Reference properties of the document, such as the URL and type of the document. Read-only</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ResourceReference? SharingReference

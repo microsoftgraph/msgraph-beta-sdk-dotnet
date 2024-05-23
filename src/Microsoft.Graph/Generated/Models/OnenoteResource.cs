@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class OnenoteResource : OnenoteEntityBaseModel, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The content property</summary>
+        /// <summary>The content of the resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Content
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The contentUrl property</summary>
+        /// <summary>The URL for the content stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentUrl

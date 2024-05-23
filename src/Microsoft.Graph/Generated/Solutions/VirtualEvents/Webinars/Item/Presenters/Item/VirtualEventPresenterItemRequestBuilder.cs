@@ -85,7 +85,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Presenters.
             return await RequestAdapter.SendAsync<VirtualEventPresenter>(requestInfo, VirtualEventPresenter.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property presenters in solutions
+        /// Update the properties of a virtualEventPresenter object. Currently the supported virtual event type is virtualEventWebinar.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventpresenter-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventPresenter"/></returns>
         /// <param name="body">The request body</param>
@@ -158,7 +159,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item.Presenters.
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property presenters in solutions
+        /// Update the properties of a virtualEventPresenter object. Currently the supported virtual event type is virtualEventWebinar.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

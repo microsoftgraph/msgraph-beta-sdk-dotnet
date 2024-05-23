@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Recording
         {
         }
         /// <summary>
-        /// Delete recording for the navigation property onlineMeetings in me
+        /// The content stream of the recording of a Teams live event. Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Recording
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update recording for the navigation property onlineMeetings in me
+        /// The content stream of the recording of a Teams live event. Read-only.
         /// </summary>
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="body">Binary request body</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Recording
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete recording for the navigation property onlineMeetings in me
+        /// The content stream of the recording of a Teams live event. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Recording
             return requestInfo;
         }
         /// <summary>
-        /// Update recording for the navigation property onlineMeetings in me
+        /// The content stream of the recording of a Teams live event. Read-only.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Binary request body</param>

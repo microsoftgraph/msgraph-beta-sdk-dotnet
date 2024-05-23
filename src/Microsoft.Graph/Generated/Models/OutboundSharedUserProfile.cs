@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The collection of external Microsoft Entra tenants that the user has shared profile data with. Read-only.</summary>
+        /// <summary>The collection of external Microsoft Entra tenants that the user shared profile data with. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<TenantReference>? Tenants

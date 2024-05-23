@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("additionalDetail", value); }
         }
 #endif
-        /// <summary>The additionalDetails property</summary>
+        /// <summary>More details about the health check or the recommended action. Read-only. The additionalDetails property is deprecated and stopped returning data on January 31, 2024. Goind forward, use the additionalDetail property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AdditionalDetails

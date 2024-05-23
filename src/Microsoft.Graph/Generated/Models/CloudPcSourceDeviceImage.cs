@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier (ID) of the source image. Read-only. The id property is deprecated and will stop returning data on January 31, 2024. Going forward, use the resourceId property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id

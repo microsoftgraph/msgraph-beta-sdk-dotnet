@@ -288,7 +288,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("participants", value); }
         }
 #endif
-        /// <summary>The requestedModalities property</summary>
+        /// <summary>The list of requested modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Modality?>? RequestedModalities
@@ -304,7 +304,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requestedModalities", value); }
         }
 #endif
-        /// <summary>The resultInfo property</summary>
+        /// <summary>The result information. For example, the result can hold termination reason. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ResultInfo? ResultInfo
@@ -320,13 +320,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resultInfo", value); }
         }
 #endif
-        /// <summary>The ringingTimeoutInSeconds property</summary>
+        /// <summary>Ringing timeout in seconds for outgoing peer to peer calls. The max value for this attribute is 115 seconds.</summary>
         public int? RingingTimeoutInSeconds
         {
             get { return BackingStore?.Get<int?>("ringingTimeoutInSeconds"); }
             set { BackingStore?.Set("ringingTimeoutInSeconds", value); }
         }
-        /// <summary>The routingPolicies property</summary>
+        /// <summary>This property is applicable for peer to peer calls only. Possible values are: none, noMissedCall, disableForwardingExceptPhone, disableForwarding, preferSkypeForBusiness, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<RoutingPolicy?>? RoutingPolicies
@@ -342,7 +342,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("routingPolicies", value); }
         }
 #endif
-        /// <summary>The source property</summary>
+        /// <summary>The originator of the call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ParticipantInfo? Source
@@ -358,13 +358,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("source", value); }
         }
 #endif
-        /// <summary>The state property</summary>
+        /// <summary>The call state. Possible values are: incoming, establishing, ringing, established, hold, transferring, transferAccepted, redirecting, terminating, terminated. Read-only.</summary>
         public CallState? State
         {
             get { return BackingStore?.Get<CallState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>The subject property</summary>
+        /// <summary>The subject of the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Subject
@@ -380,7 +380,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subject", value); }
         }
 #endif
-        /// <summary>The targets property</summary>
+        /// <summary>The targets of the call. Required information for creating peer to peer call.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<InvitationParticipantInfo>? Targets
@@ -396,7 +396,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targets", value); }
         }
 #endif
-        /// <summary>The tenantId property</summary>
+        /// <summary>Read-only. tenantId in Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TenantId

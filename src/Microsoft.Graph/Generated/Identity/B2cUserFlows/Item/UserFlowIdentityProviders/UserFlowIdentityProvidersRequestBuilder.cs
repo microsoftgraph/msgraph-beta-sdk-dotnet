@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProvid
         {
         }
         /// <summary>
-        /// Get userFlowIdentityProviders from identity
+        /// The identity providers included in the user flow.
         /// </summary>
         /// <returns>A <see cref="IdentityProviderBaseCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProvid
             return await RequestAdapter.SendAsync<IdentityProviderBaseCollectionResponse>(requestInfo, IdentityProviderBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get userFlowIdentityProviders from identity
+        /// The identity providers included in the user flow.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProvid
             return new UserFlowIdentityProvidersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get userFlowIdentityProviders from identity
+        /// The identity providers included in the user flow.
         /// </summary>
         public class UserFlowIdentityProvidersRequestBuilderGetQueryParameters 
         {

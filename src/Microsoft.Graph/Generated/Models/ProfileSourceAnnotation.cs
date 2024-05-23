@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isDefaultSource property</summary>
+        /// <summary>Indicates whether the source is the default one.</summary>
         public bool? IsDefaultSource
         {
             get { return BackingStore?.Get<bool?>("isDefaultSource"); }
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The properties property</summary>
+        /// <summary>The names of properties that have data from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Properties

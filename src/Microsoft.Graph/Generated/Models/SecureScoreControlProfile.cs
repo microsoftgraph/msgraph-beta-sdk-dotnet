@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("controlCategory", value); }
         }
 #endif
-        /// <summary>Flag to indicate where the tenant has marked a control (ignore, thirdParty, reviewed) (supports update).</summary>
+        /// <summary>Flag to indicate where the tenant has marked a control (ignored, thirdParty, reviewed) (supports update).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<SecureScoreControlStateUpdate>? ControlStateUpdates
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("implementationCost", value); }
         }
 #endif
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>Time at which the control profile entity was last modified. The Timestamp type represents date and time</summary>
         public DateTimeOffset? LastModifiedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("service", value); }
         }
 #endif
-        /// <summary>List of threats the control mitigates (accountBreach,dataDeletion,dataExfiltration,dataSpillage,elevationOfPrivilege,maliciousInsider,passwordCracking,phishingOrWhaling,spoofing).</summary>
+        /// <summary>List of threats the control mitigates (accountBreach, dataDeletion, dataExfiltration, dataSpillage, elevationOfPrivilege, maliciousInsider, passwordCracking, phishingOrWhaling, spoofing).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Threats
@@ -258,7 +258,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("userImpact", value); }
         }
 #endif
-        /// <summary>The vendorInformation property</summary>
+        /// <summary>Complex type containing details about the security product/service vendor, provider, and subprovider (for example, vendor=Microsoft; provider=SecureScore). Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public SecurityVendorInformation? VendorInformation

@@ -10,13 +10,13 @@ namespace Microsoft.Graph.Beta.Models
     public class SubstringTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The index property</summary>
+        /// <summary>The start index of the substring operation, where 0 is the first character in the string.</summary>
         public int? Index
         {
             get { return BackingStore?.Get<int?>("index"); }
             set { BackingStore?.Set("index", value); }
         }
-        /// <summary>The length property</summary>
+        /// <summary>The maximum length of the string, starting from the provided index.</summary>
         public int? Length
         {
             get { return BackingStore?.Get<int?>("length"); }

@@ -55,7 +55,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get claimsPolicy from servicePrincipals
+        /// Get the properties and relationships of a customClaimsPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customclaimspolicy-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomClaimsPolicy"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -78,7 +79,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return await RequestAdapter.SendAsync<CustomClaimsPolicy>(requestInfo, CustomClaimsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property claimsPolicy in servicePrincipals
+        /// Create a new customClaimsPolicy object if it doesn&apos;t exist, or replace an existing one.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-put-customclaimspolicy?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomClaimsPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -122,7 +124,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return requestInfo;
         }
         /// <summary>
-        /// Get claimsPolicy from servicePrincipals
+        /// Get the properties and relationships of a customClaimsPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -141,7 +143,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property claimsPolicy in servicePrincipals
+        /// Create a new customClaimsPolicy object if it doesn&apos;t exist, or replace an existing one.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -179,7 +181,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
         {
         }
         /// <summary>
-        /// Get claimsPolicy from servicePrincipals
+        /// Get the properties and relationships of a customClaimsPolicy object.
         /// </summary>
         public class ClaimsPolicyRequestBuilderGetQueryParameters 
         {

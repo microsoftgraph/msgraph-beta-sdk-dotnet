@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
             set { BackingStore?.Set("modalities", value); }
         }
 #endif
-        /// <summary>The organizer property</summary>
+        /// <summary>The organizing party&apos;s identity. The organizer property is deprecated and will stop returning data on June 30, 2026. Going forward, use the organizer_v2 relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.IdentitySet? Organizer
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
             set { BackingStore?.Set("organizer_v2", value); }
         }
 #endif
-        /// <summary>The participants property</summary>
+        /// <summary>List of distinct identities involved in the call. Limited to 130 entries. The participants property is deprecated and will stop returning data on June 30, 2026. Going forward, use the participants_v2 relationship.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Microsoft.Graph.Beta.Models.IdentitySet>? Participants

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("profile", value); }
         }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Indicates whether the provisioning policy enables Microsoft Managed Desktop and, if enabled, specifies the type of plan managing the device. Possible values are: notManaged, premiumManaged, standardManaged, starterManaged, unknownFutureValue. The type property is deprecated and will stop returning data on January 31, 2024. Going forward, use the managedType property.</summary>
         public MicrosoftManagedDesktopType? Type
         {
             get { return BackingStore?.Get<MicrosoftManagedDesktopType?>("type"); }

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class WorkbookRangeView : Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The cellAddresses property</summary>
+        /// <summary>Represents the cell addresses</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Json? CellAddresses

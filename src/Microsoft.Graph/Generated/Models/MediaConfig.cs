@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The removeFromDefaultAudioGroup property</summary>
+        /// <summary>Remove media from the default audio group.</summary>
         public bool? RemoveFromDefaultAudioGroup
         {
             get { return BackingStore?.Get<bool?>("removeFromDefaultAudioGroup"); }

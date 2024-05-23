@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class ExtractTransformation : CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The type property</summary>
+        /// <summary>The type of extract transformation to apply.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("type", value); }
         }
 #endif
-        /// <summary>The value property</summary>
+        /// <summary>The value to be used as part of the transformation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("value", value); }
         }
 #endif
-        /// <summary>The value2 property</summary>
+        /// <summary>An optional secondary value to be used when dealing with between extract operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Value2

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class CustomClaimCondition : CustomClaimConditionBase, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The memberOf property</summary>
+        /// <summary>A list of groups (GUIDs) to which the user/application must be a member for this condition to be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MemberOf
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("memberOf", value); }
         }
 #endif
-        /// <summary>The userType property</summary>
+        /// <summary>The type of user this condition applies to. The possible values are: any, members, allGuests, aadGuests, externalGuests, unknownFutureValue.</summary>
         public ClaimConditionUserType? UserType
         {
             get { return BackingStore?.Get<ClaimConditionUserType?>("userType"); }
