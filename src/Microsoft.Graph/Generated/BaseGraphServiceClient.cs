@@ -49,6 +49,7 @@ using Microsoft.Graph.Beta.Education;
 using Microsoft.Graph.Beta.EmployeeExperience;
 using Microsoft.Graph.Beta.External;
 using Microsoft.Graph.Beta.FilterOperators;
+using Microsoft.Graph.Beta.FilteringPolicies;
 using Microsoft.Graph.Beta.Financials;
 using Microsoft.Graph.Beta.Functions;
 using Microsoft.Graph.Beta.GovernanceResources;
@@ -108,6 +109,7 @@ using Microsoft.Graph.Beta.Settings;
 using Microsoft.Graph.Beta.Shares;
 using Microsoft.Graph.Beta.Sites;
 using Microsoft.Graph.Beta.Solutions;
+using Microsoft.Graph.Beta.Storage;
 using Microsoft.Graph.Beta.SubscribedSkus;
 using Microsoft.Graph.Beta.Subscriptions;
 using Microsoft.Graph.Beta.TeamTemplateDefinition;
@@ -363,6 +365,11 @@ namespace Microsoft.Graph.Beta
         public ExternalRequestBuilder External
         {
             get => new ExternalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the collection of filteringPolicy entities.</summary>
+        public FilteringPoliciesRequestBuilder FilteringPolicies
+        {
+            get => new FilteringPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of filterOperatorSchema entities.</summary>
         public FilterOperatorsRequestBuilder FilterOperators
@@ -648,6 +655,11 @@ namespace Microsoft.Graph.Beta
         public SolutionsRequestBuilder Solutions
         {
             get => new SolutionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the storage singleton.</summary>
+        public StorageRequestBuilder Storage
+        {
+            get => new StorageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of subscribedSku entities.</summary>
         public SubscribedSkusRequestBuilder SubscribedSkus

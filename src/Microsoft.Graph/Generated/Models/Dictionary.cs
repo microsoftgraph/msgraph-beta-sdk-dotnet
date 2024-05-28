@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             return mappingValue switch
             {
                 "#microsoft.graph.customAppScopeAttributesDictionary" => new CustomAppScopeAttributesDictionary(),
+                "#microsoft.graph.fileStorageContainerCustomPropertyDictionary" => new FileStorageContainerCustomPropertyDictionary(),
                 "#microsoft.graph.partner.security.additionalDataDictionary" => new AdditionalDataDictionary(),
                 "#microsoft.graph.plannerFormsDictionary" => new PlannerFormsDictionary(),
                 "#microsoft.graph.resultTemplateDictionary" => new ResultTemplateDictionary(),

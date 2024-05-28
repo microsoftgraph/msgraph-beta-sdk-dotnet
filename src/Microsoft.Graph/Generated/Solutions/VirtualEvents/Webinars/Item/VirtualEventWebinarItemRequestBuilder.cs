@@ -106,7 +106,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
             return await RequestAdapter.SendAsync<VirtualEventWebinar>(requestInfo, VirtualEventWebinar.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property webinars in solutions
+        /// Update the properties of a virtualEventWebinar object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventwebinar-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventWebinar"/></returns>
         /// <param name="body">The request body</param>
@@ -199,7 +200,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property webinars in solutions
+        /// Update the properties of a virtualEventWebinar object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

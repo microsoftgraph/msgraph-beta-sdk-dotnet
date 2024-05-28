@@ -38,25 +38,25 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("fulfilledDateTime"); }
             set { BackingStore?.Set("fulfilledDateTime", value); }
         }
-        /// <summary>Timestamp, reviews ending on or before this date are in the fetched history data.</summary>
+        /// <summary>The date and time for which reviews ended before this date are included in the fetched history data.</summary>
         public DateTimeOffset? ReviewHistoryPeriodEndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewHistoryPeriodEndDateTime"); }
             set { BackingStore?.Set("reviewHistoryPeriodEndDateTime", value); }
         }
-        /// <summary>Timestamp, reviews starting on or after this date are in the fetched history data.</summary>
+        /// <summary>The date and time for which reviews started on or after this date are included in the fetched history data.</summary>
         public DateTimeOffset? ReviewHistoryPeriodStartDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewHistoryPeriodStartDateTime"); }
             set { BackingStore?.Set("reviewHistoryPeriodStartDateTime", value); }
         }
-        /// <summary>Timestamp when the instance&apos;s history data is scheduled to be generated.</summary>
+        /// <summary>The date and time when the instance&apos;s history data is scheduled to be generated.</summary>
         public DateTimeOffset? RunDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("runDateTime"); }
             set { BackingStore?.Set("runDateTime", value); }
         }
-        /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status has been marked as done, a link can be generated to retrieve the instance&apos;s data by calling generateDownloadUri method.</summary>
+        /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue. Once the status is marked as done, you can generate a link retrieve the instance&apos;s data by calling generateDownloadUri method.</summary>
         public AccessReviewHistoryStatus? Status
         {
             get { return BackingStore?.Get<AccessReviewHistoryStatus?>("status"); }

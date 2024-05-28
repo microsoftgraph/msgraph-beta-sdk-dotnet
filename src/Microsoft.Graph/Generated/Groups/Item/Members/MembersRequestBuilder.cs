@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Members
         {
         }
         /// <summary>
-        /// Get a list of the group&apos;s direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation is not transitive.
+        /// Get a list of the group&apos;s direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation isn&apos;t transitive.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/group-list-members?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="DirectoryObjectCollectionResponse"/></returns>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Members
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the group&apos;s direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation is not transitive.
+        /// Get a list of the group&apos;s direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation isn&apos;t transitive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Members
             return new MembersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a list of the group&apos;s direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation is not transitive.
+        /// Get a list of the group&apos;s direct members. A group can have users, contacts, devices, service principals, and other groups as members. This operation isn&apos;t transitive.
         /// </summary>
         public class MembersRequestBuilderGetQueryParameters 
         {

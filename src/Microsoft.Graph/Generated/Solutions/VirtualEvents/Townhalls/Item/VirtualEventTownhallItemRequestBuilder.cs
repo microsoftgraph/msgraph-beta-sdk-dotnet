@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item
             return await RequestAdapter.SendAsync<VirtualEventTownhall>(requestInfo, VirtualEventTownhall.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the properties of a virtualEventTownhall object.
+        /// Update the properties of a vvirtualEventTownhall object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventtownhall-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventTownhall"/></returns>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of a virtualEventTownhall object.
+        /// Update the properties of a vvirtualEventTownhall object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

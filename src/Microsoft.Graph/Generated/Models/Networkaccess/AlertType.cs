@@ -39,5 +39,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         #pragma warning disable CS1591
         WebContentBlocked,
         #pragma warning restore CS1591
+        [EnumMember(Value = "malware")]
+        #pragma warning disable CS1591
+        Malware,
+        #pragma warning restore CS1591
     }
 }

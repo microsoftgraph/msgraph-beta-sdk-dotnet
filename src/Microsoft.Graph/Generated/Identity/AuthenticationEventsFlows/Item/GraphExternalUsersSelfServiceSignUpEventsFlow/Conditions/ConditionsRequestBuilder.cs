@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
         {
         }
         /// <summary>
-        /// The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
+        /// The conditions representing the context of the authentication request that&apos;s used to decide whether the events policy is invoked.
         /// </summary>
         /// <returns>A <see cref="AuthenticationConditions"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return await RequestAdapter.SendAsync<AuthenticationConditions>(requestInfo, AuthenticationConditions.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
+        /// The conditions representing the context of the authentication request that&apos;s used to decide whether the events policy is invoked.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Identity.AuthenticationEventsFlows.Item.GraphExte
             return new ConditionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The conditions representing the context of the authentication request that will be used to decide whether the events policy will be invoked.
+        /// The conditions representing the context of the authentication request that&apos;s used to decide whether the events policy is invoked.
         /// </summary>
         public class ConditionsRequestBuilderGetQueryParameters 
         {

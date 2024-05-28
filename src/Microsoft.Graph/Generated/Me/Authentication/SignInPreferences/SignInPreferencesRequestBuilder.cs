@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SignInPreferences
         {
         }
         /// <summary>
-        /// The settings and preferences for to the sign-in experience of a user. Use this property to configure the user&apos;s default multifactor authentication (MFA) method.
+        /// The settings and preferences for the sign-in experience of a user. Use this property to configure the user&apos;s default multifactor authentication (MFA) method.
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SignInPreferences"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SignInPreferences
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SignInPreferences>(requestInfo, Microsoft.Graph.Beta.Models.SignInPreferences.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The settings and preferences for to the sign-in experience of a user. Use this property to configure the user&apos;s default multifactor authentication (MFA) method.
+        /// The settings and preferences for the sign-in experience of a user. Use this property to configure the user&apos;s default multifactor authentication (MFA) method.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.SignInPreferences
             return new SignInPreferencesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// The settings and preferences for to the sign-in experience of a user. Use this property to configure the user&apos;s default multifactor authentication (MFA) method.
+        /// The settings and preferences for the sign-in experience of a user. Use this property to configure the user&apos;s default multifactor authentication (MFA) method.
         /// </summary>
         public class SignInPreferencesRequestBuilderGetQueryParameters 
         {

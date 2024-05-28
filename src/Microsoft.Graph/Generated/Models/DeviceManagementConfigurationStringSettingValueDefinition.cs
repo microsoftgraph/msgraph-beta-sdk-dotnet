@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fileTypes", value); }
         }
 #endif
-        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub, bashScript, unknownFutureValue.</summary>
+        /// <summary>Pre-defined format of the string. Possible values are: none, email, guid, ip, base64, url, version, xml, date, time, binary, regEx, json, dateTime, surfaceHub.</summary>
         public DeviceManagementConfigurationStringFormat? Format
         {
             get { return BackingStore?.Get<DeviceManagementConfigurationStringFormat?>("format"); }
@@ -55,13 +55,13 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<bool?>("isSecret"); }
             set { BackingStore?.Set("isSecret", value); }
         }
-        /// <summary>Maximum length of string. Valid values 0 to 87516</summary>
+        /// <summary>Maximum length of string</summary>
         public long? MaximumLength
         {
             get { return BackingStore?.Get<long?>("maximumLength"); }
             set { BackingStore?.Set("maximumLength", value); }
         }
-        /// <summary>Minimum length of string. Valid values 0 to 87516</summary>
+        /// <summary>Minimum length of string</summary>
         public long? MinimumLength
         {
             get { return BackingStore?.Get<long?>("minimumLength"); }

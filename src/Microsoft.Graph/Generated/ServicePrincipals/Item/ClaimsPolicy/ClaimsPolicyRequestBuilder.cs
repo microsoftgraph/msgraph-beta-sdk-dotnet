@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return await RequestAdapter.SendAsync<CustomClaimsPolicy>(requestInfo, CustomClaimsPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create a new customClaimsPolicy object if it doesn&apos;t exist, or replace an existing one.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/serviceprincipal-put-customclaimspolicy?view=graph-rest-beta" />
+        /// Update a customClaimsPolicy object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/customclaimspolicy-update?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="CustomClaimsPolicy"/></returns>
         /// <param name="body">The request body</param>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.ClaimsPolicy
             return requestInfo;
         }
         /// <summary>
-        /// Create a new customClaimsPolicy object if it doesn&apos;t exist, or replace an existing one.
+        /// Update a customClaimsPolicy object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

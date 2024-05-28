@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     public class VirtualEvent : Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Identity information for the creator of the virtual event. Inherited from virtualEvent.</summary>
+        /// <summary>The identity information for the creator of the virtual event. Inherited from virtualEvent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public CommunicationsIdentitySet? CreatedBy
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
-        /// <summary>Description of the virtual event.</summary>
+        /// <summary>A description of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public ItemBody? Description
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("description", value); }
         }
 #endif
-        /// <summary>Display name of the virtual event.</summary>
+        /// <summary>The display name of the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>End time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.</summary>
+        /// <summary>The end time of the virtual event. The timeZone property can be set to any of the time zones currently supported by Windows. For details on how to get all available time zones using PowerShell, see Get-TimeZone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public DateTimeTimeZone? EndDateTime
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("presenters", value); }
         }
 #endif
-        /// <summary>Sessions for the virtual event.</summary>
+        /// <summary>The sessions for the virtual event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<VirtualEventSession>? Sessions
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
 #endif
-        /// <summary>Status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.</summary>
+        /// <summary>The status of the virtual event. The possible values are: draft, published, canceled, unknownFutureValue.</summary>
         public VirtualEventStatus? Status
         {
             get { return BackingStore?.Get<VirtualEventStatus?>("status"); }

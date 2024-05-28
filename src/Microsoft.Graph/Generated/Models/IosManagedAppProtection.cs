@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("apps", value); }
         }
 #endif
-        /// <summary>A custom browser protocol to open weblink on iOS.</summary>
+        /// <summary>A custom browser protocol to open weblink on iOS. When this property is configured, ManagedBrowserToOpenLinksRequired should be true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CustomBrowserProtocol

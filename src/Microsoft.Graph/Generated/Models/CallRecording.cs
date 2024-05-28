@@ -10,6 +10,22 @@ namespace Microsoft.Graph.Beta.Models
     public class CallRecording : Entity, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The callId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CallId
+        {
+            get { return BackingStore?.Get<string?>("callId"); }
+            set { BackingStore?.Set("callId", value); }
+        }
+#nullable restore
+#else
+        public string CallId
+        {
+            get { return BackingStore?.Get<string>("callId"); }
+            set { BackingStore?.Set("callId", value); }
+        }
+#endif
         /// <summary>The content of the recording. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,11 +42,33 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
+        /// <summary>The contentCorrelationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ContentCorrelationId
+        {
+            get { return BackingStore?.Get<string?>("contentCorrelationId"); }
+            set { BackingStore?.Set("contentCorrelationId", value); }
+        }
+#nullable restore
+#else
+        public string ContentCorrelationId
+        {
+            get { return BackingStore?.Get<string>("contentCorrelationId"); }
+            set { BackingStore?.Set("contentCorrelationId", value); }
+        }
+#endif
         /// <summary>Date and time at which the recording was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
+        }
+        /// <summary>The endDateTime property</summary>
+        public DateTimeOffset? EndDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The unique identifier of the onlineMeeting related to this recording. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -114,8 +152,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "callId", n => { CallId = n.GetStringValue(); } },
                 { "content", n => { Content = n.GetByteArrayValue(); } },
+                { "contentCorrelationId", n => { ContentCorrelationId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "meetingId", n => { MeetingId = n.GetStringValue(); } },
                 { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 { "meetingOrganizerId", n => { MeetingOrganizerId = n.GetStringValue(); } },
@@ -130,8 +171,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("callId", CallId);
             writer.WriteByteArrayValue("content", Content);
+            writer.WriteStringValue("contentCorrelationId", ContentCorrelationId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("meetingId", MeetingId);
             writer.WriteObjectValue<IdentitySet>("meetingOrganizer", MeetingOrganizer);
             writer.WriteStringValue("meetingOrganizerId", MeetingOrganizerId);
