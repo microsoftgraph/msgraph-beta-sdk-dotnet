@@ -100,7 +100,8 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars
             return new GetByUserRoleWithRoleRequestBuilder(PathParameters, RequestAdapter, role);
         }
         /// <summary>
-        /// Create new navigation property to webinars for solutions
+        /// Create a new virtualEventWebinar object in draft mode.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventsroot-post-webinars?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="VirtualEventWebinar"/></returns>
         /// <param name="body">The request body</param>
@@ -144,7 +145,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Webinars
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to webinars for solutions
+        /// Create a new virtualEventWebinar object in draft mode.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

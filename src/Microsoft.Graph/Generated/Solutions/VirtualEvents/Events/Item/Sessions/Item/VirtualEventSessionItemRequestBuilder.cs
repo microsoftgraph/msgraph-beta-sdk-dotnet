@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sessions for the virtual event.
+        /// The sessions for the virtual event.
         /// </summary>
         /// <returns>A <see cref="VirtualEventSession"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
             return requestInfo;
         }
         /// <summary>
-        /// Sessions for the virtual event.
+        /// The sessions for the virtual event.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Events.Item.Sessions.Item
         {
         }
         /// <summary>
-        /// Sessions for the virtual event.
+        /// The sessions for the virtual event.
         /// </summary>
         public class VirtualEventSessionItemRequestBuilderGetQueryParameters 
         {

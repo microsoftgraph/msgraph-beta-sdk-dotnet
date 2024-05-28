@@ -749,6 +749,8 @@ namespace Microsoft.Graph.Beta.Models
                 "#microsoft.graph.fileAttachment" => new FileAttachment(),
                 "#microsoft.graph.fileClassificationRequest" => new FileClassificationRequest(),
                 "#microsoft.graph.fileSecurityProfile" => new FileSecurityProfile(),
+                "#microsoft.graph.fileStorage" => new FileStorage(),
+                "#microsoft.graph.fileStorageContainer" => new FileStorageContainer(),
                 "#microsoft.graph.filterOperatorSchema" => new FilterOperatorSchema(),
                 "#microsoft.graph.finding" => new Finding(),
                 "#microsoft.graph.focusActivityStatistics" => new FocusActivityStatistics(),
