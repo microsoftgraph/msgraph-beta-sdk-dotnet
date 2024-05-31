@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("backgroundColor", value); }
         }
 #endif
-        /// <summary>Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image will reduce bandwidth requirements and make the page load faster.</summary>
+        /// <summary>Image that appears as the background of the sign-in page. The allowed types are PNG or JPEG not smaller than 300 KB and not larger than 1920 × 1080 pixels. A smaller image reduces bandwidth requirements and make the page load faster.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? BackgroundImage
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cdnList", value); }
         }
 #endif
-        /// <summary>Represents the various content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra ID for customers tenants only.</summary>
+        /// <summary>Represents the content options to be customized throughout the authentication flow for a tenant. NOTE: Supported by Microsoft Entra ID for customers&apos; tenants only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public Microsoft.Graph.Beta.Models.ContentCustomization? ContentCustomization

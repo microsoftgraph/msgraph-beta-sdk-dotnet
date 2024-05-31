@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers
         {
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a riskyUser object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyusers-get?view=graph-rest-beta" />
+        /// Retrieve the properties and relationships of a collection of riskyUser objects.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/riskyusers-list?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="RiskyUserCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers
             return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, RiskyUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a riskyUser object.
+        /// Retrieve the properties and relationships of a collection of riskyUser objects.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers
             return new RiskyUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a riskyUser object.
+        /// Retrieve the properties and relationships of a collection of riskyUser objects.
         /// </summary>
         public class RiskyUsersRequestBuilderGetQueryParameters 
         {

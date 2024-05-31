@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/channel-post-messages?view=graph-rest-beta" />
+        /// Send a new chatMessage in the specified channel or a chat.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/chatmessage-post?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="ChatMessage"/></returns>
         /// <param name="body">The request body</param>
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.Messages
             return requestInfo;
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel.
+        /// Send a new chatMessage in the specified channel or a chat.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

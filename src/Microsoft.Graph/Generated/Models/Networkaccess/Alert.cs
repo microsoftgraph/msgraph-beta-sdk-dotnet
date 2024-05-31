@@ -54,6 +54,54 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("description", value); }
         }
 #endif
+        /// <summary>The detectionTechnology property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DetectionTechnology
+        {
+            get { return BackingStore?.Get<string?>("detectionTechnology"); }
+            set { BackingStore?.Set("detectionTechnology", value); }
+        }
+#nullable restore
+#else
+        public string DetectionTechnology
+        {
+            get { return BackingStore?.Get<string>("detectionTechnology"); }
+            set { BackingStore?.Set("detectionTechnology", value); }
+        }
+#endif
+        /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? DisplayName
+        {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#nullable restore
+#else
+        public string DisplayName
+        {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#endif
+        /// <summary>The policy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public FilteringPolicy? Policy
+        {
+            get { return BackingStore?.Get<FilteringPolicy?>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#nullable restore
+#else
+        public FilteringPolicy Policy
+        {
+            get { return BackingStore?.Get<FilteringPolicy>("policy"); }
+            set { BackingStore?.Set("policy", value); }
+        }
+#endif
         /// <summary>The relatedResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +116,28 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             get { return BackingStore?.Get<List<RelatedResource>>("relatedResources"); }
             set { BackingStore?.Set("relatedResources", value); }
+        }
+#endif
+        /// <summary>The severity property</summary>
+        public ThreatSeverity? Severity
+        {
+            get { return BackingStore?.Get<ThreatSeverity?>("severity"); }
+            set { BackingStore?.Set("severity", value); }
+        }
+        /// <summary>The vendorName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? VendorName
+        {
+            get { return BackingStore?.Get<string?>("vendorName"); }
+            set { BackingStore?.Set("vendorName", value); }
+        }
+#nullable restore
+#else
+        public string VendorName
+        {
+            get { return BackingStore?.Get<string>("vendorName"); }
+            set { BackingStore?.Set("vendorName", value); }
         }
 #endif
         /// <summary>
@@ -92,7 +162,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "alertType", n => { AlertType = n.GetEnumValue<AlertType>(); } },
                 { "creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "detectionTechnology", n => { DetectionTechnology = n.GetStringValue(); } },
+                { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "policy", n => { Policy = n.GetObjectValue<FilteringPolicy>(FilteringPolicy.CreateFromDiscriminatorValue); } },
                 { "relatedResources", n => { RelatedResources = n.GetCollectionOfObjectValues<RelatedResource>(RelatedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "severity", n => { Severity = n.GetEnumValue<ThreatSeverity>(); } },
+                { "vendorName", n => { VendorName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -107,7 +182,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteEnumValue<AlertType>("alertType", AlertType);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteStringValue("description", Description);
+            writer.WriteStringValue("detectionTechnology", DetectionTechnology);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteObjectValue<FilteringPolicy>("policy", Policy);
             writer.WriteCollectionOfObjectValues<RelatedResource>("relatedResources", RelatedResources);
+            writer.WriteEnumValue<ThreatSeverity>("severity", Severity);
+            writer.WriteStringValue("vendorName", VendorName);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("coOrganizers", value); }
         }
 #endif
-        /// <summary>The attendees invited to the town hall. The supported identites are: communicationsUserIdentity and communicationsGuestIdentity.</summary>
+        /// <summary>The attendees invited to the town hall. The supported identities are: communicationsUserIdentity and communicationsGuestIdentity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<Identity>? InvitedAttendees

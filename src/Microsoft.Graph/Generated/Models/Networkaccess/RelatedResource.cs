@@ -56,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             {
                 "#microsoft.graph.networkaccess.relatedDestination" => new RelatedDestination(),
                 "#microsoft.graph.networkaccess.relatedDevice" => new RelatedDevice(),
+                "#microsoft.graph.networkaccess.relatedMalware" => new RelatedMalware(),
                 "#microsoft.graph.networkaccess.relatedProcess" => new RelatedProcess(),
                 "#microsoft.graph.networkaccess.relatedRemoteNetwork" => new RelatedRemoteNetwork(),
                 "#microsoft.graph.networkaccess.relatedTenant" => new RelatedTenant(),

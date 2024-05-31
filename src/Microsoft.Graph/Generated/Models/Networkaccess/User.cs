@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
+        /// <summary>The firstAccessDateTime property</summary>
+        public DateTimeOffset? FirstAccessDateTime
+        {
+            get { return BackingStore?.Get<DateTimeOffset?>("firstAccessDateTime"); }
+            set { BackingStore?.Set("firstAccessDateTime", value); }
+        }
         /// <summary>The date and time of the most recent access.</summary>
         public DateTimeOffset? LastAccessDateTime
         {
@@ -57,11 +63,29 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
+        /// <summary>The totalBytesReceived property</summary>
+        public long? TotalBytesReceived
+        {
+            get { return BackingStore?.Get<long?>("totalBytesReceived"); }
+            set { BackingStore?.Set("totalBytesReceived", value); }
+        }
+        /// <summary>The totalBytesSent property</summary>
+        public long? TotalBytesSent
+        {
+            get { return BackingStore?.Get<long?>("totalBytesSent"); }
+            set { BackingStore?.Set("totalBytesSent", value); }
+        }
         /// <summary>The trafficType property</summary>
         public Microsoft.Graph.Beta.Models.Networkaccess.TrafficType? TrafficType
         {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType?>("trafficType"); }
             set { BackingStore?.Set("trafficType", value); }
+        }
+        /// <summary>The transactionCount property</summary>
+        public long? TransactionCount
+        {
+            get { return BackingStore?.Get<long?>("transactionCount"); }
+            set { BackingStore?.Set("transactionCount", value); }
         }
         /// <summary>The ID for the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -128,9 +152,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
+                { "firstAccessDateTime", n => { FirstAccessDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastAccessDateTime", n => { LastAccessDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
+                { "totalBytesReceived", n => { TotalBytesReceived = n.GetLongValue(); } },
+                { "totalBytesSent", n => { TotalBytesSent = n.GetLongValue(); } },
                 { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "transactionCount", n => { TransactionCount = n.GetLongValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 { "userType", n => { UserType = n.GetEnumValue<UserType>(); } },
@@ -144,9 +172,13 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("firstAccessDateTime", FirstAccessDateTime);
             writer.WriteDateTimeOffsetValue("lastAccessDateTime", LastAccessDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteLongValue("totalBytesReceived", TotalBytesReceived);
+            writer.WriteLongValue("totalBytesSent", TotalBytesSent);
             writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
+            writer.WriteLongValue("transactionCount", TransactionCount);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteEnumValue<UserType>("userType", UserType);

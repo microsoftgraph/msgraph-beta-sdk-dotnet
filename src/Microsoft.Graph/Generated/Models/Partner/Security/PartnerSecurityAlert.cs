@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
             set { BackingStore?.Set("activityLogs", value); }
         }
 #endif
-        /// <summary>A bag of name-value pairs that contain additional details about an alert.</summary>
+        /// <summary>A bag of name-value pairs that contain more details about an alert.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public AdditionalDataDictionary? AdditionalDetails
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
             set { BackingStore?.Set("affectedResources", value); }
         }
 #endif
-        /// <summary>The type of vulnerability that impacts the customer due to this alert.</summary>
+        /// <summary>The type of vulnerability that impacts the customer due to this alert. For more information, see Security alerts reference guide.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AlertType
@@ -150,13 +150,13 @@ namespace Microsoft.Graph.Beta.Models.Partner.Security
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  subscription.</summary>
+        /// <summary>Time of the first activity associated with the alert. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? FirstObservedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("firstObservedDateTime"); }
             set { BackingStore?.Set("firstObservedDateTime", value); }
         }
-        /// <summary>Indicates whehter an alert is a test alert.</summary>
+        /// <summary>Indicates whether an alert is a test alert.</summary>
         public bool? IsTest
         {
             get { return BackingStore?.Get<bool?>("isTest"); }

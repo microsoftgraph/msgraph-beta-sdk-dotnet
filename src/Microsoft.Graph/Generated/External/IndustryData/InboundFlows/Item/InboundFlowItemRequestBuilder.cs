@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
-        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundfileflow-get?view=graph-rest-beta" />
+        /// Read the properties and relationships of an inboundFlow object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-inboundflow-get?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="InboundFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
+        /// Read the properties and relationships of an inboundFlow object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.InboundFlows.Item
         {
         }
         /// <summary>
-        /// Read the properties and relationships of an inboundFileFlow object.
+        /// Read the properties and relationships of an inboundFlow object.
         /// </summary>
         public class InboundFlowItemRequestBuilderGetQueryParameters 
         {
