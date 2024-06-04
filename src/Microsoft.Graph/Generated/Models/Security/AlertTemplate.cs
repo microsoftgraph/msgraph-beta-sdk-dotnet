@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Which asset or assets were impacted based on the alert triggered by the custom detection rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImpactedAsset>? ImpactedAssets
+        public List<Microsoft.Graph.Beta.Models.Security.ImpactedAsset>? ImpactedAssets
         {
-            get { return BackingStore?.Get<List<ImpactedAsset>?>("impactedAssets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ImpactedAsset>?>("impactedAssets"); }
             set { BackingStore?.Set("impactedAssets", value); }
         }
 #nullable restore
 #else
-        public List<ImpactedAsset> ImpactedAssets
+        public List<Microsoft.Graph.Beta.Models.Security.ImpactedAsset> ImpactedAssets
         {
-            get { return BackingStore?.Get<List<ImpactedAsset>>("impactedAssets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ImpactedAsset>>("impactedAssets"); }
             set { BackingStore?.Set("impactedAssets", value); }
         }
 #endif
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>The severity property</summary>
-        public AlertSeverity? Severity
+        public Microsoft.Graph.Beta.Models.Security.AlertSeverity? Severity
         {
-            get { return BackingStore?.Get<AlertSeverity?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>Name of the alert triggered by the custom detection rule.</summary>
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AlertTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.AlertTemplate"/> and sets the default values.
         /// </summary>
         public AlertTemplate()
         {
@@ -148,12 +148,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AlertTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AlertTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AlertTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.AlertTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AlertTemplate();
+            return new Microsoft.Graph.Beta.Models.Security.AlertTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,11 +165,11 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "impactedAssets", n => { ImpactedAssets = n.GetCollectionOfObjectValues<ImpactedAsset>(ImpactedAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "impactedAssets", n => { ImpactedAssets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ImpactedAsset>(Microsoft.Graph.Beta.Models.Security.ImpactedAsset.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
-                { "severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.AlertSeverity>(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -182,11 +182,11 @@ namespace Microsoft.Graph.Beta.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<ImpactedAsset>("impactedAssets", ImpactedAssets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ImpactedAsset>("impactedAssets", ImpactedAssets);
             writer.WriteCollectionOfPrimitiveValues<string>("mitreTechniques", MitreTechniques);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("recommendedActions", RecommendedActions);
-            writer.WriteEnumValue<AlertSeverity>("severity", Severity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.AlertSeverity>("severity", Severity);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);
         }

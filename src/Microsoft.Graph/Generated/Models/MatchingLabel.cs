@@ -82,16 +82,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The labelActions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LabelActionBase>? LabelActions
+        public List<Microsoft.Graph.Beta.Models.LabelActionBase>? LabelActions
         {
-            get { return BackingStore?.Get<List<LabelActionBase>?>("labelActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LabelActionBase>?>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
 #nullable restore
 #else
-        public List<LabelActionBase> LabelActions
+        public List<Microsoft.Graph.Beta.Models.LabelActionBase> LabelActions
         {
-            get { return BackingStore?.Get<List<LabelActionBase>>("labelActions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LabelActionBase>>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
 #endif
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MatchingLabel"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MatchingLabel"/> and sets the default values.
         /// </summary>
         public MatchingLabel()
         {
@@ -176,12 +176,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MatchingLabel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MatchingLabel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MatchingLabel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MatchingLabel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MatchingLabel();
+            return new Microsoft.Graph.Beta.Models.MatchingLabel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -191,12 +191,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "applicationMode", n => { ApplicationMode = n.GetEnumValue<ApplicationMode>(); } },
+                { "applicationMode", n => { ApplicationMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.ApplicationMode>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
-                { "labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<LabelActionBase>(LabelActionBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LabelActionBase>(Microsoft.Graph.Beta.Models.LabelActionBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policyTip", n => { PolicyTip = n.GetStringValue(); } },
@@ -211,12 +211,12 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ApplicationMode>("applicationMode", ApplicationMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ApplicationMode>("applicationMode", ApplicationMode);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isEndpointProtectionEnabled", IsEndpointProtectionEnabled);
-            writer.WriteCollectionOfObjectValues<LabelActionBase>("labelActions", LabelActions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LabelActionBase>("labelActions", LabelActions);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyTip", PolicyTip);

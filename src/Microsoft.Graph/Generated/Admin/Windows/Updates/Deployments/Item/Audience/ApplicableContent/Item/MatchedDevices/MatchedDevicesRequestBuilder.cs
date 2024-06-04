@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.A
     public class MatchedDevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the matchedDevices property of the microsoft.graph.windowsUpdates.applicableContent entity.</summary>
         /// <param name="position">The unique identifier of applicableContentDeviceMatch</param>
-        /// <returns>A <see cref="ApplicableContentDeviceMatchDeviceItemRequestBuilder"/></returns>
-        public ApplicableContentDeviceMatchDeviceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.Item.ApplicableContentDeviceMatchDeviceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.Item.ApplicableContentDeviceMatchDeviceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("applicableContentDeviceMatch%2DdeviceId", position);
-                return new ApplicableContentDeviceMatchDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.Item.ApplicableContentDeviceMatchDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MatchedDevicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.A
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="MatchedDevicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.A
         /// <summary>
         /// Collection of devices and recommendations for applicable catalog content.
         /// </summary>
-        /// <returns>A <see cref="ApplicableContentDeviceMatchCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatchCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ApplicableContentDeviceMatchCollectionResponse?> GetAsync(Action<RequestConfiguration<MatchedDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatchCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder.MatchedDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ApplicableContentDeviceMatchCollectionResponse> GetAsync(Action<RequestConfiguration<MatchedDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatchCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder.MatchedDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ApplicableContentDeviceMatchCollectionResponse>(requestInfo, ApplicableContentDeviceMatchCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatchCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatchCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to matchedDevices for admin
         /// </summary>
-        /// <returns>A <see cref="ApplicableContentDeviceMatch"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ApplicableContentDeviceMatch?> PostAsync(ApplicableContentDeviceMatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch?> PostAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ApplicableContentDeviceMatch> PostAsync(ApplicableContentDeviceMatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch> PostAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ApplicableContentDeviceMatch>(requestInfo, ApplicableContentDeviceMatch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Collection of devices and recommendations for applicable catalog content.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MatchedDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder.MatchedDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MatchedDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder.MatchedDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.A
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ApplicableContentDeviceMatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ApplicableContentDeviceMatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.ApplicableContentDeviceMatch body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.A
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MatchedDevicesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MatchedDevicesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder WithUrl(string rawUrl)
         {
-            return new MatchedDevicesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Collection of devices and recommendations for applicable catalog content.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.A
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MatchedDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<MatchedDevicesRequestBuilderGetQueryParameters>
+        public class MatchedDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.ApplicableContent.Item.MatchedDevices.MatchedDevicesRequestBuilder.MatchedDevicesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -65,13 +65,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the status of the Approval Request. The status of a request will change when an action is successfully performed on it, such as when it is `approved` or `rejected`, or when the request&apos;s expiration DateTime passes and the result is `expired`.</summary>
-        public OperationApprovalRequestStatus? RequestStatus
+        public Microsoft.Graph.Beta.Models.OperationApprovalRequestStatus? RequestStatus
         {
-            get { return BackingStore?.Get<OperationApprovalRequestStatus?>("requestStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationApprovalRequestStatus?>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OperationApprovalRequestEntityStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OperationApprovalRequestEntityStatus"/> and sets the default values.
         /// </summary>
         public OperationApprovalRequestEntityStatus()
         {
@@ -81,12 +81,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OperationApprovalRequestEntityStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OperationApprovalRequestEntityStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OperationApprovalRequestEntityStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OperationApprovalRequestEntityStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OperationApprovalRequestEntityStatus();
+            return new Microsoft.Graph.Beta.Models.OperationApprovalRequestEntityStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "requestExpirationDateTime", n => { RequestExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "requestId", n => { RequestId = n.GetStringValue(); } },
-                { "requestStatus", n => { RequestStatus = n.GetEnumValue<OperationApprovalRequestStatus>(); } },
+                { "requestStatus", n => { RequestStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationApprovalRequestStatus>(); } },
             };
         }
         /// <summary>
@@ -111,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<OperationApprovalRequestStatus>("requestStatus", RequestStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OperationApprovalRequestStatus>("requestStatus", RequestStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

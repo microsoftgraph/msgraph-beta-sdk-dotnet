@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents a booked appointment of a service by a customer in a business.
     /// </summary>
-    public class BookingAppointment : Entity, IParsable
+    public class BookingAppointment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,16 +100,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents location information for the bookingCustomer who is booking the appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Location? CustomerLocation
+        public Microsoft.Graph.Beta.Models.Location? CustomerLocation
         {
-            get { return BackingStore?.Get<Location?>("customerLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location?>("customerLocation"); }
             set { BackingStore?.Set("customerLocation", value); }
         }
 #nullable restore
 #else
-        public Location CustomerLocation
+        public Microsoft.Graph.Beta.Models.Location CustomerLocation
         {
-            get { return BackingStore?.Get<Location>("customerLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("customerLocation"); }
             set { BackingStore?.Set("customerLocation", value); }
         }
 #endif
@@ -164,16 +164,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingCustomerInformationBase>? Customers
+        public List<Microsoft.Graph.Beta.Models.BookingCustomerInformationBase>? Customers
         {
-            get { return BackingStore?.Get<List<BookingCustomerInformationBase>?>("customers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingCustomerInformationBase>?>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
 #nullable restore
 #else
-        public List<BookingCustomerInformationBase> Customers
+        public List<Microsoft.Graph.Beta.Models.BookingCustomerInformationBase> Customers
         {
-            get { return BackingStore?.Get<List<BookingCustomerInformationBase>>("customers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingCustomerInformationBase>>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
 #endif
@@ -202,16 +202,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The end property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? End
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? End
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone End
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone End
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("end"); }
             set { BackingStore?.Set("end", value); }
         }
 #endif
@@ -230,16 +230,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The date, time, and time zone of the invoice for this appointment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? InvoiceDate
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? InvoiceDate
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("invoiceDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("invoiceDate"); }
             set { BackingStore?.Set("invoiceDate", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone InvoiceDate
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone InvoiceDate
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("invoiceDate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("invoiceDate"); }
             set { BackingStore?.Set("invoiceDate", value); }
         }
 #endif
@@ -260,9 +260,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The invoiceStatus property</summary>
-        public BookingInvoiceStatus? InvoiceStatus
+        public Microsoft.Graph.Beta.Models.BookingInvoiceStatus? InvoiceStatus
         {
-            get { return BackingStore?.Get<BookingInvoiceStatus?>("invoiceStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingInvoiceStatus?>("invoiceStatus"); }
             set { BackingStore?.Set("invoiceStatus", value); }
         }
         /// <summary>The URL of the invoice in Microsoft Bookings.</summary>
@@ -362,24 +362,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("price", value); }
         }
         /// <summary>Represents the type of pricing of a booking service.</summary>
-        public BookingPriceType? PriceType
+        public Microsoft.Graph.Beta.Models.BookingPriceType? PriceType
         {
-            get { return BackingStore?.Get<BookingPriceType?>("priceType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingPriceType?>("priceType"); }
             set { BackingStore?.Set("priceType", value); }
         }
         /// <summary>The collection of customer reminders sent for this appointment. The value of this property is available only when reading this bookingAppointment by its ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingReminder>? Reminders
+        public List<Microsoft.Graph.Beta.Models.BookingReminder>? Reminders
         {
-            get { return BackingStore?.Get<List<BookingReminder>?>("reminders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingReminder>?>("reminders"); }
             set { BackingStore?.Set("reminders", value); }
         }
 #nullable restore
 #else
-        public List<BookingReminder> Reminders
+        public List<Microsoft.Graph.Beta.Models.BookingReminder> Reminders
         {
-            get { return BackingStore?.Get<List<BookingReminder>>("reminders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingReminder>>("reminders"); }
             set { BackingStore?.Set("reminders", value); }
         }
 #endif
@@ -418,16 +418,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The location where the service is delivered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Location? ServiceLocation
+        public Microsoft.Graph.Beta.Models.Location? ServiceLocation
         {
-            get { return BackingStore?.Get<Location?>("serviceLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location?>("serviceLocation"); }
             set { BackingStore?.Set("serviceLocation", value); }
         }
 #nullable restore
 #else
-        public Location ServiceLocation
+        public Microsoft.Graph.Beta.Models.Location ServiceLocation
         {
-            get { return BackingStore?.Get<Location>("serviceLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("serviceLocation"); }
             set { BackingStore?.Set("serviceLocation", value); }
         }
 #endif
@@ -488,28 +488,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The start property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DateTimeTimeZone? Start
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone? Start
         {
-            get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone?>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #nullable restore
 #else
-        public DateTimeTimeZone Start
+        public Microsoft.Graph.Beta.Models.DateTimeTimeZone Start
         {
-            get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("start"); }
             set { BackingStore?.Set("start", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingAppointment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BookingAppointment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BookingAppointment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.BookingAppointment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingAppointment();
+            return new Microsoft.Graph.Beta.Models.BookingAppointment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -525,19 +525,19 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "customerEmailAddress", n => { CustomerEmailAddress = n.GetStringValue(); } },
                 { "customerId", n => { CustomerId = n.GetStringValue(); } },
-                { "customerLocation", n => { CustomerLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
+                { "customerLocation", n => { CustomerLocation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Location>(Microsoft.Graph.Beta.Models.Location.CreateFromDiscriminatorValue); } },
                 { "customerName", n => { CustomerName = n.GetStringValue(); } },
                 { "customerNotes", n => { CustomerNotes = n.GetStringValue(); } },
                 { "customerPhone", n => { CustomerPhone = n.GetStringValue(); } },
                 { "customerTimeZone", n => { CustomerTimeZone = n.GetStringValue(); } },
-                { "customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customers", n => { Customers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingCustomerInformationBase>(Microsoft.Graph.Beta.Models.BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "duration", n => { Duration = n.GetTimeSpanValue(); } },
-                { "end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "end", n => { End = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "filledAttendeesCount", n => { FilledAttendeesCount = n.GetIntValue(); } },
                 { "invoiceAmount", n => { InvoiceAmount = n.GetDoubleValue(); } },
-                { "invoiceDate", n => { InvoiceDate = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "invoiceDate", n => { InvoiceDate = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 { "invoiceId", n => { InvoiceId = n.GetStringValue(); } },
-                { "invoiceStatus", n => { InvoiceStatus = n.GetEnumValue<BookingInvoiceStatus>(); } },
+                { "invoiceStatus", n => { InvoiceStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.BookingInvoiceStatus>(); } },
                 { "invoiceUrl", n => { InvoiceUrl = n.GetStringValue(); } },
                 { "isCustomerAllowedToManageBooking", n => { IsCustomerAllowedToManageBooking = n.GetBoolValue(); } },
                 { "isLocationOnline", n => { IsLocationOnline = n.GetBoolValue(); } },
@@ -549,16 +549,16 @@ namespace Microsoft.Graph.Beta.Models
                 { "postBuffer", n => { PostBuffer = n.GetTimeSpanValue(); } },
                 { "preBuffer", n => { PreBuffer = n.GetTimeSpanValue(); } },
                 { "price", n => { Price = n.GetDoubleValue(); } },
-                { "priceType", n => { PriceType = n.GetEnumValue<BookingPriceType>(); } },
-                { "reminders", n => { Reminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "priceType", n => { PriceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.BookingPriceType>(); } },
+                { "reminders", n => { Reminders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingReminder>(Microsoft.Graph.Beta.Models.BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "selfServiceAppointmentId", n => { SelfServiceAppointmentId = n.GetStringValue(); } },
                 { "serviceId", n => { ServiceId = n.GetStringValue(); } },
-                { "serviceLocation", n => { ServiceLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
+                { "serviceLocation", n => { ServiceLocation = n.GetObjectValue<Microsoft.Graph.Beta.Models.Location>(Microsoft.Graph.Beta.Models.Location.CreateFromDiscriminatorValue); } },
                 { "serviceName", n => { ServiceName = n.GetStringValue(); } },
                 { "serviceNotes", n => { ServiceNotes = n.GetStringValue(); } },
                 { "smsNotificationsEnabled", n => { SmsNotificationsEnabled = n.GetBoolValue(); } },
                 { "staffMemberIds", n => { StaffMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                { "start", n => { Start = n.GetObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>(Microsoft.Graph.Beta.Models.DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -575,17 +575,17 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("customerEmailAddress", CustomerEmailAddress);
             writer.WriteStringValue("customerId", CustomerId);
-            writer.WriteObjectValue<Location>("customerLocation", CustomerLocation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Location>("customerLocation", CustomerLocation);
             writer.WriteStringValue("customerName", CustomerName);
             writer.WriteStringValue("customerNotes", CustomerNotes);
             writer.WriteStringValue("customerPhone", CustomerPhone);
-            writer.WriteCollectionOfObjectValues<BookingCustomerInformationBase>("customers", Customers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingCustomerInformationBase>("customers", Customers);
             writer.WriteStringValue("customerTimeZone", CustomerTimeZone);
-            writer.WriteObjectValue<DateTimeTimeZone>("end", End);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("end", End);
             writer.WriteDoubleValue("invoiceAmount", InvoiceAmount);
-            writer.WriteObjectValue<DateTimeTimeZone>("invoiceDate", InvoiceDate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("invoiceDate", InvoiceDate);
             writer.WriteStringValue("invoiceId", InvoiceId);
-            writer.WriteEnumValue<BookingInvoiceStatus>("invoiceStatus", InvoiceStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BookingInvoiceStatus>("invoiceStatus", InvoiceStatus);
             writer.WriteStringValue("invoiceUrl", InvoiceUrl);
             writer.WriteBoolValue("isCustomerAllowedToManageBooking", IsCustomerAllowedToManageBooking);
             writer.WriteBoolValue("isLocationOnline", IsLocationOnline);
@@ -597,16 +597,16 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteTimeSpanValue("postBuffer", PostBuffer);
             writer.WriteTimeSpanValue("preBuffer", PreBuffer);
             writer.WriteDoubleValue("price", Price);
-            writer.WriteEnumValue<BookingPriceType>("priceType", PriceType);
-            writer.WriteCollectionOfObjectValues<BookingReminder>("reminders", Reminders);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BookingPriceType>("priceType", PriceType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingReminder>("reminders", Reminders);
             writer.WriteStringValue("selfServiceAppointmentId", SelfServiceAppointmentId);
             writer.WriteStringValue("serviceId", ServiceId);
-            writer.WriteObjectValue<Location>("serviceLocation", ServiceLocation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Location>("serviceLocation", ServiceLocation);
             writer.WriteStringValue("serviceName", ServiceName);
             writer.WriteStringValue("serviceNotes", ServiceNotes);
             writer.WriteBoolValue("smsNotificationsEnabled", SmsNotificationsEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("staffMemberIds", StaffMemberIds);
-            writer.WriteObjectValue<DateTimeTimeZone>("start", Start);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DateTimeTimeZone>("start", Start);
         }
     }
 }

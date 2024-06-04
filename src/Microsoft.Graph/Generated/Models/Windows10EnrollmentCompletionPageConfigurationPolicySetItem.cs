@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for Windows10EnrollmentCompletionPageConfiguration PolicySetItem.
     /// </summary>
-    public class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : PolicySetItem, IParsable
+    public class Windows10EnrollmentCompletionPageConfigurationPolicySetItem : Microsoft.Graph.Beta.Models.PolicySetItem, IParsable
     {
         /// <summary>Priority of the Windows10EnrollmentCompletionPageConfigurationPolicySetItem.</summary>
         public int? Priority
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows10EnrollmentCompletionPageConfigurationPolicySetItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfigurationPolicySetItem"/> and sets the default values.
         /// </summary>
         public Windows10EnrollmentCompletionPageConfigurationPolicySetItem() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10EnrollmentCompletionPageConfigurationPolicySetItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfigurationPolicySetItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10EnrollmentCompletionPageConfigurationPolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfigurationPolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10EnrollmentCompletionPageConfigurationPolicySetItem();
+            return new Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfigurationPolicySetItem();
         }
         /// <summary>
         /// The deserialization information for the current model

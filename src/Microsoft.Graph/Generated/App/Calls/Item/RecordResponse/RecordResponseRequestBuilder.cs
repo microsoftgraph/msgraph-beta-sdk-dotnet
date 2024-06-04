@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.RecordResponse
     public class RecordResponseRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="RecordResponseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponseRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.RecordResponse
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="RecordResponseRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponseRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,27 +36,27 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.RecordResponse
         /// Record a short audio response from the caller. A bot can use this API to capture a voice response from a caller after they&apos;re prompted for a response. For more information about how to handle operations, see commsOperation. This action isn&apos;t intended to record the entire call. The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn&apos;t save the recording permanently and discards it shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/call-record?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="RecordOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecordOperation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RecordOperation?> PostAsync(RecordResponsePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.RecordOperation?> PostAsync(Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponsePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RecordOperation> PostAsync(RecordResponsePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.RecordOperation> PostAsync(Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponsePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RecordOperation>(requestInfo, RecordOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RecordOperation>(requestInfo, Microsoft.Graph.Beta.Models.RecordOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Record a short audio response from the caller. A bot can use this API to capture a voice response from a caller after they&apos;re prompted for a response. For more information about how to handle operations, see commsOperation. This action isn&apos;t intended to record the entire call. The maximum length of recording is 2 minutes.The Cloud Communications Platform doesn&apos;t save the recording permanently and discards it shortly after the call ends. The bot must download the recording promptly after the recording operation finishes by using the recordingLocation value provided in the completed notification.
@@ -66,11 +66,11 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.RecordResponse
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(RecordResponsePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponsePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(RecordResponsePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponsePostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.RecordResponse
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="RecordResponseRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponseRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public RecordResponseRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponseRequestBuilder WithUrl(string rawUrl)
         {
-            return new RecordResponseRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.App.Calls.Item.RecordResponse.RecordResponseRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

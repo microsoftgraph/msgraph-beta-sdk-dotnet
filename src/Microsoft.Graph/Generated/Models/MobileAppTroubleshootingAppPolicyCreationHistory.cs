@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// History Item contained in the Mobile App Troubleshooting Event.
     /// </summary>
-    public class MobileAppTroubleshootingAppPolicyCreationHistory : MobileAppTroubleshootingHistoryItem, IParsable
+    public class MobileAppTroubleshootingAppPolicyCreationHistory : Microsoft.Graph.Beta.Models.MobileAppTroubleshootingHistoryItem, IParsable
     {
         /// <summary>Error code for the failure, empty if no failure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppTroubleshootingAppPolicyCreationHistory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppTroubleshootingAppPolicyCreationHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppTroubleshootingAppPolicyCreationHistory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingAppPolicyCreationHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppTroubleshootingAppPolicyCreationHistory();
+            return new Microsoft.Graph.Beta.Models.MobileAppTroubleshootingAppPolicyCreationHistory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "errorCode", n => { ErrorCode = n.GetStringValue(); } },
-                { "runState", n => { RunState = n.GetEnumValue<RunState>(); } },
+                { "runState", n => { RunState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RunState>(); } },
             };
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("errorCode", ErrorCode);
-            writer.WriteEnumValue<RunState>("runState", RunState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RunState>("runState", RunState);
         }
     }
 }

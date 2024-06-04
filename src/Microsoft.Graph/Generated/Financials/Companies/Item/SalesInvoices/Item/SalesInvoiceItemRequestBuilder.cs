@@ -27,57 +27,57 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item
     public class SalesInvoiceItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cancel.CancelRequestBuilder Cancel
         {
-            get => new CancelRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancelAndSend method.</summary>
-        public CancelAndSendRequestBuilder CancelAndSend
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.CancelAndSend.CancelAndSendRequestBuilder CancelAndSend
         {
-            get => new CancelAndSendRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.CancelAndSend.CancelAndSendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the currency property of the microsoft.graph.salesInvoice entity.</summary>
-        public CurrencyRequestBuilder Currency
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Currency.CurrencyRequestBuilder Currency
         {
-            get => new CurrencyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Currency.CurrencyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the customer property of the microsoft.graph.salesInvoice entity.</summary>
-        public CustomerRequestBuilder Customer
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Customer.CustomerRequestBuilder Customer
         {
-            get => new CustomerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Customer.CustomerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the paymentTerm property of the microsoft.graph.salesInvoice entity.</summary>
-        public PaymentTermRequestBuilder PaymentTerm
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.PaymentTerm.PaymentTermRequestBuilder PaymentTerm
         {
-            get => new PaymentTermRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.PaymentTerm.PaymentTermRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the postAndSend method.</summary>
-        public PostAndSendRequestBuilder PostAndSend
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.PostAndSend.PostAndSendRequestBuilder PostAndSend
         {
-            get => new PostAndSendRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.PostAndSend.PostAndSendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the post method.</summary>
-        public PostRequestBuilder PostPath
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Post.PostRequestBuilder PostPath
         {
-            get => new PostRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Post.PostRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.</summary>
-        public SalesInvoiceLinesRequestBuilder SalesInvoiceLines
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines.SalesInvoiceLinesRequestBuilder SalesInvoiceLines
         {
-            get => new SalesInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceLines.SalesInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the send method.</summary>
-        public SendRequestBuilder Send
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Send.SendRequestBuilder Send
         {
-            get => new SendRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.Send.SendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the shipmentMethod property of the microsoft.graph.salesInvoice entity.</summary>
-        public ShipmentMethodRequestBuilder ShipmentMethod
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.ShipmentMethod.ShipmentMethodRequestBuilder ShipmentMethod
         {
-            get => new ShipmentMethodRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.ShipmentMethod.ShipmentMethodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="SalesInvoiceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SalesInvoiceItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -95,50 +95,50 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item
         /// <summary>
         /// Get salesInvoices from financials
         /// </summary>
-        /// <returns>A <see cref="SalesInvoice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SalesInvoice"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesInvoice?> GetAsync(Action<RequestConfiguration<SalesInvoiceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesInvoice?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder.SalesInvoiceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SalesInvoice> GetAsync(Action<RequestConfiguration<SalesInvoiceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesInvoice> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder.SalesInvoiceItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SalesInvoice>(requestInfo, SalesInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SalesInvoice>(requestInfo, Microsoft.Graph.Beta.Models.SalesInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property salesInvoices in financials
         /// </summary>
-        /// <returns>A <see cref="SalesInvoice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SalesInvoice"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SalesInvoice?> PatchAsync(SalesInvoice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesInvoice?> PatchAsync(Microsoft.Graph.Beta.Models.SalesInvoice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SalesInvoice> PatchAsync(SalesInvoice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SalesInvoice> PatchAsync(Microsoft.Graph.Beta.Models.SalesInvoice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SalesInvoice>(requestInfo, SalesInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SalesInvoice>(requestInfo, Microsoft.Graph.Beta.Models.SalesInvoice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get salesInvoices from financials
@@ -147,11 +147,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoiceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder.SalesInvoiceItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SalesInvoiceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder.SalesInvoiceItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(SalesInvoice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.SalesInvoice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(SalesInvoice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.SalesInvoice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -184,11 +184,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SalesInvoiceItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SalesInvoiceItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new SalesInvoiceItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get salesInvoices from financials
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SalesInvoiceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<SalesInvoiceItemRequestBuilderGetQueryParameters>
+        public class SalesInvoiceItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item.SalesInvoiceItemRequestBuilder.SalesInvoiceItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

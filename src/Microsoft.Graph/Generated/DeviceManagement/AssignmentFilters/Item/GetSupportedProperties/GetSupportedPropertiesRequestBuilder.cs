@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSuppor
     public class GetSupportedPropertiesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetSupportedPropertiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSuppor
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetSupportedPropertiesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSuppor
         /// <summary>
         /// Invoke function getSupportedProperties
         /// </summary>
-        /// <returns>A <see cref="GetSupportedPropertiesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetSupportedPropertiesGetResponse?> GetAsGetSupportedPropertiesGetResponseAsync(Action<RequestConfiguration<GetSupportedPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesGetResponse?> GetAsGetSupportedPropertiesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder.GetSupportedPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetSupportedPropertiesGetResponse> GetAsGetSupportedPropertiesGetResponseAsync(Action<RequestConfiguration<GetSupportedPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesGetResponse> GetAsGetSupportedPropertiesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder.GetSupportedPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetSupportedPropertiesGetResponse>(requestInfo, GetSupportedPropertiesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesGetResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getSupportedProperties
         /// </summary>
-        /// <returns>A <see cref="GetSupportedPropertiesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetSupportedPropertiesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetSupportedPropertiesResponse?> GetAsync(Action<RequestConfiguration<GetSupportedPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder.GetSupportedPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetSupportedPropertiesResponse> GetAsync(Action<RequestConfiguration<GetSupportedPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder.GetSupportedPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetSupportedPropertiesResponse>(requestInfo, GetSupportedPropertiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getSupportedProperties
@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSuppor
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetSupportedPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder.GetSupportedPropertiesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetSupportedPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder.GetSupportedPropertiesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSuppor
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetSupportedPropertiesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetSupportedPropertiesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetSupportedPropertiesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getSupportedProperties
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSuppor
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetSupportedPropertiesRequestBuilderGetRequestConfiguration : RequestConfiguration<GetSupportedPropertiesRequestBuilderGetQueryParameters>
+        public class GetSupportedPropertiesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties.GetSupportedPropertiesRequestBuilder.GetSupportedPropertiesRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GovernanceRoleDefinition : Entity, IParsable
+    public class GovernanceRoleDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The display name of the role definition.</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. The associated resource for the role definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceResource? Resource
+        public Microsoft.Graph.Beta.Models.GovernanceResource? Resource
         {
-            get { return BackingStore?.Get<GovernanceResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public GovernanceResource Resource
+        public Microsoft.Graph.Beta.Models.GovernanceResource Resource
         {
-            get { return BackingStore?.Get<GovernanceResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The associated role setting for the role definition.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleSetting? RoleSetting
+        public Microsoft.Graph.Beta.Models.GovernanceRoleSetting? RoleSetting
         {
-            get { return BackingStore?.Get<GovernanceRoleSetting?>("roleSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleSetting?>("roleSetting"); }
             set { BackingStore?.Set("roleSetting", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleSetting RoleSetting
+        public Microsoft.Graph.Beta.Models.GovernanceRoleSetting RoleSetting
         {
-            get { return BackingStore?.Get<GovernanceRoleSetting>("roleSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleSetting>("roleSetting"); }
             set { BackingStore?.Set("roleSetting", value); }
         }
 #endif
@@ -109,12 +109,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GovernanceRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GovernanceRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceRoleDefinition();
+            return new Microsoft.Graph.Beta.Models.GovernanceRoleDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceResource>(Microsoft.Graph.Beta.Models.GovernanceResource.CreateFromDiscriminatorValue); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "roleSetting", n => { RoleSetting = n.GetObjectValue<GovernanceRoleSetting>(GovernanceRoleSetting.CreateFromDiscriminatorValue); } },
+                { "roleSetting", n => { RoleSetting = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleSetting>(Microsoft.Graph.Beta.Models.GovernanceRoleSetting.CreateFromDiscriminatorValue); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
         }
@@ -142,9 +142,9 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteObjectValue<GovernanceResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceResource>("resource", Resource);
             writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteObjectValue<GovernanceRoleSetting>("roleSetting", RoleSetting);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleSetting>("roleSetting", RoleSetting);
             writer.WriteStringValue("templateId", TemplateId);
         }
     }

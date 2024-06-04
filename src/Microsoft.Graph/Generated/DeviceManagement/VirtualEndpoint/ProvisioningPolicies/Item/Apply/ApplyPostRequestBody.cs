@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The policySettings property</summary>
-        public CloudPcPolicySettingType? PolicySettings
+        public Microsoft.Graph.Beta.Models.CloudPcPolicySettingType? PolicySettings
         {
-            get { return BackingStore?.Get<CloudPcPolicySettingType?>("policySettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcPolicySettingType?>("policySettings"); }
             set { BackingStore?.Set("policySettings", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ApplyPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply.ApplyPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyPostRequestBody()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplyPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply.ApplyPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply.ApplyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplyPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies.Item.Apply.ApplyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "policySettings", n => { PolicySettings = n.GetEnumValue<CloudPcPolicySettingType>(); } },
+                { "policySettings", n => { PolicySettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcPolicySettingType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<CloudPcPolicySettingType>("policySettings", PolicySettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcPolicySettingType>("policySettings", PolicySettings);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

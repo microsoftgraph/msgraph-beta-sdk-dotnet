@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations
 {
     [Obsolete("This class is obsolete. Use GetEffectiveDeviceEnrollmentConfigurationsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetEffectiveDeviceEnrollmentConfigurationsResponse : GetEffectiveDeviceEnrollmentConfigurationsGetResponse, IParsable
+    public class GetEffectiveDeviceEnrollmentConfigurationsResponse : Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetEffectiveDeviceEnrollmentConfigurationsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetEffectiveDeviceEnrollmentConfigurationsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetEffectiveDeviceEnrollmentConfigurationsResponse();
+            return new Microsoft.Graph.Beta.Me.GetEffectiveDeviceEnrollmentConfigurations.GetEffectiveDeviceEnrollmentConfigurationsResponse();
         }
     }
 }

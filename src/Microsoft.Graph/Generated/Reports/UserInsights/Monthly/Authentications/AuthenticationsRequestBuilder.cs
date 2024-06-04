@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications
     public class AuthenticationsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authentications property of the microsoft.graph.monthlyUserInsightMetricsRoot entity.</summary>
         /// <param name="position">The unique identifier of authenticationsMetric</param>
-        /// <returns>A <see cref="AuthenticationsMetricItemRequestBuilder"/></returns>
-        public AuthenticationsMetricItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.Item.AuthenticationsMetricItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.Item.AuthenticationsMetricItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("authenticationsMetric%2Did", position);
-                return new AuthenticationsMetricItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.Item.AuthenticationsMetricItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications
         /// Get a list of monthly authentications on apps registered in your tenant configured for Microsoft Entra External ID for customers.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/monthlyuserinsightmetricsroot-list-authentications?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="AuthenticationsMetricCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationsMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationsMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<AuthenticationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AuthenticationsMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder.AuthenticationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationsMetricCollectionResponse> GetAsync(Action<RequestConfiguration<AuthenticationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AuthenticationsMetricCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder.AuthenticationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationsMetricCollectionResponse>(requestInfo, AuthenticationsMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthenticationsMetricCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.AuthenticationsMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of monthly authentications on apps registered in your tenant configured for Microsoft Entra External ID for customers.
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder.AuthenticationsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder.AuthenticationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticationsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthenticationsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of monthly authentications on apps registered in your tenant configured for Microsoft Entra External ID for customers.
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationsRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthenticationsRequestBuilderGetQueryParameters>
+        public class AuthenticationsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Monthly.Authentications.AuthenticationsRequestBuilder.AuthenticationsRequestBuilderGetQueryParameters>
         {
         }
     }

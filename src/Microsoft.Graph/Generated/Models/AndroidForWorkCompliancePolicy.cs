@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This class contains compliance settings for Android for Work.
     /// </summary>
-    public class AndroidForWorkCompliancePolicy : DeviceCompliancePolicy, IParsable
+    public class AndroidForWorkCompliancePolicy : Microsoft.Graph.Beta.Models.DeviceCompliancePolicy, IParsable
     {
         /// <summary>Require that devices have enabled device threat protection.</summary>
         public bool? DeviceThreatProtectionEnabled
@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceThreatProtectionEnabled", value); }
         }
         /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
-        public DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
+        public Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel? DeviceThreatProtectionRequiredSecurityLevel
         {
-            get { return BackingStore?.Get<DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel?>("deviceThreatProtectionRequiredSecurityLevel"); }
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Minimum Android security patch level.</summary>
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Android required password type.</summary>
-        public AndroidRequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Number of sign-in failures allowed before factory reset. Valid values 1 to 16</summary>
@@ -114,9 +114,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
         /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
-        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity? RequiredPasswordComplexity
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
             set { BackingStore?.Set("requiredPasswordComplexity", value); }
         }
         /// <summary>Devices must not be jailbroken or rooted.</summary>
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("securityRequireCompanyPortalAppIntegrity", value); }
         }
         /// <summary>An enum representing the Android Play Integrity API evaluation types.</summary>
-        public AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType
+        public Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType? SecurityRequiredAndroidSafetyNetEvaluationType
         {
-            get { return BackingStore?.Get<AndroidSafetyNetEvaluationType?>("securityRequiredAndroidSafetyNetEvaluationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType?>("securityRequiredAndroidSafetyNetEvaluationType"); }
             set { BackingStore?.Set("securityRequiredAndroidSafetyNetEvaluationType", value); }
         }
         /// <summary>Require Google Play Services to be installed and enabled on the device.</summary>
@@ -204,9 +204,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfilePasswordMinimumLength", value); }
         }
         /// <summary>Android For Work required password type.</summary>
-        public AndroidForWorkRequiredPasswordType? WorkProfilePasswordRequiredType
+        public Microsoft.Graph.Beta.Models.AndroidForWorkRequiredPasswordType? WorkProfilePasswordRequiredType
         {
-            get { return BackingStore?.Get<AndroidForWorkRequiredPasswordType?>("workProfilePasswordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkRequiredPasswordType?>("workProfilePasswordRequiredType"); }
             set { BackingStore?.Set("workProfilePasswordRequiredType", value); }
         }
         /// <summary>Number of previous work profile passwords to block. Valid values 0 to 24</summary>
@@ -216,9 +216,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfilePreviousPasswordBlockCount", value); }
         }
         /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
-        public AndroidRequiredPasswordComplexity? WorkProfileRequiredPasswordComplexity
+        public Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity? WorkProfileRequiredPasswordComplexity
         {
-            get { return BackingStore?.Get<AndroidRequiredPasswordComplexity?>("workProfileRequiredPasswordComplexity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity?>("workProfileRequiredPasswordComplexity"); }
             set { BackingStore?.Set("workProfileRequiredPasswordComplexity", value); }
         }
         /// <summary>Password is required or not for work profile</summary>
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("workProfileRequirePassword", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidForWorkCompliancePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkCompliancePolicy"/> and sets the default values.
         /// </summary>
         public AndroidForWorkCompliancePolicy() : base()
         {
@@ -237,12 +237,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkCompliancePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkCompliancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidForWorkCompliancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidForWorkCompliancePolicy();
+            return new Microsoft.Graph.Beta.Models.AndroidForWorkCompliancePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -253,7 +253,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "deviceThreatProtectionEnabled", n => { DeviceThreatProtectionEnabled = n.GetBoolValue(); } },
-                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<DeviceThreatProtectionLevel>(); } },
+                { "deviceThreatProtectionRequiredSecurityLevel", n => { DeviceThreatProtectionRequiredSecurityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>(); } },
                 { "minAndroidSecurityPatchLevel", n => { MinAndroidSecurityPatchLevel = n.GetStringValue(); } },
                 { "osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
                 { "osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },
@@ -262,9 +262,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordMinutesOfInactivityBeforeLock", n => { PasswordMinutesOfInactivityBeforeLock = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidRequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType>(); } },
                 { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
-                { "requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<AndroidRequiredPasswordComplexity>(); } },
+                { "requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>(); } },
                 { "securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
                 { "securityDisableUsbDebugging", n => { SecurityDisableUsbDebugging = n.GetBoolValue(); } },
                 { "securityPreventInstallAppsFromUnknownSources", n => { SecurityPreventInstallAppsFromUnknownSources = n.GetBoolValue(); } },
@@ -274,15 +274,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "securityRequireSafetyNetAttestationCertifiedDevice", n => { SecurityRequireSafetyNetAttestationCertifiedDevice = n.GetBoolValue(); } },
                 { "securityRequireUpToDateSecurityProviders", n => { SecurityRequireUpToDateSecurityProviders = n.GetBoolValue(); } },
                 { "securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
-                { "securityRequiredAndroidSafetyNetEvaluationType", n => { SecurityRequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<AndroidSafetyNetEvaluationType>(); } },
+                { "securityRequiredAndroidSafetyNetEvaluationType", n => { SecurityRequiredAndroidSafetyNetEvaluationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType>(); } },
                 { "storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
                 { "workProfileInactiveBeforeScreenLockInMinutes", n => { WorkProfileInactiveBeforeScreenLockInMinutes = n.GetIntValue(); } },
                 { "workProfilePasswordExpirationInDays", n => { WorkProfilePasswordExpirationInDays = n.GetIntValue(); } },
                 { "workProfilePasswordMinimumLength", n => { WorkProfilePasswordMinimumLength = n.GetIntValue(); } },
-                { "workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<AndroidForWorkRequiredPasswordType>(); } },
+                { "workProfilePasswordRequiredType", n => { WorkProfilePasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkRequiredPasswordType>(); } },
                 { "workProfilePreviousPasswordBlockCount", n => { WorkProfilePreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "workProfileRequirePassword", n => { WorkProfileRequirePassword = n.GetBoolValue(); } },
-                { "workProfileRequiredPasswordComplexity", n => { WorkProfileRequiredPasswordComplexity = n.GetEnumValue<AndroidRequiredPasswordComplexity>(); } },
+                { "workProfileRequiredPasswordComplexity", n => { WorkProfileRequiredPasswordComplexity = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>(); } },
             };
         }
         /// <summary>
@@ -294,7 +294,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("deviceThreatProtectionEnabled", DeviceThreatProtectionEnabled);
-            writer.WriteEnumValue<DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceThreatProtectionLevel>("deviceThreatProtectionRequiredSecurityLevel", DeviceThreatProtectionRequiredSecurityLevel);
             writer.WriteStringValue("minAndroidSecurityPatchLevel", MinAndroidSecurityPatchLevel);
             writer.WriteStringValue("osMaximumVersion", OsMaximumVersion);
             writer.WriteStringValue("osMinimumVersion", OsMinimumVersion);
@@ -303,14 +303,14 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeLock", PasswordMinutesOfInactivityBeforeLock);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
-            writer.WriteEnumValue<AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
             writer.WriteBoolValue("securityBlockJailbrokenDevices", SecurityBlockJailbrokenDevices);
             writer.WriteBoolValue("securityDisableUsbDebugging", SecurityDisableUsbDebugging);
             writer.WriteBoolValue("securityPreventInstallAppsFromUnknownSources", SecurityPreventInstallAppsFromUnknownSources);
             writer.WriteBoolValue("securityRequireCompanyPortalAppIntegrity", SecurityRequireCompanyPortalAppIntegrity);
-            writer.WriteEnumValue<AndroidSafetyNetEvaluationType>("securityRequiredAndroidSafetyNetEvaluationType", SecurityRequiredAndroidSafetyNetEvaluationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidSafetyNetEvaluationType>("securityRequiredAndroidSafetyNetEvaluationType", SecurityRequiredAndroidSafetyNetEvaluationType);
             writer.WriteBoolValue("securityRequireGooglePlayServices", SecurityRequireGooglePlayServices);
             writer.WriteBoolValue("securityRequireSafetyNetAttestationBasicIntegrity", SecurityRequireSafetyNetAttestationBasicIntegrity);
             writer.WriteBoolValue("securityRequireSafetyNetAttestationCertifiedDevice", SecurityRequireSafetyNetAttestationCertifiedDevice);
@@ -320,9 +320,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("workProfileInactiveBeforeScreenLockInMinutes", WorkProfileInactiveBeforeScreenLockInMinutes);
             writer.WriteIntValue("workProfilePasswordExpirationInDays", WorkProfilePasswordExpirationInDays);
             writer.WriteIntValue("workProfilePasswordMinimumLength", WorkProfilePasswordMinimumLength);
-            writer.WriteEnumValue<AndroidForWorkRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidForWorkRequiredPasswordType>("workProfilePasswordRequiredType", WorkProfilePasswordRequiredType);
             writer.WriteIntValue("workProfilePreviousPasswordBlockCount", WorkProfilePreviousPasswordBlockCount);
-            writer.WriteEnumValue<AndroidRequiredPasswordComplexity>("workProfileRequiredPasswordComplexity", WorkProfileRequiredPasswordComplexity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidRequiredPasswordComplexity>("workProfileRequiredPasswordComplexity", WorkProfileRequiredPasswordComplexity);
             writer.WriteBoolValue("workProfileRequirePassword", WorkProfileRequirePassword);
         }
     }

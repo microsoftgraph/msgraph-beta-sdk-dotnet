@@ -13,50 +13,50 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Specifies the admin review property that constitutes of who reviewed the user submission, when and what was it identified as.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubmissionAdminReview? AdminReview
+        public Microsoft.Graph.Beta.Models.Security.SubmissionAdminReview? AdminReview
         {
-            get { return BackingStore?.Get<SubmissionAdminReview?>("adminReview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionAdminReview?>("adminReview"); }
             set { BackingStore?.Set("adminReview", value); }
         }
 #nullable restore
 #else
-        public SubmissionAdminReview AdminReview
+        public Microsoft.Graph.Beta.Models.Security.SubmissionAdminReview AdminReview
         {
-            get { return BackingStore?.Get<SubmissionAdminReview>("adminReview"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionAdminReview>("adminReview"); }
             set { BackingStore?.Set("adminReview", value); }
         }
 #endif
         /// <summary>The category property</summary>
-        public SubmissionCategory? Category
+        public Microsoft.Graph.Beta.Models.Security.SubmissionCategory? Category
         {
-            get { return BackingStore?.Get<SubmissionCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>Specifies the source of the submission. The possible values are: microsoft,  other and unkownFutureValue.</summary>
-        public SubmissionClientSource? ClientSource
+        /// <summary>Specifies the source of the submission. The possible values are: microsoft, other, and unkownFutureValue.</summary>
+        public Microsoft.Graph.Beta.Models.Security.SubmissionClientSource? ClientSource
         {
-            get { return BackingStore?.Get<SubmissionClientSource?>("clientSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionClientSource?>("clientSource"); }
             set { BackingStore?.Set("clientSource", value); }
         }
-        /// <summary>Specifies the type of content being submitted. The possible values are: email, url, file, app and unkownFutureValue.</summary>
-        public SubmissionContentType? ContentType
+        /// <summary>Specifies the type of content being submitted. The possible values are: email, url, file, app, and unkownFutureValue.</summary>
+        public Microsoft.Graph.Beta.Models.Security.SubmissionContentType? ContentType
         {
-            get { return BackingStore?.Get<SubmissionContentType?>("contentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionContentType?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq &apos;value&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubmissionUserIdentity? CreatedBy
+        public Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<SubmissionUserIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public SubmissionUserIdentity CreatedBy
+        public Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity CreatedBy
         {
-            get { return BackingStore?.Get<SubmissionUserIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -69,29 +69,29 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Specifies the result of the analysis performed by Microsoft.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SubmissionResult? Result
+        public Microsoft.Graph.Beta.Models.Security.SubmissionResult? Result
         {
-            get { return BackingStore?.Get<SubmissionResult?>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #nullable restore
 #else
-        public SubmissionResult Result
+        public Microsoft.Graph.Beta.Models.Security.SubmissionResult Result
         {
-            get { return BackingStore?.Get<SubmissionResult>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionResult>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #endif
-        /// <summary>Specifies the role of the submitter. Supports $filter = source eq &apos;value&apos;. The possible values are: administrator,  user and unkownFutureValue.</summary>
-        public SubmissionSource? Source
+        /// <summary>Specifies the role of the submitter. Supports $filter = source eq &apos;value&apos;. The possible values are: administrator,  user, and unkownFutureValue.</summary>
+        public Microsoft.Graph.Beta.Models.Security.SubmissionSource? Source
         {
-            get { return BackingStore?.Get<SubmissionSource?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq &apos;value&apos;. The possible values are: notStarted, running, succeeded, failed, skipped and unkownFutureValue.</summary>
-        public LongRunningOperationStatus? Status
+        /// <summary>Indicates whether the threat submission has been analyzed by Microsoft. Supports $filter = status eq &apos;value&apos;. The possible values are: notStarted, running, succeeded, failed, skipped, and unkownFutureValue.</summary>
+        public Microsoft.Graph.Beta.Models.Security.LongRunningOperationStatus? Status
         {
-            get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Indicates the tenant id of the submitter. Not required when created using a POST operation. It&apos;s extracted from the token of the post API call.</summary>
@@ -113,22 +113,22 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ThreatSubmission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.ThreatSubmission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.ThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.emailContentThreatSubmission" => new EmailContentThreatSubmission(),
-                "#microsoft.graph.security.emailThreatSubmission" => new EmailThreatSubmission(),
-                "#microsoft.graph.security.emailUrlThreatSubmission" => new EmailUrlThreatSubmission(),
-                "#microsoft.graph.security.fileContentThreatSubmission" => new FileContentThreatSubmission(),
-                "#microsoft.graph.security.fileThreatSubmission" => new FileThreatSubmission(),
-                "#microsoft.graph.security.fileUrlThreatSubmission" => new FileUrlThreatSubmission(),
-                "#microsoft.graph.security.urlThreatSubmission" => new UrlThreatSubmission(),
-                _ => new ThreatSubmission(),
+                "#microsoft.graph.security.emailContentThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.EmailContentThreatSubmission(),
+                "#microsoft.graph.security.emailThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.EmailThreatSubmission(),
+                "#microsoft.graph.security.emailUrlThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.EmailUrlThreatSubmission(),
+                "#microsoft.graph.security.fileContentThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.FileContentThreatSubmission(),
+                "#microsoft.graph.security.fileThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.FileThreatSubmission(),
+                "#microsoft.graph.security.fileUrlThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.FileUrlThreatSubmission(),
+                "#microsoft.graph.security.urlThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.UrlThreatSubmission(),
+                _ => new Microsoft.Graph.Beta.Models.Security.ThreatSubmission(),
             };
         }
         /// <summary>
@@ -139,15 +139,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "adminReview", n => { AdminReview = n.GetObjectValue<SubmissionAdminReview>(SubmissionAdminReview.CreateFromDiscriminatorValue); } },
-                { "category", n => { Category = n.GetEnumValue<SubmissionCategory>(); } },
-                { "clientSource", n => { ClientSource = n.GetEnumValue<SubmissionClientSource>(); } },
-                { "contentType", n => { ContentType = n.GetEnumValue<SubmissionContentType>(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<SubmissionUserIdentity>(SubmissionUserIdentity.CreateFromDiscriminatorValue); } },
+                { "adminReview", n => { AdminReview = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.SubmissionAdminReview>(Microsoft.Graph.Beta.Models.Security.SubmissionAdminReview.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionCategory>(); } },
+                { "clientSource", n => { ClientSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionClientSource>(); } },
+                { "contentType", n => { ContentType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionContentType>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity>(Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "result", n => { Result = n.GetObjectValue<SubmissionResult>(SubmissionResult.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetEnumValue<SubmissionSource>(); } },
-                { "status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
+                { "result", n => { Result = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.SubmissionResult>(Microsoft.Graph.Beta.Models.Security.SubmissionResult.CreateFromDiscriminatorValue); } },
+                { "source", n => { Source = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionSource>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.LongRunningOperationStatus>(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -159,15 +159,15 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<SubmissionAdminReview>("adminReview", AdminReview);
-            writer.WriteEnumValue<SubmissionCategory>("category", Category);
-            writer.WriteEnumValue<SubmissionClientSource>("clientSource", ClientSource);
-            writer.WriteEnumValue<SubmissionContentType>("contentType", ContentType);
-            writer.WriteObjectValue<SubmissionUserIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.SubmissionAdminReview>("adminReview", AdminReview);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionClientSource>("clientSource", ClientSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionContentType>("contentType", ContentType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<SubmissionResult>("result", Result);
-            writer.WriteEnumValue<SubmissionSource>("source", Source);
-            writer.WriteEnumValue<LongRunningOperationStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.SubmissionResult>("result", Result);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionSource>("source", Source);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.LongRunningOperationStatus>("status", Status);
             writer.WriteStringValue("tenantId", TenantId);
         }
     }

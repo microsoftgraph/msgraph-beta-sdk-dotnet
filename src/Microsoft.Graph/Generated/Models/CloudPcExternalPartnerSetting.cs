@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcExternalPartnerSetting : Entity, IParsable
+    public class CloudPcExternalPartnerSetting : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).</summary>
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public CloudPcExternalPartnerStatus? Status
+        public Microsoft.Graph.Beta.Models.CloudPcExternalPartnerStatus? Status
         {
-            get { return BackingStore?.Get<CloudPcExternalPartnerStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcExternalPartnerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Status details message.</summary>
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcExternalPartnerSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcExternalPartnerSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcExternalPartnerSetting();
+            return new Microsoft.Graph.Beta.Models.CloudPcExternalPartnerSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "enableConnection", n => { EnableConnection = n.GetBoolValue(); } },
                 { "lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "partnerId", n => { PartnerId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<CloudPcExternalPartnerStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcExternalPartnerStatus>(); } },
                 { "statusDetails", n => { StatusDetails = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("enableConnection", EnableConnection);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
             writer.WriteStringValue("partnerId", PartnerId);
-            writer.WriteEnumValue<CloudPcExternalPartnerStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcExternalPartnerStatus>("status", Status);
             writer.WriteStringValue("statusDetails", StatusDetails);
         }
     }

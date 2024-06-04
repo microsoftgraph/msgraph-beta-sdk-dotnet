@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The RefUserMatchTarget for matching a user from the source with a Microsoft Entra user object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserMatchTargetReferenceValue? MatchTarget
+        public Microsoft.Graph.Beta.Models.IndustryData.UserMatchTargetReferenceValue? MatchTarget
         {
-            get { return BackingStore?.Get<UserMatchTargetReferenceValue?>("matchTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.UserMatchTargetReferenceValue?>("matchTarget"); }
             set { BackingStore?.Set("matchTarget", value); }
         }
 #nullable restore
 #else
-        public UserMatchTargetReferenceValue MatchTarget
+        public Microsoft.Graph.Beta.Models.IndustryData.UserMatchTargetReferenceValue MatchTarget
         {
-            get { return BackingStore?.Get<UserMatchTargetReferenceValue>("matchTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.UserMatchTargetReferenceValue>("matchTarget"); }
             set { BackingStore?.Set("matchTarget", value); }
         }
 #endif
@@ -76,21 +76,21 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The sourceIdentifier property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentifierTypeReferenceValue? SourceIdentifier
+        public Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue? SourceIdentifier
         {
-            get { return BackingStore?.Get<IdentifierTypeReferenceValue?>("sourceIdentifier"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue?>("sourceIdentifier"); }
             set { BackingStore?.Set("sourceIdentifier", value); }
         }
 #nullable restore
 #else
-        public IdentifierTypeReferenceValue SourceIdentifier
+        public Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue SourceIdentifier
         {
-            get { return BackingStore?.Get<IdentifierTypeReferenceValue>("sourceIdentifier"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue>("sourceIdentifier"); }
             set { BackingStore?.Set("sourceIdentifier", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserMatchingSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserMatchingSetting"/> and sets the default values.
         /// </summary>
         public UserMatchingSetting()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserMatchingSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserMatchingSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserMatchingSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.UserMatchingSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserMatchingSetting();
+            return new Microsoft.Graph.Beta.Models.IndustryData.UserMatchingSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "matchTarget", n => { MatchTarget = n.GetObjectValue<UserMatchTargetReferenceValue>(UserMatchTargetReferenceValue.CreateFromDiscriminatorValue); } },
+                { "matchTarget", n => { MatchTarget = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.UserMatchTargetReferenceValue>(Microsoft.Graph.Beta.Models.IndustryData.UserMatchTargetReferenceValue.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "priorityOrder", n => { PriorityOrder = n.GetIntValue(); } },
                 { "roleGroup", n => { RoleGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>(Microsoft.Graph.Beta.Models.IndustryData.RoleGroup.CreateFromDiscriminatorValue); } },
-                { "sourceIdentifier", n => { SourceIdentifier = n.GetObjectValue<IdentifierTypeReferenceValue>(IdentifierTypeReferenceValue.CreateFromDiscriminatorValue); } },
+                { "sourceIdentifier", n => { SourceIdentifier = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue>(Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,11 +129,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UserMatchTargetReferenceValue>("matchTarget", MatchTarget);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.UserMatchTargetReferenceValue>("matchTarget", MatchTarget);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("priorityOrder", PriorityOrder);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.RoleGroup>("roleGroup", RoleGroup);
-            writer.WriteObjectValue<IdentifierTypeReferenceValue>("sourceIdentifier", SourceIdentifier);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.IdentifierTypeReferenceValue>("sourceIdentifier", SourceIdentifier);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

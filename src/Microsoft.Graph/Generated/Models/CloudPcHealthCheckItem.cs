@@ -74,13 +74,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The result property</summary>
-        public CloudPcConnectivityEventResult? Result
+        public Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult? Result
         {
-            get { return BackingStore?.Get<CloudPcConnectivityEventResult?>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcHealthCheckItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem"/> and sets the default values.
         /// </summary>
         public CloudPcHealthCheckItem()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcHealthCheckItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcHealthCheckItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcHealthCheckItem();
+            return new Microsoft.Graph.Beta.Models.CloudPcHealthCheckItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastHealthCheckDateTime", n => { LastHealthCheckDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "result", n => { Result = n.GetEnumValue<CloudPcConnectivityEventResult>(); } },
+                { "result", n => { Result = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult>(); } },
             };
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastHealthCheckDateTime", LastHealthCheckDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<CloudPcConnectivityEventResult>("result", Result);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcConnectivityEventResult>("result", Result);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

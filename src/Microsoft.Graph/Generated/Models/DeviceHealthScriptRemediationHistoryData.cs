@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceHealthScriptRemediationHistoryData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData"/> and sets the default values.
         /// </summary>
         public DeviceHealthScriptRemediationHistoryData()
         {
@@ -72,12 +72,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceHealthScriptRemediationHistoryData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceHealthScriptRemediationHistoryData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceHealthScriptRemediationHistoryData();
+            return new Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData();
         }
         /// <summary>
         /// The deserialization information for the current model

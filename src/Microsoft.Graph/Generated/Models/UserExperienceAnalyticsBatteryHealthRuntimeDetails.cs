@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics battery health runtime entity contains count of devices broken down into 3 categories - devices with runtime &gt; 5 hours, devices with runtime 3-5 hours and devices with runtime &lt; 3 hours.This API provides the count of devices in these 3 categories.
     /// </summary>
-    public class UserExperienceAnalyticsBatteryHealthRuntimeDetails : Entity, IParsable
+    public class UserExperienceAnalyticsBatteryHealthRuntimeDetails : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of active devices within the tenant. Valid values 0 to 2147483647</summary>
         public int? ActiveDevices
@@ -44,12 +44,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsBatteryHealthRuntimeDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsBatteryHealthRuntimeDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsBatteryHealthRuntimeDetails();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails();
         }
         /// <summary>
         /// The deserialization information for the current model

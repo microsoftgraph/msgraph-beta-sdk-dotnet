@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ImportResourceActionsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsPostRequestBody"/> and sets the default values.
         /// </summary>
         public ImportResourceActionsPostRequestBody()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ImportResourceActionsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ImportResourceActionsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ImportResourceActionsPostRequestBody();
+            return new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ImportResourceActions.ImportResourceActionsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

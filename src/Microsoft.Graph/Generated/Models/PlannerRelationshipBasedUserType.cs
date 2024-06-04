@@ -7,17 +7,17 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerRelationshipBasedUserType : PlannerTaskConfigurationRoleBase, IParsable
+    public class PlannerRelationshipBasedUserType : Microsoft.Graph.Beta.Models.PlannerTaskConfigurationRoleBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The role property</summary>
-        public PlannerRelationshipUserRoles? Role
+        public Microsoft.Graph.Beta.Models.PlannerRelationshipUserRoles? Role
         {
-            get { return BackingStore?.Get<PlannerRelationshipUserRoles?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerRelationshipUserRoles?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlannerRelationshipBasedUserType"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerRelationshipBasedUserType"/> and sets the default values.
         /// </summary>
         public PlannerRelationshipBasedUserType() : base()
         {
@@ -26,12 +26,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerRelationshipBasedUserType"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerRelationshipBasedUserType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerRelationshipBasedUserType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerRelationshipBasedUserType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerRelationshipBasedUserType();
+            return new Microsoft.Graph.Beta.Models.PlannerRelationshipBasedUserType();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "role", n => { Role = n.GetEnumValue<PlannerRelationshipUserRoles>(); } },
+                { "role", n => { Role = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlannerRelationshipUserRoles>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<PlannerRelationshipUserRoles>("role", Role);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlannerRelationshipUserRoles>("role", Role);
         }
     }
 }

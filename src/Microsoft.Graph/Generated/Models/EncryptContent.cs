@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EncryptContent : LabelActionBase, IParsable
+    public class EncryptContent : Microsoft.Graph.Beta.Models.LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The encryptWith property</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("encryptWith", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EncryptContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EncryptContent"/> and sets the default values.
         /// </summary>
         public EncryptContent() : base()
         {
@@ -26,17 +26,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EncryptContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EncryptContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EncryptContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EncryptContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.encryptWithTemplate" => new EncryptWithTemplate(),
-                "#microsoft.graph.encryptWithUserDefinedRights" => new EncryptWithUserDefinedRights(),
-                _ => new EncryptContent(),
+                "#microsoft.graph.encryptWithTemplate" => new Microsoft.Graph.Beta.Models.EncryptWithTemplate(),
+                "#microsoft.graph.encryptWithUserDefinedRights" => new Microsoft.Graph.Beta.Models.EncryptWithUserDefinedRights(),
+                _ => new Microsoft.Graph.Beta.Models.EncryptContent(),
             };
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "encryptWith", n => { EncryptWith = n.GetEnumValue<EncryptWith>(); } },
+                { "encryptWith", n => { EncryptWith = n.GetEnumValue<Microsoft.Graph.Beta.Models.EncryptWith>(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<EncryptWith>("encryptWith", EncryptWith);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EncryptWith>("encryptWith", EncryptWith);
         }
     }
 }

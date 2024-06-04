@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MfaCompletionMetric : Entity, IParsable
+    public class MfaCompletionMetric : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The ID of the Microsoft Entra application. Supports $filter (eq).</summary>
@@ -90,16 +90,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The mfaFailures property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MfaFailure>? MfaFailures
+        public List<Microsoft.Graph.Beta.Models.MfaFailure>? MfaFailures
         {
-            get { return BackingStore?.Get<List<MfaFailure>?>("mfaFailures"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MfaFailure>?>("mfaFailures"); }
             set { BackingStore?.Set("mfaFailures", value); }
         }
 #nullable restore
 #else
-        public List<MfaFailure> MfaFailures
+        public List<Microsoft.Graph.Beta.Models.MfaFailure> MfaFailures
         {
-            get { return BackingStore?.Get<List<MfaFailure>>("mfaFailures"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MfaFailure>>("mfaFailures"); }
             set { BackingStore?.Set("mfaFailures", value); }
         }
 #endif
@@ -144,12 +144,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MfaCompletionMetric"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MfaCompletionMetric"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MfaCompletionMetric CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MfaCompletionMetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MfaCompletionMetric();
+            return new Microsoft.Graph.Beta.Models.MfaCompletionMetric();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "factDate", n => { FactDate = n.GetDateValue(); } },
                 { "identityProvider", n => { IdentityProvider = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
-                { "mfaFailures", n => { MfaFailures = n.GetCollectionOfObjectValues<MfaFailure>(MfaFailure.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mfaFailures", n => { MfaFailures = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MfaFailure>(Microsoft.Graph.Beta.Models.MfaFailure.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "mfaMethod", n => { MfaMethod = n.GetStringValue(); } },
                 { "os", n => { Os = n.GetStringValue(); } },
                 { "successCount", n => { SuccessCount = n.GetLongValue(); } },
@@ -185,7 +185,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateValue("factDate", FactDate);
             writer.WriteStringValue("identityProvider", IdentityProvider);
             writer.WriteStringValue("language", Language);
-            writer.WriteCollectionOfObjectValues<MfaFailure>("mfaFailures", MfaFailures);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MfaFailure>("mfaFailures", MfaFailures);
             writer.WriteStringValue("mfaMethod", MfaMethod);
             writer.WriteStringValue("os", Os);
             writer.WriteLongValue("successCount", SuccessCount);

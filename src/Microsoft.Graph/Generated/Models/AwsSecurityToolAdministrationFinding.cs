@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsSecurityToolAdministrationFinding : Finding, IParsable
+    public class AwsSecurityToolAdministrationFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemIdentity? Identity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity? Identity
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentity?>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemIdentity Identity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity Identity
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentity>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #endif
@@ -59,27 +59,27 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The securityTools property</summary>
-        public AwsSecurityToolWebServices? SecurityTools
+        public Microsoft.Graph.Beta.Models.AwsSecurityToolWebServices? SecurityTools
         {
-            get { return BackingStore?.Get<AwsSecurityToolWebServices?>("securityTools"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsSecurityToolWebServices?>("securityTools"); }
             set { BackingStore?.Set("securityTools", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsSecurityToolAdministrationFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsSecurityToolAdministrationFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsSecurityToolAdministrationFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsSecurityToolAdministrationFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.securityToolAwsResourceAdministratorFinding" => new SecurityToolAwsResourceAdministratorFinding(),
-                "#microsoft.graph.securityToolAwsRoleAdministratorFinding" => new SecurityToolAwsRoleAdministratorFinding(),
-                "#microsoft.graph.securityToolAwsServerlessFunctionAdministratorFinding" => new SecurityToolAwsServerlessFunctionAdministratorFinding(),
-                "#microsoft.graph.securityToolAwsUserAdministratorFinding" => new SecurityToolAwsUserAdministratorFinding(),
-                _ => new AwsSecurityToolAdministrationFinding(),
+                "#microsoft.graph.securityToolAwsResourceAdministratorFinding" => new Microsoft.Graph.Beta.Models.SecurityToolAwsResourceAdministratorFinding(),
+                "#microsoft.graph.securityToolAwsRoleAdministratorFinding" => new Microsoft.Graph.Beta.Models.SecurityToolAwsRoleAdministratorFinding(),
+                "#microsoft.graph.securityToolAwsServerlessFunctionAdministratorFinding" => new Microsoft.Graph.Beta.Models.SecurityToolAwsServerlessFunctionAdministratorFinding(),
+                "#microsoft.graph.securityToolAwsUserAdministratorFinding" => new Microsoft.Graph.Beta.Models.SecurityToolAwsUserAdministratorFinding(),
+                _ => new Microsoft.Graph.Beta.Models.AwsSecurityToolAdministrationFinding(),
             };
         }
         /// <summary>
@@ -90,10 +90,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "identity", n => { Identity = n.GetObjectValue<AuthorizationSystemIdentity>(AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
+                { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>(Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
                 { "identityDetails", n => { IdentityDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityDetails>(Microsoft.Graph.Beta.Models.IdentityDetails.CreateFromDiscriminatorValue); } },
                 { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
-                { "securityTools", n => { SecurityTools = n.GetEnumValue<AwsSecurityToolWebServices>(); } },
+                { "securityTools", n => { SecurityTools = n.GetEnumValue<Microsoft.Graph.Beta.Models.AwsSecurityToolWebServices>(); } },
             };
         }
         /// <summary>
@@ -104,10 +104,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AuthorizationSystemIdentity>("identity", Identity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>("identity", Identity);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityDetails>("identityDetails", IdentityDetails);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex", PermissionsCreepIndex);
-            writer.WriteEnumValue<AwsSecurityToolWebServices>("securityTools", SecurityTools);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AwsSecurityToolWebServices>("securityTools", SecurityTools);
         }
     }
 }

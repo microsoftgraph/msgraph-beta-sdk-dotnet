@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageResource : Entity, IParsable
+    public class AccessPackageResource : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Contains the environment information for the resource. This environment can be set using either the @odata.bind annotation or the environment&apos;s originId. Supports $expand.</summary>
@@ -29,32 +29,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceRole>? AccessPackageResourceRoles
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>? AccessPackageResourceRoles
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRole>?>("accessPackageResourceRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>?>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceRole> AccessPackageResourceRoles
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceRole> AccessPackageResourceRoles
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceRole>>("accessPackageResourceRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
 #endif
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceScope>? AccessPackageResourceScopes
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>? AccessPackageResourceScopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceScope>?>("accessPackageResourceScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>?>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceScope> AccessPackageResourceScopes
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceScope> AccessPackageResourceScopes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceScope>>("accessPackageResourceScopes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
 #endif
@@ -83,16 +83,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contains information about the attributes to be collected from the requestor and sent to the resource application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageResourceAttribute>? Attributes
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>? Attributes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceAttribute>?>("attributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>?>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageResourceAttribute> Attributes
+        public List<Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute> Attributes
         {
-            get { return BackingStore?.Get<List<AccessPackageResourceAttribute>>("attributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
 #endif
@@ -201,12 +201,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessPackageResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageResource();
+            return new Microsoft.Graph.Beta.Models.AccessPackageResource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -217,11 +217,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accessPackageResourceEnvironment", n => { AccessPackageResourceEnvironment = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>(Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment.CreateFromDiscriminatorValue); } },
-                { "accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<AccessPackageResourceRole>(AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<AccessPackageResourceScope>(AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageResourceRoles", n => { AccessPackageResourceRoles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(Microsoft.Graph.Beta.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageResourceScopes", n => { AccessPackageResourceScopes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(Microsoft.Graph.Beta.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "addedBy", n => { AddedBy = n.GetStringValue(); } },
                 { "addedOn", n => { AddedOn = n.GetDateTimeOffsetValue(); } },
-                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<AccessPackageResourceAttribute>(AccessPackageResourceAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributes", n => { Attributes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>(Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isPendingOnboarding", n => { IsPendingOnboarding = n.GetBoolValue(); } },
@@ -240,11 +240,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>("accessPackageResourceEnvironment", AccessPackageResourceEnvironment);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRoles", AccessPackageResourceRoles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScopes", AccessPackageResourceScopes);
             writer.WriteStringValue("addedBy", AddedBy);
             writer.WriteDateTimeOffsetValue("addedOn", AddedOn);
-            writer.WriteCollectionOfObjectValues<AccessPackageResourceAttribute>("attributes", Attributes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageResourceAttribute>("attributes", Attributes);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isPendingOnboarding", IsPendingOnboarding);

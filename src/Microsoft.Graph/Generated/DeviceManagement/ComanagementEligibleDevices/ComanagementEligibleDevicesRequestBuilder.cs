@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices
     public class ComanagementEligibleDevicesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the comanagementEligibleDevices property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of comanagementEligibleDevice</param>
-        /// <returns>A <see cref="ComanagementEligibleDeviceItemRequestBuilder"/></returns>
-        public ComanagementEligibleDeviceItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.Item.ComanagementEligibleDeviceItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.Item.ComanagementEligibleDeviceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("comanagementEligibleDevice%2Did", position);
-                return new ComanagementEligibleDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.Item.ComanagementEligibleDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ComanagementEligibleDevicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ComanagementEligibleDevicesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices
         /// <summary>
         /// The list of co-management eligible devices report
         /// </summary>
-        /// <returns>A <see cref="ComanagementEligibleDeviceCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ComanagementEligibleDeviceCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ComanagementEligibleDeviceCollectionResponse?> GetAsync(Action<RequestConfiguration<ComanagementEligibleDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ComanagementEligibleDeviceCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder.ComanagementEligibleDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ComanagementEligibleDeviceCollectionResponse> GetAsync(Action<RequestConfiguration<ComanagementEligibleDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ComanagementEligibleDeviceCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder.ComanagementEligibleDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ComanagementEligibleDeviceCollectionResponse>(requestInfo, ComanagementEligibleDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ComanagementEligibleDeviceCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ComanagementEligibleDeviceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to comanagementEligibleDevices for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="ComanagementEligibleDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ComanagementEligibleDevice"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ComanagementEligibleDevice?> PostAsync(ComanagementEligibleDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice?> PostAsync(Microsoft.Graph.Beta.Models.ComanagementEligibleDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ComanagementEligibleDevice> PostAsync(ComanagementEligibleDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice> PostAsync(Microsoft.Graph.Beta.Models.ComanagementEligibleDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ComanagementEligibleDevice>(requestInfo, ComanagementEligibleDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>(requestInfo, Microsoft.Graph.Beta.Models.ComanagementEligibleDevice.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The list of co-management eligible devices report
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ComanagementEligibleDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder.ComanagementEligibleDevicesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ComanagementEligibleDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder.ComanagementEligibleDevicesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ComanagementEligibleDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ComanagementEligibleDevice body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ComanagementEligibleDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ComanagementEligibleDevice body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ComanagementEligibleDevicesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ComanagementEligibleDevicesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder WithUrl(string rawUrl)
         {
-            return new ComanagementEligibleDevicesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The list of co-management eligible devices report
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ComanagementEligibleDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<ComanagementEligibleDevicesRequestBuilderGetQueryParameters>
+        public class ComanagementEligibleDevicesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.ComanagementEligibleDevicesRequestBuilder.ComanagementEligibleDevicesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

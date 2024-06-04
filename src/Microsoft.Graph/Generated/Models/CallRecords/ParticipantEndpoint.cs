@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.CallRecords
 {
     #pragma warning disable CS1591
-    public class ParticipantEndpoint : Endpoint, IParsable
+    public class ParticipantEndpoint : Microsoft.Graph.Beta.Models.CallRecords.Endpoint, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Identity associated with the endpoint.</summary>
@@ -57,16 +57,16 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>The feedback provided by the user of this endpoint about the quality of the session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserFeedback? Feedback
+        public Microsoft.Graph.Beta.Models.CallRecords.UserFeedback? Feedback
         {
-            get { return BackingStore?.Get<UserFeedback?>("feedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.UserFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #nullable restore
 #else
-        public UserFeedback Feedback
+        public Microsoft.Graph.Beta.Models.CallRecords.UserFeedback Feedback
         {
-            get { return BackingStore?.Get<UserFeedback>("feedback"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.UserFeedback>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
 #endif
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ParticipantEndpoint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CallRecords.ParticipantEndpoint"/> and sets the default values.
         /// </summary>
         public ParticipantEndpoint() : base()
         {
@@ -112,12 +112,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ParticipantEndpoint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.ParticipantEndpoint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ParticipantEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecords.ParticipantEndpoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ParticipantEndpoint();
+            return new Microsoft.Graph.Beta.Models.CallRecords.ParticipantEndpoint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
                 { "cpuCoresCount", n => { CpuCoresCount = n.GetIntValue(); } },
                 { "cpuName", n => { CpuName = n.GetStringValue(); } },
                 { "cpuProcessorSpeedInMhz", n => { CpuProcessorSpeedInMhz = n.GetIntValue(); } },
-                { "feedback", n => { Feedback = n.GetObjectValue<UserFeedback>(UserFeedback.CreateFromDiscriminatorValue); } },
+                { "feedback", n => { Feedback = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallRecords.UserFeedback>(Microsoft.Graph.Beta.Models.CallRecords.UserFeedback.CreateFromDiscriminatorValue); } },
                 { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
             writer.WriteIntValue("cpuCoresCount", CpuCoresCount);
             writer.WriteStringValue("cpuName", CpuName);
             writer.WriteIntValue("cpuProcessorSpeedInMhz", CpuProcessorSpeedInMhz);
-            writer.WriteObjectValue<UserFeedback>("feedback", Feedback);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CallRecords.UserFeedback>("feedback", Feedback);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("identity", Identity);
             writer.WriteStringValue("name", Name);
         }

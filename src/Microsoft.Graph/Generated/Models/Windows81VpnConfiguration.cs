@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Windows 8.1 (and later) devices to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class Windows81VpnConfiguration : WindowsVpnConfiguration, IParsable
+    public class Windows81VpnConfiguration : Microsoft.Graph.Beta.Models.WindowsVpnConfiguration, IParsable
     {
         /// <summary>Value indicating whether this policy only applies to Windows 8.1. This property is read-only.</summary>
         public bool? ApplyOnlyToWindows81
@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("applyOnlyToWindows81", value); }
         }
         /// <summary>Windows VPN connection type.</summary>
-        public WindowsVpnConnectionType? ConnectionType
+        public Microsoft.Graph.Beta.Models.WindowsVpnConnectionType? ConnectionType
         {
-            get { return BackingStore?.Get<WindowsVpnConnectionType?>("connectionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsVpnConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Enable split tunneling for the VPN.</summary>
@@ -48,21 +48,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Proxy Server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Windows81VpnProxyServer? ProxyServer
+        public Microsoft.Graph.Beta.Models.Windows81VpnProxyServer? ProxyServer
         {
-            get { return BackingStore?.Get<Windows81VpnProxyServer?>("proxyServer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows81VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #nullable restore
 #else
-        public Windows81VpnProxyServer ProxyServer
+        public Microsoft.Graph.Beta.Models.Windows81VpnProxyServer ProxyServer
         {
-            get { return BackingStore?.Get<Windows81VpnProxyServer>("proxyServer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows81VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Windows81VpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows81VpnConfiguration"/> and sets the default values.
         /// </summary>
         public Windows81VpnConfiguration() : base()
         {
@@ -71,16 +71,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows81VpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows81VpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows81VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows81VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsPhone81VpnConfiguration" => new WindowsPhone81VpnConfiguration(),
-                _ => new Windows81VpnConfiguration(),
+                "#microsoft.graph.windowsPhone81VpnConfiguration" => new Microsoft.Graph.Beta.Models.WindowsPhone81VpnConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.Windows81VpnConfiguration(),
             };
         }
         /// <summary>
@@ -92,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "applyOnlyToWindows81", n => { ApplyOnlyToWindows81 = n.GetBoolValue(); } },
-                { "connectionType", n => { ConnectionType = n.GetEnumValue<WindowsVpnConnectionType>(); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsVpnConnectionType>(); } },
                 { "enableSplitTunneling", n => { EnableSplitTunneling = n.GetBoolValue(); } },
                 { "loginGroupOrDomain", n => { LoginGroupOrDomain = n.GetStringValue(); } },
-                { "proxyServer", n => { ProxyServer = n.GetObjectValue<Windows81VpnProxyServer>(Windows81VpnProxyServer.CreateFromDiscriminatorValue); } },
+                { "proxyServer", n => { ProxyServer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Windows81VpnProxyServer>(Microsoft.Graph.Beta.Models.Windows81VpnProxyServer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WindowsVpnConnectionType>("connectionType", ConnectionType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsVpnConnectionType>("connectionType", ConnectionType);
             writer.WriteBoolValue("enableSplitTunneling", EnableSplitTunneling);
             writer.WriteStringValue("loginGroupOrDomain", LoginGroupOrDomain);
-            writer.WriteObjectValue<Windows81VpnProxyServer>("proxyServer", ProxyServer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Windows81VpnProxyServer>("proxyServer", ProxyServer);
         }
     }
 }

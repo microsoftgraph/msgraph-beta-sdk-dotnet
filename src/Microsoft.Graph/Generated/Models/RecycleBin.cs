@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RecycleBin : BaseItem, IParsable
+    public class RecycleBin : Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of the recycleBinItems deleted by a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RecycleBinItem>? Items
+        public List<Microsoft.Graph.Beta.Models.RecycleBinItem>? Items
         {
-            get { return BackingStore?.Get<List<RecycleBinItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RecycleBinItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<RecycleBinItem> Items
+        public List<Microsoft.Graph.Beta.Models.RecycleBinItem> Items
         {
-            get { return BackingStore?.Get<List<RecycleBinItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RecycleBinItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RecycleBin"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RecycleBin"/> and sets the default values.
         /// </summary>
         public RecycleBin() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecycleBin"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecycleBin"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RecycleBin CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RecycleBin CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecycleBin();
+            return new Microsoft.Graph.Beta.Models.RecycleBin();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "items", n => { Items = n.GetCollectionOfObjectValues<RecycleBinItem>(RecycleBinItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RecycleBinItem>(Microsoft.Graph.Beta.Models.RecycleBinItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<RecycleBinItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RecycleBinItem>("items", Items);
         }
     }
 }

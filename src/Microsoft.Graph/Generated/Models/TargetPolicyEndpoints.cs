@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TargetPolicyEndpoints"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TargetPolicyEndpoints"/> and sets the default values.
         /// </summary>
         public TargetPolicyEndpoints()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TargetPolicyEndpoints"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TargetPolicyEndpoints"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TargetPolicyEndpoints CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TargetPolicyEndpoints CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TargetPolicyEndpoints();
+            return new Microsoft.Graph.Beta.Models.TargetPolicyEndpoints();
         }
         /// <summary>
         /// The deserialization information for the current model

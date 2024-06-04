@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the type of execution context the app runs in.</summary>
-        public RunAsAccountType? RunAsAccount
+        public Microsoft.Graph.Beta.Models.RunAsAccountType? RunAsAccount
         {
-            get { return BackingStore?.Get<RunAsAccountType?>("runAsAccount"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunAsAccountType?>("runAsAccount"); }
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WinGetAppInstallExperience"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WinGetAppInstallExperience"/> and sets the default values.
         /// </summary>
         public WinGetAppInstallExperience()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WinGetAppInstallExperience"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WinGetAppInstallExperience"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WinGetAppInstallExperience CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WinGetAppInstallExperience CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WinGetAppInstallExperience();
+            return new Microsoft.Graph.Beta.Models.WinGetAppInstallExperience();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<RunAsAccountType>(); } },
+                { "runAsAccount", n => { RunAsAccount = n.GetEnumValue<Microsoft.Graph.Beta.Models.RunAsAccountType>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RunAsAccountType>("runAsAccount", RunAsAccount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Supported platform types for policies.</summary>
-        public PolicyPlatformType? PlatformType
+        public Microsoft.Graph.Beta.Models.PolicyPlatformType? PlatformType
         {
-            get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PolicyPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="QueryByPlatformTypePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypePostRequestBody"/> and sets the default values.
         /// </summary>
         public QueryByPlatformTypePostRequestBody()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QueryByPlatformTypePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static QueryByPlatformTypePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QueryByPlatformTypePostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType.QueryByPlatformTypePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PolicyPlatformType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<PolicyPlatformType>("platformType", PlatformType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PolicyPlatformType>("platformType", PlatformType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

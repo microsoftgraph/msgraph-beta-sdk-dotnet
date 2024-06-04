@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WritebackConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WritebackConfiguration"/> and sets the default values.
         /// </summary>
         public WritebackConfiguration()
         {
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WritebackConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WritebackConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WritebackConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WritebackConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.groupWritebackConfiguration" => new GroupWritebackConfiguration(),
-                _ => new WritebackConfiguration(),
+                "#microsoft.graph.groupWritebackConfiguration" => new Microsoft.Graph.Beta.Models.GroupWritebackConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.WritebackConfiguration(),
             };
         }
         /// <summary>

@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplateStepTenantSummary>? Value
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummary>? Value
         {
-            get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummary>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplateStepTenantSummary> Value
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummary> Value
         {
-            get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummary>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateStepTenantSummaryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummaryCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagementTemplateStepTenantSummaryCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummaryCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementTemplateStepTenantSummaryCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummaryCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<ManagementTemplateStepTenantSummary>(ManagementTemplateStepTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummary>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateStepTenantSummary>("value", Value);
         }
     }
 }

@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey
 {
     [Obsolete("This class is obsolete. Use GetFileVaultKeyGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetFileVaultKeyResponse : GetFileVaultKeyGetResponse, IParsable
+    public class GetFileVaultKeyResponse : Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey.GetFileVaultKeyGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetFileVaultKeyResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey.GetFileVaultKeyResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetFileVaultKeyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey.GetFileVaultKeyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetFileVaultKeyResponse();
+            return new Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey.GetFileVaultKeyResponse();
         }
     }
 }

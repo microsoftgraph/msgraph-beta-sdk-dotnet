@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for device run state of the hardware configuration
     /// </summary>
-    public class HardwareConfigurationDeviceState : Entity, IParsable
+    public class HardwareConfigurationDeviceState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>A list of identifier strings of different assignment filters applied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,9 +60,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the type of execution status of the device management script.</summary>
-        public RunState? ConfigurationState
+        public Microsoft.Graph.Beta.Models.RunState? ConfigurationState
         {
-            get { return BackingStore?.Get<RunState?>("configurationState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>("configurationState"); }
             set { BackingStore?.Set("configurationState", value); }
         }
         /// <summary>The name of the device</summary>
@@ -144,12 +144,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HardwareConfigurationDeviceState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HardwareConfigurationDeviceState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HardwareConfigurationDeviceState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.HardwareConfigurationDeviceState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HardwareConfigurationDeviceState();
+            return new Microsoft.Graph.Beta.Models.HardwareConfigurationDeviceState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "assignmentFilterIds", n => { AssignmentFilterIds = n.GetStringValue(); } },
                 { "configurationError", n => { ConfigurationError = n.GetStringValue(); } },
                 { "configurationOutput", n => { ConfigurationOutput = n.GetStringValue(); } },
-                { "configurationState", n => { ConfigurationState = n.GetEnumValue<RunState>(); } },
+                { "configurationState", n => { ConfigurationState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RunState>(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "internalVersion", n => { InternalVersion = n.GetIntValue(); } },
                 { "lastStateUpdateDateTime", n => { LastStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("assignmentFilterIds", AssignmentFilterIds);
             writer.WriteStringValue("configurationError", ConfigurationError);
             writer.WriteStringValue("configurationOutput", ConfigurationOutput);
-            writer.WriteEnumValue<RunState>("configurationState", ConfigurationState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RunState>("configurationState", ConfigurationState);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteIntValue("internalVersion", InternalVersion);
             writer.WriteDateTimeOffsetValue("lastStateUpdateDateTime", LastStateUpdateDateTime);

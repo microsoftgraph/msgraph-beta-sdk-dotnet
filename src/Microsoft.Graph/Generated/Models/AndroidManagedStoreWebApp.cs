@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties and inherited properties for web apps configured to be distributed via the managed Android app store.
     /// </summary>
-    public class AndroidManagedStoreWebApp : AndroidManagedStoreApp, IParsable
+    public class AndroidManagedStoreWebApp : Microsoft.Graph.Beta.Models.AndroidManagedStoreApp, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="AndroidManagedStoreWebApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidManagedStoreWebApp"/> and sets the default values.
         /// </summary>
         public AndroidManagedStoreWebApp() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidManagedStoreWebApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidManagedStoreWebApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidManagedStoreWebApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidManagedStoreWebApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidManagedStoreWebApp();
+            return new Microsoft.Graph.Beta.Models.AndroidManagedStoreWebApp();
         }
         /// <summary>
         /// The deserialization information for the current model

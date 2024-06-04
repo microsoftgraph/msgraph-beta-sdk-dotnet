@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The color modes supported by the printer. Valid values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintColorMode?>? ColorModes
+        public List<Microsoft.Graph.Beta.Models.PrintColorMode?>? ColorModes
         {
-            get { return BackingStore?.Get<List<PrintColorMode?>?>("colorModes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintColorMode?>?>("colorModes"); }
             set { BackingStore?.Set("colorModes", value); }
         }
 #nullable restore
 #else
-        public List<PrintColorMode?> ColorModes
+        public List<Microsoft.Graph.Beta.Models.PrintColorMode?> ColorModes
         {
-            get { return BackingStore?.Get<List<PrintColorMode?>>("colorModes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintColorMode?>>("colorModes"); }
             set { BackingStore?.Set("colorModes", value); }
         }
 #endif
@@ -76,16 +76,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The range of copies per job supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IntegerRange? CopiesPerJob
+        public Microsoft.Graph.Beta.Models.IntegerRange? CopiesPerJob
         {
-            get { return BackingStore?.Get<IntegerRange?>("copiesPerJob"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntegerRange?>("copiesPerJob"); }
             set { BackingStore?.Set("copiesPerJob", value); }
         }
 #nullable restore
 #else
-        public IntegerRange CopiesPerJob
+        public Microsoft.Graph.Beta.Models.IntegerRange CopiesPerJob
         {
-            get { return BackingStore?.Get<IntegerRange>("copiesPerJob"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntegerRange>("copiesPerJob"); }
             set { BackingStore?.Set("copiesPerJob", value); }
         }
 #endif
@@ -108,64 +108,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of duplex modes that are supported by the printer. Valid values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintDuplexMode?>? DuplexModes
+        public List<Microsoft.Graph.Beta.Models.PrintDuplexMode?>? DuplexModes
         {
-            get { return BackingStore?.Get<List<PrintDuplexMode?>?>("duplexModes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintDuplexMode?>?>("duplexModes"); }
             set { BackingStore?.Set("duplexModes", value); }
         }
 #nullable restore
 #else
-        public List<PrintDuplexMode?> DuplexModes
+        public List<Microsoft.Graph.Beta.Models.PrintDuplexMode?> DuplexModes
         {
-            get { return BackingStore?.Get<List<PrintDuplexMode?>>("duplexModes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintDuplexMode?>>("duplexModes"); }
             set { BackingStore?.Set("duplexModes", value); }
         }
 #endif
         /// <summary>The feedDirections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrinterFeedDirection?>? FeedDirections
+        public List<Microsoft.Graph.Beta.Models.PrinterFeedDirection?>? FeedDirections
         {
-            get { return BackingStore?.Get<List<PrinterFeedDirection?>?>("feedDirections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrinterFeedDirection?>?>("feedDirections"); }
             set { BackingStore?.Set("feedDirections", value); }
         }
 #nullable restore
 #else
-        public List<PrinterFeedDirection?> FeedDirections
+        public List<Microsoft.Graph.Beta.Models.PrinterFeedDirection?> FeedDirections
         {
-            get { return BackingStore?.Get<List<PrinterFeedDirection?>>("feedDirections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrinterFeedDirection?>>("feedDirections"); }
             set { BackingStore?.Set("feedDirections", value); }
         }
 #endif
         /// <summary>The list of feed orientations that are supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrinterFeedOrientation?>? FeedOrientations
+        public List<Microsoft.Graph.Beta.Models.PrinterFeedOrientation?>? FeedOrientations
         {
-            get { return BackingStore?.Get<List<PrinterFeedOrientation?>?>("feedOrientations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrinterFeedOrientation?>?>("feedOrientations"); }
             set { BackingStore?.Set("feedOrientations", value); }
         }
 #nullable restore
 #else
-        public List<PrinterFeedOrientation?> FeedOrientations
+        public List<Microsoft.Graph.Beta.Models.PrinterFeedOrientation?> FeedOrientations
         {
-            get { return BackingStore?.Get<List<PrinterFeedOrientation?>>("feedOrientations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrinterFeedOrientation?>>("feedOrientations"); }
             set { BackingStore?.Set("feedOrientations", value); }
         }
 #endif
         /// <summary>Finishing processes the printer supports for a printed document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintFinishing?>? Finishings
+        public List<Microsoft.Graph.Beta.Models.PrintFinishing?>? Finishings
         {
-            get { return BackingStore?.Get<List<PrintFinishing?>?>("finishings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintFinishing?>?>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #nullable restore
 #else
-        public List<PrintFinishing?> Finishings
+        public List<Microsoft.Graph.Beta.Models.PrintFinishing?> Finishings
         {
-            get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintFinishing?>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
 #endif
@@ -264,16 +264,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The presentation directions supported by the printer. Supported values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintMultipageLayout?>? MultipageLayouts
+        public List<Microsoft.Graph.Beta.Models.PrintMultipageLayout?>? MultipageLayouts
         {
-            get { return BackingStore?.Get<List<PrintMultipageLayout?>?>("multipageLayouts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintMultipageLayout?>?>("multipageLayouts"); }
             set { BackingStore?.Set("multipageLayouts", value); }
         }
 #nullable restore
 #else
-        public List<PrintMultipageLayout?> MultipageLayouts
+        public List<Microsoft.Graph.Beta.Models.PrintMultipageLayout?> MultipageLayouts
         {
-            get { return BackingStore?.Get<List<PrintMultipageLayout?>>("multipageLayouts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintMultipageLayout?>>("multipageLayouts"); }
             set { BackingStore?.Set("multipageLayouts", value); }
         }
 #endif
@@ -296,16 +296,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The print orientations supported by the printer. Valid values are described in the following table.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintOrientation?>? Orientations
+        public List<Microsoft.Graph.Beta.Models.PrintOrientation?>? Orientations
         {
-            get { return BackingStore?.Get<List<PrintOrientation?>?>("orientations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintOrientation?>?>("orientations"); }
             set { BackingStore?.Set("orientations", value); }
         }
 #nullable restore
 #else
-        public List<PrintOrientation?> Orientations
+        public List<Microsoft.Graph.Beta.Models.PrintOrientation?> Orientations
         {
-            get { return BackingStore?.Get<List<PrintOrientation?>>("orientations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintOrientation?>>("orientations"); }
             set { BackingStore?.Set("orientations", value); }
         }
 #endif
@@ -344,16 +344,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The print qualities supported by the printer.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintQuality?>? Qualities
+        public List<Microsoft.Graph.Beta.Models.PrintQuality?>? Qualities
         {
-            get { return BackingStore?.Get<List<PrintQuality?>?>("qualities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintQuality?>?>("qualities"); }
             set { BackingStore?.Set("qualities", value); }
         }
 #nullable restore
 #else
-        public List<PrintQuality?> Qualities
+        public List<Microsoft.Graph.Beta.Models.PrintQuality?> Qualities
         {
-            get { return BackingStore?.Get<List<PrintQuality?>>("qualities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintQuality?>>("qualities"); }
             set { BackingStore?.Set("qualities", value); }
         }
 #endif
@@ -376,48 +376,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Supported print scalings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintScaling?>? Scalings
+        public List<Microsoft.Graph.Beta.Models.PrintScaling?>? Scalings
         {
-            get { return BackingStore?.Get<List<PrintScaling?>?>("scalings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintScaling?>?>("scalings"); }
             set { BackingStore?.Set("scalings", value); }
         }
 #nullable restore
 #else
-        public List<PrintScaling?> Scalings
+        public List<Microsoft.Graph.Beta.Models.PrintScaling?> Scalings
         {
-            get { return BackingStore?.Get<List<PrintScaling?>>("scalings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintScaling?>>("scalings"); }
             set { BackingStore?.Set("scalings", value); }
         }
 #endif
         /// <summary>The supportedColorConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintColorConfiguration?>? SupportedColorConfigurations
+        public List<Microsoft.Graph.Beta.Models.PrintColorConfiguration?>? SupportedColorConfigurations
         {
-            get { return BackingStore?.Get<List<PrintColorConfiguration?>?>("supportedColorConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintColorConfiguration?>?>("supportedColorConfigurations"); }
             set { BackingStore?.Set("supportedColorConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<PrintColorConfiguration?> SupportedColorConfigurations
+        public List<Microsoft.Graph.Beta.Models.PrintColorConfiguration?> SupportedColorConfigurations
         {
-            get { return BackingStore?.Get<List<PrintColorConfiguration?>>("supportedColorConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintColorConfiguration?>>("supportedColorConfigurations"); }
             set { BackingStore?.Set("supportedColorConfigurations", value); }
         }
 #endif
         /// <summary>The supportedCopiesPerJob property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IntegerRange? SupportedCopiesPerJob
+        public Microsoft.Graph.Beta.Models.IntegerRange? SupportedCopiesPerJob
         {
-            get { return BackingStore?.Get<IntegerRange?>("supportedCopiesPerJob"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntegerRange?>("supportedCopiesPerJob"); }
             set { BackingStore?.Set("supportedCopiesPerJob", value); }
         }
 #nullable restore
 #else
-        public IntegerRange SupportedCopiesPerJob
+        public Microsoft.Graph.Beta.Models.IntegerRange SupportedCopiesPerJob
         {
-            get { return BackingStore?.Get<IntegerRange>("supportedCopiesPerJob"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntegerRange>("supportedCopiesPerJob"); }
             set { BackingStore?.Set("supportedCopiesPerJob", value); }
         }
 #endif
@@ -440,32 +440,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The supportedDuplexConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintDuplexConfiguration?>? SupportedDuplexConfigurations
+        public List<Microsoft.Graph.Beta.Models.PrintDuplexConfiguration?>? SupportedDuplexConfigurations
         {
-            get { return BackingStore?.Get<List<PrintDuplexConfiguration?>?>("supportedDuplexConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintDuplexConfiguration?>?>("supportedDuplexConfigurations"); }
             set { BackingStore?.Set("supportedDuplexConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<PrintDuplexConfiguration?> SupportedDuplexConfigurations
+        public List<Microsoft.Graph.Beta.Models.PrintDuplexConfiguration?> SupportedDuplexConfigurations
         {
-            get { return BackingStore?.Get<List<PrintDuplexConfiguration?>>("supportedDuplexConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintDuplexConfiguration?>>("supportedDuplexConfigurations"); }
             set { BackingStore?.Set("supportedDuplexConfigurations", value); }
         }
 #endif
         /// <summary>The supportedFinishings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintFinishing?>? SupportedFinishings
+        public List<Microsoft.Graph.Beta.Models.PrintFinishing?>? SupportedFinishings
         {
-            get { return BackingStore?.Get<List<PrintFinishing?>?>("supportedFinishings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintFinishing?>?>("supportedFinishings"); }
             set { BackingStore?.Set("supportedFinishings", value); }
         }
 #nullable restore
 #else
-        public List<PrintFinishing?> SupportedFinishings
+        public List<Microsoft.Graph.Beta.Models.PrintFinishing?> SupportedFinishings
         {
-            get { return BackingStore?.Get<List<PrintFinishing?>>("supportedFinishings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintFinishing?>>("supportedFinishings"); }
             set { BackingStore?.Set("supportedFinishings", value); }
         }
 #endif
@@ -504,32 +504,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The supportedMediaTypes property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintMediaType?>? SupportedMediaTypes
+        public List<Microsoft.Graph.Beta.Models.PrintMediaType?>? SupportedMediaTypes
         {
-            get { return BackingStore?.Get<List<PrintMediaType?>?>("supportedMediaTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintMediaType?>?>("supportedMediaTypes"); }
             set { BackingStore?.Set("supportedMediaTypes", value); }
         }
 #nullable restore
 #else
-        public List<PrintMediaType?> SupportedMediaTypes
+        public List<Microsoft.Graph.Beta.Models.PrintMediaType?> SupportedMediaTypes
         {
-            get { return BackingStore?.Get<List<PrintMediaType?>>("supportedMediaTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintMediaType?>>("supportedMediaTypes"); }
             set { BackingStore?.Set("supportedMediaTypes", value); }
         }
 #endif
         /// <summary>The supportedOrientations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintOrientation?>? SupportedOrientations
+        public List<Microsoft.Graph.Beta.Models.PrintOrientation?>? SupportedOrientations
         {
-            get { return BackingStore?.Get<List<PrintOrientation?>?>("supportedOrientations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintOrientation?>?>("supportedOrientations"); }
             set { BackingStore?.Set("supportedOrientations", value); }
         }
 #nullable restore
 #else
-        public List<PrintOrientation?> SupportedOrientations
+        public List<Microsoft.Graph.Beta.Models.PrintOrientation?> SupportedOrientations
         {
-            get { return BackingStore?.Get<List<PrintOrientation?>>("supportedOrientations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintOrientation?>>("supportedOrientations"); }
             set { BackingStore?.Set("supportedOrientations", value); }
         }
 #endif
@@ -552,48 +552,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The supportedPagesPerSheet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IntegerRange? SupportedPagesPerSheet
+        public Microsoft.Graph.Beta.Models.IntegerRange? SupportedPagesPerSheet
         {
-            get { return BackingStore?.Get<IntegerRange?>("supportedPagesPerSheet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntegerRange?>("supportedPagesPerSheet"); }
             set { BackingStore?.Set("supportedPagesPerSheet", value); }
         }
 #nullable restore
 #else
-        public IntegerRange SupportedPagesPerSheet
+        public Microsoft.Graph.Beta.Models.IntegerRange SupportedPagesPerSheet
         {
-            get { return BackingStore?.Get<IntegerRange>("supportedPagesPerSheet"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntegerRange>("supportedPagesPerSheet"); }
             set { BackingStore?.Set("supportedPagesPerSheet", value); }
         }
 #endif
         /// <summary>The supportedPresentationDirections property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintPresentationDirection?>? SupportedPresentationDirections
+        public List<Microsoft.Graph.Beta.Models.PrintPresentationDirection?>? SupportedPresentationDirections
         {
-            get { return BackingStore?.Get<List<PrintPresentationDirection?>?>("supportedPresentationDirections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintPresentationDirection?>?>("supportedPresentationDirections"); }
             set { BackingStore?.Set("supportedPresentationDirections", value); }
         }
 #nullable restore
 #else
-        public List<PrintPresentationDirection?> SupportedPresentationDirections
+        public List<Microsoft.Graph.Beta.Models.PrintPresentationDirection?> SupportedPresentationDirections
         {
-            get { return BackingStore?.Get<List<PrintPresentationDirection?>>("supportedPresentationDirections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintPresentationDirection?>>("supportedPresentationDirections"); }
             set { BackingStore?.Set("supportedPresentationDirections", value); }
         }
 #endif
         /// <summary>The supportedPrintQualities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintQuality?>? SupportedPrintQualities
+        public List<Microsoft.Graph.Beta.Models.PrintQuality?>? SupportedPrintQualities
         {
-            get { return BackingStore?.Get<List<PrintQuality?>?>("supportedPrintQualities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintQuality?>?>("supportedPrintQualities"); }
             set { BackingStore?.Set("supportedPrintQualities", value); }
         }
 #nullable restore
 #else
-        public List<PrintQuality?> SupportedPrintQualities
+        public List<Microsoft.Graph.Beta.Models.PrintQuality?> SupportedPrintQualities
         {
-            get { return BackingStore?.Get<List<PrintQuality?>>("supportedPrintQualities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintQuality?>>("supportedPrintQualities"); }
             set { BackingStore?.Set("supportedPrintQualities", value); }
         }
 #endif
@@ -620,7 +620,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PrinterCapabilities"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PrinterCapabilities"/> and sets the default values.
         /// </summary>
         public PrinterCapabilities()
         {
@@ -630,12 +630,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrinterCapabilities"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrinterCapabilities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PrinterCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PrinterCapabilities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrinterCapabilities();
+            return new Microsoft.Graph.Beta.Models.PrinterCapabilities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -647,14 +647,14 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "bottomMargins", n => { BottomMargins = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
                 { "collation", n => { Collation = n.GetBoolValue(); } },
-                { "colorModes", n => { ColorModes = n.GetCollectionOfEnumValues<PrintColorMode>()?.ToList(); } },
+                { "colorModes", n => { ColorModes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintColorMode>()?.ToList(); } },
                 { "contentTypes", n => { ContentTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "copiesPerJob", n => { CopiesPerJob = n.GetObjectValue<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue); } },
+                { "copiesPerJob", n => { CopiesPerJob = n.GetObjectValue<Microsoft.Graph.Beta.Models.IntegerRange>(Microsoft.Graph.Beta.Models.IntegerRange.CreateFromDiscriminatorValue); } },
                 { "dpis", n => { Dpis = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                { "duplexModes", n => { DuplexModes = n.GetCollectionOfEnumValues<PrintDuplexMode>()?.ToList(); } },
-                { "feedDirections", n => { FeedDirections = n.GetCollectionOfEnumValues<PrinterFeedDirection>()?.ToList(); } },
-                { "feedOrientations", n => { FeedOrientations = n.GetCollectionOfEnumValues<PrinterFeedOrientation>()?.ToList(); } },
-                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<PrintFinishing>()?.ToList(); } },
+                { "duplexModes", n => { DuplexModes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintDuplexMode>()?.ToList(); } },
+                { "feedDirections", n => { FeedDirections = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrinterFeedDirection>()?.ToList(); } },
+                { "feedOrientations", n => { FeedOrientations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrinterFeedOrientation>()?.ToList(); } },
+                { "finishings", n => { Finishings = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintFinishing>()?.ToList(); } },
                 { "inputBins", n => { InputBins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "isColorPrintingSupported", n => { IsColorPrintingSupported = n.GetBoolValue(); } },
                 { "isPageRangeSupported", n => { IsPageRangeSupported = n.GetBoolValue(); } },
@@ -662,27 +662,27 @@ namespace Microsoft.Graph.Beta.Models
                 { "mediaColors", n => { MediaColors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "mediaSizes", n => { MediaSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "mediaTypes", n => { MediaTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "multipageLayouts", n => { MultipageLayouts = n.GetCollectionOfEnumValues<PrintMultipageLayout>()?.ToList(); } },
+                { "multipageLayouts", n => { MultipageLayouts = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintMultipageLayout>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "orientations", n => { Orientations = n.GetCollectionOfEnumValues<PrintOrientation>()?.ToList(); } },
+                { "orientations", n => { Orientations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintOrientation>()?.ToList(); } },
                 { "outputBins", n => { OutputBins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "pagesPerSheet", n => { PagesPerSheet = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                { "qualities", n => { Qualities = n.GetCollectionOfEnumValues<PrintQuality>()?.ToList(); } },
+                { "qualities", n => { Qualities = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintQuality>()?.ToList(); } },
                 { "rightMargins", n => { RightMargins = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
-                { "scalings", n => { Scalings = n.GetCollectionOfEnumValues<PrintScaling>()?.ToList(); } },
-                { "supportedColorConfigurations", n => { SupportedColorConfigurations = n.GetCollectionOfEnumValues<PrintColorConfiguration>()?.ToList(); } },
-                { "supportedCopiesPerJob", n => { SupportedCopiesPerJob = n.GetObjectValue<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue); } },
+                { "scalings", n => { Scalings = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintScaling>()?.ToList(); } },
+                { "supportedColorConfigurations", n => { SupportedColorConfigurations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintColorConfiguration>()?.ToList(); } },
+                { "supportedCopiesPerJob", n => { SupportedCopiesPerJob = n.GetObjectValue<Microsoft.Graph.Beta.Models.IntegerRange>(Microsoft.Graph.Beta.Models.IntegerRange.CreateFromDiscriminatorValue); } },
                 { "supportedDocumentMimeTypes", n => { SupportedDocumentMimeTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "supportedDuplexConfigurations", n => { SupportedDuplexConfigurations = n.GetCollectionOfEnumValues<PrintDuplexConfiguration>()?.ToList(); } },
-                { "supportedFinishings", n => { SupportedFinishings = n.GetCollectionOfEnumValues<PrintFinishing>()?.ToList(); } },
+                { "supportedDuplexConfigurations", n => { SupportedDuplexConfigurations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintDuplexConfiguration>()?.ToList(); } },
+                { "supportedFinishings", n => { SupportedFinishings = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintFinishing>()?.ToList(); } },
                 { "supportedMediaColors", n => { SupportedMediaColors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "supportedMediaSizes", n => { SupportedMediaSizes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "supportedMediaTypes", n => { SupportedMediaTypes = n.GetCollectionOfEnumValues<PrintMediaType>()?.ToList(); } },
-                { "supportedOrientations", n => { SupportedOrientations = n.GetCollectionOfEnumValues<PrintOrientation>()?.ToList(); } },
+                { "supportedMediaTypes", n => { SupportedMediaTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintMediaType>()?.ToList(); } },
+                { "supportedOrientations", n => { SupportedOrientations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintOrientation>()?.ToList(); } },
                 { "supportedOutputBins", n => { SupportedOutputBins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "supportedPagesPerSheet", n => { SupportedPagesPerSheet = n.GetObjectValue<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue); } },
-                { "supportedPresentationDirections", n => { SupportedPresentationDirections = n.GetCollectionOfEnumValues<PrintPresentationDirection>()?.ToList(); } },
-                { "supportedPrintQualities", n => { SupportedPrintQualities = n.GetCollectionOfEnumValues<PrintQuality>()?.ToList(); } },
+                { "supportedPagesPerSheet", n => { SupportedPagesPerSheet = n.GetObjectValue<Microsoft.Graph.Beta.Models.IntegerRange>(Microsoft.Graph.Beta.Models.IntegerRange.CreateFromDiscriminatorValue); } },
+                { "supportedPresentationDirections", n => { SupportedPresentationDirections = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintPresentationDirection>()?.ToList(); } },
+                { "supportedPrintQualities", n => { SupportedPrintQualities = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintQuality>()?.ToList(); } },
                 { "supportsFitPdfToPage", n => { SupportsFitPdfToPage = n.GetBoolValue(); } },
                 { "topMargins", n => { TopMargins = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
             };
@@ -696,14 +696,14 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<int?>("bottomMargins", BottomMargins);
             writer.WriteBoolValue("collation", Collation);
-            writer.WriteCollectionOfEnumValues<PrintColorMode>("colorModes", ColorModes);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintColorMode>("colorModes", ColorModes);
             writer.WriteCollectionOfPrimitiveValues<string>("contentTypes", ContentTypes);
-            writer.WriteObjectValue<IntegerRange>("copiesPerJob", CopiesPerJob);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IntegerRange>("copiesPerJob", CopiesPerJob);
             writer.WriteCollectionOfPrimitiveValues<int?>("dpis", Dpis);
-            writer.WriteCollectionOfEnumValues<PrintDuplexMode>("duplexModes", DuplexModes);
-            writer.WriteCollectionOfEnumValues<PrinterFeedDirection>("feedDirections", FeedDirections);
-            writer.WriteCollectionOfEnumValues<PrinterFeedOrientation>("feedOrientations", FeedOrientations);
-            writer.WriteCollectionOfEnumValues<PrintFinishing>("finishings", Finishings);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintDuplexMode>("duplexModes", DuplexModes);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrinterFeedDirection>("feedDirections", FeedDirections);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrinterFeedOrientation>("feedOrientations", FeedOrientations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintFinishing>("finishings", Finishings);
             writer.WriteCollectionOfPrimitiveValues<string>("inputBins", InputBins);
             writer.WriteBoolValue("isColorPrintingSupported", IsColorPrintingSupported);
             writer.WriteBoolValue("isPageRangeSupported", IsPageRangeSupported);
@@ -711,27 +711,27 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("mediaColors", MediaColors);
             writer.WriteCollectionOfPrimitiveValues<string>("mediaSizes", MediaSizes);
             writer.WriteCollectionOfPrimitiveValues<string>("mediaTypes", MediaTypes);
-            writer.WriteCollectionOfEnumValues<PrintMultipageLayout>("multipageLayouts", MultipageLayouts);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintMultipageLayout>("multipageLayouts", MultipageLayouts);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfEnumValues<PrintOrientation>("orientations", Orientations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintOrientation>("orientations", Orientations);
             writer.WriteCollectionOfPrimitiveValues<string>("outputBins", OutputBins);
             writer.WriteCollectionOfPrimitiveValues<int?>("pagesPerSheet", PagesPerSheet);
-            writer.WriteCollectionOfEnumValues<PrintQuality>("qualities", Qualities);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintQuality>("qualities", Qualities);
             writer.WriteCollectionOfPrimitiveValues<int?>("rightMargins", RightMargins);
-            writer.WriteCollectionOfEnumValues<PrintScaling>("scalings", Scalings);
-            writer.WriteCollectionOfEnumValues<PrintColorConfiguration>("supportedColorConfigurations", SupportedColorConfigurations);
-            writer.WriteObjectValue<IntegerRange>("supportedCopiesPerJob", SupportedCopiesPerJob);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintScaling>("scalings", Scalings);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintColorConfiguration>("supportedColorConfigurations", SupportedColorConfigurations);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IntegerRange>("supportedCopiesPerJob", SupportedCopiesPerJob);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedDocumentMimeTypes", SupportedDocumentMimeTypes);
-            writer.WriteCollectionOfEnumValues<PrintDuplexConfiguration>("supportedDuplexConfigurations", SupportedDuplexConfigurations);
-            writer.WriteCollectionOfEnumValues<PrintFinishing>("supportedFinishings", SupportedFinishings);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintDuplexConfiguration>("supportedDuplexConfigurations", SupportedDuplexConfigurations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintFinishing>("supportedFinishings", SupportedFinishings);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedMediaColors", SupportedMediaColors);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedMediaSizes", SupportedMediaSizes);
-            writer.WriteCollectionOfEnumValues<PrintMediaType>("supportedMediaTypes", SupportedMediaTypes);
-            writer.WriteCollectionOfEnumValues<PrintOrientation>("supportedOrientations", SupportedOrientations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintMediaType>("supportedMediaTypes", SupportedMediaTypes);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintOrientation>("supportedOrientations", SupportedOrientations);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedOutputBins", SupportedOutputBins);
-            writer.WriteObjectValue<IntegerRange>("supportedPagesPerSheet", SupportedPagesPerSheet);
-            writer.WriteCollectionOfEnumValues<PrintPresentationDirection>("supportedPresentationDirections", SupportedPresentationDirections);
-            writer.WriteCollectionOfEnumValues<PrintQuality>("supportedPrintQualities", SupportedPrintQualities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IntegerRange>("supportedPagesPerSheet", SupportedPagesPerSheet);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintPresentationDirection>("supportedPresentationDirections", SupportedPresentationDirections);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.PrintQuality>("supportedPrintQualities", SupportedPrintQualities);
             writer.WriteBoolValue("supportsFitPdfToPage", SupportsFitPdfToPage);
             writer.WriteCollectionOfPrimitiveValues<int?>("topMargins", TopMargins);
             writer.WriteAdditionalData(AdditionalData);

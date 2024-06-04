@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The different attributes to sync for the class groups. The possible values are: courseTitle, courseCode, courseSubject, courseGradeLevel, courseExternalId, academicSessionTitle, academicSessionExternalId, classCode, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AdditionalClassGroupAttributes?>? AdditionalAttributes
+        public List<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes?>? AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<AdditionalClassGroupAttributes?>?>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes?>?>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #nullable restore
 #else
-        public List<AdditionalClassGroupAttributes?> AdditionalAttributes
+        public List<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes?> AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<AdditionalClassGroupAttributes?>>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes?>>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #endif
@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The additionalOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdditionalClassGroupOptions? AdditionalOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions? AdditionalOptions
         {
-            get { return BackingStore?.Get<AdditionalClassGroupOptions?>("additionalOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
 #nullable restore
 #else
-        public AdditionalClassGroupOptions AdditionalOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions AdditionalOptions
         {
-            get { return BackingStore?.Get<AdditionalClassGroupOptions>("additionalOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
 #endif
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClassGroupConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.ClassGroupConfiguration"/> and sets the default values.
         /// </summary>
         public ClassGroupConfiguration()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClassGroupConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.ClassGroupConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClassGroupConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.ClassGroupConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClassGroupConfiguration();
+            return new Microsoft.Graph.Beta.Models.IndustryData.ClassGroupConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,8 +109,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfEnumValues<AdditionalClassGroupAttributes>()?.ToList(); } },
-                { "additionalOptions", n => { AdditionalOptions = n.GetObjectValue<AdditionalClassGroupOptions>(AdditionalClassGroupOptions.CreateFromDiscriminatorValue); } },
+                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes>()?.ToList(); } },
+                { "additionalOptions", n => { AdditionalOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions>(Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions.CreateFromDiscriminatorValue); } },
                 { "enrollmentMappings", n => { EnrollmentMappings = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings>(Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -122,8 +122,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<AdditionalClassGroupAttributes>("additionalAttributes", AdditionalAttributes);
-            writer.WriteObjectValue<AdditionalClassGroupOptions>("additionalOptions", AdditionalOptions);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupAttributes>("additionalAttributes", AdditionalAttributes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.AdditionalClassGroupOptions>("additionalOptions", AdditionalOptions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.EnrollmentMappings>("enrollmentMappings", EnrollmentMappings);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

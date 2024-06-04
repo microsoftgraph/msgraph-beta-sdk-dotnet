@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>The appliesTo property</summary>
-        public EducationUserRole? AppliesTo
+        public Microsoft.Graph.Beta.Models.EducationUserRole? AppliesTo
         {
-            get { return BackingStore?.Get<EducationUserRole?>("appliesTo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationUserRole?>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationIdentityMatchingOptions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EducationIdentityMatchingOptions"/> and sets the default values.
         /// </summary>
         public EducationIdentityMatchingOptions()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationIdentityMatchingOptions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationIdentityMatchingOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EducationIdentityMatchingOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.EducationIdentityMatchingOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationIdentityMatchingOptions();
+            return new Microsoft.Graph.Beta.Models.EducationIdentityMatchingOptions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "appliesTo", n => { AppliesTo = n.GetEnumValue<EducationUserRole>(); } },
+                { "appliesTo", n => { AppliesTo = n.GetEnumValue<Microsoft.Graph.Beta.Models.EducationUserRole>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "sourcePropertyName", n => { SourcePropertyName = n.GetStringValue(); } },
                 { "targetDomain", n => { TargetDomain = n.GetStringValue(); } },
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<EducationUserRole>("appliesTo", AppliesTo);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EducationUserRole>("appliesTo", AppliesTo);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sourcePropertyName", SourcePropertyName);
             writer.WriteStringValue("targetDomain", TargetDomain);

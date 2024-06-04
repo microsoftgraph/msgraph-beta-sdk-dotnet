@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppDetection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Win32LobAppDetection"/> and sets the default values.
         /// </summary>
         public Win32LobAppDetection()
         {
@@ -47,19 +47,19 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppDetection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Win32LobAppDetection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Win32LobAppDetection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Win32LobAppDetection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.win32LobAppFileSystemDetection" => new Win32LobAppFileSystemDetection(),
-                "#microsoft.graph.win32LobAppPowerShellScriptDetection" => new Win32LobAppPowerShellScriptDetection(),
-                "#microsoft.graph.win32LobAppProductCodeDetection" => new Win32LobAppProductCodeDetection(),
-                "#microsoft.graph.win32LobAppRegistryDetection" => new Win32LobAppRegistryDetection(),
-                _ => new Win32LobAppDetection(),
+                "#microsoft.graph.win32LobAppFileSystemDetection" => new Microsoft.Graph.Beta.Models.Win32LobAppFileSystemDetection(),
+                "#microsoft.graph.win32LobAppPowerShellScriptDetection" => new Microsoft.Graph.Beta.Models.Win32LobAppPowerShellScriptDetection(),
+                "#microsoft.graph.win32LobAppProductCodeDetection" => new Microsoft.Graph.Beta.Models.Win32LobAppProductCodeDetection(),
+                "#microsoft.graph.win32LobAppRegistryDetection" => new Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetection(),
+                _ => new Microsoft.Graph.Beta.Models.Win32LobAppDetection(),
             };
         }
         /// <summary>

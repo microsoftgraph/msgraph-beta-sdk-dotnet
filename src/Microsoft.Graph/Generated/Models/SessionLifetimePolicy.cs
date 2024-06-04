@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SessionLifetimePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SessionLifetimePolicy"/> and sets the default values.
         /// </summary>
         public SessionLifetimePolicy()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SessionLifetimePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SessionLifetimePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SessionLifetimePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SessionLifetimePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SessionLifetimePolicy();
+            return new Microsoft.Graph.Beta.Models.SessionLifetimePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "detail", n => { Detail = n.GetStringValue(); } },
-                { "expirationRequirement", n => { ExpirationRequirement = n.GetEnumValue<ExpirationRequirement>(); } },
+                { "expirationRequirement", n => { ExpirationRequirement = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExpirationRequirement>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detail", Detail);
-            writer.WriteEnumValue<ExpirationRequirement>("expirationRequirement", ExpirationRequirement);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExpirationRequirement>("expirationRequirement", ExpirationRequirement);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -57,28 +57,28 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>A flow that provisions relevant records of a given entity type in the Microsoft 365 tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProvisioningFlow>? ProvisioningFlows
+        public List<Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow>? ProvisioningFlows
         {
-            get { return BackingStore?.Get<List<ProvisioningFlow>?>("provisioningFlows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow>?>("provisioningFlows"); }
             set { BackingStore?.Set("provisioningFlows", value); }
         }
 #nullable restore
 #else
-        public List<ProvisioningFlow> ProvisioningFlows
+        public List<Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow> ProvisioningFlows
         {
-            get { return BackingStore?.Get<List<ProvisioningFlow>>("provisioningFlows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow>>("provisioningFlows"); }
             set { BackingStore?.Set("provisioningFlows", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutboundProvisioningFlowSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.OutboundProvisioningFlowSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutboundProvisioningFlowSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.OutboundProvisioningFlowSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutboundProvisioningFlowSet();
+            return new Microsoft.Graph.Beta.Models.IndustryData.OutboundProvisioningFlowSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.Filter>(Microsoft.Graph.Beta.Models.IndustryData.Filter.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "provisioningFlows", n => { ProvisioningFlows = n.GetCollectionOfObjectValues<ProvisioningFlow>(ProvisioningFlow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "provisioningFlows", n => { ProvisioningFlows = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow>(Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.Filter>("filter", Filter);
-            writer.WriteCollectionOfObjectValues<ProvisioningFlow>("provisioningFlows", ProvisioningFlows);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.ProvisioningFlow>("provisioningFlows", ProvisioningFlows);
         }
     }
 }

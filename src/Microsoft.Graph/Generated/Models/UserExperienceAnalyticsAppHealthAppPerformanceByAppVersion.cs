@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics application performance entity contains app performance details by app version.
     /// </summary>
-    public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion : Entity, IParsable
+    public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The number of crashes for the application. Valid values 0 to 2147483647. Supports: $select, $OrderBy. Read-only. Valid values -2147483648 to 2147483647</summary>
         public int? AppCrashCount
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion();
         }
         /// <summary>
         /// The deserialization information for the current model

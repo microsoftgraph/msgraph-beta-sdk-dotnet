@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values are: sharedSecret, unknownFutureValue.</summary>
-        public WorkforceIntegrationEncryptionProtocol? Protocol
+        public Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryptionProtocol? Protocol
         {
-            get { return BackingStore?.Get<WorkforceIntegrationEncryptionProtocol?>("protocol"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryptionProtocol?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>Encryption shared secret.</summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WorkforceIntegrationEncryption"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryption"/> and sets the default values.
         /// </summary>
         public WorkforceIntegrationEncryption()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkforceIntegrationEncryption"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryption"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WorkforceIntegrationEncryption CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryption CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkforceIntegrationEncryption();
+            return new Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryption();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "protocol", n => { Protocol = n.GetEnumValue<WorkforceIntegrationEncryptionProtocol>(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryptionProtocol>(); } },
                 { "secret", n => { Secret = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<WorkforceIntegrationEncryptionProtocol>("protocol", Protocol);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WorkforceIntegrationEncryptionProtocol>("protocol", Protocol);
             writer.WriteStringValue("secret", Secret);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrintConnector : Entity, IParsable
+    public class PrintConnector : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The connector&apos;s version.</summary>
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The physical and/or organizational location of the connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterLocation? Location
+        public Microsoft.Graph.Beta.Models.PrinterLocation? Location
         {
-            get { return BackingStore?.Get<PrinterLocation?>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterLocation?>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #nullable restore
 #else
-        public PrinterLocation Location
+        public Microsoft.Graph.Beta.Models.PrinterLocation Location
         {
-            get { return BackingStore?.Get<PrinterLocation>("location"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
 #endif
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrintConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrintConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrintConnector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintConnector();
+            return new Microsoft.Graph.Beta.Models.PrintConnector();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -150,7 +150,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceHealth", n => { DeviceHealth = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceHealth>(Microsoft.Graph.Beta.Models.DeviceHealth.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "fullyQualifiedDomainName", n => { FullyQualifiedDomainName = n.GetStringValue(); } },
-                { "location", n => { Location = n.GetObjectValue<PrinterLocation>(PrinterLocation.CreateFromDiscriminatorValue); } },
+                { "location", n => { Location = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrinterLocation>(Microsoft.Graph.Beta.Models.PrinterLocation.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "operatingSystem", n => { OperatingSystem = n.GetStringValue(); } },
                 { "registeredDateTime", n => { RegisteredDateTime = n.GetDateTimeOffsetValue(); } },
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceHealth>("deviceHealth", DeviceHealth);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("fullyQualifiedDomainName", FullyQualifiedDomainName);
-            writer.WriteObjectValue<PrinterLocation>("location", Location);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrinterLocation>("location", Location);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("operatingSystem", OperatingSystem);
             writer.WriteDateTimeOffsetValue("registeredDateTime", RegisteredDateTime);

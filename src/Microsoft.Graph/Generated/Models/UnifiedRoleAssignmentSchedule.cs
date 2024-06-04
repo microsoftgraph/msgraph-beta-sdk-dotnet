@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleAssignmentSchedule : UnifiedRoleScheduleBase, IParsable
+    public class UnifiedRoleAssignmentSchedule : Microsoft.Graph.Beta.Models.UnifiedRoleScheduleBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If the request is from an eligible administrator to activate a role, this parameter shows the related eligible assignment for that activation. Otherwise, it&apos;s null. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleEligibilitySchedule? ActivatedUsing
+        public Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule? ActivatedUsing
         {
-            get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule?>("activatedUsing"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule?>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleEligibilitySchedule ActivatedUsing
+        public Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule ActivatedUsing
         {
-            get { return BackingStore?.Get<UnifiedRoleEligibilitySchedule>("activatedUsing"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule>("activatedUsing"); }
             set { BackingStore?.Set("activatedUsing", value); }
         }
 #endif
@@ -61,28 +61,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The period of the role assignment. It can represent a single occurrence or multiple recurrences.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestSchedule? ScheduleInfo
+        public Microsoft.Graph.Beta.Models.RequestSchedule? ScheduleInfo
         {
-            get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule?>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #nullable restore
 #else
-        public RequestSchedule ScheduleInfo
+        public Microsoft.Graph.Beta.Models.RequestSchedule ScheduleInfo
         {
-            get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSchedule>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignmentSchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleAssignmentSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleAssignmentSchedule();
+            return new Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentSchedule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activatedUsing", n => { ActivatedUsing = n.GetObjectValue<UnifiedRoleEligibilitySchedule>(UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
+                { "activatedUsing", n => { ActivatedUsing = n.GetObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule>(Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule.CreateFromDiscriminatorValue); } },
                 { "assignmentType", n => { AssignmentType = n.GetStringValue(); } },
                 { "memberType", n => { MemberType = n.GetStringValue(); } },
-                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<RequestSchedule>(RequestSchedule.CreateFromDiscriminatorValue); } },
+                { "scheduleInfo", n => { ScheduleInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>(Microsoft.Graph.Beta.Models.RequestSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UnifiedRoleEligibilitySchedule>("activatedUsing", ActivatedUsing);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleEligibilitySchedule>("activatedUsing", ActivatedUsing);
             writer.WriteStringValue("assignmentType", AssignmentType);
             writer.WriteStringValue("memberType", MemberType);
-            writer.WriteObjectValue<RequestSchedule>("scheduleInfo", ScheduleInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RequestSchedule>("scheduleInfo", ScheduleInfo);
         }
     }
 }

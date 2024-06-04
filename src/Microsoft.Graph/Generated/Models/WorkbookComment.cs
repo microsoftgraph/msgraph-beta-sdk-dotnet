@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookComment : Entity, IParsable
+    public class WorkbookComment : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The content of the comment.</summary>
@@ -45,44 +45,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The replies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookCommentReply>? Replies
+        public List<Microsoft.Graph.Beta.Models.WorkbookCommentReply>? Replies
         {
-            get { return BackingStore?.Get<List<WorkbookCommentReply>?>("replies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookCommentReply>?>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookCommentReply> Replies
+        public List<Microsoft.Graph.Beta.Models.WorkbookCommentReply> Replies
         {
-            get { return BackingStore?.Get<List<WorkbookCommentReply>>("replies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookCommentReply>>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
 #endif
         /// <summary>The task associated with the comment. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookDocumentTask? Task
+        public Microsoft.Graph.Beta.Models.WorkbookDocumentTask? Task
         {
-            get { return BackingStore?.Get<WorkbookDocumentTask?>("task"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookDocumentTask?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #nullable restore
 #else
-        public WorkbookDocumentTask Task
+        public Microsoft.Graph.Beta.Models.WorkbookDocumentTask Task
         {
-            get { return BackingStore?.Get<WorkbookDocumentTask>("task"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookDocumentTask>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookComment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkbookComment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookComment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WorkbookComment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookComment();
+            return new Microsoft.Graph.Beta.Models.WorkbookComment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "content", n => { Content = n.GetStringValue(); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
-                { "replies", n => { Replies = n.GetCollectionOfObjectValues<WorkbookCommentReply>(WorkbookCommentReply.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "task", n => { Task = n.GetObjectValue<WorkbookDocumentTask>(WorkbookDocumentTask.CreateFromDiscriminatorValue); } },
+                { "replies", n => { Replies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookCommentReply>(Microsoft.Graph.Beta.Models.WorkbookCommentReply.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "task", n => { Task = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookDocumentTask>(Microsoft.Graph.Beta.Models.WorkbookDocumentTask.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -108,8 +108,8 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("content", Content);
             writer.WriteStringValue("contentType", ContentType);
-            writer.WriteCollectionOfObjectValues<WorkbookCommentReply>("replies", Replies);
-            writer.WriteObjectValue<WorkbookDocumentTask>("task", Task);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookCommentReply>("replies", Replies);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookDocumentTask>("task", Task);
         }
     }
 }

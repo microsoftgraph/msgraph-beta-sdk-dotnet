@@ -17,37 +17,37 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore.Get<IDictionary<string, object>>("AdditionalData") ?? new Dictionary<string, object>(); }
             set { BackingStore.Set("AdditionalData", value); }
         }
-        /// <summary>The Identity of the Application. This property is read-only.</summary>
+        /// <summary>Optional. The application associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Application
+        public Microsoft.Graph.Beta.Models.Identity? Application
         {
-            get { return BackingStore?.Get<Identity?>("application"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #nullable restore
 #else
-        public Identity Application
+        public Microsoft.Graph.Beta.Models.Identity Application
         {
-            get { return BackingStore?.Get<Identity>("application"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("application"); }
             set { BackingStore?.Set("application", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The Identity of the Device. This property is read-only.</summary>
+        /// <summary>Optional. The device associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? Device
+        public Microsoft.Graph.Beta.Models.Identity? Device
         {
-            get { return BackingStore?.Get<Identity?>("device"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("device"); }
             set { BackingStore?.Set("device", value); }
         }
 #nullable restore
 #else
-        public Identity Device
+        public Microsoft.Graph.Beta.Models.Identity Device
         {
-            get { return BackingStore?.Get<Identity>("device"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("device"); }
             set { BackingStore?.Set("device", value); }
         }
 #endif
@@ -67,24 +67,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The Identity of the User. This property is read-only.</summary>
+        /// <summary>Optional. The user associated with this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? User
+        public Microsoft.Graph.Beta.Models.Identity? User
         {
-            get { return BackingStore?.Get<Identity?>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #nullable restore
 #else
-        public Identity User
+        public Microsoft.Graph.Beta.Models.Identity User
         {
-            get { return BackingStore?.Get<Identity>("user"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IdentitySet"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IdentitySet"/> and sets the default values.
         /// </summary>
         public IdentitySet()
         {
@@ -94,20 +94,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentitySet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentitySet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IdentitySet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.chatMessageFromIdentitySet" => new ChatMessageFromIdentitySet(),
-                "#microsoft.graph.chatMessageMentionedIdentitySet" => new ChatMessageMentionedIdentitySet(),
-                "#microsoft.graph.chatMessageReactionIdentitySet" => new ChatMessageReactionIdentitySet(),
-                "#microsoft.graph.communicationsIdentitySet" => new CommunicationsIdentitySet(),
-                "#microsoft.graph.sharePointIdentitySet" => new SharePointIdentitySet(),
-                _ => new IdentitySet(),
+                "#microsoft.graph.chatMessageFromIdentitySet" => new Microsoft.Graph.Beta.Models.ChatMessageFromIdentitySet(),
+                "#microsoft.graph.chatMessageMentionedIdentitySet" => new Microsoft.Graph.Beta.Models.ChatMessageMentionedIdentitySet(),
+                "#microsoft.graph.chatMessageReactionIdentitySet" => new Microsoft.Graph.Beta.Models.ChatMessageReactionIdentitySet(),
+                "#microsoft.graph.communicationsIdentitySet" => new Microsoft.Graph.Beta.Models.CommunicationsIdentitySet(),
+                "#microsoft.graph.sharePointIdentitySet" => new Microsoft.Graph.Beta.Models.SharePointIdentitySet(),
+                _ => new Microsoft.Graph.Beta.Models.IdentitySet(),
             };
         }
         /// <summary>
@@ -118,10 +118,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                { "device", n => { Device = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "application", n => { Application = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -131,10 +131,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Identity>("application", Application);
-            writer.WriteObjectValue<Identity>("device", Device);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("application", Application);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("device", Device);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<Identity>("user", User);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

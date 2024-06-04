@@ -9,43 +9,43 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Configuration used to deliver a set of custom settings as-is to all users in the targeted security group
     /// </summary>
-    public class TargetedManagedAppConfiguration : ManagedAppConfiguration, IParsable
+    public class TargetedManagedAppConfiguration : Microsoft.Graph.Beta.Models.ManagedAppConfiguration, IParsable
     {
         /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
-        public TargetedManagedAppGroupType? AppGroupType
+        public Microsoft.Graph.Beta.Models.TargetedManagedAppGroupType? AppGroupType
         {
-            get { return BackingStore?.Get<TargetedManagedAppGroupType?>("appGroupType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TargetedManagedAppGroupType?>("appGroupType"); }
             set { BackingStore?.Set("appGroupType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps
+        public List<Microsoft.Graph.Beta.Models.ManagedMobileApp>? Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps
+        public List<Microsoft.Graph.Beta.Models.ManagedMobileApp> Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #endif
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TargetedManagedAppPolicyAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<TargetedManagedAppPolicyAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -58,16 +58,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedAppPolicyDeploymentSummary? DeploymentSummary
+        public Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary? DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary
+        public Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #endif
@@ -78,13 +78,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("isAssigned", value); }
         }
         /// <summary>Management levels for apps</summary>
-        public AppManagementLevel? TargetedAppManagementLevels
+        public Microsoft.Graph.Beta.Models.AppManagementLevel? TargetedAppManagementLevels
         {
-            get { return BackingStore?.Get<AppManagementLevel?>("targetedAppManagementLevels"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppManagementLevel?>("targetedAppManagementLevels"); }
             set { BackingStore?.Set("targetedAppManagementLevels", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TargetedManagedAppConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration"/> and sets the default values.
         /// </summary>
         public TargetedManagedAppConfiguration() : base()
         {
@@ -93,12 +93,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TargetedManagedAppConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TargetedManagedAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TargetedManagedAppConfiguration();
+            return new Microsoft.Graph.Beta.Models.TargetedManagedAppConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,13 +108,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appGroupType", n => { AppGroupType = n.GetEnumValue<TargetedManagedAppGroupType>(); } },
-                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>(TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appGroupType", n => { AppGroupType = n.GetEnumValue<Microsoft.Graph.Beta.Models.TargetedManagedAppGroupType>(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedMobileApp>(Microsoft.Graph.Beta.Models.ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>(Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
-                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>(Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
-                { "targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<AppManagementLevel>(); } },
+                { "targetedAppManagementLevels", n => { TargetedAppManagementLevels = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppManagementLevel>(); } },
             };
         }
         /// <summary>
@@ -125,13 +125,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TargetedManagedAppGroupType>("appGroupType", AppGroupType);
-            writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
-            writer.WriteCollectionOfObjectValues<TargetedManagedAppPolicyAssignment>("assignments", Assignments);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TargetedManagedAppGroupType>("appGroupType", AppGroupType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedMobileApp>("apps", Apps);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TargetedManagedAppPolicyAssignment>("assignments", Assignments);
             writer.WriteIntValue("deployedAppCount", DeployedAppCount);
-            writer.WriteObjectValue<ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
             writer.WriteBoolValue("isAssigned", IsAssigned);
-            writer.WriteEnumValue<AppManagementLevel>("targetedAppManagementLevels", TargetedAppManagementLevels);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppManagementLevel>("targetedAppManagementLevels", TargetedAppManagementLevels);
         }
     }
 }

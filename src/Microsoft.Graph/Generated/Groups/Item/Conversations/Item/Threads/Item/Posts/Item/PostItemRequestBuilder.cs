@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
     public class PostItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.post entity.</summary>
-        public AttachmentsRequestBuilder Attachments
+        public Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Attachments.AttachmentsRequestBuilder Attachments
         {
-            get => new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.post entity.</summary>
-        public ExtensionsRequestBuilder Extensions
+        public Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        public ForwardRequestBuilder Forward
+        public Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Forward.ForwardRequestBuilder Forward
         {
-            get => new ForwardRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inReplyTo property of the microsoft.graph.post entity.</summary>
-        public InReplyToRequestBuilder InReplyTo
+        public Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder InReplyTo
         {
-            get => new InReplyToRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.InReplyTo.InReplyToRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mentions property of the microsoft.graph.post entity.</summary>
-        public MentionsRequestBuilder Mentions
+        public Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions.MentionsRequestBuilder Mentions
         {
-            get => new MentionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Mentions.MentionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the reply method.</summary>
-        public ReplyRequestBuilder Reply
+        public Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply.ReplyRequestBuilder Reply
         {
-            get => new ReplyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.Reply.ReplyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PostItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PostItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -74,20 +74,20 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Post"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Post?> GetAsync(Action<RequestConfiguration<PostItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Post?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder.PostItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Post> GetAsync(Action<RequestConfiguration<PostItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Post> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder.PostItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Post>(requestInfo, Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Post?> PatchAsync(Microsoft.Graph.Beta.Models.Post body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Post>(requestInfo, Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -123,11 +123,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PostItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder.PostItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PostItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder.PostItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -160,11 +160,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PostItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PostItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PostItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get posts from groups
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PostItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PostItemRequestBuilderGetQueryParameters>
+        public class PostItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts.Item.PostItemRequestBuilder.PostItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

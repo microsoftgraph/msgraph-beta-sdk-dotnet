@@ -57,23 +57,23 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The healthIssues property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HealthIssue>? HealthIssues
+        public List<Microsoft.Graph.Beta.Models.Security.HealthIssue>? HealthIssues
         {
-            get { return BackingStore?.Get<List<HealthIssue>?>("healthIssues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.HealthIssue>?>("healthIssues"); }
             set { BackingStore?.Set("healthIssues", value); }
         }
 #nullable restore
 #else
-        public List<HealthIssue> HealthIssues
+        public List<Microsoft.Graph.Beta.Models.Security.HealthIssue> HealthIssues
         {
-            get { return BackingStore?.Get<List<HealthIssue>>("healthIssues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.HealthIssue>>("healthIssues"); }
             set { BackingStore?.Set("healthIssues", value); }
         }
 #endif
         /// <summary>The healthStatus property</summary>
-        public SensorHealthStatus? HealthStatus
+        public Microsoft.Graph.Beta.Models.Security.SensorHealthStatus? HealthStatus
         {
-            get { return BackingStore?.Get<SensorHealthStatus?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SensorHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The openHealthIssuesCount property</summary>
@@ -91,16 +91,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SensorSettings? Settings
+        public Microsoft.Graph.Beta.Models.Security.SensorSettings? Settings
         {
-            get { return BackingStore?.Get<SensorSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SensorSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public SensorSettings Settings
+        public Microsoft.Graph.Beta.Models.Security.SensorSettings Settings
         {
-            get { return BackingStore?.Get<SensorSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SensorSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
@@ -123,12 +123,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Sensor"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.Sensor"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Sensor CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.Sensor CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Sensor();
+            return new Microsoft.Graph.Beta.Models.Security.Sensor();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -139,14 +139,14 @@ namespace Microsoft.Graph.Beta.Models.Security
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "deploymentStatus", n => { DeploymentStatus = n.GetEnumValue<DeploymentStatus>(); } },
+                { "deploymentStatus", n => { DeploymentStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.DeploymentStatus>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
-                { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<HealthIssue>(HealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<SensorHealthStatus>(); } },
+                { "healthIssues", n => { HealthIssues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.HealthIssue>(Microsoft.Graph.Beta.Models.Security.HealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SensorHealthStatus>(); } },
                 { "openHealthIssuesCount", n => { OpenHealthIssuesCount = n.GetLongValue(); } },
-                { "sensorType", n => { SensorType = n.GetEnumValue<SensorType>(); } },
-                { "settings", n => { Settings = n.GetObjectValue<SensorSettings>(SensorSettings.CreateFromDiscriminatorValue); } },
+                { "sensorType", n => { SensorType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SensorType>(); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.SensorSettings>(Microsoft.Graph.Beta.Models.Security.SensorSettings.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -159,14 +159,14 @@ namespace Microsoft.Graph.Beta.Models.Security
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteEnumValue<DeploymentStatus>("deploymentStatus", DeploymentStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.DeploymentStatus>("deploymentStatus", DeploymentStatus);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("domainName", DomainName);
-            writer.WriteCollectionOfObjectValues<HealthIssue>("healthIssues", HealthIssues);
-            writer.WriteEnumValue<SensorHealthStatus>("healthStatus", HealthStatus);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.HealthIssue>("healthIssues", HealthIssues);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SensorHealthStatus>("healthStatus", HealthStatus);
             writer.WriteLongValue("openHealthIssuesCount", OpenHealthIssuesCount);
-            writer.WriteEnumValue<SensorType>("sensorType", SensorType);
-            writer.WriteObjectValue<SensorSettings>("settings", Settings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SensorType>("sensorType", SensorType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.SensorSettings>("settings", Settings);
             writer.WriteStringValue("version", Version);
         }
     }

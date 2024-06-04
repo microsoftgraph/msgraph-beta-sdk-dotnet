@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeliveryOptimizationGroupIdSource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationGroupIdSource"/> and sets the default values.
         /// </summary>
         public DeliveryOptimizationGroupIdSource()
         {
@@ -47,17 +47,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeliveryOptimizationGroupIdSource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeliveryOptimizationGroupIdSource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeliveryOptimizationGroupIdSource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeliveryOptimizationGroupIdSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deliveryOptimizationGroupIdCustom" => new DeliveryOptimizationGroupIdCustom(),
-                "#microsoft.graph.deliveryOptimizationGroupIdSourceOptions" => new DeliveryOptimizationGroupIdSourceOptions(),
-                _ => new DeliveryOptimizationGroupIdSource(),
+                "#microsoft.graph.deliveryOptimizationGroupIdCustom" => new Microsoft.Graph.Beta.Models.DeliveryOptimizationGroupIdCustom(),
+                "#microsoft.graph.deliveryOptimizationGroupIdSourceOptions" => new Microsoft.Graph.Beta.Models.DeliveryOptimizationGroupIdSourceOptions(),
+                _ => new Microsoft.Graph.Beta.Models.DeliveryOptimizationGroupIdSource(),
             };
         }
         /// <summary>

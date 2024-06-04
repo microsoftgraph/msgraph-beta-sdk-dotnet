@@ -38,21 +38,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identities the item was shared with in this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentitySet>? Recipients
+        public List<Microsoft.Graph.Beta.Models.IdentitySet>? Recipients
         {
-            get { return BackingStore?.Get<List<IdentitySet>?>("recipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentitySet>?>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #nullable restore
 #else
-        public List<IdentitySet> Recipients
+        public List<Microsoft.Graph.Beta.Models.IdentitySet> Recipients
         {
-            get { return BackingStore?.Get<List<IdentitySet>>("recipients"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentitySet>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ShareAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ShareAction"/> and sets the default values.
         /// </summary>
         public ShareAction()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ShareAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ShareAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ShareAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ShareAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ShareAction();
+            return new Microsoft.Graph.Beta.Models.ShareAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recipients", n => { Recipients = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<IdentitySet>("recipients", Recipients);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>("recipients", Recipients);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

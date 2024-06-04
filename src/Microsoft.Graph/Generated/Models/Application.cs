@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Application : DirectoryObject, IParsable
+    public class Application : Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ApiApplication? Api
+        public Microsoft.Graph.Beta.Models.ApiApplication? Api
         {
-            get { return BackingStore?.Get<ApiApplication?>("api"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApiApplication?>("api"); }
             set { BackingStore?.Set("api", value); }
         }
 #nullable restore
 #else
-        public ApiApplication Api
+        public Microsoft.Graph.Beta.Models.ApiApplication Api
         {
-            get { return BackingStore?.Get<ApiApplication>("api"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApiApplication>("api"); }
             set { BackingStore?.Set("api", value); }
         }
 #endif
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The appManagementPolicy applied to this application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppManagementPolicy>? AppManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.AppManagementPolicy>? AppManagementPolicies
         {
-            get { return BackingStore?.Get<List<AppManagementPolicy>?>("appManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppManagementPolicy>?>("appManagementPolicies"); }
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AppManagementPolicy> AppManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.AppManagementPolicy> AppManagementPolicies
         {
-            get { return BackingStore?.Get<List<AppManagementPolicy>>("appManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppManagementPolicy>>("appManagementPolicies"); }
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
 #endif
         /// <summary>The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppRole>? AppRoles
+        public List<Microsoft.Graph.Beta.Models.AppRole>? AppRoles
         {
-            get { return BackingStore?.Get<List<AppRole>?>("appRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppRole>?>("appRoles"); }
             set { BackingStore?.Set("appRoles", value); }
         }
 #nullable restore
 #else
-        public List<AppRole> AppRoles
+        public List<Microsoft.Graph.Beta.Models.AppRole> AppRoles
         {
-            get { return BackingStore?.Get<List<AppRole>>("appRoles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppRole>>("appRoles"); }
             set { BackingStore?.Set("appRoles", value); }
         }
 #endif
@@ -131,16 +131,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Supports $filter (/$count eq 0, /$count ne 0). Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? CreatedOnBehalfOf
+        public Microsoft.Graph.Beta.Models.DirectoryObject? CreatedOnBehalfOf
         {
-            get { return BackingStore?.Get<DirectoryObject?>("createdOnBehalfOf"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryObject?>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject CreatedOnBehalfOf
+        public Microsoft.Graph.Beta.Models.DirectoryObject CreatedOnBehalfOf
         {
-            get { return BackingStore?.Get<DirectoryObject>("createdOnBehalfOf"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryObject>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
         }
 #endif
@@ -211,32 +211,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtensionProperty>? ExtensionProperties
+        public List<Microsoft.Graph.Beta.Models.ExtensionProperty>? ExtensionProperties
         {
-            get { return BackingStore?.Get<List<ExtensionProperty>?>("extensionProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtensionProperty>?>("extensionProperties"); }
             set { BackingStore?.Set("extensionProperties", value); }
         }
 #nullable restore
 #else
-        public List<ExtensionProperty> ExtensionProperties
+        public List<Microsoft.Graph.Beta.Models.ExtensionProperty> ExtensionProperties
         {
-            get { return BackingStore?.Get<List<ExtensionProperty>>("extensionProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtensionProperty>>("extensionProperties"); }
             set { BackingStore?.Set("extensionProperties", value); }
         }
 #endif
         /// <summary>Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FederatedIdentityCredential>? FederatedIdentityCredentials
+        public List<Microsoft.Graph.Beta.Models.FederatedIdentityCredential>? FederatedIdentityCredentials
         {
-            get { return BackingStore?.Get<List<FederatedIdentityCredential>?>("federatedIdentityCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.FederatedIdentityCredential>?>("federatedIdentityCredentials"); }
             set { BackingStore?.Set("federatedIdentityCredentials", value); }
         }
 #nullable restore
 #else
-        public List<FederatedIdentityCredential> FederatedIdentityCredentials
+        public List<Microsoft.Graph.Beta.Models.FederatedIdentityCredential> FederatedIdentityCredentials
         {
-            get { return BackingStore?.Get<List<FederatedIdentityCredential>>("federatedIdentityCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.FederatedIdentityCredential>>("federatedIdentityCredentials"); }
             set { BackingStore?.Set("federatedIdentityCredentials", value); }
         }
 #endif
@@ -259,16 +259,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The homeRealmDiscoveryPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HomeRealmDiscoveryPolicy>? HomeRealmDiscoveryPolicies
+        public List<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>? HomeRealmDiscoveryPolicies
         {
-            get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>?>("homeRealmDiscoveryPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>?>("homeRealmDiscoveryPolicies"); }
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
 #nullable restore
 #else
-        public List<HomeRealmDiscoveryPolicy> HomeRealmDiscoveryPolicies
+        public List<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy> HomeRealmDiscoveryPolicies
         {
-            get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>>("homeRealmDiscoveryPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>>("homeRealmDiscoveryPolicies"); }
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
 #endif
@@ -291,16 +291,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Basic profile information of the application, such as it&apos;s marketing, support, terms of service, and privacy statement URLs. The terms of service and privacy statement are surfaced to users through the user consent experience. For more information, see How to: Add Terms of service and privacy statement for registered Microsoft Entra apps. Supports $filter (eq, ne, not, ge, le, and eq on null values).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InformationalUrl? Info
+        public Microsoft.Graph.Beta.Models.InformationalUrl? Info
         {
-            get { return BackingStore?.Get<InformationalUrl?>("info"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationalUrl?>("info"); }
             set { BackingStore?.Set("info", value); }
         }
 #nullable restore
 #else
-        public InformationalUrl Info
+        public Microsoft.Graph.Beta.Models.InformationalUrl Info
         {
-            get { return BackingStore?.Get<InformationalUrl>("info"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationalUrl>("info"); }
             set { BackingStore?.Set("info", value); }
         }
 #endif
@@ -319,16 +319,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of key credentials associated with the application. Not nullable. Supports $filter (eq, not, ge, le).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyCredential>? KeyCredentials
+        public List<Microsoft.Graph.Beta.Models.KeyCredential>? KeyCredentials
         {
-            get { return BackingStore?.Get<List<KeyCredential>?>("keyCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyCredential>?>("keyCredentials"); }
             set { BackingStore?.Set("keyCredentials", value); }
         }
 #nullable restore
 #else
-        public List<KeyCredential> KeyCredentials
+        public List<Microsoft.Graph.Beta.Models.KeyCredential> KeyCredentials
         {
-            get { return BackingStore?.Get<List<KeyCredential>>("keyCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyCredential>>("keyCredentials"); }
             set { BackingStore?.Set("keyCredentials", value); }
         }
 #endif
@@ -399,16 +399,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand, $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1), and $select nested in $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? Owners
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? Owners
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("owners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> Owners
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> Owners
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("owners"); }
             set { BackingStore?.Set("owners", value); }
         }
 #endif
@@ -431,32 +431,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of password credentials associated with the application. Not nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PasswordCredential>? PasswordCredentials
+        public List<Microsoft.Graph.Beta.Models.PasswordCredential>? PasswordCredentials
         {
-            get { return BackingStore?.Get<List<PasswordCredential>?>("passwordCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PasswordCredential>?>("passwordCredentials"); }
             set { BackingStore?.Set("passwordCredentials", value); }
         }
 #nullable restore
 #else
-        public List<PasswordCredential> PasswordCredentials
+        public List<Microsoft.Graph.Beta.Models.PasswordCredential> PasswordCredentials
         {
-            get { return BackingStore?.Get<List<PasswordCredential>>("passwordCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PasswordCredential>>("passwordCredentials"); }
             set { BackingStore?.Set("passwordCredentials", value); }
         }
 #endif
         /// <summary>Specifies settings for installed clients such as desktop or mobile devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PublicClientApplication? PublicClient
+        public Microsoft.Graph.Beta.Models.PublicClientApplication? PublicClient
         {
-            get { return BackingStore?.Get<PublicClientApplication?>("publicClient"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicClientApplication?>("publicClient"); }
             set { BackingStore?.Set("publicClient", value); }
         }
 #nullable restore
 #else
-        public PublicClientApplication PublicClient
+        public Microsoft.Graph.Beta.Models.PublicClientApplication PublicClient
         {
-            get { return BackingStore?.Get<PublicClientApplication>("publicClient"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PublicClientApplication>("publicClient"); }
             set { BackingStore?.Set("publicClient", value); }
         }
 #endif
@@ -575,16 +575,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies settings for a single-page application, including sign out URLs and redirect URIs for authorization codes and access tokens.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SpaApplication? Spa
+        public Microsoft.Graph.Beta.Models.SpaApplication? Spa
         {
-            get { return BackingStore?.Get<SpaApplication?>("spa"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SpaApplication?>("spa"); }
             set { BackingStore?.Set("spa", value); }
         }
 #nullable restore
 #else
-        public SpaApplication Spa
+        public Microsoft.Graph.Beta.Models.SpaApplication Spa
         {
-            get { return BackingStore?.Get<SpaApplication>("spa"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SpaApplication>("spa"); }
             set { BackingStore?.Set("spa", value); }
         }
 #endif
@@ -629,32 +629,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The tokenIssuancePolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TokenIssuancePolicy>? TokenIssuancePolicies
+        public List<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>? TokenIssuancePolicies
         {
-            get { return BackingStore?.Get<List<TokenIssuancePolicy>?>("tokenIssuancePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>?>("tokenIssuancePolicies"); }
             set { BackingStore?.Set("tokenIssuancePolicies", value); }
         }
 #nullable restore
 #else
-        public List<TokenIssuancePolicy> TokenIssuancePolicies
+        public List<Microsoft.Graph.Beta.Models.TokenIssuancePolicy> TokenIssuancePolicies
         {
-            get { return BackingStore?.Get<List<TokenIssuancePolicy>>("tokenIssuancePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>>("tokenIssuancePolicies"); }
             set { BackingStore?.Set("tokenIssuancePolicies", value); }
         }
 #endif
         /// <summary>The tokenLifetimePolicies assigned to this application. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TokenLifetimePolicy>? TokenLifetimePolicies
+        public List<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>? TokenLifetimePolicies
         {
-            get { return BackingStore?.Get<List<TokenLifetimePolicy>?>("tokenLifetimePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>?>("tokenLifetimePolicies"); }
             set { BackingStore?.Set("tokenLifetimePolicies", value); }
         }
 #nullable restore
 #else
-        public List<TokenLifetimePolicy> TokenLifetimePolicies
+        public List<Microsoft.Graph.Beta.Models.TokenLifetimePolicy> TokenLifetimePolicies
         {
-            get { return BackingStore?.Get<List<TokenLifetimePolicy>>("tokenLifetimePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>>("tokenLifetimePolicies"); }
             set { BackingStore?.Set("tokenLifetimePolicies", value); }
         }
 #endif
@@ -693,37 +693,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies settings for a web application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WebApplication? Web
+        public Microsoft.Graph.Beta.Models.WebApplication? Web
         {
-            get { return BackingStore?.Get<WebApplication?>("web"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WebApplication?>("web"); }
             set { BackingStore?.Set("web", value); }
         }
 #nullable restore
 #else
-        public WebApplication Web
+        public Microsoft.Graph.Beta.Models.WebApplication Web
         {
-            get { return BackingStore?.Get<WebApplication>("web"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WebApplication>("web"); }
             set { BackingStore?.Set("web", value); }
         }
 #endif
         /// <summary>Specifies settings for apps running Microsoft Windows and published in the Microsoft Store or Xbox games store.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsApplication? Windows
+        public Microsoft.Graph.Beta.Models.WindowsApplication? Windows
         {
-            get { return BackingStore?.Get<WindowsApplication?>("windows"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsApplication?>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #nullable restore
 #else
-        public WindowsApplication Windows
+        public Microsoft.Graph.Beta.Models.WindowsApplication Windows
         {
-            get { return BackingStore?.Get<WindowsApplication>("windows"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsApplication>("windows"); }
             set { BackingStore?.Set("windows", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Application"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Application"/> and sets the default values.
         /// </summary>
         public Application() : base()
         {
@@ -732,12 +732,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Application"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Application"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Application CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Application CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Application();
+            return new Microsoft.Graph.Beta.Models.Application();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -747,36 +747,36 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "api", n => { Api = n.GetObjectValue<ApiApplication>(ApiApplication.CreateFromDiscriminatorValue); } },
+                { "api", n => { Api = n.GetObjectValue<Microsoft.Graph.Beta.Models.ApiApplication>(Microsoft.Graph.Beta.Models.ApiApplication.CreateFromDiscriminatorValue); } },
                 { "appId", n => { AppId = n.GetStringValue(); } },
-                { "appManagementPolicies", n => { AppManagementPolicies = n.GetCollectionOfObjectValues<AppManagementPolicy>(AppManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "appRoles", n => { AppRoles = n.GetCollectionOfObjectValues<AppRole>(AppRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appManagementPolicies", n => { AppManagementPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppManagementPolicy>(Microsoft.Graph.Beta.Models.AppManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appRoles", n => { AppRoles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppRole>(Microsoft.Graph.Beta.Models.AppRole.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "authenticationBehaviors", n => { AuthenticationBehaviors = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationBehaviors>(Microsoft.Graph.Beta.Models.AuthenticationBehaviors.CreateFromDiscriminatorValue); } },
                 { "certification", n => { Certification = n.GetObjectValue<Microsoft.Graph.Beta.Models.Certification>(Microsoft.Graph.Beta.Models.Certification.CreateFromDiscriminatorValue); } },
                 { "connectorGroup", n => { ConnectorGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConnectorGroup>(Microsoft.Graph.Beta.Models.ConnectorGroup.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "createdOnBehalfOf", n => { CreatedOnBehalfOf = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "defaultRedirectUri", n => { DefaultRedirectUri = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "disabledByMicrosoftStatus", n => { DisabledByMicrosoftStatus = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "extensionProperties", n => { ExtensionProperties = n.GetCollectionOfObjectValues<ExtensionProperty>(ExtensionProperty.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "federatedIdentityCredentials", n => { FederatedIdentityCredentials = n.GetCollectionOfObjectValues<FederatedIdentityCredential>(FederatedIdentityCredential.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensionProperties", n => { ExtensionProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtensionProperty>(Microsoft.Graph.Beta.Models.ExtensionProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "federatedIdentityCredentials", n => { FederatedIdentityCredentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.FederatedIdentityCredential>(Microsoft.Graph.Beta.Models.FederatedIdentityCredential.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "groupMembershipClaims", n => { GroupMembershipClaims = n.GetStringValue(); } },
-                { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<HomeRealmDiscoveryPolicy>(HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>(Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "identifierUris", n => { IdentifierUris = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "info", n => { Info = n.GetObjectValue<InformationalUrl>(InformationalUrl.CreateFromDiscriminatorValue); } },
+                { "info", n => { Info = n.GetObjectValue<Microsoft.Graph.Beta.Models.InformationalUrl>(Microsoft.Graph.Beta.Models.InformationalUrl.CreateFromDiscriminatorValue); } },
                 { "isDeviceOnlyAuthSupported", n => { IsDeviceOnlyAuthSupported = n.GetBoolValue(); } },
                 { "isFallbackPublicClient", n => { IsFallbackPublicClient = n.GetBoolValue(); } },
-                { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<KeyCredential>(KeyCredential.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "keyCredentials", n => { KeyCredentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyCredential>(Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "logo", n => { Logo = n.GetByteArrayValue(); } },
                 { "notes", n => { Notes = n.GetStringValue(); } },
                 { "onPremisesPublishing", n => { OnPremisesPublishing = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesPublishing>(Microsoft.Graph.Beta.Models.OnPremisesPublishing.CreateFromDiscriminatorValue); } },
                 { "optionalClaims", n => { OptionalClaims = n.GetObjectValue<Microsoft.Graph.Beta.Models.OptionalClaims>(Microsoft.Graph.Beta.Models.OptionalClaims.CreateFromDiscriminatorValue); } },
-                { "owners", n => { Owners = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "owners", n => { Owners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "parentalControlSettings", n => { ParentalControlSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ParentalControlSettings>(Microsoft.Graph.Beta.Models.ParentalControlSettings.CreateFromDiscriminatorValue); } },
-                { "passwordCredentials", n => { PasswordCredentials = n.GetCollectionOfObjectValues<PasswordCredential>(PasswordCredential.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "publicClient", n => { PublicClient = n.GetObjectValue<PublicClientApplication>(PublicClientApplication.CreateFromDiscriminatorValue); } },
+                { "passwordCredentials", n => { PasswordCredentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PasswordCredential>(Microsoft.Graph.Beta.Models.PasswordCredential.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "publicClient", n => { PublicClient = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicClientApplication>(Microsoft.Graph.Beta.Models.PublicClientApplication.CreateFromDiscriminatorValue); } },
                 { "publisherDomain", n => { PublisherDomain = n.GetStringValue(); } },
                 { "requestSignatureVerification", n => { RequestSignatureVerification = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestSignatureVerification>(Microsoft.Graph.Beta.Models.RequestSignatureVerification.CreateFromDiscriminatorValue); } },
                 { "requiredResourceAccess", n => { RequiredResourceAccess = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RequiredResourceAccess>(Microsoft.Graph.Beta.Models.RequiredResourceAccess.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -784,16 +784,16 @@ namespace Microsoft.Graph.Beta.Models
                 { "serviceManagementReference", n => { ServiceManagementReference = n.GetStringValue(); } },
                 { "servicePrincipalLockConfiguration", n => { ServicePrincipalLockConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>(Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration.CreateFromDiscriminatorValue); } },
                 { "signInAudience", n => { SignInAudience = n.GetStringValue(); } },
-                { "spa", n => { Spa = n.GetObjectValue<SpaApplication>(SpaApplication.CreateFromDiscriminatorValue); } },
+                { "spa", n => { Spa = n.GetObjectValue<Microsoft.Graph.Beta.Models.SpaApplication>(Microsoft.Graph.Beta.Models.SpaApplication.CreateFromDiscriminatorValue); } },
                 { "synchronization", n => { Synchronization = n.GetObjectValue<Microsoft.Graph.Beta.Models.Synchronization>(Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "tokenEncryptionKeyId", n => { TokenEncryptionKeyId = n.GetGuidValue(); } },
-                { "tokenIssuancePolicies", n => { TokenIssuancePolicies = n.GetCollectionOfObjectValues<TokenIssuancePolicy>(TokenIssuancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "tokenLifetimePolicies", n => { TokenLifetimePolicies = n.GetCollectionOfObjectValues<TokenLifetimePolicy>(TokenLifetimePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tokenIssuancePolicies", n => { TokenIssuancePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>(Microsoft.Graph.Beta.Models.TokenIssuancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tokenLifetimePolicies", n => { TokenLifetimePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>(Microsoft.Graph.Beta.Models.TokenLifetimePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "uniqueName", n => { UniqueName = n.GetStringValue(); } },
                 { "verifiedPublisher", n => { VerifiedPublisher = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiedPublisher>(Microsoft.Graph.Beta.Models.VerifiedPublisher.CreateFromDiscriminatorValue); } },
-                { "web", n => { Web = n.GetObjectValue<WebApplication>(WebApplication.CreateFromDiscriminatorValue); } },
-                { "windows", n => { Windows = n.GetObjectValue<WindowsApplication>(WindowsApplication.CreateFromDiscriminatorValue); } },
+                { "web", n => { Web = n.GetObjectValue<Microsoft.Graph.Beta.Models.WebApplication>(Microsoft.Graph.Beta.Models.WebApplication.CreateFromDiscriminatorValue); } },
+                { "windows", n => { Windows = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsApplication>(Microsoft.Graph.Beta.Models.WindowsApplication.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -804,36 +804,36 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ApiApplication>("api", Api);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ApiApplication>("api", Api);
             writer.WriteStringValue("appId", AppId);
-            writer.WriteCollectionOfObjectValues<AppManagementPolicy>("appManagementPolicies", AppManagementPolicies);
-            writer.WriteCollectionOfObjectValues<AppRole>("appRoles", AppRoles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppManagementPolicy>("appManagementPolicies", AppManagementPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppRole>("appRoles", AppRoles);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationBehaviors>("authenticationBehaviors", AuthenticationBehaviors);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Certification>("certification", Certification);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConnectorGroup>("connectorGroup", ConnectorGroup);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DirectoryObject>("createdOnBehalfOf", CreatedOnBehalfOf);
             writer.WriteStringValue("defaultRedirectUri", DefaultRedirectUri);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("disabledByMicrosoftStatus", DisabledByMicrosoftStatus);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<ExtensionProperty>("extensionProperties", ExtensionProperties);
-            writer.WriteCollectionOfObjectValues<FederatedIdentityCredential>("federatedIdentityCredentials", FederatedIdentityCredentials);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtensionProperty>("extensionProperties", ExtensionProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.FederatedIdentityCredential>("federatedIdentityCredentials", FederatedIdentityCredentials);
             writer.WriteStringValue("groupMembershipClaims", GroupMembershipClaims);
-            writer.WriteCollectionOfObjectValues<HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
             writer.WriteCollectionOfPrimitiveValues<string>("identifierUris", IdentifierUris);
-            writer.WriteObjectValue<InformationalUrl>("info", Info);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InformationalUrl>("info", Info);
             writer.WriteBoolValue("isDeviceOnlyAuthSupported", IsDeviceOnlyAuthSupported);
             writer.WriteBoolValue("isFallbackPublicClient", IsFallbackPublicClient);
-            writer.WriteCollectionOfObjectValues<KeyCredential>("keyCredentials", KeyCredentials);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyCredential>("keyCredentials", KeyCredentials);
             writer.WriteByteArrayValue("logo", Logo);
             writer.WriteStringValue("notes", Notes);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnPremisesPublishing>("onPremisesPublishing", OnPremisesPublishing);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OptionalClaims>("optionalClaims", OptionalClaims);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("owners", Owners);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("owners", Owners);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ParentalControlSettings>("parentalControlSettings", ParentalControlSettings);
-            writer.WriteCollectionOfObjectValues<PasswordCredential>("passwordCredentials", PasswordCredentials);
-            writer.WriteObjectValue<PublicClientApplication>("publicClient", PublicClient);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PasswordCredential>("passwordCredentials", PasswordCredentials);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PublicClientApplication>("publicClient", PublicClient);
             writer.WriteStringValue("publisherDomain", PublisherDomain);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RequestSignatureVerification>("requestSignatureVerification", RequestSignatureVerification);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RequiredResourceAccess>("requiredResourceAccess", RequiredResourceAccess);
@@ -841,16 +841,16 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("serviceManagementReference", ServiceManagementReference);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration", ServicePrincipalLockConfiguration);
             writer.WriteStringValue("signInAudience", SignInAudience);
-            writer.WriteObjectValue<SpaApplication>("spa", Spa);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SpaApplication>("spa", Spa);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Synchronization>("synchronization", Synchronization);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteGuidValue("tokenEncryptionKeyId", TokenEncryptionKeyId);
-            writer.WriteCollectionOfObjectValues<TokenIssuancePolicy>("tokenIssuancePolicies", TokenIssuancePolicies);
-            writer.WriteCollectionOfObjectValues<TokenLifetimePolicy>("tokenLifetimePolicies", TokenLifetimePolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>("tokenIssuancePolicies", TokenIssuancePolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>("tokenLifetimePolicies", TokenLifetimePolicies);
             writer.WriteStringValue("uniqueName", UniqueName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VerifiedPublisher>("verifiedPublisher", VerifiedPublisher);
-            writer.WriteObjectValue<WebApplication>("web", Web);
-            writer.WriteObjectValue<WindowsApplication>("windows", Windows);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WebApplication>("web", Web);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsApplication>("windows", Windows);
         }
     }
 }

@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Beta.Workplace
     public class WorkplaceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the sensorDevices property of the microsoft.graph.workplace entity.</summary>
-        public SensorDevicesRequestBuilder SensorDevices
+        public Microsoft.Graph.Beta.Workplace.SensorDevices.SensorDevicesRequestBuilder SensorDevices
         {
-            get => new SensorDevicesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Workplace.SensorDevices.SensorDevicesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkplaceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,7 +32,7 @@ namespace Microsoft.Graph.Beta.Workplace
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="WorkplaceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -45,20 +45,20 @@ namespace Microsoft.Graph.Beta.Workplace
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Workplace"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Workplace?> GetAsync(Action<RequestConfiguration<WorkplaceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Workplace?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder.WorkplaceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Workplace> GetAsync(Action<RequestConfiguration<WorkplaceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Workplace> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder.WorkplaceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Workplace>(requestInfo, Microsoft.Graph.Beta.Models.Workplace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Workplace
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Workplace?> PatchAsync(Microsoft.Graph.Beta.Models.Workplace body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -83,19 +83,19 @@ namespace Microsoft.Graph.Beta.Workplace
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Workplace>(requestInfo, Microsoft.Graph.Beta.Models.Workplace.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the sensorDevices property of the microsoft.graph.workplace entity.
         /// </summary>
-        /// <returns>A <see cref="SensorDevicesWithDeviceIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId.SensorDevicesWithDeviceIdRequestBuilder"/></returns>
         /// <param name="deviceId">Alternate key of workplaceSensorDevice</param>
-        public SensorDevicesWithDeviceIdRequestBuilder SensorDevicesWithDeviceId(string deviceId)
+        public Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId.SensorDevicesWithDeviceIdRequestBuilder SensorDevicesWithDeviceId(string deviceId)
         {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
-            return new SensorDevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
+            return new Microsoft.Graph.Beta.Workplace.SensorDevicesWithDeviceId.SensorDevicesWithDeviceIdRequestBuilder(PathParameters, RequestAdapter, deviceId);
         }
         /// <summary>
         /// Get workplace
@@ -104,11 +104,11 @@ namespace Microsoft.Graph.Beta.Workplace
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkplaceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder.WorkplaceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<WorkplaceRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder.WorkplaceRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -141,11 +141,11 @@ namespace Microsoft.Graph.Beta.Workplace
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="WorkplaceRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public WorkplaceRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder WithUrl(string rawUrl)
         {
-            return new WorkplaceRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get workplace
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Workplace
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class WorkplaceRequestBuilderGetRequestConfiguration : RequestConfiguration<WorkplaceRequestBuilderGetQueryParameters>
+        public class WorkplaceRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Workplace.WorkplaceRequestBuilder.WorkplaceRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

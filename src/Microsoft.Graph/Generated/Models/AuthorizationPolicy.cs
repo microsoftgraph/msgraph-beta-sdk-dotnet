@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthorizationPolicy : PolicyBase, IParsable
+    public class AuthorizationPolicy : Microsoft.Graph.Beta.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether users can sign up for email based subscriptions.</summary>
@@ -49,16 +49,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The defaultUserRoleOverrides property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DefaultUserRoleOverride>? DefaultUserRoleOverrides
+        public List<Microsoft.Graph.Beta.Models.DefaultUserRoleOverride>? DefaultUserRoleOverrides
         {
-            get { return BackingStore?.Get<List<DefaultUserRoleOverride>?>("defaultUserRoleOverrides"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DefaultUserRoleOverride>?>("defaultUserRoleOverrides"); }
             set { BackingStore?.Set("defaultUserRoleOverrides", value); }
         }
 #nullable restore
 #else
-        public List<DefaultUserRoleOverride> DefaultUserRoleOverrides
+        public List<Microsoft.Graph.Beta.Models.DefaultUserRoleOverride> DefaultUserRoleOverrides
         {
-            get { return BackingStore?.Get<List<DefaultUserRoleOverride>>("defaultUserRoleOverrides"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DefaultUserRoleOverride>>("defaultUserRoleOverrides"); }
             set { BackingStore?.Set("defaultUserRoleOverrides", value); }
         }
 #endif
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AuthorizationPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthorizationPolicy"/> and sets the default values.
         /// </summary>
         public AuthorizationPolicy() : base()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthorizationPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorizationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthorizationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthorizationPolicy();
+            return new Microsoft.Graph.Beta.Models.AuthorizationPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "allowEmailVerifiedUsersToJoinOrganization", n => { AllowEmailVerifiedUsersToJoinOrganization = n.GetBoolValue(); } },
-                { "allowInvitesFrom", n => { AllowInvitesFrom = n.GetEnumValue<AllowInvitesFrom>(); } },
+                { "allowInvitesFrom", n => { AllowInvitesFrom = n.GetEnumValue<Microsoft.Graph.Beta.Models.AllowInvitesFrom>(); } },
                 { "allowUserConsentForRiskyApps", n => { AllowUserConsentForRiskyApps = n.GetBoolValue(); } },
                 { "allowedToSignUpEmailBasedSubscriptions", n => { AllowedToSignUpEmailBasedSubscriptions = n.GetBoolValue(); } },
                 { "allowedToUseSSPR", n => { AllowedToUseSSPR = n.GetBoolValue(); } },
                 { "blockMsolPowerShell", n => { BlockMsolPowerShell = n.GetBoolValue(); } },
-                { "defaultUserRoleOverrides", n => { DefaultUserRoleOverrides = n.GetCollectionOfObjectValues<DefaultUserRoleOverride>(DefaultUserRoleOverride.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "defaultUserRoleOverrides", n => { DefaultUserRoleOverrides = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DefaultUserRoleOverride>(Microsoft.Graph.Beta.Models.DefaultUserRoleOverride.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "defaultUserRolePermissions", n => { DefaultUserRolePermissions = n.GetObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>(Microsoft.Graph.Beta.Models.DefaultUserRolePermissions.CreateFromDiscriminatorValue); } },
                 { "enabledPreviewFeatures", n => { EnabledPreviewFeatures = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "guestUserRoleId", n => { GuestUserRoleId = n.GetGuidValue(); } },
@@ -165,10 +165,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("allowedToSignUpEmailBasedSubscriptions", AllowedToSignUpEmailBasedSubscriptions);
             writer.WriteBoolValue("allowedToUseSSPR", AllowedToUseSSPR);
             writer.WriteBoolValue("allowEmailVerifiedUsersToJoinOrganization", AllowEmailVerifiedUsersToJoinOrganization);
-            writer.WriteEnumValue<AllowInvitesFrom>("allowInvitesFrom", AllowInvitesFrom);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AllowInvitesFrom>("allowInvitesFrom", AllowInvitesFrom);
             writer.WriteBoolValue("allowUserConsentForRiskyApps", AllowUserConsentForRiskyApps);
             writer.WriteBoolValue("blockMsolPowerShell", BlockMsolPowerShell);
-            writer.WriteCollectionOfObjectValues<DefaultUserRoleOverride>("defaultUserRoleOverrides", DefaultUserRoleOverrides);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DefaultUserRoleOverride>("defaultUserRoleOverrides", DefaultUserRoleOverrides);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>("defaultUserRolePermissions", DefaultUserRolePermissions);
             writer.WriteCollectionOfPrimitiveValues<string>("enabledPreviewFeatures", EnabledPreviewFeatures);
             writer.WriteGuidValue("guestUserRoleId", GuestUserRoleId);

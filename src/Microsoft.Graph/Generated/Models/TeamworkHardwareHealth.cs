@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The system health details for a teamworkDevice.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? ComputeHealth
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth? ComputeHealth
         {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth?>("computeHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth?>("computeHealth"); }
             set { BackingStore?.Set("computeHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth ComputeHealth
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth ComputeHealth
         {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth>("computeHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth>("computeHealth"); }
             set { BackingStore?.Set("computeHealth", value); }
         }
 #endif
         /// <summary>The health details about the HDMI ingest of a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralHealth? HdmiIngestHealth
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth? HdmiIngestHealth
         {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth?>("hdmiIngestHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth?>("hdmiIngestHealth"); }
             set { BackingStore?.Set("hdmiIngestHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralHealth HdmiIngestHealth
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth HdmiIngestHealth
         {
-            get { return BackingStore?.Get<TeamworkPeripheralHealth>("hdmiIngestHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth>("hdmiIngestHealth"); }
             set { BackingStore?.Set("hdmiIngestHealth", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkHardwareHealth"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkHardwareHealth"/> and sets the default values.
         /// </summary>
         public TeamworkHardwareHealth()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkHardwareHealth"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkHardwareHealth"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkHardwareHealth CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkHardwareHealth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkHardwareHealth();
+            return new Microsoft.Graph.Beta.Models.TeamworkHardwareHealth();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,8 +93,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "computeHealth", n => { ComputeHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
-                { "hdmiIngestHealth", n => { HdmiIngestHealth = n.GetObjectValue<TeamworkPeripheralHealth>(TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "computeHealth", n => { ComputeHealth = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth>(Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
+                { "hdmiIngestHealth", n => { HdmiIngestHealth = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth>(Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<TeamworkPeripheralHealth>("computeHealth", ComputeHealth);
-            writer.WriteObjectValue<TeamworkPeripheralHealth>("hdmiIngestHealth", HdmiIngestHealth);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth>("computeHealth", ComputeHealth);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheralHealth>("hdmiIngestHealth", HdmiIngestHealth);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

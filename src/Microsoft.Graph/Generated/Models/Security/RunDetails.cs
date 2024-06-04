@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Error code of the most recent run that encountered an error. The possible values are: queryExecutionFailed, queryExecutionThrottling, queryExceededResultSize, queryLimitsExceeded, queryTimeout, alertCreationFailed, alertReportNotFound, partialRowsFailed, unknownFutureValue.</summary>
-        public HuntingRuleErrorCode? ErrorCode
+        public Microsoft.Graph.Beta.Models.Security.HuntingRuleErrorCode? ErrorCode
         {
-            get { return BackingStore?.Get<HuntingRuleErrorCode?>("errorCode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.HuntingRuleErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Reason for failure when the custom detection last ran and failed. See the table below.</summary>
@@ -64,13 +64,13 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>Status of custom detection when it was last run. The possible values are: running, completed, failed, partiallyFailed, unknownFutureValue.</summary>
-        public HuntingRuleRunStatus? Status
+        public Microsoft.Graph.Beta.Models.Security.HuntingRuleRunStatus? Status
         {
-            get { return BackingStore?.Get<HuntingRuleRunStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.HuntingRuleRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="RunDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.RunDetails"/> and sets the default values.
         /// </summary>
         public RunDetails()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RunDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.RunDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RunDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.RunDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RunDetails();
+            return new Microsoft.Graph.Beta.Models.Security.RunDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errorCode", n => { ErrorCode = n.GetEnumValue<HuntingRuleErrorCode>(); } },
+                { "errorCode", n => { ErrorCode = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.HuntingRuleErrorCode>(); } },
                 { "failureReason", n => { FailureReason = n.GetStringValue(); } },
                 { "lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<HuntingRuleRunStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.HuntingRuleRunStatus>(); } },
             };
         }
         /// <summary>
@@ -109,11 +109,11 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<HuntingRuleErrorCode>("errorCode", ErrorCode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.HuntingRuleErrorCode>("errorCode", ErrorCode);
             writer.WriteStringValue("failureReason", FailureReason);
             writer.WriteDateTimeOffsetValue("lastRunDateTime", LastRunDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<HuntingRuleRunStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.HuntingRuleRunStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AzureIdentity : AuthorizationSystemIdentity, IParsable
+    public class AzureIdentity : Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="AzureIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AzureIdentity"/> and sets the default values.
         /// </summary>
         public AzureIdentity() : base()
         {
@@ -20,20 +20,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AzureIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AzureIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AzureIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.azureGroup" => new AzureGroup(),
-                "#microsoft.graph.azureManagedIdentity" => new AzureManagedIdentity(),
-                "#microsoft.graph.azureServerlessFunction" => new AzureServerlessFunction(),
-                "#microsoft.graph.azureServicePrincipal" => new AzureServicePrincipal(),
-                "#microsoft.graph.azureUser" => new AzureUser(),
-                _ => new AzureIdentity(),
+                "#microsoft.graph.azureGroup" => new Microsoft.Graph.Beta.Models.AzureGroup(),
+                "#microsoft.graph.azureManagedIdentity" => new Microsoft.Graph.Beta.Models.AzureManagedIdentity(),
+                "#microsoft.graph.azureServerlessFunction" => new Microsoft.Graph.Beta.Models.AzureServerlessFunction(),
+                "#microsoft.graph.azureServicePrincipal" => new Microsoft.Graph.Beta.Models.AzureServicePrincipal(),
+                "#microsoft.graph.azureUser" => new Microsoft.Graph.Beta.Models.AzureUser(),
+                _ => new Microsoft.Graph.Beta.Models.AzureIdentity(),
             };
         }
         /// <summary>

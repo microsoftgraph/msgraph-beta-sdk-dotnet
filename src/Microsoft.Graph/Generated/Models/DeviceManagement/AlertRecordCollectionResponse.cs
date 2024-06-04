@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AlertRecord>? Value
+        public List<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>? Value
         {
-            get { return BackingStore?.Get<List<AlertRecord>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AlertRecord> Value
+        public List<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord> Value
         {
-            get { return BackingStore?.Get<List<AlertRecord>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AlertRecordCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecordCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AlertRecordCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecordCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AlertRecordCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecordCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AlertRecord>(AlertRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>(Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AlertRecord>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRecord>("value", Value);
         }
     }
 }

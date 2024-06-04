@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CustomClaim : CustomClaimBase, IParsable
+    public class CustomClaim : Microsoft.Graph.Beta.Models.CustomClaimBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the claim to be emitted.</summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomClaim"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomClaim"/> and sets the default values.
         /// </summary>
         public CustomClaim() : base()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomClaim"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomClaim"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomClaim CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CustomClaim CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomClaim();
+            return new Microsoft.Graph.Beta.Models.CustomClaim();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "namespace", n => { Namespace = n.GetStringValue(); } },
-                { "samlAttributeNameFormat", n => { SamlAttributeNameFormat = n.GetEnumValue<SamlAttributeNameFormat>(); } },
+                { "samlAttributeNameFormat", n => { SamlAttributeNameFormat = n.GetEnumValue<Microsoft.Graph.Beta.Models.SamlAttributeNameFormat>(); } },
                 { "tokenFormat", n => { TokenFormat = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.TokenFormat>()?.ToList(); } },
             };
         }
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("namespace", Namespace);
-            writer.WriteEnumValue<SamlAttributeNameFormat>("samlAttributeNameFormat", SamlAttributeNameFormat);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SamlAttributeNameFormat>("samlAttributeNameFormat", SamlAttributeNameFormat);
             writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.TokenFormat>("tokenFormat", TokenFormat);
         }
     }

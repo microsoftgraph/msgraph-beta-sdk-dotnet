@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleManagementAlert : Entity, IParsable
+    public class UnifiedRoleManagementAlert : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration of the alert in PIM for Microsoft Entra roles. Alert configurations are pre-defined and cannot be created or deleted, but some configurations can be modified. Supports $filter for the isEnabled property and $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleManagementAlertConfiguration? AlertConfiguration
+        public Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration? AlertConfiguration
         {
-            get { return BackingStore?.Get<UnifiedRoleManagementAlertConfiguration?>("alertConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration?>("alertConfiguration"); }
             set { BackingStore?.Set("alertConfiguration", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleManagementAlertConfiguration AlertConfiguration
+        public Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration AlertConfiguration
         {
-            get { return BackingStore?.Get<UnifiedRoleManagementAlertConfiguration>("alertConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration>("alertConfiguration"); }
             set { BackingStore?.Set("alertConfiguration", value); }
         }
 #endif
         /// <summary>Contains the description, impact, and measures to mitigate or prevent the security alert from being triggered in your tenant. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleManagementAlertDefinition? AlertDefinition
+        public Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition? AlertDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleManagementAlertDefinition?>("alertDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition?>("alertDefinition"); }
             set { BackingStore?.Set("alertDefinition", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleManagementAlertDefinition AlertDefinition
+        public Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition AlertDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleManagementAlertDefinition>("alertDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition>("alertDefinition"); }
             set { BackingStore?.Set("alertDefinition", value); }
         }
 #endif
@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents the incidents of this type of alert that have been triggered in Privileged Identity Management (PIM) for Microsoft Entra roles in the tenant. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementAlertIncident>? AlertIncidents
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident>? AlertIncidents
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementAlertIncident>?>("alertIncidents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident>?>("alertIncidents"); }
             set { BackingStore?.Set("alertIncidents", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementAlertIncident> AlertIncidents
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident> AlertIncidents
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementAlertIncident>>("alertIncidents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident>>("alertIncidents"); }
             set { BackingStore?.Set("alertIncidents", value); }
         }
 #endif
@@ -133,12 +133,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleManagementAlert"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlert"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleManagementAlert CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlert CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleManagementAlert();
+            return new Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlert();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -148,10 +148,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alertConfiguration", n => { AlertConfiguration = n.GetObjectValue<UnifiedRoleManagementAlertConfiguration>(UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue); } },
-                { "alertDefinition", n => { AlertDefinition = n.GetObjectValue<UnifiedRoleManagementAlertDefinition>(UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
+                { "alertConfiguration", n => { AlertConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration>(Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration.CreateFromDiscriminatorValue); } },
+                { "alertDefinition", n => { AlertDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition>(Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition.CreateFromDiscriminatorValue); } },
                 { "alertDefinitionId", n => { AlertDefinitionId = n.GetStringValue(); } },
-                { "alertIncidents", n => { AlertIncidents = n.GetCollectionOfObjectValues<UnifiedRoleManagementAlertIncident>(UnifiedRoleManagementAlertIncident.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertIncidents", n => { AlertIncidents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident>(Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "incidentCount", n => { IncidentCount = n.GetIntValue(); } },
                 { "isActive", n => { IsActive = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -168,10 +168,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UnifiedRoleManagementAlertConfiguration>("alertConfiguration", AlertConfiguration);
-            writer.WriteObjectValue<UnifiedRoleManagementAlertDefinition>("alertDefinition", AlertDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertConfiguration>("alertConfiguration", AlertConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertDefinition>("alertDefinition", AlertDefinition);
             writer.WriteStringValue("alertDefinitionId", AlertDefinitionId);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleManagementAlertIncident>("alertIncidents", AlertIncidents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleManagementAlertIncident>("alertIncidents", AlertIncidents);
             writer.WriteIntValue("incidentCount", IncidentCount);
             writer.WriteBoolValue("isActive", IsActive);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);

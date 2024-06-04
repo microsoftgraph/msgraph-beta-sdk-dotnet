@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("actionCapability", value); }
         }
         /// <summary>The name of the supported Cloud PC remote action. Possible values are: unknown, restart, rename, restore, resize, reprovision, troubleShoot, changeUserAccountType, placeUnderReview. Default value is unknown.</summary>
-        public CloudPcRemoteActionName? ActionName
+        public Microsoft.Graph.Beta.Models.CloudPcRemoteActionName? ActionName
         {
-            get { return BackingStore?.Get<CloudPcRemoteActionName?>("actionName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcRemoteActionName?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcRemoteActionCapability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcRemoteActionCapability"/> and sets the default values.
         /// </summary>
         public CloudPcRemoteActionCapability()
         {
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcRemoteActionCapability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcRemoteActionCapability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcRemoteActionCapability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcRemoteActionCapability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcRemoteActionCapability();
+            return new Microsoft.Graph.Beta.Models.CloudPcRemoteActionCapability();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionCapability", n => { ActionCapability = n.GetEnumValue<ActionCapability>(); } },
-                { "actionName", n => { ActionName = n.GetEnumValue<CloudPcRemoteActionName>(); } },
+                { "actionCapability", n => { ActionCapability = n.GetEnumValue<Microsoft.Graph.Beta.Models.ActionCapability>(); } },
+                { "actionName", n => { ActionName = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcRemoteActionName>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -85,8 +85,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ActionCapability>("actionCapability", ActionCapability);
-            writer.WriteEnumValue<CloudPcRemoteActionName>("actionName", ActionName);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ActionCapability>("actionCapability", ActionCapability);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcRemoteActionName>("actionName", ActionName);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ManagedAllDeviceCertificateState : Entity, IParsable
+    public class ManagedAllDeviceCertificateState : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Certificate expiry date</summary>
@@ -61,9 +61,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("certificateKeyUsages", value); }
         }
         /// <summary>Certificate Revocation Status.</summary>
-        public CertificateRevocationStatus? CertificateRevokeStatus
+        public Microsoft.Graph.Beta.Models.CertificateRevocationStatus? CertificateRevokeStatus
         {
-            get { return BackingStore?.Get<CertificateRevocationStatus?>("certificateRevokeStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateRevocationStatus?>("certificateRevokeStatus"); }
             set { BackingStore?.Set("certificateRevokeStatus", value); }
         }
         /// <summary>The time the revoke status was last changed</summary>
@@ -155,12 +155,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedAllDeviceCertificateState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedAllDeviceCertificateState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedAllDeviceCertificateState();
+            return new Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "certificateIssuanceDateTime", n => { CertificateIssuanceDateTime = n.GetDateTimeOffsetValue(); } },
                 { "certificateIssuerName", n => { CertificateIssuerName = n.GetStringValue(); } },
                 { "certificateKeyUsages", n => { CertificateKeyUsages = n.GetIntValue(); } },
-                { "certificateRevokeStatus", n => { CertificateRevokeStatus = n.GetEnumValue<CertificateRevocationStatus>(); } },
+                { "certificateRevokeStatus", n => { CertificateRevokeStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateRevocationStatus>(); } },
                 { "certificateRevokeStatusLastChangeDateTime", n => { CertificateRevokeStatusLastChangeDateTime = n.GetDateTimeOffsetValue(); } },
                 { "certificateSerialNumber", n => { CertificateSerialNumber = n.GetStringValue(); } },
                 { "certificateSubjectName", n => { CertificateSubjectName = n.GetStringValue(); } },
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("certificateIssuanceDateTime", CertificateIssuanceDateTime);
             writer.WriteStringValue("certificateIssuerName", CertificateIssuerName);
             writer.WriteIntValue("certificateKeyUsages", CertificateKeyUsages);
-            writer.WriteEnumValue<CertificateRevocationStatus>("certificateRevokeStatus", CertificateRevokeStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateRevocationStatus>("certificateRevokeStatus", CertificateRevokeStatus);
             writer.WriteDateTimeOffsetValue("certificateRevokeStatusLastChangeDateTime", CertificateRevokeStatusLastChangeDateTime);
             writer.WriteStringValue("certificateSerialNumber", CertificateSerialNumber);
             writer.WriteStringValue("certificateSubjectName", CertificateSubjectName);

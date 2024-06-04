@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="User"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.User"/> and sets the default values.
         /// </summary>
         public User()
         {
@@ -136,12 +136,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="User"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.User"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static User CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.User CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new User();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.User();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -157,11 +157,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "totalBytesReceived", n => { TotalBytesReceived = n.GetLongValue(); } },
                 { "totalBytesSent", n => { TotalBytesSent = n.GetLongValue(); } },
-                { "trafficType", n => { TrafficType = n.GetEnumValue<TrafficType>(); } },
+                { "trafficType", n => { TrafficType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>(); } },
                 { "transactionCount", n => { TransactionCount = n.GetLongValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                { "userType", n => { UserType = n.GetEnumValue<UserType>(); } },
+                { "userType", n => { UserType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.UserType>(); } },
             };
         }
         /// <summary>
@@ -177,11 +177,11 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("totalBytesReceived", TotalBytesReceived);
             writer.WriteLongValue("totalBytesSent", TotalBytesSent);
-            writer.WriteEnumValue<TrafficType>("trafficType", TrafficType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficType>("trafficType", TrafficType);
             writer.WriteLongValue("transactionCount", TransactionCount);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
-            writer.WriteEnumValue<UserType>("userType", UserType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.UserType>("userType", UserType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

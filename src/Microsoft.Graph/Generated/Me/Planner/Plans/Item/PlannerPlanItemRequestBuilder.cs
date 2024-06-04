@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
     public class PlannerPlanItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the archive method.</summary>
-        public ArchiveRequestBuilder Archive
+        public Microsoft.Graph.Beta.Me.Planner.Plans.Item.Archive.ArchiveRequestBuilder Archive
         {
-            get => new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Planner.Plans.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.</summary>
-        public BucketsRequestBuilder Buckets
+        public Microsoft.Graph.Beta.Me.Planner.Plans.Item.Buckets.BucketsRequestBuilder Buckets
         {
-            get => new BucketsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Planner.Plans.Item.Buckets.BucketsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the details property of the microsoft.graph.plannerPlan entity.</summary>
-        public DetailsRequestBuilder Details
+        public Microsoft.Graph.Beta.Me.Planner.Plans.Item.Details.DetailsRequestBuilder Details
         {
-            get => new DetailsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Planner.Plans.Item.Details.DetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the moveToContainer method.</summary>
-        public MoveToContainerRequestBuilder MoveToContainer
+        public Microsoft.Graph.Beta.Me.Planner.Plans.Item.MoveToContainer.MoveToContainerRequestBuilder MoveToContainer
         {
-            get => new MoveToContainerRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Planner.Plans.Item.MoveToContainer.MoveToContainerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.plannerPlan entity.</summary>
-        public TasksRequestBuilder Tasks
+        public Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.TasksRequestBuilder Tasks
         {
-            get => new TasksRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Planner.Plans.Item.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
-        public UnarchiveRequestBuilder Unarchive
+        public Microsoft.Graph.Beta.Me.Planner.Plans.Item.Unarchive.UnarchiveRequestBuilder Unarchive
         {
-            get => new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.Planner.Plans.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlannerPlanItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlannerPlanItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -86,57 +86,57 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get plans from me
         /// </summary>
-        /// <returns>A <see cref="PlannerPlan"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerPlan"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerPlan?> GetAsync(Action<RequestConfiguration<PlannerPlanItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlan?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder.PlannerPlanItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerPlan> GetAsync(Action<RequestConfiguration<PlannerPlanItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlan> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder.PlannerPlanItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlannerPlan>(requestInfo, Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property plans in me
         /// </summary>
-        /// <returns>A <see cref="PlannerPlan"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerPlan"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerPlan?> PatchAsync(PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlan?> PatchAsync(Microsoft.Graph.Beta.Models.PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerPlan> PatchAsync(PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerPlan> PatchAsync(Microsoft.Graph.Beta.Models.PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerPlan>(requestInfo, PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlannerPlan>(requestInfo, Microsoft.Graph.Beta.Models.PlannerPlan.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property plans for me
@@ -164,11 +164,11 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlannerPlanItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder.PlannerPlanItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PlannerPlanItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder.PlannerPlanItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -184,11 +184,11 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.PlannerPlan body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -201,11 +201,11 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PlannerPlanItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PlannerPlanItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PlannerPlanItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.Plans.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PlannerPlanItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PlannerPlanItemRequestBuilderGetQueryParameters>
+        public class PlannerPlanItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.Planner.Plans.Item.PlannerPlanItemRequestBuilder.PlannerPlanItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

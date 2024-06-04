@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GovernanceRoleAssignmentRequest : Entity, IParsable
+    public class GovernanceRoleAssignmentRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Required. The state of the assignment. The possible values are: Eligible (for eligible assignment),  Active (if it is directly assigned), Active (by administrators, or activated on an eligible assignment by the users).</summary>
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. The resource that the request aims to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceResource? Resource
+        public Microsoft.Graph.Beta.Models.GovernanceResource? Resource
         {
-            get { return BackingStore?.Get<GovernanceResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public GovernanceResource Resource
+        public Microsoft.Graph.Beta.Models.GovernanceResource Resource
         {
-            get { return BackingStore?.Get<GovernanceResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -99,16 +99,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. The role definition that the request aims to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleDefinition? RoleDefinition
+        public Microsoft.Graph.Beta.Models.GovernanceRoleDefinition? RoleDefinition
         {
-            get { return BackingStore?.Get<GovernanceRoleDefinition?>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleDefinition RoleDefinition
+        public Microsoft.Graph.Beta.Models.GovernanceRoleDefinition RoleDefinition
         {
-            get { return BackingStore?.Get<GovernanceRoleDefinition>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #endif
@@ -131,48 +131,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The schedule object of the role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.GovernanceSchedule? Schedule
         {
-            get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public GovernanceSchedule Schedule
+        public Microsoft.Graph.Beta.Models.GovernanceSchedule Schedule
         {
-            get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>The status of the role assignment request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleAssignmentRequestStatus? Status
+        public Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus? Status
         {
-            get { return BackingStore?.Get<GovernanceRoleAssignmentRequestStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleAssignmentRequestStatus Status
+        public Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus Status
         {
-            get { return BackingStore?.Get<GovernanceRoleAssignmentRequestStatus>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
         /// <summary>Read-only. The user/group principal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSubject? Subject
+        public Microsoft.Graph.Beta.Models.GovernanceSubject? Subject
         {
-            get { return BackingStore?.Get<GovernanceSubject?>("subject"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSubject?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public GovernanceSubject Subject
+        public Microsoft.Graph.Beta.Models.GovernanceSubject Subject
         {
-            get { return BackingStore?.Get<GovernanceSubject>("subject"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSubject>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #endif
@@ -211,12 +211,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleAssignmentRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GovernanceRoleAssignmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceRoleAssignmentRequest();
+            return new Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -230,13 +230,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "linkedEligibleRoleAssignmentId", n => { LinkedEligibleRoleAssignmentId = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "requestedDateTime", n => { RequestedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceResource>(Microsoft.Graph.Beta.Models.GovernanceResource.CreateFromDiscriminatorValue); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
+                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>(Microsoft.Graph.Beta.Models.GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<GovernanceRoleAssignmentRequestStatus>(GovernanceRoleAssignmentRequestStatus.CreateFromDiscriminatorValue); } },
-                { "subject", n => { Subject = n.GetObjectValue<GovernanceSubject>(GovernanceSubject.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceSchedule>(Microsoft.Graph.Beta.Models.GovernanceSchedule.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus>(Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus.CreateFromDiscriminatorValue); } },
+                { "subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceSubject>(Microsoft.Graph.Beta.Models.GovernanceSubject.CreateFromDiscriminatorValue); } },
                 { "subjectId", n => { SubjectId = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -253,13 +253,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("linkedEligibleRoleAssignmentId", LinkedEligibleRoleAssignmentId);
             writer.WriteStringValue("reason", Reason);
             writer.WriteDateTimeOffsetValue("requestedDateTime", RequestedDateTime);
-            writer.WriteObjectValue<GovernanceResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceResource>("resource", Resource);
             writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteObjectValue<GovernanceRoleDefinition>("roleDefinition", RoleDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
-            writer.WriteObjectValue<GovernanceSchedule>("schedule", Schedule);
-            writer.WriteObjectValue<GovernanceRoleAssignmentRequestStatus>("status", Status);
-            writer.WriteObjectValue<GovernanceSubject>("subject", Subject);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleAssignmentRequestStatus>("status", Status);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceSubject>("subject", Subject);
             writer.WriteStringValue("subjectId", SubjectId);
             writer.WriteStringValue("type", Type);
         }

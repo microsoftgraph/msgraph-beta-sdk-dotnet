@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents user state for an intent
     /// </summary>
-    public class DeviceManagementIntentUserState : Entity, IParsable
+    public class DeviceManagementIntentUserState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Count of Devices that belongs to a user for an intent</summary>
         public int? DeviceCount
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>The state property</summary>
-        public ComplianceStatus? State
+        public Microsoft.Graph.Beta.Models.ComplianceStatus? State
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The user name that is being reported on a device</summary>
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementIntentUserState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementIntentUserState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementIntentUserState();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
                 { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteDateTimeOffsetValue("lastReportedDateTime", LastReportedDateTime);
-            writer.WriteEnumValue<ComplianceStatus>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>("state", State);
             writer.WriteStringValue("userName", UserName);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
         }

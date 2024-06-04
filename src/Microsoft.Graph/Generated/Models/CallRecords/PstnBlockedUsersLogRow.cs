@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         }
 #endif
         /// <summary>Indicates whether the user is blocked or unblocked from making PSTN calls in Microsoft Teams. The possible values are: blocked, unblocked, unknownFutureValue.</summary>
-        public PstnUserBlockMode? UserBlockMode
+        public Microsoft.Graph.Beta.Models.CallRecords.PstnUserBlockMode? UserBlockMode
         {
-            get { return BackingStore?.Get<PstnUserBlockMode?>("userBlockMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.PstnUserBlockMode?>("userBlockMode"); }
             set { BackingStore?.Set("userBlockMode", value); }
         }
         /// <summary>Display name of the user.</summary>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PstnBlockedUsersLogRow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CallRecords.PstnBlockedUsersLogRow"/> and sets the default values.
         /// </summary>
         public PstnBlockedUsersLogRow()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PstnBlockedUsersLogRow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.PstnBlockedUsersLogRow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PstnBlockedUsersLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CallRecords.PstnBlockedUsersLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PstnBlockedUsersLogRow();
+            return new Microsoft.Graph.Beta.Models.CallRecords.PstnBlockedUsersLogRow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
                 { "blockReason", n => { BlockReason = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "remediationId", n => { RemediationId = n.GetStringValue(); } },
-                { "userBlockMode", n => { UserBlockMode = n.GetEnumValue<PstnUserBlockMode>(); } },
+                { "userBlockMode", n => { UserBlockMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.CallRecords.PstnUserBlockMode>(); } },
                 { "userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
             writer.WriteStringValue("blockReason", BlockReason);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("remediationId", RemediationId);
-            writer.WriteEnumValue<PstnUserBlockMode>("userBlockMode", UserBlockMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CallRecords.PstnUserBlockMode>("userBlockMode", UserBlockMode);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

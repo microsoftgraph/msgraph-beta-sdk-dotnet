@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl
 {
     [Obsolete("This class is obsolete. Use UploadUrlGetResponse instead.")]
     #pragma warning disable CS1591
-    public class UploadUrlResponse : UploadUrlGetResponse, IParsable
+    public class UploadUrlResponse : Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UploadUrlResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UploadUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UploadUrlResponse();
+            return new Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.UploadUrl.UploadUrlResponse();
         }
     }
 }

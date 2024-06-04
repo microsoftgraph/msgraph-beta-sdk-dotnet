@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerChecklistRequirement"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerChecklistRequirement"/> and sets the default values.
         /// </summary>
         public PlannerChecklistRequirement()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerChecklistRequirement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerChecklistRequirement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerChecklistRequirement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerChecklistRequirement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerChecklistRequirement();
+            return new Microsoft.Graph.Beta.Models.PlannerChecklistRequirement();
         }
         /// <summary>
         /// The deserialization information for the current model

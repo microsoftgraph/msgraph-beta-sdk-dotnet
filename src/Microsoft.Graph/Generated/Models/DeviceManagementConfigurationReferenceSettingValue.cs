@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Model for ReferenceSettingValue
     /// </summary>
-    public class DeviceManagementConfigurationReferenceSettingValue : DeviceManagementConfigurationStringSettingValue, IParsable
+    public class DeviceManagementConfigurationReferenceSettingValue : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationStringSettingValue, IParsable
     {
         /// <summary>A note that admin can use to put some contextual information</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationReferenceSettingValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferenceSettingValue"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationReferenceSettingValue() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationReferenceSettingValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferenceSettingValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationReferenceSettingValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferenceSettingValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationReferenceSettingValue();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationReferenceSettingValue();
         }
         /// <summary>
         /// The deserialization information for the current model

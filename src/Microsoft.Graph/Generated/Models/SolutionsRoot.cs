@@ -19,51 +19,67 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The backupRestore property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.BackupRestoreRoot? BackupRestore
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BackupRestoreRoot?>("backupRestore"); }
+            set { BackingStore?.Set("backupRestore", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.BackupRestoreRoot BackupRestore
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BackupRestoreRoot>("backupRestore"); }
+            set { BackingStore?.Set("backupRestore", value); }
+        }
+#endif
         /// <summary>The bookingBusinesses property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingBusiness>? BookingBusinesses
+        public List<Microsoft.Graph.Beta.Models.BookingBusiness>? BookingBusinesses
         {
-            get { return BackingStore?.Get<List<BookingBusiness>?>("bookingBusinesses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingBusiness>?>("bookingBusinesses"); }
             set { BackingStore?.Set("bookingBusinesses", value); }
         }
 #nullable restore
 #else
-        public List<BookingBusiness> BookingBusinesses
+        public List<Microsoft.Graph.Beta.Models.BookingBusiness> BookingBusinesses
         {
-            get { return BackingStore?.Get<List<BookingBusiness>>("bookingBusinesses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingBusiness>>("bookingBusinesses"); }
             set { BackingStore?.Set("bookingBusinesses", value); }
         }
 #endif
         /// <summary>The bookingCurrencies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingCurrency>? BookingCurrencies
+        public List<Microsoft.Graph.Beta.Models.BookingCurrency>? BookingCurrencies
         {
-            get { return BackingStore?.Get<List<BookingCurrency>?>("bookingCurrencies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingCurrency>?>("bookingCurrencies"); }
             set { BackingStore?.Set("bookingCurrencies", value); }
         }
 #nullable restore
 #else
-        public List<BookingCurrency> BookingCurrencies
+        public List<Microsoft.Graph.Beta.Models.BookingCurrency> BookingCurrencies
         {
-            get { return BackingStore?.Get<List<BookingCurrency>>("bookingCurrencies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingCurrency>>("bookingCurrencies"); }
             set { BackingStore?.Set("bookingCurrencies", value); }
         }
 #endif
         /// <summary>The businessScenarios property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BusinessScenario>? BusinessScenarios
+        public List<Microsoft.Graph.Beta.Models.BusinessScenario>? BusinessScenarios
         {
-            get { return BackingStore?.Get<List<BusinessScenario>?>("businessScenarios"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BusinessScenario>?>("businessScenarios"); }
             set { BackingStore?.Set("businessScenarios", value); }
         }
 #nullable restore
 #else
-        public List<BusinessScenario> BusinessScenarios
+        public List<Microsoft.Graph.Beta.Models.BusinessScenario> BusinessScenarios
         {
-            get { return BackingStore?.Get<List<BusinessScenario>>("businessScenarios"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BusinessScenario>>("businessScenarios"); }
             set { BackingStore?.Set("businessScenarios", value); }
         }
 #endif
@@ -86,21 +102,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The virtualEvents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventsRoot? VirtualEvents
+        public Microsoft.Graph.Beta.Models.VirtualEventsRoot? VirtualEvents
         {
-            get { return BackingStore?.Get<VirtualEventsRoot?>("virtualEvents"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventsRoot?>("virtualEvents"); }
             set { BackingStore?.Set("virtualEvents", value); }
         }
 #nullable restore
 #else
-        public VirtualEventsRoot VirtualEvents
+        public Microsoft.Graph.Beta.Models.VirtualEventsRoot VirtualEvents
         {
-            get { return BackingStore?.Get<VirtualEventsRoot>("virtualEvents"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventsRoot>("virtualEvents"); }
             set { BackingStore?.Set("virtualEvents", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SolutionsRoot"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SolutionsRoot"/> and sets the default values.
         /// </summary>
         public SolutionsRoot()
         {
@@ -110,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SolutionsRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SolutionsRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SolutionsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SolutionsRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SolutionsRoot();
+            return new Microsoft.Graph.Beta.Models.SolutionsRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,11 +141,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<BookingBusiness>(BookingBusiness.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<BookingCurrency>(BookingCurrency.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "businessScenarios", n => { BusinessScenarios = n.GetCollectionOfObjectValues<BusinessScenario>(BusinessScenario.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "backupRestore", n => { BackupRestore = n.GetObjectValue<Microsoft.Graph.Beta.Models.BackupRestoreRoot>(Microsoft.Graph.Beta.Models.BackupRestoreRoot.CreateFromDiscriminatorValue); } },
+                { "bookingBusinesses", n => { BookingBusinesses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingBusiness>(Microsoft.Graph.Beta.Models.BookingBusiness.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bookingCurrencies", n => { BookingCurrencies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingCurrency>(Microsoft.Graph.Beta.Models.BookingCurrency.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "businessScenarios", n => { BusinessScenarios = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BusinessScenario>(Microsoft.Graph.Beta.Models.BusinessScenario.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "virtualEvents", n => { VirtualEvents = n.GetObjectValue<VirtualEventsRoot>(VirtualEventsRoot.CreateFromDiscriminatorValue); } },
+                { "virtualEvents", n => { VirtualEvents = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualEventsRoot>(Microsoft.Graph.Beta.Models.VirtualEventsRoot.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -139,11 +156,12 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<BookingBusiness>("bookingBusinesses", BookingBusinesses);
-            writer.WriteCollectionOfObjectValues<BookingCurrency>("bookingCurrencies", BookingCurrencies);
-            writer.WriteCollectionOfObjectValues<BusinessScenario>("businessScenarios", BusinessScenarios);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BackupRestoreRoot>("backupRestore", BackupRestore);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingBusiness>("bookingBusinesses", BookingBusinesses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingCurrency>("bookingCurrencies", BookingCurrencies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BusinessScenario>("businessScenarios", BusinessScenarios);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<VirtualEventsRoot>("virtualEvents", VirtualEvents);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VirtualEventsRoot>("virtualEvents", VirtualEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

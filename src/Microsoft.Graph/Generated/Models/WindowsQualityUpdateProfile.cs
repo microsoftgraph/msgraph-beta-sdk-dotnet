@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Quality Update Profile
     /// </summary>
-    public class WindowsQualityUpdateProfile : Entity, IParsable
+    public class WindowsQualityUpdateProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The list of group assignments of the profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsQualityUpdateProfileAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfileAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<WindowsQualityUpdateProfileAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfileAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<WindowsQualityUpdateProfileAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfileAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<WindowsQualityUpdateProfileAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Expedited update settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExpeditedWindowsQualityUpdateSettings? ExpeditedUpdateSettings
+        public Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings? ExpeditedUpdateSettings
         {
-            get { return BackingStore?.Get<ExpeditedWindowsQualityUpdateSettings?>("expeditedUpdateSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings?>("expeditedUpdateSettings"); }
             set { BackingStore?.Set("expeditedUpdateSettings", value); }
         }
 #nullable restore
 #else
-        public ExpeditedWindowsQualityUpdateSettings ExpeditedUpdateSettings
+        public Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings ExpeditedUpdateSettings
         {
-            get { return BackingStore?.Get<ExpeditedWindowsQualityUpdateSettings>("expeditedUpdateSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings>("expeditedUpdateSettings"); }
             set { BackingStore?.Set("expeditedUpdateSettings", value); }
         }
 #endif
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsQualityUpdateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsQualityUpdateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsQualityUpdateProfile();
+            return new Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,12 +153,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsQualityUpdateProfileAssignment>(WindowsQualityUpdateProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfileAssignment>(Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deployableContentDisplayName", n => { DeployableContentDisplayName = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "expeditedUpdateSettings", n => { ExpeditedUpdateSettings = n.GetObjectValue<ExpeditedWindowsQualityUpdateSettings>(ExpeditedWindowsQualityUpdateSettings.CreateFromDiscriminatorValue); } },
+                { "expeditedUpdateSettings", n => { ExpeditedUpdateSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings>(Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "releaseDateDisplayName", n => { ReleaseDateDisplayName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -172,12 +172,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WindowsQualityUpdateProfileAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfileAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("deployableContentDisplayName", DeployableContentDisplayName);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<ExpeditedWindowsQualityUpdateSettings>("expeditedUpdateSettings", ExpeditedUpdateSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExpeditedWindowsQualityUpdateSettings>("expeditedUpdateSettings", ExpeditedUpdateSettings);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("releaseDateDisplayName", ReleaseDateDisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);

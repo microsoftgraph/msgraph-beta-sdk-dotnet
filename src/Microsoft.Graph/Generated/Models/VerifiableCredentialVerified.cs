@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VerifiableCredentialVerified : VerifiableCredentialRequirementStatus, IParsable
+    public class VerifiableCredentialVerified : Microsoft.Graph.Beta.Models.VerifiableCredentialRequirementStatus, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="VerifiableCredentialVerified"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VerifiableCredentialVerified"/> and sets the default values.
         /// </summary>
         public VerifiableCredentialVerified() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VerifiableCredentialVerified"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VerifiableCredentialVerified"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VerifiableCredentialVerified CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VerifiableCredentialVerified CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VerifiableCredentialVerified();
+            return new Microsoft.Graph.Beta.Models.VerifiableCredentialVerified();
         }
         /// <summary>
         /// The deserialization information for the current model

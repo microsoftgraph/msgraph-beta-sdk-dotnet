@@ -9,7 +9,7 @@ using System;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID
 {
     #pragma warning disable CS1591
-    public class FindByCatalogIdWithCatalogIDGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class FindByCatalogIdWithCatalogIDGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
@@ -31,12 +31,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FindByCatalogIdWithCatalogIDGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FindByCatalogIdWithCatalogIDGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FindByCatalogIdWithCatalogIDGetResponse();
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

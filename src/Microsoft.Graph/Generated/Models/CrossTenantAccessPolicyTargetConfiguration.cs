@@ -12,9 +12,9 @@ namespace Microsoft.Graph.Beta.Models
     #pragma warning restore CS1591
     {
         /// <summary>Defines whether access is allowed or blocked. The possible values are: allowed, blocked, unknownFutureValue.</summary>
-        public CrossTenantAccessPolicyTargetConfigurationAccessType? AccessType
+        public Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTargetConfigurationAccessType? AccessType
         {
-            get { return BackingStore?.Get<CrossTenantAccessPolicyTargetConfigurationAccessType?>("accessType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTargetConfigurationAccessType?>("accessType"); }
             set { BackingStore?.Set("accessType", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,21 +44,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies whether to target users, groups, or applications with this rule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CrossTenantAccessPolicyTarget>? Targets
+        public List<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTarget>? Targets
         {
-            get { return BackingStore?.Get<List<CrossTenantAccessPolicyTarget>?>("targets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTarget>?>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #nullable restore
 #else
-        public List<CrossTenantAccessPolicyTarget> Targets
+        public List<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTarget> Targets
         {
-            get { return BackingStore?.Get<List<CrossTenantAccessPolicyTarget>>("targets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTarget>>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CrossTenantAccessPolicyTargetConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTargetConfiguration"/> and sets the default values.
         /// </summary>
         public CrossTenantAccessPolicyTargetConfiguration()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CrossTenantAccessPolicyTargetConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTargetConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CrossTenantAccessPolicyTargetConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTargetConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CrossTenantAccessPolicyTargetConfiguration();
+            return new Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTargetConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessType", n => { AccessType = n.GetEnumValue<CrossTenantAccessPolicyTargetConfigurationAccessType>(); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTargetConfigurationAccessType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "targets", n => { Targets = n.GetCollectionOfObjectValues<CrossTenantAccessPolicyTarget>(CrossTenantAccessPolicyTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "targets", n => { Targets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTarget>(Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTarget.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<CrossTenantAccessPolicyTargetConfigurationAccessType>("accessType", AccessType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTargetConfigurationAccessType>("accessType", AccessType);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<CrossTenantAccessPolicyTarget>("targets", Targets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicyTarget>("targets", Targets);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

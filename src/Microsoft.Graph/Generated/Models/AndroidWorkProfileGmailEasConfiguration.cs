@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing configurations in this profile you can instruct the Gmail email client on Android Work Profile devices to communicate with an Exchange server and get email, contacts, calendar, tasks, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
     /// </summary>
-    public class AndroidWorkProfileGmailEasConfiguration : AndroidWorkProfileEasEmailProfileBase, IParsable
+    public class AndroidWorkProfileGmailEasConfiguration : Microsoft.Graph.Beta.Models.AndroidWorkProfileEasEmailProfileBase, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="AndroidWorkProfileGmailEasConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidWorkProfileGmailEasConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidWorkProfileGmailEasConfiguration() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidWorkProfileGmailEasConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidWorkProfileGmailEasConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidWorkProfileGmailEasConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidWorkProfileGmailEasConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidWorkProfileGmailEasConfiguration();
+            return new Microsoft.Graph.Beta.Models.AndroidWorkProfileGmailEasConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The set of activities performed during the run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IndustryDataRunActivity>? Activities
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>? Activities
         {
-            get { return BackingStore?.Get<List<IndustryDataRunActivity>?>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<IndustryDataRunActivity> Activities
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity> Activities
         {
-            get { return BackingStore?.Get<List<IndustryDataRunActivity>>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #endif
@@ -71,20 +71,20 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The status property</summary>
-        public IndustryDataRunStatus? Status
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatus? Status
         {
-            get { return BackingStore?.Get<IndustryDataRunStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IndustryDataRun"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRun"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IndustryDataRun CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRun CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IndustryDataRun();
+            return new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRun();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activities", n => { Activities = n.GetCollectionOfObjectValues<IndustryDataRunActivity>(IndustryDataRunActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>(Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "blockingError", n => { BlockingError = n.GetObjectValue<Microsoft.Graph.Beta.Models.PublicError>(Microsoft.Graph.Beta.Models.PublicError.CreateFromDiscriminatorValue); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<IndustryDataRunStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatus>(); } },
             };
         }
         /// <summary>
@@ -110,8 +110,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IndustryDataRunActivity>("activities", Activities);
-            writer.WriteEnumValue<IndustryDataRunStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunActivity>("activities", Activities);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatus>("status", Status);
         }
     }
 }

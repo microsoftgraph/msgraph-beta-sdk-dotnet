@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TeamworkDeviceConfiguration : Entity, IParsable
+    public class TeamworkDeviceConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The camera configuration. Applicable only for Microsoft Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkCameraConfiguration? CameraConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration? CameraConfiguration
         {
-            get { return BackingStore?.Get<TeamworkCameraConfiguration?>("cameraConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration?>("cameraConfiguration"); }
             set { BackingStore?.Set("cameraConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkCameraConfiguration CameraConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration CameraConfiguration
         {
-            get { return BackingStore?.Get<TeamworkCameraConfiguration>("cameraConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration>("cameraConfiguration"); }
             set { BackingStore?.Set("cameraConfiguration", value); }
         }
 #endif
         /// <summary>Identity of the user who created the device configuration document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -51,48 +51,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The display configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDisplayConfiguration? DisplayConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration? DisplayConfiguration
         {
-            get { return BackingStore?.Get<TeamworkDisplayConfiguration?>("displayConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration?>("displayConfiguration"); }
             set { BackingStore?.Set("displayConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkDisplayConfiguration DisplayConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration DisplayConfiguration
         {
-            get { return BackingStore?.Get<TeamworkDisplayConfiguration>("displayConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration>("displayConfiguration"); }
             set { BackingStore?.Set("displayConfiguration", value); }
         }
 #endif
         /// <summary>The hardware configuration. Applicable only for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkHardwareConfiguration? HardwareConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration? HardwareConfiguration
         {
-            get { return BackingStore?.Get<TeamworkHardwareConfiguration?>("hardwareConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration?>("hardwareConfiguration"); }
             set { BackingStore?.Set("hardwareConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkHardwareConfiguration HardwareConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration HardwareConfiguration
         {
-            get { return BackingStore?.Get<TeamworkHardwareConfiguration>("hardwareConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration>("hardwareConfiguration"); }
             set { BackingStore?.Set("hardwareConfiguration", value); }
         }
 #endif
         /// <summary>Identity of the user who last modified the device configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -105,92 +105,92 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The microphone configuration. Applicable only for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkMicrophoneConfiguration? MicrophoneConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration? MicrophoneConfiguration
         {
-            get { return BackingStore?.Get<TeamworkMicrophoneConfiguration?>("microphoneConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration?>("microphoneConfiguration"); }
             set { BackingStore?.Set("microphoneConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkMicrophoneConfiguration MicrophoneConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration MicrophoneConfiguration
         {
-            get { return BackingStore?.Get<TeamworkMicrophoneConfiguration>("microphoneConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration>("microphoneConfiguration"); }
             set { BackingStore?.Set("microphoneConfiguration", value); }
         }
 #endif
         /// <summary>Information related to software versions for the device, such as firmware, operating system, Teams client, and admin agent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkDeviceSoftwareVersions? SoftwareVersions
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceSoftwareVersions? SoftwareVersions
         {
-            get { return BackingStore?.Get<TeamworkDeviceSoftwareVersions?>("softwareVersions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceSoftwareVersions?>("softwareVersions"); }
             set { BackingStore?.Set("softwareVersions", value); }
         }
 #nullable restore
 #else
-        public TeamworkDeviceSoftwareVersions SoftwareVersions
+        public Microsoft.Graph.Beta.Models.TeamworkDeviceSoftwareVersions SoftwareVersions
         {
-            get { return BackingStore?.Get<TeamworkDeviceSoftwareVersions>("softwareVersions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkDeviceSoftwareVersions>("softwareVersions"); }
             set { BackingStore?.Set("softwareVersions", value); }
         }
 #endif
         /// <summary>The speaker configuration. Applicable only for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkSpeakerConfiguration? SpeakerConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkSpeakerConfiguration? SpeakerConfiguration
         {
-            get { return BackingStore?.Get<TeamworkSpeakerConfiguration?>("speakerConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkSpeakerConfiguration?>("speakerConfiguration"); }
             set { BackingStore?.Set("speakerConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkSpeakerConfiguration SpeakerConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkSpeakerConfiguration SpeakerConfiguration
         {
-            get { return BackingStore?.Get<TeamworkSpeakerConfiguration>("speakerConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkSpeakerConfiguration>("speakerConfiguration"); }
             set { BackingStore?.Set("speakerConfiguration", value); }
         }
 #endif
         /// <summary>The system configuration. Not applicable for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkSystemConfiguration? SystemConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkSystemConfiguration? SystemConfiguration
         {
-            get { return BackingStore?.Get<TeamworkSystemConfiguration?>("systemConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkSystemConfiguration?>("systemConfiguration"); }
             set { BackingStore?.Set("systemConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkSystemConfiguration SystemConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkSystemConfiguration SystemConfiguration
         {
-            get { return BackingStore?.Get<TeamworkSystemConfiguration>("systemConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkSystemConfiguration>("systemConfiguration"); }
             set { BackingStore?.Set("systemConfiguration", value); }
         }
 #endif
         /// <summary>The Teams client configuration. Applicable only for Teams Rooms-enabled devices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkTeamsClientConfiguration? TeamsClientConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration? TeamsClientConfiguration
         {
-            get { return BackingStore?.Get<TeamworkTeamsClientConfiguration?>("teamsClientConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration?>("teamsClientConfiguration"); }
             set { BackingStore?.Set("teamsClientConfiguration", value); }
         }
 #nullable restore
 #else
-        public TeamworkTeamsClientConfiguration TeamsClientConfiguration
+        public Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration TeamsClientConfiguration
         {
-            get { return BackingStore?.Get<TeamworkTeamsClientConfiguration>("teamsClientConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration>("teamsClientConfiguration"); }
             set { BackingStore?.Set("teamsClientConfiguration", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamworkDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkDeviceConfiguration();
+            return new Microsoft.Graph.Beta.Models.TeamworkDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -200,18 +200,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "cameraConfiguration", n => { CameraConfiguration = n.GetObjectValue<TeamworkCameraConfiguration>(TeamworkCameraConfiguration.CreateFromDiscriminatorValue); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "cameraConfiguration", n => { CameraConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration>(Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "displayConfiguration", n => { DisplayConfiguration = n.GetObjectValue<TeamworkDisplayConfiguration>(TeamworkDisplayConfiguration.CreateFromDiscriminatorValue); } },
-                { "hardwareConfiguration", n => { HardwareConfiguration = n.GetObjectValue<TeamworkHardwareConfiguration>(TeamworkHardwareConfiguration.CreateFromDiscriminatorValue); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "displayConfiguration", n => { DisplayConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration>(Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration.CreateFromDiscriminatorValue); } },
+                { "hardwareConfiguration", n => { HardwareConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration>(Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "microphoneConfiguration", n => { MicrophoneConfiguration = n.GetObjectValue<TeamworkMicrophoneConfiguration>(TeamworkMicrophoneConfiguration.CreateFromDiscriminatorValue); } },
-                { "softwareVersions", n => { SoftwareVersions = n.GetObjectValue<TeamworkDeviceSoftwareVersions>(TeamworkDeviceSoftwareVersions.CreateFromDiscriminatorValue); } },
-                { "speakerConfiguration", n => { SpeakerConfiguration = n.GetObjectValue<TeamworkSpeakerConfiguration>(TeamworkSpeakerConfiguration.CreateFromDiscriminatorValue); } },
-                { "systemConfiguration", n => { SystemConfiguration = n.GetObjectValue<TeamworkSystemConfiguration>(TeamworkSystemConfiguration.CreateFromDiscriminatorValue); } },
-                { "teamsClientConfiguration", n => { TeamsClientConfiguration = n.GetObjectValue<TeamworkTeamsClientConfiguration>(TeamworkTeamsClientConfiguration.CreateFromDiscriminatorValue); } },
+                { "microphoneConfiguration", n => { MicrophoneConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration>(Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration.CreateFromDiscriminatorValue); } },
+                { "softwareVersions", n => { SoftwareVersions = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkDeviceSoftwareVersions>(Microsoft.Graph.Beta.Models.TeamworkDeviceSoftwareVersions.CreateFromDiscriminatorValue); } },
+                { "speakerConfiguration", n => { SpeakerConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkSpeakerConfiguration>(Microsoft.Graph.Beta.Models.TeamworkSpeakerConfiguration.CreateFromDiscriminatorValue); } },
+                { "systemConfiguration", n => { SystemConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkSystemConfiguration>(Microsoft.Graph.Beta.Models.TeamworkSystemConfiguration.CreateFromDiscriminatorValue); } },
+                { "teamsClientConfiguration", n => { TeamsClientConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration>(Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -222,18 +222,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TeamworkCameraConfiguration>("cameraConfiguration", CameraConfiguration);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkCameraConfiguration>("cameraConfiguration", CameraConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<TeamworkDisplayConfiguration>("displayConfiguration", DisplayConfiguration);
-            writer.WriteObjectValue<TeamworkHardwareConfiguration>("hardwareConfiguration", HardwareConfiguration);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkDisplayConfiguration>("displayConfiguration", DisplayConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkHardwareConfiguration>("hardwareConfiguration", HardwareConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<TeamworkMicrophoneConfiguration>("microphoneConfiguration", MicrophoneConfiguration);
-            writer.WriteObjectValue<TeamworkDeviceSoftwareVersions>("softwareVersions", SoftwareVersions);
-            writer.WriteObjectValue<TeamworkSpeakerConfiguration>("speakerConfiguration", SpeakerConfiguration);
-            writer.WriteObjectValue<TeamworkSystemConfiguration>("systemConfiguration", SystemConfiguration);
-            writer.WriteObjectValue<TeamworkTeamsClientConfiguration>("teamsClientConfiguration", TeamsClientConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkMicrophoneConfiguration>("microphoneConfiguration", MicrophoneConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkDeviceSoftwareVersions>("softwareVersions", SoftwareVersions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkSpeakerConfiguration>("speakerConfiguration", SpeakerConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkSystemConfiguration>("systemConfiguration", SystemConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkTeamsClientConfiguration>("teamsClientConfiguration", TeamsClientConfiguration);
         }
     }
 }

@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>The exploitedCves property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CveInformation>? ExploitedCves
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.CveInformation>? ExploitedCves
         {
-            get { return BackingStore?.Get<List<CveInformation>?>("exploitedCves"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.CveInformation>?>("exploitedCves"); }
             set { BackingStore?.Set("exploitedCves", value); }
         }
 #nullable restore
 #else
-        public List<CveInformation> ExploitedCves
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.CveInformation> ExploitedCves
         {
-            get { return BackingStore?.Get<List<CveInformation>>("exploitedCves"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.CveInformation>>("exploitedCves"); }
             set { BackingStore?.Set("exploitedCves", value); }
         }
 #endif
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("maxBaseScore", value); }
         }
         /// <summary>The maxSeverity property</summary>
-        public CveSeverityLevel? MaxSeverity
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.CveSeverityLevel? MaxSeverity
         {
-            get { return BackingStore?.Get<CveSeverityLevel?>("maxSeverity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.CveSeverityLevel?>("maxSeverity"); }
             set { BackingStore?.Set("maxSeverity", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="QualityUpdateCveSeverityInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation"/> and sets the default values.
         /// </summary>
         public QualityUpdateCveSeverityInformation()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QualityUpdateCveSeverityInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static QualityUpdateCveSeverityInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QualityUpdateCveSeverityInformation();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "exploitedCves", n => { ExploitedCves = n.GetCollectionOfObjectValues<CveInformation>(CveInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exploitedCves", n => { ExploitedCves = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.CveInformation>(Microsoft.Graph.Beta.Models.WindowsUpdates.CveInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "maxBaseScore", n => { MaxBaseScore = n.GetDoubleValue(); } },
-                { "maxSeverity", n => { MaxSeverity = n.GetEnumValue<CveSeverityLevel>(); } },
+                { "maxSeverity", n => { MaxSeverity = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CveSeverityLevel>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<CveInformation>("exploitedCves", ExploitedCves);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.CveInformation>("exploitedCves", ExploitedCves);
             writer.WriteDoubleValue("maxBaseScore", MaxBaseScore);
-            writer.WriteEnumValue<CveSeverityLevel>("maxSeverity", MaxSeverity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.CveSeverityLevel>("maxSeverity", MaxSeverity);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

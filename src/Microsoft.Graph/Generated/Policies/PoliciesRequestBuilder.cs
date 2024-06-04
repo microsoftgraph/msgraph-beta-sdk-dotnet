@@ -24,6 +24,7 @@ using Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolicy;
 using Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies;
 using Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies;
 using Microsoft.Graph.Beta.Policies.PermissionGrantPolicies;
+using Microsoft.Graph.Beta.Policies.PermissionGrantPreApprovalPolicies;
 using Microsoft.Graph.Beta.Policies.RoleManagementPolicies;
 using Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments;
 using Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies;
@@ -45,147 +46,152 @@ namespace Microsoft.Graph.Beta.Policies
     public class PoliciesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the accessReviewPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public AccessReviewPolicyRequestBuilder AccessReviewPolicy
+        public Microsoft.Graph.Beta.Policies.AccessReviewPolicy.AccessReviewPolicyRequestBuilder AccessReviewPolicy
         {
-            get => new AccessReviewPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.AccessReviewPolicy.AccessReviewPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the activityBasedTimeoutPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public ActivityBasedTimeoutPoliciesRequestBuilder ActivityBasedTimeoutPolicies
+        public Microsoft.Graph.Beta.Policies.ActivityBasedTimeoutPolicies.ActivityBasedTimeoutPoliciesRequestBuilder ActivityBasedTimeoutPolicies
         {
-            get => new ActivityBasedTimeoutPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.ActivityBasedTimeoutPolicies.ActivityBasedTimeoutPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the adminConsentRequestPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public AdminConsentRequestPolicyRequestBuilder AdminConsentRequestPolicy
+        public Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy.AdminConsentRequestPolicyRequestBuilder AdminConsentRequestPolicy
         {
-            get => new AdminConsentRequestPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy.AdminConsentRequestPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public AppManagementPoliciesRequestBuilder AppManagementPolicies
+        public Microsoft.Graph.Beta.Policies.AppManagementPolicies.AppManagementPoliciesRequestBuilder AppManagementPolicies
         {
-            get => new AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.AppManagementPolicies.AppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationFlowsPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public AuthenticationFlowsPolicyRequestBuilder AuthenticationFlowsPolicy
+        public Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy.AuthenticationFlowsPolicyRequestBuilder AuthenticationFlowsPolicy
         {
-            get => new AuthenticationFlowsPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy.AuthenticationFlowsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
+        public Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
         {
-            get => new AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy.AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authenticationStrengthPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public AuthenticationStrengthPoliciesRequestBuilder AuthenticationStrengthPolicies
+        public Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.AuthenticationStrengthPoliciesRequestBuilder AuthenticationStrengthPolicies
         {
-            get => new AuthenticationStrengthPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.AuthenticationStrengthPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the authorizationPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public AuthorizationPolicyRequestBuilder AuthorizationPolicy
+        public Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder AuthorizationPolicy
         {
-            get => new AuthorizationPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.AuthorizationPolicy.AuthorizationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the b2cAuthenticationMethodsPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public B2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy
+        public Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder B2cAuthenticationMethodsPolicy
         {
-            get => new B2cAuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy.B2cAuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the claimsMappingPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public ClaimsMappingPoliciesRequestBuilder ClaimsMappingPolicies
+        public Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies.ClaimsMappingPoliciesRequestBuilder ClaimsMappingPolicies
         {
-            get => new ClaimsMappingPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies.ClaimsMappingPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the conditionalAccessPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public ConditionalAccessPoliciesRequestBuilder ConditionalAccessPolicies
+        public Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies.ConditionalAccessPoliciesRequestBuilder ConditionalAccessPolicies
         {
-            get => new ConditionalAccessPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies.ConditionalAccessPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the crossTenantAccessPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public CrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy
+        public Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder CrossTenantAccessPolicy
         {
-            get => new CrossTenantAccessPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.CrossTenantAccessPolicy.CrossTenantAccessPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the defaultAppManagementPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public DefaultAppManagementPolicyRequestBuilder DefaultAppManagementPolicy
+        public Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy.DefaultAppManagementPolicyRequestBuilder DefaultAppManagementPolicy
         {
-            get => new DefaultAppManagementPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy.DefaultAppManagementPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public DeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy
+        public Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy.DeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy
         {
-            get => new DeviceRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy.DeviceRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the directoryRoleAccessReviewPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public DirectoryRoleAccessReviewPolicyRequestBuilder DirectoryRoleAccessReviewPolicy
+        public Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy.DirectoryRoleAccessReviewPolicyRequestBuilder DirectoryRoleAccessReviewPolicy
         {
-            get => new DirectoryRoleAccessReviewPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.DirectoryRoleAccessReviewPolicy.DirectoryRoleAccessReviewPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the externalIdentitiesPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public ExternalIdentitiesPolicyRequestBuilder ExternalIdentitiesPolicy
+        public Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy.ExternalIdentitiesPolicyRequestBuilder ExternalIdentitiesPolicy
         {
-            get => new ExternalIdentitiesPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy.ExternalIdentitiesPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the featureRolloutPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies
+        public Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder FeatureRolloutPolicies
         {
-            get => new FeatureRolloutPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.FeatureRolloutPolicies.FeatureRolloutPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the federatedTokenValidationPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public FederatedTokenValidationPolicyRequestBuilder FederatedTokenValidationPolicy
+        public Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy.FederatedTokenValidationPolicyRequestBuilder FederatedTokenValidationPolicy
         {
-            get => new FederatedTokenValidationPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.FederatedTokenValidationPolicy.FederatedTokenValidationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies
+        public Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.HomeRealmDiscoveryPoliciesRequestBuilder HomeRealmDiscoveryPolicies
         {
-            get => new HomeRealmDiscoveryPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.HomeRealmDiscoveryPolicies.HomeRealmDiscoveryPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the identitySecurityDefaultsEnforcementPolicy property of the microsoft.graph.policyRoot entity.</summary>
-        public IdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy
+        public Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolicy.IdentitySecurityDefaultsEnforcementPolicyRequestBuilder IdentitySecurityDefaultsEnforcementPolicy
         {
-            get => new IdentitySecurityDefaultsEnforcementPolicyRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.IdentitySecurityDefaultsEnforcementPolicy.IdentitySecurityDefaultsEnforcementPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileAppManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public MobileAppManagementPoliciesRequestBuilder MobileAppManagementPolicies
+        public Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.MobileAppManagementPoliciesRequestBuilder MobileAppManagementPolicies
         {
-            get => new MobileAppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.MobileAppManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the mobileDeviceManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public MobileDeviceManagementPoliciesRequestBuilder MobileDeviceManagementPolicies
+        public Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder MobileDeviceManagementPolicies
         {
-            get => new MobileDeviceManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.MobileDeviceManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public PermissionGrantPoliciesRequestBuilder PermissionGrantPolicies
+        public Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.PermissionGrantPoliciesRequestBuilder PermissionGrantPolicies
         {
-            get => new PermissionGrantPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.PermissionGrantPolicies.PermissionGrantPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the permissionGrantPreApprovalPolicies property of the microsoft.graph.policyRoot entity.</summary>
+        public Microsoft.Graph.Beta.Policies.PermissionGrantPreApprovalPolicies.PermissionGrantPreApprovalPoliciesRequestBuilder PermissionGrantPreApprovalPolicies
+        {
+            get => new Microsoft.Graph.Beta.Policies.PermissionGrantPreApprovalPolicies.PermissionGrantPreApprovalPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleManagementPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public RoleManagementPoliciesRequestBuilder RoleManagementPolicies
+        public Microsoft.Graph.Beta.Policies.RoleManagementPolicies.RoleManagementPoliciesRequestBuilder RoleManagementPolicies
         {
-            get => new RoleManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.RoleManagementPolicies.RoleManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the roleManagementPolicyAssignments property of the microsoft.graph.policyRoot entity.</summary>
-        public RoleManagementPolicyAssignmentsRequestBuilder RoleManagementPolicyAssignments
+        public Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments.RoleManagementPolicyAssignmentsRequestBuilder RoleManagementPolicyAssignments
         {
-            get => new RoleManagementPolicyAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments.RoleManagementPolicyAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the servicePrincipalCreationPolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public ServicePrincipalCreationPoliciesRequestBuilder ServicePrincipalCreationPolicies
+        public Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.ServicePrincipalCreationPoliciesRequestBuilder ServicePrincipalCreationPolicies
         {
-            get => new ServicePrincipalCreationPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.ServicePrincipalCreationPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenIssuancePolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public TokenIssuancePoliciesRequestBuilder TokenIssuancePolicies
+        public Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.TokenIssuancePoliciesRequestBuilder TokenIssuancePolicies
         {
-            get => new TokenIssuancePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.TokenIssuancePolicies.TokenIssuancePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tokenLifetimePolicies property of the microsoft.graph.policyRoot entity.</summary>
-        public TokenLifetimePoliciesRequestBuilder TokenLifetimePolicies
+        public Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder TokenLifetimePolicies
         {
-            get => new TokenLifetimePoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Policies.TokenLifetimePolicies.TokenLifetimePoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -193,7 +199,7 @@ namespace Microsoft.Graph.Beta.Policies
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PoliciesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -203,50 +209,50 @@ namespace Microsoft.Graph.Beta.Policies
         /// <summary>
         /// Get policies
         /// </summary>
-        /// <returns>A <see cref="PolicyRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PolicyRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PolicyRoot?> GetAsync(Action<RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PolicyRoot?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PolicyRoot> GetAsync(Action<RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PolicyRoot> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PolicyRoot>(requestInfo, PolicyRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PolicyRoot>(requestInfo, Microsoft.Graph.Beta.Models.PolicyRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update policies
         /// </summary>
-        /// <returns>A <see cref="PolicyRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PolicyRoot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PolicyRoot?> PatchAsync(PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PolicyRoot?> PatchAsync(Microsoft.Graph.Beta.Models.PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PolicyRoot> PatchAsync(PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PolicyRoot> PatchAsync(Microsoft.Graph.Beta.Models.PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PolicyRoot>(requestInfo, PolicyRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PolicyRoot>(requestInfo, Microsoft.Graph.Beta.Models.PolicyRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get policies
@@ -255,11 +261,11 @@ namespace Microsoft.Graph.Beta.Policies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -275,11 +281,11 @@ namespace Microsoft.Graph.Beta.Policies
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.PolicyRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -292,11 +298,11 @@ namespace Microsoft.Graph.Beta.Policies
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PoliciesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public PoliciesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder WithUrl(string rawUrl)
         {
-            return new PoliciesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get policies
@@ -328,7 +334,7 @@ namespace Microsoft.Graph.Beta.Policies
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<PoliciesRequestBuilderGetQueryParameters>
+        public class PoliciesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Policies.PoliciesRequestBuilder.PoliciesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

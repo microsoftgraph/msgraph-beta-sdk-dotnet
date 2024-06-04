@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActiv
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SelfActivatePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActivate.SelfActivatePostRequestBody"/> and sets the default values.
         /// </summary>
         public SelfActivatePostRequestBody()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActiv
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SelfActivatePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActivate.SelfActivatePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SelfActivatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActivate.SelfActivatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SelfActivatePostRequestBody();
+            return new Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActivate.SelfActivatePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

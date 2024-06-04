@@ -15,16 +15,16 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
         /// <summary>The addExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? AddExclusions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>? AddExclusions
         {
-            get { return BackingStore?.Get<List<UpdatableAsset>?>("addExclusions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>?>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> AddExclusions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset> AddExclusions
         {
-            get { return BackingStore?.Get<List<UpdatableAsset>>("addExclusions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
 #endif
@@ -37,16 +37,16 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
         /// <summary>The addMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? AddMembers
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>? AddMembers
         {
-            get { return BackingStore?.Get<List<UpdatableAsset>?>("addMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>?>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> AddMembers
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset> AddMembers
         {
-            get { return BackingStore?.Get<List<UpdatableAsset>>("addMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
 #endif
@@ -55,37 +55,37 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
         /// <summary>The removeExclusions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? RemoveExclusions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>? RemoveExclusions
         {
-            get { return BackingStore?.Get<List<UpdatableAsset>?>("removeExclusions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>?>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> RemoveExclusions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset> RemoveExclusions
         {
-            get { return BackingStore?.Get<List<UpdatableAsset>>("removeExclusions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
 #endif
         /// <summary>The removeMembers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UpdatableAsset>? RemoveMembers
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>? RemoveMembers
         {
-            get { return BackingStore?.Get<List<UpdatableAsset>?>("removeMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>?>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
 #nullable restore
 #else
-        public List<UpdatableAsset> RemoveMembers
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset> RemoveMembers
         {
-            get { return BackingStore?.Get<List<UpdatableAsset>>("removeMembers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdateAudiencePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudience.UpdateAudiencePostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateAudiencePostRequestBody()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateAudiencePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudience.UpdateAudiencePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateAudiencePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudience.UpdateAudiencePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateAudiencePostRequestBody();
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.MicrosoftGraphWindowsUpdatesUpdateAudience.UpdateAudiencePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,10 +110,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "addExclusions", n => { AddExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "addMembers", n => { AddMembers = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "removeExclusions", n => { RemoveExclusions = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "removeMembers", n => { RemoveMembers = n.GetCollectionOfObjectValues<UpdatableAsset>(UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addExclusions", n => { AddExclusions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addMembers", n => { AddMembers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "removeExclusions", n => { RemoveExclusions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "removeMembers", n => { RemoveMembers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>(Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -123,10 +123,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<UpdatableAsset>("addExclusions", AddExclusions);
-            writer.WriteCollectionOfObjectValues<UpdatableAsset>("addMembers", AddMembers);
-            writer.WriteCollectionOfObjectValues<UpdatableAsset>("removeExclusions", RemoveExclusions);
-            writer.WriteCollectionOfObjectValues<UpdatableAsset>("removeMembers", RemoveMembers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>("addExclusions", AddExclusions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>("addMembers", AddMembers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>("removeExclusions", RemoveExclusions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAsset>("removeMembers", RemoveMembers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

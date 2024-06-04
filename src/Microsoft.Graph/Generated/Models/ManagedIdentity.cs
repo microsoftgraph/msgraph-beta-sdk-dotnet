@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagedIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedIdentity"/> and sets the default values.
         /// </summary>
         public ManagedIdentity()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagedIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedIdentity();
+            return new Microsoft.Graph.Beta.Models.ManagedIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "associatedResourceId", n => { AssociatedResourceId = n.GetStringValue(); } },
                 { "federatedTokenId", n => { FederatedTokenId = n.GetStringValue(); } },
                 { "federatedTokenIssuer", n => { FederatedTokenIssuer = n.GetStringValue(); } },
-                { "msiType", n => { MsiType = n.GetEnumValue<MsiType>(); } },
+                { "msiType", n => { MsiType = n.GetEnumValue<Microsoft.Graph.Beta.Models.MsiType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("associatedResourceId", AssociatedResourceId);
             writer.WriteStringValue("federatedTokenId", FederatedTokenId);
             writer.WriteStringValue("federatedTokenIssuer", FederatedTokenIssuer);
-            writer.WriteEnumValue<MsiType>("msiType", MsiType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MsiType>("msiType", MsiType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

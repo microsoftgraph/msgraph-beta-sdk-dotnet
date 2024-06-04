@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>The value property</summary>
-        public DeploymentStateReasonValue? Value
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentStateReasonValue? Value
         {
-            get { return BackingStore?.Get<DeploymentStateReasonValue?>("value"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentStateReasonValue?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeploymentStateReason"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentStateReason"/> and sets the default values.
         /// </summary>
         public DeploymentStateReason()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeploymentStateReason"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentStateReason"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeploymentStateReason CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentStateReason CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeploymentStateReason();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentStateReason();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "value", n => { Value = n.GetEnumValue<DeploymentStateReasonValue>(); } },
+                { "value", n => { Value = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentStateReasonValue>(); } },
             };
         }
         /// <summary>
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DeploymentStateReasonValue>("value", Value);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentStateReasonValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

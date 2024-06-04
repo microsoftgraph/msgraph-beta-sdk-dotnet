@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A setting instance representing a complex value
     /// </summary>
-    public class DeviceManagementComplexSettingInstance : DeviceManagementSettingInstance, IParsable
+    public class DeviceManagementComplexSettingInstance : Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance, IParsable
     {
         /// <summary>The values that make up the complex setting</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? Value
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>? Value
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> Value
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance> Value
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementComplexSettingInstance"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementComplexSettingInstance"/> and sets the default values.
         /// </summary>
         public DeviceManagementComplexSettingInstance() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementComplexSettingInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementComplexSettingInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementComplexSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementComplexSettingInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementComplexSettingInstance();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementComplexSettingInstance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementSettingInstance>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>("value", Value);
         }
     }
 }

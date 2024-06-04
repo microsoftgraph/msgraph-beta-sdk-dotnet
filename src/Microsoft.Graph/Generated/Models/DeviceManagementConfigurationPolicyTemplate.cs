@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Management Configuration Policy Template
     /// </summary>
-    public class DeviceManagementConfigurationPolicyTemplate : Entity, IParsable
+    public class DeviceManagementConfigurationPolicyTemplate : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Allow unmanaged setting templates</summary>
         public bool? AllowUnmanagedSettings
@@ -82,15 +82,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Describes current lifecycle state of a template</summary>
-        public DeviceManagementTemplateLifecycleState? LifecycleState
+        public Microsoft.Graph.Beta.Models.DeviceManagementTemplateLifecycleState? LifecycleState
         {
-            get { return BackingStore?.Get<DeviceManagementTemplateLifecycleState?>("lifecycleState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementTemplateLifecycleState?>("lifecycleState"); }
             set { BackingStore?.Set("lifecycleState", value); }
         }
         /// <summary>Supported platform types.</summary>
-        public DeviceManagementConfigurationPlatforms? Platforms
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms? Platforms
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>Number of setting templates. Valid values 0 to 2147483647. This property is read-only.</summary>
@@ -102,29 +102,29 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Setting templates</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingTemplate>? SettingTemplates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>? SettingTemplates
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>?>("settingTemplates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>?>("settingTemplates"); }
             set { BackingStore?.Set("settingTemplates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingTemplate> SettingTemplates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate> SettingTemplates
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingTemplate>>("settingTemplates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>>("settingTemplates"); }
             set { BackingStore?.Set("settingTemplates", value); }
         }
 #endif
         /// <summary>Describes which technology this setting can be deployed with</summary>
-        public DeviceManagementConfigurationTechnologies? Technologies
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies? Technologies
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies?>("technologies"); }
             set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>Describes the TemplateFamily for the Template entity</summary>
-        public DeviceManagementConfigurationTemplateFamily? TemplateFamily
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTemplateFamily? TemplateFamily
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
             set { BackingStore?.Set("templateFamily", value); }
         }
         /// <summary>Template version. Valid values 1 to 2147483647. This property is read-only.</summary>
@@ -136,12 +136,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationPolicyTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationPolicyTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationPolicyTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -156,12 +156,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
-                { "lifecycleState", n => { LifecycleState = n.GetEnumValue<DeviceManagementTemplateLifecycleState>(); } },
-                { "platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                { "lifecycleState", n => { LifecycleState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementTemplateLifecycleState>(); } },
+                { "platforms", n => { Platforms = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>(); } },
                 { "settingTemplateCount", n => { SettingTemplateCount = n.GetIntValue(); } },
-                { "settingTemplates", n => { SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
-                { "templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
+                { "settingTemplates", n => { SettingTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "technologies", n => { Technologies = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies>(); } },
+                { "templateFamily", n => { TemplateFamily = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTemplateFamily>(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -178,11 +178,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("displayVersion", DisplayVersion);
-            writer.WriteEnumValue<DeviceManagementTemplateLifecycleState>("lifecycleState", LifecycleState);
-            writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platforms", Platforms);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>("settingTemplates", SettingTemplates);
-            writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
-            writer.WriteEnumValue<DeviceManagementConfigurationTemplateFamily>("templateFamily", TemplateFamily);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementTemplateLifecycleState>("lifecycleState", LifecycleState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPlatforms>("platforms", Platforms);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>("settingTemplates", SettingTemplates);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTechnologies>("technologies", Technologies);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationTemplateFamily>("templateFamily", TemplateFamily);
         }
     }
 }

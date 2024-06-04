@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams
     public class JoinedTeamsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Me.JoinedTeams.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Me.JoinedTeams.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the joinedTeams property of the microsoft.graph.user entity.</summary>
         /// <param name="position">The unique identifier of team</param>
-        /// <returns>A <see cref="TeamItemRequestBuilder"/></returns>
-        public TeamItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.JoinedTeams.Item.TeamItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Me.JoinedTeams.Item.TeamItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("team%2Did", position);
-                return new TeamItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Me.JoinedTeams.Item.TeamItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="JoinedTeamsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="JoinedTeamsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams
         /// Get the teams in Microsoft Teams that the user is a direct member of.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/user-list-joinedteams?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="TeamCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<TeamCollectionResponse?> GetAsync(Action<RequestConfiguration<JoinedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TeamCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder.JoinedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<TeamCollectionResponse> GetAsync(Action<RequestConfiguration<JoinedTeamsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.TeamCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder.JoinedTeamsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<TeamCollectionResponse>(requestInfo, TeamCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.TeamCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the teams in Microsoft Teams that the user is a direct member of.
@@ -82,11 +82,11 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<JoinedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder.JoinedTeamsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<JoinedTeamsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder.JoinedTeamsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -97,11 +97,11 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="JoinedTeamsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public JoinedTeamsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder WithUrl(string rawUrl)
         {
-            return new JoinedTeamsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the teams in Microsoft Teams that the user is a direct member of.
@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Me.JoinedTeams
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class JoinedTeamsRequestBuilderGetRequestConfiguration : RequestConfiguration<JoinedTeamsRequestBuilderGetQueryParameters>
+        public class JoinedTeamsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.JoinedTeams.JoinedTeamsRequestBuilder.JoinedTeamsRequestBuilderGetQueryParameters>
         {
         }
     }

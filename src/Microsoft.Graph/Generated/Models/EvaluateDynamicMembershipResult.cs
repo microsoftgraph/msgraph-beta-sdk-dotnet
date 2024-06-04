@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Provides a detailed analysis of the membership evaluation result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExpressionEvaluationDetails? MembershipRuleEvaluationDetails
+        public Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails? MembershipRuleEvaluationDetails
         {
-            get { return BackingStore?.Get<ExpressionEvaluationDetails?>("membershipRuleEvaluationDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails?>("membershipRuleEvaluationDetails"); }
             set { BackingStore?.Set("membershipRuleEvaluationDetails", value); }
         }
 #nullable restore
 #else
-        public ExpressionEvaluationDetails MembershipRuleEvaluationDetails
+        public Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails MembershipRuleEvaluationDetails
         {
-            get { return BackingStore?.Get<ExpressionEvaluationDetails>("membershipRuleEvaluationDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails>("membershipRuleEvaluationDetails"); }
             set { BackingStore?.Set("membershipRuleEvaluationDetails", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EvaluateDynamicMembershipResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EvaluateDynamicMembershipResult"/> and sets the default values.
         /// </summary>
         public EvaluateDynamicMembershipResult()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EvaluateDynamicMembershipResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EvaluateDynamicMembershipResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EvaluateDynamicMembershipResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.EvaluateDynamicMembershipResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EvaluateDynamicMembershipResult();
+            return new Microsoft.Graph.Beta.Models.EvaluateDynamicMembershipResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "membershipRule", n => { MembershipRule = n.GetStringValue(); } },
-                { "membershipRuleEvaluationDetails", n => { MembershipRuleEvaluationDetails = n.GetObjectValue<ExpressionEvaluationDetails>(ExpressionEvaluationDetails.CreateFromDiscriminatorValue); } },
+                { "membershipRuleEvaluationDetails", n => { MembershipRuleEvaluationDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails>(Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails.CreateFromDiscriminatorValue); } },
                 { "membershipRuleEvaluationResult", n => { MembershipRuleEvaluationResult = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("membershipRule", MembershipRule);
-            writer.WriteObjectValue<ExpressionEvaluationDetails>("membershipRuleEvaluationDetails", MembershipRuleEvaluationDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExpressionEvaluationDetails>("membershipRuleEvaluationDetails", MembershipRuleEvaluationDetails);
             writer.WriteBoolValue("membershipRuleEvaluationResult", MembershipRuleEvaluationResult);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

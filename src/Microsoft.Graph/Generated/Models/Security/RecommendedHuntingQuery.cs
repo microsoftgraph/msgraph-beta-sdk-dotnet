@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RecommendedHuntingQuery"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery"/> and sets the default values.
         /// </summary>
         public RecommendedHuntingQuery()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RecommendedHuntingQuery"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RecommendedHuntingQuery CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RecommendedHuntingQuery();
+            return new Microsoft.Graph.Beta.Models.Security.RecommendedHuntingQuery();
         }
         /// <summary>
         /// The deserialization information for the current model

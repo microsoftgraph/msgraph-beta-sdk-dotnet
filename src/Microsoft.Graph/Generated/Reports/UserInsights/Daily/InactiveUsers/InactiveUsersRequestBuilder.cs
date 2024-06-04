@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers
     public class InactiveUsersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the inactiveUsers property of the microsoft.graph.dailyUserInsightMetricsRoot entity.</summary>
         /// <param name="position">The unique identifier of dailyInactiveUsersMetric</param>
-        /// <returns>A <see cref="DailyInactiveUsersMetricItemRequestBuilder"/></returns>
-        public DailyInactiveUsersMetricItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.Item.DailyInactiveUsersMetricItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.Item.DailyInactiveUsersMetricItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("dailyInactiveUsersMetric%2Did", position);
-                return new DailyInactiveUsersMetricItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.Item.DailyInactiveUsersMetricItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="InactiveUsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="InactiveUsersRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers
         /// <summary>
         /// Get inactiveUsers from reports
         /// </summary>
-        /// <returns>A <see cref="DailyInactiveUsersMetricCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DailyInactiveUsersMetricCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DailyInactiveUsersMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<InactiveUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetricCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder.InactiveUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DailyInactiveUsersMetricCollectionResponse> GetAsync(Action<RequestConfiguration<InactiveUsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetricCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder.InactiveUsersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DailyInactiveUsersMetricCollectionResponse>(requestInfo, DailyInactiveUsersMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DailyInactiveUsersMetricCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DailyInactiveUsersMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get inactiveUsers from reports
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InactiveUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder.InactiveUsersRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<InactiveUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder.InactiveUsersRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="InactiveUsersRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public InactiveUsersRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder WithUrl(string rawUrl)
         {
-            return new InactiveUsersRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get inactiveUsers from reports
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class InactiveUsersRequestBuilderGetRequestConfiguration : RequestConfiguration<InactiveUsersRequestBuilderGetQueryParameters>
+        public class InactiveUsersRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsers.InactiveUsersRequestBuilder.InactiveUsersRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ListItem : BaseItem, IParsable
+    public class ListItem : Microsoft.Graph.Beta.Models.BaseItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The list of recent activities that took place on this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemActivityOLD>? Activities
+        public List<Microsoft.Graph.Beta.Models.ItemActivityOLD>? Activities
         {
-            get { return BackingStore?.Get<List<ItemActivityOLD>?>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemActivityOLD>?>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #nullable restore
 #else
-        public List<ItemActivityOLD> Activities
+        public List<Microsoft.Graph.Beta.Models.ItemActivityOLD> Activities
         {
-            get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemActivityOLD>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
 #endif
         /// <summary>Analytics about the view activities that took place on this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemAnalytics? Analytics
+        public Microsoft.Graph.Beta.Models.ItemAnalytics? Analytics
         {
-            get { return BackingStore?.Get<ItemAnalytics?>("analytics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemAnalytics?>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
 #nullable restore
 #else
-        public ItemAnalytics Analytics
+        public Microsoft.Graph.Beta.Models.ItemAnalytics Analytics
         {
-            get { return BackingStore?.Get<ItemAnalytics>("analytics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemAnalytics>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
 #endif
         /// <summary>The content type of this list item</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ContentTypeInfo? ContentType
+        public Microsoft.Graph.Beta.Models.ContentTypeInfo? ContentType
         {
-            get { return BackingStore?.Get<ContentTypeInfo?>("contentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentTypeInfo?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #nullable restore
 #else
-        public ContentTypeInfo ContentType
+        public Microsoft.Graph.Beta.Models.ContentTypeInfo ContentType
         {
-            get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentTypeInfo>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Version information for a document set version created by a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DocumentSetVersion>? DocumentSetVersions
+        public List<Microsoft.Graph.Beta.Models.DocumentSetVersion>? DocumentSetVersions
         {
-            get { return BackingStore?.Get<List<DocumentSetVersion>?>("documentSetVersions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DocumentSetVersion>?>("documentSetVersions"); }
             set { BackingStore?.Set("documentSetVersions", value); }
         }
 #nullable restore
 #else
-        public List<DocumentSetVersion> DocumentSetVersions
+        public List<Microsoft.Graph.Beta.Models.DocumentSetVersion> DocumentSetVersions
         {
-            get { return BackingStore?.Get<List<DocumentSetVersion>>("documentSetVersions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DocumentSetVersion>>("documentSetVersions"); }
             set { BackingStore?.Set("documentSetVersions", value); }
         }
 #endif
@@ -109,17 +109,33 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The values of the columns set on this list item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FieldValueSet? Fields
+        public Microsoft.Graph.Beta.Models.FieldValueSet? Fields
         {
-            get { return BackingStore?.Get<FieldValueSet?>("fields"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FieldValueSet?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public FieldValueSet Fields
+        public Microsoft.Graph.Beta.Models.FieldValueSet Fields
         {
-            get { return BackingStore?.Get<FieldValueSet>("fields"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FieldValueSet>("fields"); }
             set { BackingStore?.Set("fields", value); }
+        }
+#endif
+        /// <summary>The permissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.Permission>? Permissions
+        {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Permission>?>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.Permission> Permissions
+        {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Permission>>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
         }
 #endif
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
@@ -141,21 +157,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of previous versions of the list item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ListItemVersion>? Versions
+        public List<Microsoft.Graph.Beta.Models.ListItemVersion>? Versions
         {
-            get { return BackingStore?.Get<List<ListItemVersion>?>("versions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ListItemVersion>?>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #nullable restore
 #else
-        public List<ListItemVersion> Versions
+        public List<Microsoft.Graph.Beta.Models.ListItemVersion> Versions
         {
-            get { return BackingStore?.Get<List<ListItemVersion>>("versions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ListItemVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ListItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ListItem"/> and sets the default values.
         /// </summary>
         public ListItem() : base()
         {
@@ -164,12 +180,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ListItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ListItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ListItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ListItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ListItem();
+            return new Microsoft.Graph.Beta.Models.ListItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -179,15 +195,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activities", n => { Activities = n.GetCollectionOfObjectValues<ItemActivityOLD>(ItemActivityOLD.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "analytics", n => { Analytics = n.GetObjectValue<ItemAnalytics>(ItemAnalytics.CreateFromDiscriminatorValue); } },
-                { "contentType", n => { ContentType = n.GetObjectValue<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue); } },
+                { "activities", n => { Activities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemActivityOLD>(Microsoft.Graph.Beta.Models.ItemActivityOLD.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "analytics", n => { Analytics = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemAnalytics>(Microsoft.Graph.Beta.Models.ItemAnalytics.CreateFromDiscriminatorValue); } },
+                { "contentType", n => { ContentType = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContentTypeInfo>(Microsoft.Graph.Beta.Models.ContentTypeInfo.CreateFromDiscriminatorValue); } },
                 { "deleted", n => { Deleted = n.GetObjectValue<Microsoft.Graph.Beta.Models.Deleted>(Microsoft.Graph.Beta.Models.Deleted.CreateFromDiscriminatorValue); } },
-                { "documentSetVersions", n => { DocumentSetVersions = n.GetCollectionOfObjectValues<DocumentSetVersion>(DocumentSetVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "documentSetVersions", n => { DocumentSetVersions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DocumentSetVersion>(Microsoft.Graph.Beta.Models.DocumentSetVersion.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "driveItem", n => { DriveItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.DriveItem>(Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue); } },
-                { "fields", n => { Fields = n.GetObjectValue<FieldValueSet>(FieldValueSet.CreateFromDiscriminatorValue); } },
+                { "fields", n => { Fields = n.GetObjectValue<Microsoft.Graph.Beta.Models.FieldValueSet>(Microsoft.Graph.Beta.Models.FieldValueSet.CreateFromDiscriminatorValue); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Permission>(Microsoft.Graph.Beta.Models.Permission.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
-                { "versions", n => { Versions = n.GetCollectionOfObjectValues<ListItemVersion>(ListItemVersion.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "versions", n => { Versions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ListItemVersion>(Microsoft.Graph.Beta.Models.ListItemVersion.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -198,15 +215,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ItemActivityOLD>("activities", Activities);
-            writer.WriteObjectValue<ItemAnalytics>("analytics", Analytics);
-            writer.WriteObjectValue<ContentTypeInfo>("contentType", ContentType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemActivityOLD>("activities", Activities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemAnalytics>("analytics", Analytics);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContentTypeInfo>("contentType", ContentType);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Deleted>("deleted", Deleted);
-            writer.WriteCollectionOfObjectValues<DocumentSetVersion>("documentSetVersions", DocumentSetVersions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DocumentSetVersion>("documentSetVersions", DocumentSetVersions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DriveItem>("driveItem", DriveItem);
-            writer.WriteObjectValue<FieldValueSet>("fields", Fields);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FieldValueSet>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Permission>("permissions", Permissions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds", SharepointIds);
-            writer.WriteCollectionOfObjectValues<ListItemVersion>("versions", Versions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ListItemVersion>("versions", Versions);
         }
     }
 }

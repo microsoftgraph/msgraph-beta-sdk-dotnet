@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign an Microsoft Store for Business mobile app to a group.
     /// </summary>
-    public class MicrosoftStoreForBusinessAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
+    public class MicrosoftStoreForBusinessAppAssignmentSettings : Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings, IParsable
     {
         /// <summary>Whether or not to use device execution context for Microsoft Store for Business mobile app.</summary>
         public bool? UseDeviceContext
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("useDeviceContext", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftStoreForBusinessAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public MicrosoftStoreForBusinessAppAssignmentSettings() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftStoreForBusinessAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftStoreForBusinessAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftStoreForBusinessAppAssignmentSettings();
+            return new Microsoft.Graph.Beta.Models.MicrosoftStoreForBusinessAppAssignmentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model

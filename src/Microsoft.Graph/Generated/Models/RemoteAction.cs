@@ -118,8 +118,8 @@ namespace Microsoft.Graph.Beta.Models
         [EnumMember(Value = "initiateDeviceAttestation")]
         InitiateDeviceAttestation,
         /// <summary>Indicates remote device action to override assignments for a Device.</summary>
-        [EnumMember(Value = "changeAssignment")]
-        ChangeAssignment,
+        [EnumMember(Value = "changeAssignments")]
+        ChangeAssignments,
         /// <summary>Indicates remote device action to delete a device from Intune portal.</summary>
         [EnumMember(Value = "delete")]
         Delete,

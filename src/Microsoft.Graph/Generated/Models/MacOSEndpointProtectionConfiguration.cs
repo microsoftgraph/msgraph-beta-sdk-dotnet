@@ -9,24 +9,24 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// MacOS endpoint protection configuration profile.
     /// </summary>
-    public class MacOSEndpointProtectionConfiguration : DeviceConfiguration, IParsable
+    public class MacOSEndpointProtectionConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Possible values of a property</summary>
-        public Enablement? AdvancedThreatProtectionAutomaticSampleSubmission
+        public Microsoft.Graph.Beta.Models.Enablement? AdvancedThreatProtectionAutomaticSampleSubmission
         {
-            get { return BackingStore?.Get<Enablement?>("advancedThreatProtectionAutomaticSampleSubmission"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("advancedThreatProtectionAutomaticSampleSubmission"); }
             set { BackingStore?.Set("advancedThreatProtectionAutomaticSampleSubmission", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? AdvancedThreatProtectionCloudDelivered
+        public Microsoft.Graph.Beta.Models.Enablement? AdvancedThreatProtectionCloudDelivered
         {
-            get { return BackingStore?.Get<Enablement?>("advancedThreatProtectionCloudDelivered"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("advancedThreatProtectionCloudDelivered"); }
             set { BackingStore?.Set("advancedThreatProtectionCloudDelivered", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? AdvancedThreatProtectionDiagnosticDataCollection
+        public Microsoft.Graph.Beta.Models.Enablement? AdvancedThreatProtectionDiagnosticDataCollection
         {
-            get { return BackingStore?.Get<Enablement?>("advancedThreatProtectionDiagnosticDataCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("advancedThreatProtectionDiagnosticDataCollection"); }
             set { BackingStore?.Set("advancedThreatProtectionDiagnosticDataCollection", value); }
         }
         /// <summary>A list of file extensions to exclude from antivirus scanning for Microsoft Defender Advanced Threat Protection on macOS.</summary>
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values of a property</summary>
-        public Enablement? AdvancedThreatProtectionRealTime
+        public Microsoft.Graph.Beta.Models.Enablement? AdvancedThreatProtectionRealTime
         {
-            get { return BackingStore?.Get<Enablement?>("advancedThreatProtectionRealTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("advancedThreatProtectionRealTime"); }
             set { BackingStore?.Set("advancedThreatProtectionRealTime", value); }
         }
         /// <summary>Optional. If set to true, the user can defer the enabling of FileVault until they sign out.</summary>
@@ -184,24 +184,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("fileVaultPersonalRecoveryKeyRotationInMonths", value); }
         }
         /// <summary>Recovery key types for macOS FileVault</summary>
-        public MacOSFileVaultRecoveryKeyTypes? FileVaultSelectedRecoveryKeyTypes
+        public Microsoft.Graph.Beta.Models.MacOSFileVaultRecoveryKeyTypes? FileVaultSelectedRecoveryKeyTypes
         {
-            get { return BackingStore?.Get<MacOSFileVaultRecoveryKeyTypes?>("fileVaultSelectedRecoveryKeyTypes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSFileVaultRecoveryKeyTypes?>("fileVaultSelectedRecoveryKeyTypes"); }
             set { BackingStore?.Set("fileVaultSelectedRecoveryKeyTypes", value); }
         }
         /// <summary>List of applications with firewall settings. Firewall settings for applications not on this list are determined by the user. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSFirewallApplication>? FirewallApplications
+        public List<Microsoft.Graph.Beta.Models.MacOSFirewallApplication>? FirewallApplications
         {
-            get { return BackingStore?.Get<List<MacOSFirewallApplication>?>("firewallApplications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSFirewallApplication>?>("firewallApplications"); }
             set { BackingStore?.Set("firewallApplications", value); }
         }
 #nullable restore
 #else
-        public List<MacOSFirewallApplication> FirewallApplications
+        public List<Microsoft.Graph.Beta.Models.MacOSFirewallApplication> FirewallApplications
         {
-            get { return BackingStore?.Get<List<MacOSFirewallApplication>>("firewallApplications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSFirewallApplication>>("firewallApplications"); }
             set { BackingStore?.Set("firewallApplications", value); }
         }
 #endif
@@ -224,9 +224,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("firewallEnableStealthMode", value); }
         }
         /// <summary>App source options for macOS Gatekeeper.</summary>
-        public MacOSGatekeeperAppSources? GatekeeperAllowedAppSource
+        public Microsoft.Graph.Beta.Models.MacOSGatekeeperAppSources? GatekeeperAllowedAppSource
         {
-            get { return BackingStore?.Get<MacOSGatekeeperAppSources?>("gatekeeperAllowedAppSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSGatekeeperAppSources?>("gatekeeperAllowedAppSource"); }
             set { BackingStore?.Set("gatekeeperAllowedAppSource", value); }
         }
         /// <summary>If set to true, the user override for Gatekeeper will be disabled.</summary>
@@ -236,7 +236,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("gatekeeperBlockOverride", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MacOSEndpointProtectionConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSEndpointProtectionConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSEndpointProtectionConfiguration() : base()
         {
@@ -245,12 +245,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSEndpointProtectionConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSEndpointProtectionConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSEndpointProtectionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSEndpointProtectionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSEndpointProtectionConfiguration();
+            return new Microsoft.Graph.Beta.Models.MacOSEndpointProtectionConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -260,14 +260,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "advancedThreatProtectionAutomaticSampleSubmission", n => { AdvancedThreatProtectionAutomaticSampleSubmission = n.GetEnumValue<Enablement>(); } },
-                { "advancedThreatProtectionCloudDelivered", n => { AdvancedThreatProtectionCloudDelivered = n.GetEnumValue<Enablement>(); } },
-                { "advancedThreatProtectionDiagnosticDataCollection", n => { AdvancedThreatProtectionDiagnosticDataCollection = n.GetEnumValue<Enablement>(); } },
+                { "advancedThreatProtectionAutomaticSampleSubmission", n => { AdvancedThreatProtectionAutomaticSampleSubmission = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "advancedThreatProtectionCloudDelivered", n => { AdvancedThreatProtectionCloudDelivered = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "advancedThreatProtectionDiagnosticDataCollection", n => { AdvancedThreatProtectionDiagnosticDataCollection = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "advancedThreatProtectionExcludedExtensions", n => { AdvancedThreatProtectionExcludedExtensions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "advancedThreatProtectionExcludedFiles", n => { AdvancedThreatProtectionExcludedFiles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "advancedThreatProtectionExcludedFolders", n => { AdvancedThreatProtectionExcludedFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "advancedThreatProtectionExcludedProcesses", n => { AdvancedThreatProtectionExcludedProcesses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "advancedThreatProtectionRealTime", n => { AdvancedThreatProtectionRealTime = n.GetEnumValue<Enablement>(); } },
+                { "advancedThreatProtectionRealTime", n => { AdvancedThreatProtectionRealTime = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "fileVaultAllowDeferralUntilSignOut", n => { FileVaultAllowDeferralUntilSignOut = n.GetBoolValue(); } },
                 { "fileVaultDisablePromptAtSignOut", n => { FileVaultDisablePromptAtSignOut = n.GetBoolValue(); } },
                 { "fileVaultEnabled", n => { FileVaultEnabled = n.GetBoolValue(); } },
@@ -277,12 +277,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "fileVaultNumberOfTimesUserCanIgnore", n => { FileVaultNumberOfTimesUserCanIgnore = n.GetIntValue(); } },
                 { "fileVaultPersonalRecoveryKeyHelpMessage", n => { FileVaultPersonalRecoveryKeyHelpMessage = n.GetStringValue(); } },
                 { "fileVaultPersonalRecoveryKeyRotationInMonths", n => { FileVaultPersonalRecoveryKeyRotationInMonths = n.GetIntValue(); } },
-                { "fileVaultSelectedRecoveryKeyTypes", n => { FileVaultSelectedRecoveryKeyTypes = n.GetEnumValue<MacOSFileVaultRecoveryKeyTypes>(); } },
-                { "firewallApplications", n => { FirewallApplications = n.GetCollectionOfObjectValues<MacOSFirewallApplication>(MacOSFirewallApplication.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fileVaultSelectedRecoveryKeyTypes", n => { FileVaultSelectedRecoveryKeyTypes = n.GetEnumValue<Microsoft.Graph.Beta.Models.MacOSFileVaultRecoveryKeyTypes>(); } },
+                { "firewallApplications", n => { FirewallApplications = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSFirewallApplication>(Microsoft.Graph.Beta.Models.MacOSFirewallApplication.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "firewallBlockAllIncoming", n => { FirewallBlockAllIncoming = n.GetBoolValue(); } },
                 { "firewallEnableStealthMode", n => { FirewallEnableStealthMode = n.GetBoolValue(); } },
                 { "firewallEnabled", n => { FirewallEnabled = n.GetBoolValue(); } },
-                { "gatekeeperAllowedAppSource", n => { GatekeeperAllowedAppSource = n.GetEnumValue<MacOSGatekeeperAppSources>(); } },
+                { "gatekeeperAllowedAppSource", n => { GatekeeperAllowedAppSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.MacOSGatekeeperAppSources>(); } },
                 { "gatekeeperBlockOverride", n => { GatekeeperBlockOverride = n.GetBoolValue(); } },
             };
         }
@@ -294,14 +294,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Enablement>("advancedThreatProtectionAutomaticSampleSubmission", AdvancedThreatProtectionAutomaticSampleSubmission);
-            writer.WriteEnumValue<Enablement>("advancedThreatProtectionCloudDelivered", AdvancedThreatProtectionCloudDelivered);
-            writer.WriteEnumValue<Enablement>("advancedThreatProtectionDiagnosticDataCollection", AdvancedThreatProtectionDiagnosticDataCollection);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("advancedThreatProtectionAutomaticSampleSubmission", AdvancedThreatProtectionAutomaticSampleSubmission);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("advancedThreatProtectionCloudDelivered", AdvancedThreatProtectionCloudDelivered);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("advancedThreatProtectionDiagnosticDataCollection", AdvancedThreatProtectionDiagnosticDataCollection);
             writer.WriteCollectionOfPrimitiveValues<string>("advancedThreatProtectionExcludedExtensions", AdvancedThreatProtectionExcludedExtensions);
             writer.WriteCollectionOfPrimitiveValues<string>("advancedThreatProtectionExcludedFiles", AdvancedThreatProtectionExcludedFiles);
             writer.WriteCollectionOfPrimitiveValues<string>("advancedThreatProtectionExcludedFolders", AdvancedThreatProtectionExcludedFolders);
             writer.WriteCollectionOfPrimitiveValues<string>("advancedThreatProtectionExcludedProcesses", AdvancedThreatProtectionExcludedProcesses);
-            writer.WriteEnumValue<Enablement>("advancedThreatProtectionRealTime", AdvancedThreatProtectionRealTime);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("advancedThreatProtectionRealTime", AdvancedThreatProtectionRealTime);
             writer.WriteBoolValue("fileVaultAllowDeferralUntilSignOut", FileVaultAllowDeferralUntilSignOut);
             writer.WriteBoolValue("fileVaultDisablePromptAtSignOut", FileVaultDisablePromptAtSignOut);
             writer.WriteBoolValue("fileVaultEnabled", FileVaultEnabled);
@@ -311,12 +311,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("fileVaultNumberOfTimesUserCanIgnore", FileVaultNumberOfTimesUserCanIgnore);
             writer.WriteStringValue("fileVaultPersonalRecoveryKeyHelpMessage", FileVaultPersonalRecoveryKeyHelpMessage);
             writer.WriteIntValue("fileVaultPersonalRecoveryKeyRotationInMonths", FileVaultPersonalRecoveryKeyRotationInMonths);
-            writer.WriteEnumValue<MacOSFileVaultRecoveryKeyTypes>("fileVaultSelectedRecoveryKeyTypes", FileVaultSelectedRecoveryKeyTypes);
-            writer.WriteCollectionOfObjectValues<MacOSFirewallApplication>("firewallApplications", FirewallApplications);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MacOSFileVaultRecoveryKeyTypes>("fileVaultSelectedRecoveryKeyTypes", FileVaultSelectedRecoveryKeyTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSFirewallApplication>("firewallApplications", FirewallApplications);
             writer.WriteBoolValue("firewallBlockAllIncoming", FirewallBlockAllIncoming);
             writer.WriteBoolValue("firewallEnabled", FirewallEnabled);
             writer.WriteBoolValue("firewallEnableStealthMode", FirewallEnableStealthMode);
-            writer.WriteEnumValue<MacOSGatekeeperAppSources>("gatekeeperAllowedAppSource", GatekeeperAllowedAppSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MacOSGatekeeperAppSources>("gatekeeperAllowedAppSource", GatekeeperAllowedAppSource);
             writer.WriteBoolValue("gatekeeperBlockOverride", GatekeeperBlockOverride);
         }
     }

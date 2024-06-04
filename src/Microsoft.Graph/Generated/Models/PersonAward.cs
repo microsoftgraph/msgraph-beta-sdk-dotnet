@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PersonAward : ItemFacet, IParsable
+    public class PersonAward : Microsoft.Graph.Beta.Models.ItemFacet, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Descpription of the award or honor.</summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PersonAward"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PersonAward"/> and sets the default values.
         /// </summary>
         public PersonAward() : base()
         {
@@ -107,12 +107,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PersonAward"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PersonAward"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PersonAward CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PersonAward CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PersonAward();
+            return new Microsoft.Graph.Beta.Models.PersonAward();
         }
         /// <summary>
         /// The deserialization information for the current model

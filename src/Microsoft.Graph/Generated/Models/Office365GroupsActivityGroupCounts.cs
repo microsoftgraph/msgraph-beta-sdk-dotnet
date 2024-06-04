@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Office365GroupsActivityGroupCounts : Entity, IParsable
+    public class Office365GroupsActivityGroupCounts : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The number of active groups. A group is considered active if any of the following occurred: group mailbox received email, or  a user viewed, edited, shared, or synced files in SharePoint document library, or a user viewed SharePoint pages, or a user posted, read, or liked messages in Yammer groups.</summary>
@@ -54,12 +54,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Office365GroupsActivityGroupCounts"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Office365GroupsActivityGroupCounts"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Office365GroupsActivityGroupCounts CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Office365GroupsActivityGroupCounts CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Office365GroupsActivityGroupCounts();
+            return new Microsoft.Graph.Beta.Models.Office365GroupsActivityGroupCounts();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetShare
         }
 #endif
         /// <summary>The reportName property</summary>
-        public CloudPcReportName? ReportName
+        public Microsoft.Graph.Beta.Models.CloudPcReportName? ReportName
         {
-            get { return BackingStore?.Get<CloudPcReportName?>("reportName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcReportName?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
         /// <summary>The search property</summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetShare
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetSharedUseLicenseUsageReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport.GetSharedUseLicenseUsageReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetSharedUseLicenseUsageReportPostRequestBody()
         {
@@ -129,12 +129,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetShare
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSharedUseLicenseUsageReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport.GetSharedUseLicenseUsageReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetSharedUseLicenseUsageReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport.GetSharedUseLicenseUsageReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSharedUseLicenseUsageReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport.GetSharedUseLicenseUsageReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetShare
                 { "filter", n => { Filter = n.GetStringValue(); } },
                 { "groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "reportName", n => { ReportName = n.GetEnumValue<CloudPcReportName>(); } },
+                { "reportName", n => { ReportName = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcReportName>(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "skip", n => { Skip = n.GetIntValue(); } },
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetShare
             writer.WriteStringValue("filter", Filter);
             writer.WriteCollectionOfPrimitiveValues<string>("groupBy", GroupBy);
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
-            writer.WriteEnumValue<CloudPcReportName>("reportName", ReportName);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcReportName>("reportName", ReportName);
             writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
             writer.WriteIntValue("skip", Skip);

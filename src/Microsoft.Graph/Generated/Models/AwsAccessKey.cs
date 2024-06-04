@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsAccessKey : AwsIdentity, IParsable
+    public class AwsAccessKey : Microsoft.Graph.Beta.Models.AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the owner of the access key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsUser? Owner
+        public Microsoft.Graph.Beta.Models.AwsUser? Owner
         {
-            get { return BackingStore?.Get<AwsUser?>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsUser?>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #nullable restore
 #else
-        public AwsUser Owner
+        public Microsoft.Graph.Beta.Models.AwsUser Owner
         {
-            get { return BackingStore?.Get<AwsUser>("owner"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsUser>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsAccessKey"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsAccessKey"/> and sets the default values.
         /// </summary>
         public AwsAccessKey() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsAccessKey"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsAccessKey"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsAccessKey CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsAccessKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsAccessKey();
+            return new Microsoft.Graph.Beta.Models.AwsAccessKey();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "owner", n => { Owner = n.GetObjectValue<AwsUser>(AwsUser.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsUser>(Microsoft.Graph.Beta.Models.AwsUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AwsUser>("owner", Owner);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsUser>("owner", Owner);
         }
     }
 }

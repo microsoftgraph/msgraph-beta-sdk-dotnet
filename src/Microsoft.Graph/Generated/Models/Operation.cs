@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Operation : Entity, IParsable
+    public class Operation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The start time of the operation.</summary>
@@ -23,24 +23,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>Possible values are: notStarted, running, completed, failed. Read-only.</summary>
-        public OperationStatus? Status
+        public Microsoft.Graph.Beta.Models.OperationStatus? Status
         {
-            get { return BackingStore?.Get<OperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Operation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Operation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Operation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Operation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.onenoteOperation" => new OnenoteOperation(),
-                _ => new Operation(),
+                "#microsoft.graph.onenoteOperation" => new Microsoft.Graph.Beta.Models.OnenoteOperation(),
+                _ => new Microsoft.Graph.Beta.Models.Operation(),
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<OperationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationStatus>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
-            writer.WriteEnumValue<OperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OperationStatus>("status", Status);
         }
     }
 }

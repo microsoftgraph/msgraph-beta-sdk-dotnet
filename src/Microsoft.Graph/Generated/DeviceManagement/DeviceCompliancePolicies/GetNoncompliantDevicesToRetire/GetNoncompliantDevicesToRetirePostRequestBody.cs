@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetNonc
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetNoncompliantDevicesToRetirePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetNoncompliantDevicesToRetire.GetNoncompliantDevicesToRetirePostRequestBody"/> and sets the default values.
         /// </summary>
         public GetNoncompliantDevicesToRetirePostRequestBody()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetNonc
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetNoncompliantDevicesToRetirePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetNoncompliantDevicesToRetire.GetNoncompliantDevicesToRetirePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetNoncompliantDevicesToRetirePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetNoncompliantDevicesToRetire.GetNoncompliantDevicesToRetirePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetNoncompliantDevicesToRetirePostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetNoncompliantDevicesToRetire.GetNoncompliantDevicesToRetirePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

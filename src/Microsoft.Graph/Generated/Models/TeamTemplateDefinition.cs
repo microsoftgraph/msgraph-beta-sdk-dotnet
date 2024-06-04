@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TeamTemplateDefinition : Entity, IParsable
+    public class TeamTemplateDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Describes the audience the team template is available to. The possible values are: organization, user, public, unknownFutureValue.</summary>
-        public TeamTemplateAudience? Audience
+        public Microsoft.Graph.Beta.Models.TeamTemplateAudience? Audience
         {
-            get { return BackingStore?.Get<TeamTemplateAudience?>("audience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamTemplateAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
         /// <summary>The assigned categories for the team template.</summary>
@@ -99,16 +99,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity of the user who last modified the team template.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -169,28 +169,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Team? TeamDefinition
+        public Microsoft.Graph.Beta.Models.Team? TeamDefinition
         {
-            get { return BackingStore?.Get<Team?>("teamDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team?>("teamDefinition"); }
             set { BackingStore?.Set("teamDefinition", value); }
         }
 #nullable restore
 #else
-        public Team TeamDefinition
+        public Microsoft.Graph.Beta.Models.Team TeamDefinition
         {
-            get { return BackingStore?.Get<Team>("teamDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>("teamDefinition"); }
             set { BackingStore?.Set("teamDefinition", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamTemplateDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamTemplateDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamTemplateDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TeamTemplateDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamTemplateDefinition();
+            return new Microsoft.Graph.Beta.Models.TeamTemplateDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -200,18 +200,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "audience", n => { Audience = n.GetEnumValue<TeamTemplateAudience>(); } },
+                { "audience", n => { Audience = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamTemplateAudience>(); } },
                 { "categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "iconUrl", n => { IconUrl = n.GetStringValue(); } },
                 { "languageTag", n => { LanguageTag = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "parentTemplateId", n => { ParentTemplateId = n.GetStringValue(); } },
                 { "publisherName", n => { PublisherName = n.GetStringValue(); } },
                 { "shortDescription", n => { ShortDescription = n.GetStringValue(); } },
-                { "teamDefinition", n => { TeamDefinition = n.GetObjectValue<Team>(Team.CreateFromDiscriminatorValue); } },
+                { "teamDefinition", n => { TeamDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -222,18 +222,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TeamTemplateAudience>("audience", Audience);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamTemplateAudience>("audience", Audience);
             writer.WriteCollectionOfPrimitiveValues<string>("categories", Categories);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("iconUrl", IconUrl);
             writer.WriteStringValue("languageTag", LanguageTag);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("parentTemplateId", ParentTemplateId);
             writer.WriteStringValue("publisherName", PublisherName);
             writer.WriteStringValue("shortDescription", ShortDescription);
-            writer.WriteObjectValue<Team>("teamDefinition", TeamDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Team>("teamDefinition", TeamDefinition);
         }
     }
 }

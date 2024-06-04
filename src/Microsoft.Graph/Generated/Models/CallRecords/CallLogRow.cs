@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>The administrativeUnitInfos property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AdministrativeUnitInfo>? AdministrativeUnitInfos
+        public List<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>? AdministrativeUnitInfos
         {
-            get { return BackingStore?.Get<List<AdministrativeUnitInfo>?>("administrativeUnitInfos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>?>("administrativeUnitInfos"); }
             set { BackingStore?.Set("administrativeUnitInfos", value); }
         }
 #nullable restore
 #else
-        public List<AdministrativeUnitInfo> AdministrativeUnitInfos
+        public List<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo> AdministrativeUnitInfos
         {
-            get { return BackingStore?.Get<List<AdministrativeUnitInfo>>("administrativeUnitInfos"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>>("administrativeUnitInfos"); }
             set { BackingStore?.Set("administrativeUnitInfos", value); }
         }
 #endif
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CallLogRow"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CallRecords.CallLogRow"/> and sets the default values.
         /// </summary>
         public CallLogRow()
         {
@@ -142,18 +142,18 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CallLogRow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.CallLogRow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CallLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CallRecords.CallLogRow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.callRecords.directRoutingLogRow" => new DirectRoutingLogRow(),
-                "#microsoft.graph.callRecords.pstnCallLogRow" => new PstnCallLogRow(),
-                "#microsoft.graph.callRecords.smsLogRow" => new SmsLogRow(),
-                _ => new CallLogRow(),
+                "#microsoft.graph.callRecords.directRoutingLogRow" => new Microsoft.Graph.Beta.Models.CallRecords.DirectRoutingLogRow(),
+                "#microsoft.graph.callRecords.pstnCallLogRow" => new Microsoft.Graph.Beta.Models.CallRecords.PstnCallLogRow(),
+                "#microsoft.graph.callRecords.smsLogRow" => new Microsoft.Graph.Beta.Models.CallRecords.SmsLogRow(),
+                _ => new Microsoft.Graph.Beta.Models.CallRecords.CallLogRow(),
             };
         }
         /// <summary>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "administrativeUnitInfos", n => { AdministrativeUnitInfos = n.GetCollectionOfObjectValues<AdministrativeUnitInfo>(AdministrativeUnitInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "administrativeUnitInfos", n => { AdministrativeUnitInfos = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>(Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "otherPartyCountryCode", n => { OtherPartyCountryCode = n.GetStringValue(); } },
@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AdministrativeUnitInfo>("administrativeUnitInfos", AdministrativeUnitInfos);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo>("administrativeUnitInfos", AdministrativeUnitInfos);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("otherPartyCountryCode", OtherPartyCountryCode);

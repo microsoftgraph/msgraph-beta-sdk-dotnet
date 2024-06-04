@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for windows autopilot deployment profile PolicySetItem.
     /// </summary>
-    public class WindowsAutopilotDeploymentProfilePolicySetItem : PolicySetItem, IParsable
+    public class WindowsAutopilotDeploymentProfilePolicySetItem : Microsoft.Graph.Beta.Models.PolicySetItem, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="WindowsAutopilotDeploymentProfilePolicySetItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfilePolicySetItem"/> and sets the default values.
         /// </summary>
         public WindowsAutopilotDeploymentProfilePolicySetItem() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsAutopilotDeploymentProfilePolicySetItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfilePolicySetItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsAutopilotDeploymentProfilePolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfilePolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsAutopilotDeploymentProfilePolicySetItem();
+            return new Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfilePolicySetItem();
         }
         /// <summary>
         /// The deserialization information for the current model

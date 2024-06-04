@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RankingHint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint"/> and sets the default values.
         /// </summary>
         public RankingHint()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RankingHint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RankingHint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RankingHint();
+            return new Microsoft.Graph.Beta.Models.ExternalConnectors.RankingHint();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "importanceScore", n => { ImportanceScore = n.GetEnumValue<ImportanceScore>(); } },
+                { "importanceScore", n => { ImportanceScore = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ImportanceScore>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ImportanceScore>("importanceScore", ImportanceScore);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ImportanceScore>("importanceScore", ImportanceScore);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

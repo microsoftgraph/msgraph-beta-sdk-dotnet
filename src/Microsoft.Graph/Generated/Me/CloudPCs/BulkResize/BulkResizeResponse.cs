@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.BulkResize
 {
     [Obsolete("This class is obsolete. Use BulkResizePostResponse instead.")]
     #pragma warning disable CS1591
-    public class BulkResizeResponse : BulkResizePostResponse, IParsable
+    public class BulkResizeResponse : Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizePostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BulkResizeResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizeResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new BulkResizeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizeResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BulkResizeResponse();
+            return new Microsoft.Graph.Beta.Me.CloudPCs.BulkResize.BulkResizeResponse();
         }
     }
 }

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AdministrativeUnitInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo"/> and sets the default values.
         /// </summary>
         public AdministrativeUnitInfo()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models.CallRecords
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AdministrativeUnitInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AdministrativeUnitInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AdministrativeUnitInfo();
+            return new Microsoft.Graph.Beta.Models.CallRecords.AdministrativeUnitInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

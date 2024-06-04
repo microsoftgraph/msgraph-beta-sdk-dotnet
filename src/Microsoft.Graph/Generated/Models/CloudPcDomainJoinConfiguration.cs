@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave the regionName property empty. If you choose the azureADJoin type, provide a value for either the onPremisesConnectionId or the regionName property. Possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue.</summary>
-        public CloudPcDomainJoinType? DomainJoinType
+        public Microsoft.Graph.Beta.Models.CloudPcDomainJoinType? DomainJoinType
         {
-            get { return BackingStore?.Get<CloudPcDomainJoinType?>("domainJoinType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcDomainJoinType?>("domainJoinType"); }
             set { BackingStore?.Set("domainJoinType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -58,9 +58,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The logical geographic group this region belongs to. Multiple regions can belong to one region group. A customer can select a regionGroup when they provision a Cloud PC, and the Cloud PC is put in one of the regions in the group based on resource status. For example, the Europe region group contains the Northern Europe and Western Europe regions. Possible values are: default, australia, canada, usCentral, usEast, usWest, france, germany, europeUnion, unitedKingdom, japan, asia, india, southAmerica, euap, usGovernment, usGovernmentDOD, unknownFutureValue, norway, switzerland, and southKorea. Read-only.</summary>
-        public CloudPcRegionGroup? RegionGroup
+        public Microsoft.Graph.Beta.Models.CloudPcRegionGroup? RegionGroup
         {
-            get { return BackingStore?.Get<CloudPcRegionGroup?>("regionGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcRegionGroup?>("regionGroup"); }
             set { BackingStore?.Set("regionGroup", value); }
         }
         /// <summary>The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network is created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Microsoft Entra joined as the domain join type. If you enter a regionName, leave the onPremisesConnectionId property empty.</summary>
@@ -80,13 +80,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Specifies the method by which the provisioned Cloud PC joins Microsoft Entra ID. If you choose the hybridAzureADJoin type, only provide a value for the onPremisesConnectionId property and leave regionName as empty. If you choose the azureADJoin type, provide a value for either onPremisesConnectionId or regionName. The possible values are: azureADJoin, hybridAzureADJoin, unknownFutureValue. The type property is deprecated and will stop returning data on January 31, 2024. Going forward, use the domainJoinType property.</summary>
-        public CloudPcDomainJoinType? Type
+        public Microsoft.Graph.Beta.Models.CloudPcDomainJoinType? Type
         {
-            get { return BackingStore?.Get<CloudPcDomainJoinType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcDomainJoinType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcDomainJoinConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration"/> and sets the default values.
         /// </summary>
         public CloudPcDomainJoinConfiguration()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcDomainJoinConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcDomainJoinConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcDomainJoinConfiguration();
+            return new Microsoft.Graph.Beta.Models.CloudPcDomainJoinConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "domainJoinType", n => { DomainJoinType = n.GetEnumValue<CloudPcDomainJoinType>(); } },
+                { "domainJoinType", n => { DomainJoinType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcDomainJoinType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
-                { "regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
+                { "regionGroup", n => { RegionGroup = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcRegionGroup>(); } },
                 { "regionName", n => { RegionName = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<CloudPcDomainJoinType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcDomainJoinType>(); } },
             };
         }
         /// <summary>
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<CloudPcDomainJoinType>("domainJoinType", DomainJoinType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcDomainJoinType>("domainJoinType", DomainJoinType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
-            writer.WriteEnumValue<CloudPcRegionGroup>("regionGroup", RegionGroup);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcRegionGroup>("regionGroup", RegionGroup);
             writer.WriteStringValue("regionName", RegionName);
-            writer.WriteEnumValue<CloudPcDomainJoinType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcDomainJoinType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

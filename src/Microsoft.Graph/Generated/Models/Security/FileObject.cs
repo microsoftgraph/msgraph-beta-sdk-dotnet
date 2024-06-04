@@ -99,23 +99,23 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The otherProperties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public StringValueDictionary? OtherProperties
+        public Microsoft.Graph.Beta.Models.Security.StringValueDictionary? OtherProperties
         {
-            get { return BackingStore?.Get<StringValueDictionary?>("otherProperties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.StringValueDictionary?>("otherProperties"); }
             set { BackingStore?.Set("otherProperties", value); }
         }
 #nullable restore
 #else
-        public StringValueDictionary OtherProperties
+        public Microsoft.Graph.Beta.Models.Security.StringValueDictionary OtherProperties
         {
-            get { return BackingStore?.Get<StringValueDictionary>("otherProperties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.StringValueDictionary>("otherProperties"); }
             set { BackingStore?.Set("otherProperties", value); }
         }
 #endif
         /// <summary>The processingStatus property</summary>
-        public FileProcessingStatus? ProcessingStatus
+        public Microsoft.Graph.Beta.Models.Security.FileProcessingStatus? ProcessingStatus
         {
-            get { return BackingStore?.Get<FileProcessingStatus?>("processingStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FileProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
         /// <summary>The senderOrAuthors property</summary>
@@ -165,16 +165,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileObject"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.FileObject"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileObject CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.FileObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.ediscoveryFile" => new EdiscoveryFile(),
-                _ => new FileObject(),
+                "#microsoft.graph.security.ediscoveryFile" => new Microsoft.Graph.Beta.Models.Security.EdiscoveryFile(),
+                _ => new Microsoft.Graph.Beta.Models.Security.FileObject(),
             };
         }
         /// <summary>
@@ -191,11 +191,11 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "extractedTextContent", n => { ExtractedTextContent = n.GetByteArrayValue(); } },
                 { "mediaType", n => { MediaType = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "otherProperties", n => { OtherProperties = n.GetObjectValue<StringValueDictionary>(StringValueDictionary.CreateFromDiscriminatorValue); } },
-                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<FileProcessingStatus>(); } },
+                { "otherProperties", n => { OtherProperties = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.StringValueDictionary>(Microsoft.Graph.Beta.Models.Security.StringValueDictionary.CreateFromDiscriminatorValue); } },
+                { "processingStatus", n => { ProcessingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.FileProcessingStatus>(); } },
                 { "senderOrAuthors", n => { SenderOrAuthors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "size", n => { Size = n.GetLongValue(); } },
-                { "sourceType", n => { SourceType = n.GetEnumValue<SourceType>(); } },
+                { "sourceType", n => { SourceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SourceType>(); } },
                 { "subjectTitle", n => { SubjectTitle = n.GetStringValue(); } },
             };
         }
@@ -213,11 +213,11 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteByteArrayValue("extractedTextContent", ExtractedTextContent);
             writer.WriteStringValue("mediaType", MediaType);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<StringValueDictionary>("otherProperties", OtherProperties);
-            writer.WriteEnumValue<FileProcessingStatus>("processingStatus", ProcessingStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.StringValueDictionary>("otherProperties", OtherProperties);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.FileProcessingStatus>("processingStatus", ProcessingStatus);
             writer.WriteCollectionOfPrimitiveValues<string>("senderOrAuthors", SenderOrAuthors);
             writer.WriteLongValue("size", Size);
-            writer.WriteEnumValue<SourceType>("sourceType", SourceType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SourceType>("sourceType", SourceType);
             writer.WriteStringValue("subjectTitle", SubjectTitle);
         }
     }

@@ -9,49 +9,49 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Setting instance within policy
     /// </summary>
-    public class DeviceManagementConfigurationSetting : Entity, IParsable
+    public class DeviceManagementConfigurationSetting : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>List of related Setting Definitions. This property is read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationSettingDefinition>? SettingDefinitions
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? SettingDefinitions
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>?>("settingDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>?>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> SettingDefinitions
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("settingDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
 #endif
         /// <summary>Setting instance within policy</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSettingInstance? SettingInstance
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance? SettingInstance
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance?>("settingInstance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance?>("settingInstance"); }
             set { BackingStore?.Set("settingInstance", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSettingInstance SettingInstance
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance SettingInstance
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSettingInstance>("settingInstance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>("settingInstance"); }
             set { BackingStore?.Set("settingInstance", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationSetting();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDefinition>(DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "settingInstance", n => { SettingInstance = n.GetObjectValue<DeviceManagementConfigurationSettingInstance>(DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue); } },
+                { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settingInstance", n => { SettingInstance = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingDefinition>("settingDefinitions", SettingDefinitions);
-            writer.WriteObjectValue<DeviceManagementConfigurationSettingInstance>("settingInstance", SettingInstance);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>("settingDefinitions", SettingDefinitions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance>("settingInstance", SettingInstance);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MeetingRegistrantBase : Entity, IParsable
+    public class MeetingRegistrantBase : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A unique web URL for the registrant to join the meeting. Read-only.</summary>
@@ -29,17 +29,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingRegistrantBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingRegistrantBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MeetingRegistrantBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MeetingRegistrantBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.externalMeetingRegistrant" => new ExternalMeetingRegistrant(),
-                "#microsoft.graph.meetingRegistrant" => new MeetingRegistrant(),
-                _ => new MeetingRegistrantBase(),
+                "#microsoft.graph.externalMeetingRegistrant" => new Microsoft.Graph.Beta.Models.ExternalMeetingRegistrant(),
+                "#microsoft.graph.meetingRegistrant" => new Microsoft.Graph.Beta.Models.MeetingRegistrant(),
+                _ => new Microsoft.Graph.Beta.Models.MeetingRegistrantBase(),
             };
         }
         /// <summary>

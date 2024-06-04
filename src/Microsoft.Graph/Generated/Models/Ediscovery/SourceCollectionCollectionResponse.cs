@@ -13,28 +13,28 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SourceCollection>? Value
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>? Value
         {
-            get { return BackingStore?.Get<List<SourceCollection>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<SourceCollection> Value
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection> Value
         {
-            get { return BackingStore?.Get<List<SourceCollection>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SourceCollectionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.SourceCollectionCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SourceCollectionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.SourceCollectionCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SourceCollectionCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.Ediscovery.SourceCollectionCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<SourceCollection>(SourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>(Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<SourceCollection>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.SourceCollection>("value", Value);
         }
     }
 }

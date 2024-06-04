@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdatableAssetError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError"/> and sets the default values.
         /// </summary>
         public UpdatableAssetError()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdatableAssetError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdatableAssetError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUpdates.azureADDeviceRegistrationError" => new AzureADDeviceRegistrationError(),
-                _ => new UpdatableAssetError(),
+                "#microsoft.graph.windowsUpdates.azureADDeviceRegistrationError" => new Microsoft.Graph.Beta.Models.WindowsUpdates.AzureADDeviceRegistrationError(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetError(),
             };
         }
         /// <summary>

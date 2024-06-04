@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Android Device Owner Global Proxy Auto Config.
     /// </summary>
-    public class AndroidDeviceOwnerGlobalProxyAutoConfig : AndroidDeviceOwnerGlobalProxy, IParsable
+    public class AndroidDeviceOwnerGlobalProxyAutoConfig : Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxy, IParsable
     {
         /// <summary>The proxy auto-config URL</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerGlobalProxyAutoConfig"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxyAutoConfig"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerGlobalProxyAutoConfig() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerGlobalProxyAutoConfig"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxyAutoConfig"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerGlobalProxyAutoConfig CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxyAutoConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerGlobalProxyAutoConfig();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerGlobalProxyAutoConfig();
         }
         /// <summary>
         /// The deserialization information for the current model

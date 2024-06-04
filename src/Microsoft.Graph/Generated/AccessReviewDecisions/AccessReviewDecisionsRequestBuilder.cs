@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.AccessReviewDecisions
     public class AccessReviewDecisionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.AccessReviewDecisions.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.AccessReviewDecisions.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
         /// <param name="position">The unique identifier of accessReviewDecision</param>
-        /// <returns>A <see cref="AccessReviewDecisionItemRequestBuilder"/></returns>
-        public AccessReviewDecisionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.AccessReviewDecisions.Item.AccessReviewDecisionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.AccessReviewDecisions.Item.AccessReviewDecisionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("accessReviewDecision%2Did", position);
-                return new AccessReviewDecisionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.AccessReviewDecisions.Item.AccessReviewDecisionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewDecisionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.AccessReviewDecisions
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AccessReviewDecisionsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.AccessReviewDecisions
         /// <summary>
         /// Get entities from accessReviewDecisions
         /// </summary>
-        /// <returns>A <see cref="AccessReviewDecisionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewDecisionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessReviewDecisionCollectionResponse?> GetAsync(Action<RequestConfiguration<AccessReviewDecisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AccessReviewDecisionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder.AccessReviewDecisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AccessReviewDecisionCollectionResponse> GetAsync(Action<RequestConfiguration<AccessReviewDecisionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AccessReviewDecisionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder.AccessReviewDecisionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AccessReviewDecisionCollectionResponse>(requestInfo, AccessReviewDecisionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewDecisionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewDecisionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add new entity to accessReviewDecisions
         /// </summary>
-        /// <returns>A <see cref="AccessReviewDecision"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessReviewDecision"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AccessReviewDecision?> PostAsync(AccessReviewDecision body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AccessReviewDecision?> PostAsync(Microsoft.Graph.Beta.Models.AccessReviewDecision body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AccessReviewDecision> PostAsync(AccessReviewDecision body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AccessReviewDecision> PostAsync(Microsoft.Graph.Beta.Models.AccessReviewDecision body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AccessReviewDecision>(requestInfo, AccessReviewDecision.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AccessReviewDecision>(requestInfo, Microsoft.Graph.Beta.Models.AccessReviewDecision.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get entities from accessReviewDecisions
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.AccessReviewDecisions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AccessReviewDecisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder.AccessReviewDecisionsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AccessReviewDecisionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder.AccessReviewDecisionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.AccessReviewDecisions
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(AccessReviewDecision body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.AccessReviewDecision body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(AccessReviewDecision body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.AccessReviewDecision body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.AccessReviewDecisions
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AccessReviewDecisionsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AccessReviewDecisionsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder WithUrl(string rawUrl)
         {
-            return new AccessReviewDecisionsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get entities from accessReviewDecisions
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.AccessReviewDecisions
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AccessReviewDecisionsRequestBuilderGetRequestConfiguration : RequestConfiguration<AccessReviewDecisionsRequestBuilderGetQueryParameters>
+        public class AccessReviewDecisionsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.AccessReviewDecisions.AccessReviewDecisionsRequestBuilder.AccessReviewDecisionsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

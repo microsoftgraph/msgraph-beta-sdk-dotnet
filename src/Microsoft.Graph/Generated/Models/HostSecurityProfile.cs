@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class HostSecurityProfile : Entity, IParsable
+    public class HostSecurityProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The azureSubscriptionId property</summary>
@@ -91,16 +91,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The logonUsers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LogonUser>? LogonUsers
+        public List<Microsoft.Graph.Beta.Models.LogonUser>? LogonUsers
         {
-            get { return BackingStore?.Get<List<LogonUser>?>("logonUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LogonUser>?>("logonUsers"); }
             set { BackingStore?.Set("logonUsers", value); }
         }
 #nullable restore
 #else
-        public List<LogonUser> LogonUsers
+        public List<Microsoft.Graph.Beta.Models.LogonUser> LogonUsers
         {
-            get { return BackingStore?.Get<List<LogonUser>>("logonUsers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LogonUser>>("logonUsers"); }
             set { BackingStore?.Set("logonUsers", value); }
         }
 #endif
@@ -123,16 +123,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The networkInterfaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NetworkInterface>? NetworkInterfaces
+        public List<Microsoft.Graph.Beta.Models.NetworkInterface>? NetworkInterfaces
         {
-            get { return BackingStore?.Get<List<NetworkInterface>?>("networkInterfaces"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NetworkInterface>?>("networkInterfaces"); }
             set { BackingStore?.Set("networkInterfaces", value); }
         }
 #nullable restore
 #else
-        public List<NetworkInterface> NetworkInterfaces
+        public List<Microsoft.Graph.Beta.Models.NetworkInterface> NetworkInterfaces
         {
-            get { return BackingStore?.Get<List<NetworkInterface>>("networkInterfaces"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NetworkInterface>>("networkInterfaces"); }
             set { BackingStore?.Set("networkInterfaces", value); }
         }
 #endif
@@ -235,28 +235,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The vendorInformation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SecurityVendorInformation? VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation? VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation?>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #nullable restore
 #else
-        public SecurityVendorInformation VendorInformation
+        public Microsoft.Graph.Beta.Models.SecurityVendorInformation VendorInformation
         {
-            get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HostSecurityProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HostSecurityProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HostSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.HostSecurityProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HostSecurityProfile();
+            return new Microsoft.Graph.Beta.Models.HostSecurityProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -274,16 +274,16 @@ namespace Microsoft.Graph.Beta.Models
                 { "isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
                 { "isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
                 { "lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                { "logonUsers", n => { LogonUsers = n.GetCollectionOfObjectValues<LogonUser>(LogonUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "logonUsers", n => { LogonUsers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LogonUser>(Microsoft.Graph.Beta.Models.LogonUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "netBiosName", n => { NetBiosName = n.GetStringValue(); } },
-                { "networkInterfaces", n => { NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>(NetworkInterface.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "networkInterfaces", n => { NetworkInterfaces = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NetworkInterface>(Microsoft.Graph.Beta.Models.NetworkInterface.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "os", n => { Os = n.GetStringValue(); } },
                 { "osVersion", n => { OsVersion = n.GetStringValue(); } },
                 { "parentHost", n => { ParentHost = n.GetStringValue(); } },
                 { "relatedHostIds", n => { RelatedHostIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "riskScore", n => { RiskScore = n.GetStringValue(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
+                { "vendorInformation", n => { VendorInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>(Microsoft.Graph.Beta.Models.SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -302,16 +302,16 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isAzureAdRegistered", IsAzureAdRegistered);
             writer.WriteBoolValue("isHybridAzureDomainJoined", IsHybridAzureDomainJoined);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
-            writer.WriteCollectionOfObjectValues<LogonUser>("logonUsers", LogonUsers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LogonUser>("logonUsers", LogonUsers);
             writer.WriteStringValue("netBiosName", NetBiosName);
-            writer.WriteCollectionOfObjectValues<NetworkInterface>("networkInterfaces", NetworkInterfaces);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NetworkInterface>("networkInterfaces", NetworkInterfaces);
             writer.WriteStringValue("os", Os);
             writer.WriteStringValue("osVersion", OsVersion);
             writer.WriteStringValue("parentHost", ParentHost);
             writer.WriteCollectionOfPrimitiveValues<string>("relatedHostIds", RelatedHostIds);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }
 }

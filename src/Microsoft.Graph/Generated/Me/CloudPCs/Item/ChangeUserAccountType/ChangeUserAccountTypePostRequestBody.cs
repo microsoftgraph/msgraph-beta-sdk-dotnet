@@ -21,13 +21,13 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The userAccountType property</summary>
-        public CloudPcUserAccountType? UserAccountType
+        public Microsoft.Graph.Beta.Models.CloudPcUserAccountType? UserAccountType
         {
-            get { return BackingStore?.Get<CloudPcUserAccountType?>("userAccountType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcUserAccountType?>("userAccountType"); }
             set { BackingStore?.Set("userAccountType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ChangeUserAccountTypePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType.ChangeUserAccountTypePostRequestBody"/> and sets the default values.
         /// </summary>
         public ChangeUserAccountTypePostRequestBody()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChangeUserAccountTypePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType.ChangeUserAccountTypePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ChangeUserAccountTypePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType.ChangeUserAccountTypePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChangeUserAccountTypePostRequestBody();
+            return new Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType.ChangeUserAccountTypePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "userAccountType", n => { UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
+                { "userAccountType", n => { UserAccountType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcUserAccountType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.ChangeUserAccountType
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<CloudPcUserAccountType>("userAccountType", UserAccountType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcUserAccountType>("userAccountType", UserAccountType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

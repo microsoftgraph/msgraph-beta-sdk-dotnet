@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot
     public class CreateSnapshotRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="CreateSnapshotRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot.CreateSnapshotRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CreateSnapshotRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot.CreateSnapshotRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -32,11 +32,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot
         {
         }
         /// <summary>
-        /// Invoke action createSnapshot
+        /// Create a snapshot for a specific Cloud PC device.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/cloudpc-createsnapshot?view=graph-rest-beta" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -49,12 +50,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Invoke action createSnapshot
+        /// Create a snapshot for a specific Cloud PC device.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -75,11 +76,11 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CreateSnapshotRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot.CreateSnapshotRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CreateSnapshotRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot.CreateSnapshotRequestBuilder WithUrl(string rawUrl)
         {
-            return new CreateSnapshotRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.CloudPCs.Item.CreateSnapshot.CreateSnapshotRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

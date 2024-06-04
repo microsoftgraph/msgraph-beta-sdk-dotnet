@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The innerError property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ClassificationInnerError? InnerError
+        public Microsoft.Graph.Beta.Models.ClassificationInnerError? InnerError
         {
-            get { return BackingStore?.Get<ClassificationInnerError?>("innerError"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationInnerError?>("innerError"); }
             set { BackingStore?.Set("innerError", value); }
         }
 #nullable restore
 #else
-        public ClassificationInnerError InnerError
+        public Microsoft.Graph.Beta.Models.ClassificationInnerError InnerError
         {
-            get { return BackingStore?.Get<ClassificationInnerError>("innerError"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ClassificationInnerError>("innerError"); }
             set { BackingStore?.Set("innerError", value); }
         }
 #endif
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClassifcationErrorBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ClassifcationErrorBase"/> and sets the default values.
         /// </summary>
         public ClassifcationErrorBase()
         {
@@ -110,16 +110,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClassifcationErrorBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ClassifcationErrorBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClassifcationErrorBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ClassifcationErrorBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.classificationError" => new ClassificationError(),
-                _ => new ClassifcationErrorBase(),
+                "#microsoft.graph.classificationError" => new Microsoft.Graph.Beta.Models.ClassificationError(),
+                _ => new Microsoft.Graph.Beta.Models.ClassifcationErrorBase(),
             };
         }
         /// <summary>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "code", n => { Code = n.GetStringValue(); } },
-                { "innerError", n => { InnerError = n.GetObjectValue<ClassificationInnerError>(ClassificationInnerError.CreateFromDiscriminatorValue); } },
+                { "innerError", n => { InnerError = n.GetObjectValue<Microsoft.Graph.Beta.Models.ClassificationInnerError>(Microsoft.Graph.Beta.Models.ClassificationInnerError.CreateFromDiscriminatorValue); } },
                 { "message", n => { Message = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "target", n => { Target = n.GetStringValue(); } },
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("code", Code);
-            writer.WriteObjectValue<ClassificationInnerError>("innerError", InnerError);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ClassificationInnerError>("innerError", InnerError);
             writer.WriteStringValue("message", Message);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("target", Target);

@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// These are elevation approval requests for EPM support arbitrated scenario initiated by IW user that admins can take action on.
     /// </summary>
-    public class PrivilegeManagementElevationRequest : Entity, IParsable
+    public class PrivilegeManagementElevationRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Details of the application which is being requested to elevate, allowing the admin to understand the identity of the application. It includes file info such as FilePath, FileHash, FilePublisher, and etc. Returned by default. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ElevationRequestApplicationDetail? ApplicationDetail
+        public Microsoft.Graph.Beta.Models.ElevationRequestApplicationDetail? ApplicationDetail
         {
-            get { return BackingStore?.Get<ElevationRequestApplicationDetail?>("applicationDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ElevationRequestApplicationDetail?>("applicationDetail"); }
             set { BackingStore?.Set("applicationDetail", value); }
         }
 #nullable restore
 #else
-        public ElevationRequestApplicationDetail ApplicationDetail
+        public Microsoft.Graph.Beta.Models.ElevationRequestApplicationDetail ApplicationDetail
         {
-            get { return BackingStore?.Get<ElevationRequestApplicationDetail>("applicationDetail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ElevationRequestApplicationDetail>("applicationDetail"); }
             set { BackingStore?.Set("applicationDetail", value); }
         }
 #endif
@@ -180,20 +180,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates state of elevation request</summary>
-        public ElevationRequestState? Status
+        public Microsoft.Graph.Beta.Models.ElevationRequestState? Status
         {
-            get { return BackingStore?.Get<ElevationRequestState?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ElevationRequestState?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegeManagementElevationRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegeManagementElevationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrivilegeManagementElevationRequest();
+            return new Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicationDetail", n => { ApplicationDetail = n.GetObjectValue<ElevationRequestApplicationDetail>(ElevationRequestApplicationDetail.CreateFromDiscriminatorValue); } },
+                { "applicationDetail", n => { ApplicationDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.ElevationRequestApplicationDetail>(Microsoft.Graph.Beta.Models.ElevationRequestApplicationDetail.CreateFromDiscriminatorValue); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "requestCreatedDateTime", n => { RequestCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "requestExpiryDateTime", n => { RequestExpiryDateTime = n.GetDateTimeOffsetValue(); } },
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "reviewCompletedByUserPrincipalName", n => { ReviewCompletedByUserPrincipalName = n.GetStringValue(); } },
                 { "reviewCompletedDateTime", n => { ReviewCompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "reviewerJustification", n => { ReviewerJustification = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ElevationRequestState>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ElevationRequestState>(); } },
             };
         }
         /// <summary>
@@ -227,7 +227,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ElevationRequestApplicationDetail>("applicationDetail", ApplicationDetail);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ElevationRequestApplicationDetail>("applicationDetail", ApplicationDetail);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteDateTimeOffsetValue("requestCreatedDateTime", RequestCreatedDateTime);
             writer.WriteStringValue("requestedByUserId", RequestedByUserId);
@@ -240,7 +240,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("reviewCompletedByUserPrincipalName", ReviewCompletedByUserPrincipalName);
             writer.WriteDateTimeOffsetValue("reviewCompletedDateTime", ReviewCompletedDateTime);
             writer.WriteStringValue("reviewerJustification", ReviewerJustification);
-            writer.WriteEnumValue<ElevationRequestState>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ElevationRequestState>("status", Status);
         }
     }
 }

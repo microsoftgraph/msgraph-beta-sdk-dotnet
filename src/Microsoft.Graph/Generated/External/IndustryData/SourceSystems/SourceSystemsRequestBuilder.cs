@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems
     public class SourceSystemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sourceSystems property of the microsoft.graph.industryData.industryDataRoot entity.</summary>
         /// <param name="position">The unique identifier of sourceSystemDefinition</param>
-        /// <returns>A <see cref="SourceSystemDefinitionItemRequestBuilder"/></returns>
-        public SourceSystemDefinitionItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item.SourceSystemDefinitionItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item.SourceSystemDefinitionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("sourceSystemDefinition%2Did", position);
-                return new SourceSystemDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.External.IndustryData.SourceSystems.Item.SourceSystemDefinitionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SourceSystemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SourceSystemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,51 +55,51 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems
         /// Get a list of the sourceSystemDefinition objects and their properties.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-list?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="SourceSystemDefinitionCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinitionCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SourceSystemDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<SourceSystemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinitionCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder.SourceSystemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SourceSystemDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<SourceSystemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinitionCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder.SourceSystemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SourceSystemDefinitionCollectionResponse>(requestInfo, SourceSystemDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinitionCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create a new sourceSystemDefinition object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/industrydata-sourcesystemdefinition-post?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="SourceSystemDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SourceSystemDefinition?> PostAsync(SourceSystemDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition?> PostAsync(Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SourceSystemDefinition> PostAsync(SourceSystemDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition> PostAsync(Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SourceSystemDefinition>(requestInfo, SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition>(requestInfo, Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the sourceSystemDefinition objects and their properties.
@@ -108,11 +108,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SourceSystemsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder.SourceSystemsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SourceSystemsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder.SourceSystemsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SourceSystemDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SourceSystemDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.IndustryData.SourceSystemDefinition body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -145,11 +145,11 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SourceSystemsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SourceSystemsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SourceSystemsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the sourceSystemDefinition objects and their properties.
@@ -220,7 +220,7 @@ namespace Microsoft.Graph.Beta.External.IndustryData.SourceSystems
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SourceSystemsRequestBuilderGetRequestConfiguration : RequestConfiguration<SourceSystemsRequestBuilderGetQueryParameters>
+        public class SourceSystemsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.External.IndustryData.SourceSystems.SourceSystemsRequestBuilder.SourceSystemsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

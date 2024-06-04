@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity which represents an OnPrem Ndes connector.
     /// </summary>
-    public class NdesConnector : Entity, IParsable
+    public class NdesConnector : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The build version of the Ndes Connector.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,20 +88,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The current status of the Ndes Connector.</summary>
-        public NdesConnectorState? State
+        public Microsoft.Graph.Beta.Models.NdesConnectorState? State
         {
-            get { return BackingStore?.Get<NdesConnectorState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NdesConnectorState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NdesConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.NdesConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new NdesConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.NdesConnector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NdesConnector();
+            return new Microsoft.Graph.Beta.Models.NdesConnector();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "machineName", n => { MachineName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<NdesConnectorState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.NdesConnectorState>(); } },
             };
         }
         /// <summary>
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("lastConnectionDateTime", LastConnectionDateTime);
             writer.WriteStringValue("machineName", MachineName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteEnumValue<NdesConnectorState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.NdesConnectorState>("state", State);
         }
     }
 }

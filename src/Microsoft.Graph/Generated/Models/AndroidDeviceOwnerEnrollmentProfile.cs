@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enrollment Profile used to enroll Android Enterprise devices using Google&apos;s Cloud Management.
     /// </summary>
-    public class AndroidDeviceOwnerEnrollmentProfile : Entity, IParsable
+    public class AndroidDeviceOwnerEnrollmentProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -78,15 +78,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("enrolledDeviceCount", value); }
         }
         /// <summary>The enrollment mode for an enrollment profile.</summary>
-        public AndroidDeviceOwnerEnrollmentMode? EnrollmentMode
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentMode? EnrollmentMode
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentMode?>("enrollmentMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentMode?>("enrollmentMode"); }
             set { BackingStore?.Set("enrollmentMode", value); }
         }
         /// <summary>The enrollment token type for an enrollment profile.</summary>
-        public AndroidDeviceOwnerEnrollmentTokenType? EnrollmentTokenType
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentTokenType? EnrollmentTokenType
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentTokenType?>("enrollmentTokenType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentTokenType?>("enrollmentTokenType"); }
             set { BackingStore?.Set("enrollmentTokenType", value); }
         }
         /// <summary>Total number of AOSP devices that have enrolled using the current token.</summary>
@@ -126,16 +126,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>String used to generate a QR code for the token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public MimeContent? QrCodeImage
+        public Microsoft.Graph.Beta.Models.MimeContent? QrCodeImage
         {
-            get { return BackingStore?.Get<MimeContent?>("qrCodeImage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent?>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
 #nullable restore
 #else
-        public MimeContent QrCodeImage
+        public Microsoft.Graph.Beta.Models.MimeContent QrCodeImage
         {
-            get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MimeContent>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
 #endif
@@ -206,9 +206,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>This enum represents Wi-Fi Security Types for Android Device Owner AOSP Scenarios.</summary>
-        public AospWifiSecurityType? WifiSecurityType
+        public Microsoft.Graph.Beta.Models.AospWifiSecurityType? WifiSecurityType
         {
-            get { return BackingStore?.Get<AospWifiSecurityType?>("wifiSecurityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AospWifiSecurityType?>("wifiSecurityType"); }
             set { BackingStore?.Set("wifiSecurityType", value); }
         }
         /// <summary>String that contains the wi-fi login ssid</summary>
@@ -230,12 +230,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerEnrollmentProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerEnrollmentProfile();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -251,20 +251,20 @@ namespace Microsoft.Graph.Beta.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enrolledDeviceCount", n => { EnrolledDeviceCount = n.GetIntValue(); } },
-                { "enrollmentMode", n => { EnrollmentMode = n.GetEnumValue<AndroidDeviceOwnerEnrollmentMode>(); } },
-                { "enrollmentTokenType", n => { EnrollmentTokenType = n.GetEnumValue<AndroidDeviceOwnerEnrollmentTokenType>(); } },
+                { "enrollmentMode", n => { EnrollmentMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentMode>(); } },
+                { "enrollmentTokenType", n => { EnrollmentTokenType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentTokenType>(); } },
                 { "enrollmentTokenUsageCount", n => { EnrollmentTokenUsageCount = n.GetIntValue(); } },
                 { "isTeamsDeviceProfile", n => { IsTeamsDeviceProfile = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "qrCodeContent", n => { QrCodeContent = n.GetStringValue(); } },
-                { "qrCodeImage", n => { QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
+                { "qrCodeImage", n => { QrCodeImage = n.GetObjectValue<Microsoft.Graph.Beta.Models.MimeContent>(Microsoft.Graph.Beta.Models.MimeContent.CreateFromDiscriminatorValue); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "tokenCreationDateTime", n => { TokenCreationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "tokenExpirationDateTime", n => { TokenExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "tokenValue", n => { TokenValue = n.GetStringValue(); } },
                 { "wifiHidden", n => { WifiHidden = n.GetBoolValue(); } },
                 { "wifiPassword", n => { WifiPassword = n.GetStringValue(); } },
-                { "wifiSecurityType", n => { WifiSecurityType = n.GetEnumValue<AospWifiSecurityType>(); } },
+                { "wifiSecurityType", n => { WifiSecurityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AospWifiSecurityType>(); } },
                 { "wifiSsid", n => { WifiSsid = n.GetStringValue(); } },
             };
         }
@@ -282,20 +282,20 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("enrolledDeviceCount", EnrolledDeviceCount);
-            writer.WriteEnumValue<AndroidDeviceOwnerEnrollmentMode>("enrollmentMode", EnrollmentMode);
-            writer.WriteEnumValue<AndroidDeviceOwnerEnrollmentTokenType>("enrollmentTokenType", EnrollmentTokenType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentMode>("enrollmentMode", EnrollmentMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentTokenType>("enrollmentTokenType", EnrollmentTokenType);
             writer.WriteIntValue("enrollmentTokenUsageCount", EnrollmentTokenUsageCount);
             writer.WriteBoolValue("isTeamsDeviceProfile", IsTeamsDeviceProfile);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("qrCodeContent", QrCodeContent);
-            writer.WriteObjectValue<MimeContent>("qrCodeImage", QrCodeImage);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MimeContent>("qrCodeImage", QrCodeImage);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteDateTimeOffsetValue("tokenCreationDateTime", TokenCreationDateTime);
             writer.WriteDateTimeOffsetValue("tokenExpirationDateTime", TokenExpirationDateTime);
             writer.WriteStringValue("tokenValue", TokenValue);
             writer.WriteBoolValue("wifiHidden", WifiHidden);
             writer.WriteStringValue("wifiPassword", WifiPassword);
-            writer.WriteEnumValue<AospWifiSecurityType>("wifiSecurityType", WifiSecurityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AospWifiSecurityType>("wifiSecurityType", WifiSecurityType);
             writer.WriteStringValue("wifiSsid", WifiSsid);
         }
     }

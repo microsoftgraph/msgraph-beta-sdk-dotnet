@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AndroidForWorkAppCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AndroidForWorkAppCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidForWorkApp>? Value
+        public List<Microsoft.Graph.Beta.Models.AndroidForWorkApp>? Value
         {
-            get { return BackingStore?.Get<List<AndroidForWorkApp>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkApp>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AndroidForWorkApp> Value
+        public List<Microsoft.Graph.Beta.Models.AndroidForWorkApp> Value
         {
-            get { return BackingStore?.Get<List<AndroidForWorkApp>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkApp>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkAppCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkAppCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkAppCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidForWorkAppCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidForWorkAppCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.AndroidForWorkAppCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AndroidForWorkApp>(AndroidForWorkApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidForWorkApp>(Microsoft.Graph.Beta.Models.AndroidForWorkApp.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AndroidForWorkApp>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidForWorkApp>("value", Value);
         }
     }
 }

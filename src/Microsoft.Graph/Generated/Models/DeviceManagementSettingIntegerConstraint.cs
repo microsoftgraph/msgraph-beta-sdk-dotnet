@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Constraint enforcing the permitted value range for an integer setting
     /// </summary>
-    public class DeviceManagementSettingIntegerConstraint : DeviceManagementConstraint, IParsable
+    public class DeviceManagementSettingIntegerConstraint : Microsoft.Graph.Beta.Models.DeviceManagementConstraint, IParsable
     {
         /// <summary>The maximum permitted value</summary>
         public int? MaximumValue
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("minimumValue", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementSettingIntegerConstraint"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingIntegerConstraint"/> and sets the default values.
         /// </summary>
         public DeviceManagementSettingIntegerConstraint() : base()
         {
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementSettingIntegerConstraint"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingIntegerConstraint"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementSettingIntegerConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementSettingIntegerConstraint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettingIntegerConstraint();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementSettingIntegerConstraint();
         }
         /// <summary>
         /// The deserialization information for the current model

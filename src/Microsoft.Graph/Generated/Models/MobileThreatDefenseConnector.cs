@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity which represents a connection to Mobile Threat Defense partner.
     /// </summary>
-    public class MobileThreatDefenseConnector : Entity, IParsable
+    public class MobileThreatDefenseConnector : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>When TRUE, indicates the Mobile Threat Defense partner may collect metadata about installed applications from Intune for IOS devices. When FALSE, indicates the Mobile Threat Defense partner may not collect metadata about installed applications from Intune for IOS devices. Default value is FALSE.</summary>
         public bool? AllowPartnerToCollectIOSApplicationMetadata
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("microsoftDefenderForEndpointAttachEnabled", value); }
         }
         /// <summary>Partner state of this tenant.</summary>
-        public MobileThreatPartnerTenantState? PartnerState
+        public Microsoft.Graph.Beta.Models.MobileThreatPartnerTenantState? PartnerState
         {
-            get { return BackingStore?.Get<MobileThreatPartnerTenantState?>("partnerState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileThreatPartnerTenantState?>("partnerState"); }
             set { BackingStore?.Set("partnerState", value); }
         }
         /// <summary>Get or Set days the per tenant tolerance to unresponsiveness for this partner integration</summary>
@@ -122,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileThreatDefenseConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileThreatDefenseConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileThreatDefenseConnector();
+            return new Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "macDeviceBlockedOnMissingPartnerData", n => { MacDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
                 { "macEnabled", n => { MacEnabled = n.GetBoolValue(); } },
                 { "microsoftDefenderForEndpointAttachEnabled", n => { MicrosoftDefenderForEndpointAttachEnabled = n.GetBoolValue(); } },
-                { "partnerState", n => { PartnerState = n.GetEnumValue<MobileThreatPartnerTenantState>(); } },
+                { "partnerState", n => { PartnerState = n.GetEnumValue<Microsoft.Graph.Beta.Models.MobileThreatPartnerTenantState>(); } },
                 { "partnerUnresponsivenessThresholdInDays", n => { PartnerUnresponsivenessThresholdInDays = n.GetIntValue(); } },
                 { "partnerUnsupportedOsVersionBlocked", n => { PartnerUnsupportedOsVersionBlocked = n.GetBoolValue(); } },
                 { "windowsDeviceBlockedOnMissingPartnerData", n => { WindowsDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("macDeviceBlockedOnMissingPartnerData", MacDeviceBlockedOnMissingPartnerData);
             writer.WriteBoolValue("macEnabled", MacEnabled);
             writer.WriteBoolValue("microsoftDefenderForEndpointAttachEnabled", MicrosoftDefenderForEndpointAttachEnabled);
-            writer.WriteEnumValue<MobileThreatPartnerTenantState>("partnerState", PartnerState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MobileThreatPartnerTenantState>("partnerState", PartnerState);
             writer.WriteIntValue("partnerUnresponsivenessThresholdInDays", PartnerUnresponsivenessThresholdInDays);
             writer.WriteBoolValue("partnerUnsupportedOsVersionBlocked", PartnerUnsupportedOsVersionBlocked);
             writer.WriteBoolValue("windowsDeviceBlockedOnMissingPartnerData", WindowsDeviceBlockedOnMissingPartnerData);

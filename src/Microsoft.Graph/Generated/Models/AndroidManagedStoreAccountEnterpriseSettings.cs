@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Enterprise settings for an Android managed store account.
     /// </summary>
-    public class AndroidManagedStoreAccountEnterpriseSettings : Entity, IParsable
+    public class AndroidManagedStoreAccountEnterpriseSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Company codes for AndroidManagedStoreAccountEnterpriseSettings</summary>
         public bool? AndroidDeviceOwnerFullyManagedEnrollmentEnabled
@@ -18,24 +18,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("androidDeviceOwnerFullyManagedEnrollmentEnabled", value); }
         }
         /// <summary>Bind status of the tenant with the Google EMM API</summary>
-        public AndroidManagedStoreAccountBindStatus? BindStatus
+        public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountBindStatus? BindStatus
         {
-            get { return BackingStore?.Get<AndroidManagedStoreAccountBindStatus?>("bindStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountBindStatus?>("bindStatus"); }
             set { BackingStore?.Set("bindStatus", value); }
         }
         /// <summary>Company codes for AndroidManagedStoreAccountEnterpriseSettings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AndroidEnrollmentCompanyCode>? CompanyCodes
+        public List<Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode>? CompanyCodes
         {
-            get { return BackingStore?.Get<List<AndroidEnrollmentCompanyCode>?>("companyCodes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode>?>("companyCodes"); }
             set { BackingStore?.Set("companyCodes", value); }
         }
 #nullable restore
 #else
-        public List<AndroidEnrollmentCompanyCode> CompanyCodes
+        public List<Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode> CompanyCodes
         {
-            get { return BackingStore?.Get<List<AndroidEnrollmentCompanyCode>>("companyCodes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode>>("companyCodes"); }
             set { BackingStore?.Set("companyCodes", value); }
         }
 #endif
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceOwnerManagementEnabled", value); }
         }
         /// <summary>Android for Work device management targeting type for the account</summary>
-        public AndroidManagedStoreAccountEnrollmentTarget? EnrollmentTarget
+        public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnrollmentTarget? EnrollmentTarget
         {
-            get { return BackingStore?.Get<AndroidManagedStoreAccountEnrollmentTarget?>("enrollmentTarget"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnrollmentTarget?>("enrollmentTarget"); }
             set { BackingStore?.Set("enrollmentTarget", value); }
         }
         /// <summary>Last completion time for app sync</summary>
@@ -58,9 +58,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastAppSyncDateTime", value); }
         }
         /// <summary>Sync status of the tenant with the Google EMM API</summary>
-        public AndroidManagedStoreAccountAppSyncStatus? LastAppSyncStatus
+        public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountAppSyncStatus? LastAppSyncStatus
         {
-            get { return BackingStore?.Get<AndroidManagedStoreAccountAppSyncStatus?>("lastAppSyncStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountAppSyncStatus?>("lastAppSyncStatus"); }
             set { BackingStore?.Set("lastAppSyncStatus", value); }
         }
         /// <summary>Last modification time for Android enterprise settings</summary>
@@ -136,12 +136,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidManagedStoreAccountEnterpriseSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidManagedStoreAccountEnterpriseSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidManagedStoreAccountEnterpriseSettings();
+            return new Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,12 +152,12 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "androidDeviceOwnerFullyManagedEnrollmentEnabled", n => { AndroidDeviceOwnerFullyManagedEnrollmentEnabled = n.GetBoolValue(); } },
-                { "bindStatus", n => { BindStatus = n.GetEnumValue<AndroidManagedStoreAccountBindStatus>(); } },
-                { "companyCodes", n => { CompanyCodes = n.GetCollectionOfObjectValues<AndroidEnrollmentCompanyCode>(AndroidEnrollmentCompanyCode.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "bindStatus", n => { BindStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountBindStatus>(); } },
+                { "companyCodes", n => { CompanyCodes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode>(Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "deviceOwnerManagementEnabled", n => { DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
-                { "enrollmentTarget", n => { EnrollmentTarget = n.GetEnumValue<AndroidManagedStoreAccountEnrollmentTarget>(); } },
+                { "enrollmentTarget", n => { EnrollmentTarget = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnrollmentTarget>(); } },
                 { "lastAppSyncDateTime", n => { LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
-                { "lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<AndroidManagedStoreAccountAppSyncStatus>(); } },
+                { "lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountAppSyncStatus>(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "managedGooglePlayInitialScopeTagIds", n => { ManagedGooglePlayInitialScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "ownerOrganizationName", n => { OwnerOrganizationName = n.GetStringValue(); } },
@@ -174,12 +174,12 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("androidDeviceOwnerFullyManagedEnrollmentEnabled", AndroidDeviceOwnerFullyManagedEnrollmentEnabled);
-            writer.WriteEnumValue<AndroidManagedStoreAccountBindStatus>("bindStatus", BindStatus);
-            writer.WriteCollectionOfObjectValues<AndroidEnrollmentCompanyCode>("companyCodes", CompanyCodes);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountBindStatus>("bindStatus", BindStatus);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AndroidEnrollmentCompanyCode>("companyCodes", CompanyCodes);
             writer.WriteBoolValue("deviceOwnerManagementEnabled", DeviceOwnerManagementEnabled);
-            writer.WriteEnumValue<AndroidManagedStoreAccountEnrollmentTarget>("enrollmentTarget", EnrollmentTarget);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnrollmentTarget>("enrollmentTarget", EnrollmentTarget);
             writer.WriteDateTimeOffsetValue("lastAppSyncDateTime", LastAppSyncDateTime);
-            writer.WriteEnumValue<AndroidManagedStoreAccountAppSyncStatus>("lastAppSyncStatus", LastAppSyncStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountAppSyncStatus>("lastAppSyncStatus", LastAppSyncStatus);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("managedGooglePlayInitialScopeTagIds", ManagedGooglePlayInitialScopeTagIds);
             writer.WriteStringValue("ownerOrganizationName", OwnerOrganizationName);

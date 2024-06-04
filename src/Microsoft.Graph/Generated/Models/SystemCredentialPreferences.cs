@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Users and groups excluded from the preferred authentication method experience of the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExcludeTarget>? ExcludeTargets
+        public List<Microsoft.Graph.Beta.Models.ExcludeTarget>? ExcludeTargets
         {
-            get { return BackingStore?.Get<List<ExcludeTarget>?>("excludeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExcludeTarget>?>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #nullable restore
 #else
-        public List<ExcludeTarget> ExcludeTargets
+        public List<Microsoft.Graph.Beta.Models.ExcludeTarget> ExcludeTargets
         {
-            get { return BackingStore?.Get<List<ExcludeTarget>>("excludeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExcludeTarget>>("excludeTargets"); }
             set { BackingStore?.Set("excludeTargets", value); }
         }
 #endif
         /// <summary>Users and groups included in the preferred authentication method experience of the system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IncludeTarget>? IncludeTargets
+        public List<Microsoft.Graph.Beta.Models.IncludeTarget>? IncludeTargets
         {
-            get { return BackingStore?.Get<List<IncludeTarget>?>("includeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IncludeTarget>?>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #nullable restore
 #else
-        public List<IncludeTarget> IncludeTargets
+        public List<Microsoft.Graph.Beta.Models.IncludeTarget> IncludeTargets
         {
-            get { return BackingStore?.Get<List<IncludeTarget>>("includeTargets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IncludeTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
 #endif
@@ -68,13 +68,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public AdvancedConfigState? State
+        public Microsoft.Graph.Beta.Models.AdvancedConfigState? State
         {
-            get { return BackingStore?.Get<AdvancedConfigState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedConfigState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SystemCredentialPreferences"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SystemCredentialPreferences"/> and sets the default values.
         /// </summary>
         public SystemCredentialPreferences()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SystemCredentialPreferences"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SystemCredentialPreferences"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SystemCredentialPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SystemCredentialPreferences CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SystemCredentialPreferences();
+            return new Microsoft.Graph.Beta.Models.SystemCredentialPreferences();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,10 +99,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<ExcludeTarget>(ExcludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<IncludeTarget>(IncludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "excludeTargets", n => { ExcludeTargets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExcludeTarget>(Microsoft.Graph.Beta.Models.ExcludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeTargets", n => { IncludeTargets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IncludeTarget>(Microsoft.Graph.Beta.Models.IncludeTarget.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<AdvancedConfigState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.AdvancedConfigState>(); } },
             };
         }
         /// <summary>
@@ -112,10 +112,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ExcludeTarget>("excludeTargets", ExcludeTargets);
-            writer.WriteCollectionOfObjectValues<IncludeTarget>("includeTargets", IncludeTargets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExcludeTarget>("excludeTargets", ExcludeTargets);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IncludeTarget>("includeTargets", IncludeTargets);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<AdvancedConfigState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AdvancedConfigState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

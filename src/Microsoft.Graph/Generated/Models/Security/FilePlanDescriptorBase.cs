@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FilePlanDescriptorBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.FilePlanDescriptorBase"/> and sets the default values.
         /// </summary>
         public FilePlanDescriptorBase()
         {
@@ -62,21 +62,21 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilePlanDescriptorBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.FilePlanDescriptorBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static FilePlanDescriptorBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.FilePlanDescriptorBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.filePlanAppliedCategory" => new FilePlanAppliedCategory(),
-                "#microsoft.graph.security.filePlanAuthority" => new FilePlanAuthority(),
-                "#microsoft.graph.security.filePlanCitation" => new FilePlanCitation(),
-                "#microsoft.graph.security.filePlanDepartment" => new FilePlanDepartment(),
-                "#microsoft.graph.security.filePlanReference" => new FilePlanReference(),
-                "#microsoft.graph.security.filePlanSubcategory" => new FilePlanSubcategory(),
-                _ => new FilePlanDescriptorBase(),
+                "#microsoft.graph.security.filePlanAppliedCategory" => new Microsoft.Graph.Beta.Models.Security.FilePlanAppliedCategory(),
+                "#microsoft.graph.security.filePlanAuthority" => new Microsoft.Graph.Beta.Models.Security.FilePlanAuthority(),
+                "#microsoft.graph.security.filePlanCitation" => new Microsoft.Graph.Beta.Models.Security.FilePlanCitation(),
+                "#microsoft.graph.security.filePlanDepartment" => new Microsoft.Graph.Beta.Models.Security.FilePlanDepartment(),
+                "#microsoft.graph.security.filePlanReference" => new Microsoft.Graph.Beta.Models.Security.FilePlanReference(),
+                "#microsoft.graph.security.filePlanSubcategory" => new Microsoft.Graph.Beta.Models.Security.FilePlanSubcategory(),
+                _ => new Microsoft.Graph.Beta.Models.Security.FilePlanDescriptorBase(),
             };
         }
         /// <summary>

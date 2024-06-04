@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Instance of a GroupSettingCollection
     /// </summary>
-    public class DeviceManagementConfigurationGroupSettingCollectionInstance : DeviceManagementConfigurationSettingInstance, IParsable
+    public class DeviceManagementConfigurationGroupSettingCollectionInstance : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstance, IParsable
     {
         /// <summary>A collection of GroupSetting values</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConfigurationGroupSettingValue>? GroupSettingCollectionValue
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue>? GroupSettingCollectionValue
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValue>?>("groupSettingCollectionValue"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue>?>("groupSettingCollectionValue"); }
             set { BackingStore?.Set("groupSettingCollectionValue", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConfigurationGroupSettingValue> GroupSettingCollectionValue
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue> GroupSettingCollectionValue
         {
-            get { return BackingStore?.Get<List<DeviceManagementConfigurationGroupSettingValue>>("groupSettingCollectionValue"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue>>("groupSettingCollectionValue"); }
             set { BackingStore?.Set("groupSettingCollectionValue", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationGroupSettingCollectionInstance"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingCollectionInstance"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationGroupSettingCollectionInstance() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationGroupSettingCollectionInstance"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingCollectionInstance"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationGroupSettingCollectionInstance CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingCollectionInstance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationGroupSettingCollectionInstance();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingCollectionInstance();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "groupSettingCollectionValue", n => { GroupSettingCollectionValue = n.GetCollectionOfObjectValues<DeviceManagementConfigurationGroupSettingValue>(DeviceManagementConfigurationGroupSettingValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupSettingCollectionValue", n => { GroupSettingCollectionValue = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationGroupSettingValue>("groupSettingCollectionValue", GroupSettingCollectionValue);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationGroupSettingValue>("groupSettingCollectionValue", GroupSettingCollectionValue);
         }
     }
 }

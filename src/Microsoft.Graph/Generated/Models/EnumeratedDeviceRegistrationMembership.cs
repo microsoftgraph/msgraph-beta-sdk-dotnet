@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EnumeratedDeviceRegistrationMembership : DeviceRegistrationMembership, IParsable
+    public class EnumeratedDeviceRegistrationMembership : Microsoft.Graph.Beta.Models.DeviceRegistrationMembership, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of groups that this policy applies to.</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EnumeratedDeviceRegistrationMembership"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EnumeratedDeviceRegistrationMembership"/> and sets the default values.
         /// </summary>
         public EnumeratedDeviceRegistrationMembership() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EnumeratedDeviceRegistrationMembership"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EnumeratedDeviceRegistrationMembership"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EnumeratedDeviceRegistrationMembership CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EnumeratedDeviceRegistrationMembership CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EnumeratedDeviceRegistrationMembership();
+            return new Microsoft.Graph.Beta.Models.EnumeratedDeviceRegistrationMembership();
         }
         /// <summary>
         /// The deserialization information for the current model

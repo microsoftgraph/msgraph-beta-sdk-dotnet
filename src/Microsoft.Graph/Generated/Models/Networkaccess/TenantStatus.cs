@@ -35,12 +35,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TenantStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantStatus();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.TenantStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "onboardingErrorMessage", n => { OnboardingErrorMessage = n.GetStringValue(); } },
-                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus>(); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("onboardingErrorMessage", OnboardingErrorMessage);
-            writer.WriteEnumValue<OnboardingStatus>("onboardingStatus", OnboardingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.OnboardingStatus>("onboardingStatus", OnboardingStatus);
         }
     }
 }

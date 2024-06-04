@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Teams.GetTimesOff
 {
     [Obsolete("This class is obsolete. Use GetTimesOffGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetTimesOffResponse : GetTimesOffGetResponse, IParsable
+    public class GetTimesOffResponse : Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetTimesOffResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetTimesOffResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetTimesOffResponse();
+            return new Microsoft.Graph.Beta.Teams.GetTimesOff.GetTimesOffResponse();
         }
     }
 }

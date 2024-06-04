@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Ge
 {
     [Obsolete("This class is obsolete. Use GetSupportedCloudPcRemoteActionsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetSupportedCloudPcRemoteActionsResponse : GetSupportedCloudPcRemoteActionsGetResponse, IParsable
+    public class GetSupportedCloudPcRemoteActionsResponse : Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetSupportedCloudPcRemoteActions.GetSupportedCloudPcRemoteActionsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetSupportedCloudPcRemoteActionsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetSupportedCloudPcRemoteActions.GetSupportedCloudPcRemoteActionsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetSupportedCloudPcRemoteActionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetSupportedCloudPcRemoteActions.GetSupportedCloudPcRemoteActionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetSupportedCloudPcRemoteActionsResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetSupportedCloudPcRemoteActions.GetSupportedCloudPcRemoteActionsResponse();
         }
     }
 }

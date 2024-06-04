@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId
 {
     #pragma warning disable CS1591
-    public class GetLicensesForAppWithBundleIdGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetLicensesForAppWithBundleIdGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VppTokenLicenseSummary>? Value
+        public List<Microsoft.Graph.Beta.Models.VppTokenLicenseSummary>? Value
         {
-            get { return BackingStore?.Get<List<VppTokenLicenseSummary>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VppTokenLicenseSummary>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<VppTokenLicenseSummary> Value
+        public List<Microsoft.Graph.Beta.Models.VppTokenLicenseSummary> Value
         {
-            get { return BackingStore?.Get<List<VppTokenLicenseSummary>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VppTokenLicenseSummary>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetLicensesForAppWithBundleIdGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetLicensesForAppWithBundleIdGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetLicensesForAppWithBundleIdGetResponse();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWithBundleId.GetLicensesForAppWithBundleIdGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<VppTokenLicenseSummary>(VppTokenLicenseSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VppTokenLicenseSummary>(Microsoft.Graph.Beta.Models.VppTokenLicenseSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<VppTokenLicenseSummary>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VppTokenLicenseSummary>("value", Value);
         }
     }
 }

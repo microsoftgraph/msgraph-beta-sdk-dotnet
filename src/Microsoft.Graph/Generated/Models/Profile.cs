@@ -7,322 +7,322 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Profile : Entity, IParsable
+    public class Profile : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The account property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserAccountInformation>? Account
+        public List<Microsoft.Graph.Beta.Models.UserAccountInformation>? Account
         {
-            get { return BackingStore?.Get<List<UserAccountInformation>?>("account"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserAccountInformation>?>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #nullable restore
 #else
-        public List<UserAccountInformation> Account
+        public List<Microsoft.Graph.Beta.Models.UserAccountInformation> Account
         {
-            get { return BackingStore?.Get<List<UserAccountInformation>>("account"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserAccountInformation>>("account"); }
             set { BackingStore?.Set("account", value); }
         }
 #endif
         /// <summary>Represents details of addresses associated with the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemAddress>? Addresses
+        public List<Microsoft.Graph.Beta.Models.ItemAddress>? Addresses
         {
-            get { return BackingStore?.Get<List<ItemAddress>?>("addresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemAddress>?>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
 #nullable restore
 #else
-        public List<ItemAddress> Addresses
+        public List<Microsoft.Graph.Beta.Models.ItemAddress> Addresses
         {
-            get { return BackingStore?.Get<List<ItemAddress>>("addresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemAddress>>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
 #endif
         /// <summary>Represents the details of meaningful dates associated with a person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonAnnualEvent>? Anniversaries
+        public List<Microsoft.Graph.Beta.Models.PersonAnnualEvent>? Anniversaries
         {
-            get { return BackingStore?.Get<List<PersonAnnualEvent>?>("anniversaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonAnnualEvent>?>("anniversaries"); }
             set { BackingStore?.Set("anniversaries", value); }
         }
 #nullable restore
 #else
-        public List<PersonAnnualEvent> Anniversaries
+        public List<Microsoft.Graph.Beta.Models.PersonAnnualEvent> Anniversaries
         {
-            get { return BackingStore?.Get<List<PersonAnnualEvent>>("anniversaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonAnnualEvent>>("anniversaries"); }
             set { BackingStore?.Set("anniversaries", value); }
         }
 #endif
         /// <summary>Represents the details of awards or honors associated with a person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonAward>? Awards
+        public List<Microsoft.Graph.Beta.Models.PersonAward>? Awards
         {
-            get { return BackingStore?.Get<List<PersonAward>?>("awards"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonAward>?>("awards"); }
             set { BackingStore?.Set("awards", value); }
         }
 #nullable restore
 #else
-        public List<PersonAward> Awards
+        public List<Microsoft.Graph.Beta.Models.PersonAward> Awards
         {
-            get { return BackingStore?.Get<List<PersonAward>>("awards"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonAward>>("awards"); }
             set { BackingStore?.Set("awards", value); }
         }
 #endif
         /// <summary>Represents the details of certifications associated with a person.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonCertification>? Certifications
+        public List<Microsoft.Graph.Beta.Models.PersonCertification>? Certifications
         {
-            get { return BackingStore?.Get<List<PersonCertification>?>("certifications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonCertification>?>("certifications"); }
             set { BackingStore?.Set("certifications", value); }
         }
 #nullable restore
 #else
-        public List<PersonCertification> Certifications
+        public List<Microsoft.Graph.Beta.Models.PersonCertification> Certifications
         {
-            get { return BackingStore?.Get<List<PersonCertification>>("certifications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonCertification>>("certifications"); }
             set { BackingStore?.Set("certifications", value); }
         }
 #endif
         /// <summary>Represents data that a user has supplied related to undergraduate, graduate, postgraduate or other educational activities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationalActivity>? EducationalActivities
+        public List<Microsoft.Graph.Beta.Models.EducationalActivity>? EducationalActivities
         {
-            get { return BackingStore?.Get<List<EducationalActivity>?>("educationalActivities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationalActivity>?>("educationalActivities"); }
             set { BackingStore?.Set("educationalActivities", value); }
         }
 #nullable restore
 #else
-        public List<EducationalActivity> EducationalActivities
+        public List<Microsoft.Graph.Beta.Models.EducationalActivity> EducationalActivities
         {
-            get { return BackingStore?.Get<List<EducationalActivity>>("educationalActivities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationalActivity>>("educationalActivities"); }
             set { BackingStore?.Set("educationalActivities", value); }
         }
 #endif
         /// <summary>Represents detailed information about email addresses associated with the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemEmail>? Emails
+        public List<Microsoft.Graph.Beta.Models.ItemEmail>? Emails
         {
-            get { return BackingStore?.Get<List<ItemEmail>?>("emails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemEmail>?>("emails"); }
             set { BackingStore?.Set("emails", value); }
         }
 #nullable restore
 #else
-        public List<ItemEmail> Emails
+        public List<Microsoft.Graph.Beta.Models.ItemEmail> Emails
         {
-            get { return BackingStore?.Get<List<ItemEmail>>("emails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemEmail>>("emails"); }
             set { BackingStore?.Set("emails", value); }
         }
 #endif
         /// <summary>Provides detailed information about interests the user has associated with themselves in various services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonInterest>? Interests
+        public List<Microsoft.Graph.Beta.Models.PersonInterest>? Interests
         {
-            get { return BackingStore?.Get<List<PersonInterest>?>("interests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonInterest>?>("interests"); }
             set { BackingStore?.Set("interests", value); }
         }
 #nullable restore
 #else
-        public List<PersonInterest> Interests
+        public List<Microsoft.Graph.Beta.Models.PersonInterest> Interests
         {
-            get { return BackingStore?.Get<List<PersonInterest>>("interests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonInterest>>("interests"); }
             set { BackingStore?.Set("interests", value); }
         }
 #endif
         /// <summary>Represents detailed information about languages that a user has added to their profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LanguageProficiency>? Languages
+        public List<Microsoft.Graph.Beta.Models.LanguageProficiency>? Languages
         {
-            get { return BackingStore?.Get<List<LanguageProficiency>?>("languages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LanguageProficiency>?>("languages"); }
             set { BackingStore?.Set("languages", value); }
         }
 #nullable restore
 #else
-        public List<LanguageProficiency> Languages
+        public List<Microsoft.Graph.Beta.Models.LanguageProficiency> Languages
         {
-            get { return BackingStore?.Get<List<LanguageProficiency>>("languages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LanguageProficiency>>("languages"); }
             set { BackingStore?.Set("languages", value); }
         }
 #endif
         /// <summary>Represents the names a user has added to their profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonName>? Names
+        public List<Microsoft.Graph.Beta.Models.PersonName>? Names
         {
-            get { return BackingStore?.Get<List<PersonName>?>("names"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonName>?>("names"); }
             set { BackingStore?.Set("names", value); }
         }
 #nullable restore
 #else
-        public List<PersonName> Names
+        public List<Microsoft.Graph.Beta.Models.PersonName> Names
         {
-            get { return BackingStore?.Get<List<PersonName>>("names"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonName>>("names"); }
             set { BackingStore?.Set("names", value); }
         }
 #endif
         /// <summary>Represents notes that a user has added to their profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonAnnotation>? Notes
+        public List<Microsoft.Graph.Beta.Models.PersonAnnotation>? Notes
         {
-            get { return BackingStore?.Get<List<PersonAnnotation>?>("notes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonAnnotation>?>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #nullable restore
 #else
-        public List<PersonAnnotation> Notes
+        public List<Microsoft.Graph.Beta.Models.PersonAnnotation> Notes
         {
-            get { return BackingStore?.Get<List<PersonAnnotation>>("notes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonAnnotation>>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
 #endif
         /// <summary>Represents patents that a user has added to their profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemPatent>? Patents
+        public List<Microsoft.Graph.Beta.Models.ItemPatent>? Patents
         {
-            get { return BackingStore?.Get<List<ItemPatent>?>("patents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemPatent>?>("patents"); }
             set { BackingStore?.Set("patents", value); }
         }
 #nullable restore
 #else
-        public List<ItemPatent> Patents
+        public List<Microsoft.Graph.Beta.Models.ItemPatent> Patents
         {
-            get { return BackingStore?.Get<List<ItemPatent>>("patents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemPatent>>("patents"); }
             set { BackingStore?.Set("patents", value); }
         }
 #endif
         /// <summary>Represents detailed information about phone numbers associated with a user in various services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemPhone>? Phones
+        public List<Microsoft.Graph.Beta.Models.ItemPhone>? Phones
         {
-            get { return BackingStore?.Get<List<ItemPhone>?>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemPhone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #nullable restore
 #else
-        public List<ItemPhone> Phones
+        public List<Microsoft.Graph.Beta.Models.ItemPhone> Phones
         {
-            get { return BackingStore?.Get<List<ItemPhone>>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemPhone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #endif
         /// <summary>Represents detailed information about work positions associated with a user&apos;s profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkPosition>? Positions
+        public List<Microsoft.Graph.Beta.Models.WorkPosition>? Positions
         {
-            get { return BackingStore?.Get<List<WorkPosition>?>("positions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkPosition>?>("positions"); }
             set { BackingStore?.Set("positions", value); }
         }
 #nullable restore
 #else
-        public List<WorkPosition> Positions
+        public List<Microsoft.Graph.Beta.Models.WorkPosition> Positions
         {
-            get { return BackingStore?.Get<List<WorkPosition>>("positions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkPosition>>("positions"); }
             set { BackingStore?.Set("positions", value); }
         }
 #endif
         /// <summary>Represents detailed information about projects associated with a user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProjectParticipation>? Projects
+        public List<Microsoft.Graph.Beta.Models.ProjectParticipation>? Projects
         {
-            get { return BackingStore?.Get<List<ProjectParticipation>?>("projects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProjectParticipation>?>("projects"); }
             set { BackingStore?.Set("projects", value); }
         }
 #nullable restore
 #else
-        public List<ProjectParticipation> Projects
+        public List<Microsoft.Graph.Beta.Models.ProjectParticipation> Projects
         {
-            get { return BackingStore?.Get<List<ProjectParticipation>>("projects"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProjectParticipation>>("projects"); }
             set { BackingStore?.Set("projects", value); }
         }
 #endif
         /// <summary>Represents details of any publications a user has added to their profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ItemPublication>? Publications
+        public List<Microsoft.Graph.Beta.Models.ItemPublication>? Publications
         {
-            get { return BackingStore?.Get<List<ItemPublication>?>("publications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemPublication>?>("publications"); }
             set { BackingStore?.Set("publications", value); }
         }
 #nullable restore
 #else
-        public List<ItemPublication> Publications
+        public List<Microsoft.Graph.Beta.Models.ItemPublication> Publications
         {
-            get { return BackingStore?.Get<List<ItemPublication>>("publications"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ItemPublication>>("publications"); }
             set { BackingStore?.Set("publications", value); }
         }
 #endif
         /// <summary>Represents detailed information about skills associated with a user in various services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SkillProficiency>? Skills
+        public List<Microsoft.Graph.Beta.Models.SkillProficiency>? Skills
         {
-            get { return BackingStore?.Get<List<SkillProficiency>?>("skills"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SkillProficiency>?>("skills"); }
             set { BackingStore?.Set("skills", value); }
         }
 #nullable restore
 #else
-        public List<SkillProficiency> Skills
+        public List<Microsoft.Graph.Beta.Models.SkillProficiency> Skills
         {
-            get { return BackingStore?.Get<List<SkillProficiency>>("skills"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SkillProficiency>>("skills"); }
             set { BackingStore?.Set("skills", value); }
         }
 #endif
         /// <summary>Represents web accounts the user has indicated they use or has added to their user profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WebAccount>? WebAccounts
+        public List<Microsoft.Graph.Beta.Models.WebAccount>? WebAccounts
         {
-            get { return BackingStore?.Get<List<WebAccount>?>("webAccounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WebAccount>?>("webAccounts"); }
             set { BackingStore?.Set("webAccounts", value); }
         }
 #nullable restore
 #else
-        public List<WebAccount> WebAccounts
+        public List<Microsoft.Graph.Beta.Models.WebAccount> WebAccounts
         {
-            get { return BackingStore?.Get<List<WebAccount>>("webAccounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WebAccount>>("webAccounts"); }
             set { BackingStore?.Set("webAccounts", value); }
         }
 #endif
         /// <summary>Represents detailed information about websites associated with a user in various services.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PersonWebsite>? Websites
+        public List<Microsoft.Graph.Beta.Models.PersonWebsite>? Websites
         {
-            get { return BackingStore?.Get<List<PersonWebsite>?>("websites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonWebsite>?>("websites"); }
             set { BackingStore?.Set("websites", value); }
         }
 #nullable restore
 #else
-        public List<PersonWebsite> Websites
+        public List<Microsoft.Graph.Beta.Models.PersonWebsite> Websites
         {
-            get { return BackingStore?.Get<List<PersonWebsite>>("websites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PersonWebsite>>("websites"); }
             set { BackingStore?.Set("websites", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Profile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Profile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Profile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Profile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Profile();
+            return new Microsoft.Graph.Beta.Models.Profile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -332,25 +332,25 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "account", n => { Account = n.GetCollectionOfObjectValues<UserAccountInformation>(UserAccountInformation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<ItemAddress>(ItemAddress.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "anniversaries", n => { Anniversaries = n.GetCollectionOfObjectValues<PersonAnnualEvent>(PersonAnnualEvent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "awards", n => { Awards = n.GetCollectionOfObjectValues<PersonAward>(PersonAward.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "certifications", n => { Certifications = n.GetCollectionOfObjectValues<PersonCertification>(PersonCertification.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "educationalActivities", n => { EducationalActivities = n.GetCollectionOfObjectValues<EducationalActivity>(EducationalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "emails", n => { Emails = n.GetCollectionOfObjectValues<ItemEmail>(ItemEmail.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "interests", n => { Interests = n.GetCollectionOfObjectValues<PersonInterest>(PersonInterest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "languages", n => { Languages = n.GetCollectionOfObjectValues<LanguageProficiency>(LanguageProficiency.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "names", n => { Names = n.GetCollectionOfObjectValues<PersonName>(PersonName.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "notes", n => { Notes = n.GetCollectionOfObjectValues<PersonAnnotation>(PersonAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "patents", n => { Patents = n.GetCollectionOfObjectValues<ItemPatent>(ItemPatent.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<ItemPhone>(ItemPhone.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "positions", n => { Positions = n.GetCollectionOfObjectValues<WorkPosition>(WorkPosition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "projects", n => { Projects = n.GetCollectionOfObjectValues<ProjectParticipation>(ProjectParticipation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "publications", n => { Publications = n.GetCollectionOfObjectValues<ItemPublication>(ItemPublication.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "skills", n => { Skills = n.GetCollectionOfObjectValues<SkillProficiency>(SkillProficiency.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "webAccounts", n => { WebAccounts = n.GetCollectionOfObjectValues<WebAccount>(WebAccount.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "websites", n => { Websites = n.GetCollectionOfObjectValues<PersonWebsite>(PersonWebsite.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "account", n => { Account = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserAccountInformation>(Microsoft.Graph.Beta.Models.UserAccountInformation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "addresses", n => { Addresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemAddress>(Microsoft.Graph.Beta.Models.ItemAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "anniversaries", n => { Anniversaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonAnnualEvent>(Microsoft.Graph.Beta.Models.PersonAnnualEvent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "awards", n => { Awards = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonAward>(Microsoft.Graph.Beta.Models.PersonAward.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certifications", n => { Certifications = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonCertification>(Microsoft.Graph.Beta.Models.PersonCertification.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "educationalActivities", n => { EducationalActivities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationalActivity>(Microsoft.Graph.Beta.Models.EducationalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emails", n => { Emails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemEmail>(Microsoft.Graph.Beta.Models.ItemEmail.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "interests", n => { Interests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonInterest>(Microsoft.Graph.Beta.Models.PersonInterest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "languages", n => { Languages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LanguageProficiency>(Microsoft.Graph.Beta.Models.LanguageProficiency.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "names", n => { Names = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonName>(Microsoft.Graph.Beta.Models.PersonName.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "notes", n => { Notes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonAnnotation>(Microsoft.Graph.Beta.Models.PersonAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "patents", n => { Patents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemPatent>(Microsoft.Graph.Beta.Models.ItemPatent.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemPhone>(Microsoft.Graph.Beta.Models.ItemPhone.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "positions", n => { Positions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkPosition>(Microsoft.Graph.Beta.Models.WorkPosition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "projects", n => { Projects = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProjectParticipation>(Microsoft.Graph.Beta.Models.ProjectParticipation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "publications", n => { Publications = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemPublication>(Microsoft.Graph.Beta.Models.ItemPublication.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "skills", n => { Skills = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SkillProficiency>(Microsoft.Graph.Beta.Models.SkillProficiency.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "webAccounts", n => { WebAccounts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WebAccount>(Microsoft.Graph.Beta.Models.WebAccount.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "websites", n => { Websites = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonWebsite>(Microsoft.Graph.Beta.Models.PersonWebsite.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -361,25 +361,25 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UserAccountInformation>("account", Account);
-            writer.WriteCollectionOfObjectValues<ItemAddress>("addresses", Addresses);
-            writer.WriteCollectionOfObjectValues<PersonAnnualEvent>("anniversaries", Anniversaries);
-            writer.WriteCollectionOfObjectValues<PersonAward>("awards", Awards);
-            writer.WriteCollectionOfObjectValues<PersonCertification>("certifications", Certifications);
-            writer.WriteCollectionOfObjectValues<EducationalActivity>("educationalActivities", EducationalActivities);
-            writer.WriteCollectionOfObjectValues<ItemEmail>("emails", Emails);
-            writer.WriteCollectionOfObjectValues<PersonInterest>("interests", Interests);
-            writer.WriteCollectionOfObjectValues<LanguageProficiency>("languages", Languages);
-            writer.WriteCollectionOfObjectValues<PersonName>("names", Names);
-            writer.WriteCollectionOfObjectValues<PersonAnnotation>("notes", Notes);
-            writer.WriteCollectionOfObjectValues<ItemPatent>("patents", Patents);
-            writer.WriteCollectionOfObjectValues<ItemPhone>("phones", Phones);
-            writer.WriteCollectionOfObjectValues<WorkPosition>("positions", Positions);
-            writer.WriteCollectionOfObjectValues<ProjectParticipation>("projects", Projects);
-            writer.WriteCollectionOfObjectValues<ItemPublication>("publications", Publications);
-            writer.WriteCollectionOfObjectValues<SkillProficiency>("skills", Skills);
-            writer.WriteCollectionOfObjectValues<WebAccount>("webAccounts", WebAccounts);
-            writer.WriteCollectionOfObjectValues<PersonWebsite>("websites", Websites);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserAccountInformation>("account", Account);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemAddress>("addresses", Addresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonAnnualEvent>("anniversaries", Anniversaries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonAward>("awards", Awards);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonCertification>("certifications", Certifications);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationalActivity>("educationalActivities", EducationalActivities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemEmail>("emails", Emails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonInterest>("interests", Interests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LanguageProficiency>("languages", Languages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonName>("names", Names);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonAnnotation>("notes", Notes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemPatent>("patents", Patents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemPhone>("phones", Phones);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkPosition>("positions", Positions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProjectParticipation>("projects", Projects);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ItemPublication>("publications", Publications);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SkillProficiency>("skills", Skills);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WebAccount>("webAccounts", WebAccounts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PersonWebsite>("websites", Websites);
         }
     }
 }

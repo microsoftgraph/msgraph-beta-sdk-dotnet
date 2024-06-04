@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// IOS Update Configuration, allows you to configure time window within week to install iOS updates
     /// </summary>
-    public class IosUpdateConfiguration : DeviceConfiguration, IParsable
+    public class IosUpdateConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Active Hours End (active hours mean the time window when updates install should not happen)</summary>
         public Time? ActiveHoursEnd
@@ -27,16 +27,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>If update schedule type is set to use time window scheduling, custom time windows when updates will be scheduled. This collection can contain a maximum of 20 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows
+        public List<Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow>? CustomUpdateTimeWindows
         {
-            get { return BackingStore?.Get<List<CustomUpdateTimeWindow>?>("customUpdateTimeWindows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow>?>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
 #nullable restore
 #else
-        public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows
+        public List<Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow> CustomUpdateTimeWindows
         {
-            get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
 #endif
@@ -71,23 +71,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DayOfWeekObject?>? ScheduledInstallDays
+        public List<Microsoft.Graph.Beta.Models.DayOfWeekObject?>? ScheduledInstallDays
         {
-            get { return BackingStore?.Get<List<DayOfWeekObject?>?>("scheduledInstallDays"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DayOfWeekObject?>?>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
 #nullable restore
 #else
-        public List<DayOfWeekObject?> ScheduledInstallDays
+        public List<Microsoft.Graph.Beta.Models.DayOfWeekObject?> ScheduledInstallDays
         {
-            get { return BackingStore?.Get<List<DayOfWeekObject?>>("scheduledInstallDays"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DayOfWeekObject?>>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
 #endif
         /// <summary>Update schedule type for iOS software updates.</summary>
-        public IosSoftwareUpdateScheduleType? UpdateScheduleType
+        public Microsoft.Graph.Beta.Models.IosSoftwareUpdateScheduleType? UpdateScheduleType
         {
-            get { return BackingStore?.Get<IosSoftwareUpdateScheduleType?>("updateScheduleType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IosSoftwareUpdateScheduleType?>("updateScheduleType"); }
             set { BackingStore?.Set("updateScheduleType", value); }
         }
         /// <summary>UTC Time Offset indicated in minutes</summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("utcTimeOffsetInMinutes", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosUpdateConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosUpdateConfiguration"/> and sets the default values.
         /// </summary>
         public IosUpdateConfiguration() : base()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosUpdateConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosUpdateConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosUpdateConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosUpdateConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosUpdateConfiguration();
+            return new Microsoft.Graph.Beta.Models.IosUpdateConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,12 +123,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "activeHoursEnd", n => { ActiveHoursEnd = n.GetTimeValue(); } },
                 { "activeHoursStart", n => { ActiveHoursStart = n.GetTimeValue(); } },
-                { "customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow>(Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "desiredOsVersion", n => { DesiredOsVersion = n.GetStringValue(); } },
                 { "enforcedSoftwareUpdateDelayInDays", n => { EnforcedSoftwareUpdateDelayInDays = n.GetIntValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                { "scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
-                { "updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<IosSoftwareUpdateScheduleType>(); } },
+                { "scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.DayOfWeekObject>()?.ToList(); } },
+                { "updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<Microsoft.Graph.Beta.Models.IosSoftwareUpdateScheduleType>(); } },
                 { "utcTimeOffsetInMinutes", n => { UtcTimeOffsetInMinutes = n.GetIntValue(); } },
             };
         }
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteTimeValue("activeHoursEnd", ActiveHoursEnd);
             writer.WriteTimeValue("activeHoursStart", ActiveHoursStart);
-            writer.WriteCollectionOfObjectValues<CustomUpdateTimeWindow>("customUpdateTimeWindows", CustomUpdateTimeWindows);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomUpdateTimeWindow>("customUpdateTimeWindows", CustomUpdateTimeWindows);
             writer.WriteStringValue("desiredOsVersion", DesiredOsVersion);
             writer.WriteIntValue("enforcedSoftwareUpdateDelayInDays", EnforcedSoftwareUpdateDelayInDays);
             writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteCollectionOfEnumValues<DayOfWeekObject>("scheduledInstallDays", ScheduledInstallDays);
-            writer.WriteEnumValue<IosSoftwareUpdateScheduleType>("updateScheduleType", UpdateScheduleType);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.DayOfWeekObject>("scheduledInstallDays", ScheduledInstallDays);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IosSoftwareUpdateScheduleType>("updateScheduleType", UpdateScheduleType);
             writer.WriteIntValue("utcTimeOffsetInMinutes", UtcTimeOffsetInMinutes);
         }
     }

@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The billingPostalAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? BillingPostalAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType? BillingPostalAddress
         {
-            get { return BackingStore?.Get<PostalAddressType?>("billingPostalAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType?>("billingPostalAddress"); }
             set { BackingStore?.Set("billingPostalAddress", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType BillingPostalAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType BillingPostalAddress
         {
-            get { return BackingStore?.Get<PostalAddressType>("billingPostalAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType>("billingPostalAddress"); }
             set { BackingStore?.Set("billingPostalAddress", value); }
         }
 #endif
@@ -335,16 +335,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The salesCreditMemoLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SalesCreditMemoLine>? SalesCreditMemoLines
+        public List<Microsoft.Graph.Beta.Models.SalesCreditMemoLine>? SalesCreditMemoLines
         {
-            get { return BackingStore?.Get<List<SalesCreditMemoLine>?>("salesCreditMemoLines"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SalesCreditMemoLine>?>("salesCreditMemoLines"); }
             set { BackingStore?.Set("salesCreditMemoLines", value); }
         }
 #nullable restore
 #else
-        public List<SalesCreditMemoLine> SalesCreditMemoLines
+        public List<Microsoft.Graph.Beta.Models.SalesCreditMemoLine> SalesCreditMemoLines
         {
-            get { return BackingStore?.Get<List<SalesCreditMemoLine>>("salesCreditMemoLines"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SalesCreditMemoLine>>("salesCreditMemoLines"); }
             set { BackingStore?.Set("salesCreditMemoLines", value); }
         }
 #endif
@@ -367,16 +367,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The sellingPostalAddress property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PostalAddressType? SellingPostalAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType? SellingPostalAddress
         {
-            get { return BackingStore?.Get<PostalAddressType?>("sellingPostalAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType?>("sellingPostalAddress"); }
             set { BackingStore?.Set("sellingPostalAddress", value); }
         }
 #nullable restore
 #else
-        public PostalAddressType SellingPostalAddress
+        public Microsoft.Graph.Beta.Models.PostalAddressType SellingPostalAddress
         {
-            get { return BackingStore?.Get<PostalAddressType>("sellingPostalAddress"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PostalAddressType>("sellingPostalAddress"); }
             set { BackingStore?.Set("sellingPostalAddress", value); }
         }
 #endif
@@ -415,7 +415,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SalesCreditMemo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SalesCreditMemo"/> and sets the default values.
         /// </summary>
         public SalesCreditMemo()
         {
@@ -425,12 +425,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SalesCreditMemo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SalesCreditMemo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SalesCreditMemo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.SalesCreditMemo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SalesCreditMemo();
+            return new Microsoft.Graph.Beta.Models.SalesCreditMemo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -443,7 +443,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "billToCustomerId", n => { BillToCustomerId = n.GetGuidValue(); } },
                 { "billToCustomerNumber", n => { BillToCustomerNumber = n.GetStringValue(); } },
                 { "billToName", n => { BillToName = n.GetStringValue(); } },
-                { "billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>(Microsoft.Graph.Beta.Models.PostalAddressType.CreateFromDiscriminatorValue); } },
                 { "creditMemoDate", n => { CreditMemoDate = n.GetDateValue(); } },
                 { "currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
                 { "currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
@@ -467,9 +467,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "paymentTermsId", n => { PaymentTermsId = n.GetGuidValue(); } },
                 { "phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 { "pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
-                { "salesCreditMemoLines", n => { SalesCreditMemoLines = n.GetCollectionOfObjectValues<SalesCreditMemoLine>(SalesCreditMemoLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "salesCreditMemoLines", n => { SalesCreditMemoLines = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SalesCreditMemoLine>(Microsoft.Graph.Beta.Models.SalesCreditMemoLine.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "salesperson", n => { Salesperson = n.GetStringValue(); } },
-                { "sellingPostalAddress", n => { SellingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
+                { "sellingPostalAddress", n => { SellingPostalAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>(Microsoft.Graph.Beta.Models.PostalAddressType.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "totalAmountExcludingTax", n => { TotalAmountExcludingTax = n.GetDecimalValue(); } },
                 { "totalAmountIncludingTax", n => { TotalAmountIncludingTax = n.GetDecimalValue(); } },
@@ -483,7 +483,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PostalAddressType>("billingPostalAddress", BillingPostalAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>("billingPostalAddress", BillingPostalAddress);
             writer.WriteGuidValue("billToCustomerId", BillToCustomerId);
             writer.WriteStringValue("billToCustomerNumber", BillToCustomerNumber);
             writer.WriteStringValue("billToName", BillToName);
@@ -510,9 +510,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteGuidValue("paymentTermsId", PaymentTermsId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteBoolValue("pricesIncludeTax", PricesIncludeTax);
-            writer.WriteCollectionOfObjectValues<SalesCreditMemoLine>("salesCreditMemoLines", SalesCreditMemoLines);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SalesCreditMemoLine>("salesCreditMemoLines", SalesCreditMemoLines);
             writer.WriteStringValue("salesperson", Salesperson);
-            writer.WriteObjectValue<PostalAddressType>("sellingPostalAddress", SellingPostalAddress);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PostalAddressType>("sellingPostalAddress", SellingPostalAddress);
             writer.WriteStringValue("status", Status);
             writer.WriteDecimalValue("totalAmountExcludingTax", TotalAmountExcludingTax);
             writer.WriteDecimalValue("totalAmountIncludingTax", TotalAmountIncludingTax);

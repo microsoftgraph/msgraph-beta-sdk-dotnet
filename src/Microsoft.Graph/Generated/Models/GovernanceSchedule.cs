@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GovernanceSchedule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GovernanceSchedule"/> and sets the default values.
         /// </summary>
         public GovernanceSchedule()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceSchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceSchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GovernanceSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.GovernanceSchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceSchedule();
+            return new Microsoft.Graph.Beta.Models.GovernanceSchedule();
         }
         /// <summary>
         /// The deserialization information for the current model

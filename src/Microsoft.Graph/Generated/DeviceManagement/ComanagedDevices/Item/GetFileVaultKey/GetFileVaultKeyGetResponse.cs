@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVau
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetFileVaultKeyGetResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVaultKey.GetFileVaultKeyGetResponse"/> and sets the default values.
         /// </summary>
         public GetFileVaultKeyGetResponse()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVau
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetFileVaultKeyGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVaultKey.GetFileVaultKeyGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetFileVaultKeyGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVaultKey.GetFileVaultKeyGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetFileVaultKeyGetResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetFileVaultKey.GetFileVaultKeyGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

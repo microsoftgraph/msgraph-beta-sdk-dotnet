@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <summary>The task property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TaskObject? Task
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? Task
         {
-            get { return BackingStore?.Get<TaskObject?>("task"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #nullable restore
 #else
-        public TaskObject Task
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject Task
         {
-            get { return BackingStore?.Get<TaskObject>("task"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
 #endif
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomTaskExtensionCalloutData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionCalloutData"/> and sets the default values.
         /// </summary>
         public CustomTaskExtensionCalloutData() : base()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomTaskExtensionCalloutData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionCalloutData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CustomTaskExtensionCalloutData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionCalloutData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CustomTaskExtensionCalloutData();
+            return new Microsoft.Graph.Beta.Models.IdentityGovernance.CustomTaskExtensionCalloutData();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
-                { "task", n => { Task = n.GetObjectValue<TaskObject>(TaskObject.CreateFromDiscriminatorValue); } },
+                { "task", n => { Task = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
                 { "taskProcessingresult", n => { TaskProcessingresult = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult>(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult.CreateFromDiscriminatorValue); } },
                 { "workflow", n => { Workflow = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>(Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow.CreateFromDiscriminatorValue); } },
             };
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.User>("subject", Subject);
-            writer.WriteObjectValue<TaskObject>("task", Task);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task", Task);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskProcessingResult>("taskProcessingresult", TaskProcessingresult);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.Workflow>("workflow", Workflow);
         }

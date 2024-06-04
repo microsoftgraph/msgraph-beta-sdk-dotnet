@@ -7,54 +7,54 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class SectionGroup : OnenoteEntityHierarchyModel, IParsable
+    public class SectionGroup : Microsoft.Graph.Beta.Models.OnenoteEntityHierarchyModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The notebook that contains the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Notebook? ParentNotebook
+        public Microsoft.Graph.Beta.Models.Notebook? ParentNotebook
         {
-            get { return BackingStore?.Get<Notebook?>("parentNotebook"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Notebook?>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
 #nullable restore
 #else
-        public Notebook ParentNotebook
+        public Microsoft.Graph.Beta.Models.Notebook ParentNotebook
         {
-            get { return BackingStore?.Get<Notebook>("parentNotebook"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Notebook>("parentNotebook"); }
             set { BackingStore?.Set("parentNotebook", value); }
         }
 #endif
         /// <summary>The section group that contains the section group. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SectionGroup? ParentSectionGroup
+        public Microsoft.Graph.Beta.Models.SectionGroup? ParentSectionGroup
         {
-            get { return BackingStore?.Get<SectionGroup?>("parentSectionGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SectionGroup?>("parentSectionGroup"); }
             set { BackingStore?.Set("parentSectionGroup", value); }
         }
 #nullable restore
 #else
-        public SectionGroup ParentSectionGroup
+        public Microsoft.Graph.Beta.Models.SectionGroup ParentSectionGroup
         {
-            get { return BackingStore?.Get<SectionGroup>("parentSectionGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SectionGroup>("parentSectionGroup"); }
             set { BackingStore?.Set("parentSectionGroup", value); }
         }
 #endif
         /// <summary>The section groups in the section. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SectionGroup>? SectionGroups
+        public List<Microsoft.Graph.Beta.Models.SectionGroup>? SectionGroups
         {
-            get { return BackingStore?.Get<List<SectionGroup>?>("sectionGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SectionGroup>?>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
 #nullable restore
 #else
-        public List<SectionGroup> SectionGroups
+        public List<Microsoft.Graph.Beta.Models.SectionGroup> SectionGroups
         {
-            get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SectionGroup>>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The sections in the section group. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnenoteSection>? Sections
+        public List<Microsoft.Graph.Beta.Models.OnenoteSection>? Sections
         {
-            get { return BackingStore?.Get<List<OnenoteSection>?>("sections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnenoteSection>?>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
 #nullable restore
 #else
-        public List<OnenoteSection> Sections
+        public List<Microsoft.Graph.Beta.Models.OnenoteSection> Sections
         {
-            get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnenoteSection>>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
 #endif
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SectionGroup"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.SectionGroup"/> and sets the default values.
         /// </summary>
         public SectionGroup() : base()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SectionGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SectionGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SectionGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.SectionGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SectionGroup();
+            return new Microsoft.Graph.Beta.Models.SectionGroup();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,11 +131,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "parentNotebook", n => { ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
-                { "parentSectionGroup", n => { ParentSectionGroup = n.GetObjectValue<SectionGroup>(SectionGroup.CreateFromDiscriminatorValue); } },
-                { "sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<SectionGroup>(SectionGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "parentNotebook", n => { ParentNotebook = n.GetObjectValue<Microsoft.Graph.Beta.Models.Notebook>(Microsoft.Graph.Beta.Models.Notebook.CreateFromDiscriminatorValue); } },
+                { "parentSectionGroup", n => { ParentSectionGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.SectionGroup>(Microsoft.Graph.Beta.Models.SectionGroup.CreateFromDiscriminatorValue); } },
+                { "sectionGroups", n => { SectionGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SectionGroup>(Microsoft.Graph.Beta.Models.SectionGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sectionGroupsUrl", n => { SectionGroupsUrl = n.GetStringValue(); } },
-                { "sections", n => { Sections = n.GetCollectionOfObjectValues<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sections", n => { Sections = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnenoteSection>(Microsoft.Graph.Beta.Models.OnenoteSection.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "sectionsUrl", n => { SectionsUrl = n.GetStringValue(); } },
             };
         }
@@ -147,11 +147,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<Notebook>("parentNotebook", ParentNotebook);
-            writer.WriteObjectValue<SectionGroup>("parentSectionGroup", ParentSectionGroup);
-            writer.WriteCollectionOfObjectValues<SectionGroup>("sectionGroups", SectionGroups);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Notebook>("parentNotebook", ParentNotebook);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SectionGroup>("parentSectionGroup", ParentSectionGroup);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SectionGroup>("sectionGroups", SectionGroups);
             writer.WriteStringValue("sectionGroupsUrl", SectionGroupsUrl);
-            writer.WriteCollectionOfObjectValues<OnenoteSection>("sections", Sections);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnenoteSection>("sections", Sections);
             writer.WriteStringValue("sectionsUrl", SectionsUrl);
         }
     }

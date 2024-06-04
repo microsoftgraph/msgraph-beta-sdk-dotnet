@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
     #pragma warning disable CS1591
-    public class ContentApprovalRule : ComplianceChangeRule, IParsable
+    public class ContentApprovalRule : Microsoft.Graph.Beta.Models.WindowsUpdates.ComplianceChangeRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A filter to determine which content matches the rule on an ongoing basis.</summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             set { BackingStore?.Set("durationBeforeDeploymentStart", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContentApprovalRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApprovalRule"/> and sets the default values.
         /// </summary>
         public ContentApprovalRule() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentApprovalRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApprovalRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ContentApprovalRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApprovalRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentApprovalRule();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.ContentApprovalRule();
         }
         /// <summary>
         /// The deserialization information for the current model

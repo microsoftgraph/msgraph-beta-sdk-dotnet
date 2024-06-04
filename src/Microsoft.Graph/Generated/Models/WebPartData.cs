@@ -86,16 +86,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Properties bag of the web part.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Json? Properties
+        public UntypedNode? Properties
         {
-            get { return BackingStore?.Get<Json?>("properties"); }
+            get { return BackingStore?.Get<UntypedNode?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public Json Properties
+        public UntypedNode Properties
         {
-            get { return BackingStore?.Get<Json>("properties"); }
+            get { return BackingStore?.Get<UntypedNode>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #endif
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WebPartData"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WebPartData"/> and sets the default values.
         /// </summary>
         public WebPartData()
         {
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WebPartData"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WebPartData"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WebPartData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WebPartData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WebPartData();
+            return new Microsoft.Graph.Beta.Models.WebPartData();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "dataVersion", n => { DataVersion = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "properties", n => { Properties = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "serverProcessedContent", n => { ServerProcessedContent = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServerProcessedContent>(Microsoft.Graph.Beta.Models.ServerProcessedContent.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("dataVersion", DataVersion);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<Json>("properties", Properties);
+            writer.WriteObjectValue<UntypedNode>("properties", Properties);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServerProcessedContent>("serverProcessedContent", ServerProcessedContent);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

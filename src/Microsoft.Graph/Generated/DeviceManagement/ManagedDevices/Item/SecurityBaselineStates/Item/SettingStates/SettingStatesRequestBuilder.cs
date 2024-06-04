@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
     public class SettingStatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.</summary>
         /// <param name="position">The unique identifier of securityBaselineSettingState</param>
-        /// <returns>A <see cref="SecurityBaselineSettingStateItemRequestBuilder"/></returns>
-        public SecurityBaselineSettingStateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Item.SecurityBaselineSettingStateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Item.SecurityBaselineSettingStateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("securityBaselineSettingState%2Did", position);
-                return new SecurityBaselineSettingStateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.Item.SecurityBaselineSettingStateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SettingStatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SettingStatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
         /// <summary>
         /// The security baseline state for different settings for a device
         /// </summary>
-        /// <returns>A <see cref="SecurityBaselineSettingStateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityBaselineSettingStateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SecurityBaselineSettingStateCollectionResponse?> GetAsync(Action<RequestConfiguration<SettingStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SecurityBaselineSettingStateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder.SettingStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SecurityBaselineSettingStateCollectionResponse> GetAsync(Action<RequestConfiguration<SettingStatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SecurityBaselineSettingStateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder.SettingStatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SecurityBaselineSettingStateCollectionResponse>(requestInfo, SecurityBaselineSettingStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SecurityBaselineSettingStateCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.SecurityBaselineSettingStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to settingStates for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="SecurityBaselineSettingState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.SecurityBaselineSettingState"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SecurityBaselineSettingState?> PostAsync(SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState?> PostAsync(Microsoft.Graph.Beta.Models.SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SecurityBaselineSettingState> PostAsync(SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState> PostAsync(Microsoft.Graph.Beta.Models.SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SecurityBaselineSettingState>(requestInfo, SecurityBaselineSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.SecurityBaselineSettingState>(requestInfo, Microsoft.Graph.Beta.Models.SecurityBaselineSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The security baseline state for different settings for a device
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SettingStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder.SettingStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SettingStatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder.SettingStatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.SecurityBaselineSettingState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SettingStatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SettingStatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new SettingStatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The security baseline state for different settings for a device
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SettingStatesRequestBuilderGetRequestConfiguration : RequestConfiguration<SettingStatesRequestBuilderGetQueryParameters>
+        public class SettingStatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates.SettingStatesRequestBuilder.SettingStatesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

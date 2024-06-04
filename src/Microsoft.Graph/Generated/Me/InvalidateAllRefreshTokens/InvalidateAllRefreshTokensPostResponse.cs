@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="InvalidateAllRefreshTokensPostResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse"/> and sets the default values.
         /// </summary>
         public InvalidateAllRefreshTokensPostResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InvalidateAllRefreshTokensPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InvalidateAllRefreshTokensPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InvalidateAllRefreshTokensPostResponse();
+            return new Microsoft.Graph.Beta.Me.InvalidateAllRefreshTokens.InvalidateAllRefreshTokensPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

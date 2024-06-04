@@ -60,16 +60,16 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>The networkAdapters property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NetworkAdapter>? NetworkAdapters
+        public List<Microsoft.Graph.Beta.Models.Security.NetworkAdapter>? NetworkAdapters
         {
-            get { return BackingStore?.Get<List<NetworkAdapter>?>("networkAdapters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.NetworkAdapter>?>("networkAdapters"); }
             set { BackingStore?.Set("networkAdapters", value); }
         }
 #nullable restore
 #else
-        public List<NetworkAdapter> NetworkAdapters
+        public List<Microsoft.Graph.Beta.Models.Security.NetworkAdapter> NetworkAdapters
         {
-            get { return BackingStore?.Get<List<NetworkAdapter>>("networkAdapters"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.NetworkAdapter>>("networkAdapters"); }
             set { BackingStore?.Set("networkAdapters", value); }
         }
 #endif
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SensorSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.SensorSettings"/> and sets the default values.
         /// </summary>
         public SensorSettings()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SensorSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.SensorSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SensorSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.SensorSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SensorSettings();
+            return new Microsoft.Graph.Beta.Models.Security.SensorSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "domainControllerDnsNames", n => { DomainControllerDnsNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "isDelayedDeploymentEnabled", n => { IsDelayedDeploymentEnabled = n.GetBoolValue(); } },
-                { "networkAdapters", n => { NetworkAdapters = n.GetCollectionOfObjectValues<NetworkAdapter>(NetworkAdapter.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "networkAdapters", n => { NetworkAdapters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.NetworkAdapter>(Microsoft.Graph.Beta.Models.Security.NetworkAdapter.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("domainControllerDnsNames", DomainControllerDnsNames);
             writer.WriteBoolValue("isDelayedDeploymentEnabled", IsDelayedDeploymentEnabled);
-            writer.WriteCollectionOfObjectValues<NetworkAdapter>("networkAdapters", NetworkAdapters);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.NetworkAdapter>("networkAdapters", NetworkAdapters);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

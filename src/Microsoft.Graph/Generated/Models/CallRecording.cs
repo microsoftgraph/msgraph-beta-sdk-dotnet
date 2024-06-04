@@ -7,10 +7,10 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CallRecording : Entity, IParsable
+    public class CallRecording : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The callId property</summary>
+        /// <summary>The unique identifier for the call that is related to this recording. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallId
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The contentCorrelationId property</summary>
+        /// <summary>The unique identifier that links the transcript with its corresponding recording. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentCorrelationId
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The endDateTime property</summary>
+        /// <summary>Date and time at which the recording ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? EndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity information of the organizer of the onlineMeeting related to this recording. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? MeetingOrganizer
+        public Microsoft.Graph.Beta.Models.IdentitySet? MeetingOrganizer
         {
-            get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #nullable restore
 #else
-        public IdentitySet MeetingOrganizer
+        public Microsoft.Graph.Beta.Models.IdentitySet MeetingOrganizer
         {
-            get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #endif
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("meetingOrganizerId", value); }
         }
 #endif
-        /// <summary>The URL which can be used to access the content of the recording. Read-only.</summary>
+        /// <summary>The URL that can be used to access the content of the recording. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RecordingContentUrl
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CallRecording"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallRecording"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CallRecording CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallRecording CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CallRecording();
+            return new Microsoft.Graph.Beta.Models.CallRecording();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "meetingId", n => { MeetingId = n.GetStringValue(); } },
-                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "meetingOrganizerId", n => { MeetingOrganizerId = n.GetStringValue(); } },
                 { "recordingContentUrl", n => { RecordingContentUrl = n.GetStringValue(); } },
             };
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("meetingId", MeetingId);
-            writer.WriteObjectValue<IdentitySet>("meetingOrganizer", MeetingOrganizer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("meetingOrganizer", MeetingOrganizer);
             writer.WriteStringValue("meetingOrganizerId", MeetingOrganizerId);
             writer.WriteStringValue("recordingContentUrl", RecordingContentUrl);
         }

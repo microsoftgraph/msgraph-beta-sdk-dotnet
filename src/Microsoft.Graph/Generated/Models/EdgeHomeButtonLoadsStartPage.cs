@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Show the home button; clicking the home button loads the Start page - this is also the default value.
     /// </summary>
-    public class EdgeHomeButtonLoadsStartPage : EdgeHomeButtonConfiguration, IParsable
+    public class EdgeHomeButtonLoadsStartPage : Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="EdgeHomeButtonLoadsStartPage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EdgeHomeButtonLoadsStartPage"/> and sets the default values.
         /// </summary>
         public EdgeHomeButtonLoadsStartPage() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdgeHomeButtonLoadsStartPage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EdgeHomeButtonLoadsStartPage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdgeHomeButtonLoadsStartPage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EdgeHomeButtonLoadsStartPage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdgeHomeButtonLoadsStartPage();
+            return new Microsoft.Graph.Beta.Models.EdgeHomeButtonLoadsStartPage();
         }
         /// <summary>
         /// The deserialization information for the current model

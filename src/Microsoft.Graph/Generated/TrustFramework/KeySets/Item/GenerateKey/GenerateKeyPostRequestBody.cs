@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GenerateKeyPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey.GenerateKeyPostRequestBody"/> and sets the default values.
         /// </summary>
         public GenerateKeyPostRequestBody()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GenerateKeyPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey.GenerateKeyPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GenerateKeyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey.GenerateKeyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GenerateKeyPostRequestBody();
+            return new Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey.GenerateKeyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

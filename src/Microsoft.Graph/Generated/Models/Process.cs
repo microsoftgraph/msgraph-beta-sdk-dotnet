@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The integrity level of the process. Possible values are: unknown, untrusted, low, medium, high, system.</summary>
-        public ProcessIntegrityLevel? IntegrityLevel
+        public Microsoft.Graph.Beta.Models.ProcessIntegrityLevel? IntegrityLevel
         {
-            get { return BackingStore?.Get<ProcessIntegrityLevel?>("integrityLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProcessIntegrityLevel?>("integrityLevel"); }
             set { BackingStore?.Set("integrityLevel", value); }
         }
         /// <summary>True if the process is elevated.</summary>
@@ -168,7 +168,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("processId", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Process"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Process"/> and sets the default values.
         /// </summary>
         public Process()
         {
@@ -178,12 +178,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Process"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Process"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Process CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Process CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Process();
+            return new Microsoft.Graph.Beta.Models.Process();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "commandLine", n => { CommandLine = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "fileHash", n => { FileHash = n.GetObjectValue<Microsoft.Graph.Beta.Models.FileHash>(Microsoft.Graph.Beta.Models.FileHash.CreateFromDiscriminatorValue); } },
-                { "integrityLevel", n => { IntegrityLevel = n.GetEnumValue<ProcessIntegrityLevel>(); } },
+                { "integrityLevel", n => { IntegrityLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.ProcessIntegrityLevel>(); } },
                 { "isElevated", n => { IsElevated = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("commandLine", CommandLine);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FileHash>("fileHash", FileHash);
-            writer.WriteEnumValue<ProcessIntegrityLevel>("integrityLevel", IntegrityLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ProcessIntegrityLevel>("integrityLevel", IntegrityLevel);
             writer.WriteBoolValue("isElevated", IsElevated);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);

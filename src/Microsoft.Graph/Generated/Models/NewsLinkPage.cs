@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class NewsLinkPage : BaseSitePage, IParsable
+    public class NewsLinkPage : Microsoft.Graph.Beta.Models.BaseSitePage, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The bannerImageWebUrl property</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The newsSharepointIds property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SharepointIds? NewsSharepointIds
+        public Microsoft.Graph.Beta.Models.SharepointIds? NewsSharepointIds
         {
-            get { return BackingStore?.Get<SharepointIds?>("newsSharepointIds"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("newsSharepointIds"); }
             set { BackingStore?.Set("newsSharepointIds", value); }
         }
 #nullable restore
 #else
-        public SharepointIds NewsSharepointIds
+        public Microsoft.Graph.Beta.Models.SharepointIds NewsSharepointIds
         {
-            get { return BackingStore?.Get<SharepointIds>("newsSharepointIds"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("newsSharepointIds"); }
             set { BackingStore?.Set("newsSharepointIds", value); }
         }
 #endif
@@ -61,12 +61,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="NewsLinkPage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.NewsLinkPage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new NewsLinkPage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.NewsLinkPage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new NewsLinkPage();
+            return new Microsoft.Graph.Beta.Models.NewsLinkPage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "bannerImageWebUrl", n => { BannerImageWebUrl = n.GetStringValue(); } },
-                { "newsSharepointIds", n => { NewsSharepointIds = n.GetObjectValue<SharepointIds>(SharepointIds.CreateFromDiscriminatorValue); } },
+                { "newsSharepointIds", n => { NewsSharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 { "newsWebUrl", n => { NewsWebUrl = n.GetStringValue(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("bannerImageWebUrl", BannerImageWebUrl);
-            writer.WriteObjectValue<SharepointIds>("newsSharepointIds", NewsSharepointIds);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>("newsSharepointIds", NewsSharepointIds);
             writer.WriteStringValue("newsWebUrl", NewsWebUrl);
         }
     }

@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>A collection of role assignments for the managed tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RoleAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.RoleAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<RoleAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.RoleAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<RoleAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.RoleAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<RoleAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.RoleAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MyRole"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.MyRole"/> and sets the default values.
         /// </summary>
         public MyRole()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MyRole"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.MyRole"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MyRole CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.MyRole CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MyRole();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.MyRole();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<RoleAssignment>(RoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.RoleAssignment>(Microsoft.Graph.Beta.Models.ManagedTenants.RoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
             };
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<RoleAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.RoleAssignment>("assignments", Assignments);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteAdditionalData(AdditionalData);

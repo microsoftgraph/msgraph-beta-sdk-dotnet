@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OnenoteEntitySchemaObjectModel : OnenoteEntityBaseModel, IParsable
+    public class OnenoteEntitySchemaObjectModel : Microsoft.Graph.Beta.Models.OnenoteEntityBaseModel, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The createdDateTime property</summary>
@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OnenoteEntitySchemaObjectModel"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnenoteEntitySchemaObjectModel"/> and sets the default values.
         /// </summary>
         public OnenoteEntitySchemaObjectModel() : base()
         {
@@ -26,20 +26,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnenoteEntitySchemaObjectModel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnenoteEntitySchemaObjectModel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnenoteEntitySchemaObjectModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OnenoteEntitySchemaObjectModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.notebook" => new Notebook(),
-                "#microsoft.graph.onenoteEntityHierarchyModel" => new OnenoteEntityHierarchyModel(),
-                "#microsoft.graph.onenotePage" => new OnenotePage(),
-                "#microsoft.graph.onenoteSection" => new OnenoteSection(),
-                "#microsoft.graph.sectionGroup" => new SectionGroup(),
-                _ => new OnenoteEntitySchemaObjectModel(),
+                "#microsoft.graph.notebook" => new Microsoft.Graph.Beta.Models.Notebook(),
+                "#microsoft.graph.onenoteEntityHierarchyModel" => new Microsoft.Graph.Beta.Models.OnenoteEntityHierarchyModel(),
+                "#microsoft.graph.onenotePage" => new Microsoft.Graph.Beta.Models.OnenotePage(),
+                "#microsoft.graph.onenoteSection" => new Microsoft.Graph.Beta.Models.OnenoteSection(),
+                "#microsoft.graph.sectionGroup" => new Microsoft.Graph.Beta.Models.SectionGroup(),
+                _ => new Microsoft.Graph.Beta.Models.OnenoteEntitySchemaObjectModel(),
             };
         }
         /// <summary>

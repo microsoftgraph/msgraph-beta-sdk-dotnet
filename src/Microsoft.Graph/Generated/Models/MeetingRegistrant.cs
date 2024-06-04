@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MeetingRegistrant : MeetingRegistrantBase, IParsable
+    public class MeetingRegistrant : Microsoft.Graph.Beta.Models.MeetingRegistrantBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The registrant&apos;s answer to custom questions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomQuestionAnswer>? CustomQuestionAnswers
+        public List<Microsoft.Graph.Beta.Models.CustomQuestionAnswer>? CustomQuestionAnswers
         {
-            get { return BackingStore?.Get<List<CustomQuestionAnswer>?>("customQuestionAnswers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomQuestionAnswer>?>("customQuestionAnswers"); }
             set { BackingStore?.Set("customQuestionAnswers", value); }
         }
 #nullable restore
 #else
-        public List<CustomQuestionAnswer> CustomQuestionAnswers
+        public List<Microsoft.Graph.Beta.Models.CustomQuestionAnswer> CustomQuestionAnswers
         {
-            get { return BackingStore?.Get<List<CustomQuestionAnswer>>("customQuestionAnswers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomQuestionAnswer>>("customQuestionAnswers"); }
             set { BackingStore?.Set("customQuestionAnswers", value); }
         }
 #endif
@@ -81,13 +81,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("registrationDateTime", value); }
         }
         /// <summary>The registration status of the registrant. Read-only.</summary>
-        public MeetingRegistrantStatus? Status
+        public Microsoft.Graph.Beta.Models.MeetingRegistrantStatus? Status
         {
-            get { return BackingStore?.Get<MeetingRegistrantStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MeetingRegistrantStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MeetingRegistrant"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MeetingRegistrant"/> and sets the default values.
         /// </summary>
         public MeetingRegistrant() : base()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingRegistrant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingRegistrant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MeetingRegistrant CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MeetingRegistrant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MeetingRegistrant();
+            return new Microsoft.Graph.Beta.Models.MeetingRegistrant();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "customQuestionAnswers", n => { CustomQuestionAnswers = n.GetCollectionOfObjectValues<CustomQuestionAnswer>(CustomQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customQuestionAnswers", n => { CustomQuestionAnswers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomQuestionAnswer>(Microsoft.Graph.Beta.Models.CustomQuestionAnswer.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
                 { "firstName", n => { FirstName = n.GetStringValue(); } },
                 { "lastName", n => { LastName = n.GetStringValue(); } },
                 { "registrationDateTime", n => { RegistrationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<MeetingRegistrantStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.MeetingRegistrantStatus>(); } },
             };
         }
         /// <summary>
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<CustomQuestionAnswer>("customQuestionAnswers", CustomQuestionAnswers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomQuestionAnswer>("customQuestionAnswers", CustomQuestionAnswers);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("firstName", FirstName);
             writer.WriteStringValue("lastName", LastName);
             writer.WriteDateTimeOffsetValue("registrationDateTime", RegistrationDateTime);
-            writer.WriteEnumValue<MeetingRegistrantStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MeetingRegistrantStatus>("status", Status);
         }
     }
 }

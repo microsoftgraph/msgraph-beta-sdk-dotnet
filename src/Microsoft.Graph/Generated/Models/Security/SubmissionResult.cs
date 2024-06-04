@@ -20,30 +20,30 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The submission result category. The possible values are: notJunk, spam, phishing, malware, allowedByPolicy, blockedByPolicy, spoof, unknown, noResultAvailable and unkownFutureValue.</summary>
-        public SubmissionResultCategory? Category
+        public Microsoft.Graph.Beta.Models.Security.SubmissionResultCategory? Category
         {
-            get { return BackingStore?.Get<SubmissionResultCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionResultCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>Specifies the extra details provided by Microsoft to substantiate their analysis result.</summary>
-        public SubmissionResultDetail? Detail
+        public Microsoft.Graph.Beta.Models.Security.SubmissionResultDetail? Detail
         {
-            get { return BackingStore?.Get<SubmissionResultDetail?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionResultDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>Specifies the files detected by Microsoft in the submitted emails.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SubmissionDetectedFile>? DetectedFiles
+        public List<Microsoft.Graph.Beta.Models.Security.SubmissionDetectedFile>? DetectedFiles
         {
-            get { return BackingStore?.Get<List<SubmissionDetectedFile>?>("detectedFiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.SubmissionDetectedFile>?>("detectedFiles"); }
             set { BackingStore?.Set("detectedFiles", value); }
         }
 #nullable restore
 #else
-        public List<SubmissionDetectedFile> DetectedFiles
+        public List<Microsoft.Graph.Beta.Models.Security.SubmissionDetectedFile> DetectedFiles
         {
-            get { return BackingStore?.Get<List<SubmissionDetectedFile>>("detectedFiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.SubmissionDetectedFile>>("detectedFiles"); }
             set { BackingStore?.Set("detectedFiles", value); }
         }
 #endif
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             set { BackingStore?.Set("userMailboxSetting", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubmissionResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.SubmissionResult"/> and sets the default values.
         /// </summary>
         public SubmissionResult()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubmissionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.SubmissionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SubmissionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.SubmissionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubmissionResult();
+            return new Microsoft.Graph.Beta.Models.Security.SubmissionResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetEnumValue<SubmissionResultCategory>(); } },
-                { "detail", n => { Detail = n.GetEnumValue<SubmissionResultDetail>(); } },
-                { "detectedFiles", n => { DetectedFiles = n.GetCollectionOfObjectValues<SubmissionDetectedFile>(SubmissionDetectedFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionResultCategory>(); } },
+                { "detail", n => { Detail = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionResultDetail>(); } },
+                { "detectedFiles", n => { DetectedFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.SubmissionDetectedFile>(Microsoft.Graph.Beta.Models.Security.SubmissionDetectedFile.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "detectedUrls", n => { DetectedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "userMailboxSetting", n => { UserMailboxSetting = n.GetEnumValue<UserMailboxSetting>(); } },
+                { "userMailboxSetting", n => { UserMailboxSetting = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.UserMailboxSetting>(); } },
             };
         }
         /// <summary>
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<SubmissionResultCategory>("category", Category);
-            writer.WriteEnumValue<SubmissionResultDetail>("detail", Detail);
-            writer.WriteCollectionOfObjectValues<SubmissionDetectedFile>("detectedFiles", DetectedFiles);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionResultCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionResultDetail>("detail", Detail);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.SubmissionDetectedFile>("detectedFiles", DetectedFiles);
             writer.WriteCollectionOfPrimitiveValues<string>("detectedUrls", DetectedUrls);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<UserMailboxSetting>("userMailboxSetting", UserMailboxSetting);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.UserMailboxSetting>("userMailboxSetting", UserMailboxSetting);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

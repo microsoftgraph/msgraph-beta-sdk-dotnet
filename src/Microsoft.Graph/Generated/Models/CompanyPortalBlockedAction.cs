@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Beta.Models
     public class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Action on a device that can be executed in the Company Portal</summary>
-        public CompanyPortalAction? Action
+        public Microsoft.Graph.Beta.Models.CompanyPortalAction? Action
         {
-            get { return BackingStore?.Get<CompanyPortalAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CompanyPortalAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,13 +49,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>Supported platform types.</summary>
-        public DevicePlatformType? Platform
+        public Microsoft.Graph.Beta.Models.DevicePlatformType? Platform
         {
-            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CompanyPortalBlockedAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction"/> and sets the default values.
         /// </summary>
         public CompanyPortalBlockedAction()
         {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CompanyPortalBlockedAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CompanyPortalBlockedAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CompanyPortalBlockedAction();
+            return new Microsoft.Graph.Beta.Models.CompanyPortalBlockedAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,10 +80,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<CompanyPortalAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.CompanyPortalAction>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "ownerType", n => { OwnerType = n.GetEnumValue<OwnerType>(); } },
-                { "platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<Microsoft.Graph.Beta.Models.OwnerType>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>(); } },
             };
         }
         /// <summary>
@@ -93,10 +93,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<CompanyPortalAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CompanyPortalAction>("action", Action);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<OwnerType>("ownerType", OwnerType);
-            writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OwnerType>("ownerType", OwnerType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>("platform", Platform);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

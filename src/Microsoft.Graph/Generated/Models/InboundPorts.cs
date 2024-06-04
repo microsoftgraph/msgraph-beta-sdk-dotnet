@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="InboundPorts"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.InboundPorts"/> and sets the default values.
         /// </summary>
         public InboundPorts()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InboundPorts"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.InboundPorts"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static InboundPorts CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.InboundPorts CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.allInboundPorts" => new AllInboundPorts(),
-                "#microsoft.graph.enumeratedInboundPorts" => new EnumeratedInboundPorts(),
-                _ => new InboundPorts(),
+                "#microsoft.graph.allInboundPorts" => new Microsoft.Graph.Beta.Models.AllInboundPorts(),
+                "#microsoft.graph.enumeratedInboundPorts" => new Microsoft.Graph.Beta.Models.EnumeratedInboundPorts(),
+                _ => new Microsoft.Graph.Beta.Models.InboundPorts(),
             };
         }
         /// <summary>

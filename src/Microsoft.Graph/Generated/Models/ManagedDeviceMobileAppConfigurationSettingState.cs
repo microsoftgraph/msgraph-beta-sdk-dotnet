@@ -141,23 +141,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contributing policies</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SettingSource>? Sources
+        public List<Microsoft.Graph.Beta.Models.SettingSource>? Sources
         {
-            get { return BackingStore?.Get<List<SettingSource>?>("sources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SettingSource>?>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
 #nullable restore
 #else
-        public List<SettingSource> Sources
+        public List<Microsoft.Graph.Beta.Models.SettingSource> Sources
         {
-            get { return BackingStore?.Get<List<SettingSource>>("sources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SettingSource>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
 #endif
         /// <summary>The state property</summary>
-        public ComplianceStatus? State
+        public Microsoft.Graph.Beta.Models.ComplianceStatus? State
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>UserEmail</summary>
@@ -225,7 +225,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagedDeviceMobileAppConfigurationSettingState"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationSettingState"/> and sets the default values.
         /// </summary>
         public ManagedDeviceMobileAppConfigurationSettingState()
         {
@@ -235,12 +235,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedDeviceMobileAppConfigurationSettingState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationSettingState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagedDeviceMobileAppConfigurationSettingState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationSettingState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedDeviceMobileAppConfigurationSettingState();
+            return new Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationSettingState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -258,8 +258,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "setting", n => { Setting = n.GetStringValue(); } },
                 { "settingInstanceId", n => { SettingInstanceId = n.GetStringValue(); } },
                 { "settingName", n => { SettingName = n.GetStringValue(); } },
-                { "sources", n => { Sources = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
+                { "sources", n => { Sources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SettingSource>(Microsoft.Graph.Beta.Models.SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>(); } },
                 { "userEmail", n => { UserEmail = n.GetStringValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
@@ -281,8 +281,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("setting", Setting);
             writer.WriteStringValue("settingInstanceId", SettingInstanceId);
             writer.WriteStringValue("settingName", SettingName);
-            writer.WriteCollectionOfObjectValues<SettingSource>("sources", Sources);
-            writer.WriteEnumValue<ComplianceStatus>("state", State);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SettingSource>("sources", Sources);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>("state", State);
             writer.WriteStringValue("userEmail", UserEmail);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userName", UserName);

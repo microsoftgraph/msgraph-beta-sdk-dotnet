@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientAppType property</summary>
-        public ConditionalAccessClientApp? ClientAppType
+        public Microsoft.Graph.Beta.Models.ConditionalAccessClientApp? ClientAppType
         {
-            get { return BackingStore?.Get<ConditionalAccessClientApp?>("clientAppType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessClientApp?>("clientAppType"); }
             set { BackingStore?.Set("clientAppType", value); }
         }
         /// <summary>The country property</summary>
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The devicePlatform property</summary>
-        public ConditionalAccessDevicePlatform? DevicePlatform
+        public Microsoft.Graph.Beta.Models.ConditionalAccessDevicePlatform? DevicePlatform
         {
-            get { return BackingStore?.Get<ConditionalAccessDevicePlatform?>("devicePlatform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessDevicePlatform?>("devicePlatform"); }
             set { BackingStore?.Set("devicePlatform", value); }
         }
         /// <summary>The insiderRiskLevel property</summary>
@@ -118,25 +118,25 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The servicePrincipalRiskLevel property</summary>
-        public RiskLevel? ServicePrincipalRiskLevel
+        public Microsoft.Graph.Beta.Models.RiskLevel? ServicePrincipalRiskLevel
         {
-            get { return BackingStore?.Get<RiskLevel?>("servicePrincipalRiskLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("servicePrincipalRiskLevel"); }
             set { BackingStore?.Set("servicePrincipalRiskLevel", value); }
         }
         /// <summary>The signInRiskLevel property</summary>
-        public RiskLevel? SignInRiskLevel
+        public Microsoft.Graph.Beta.Models.RiskLevel? SignInRiskLevel
         {
-            get { return BackingStore?.Get<RiskLevel?>("signInRiskLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("signInRiskLevel"); }
             set { BackingStore?.Set("signInRiskLevel", value); }
         }
         /// <summary>The userRiskLevel property</summary>
-        public RiskLevel? UserRiskLevel
+        public Microsoft.Graph.Beta.Models.RiskLevel? UserRiskLevel
         {
-            get { return BackingStore?.Get<RiskLevel?>("userRiskLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("userRiskLevel"); }
             set { BackingStore?.Set("userRiskLevel", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessWhatIfConditions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions"/> and sets the default values.
         /// </summary>
         public ConditionalAccessWhatIfConditions()
         {
@@ -146,12 +146,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessWhatIfConditions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessWhatIfConditions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessWhatIfConditions();
+            return new Microsoft.Graph.Beta.Models.ConditionalAccessWhatIfConditions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,16 +162,16 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "authenticationFlow", n => { AuthenticationFlow = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationFlow>(Microsoft.Graph.Beta.Models.AuthenticationFlow.CreateFromDiscriminatorValue); } },
-                { "clientAppType", n => { ClientAppType = n.GetEnumValue<ConditionalAccessClientApp>(); } },
+                { "clientAppType", n => { ClientAppType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConditionalAccessClientApp>(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "deviceInfo", n => { DeviceInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceInfo>(Microsoft.Graph.Beta.Models.DeviceInfo.CreateFromDiscriminatorValue); } },
-                { "devicePlatform", n => { DevicePlatform = n.GetEnumValue<ConditionalAccessDevicePlatform>(); } },
-                { "insiderRiskLevel", n => { InsiderRiskLevel = n.GetEnumValue<InsiderRiskLevel>(); } },
+                { "devicePlatform", n => { DevicePlatform = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConditionalAccessDevicePlatform>(); } },
+                { "insiderRiskLevel", n => { InsiderRiskLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.InsiderRiskLevel>(); } },
                 { "ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "servicePrincipalRiskLevel", n => { ServicePrincipalRiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                { "signInRiskLevel", n => { SignInRiskLevel = n.GetEnumValue<RiskLevel>(); } },
-                { "userRiskLevel", n => { UserRiskLevel = n.GetEnumValue<RiskLevel>(); } },
+                { "servicePrincipalRiskLevel", n => { ServicePrincipalRiskLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>(); } },
+                { "signInRiskLevel", n => { SignInRiskLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>(); } },
+                { "userRiskLevel", n => { UserRiskLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>(); } },
             };
         }
         /// <summary>
@@ -182,16 +182,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationFlow>("authenticationFlow", AuthenticationFlow);
-            writer.WriteEnumValue<ConditionalAccessClientApp>("clientAppType", ClientAppType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConditionalAccessClientApp>("clientAppType", ClientAppType);
             writer.WriteStringValue("country", Country);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceInfo>("deviceInfo", DeviceInfo);
-            writer.WriteEnumValue<ConditionalAccessDevicePlatform>("devicePlatform", DevicePlatform);
-            writer.WriteEnumValue<InsiderRiskLevel>("insiderRiskLevel", InsiderRiskLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConditionalAccessDevicePlatform>("devicePlatform", DevicePlatform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.InsiderRiskLevel>("insiderRiskLevel", InsiderRiskLevel);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RiskLevel>("servicePrincipalRiskLevel", ServicePrincipalRiskLevel);
-            writer.WriteEnumValue<RiskLevel>("signInRiskLevel", SignInRiskLevel);
-            writer.WriteEnumValue<RiskLevel>("userRiskLevel", UserRiskLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>("servicePrincipalRiskLevel", ServicePrincipalRiskLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>("signInRiskLevel", SignInRiskLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskLevel>("userRiskLevel", UserRiskLevel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

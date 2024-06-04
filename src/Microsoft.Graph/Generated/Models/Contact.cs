@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Contact : OutlookItem, IParsable
+    public class Contact : Microsoft.Graph.Beta.Models.OutlookItem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the contact&apos;s assistant.</summary>
@@ -100,32 +100,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The contact&apos;s email addresses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TypedEmailAddress>? EmailAddresses
+        public List<Microsoft.Graph.Beta.Models.TypedEmailAddress>? EmailAddresses
         {
-            get { return BackingStore?.Get<List<TypedEmailAddress>?>("emailAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TypedEmailAddress>?>("emailAddresses"); }
             set { BackingStore?.Set("emailAddresses", value); }
         }
 #nullable restore
 #else
-        public List<TypedEmailAddress> EmailAddresses
+        public List<Microsoft.Graph.Beta.Models.TypedEmailAddress> EmailAddresses
         {
-            get { return BackingStore?.Get<List<TypedEmailAddress>>("emailAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TypedEmailAddress>>("emailAddresses"); }
             set { BackingStore?.Set("emailAddresses", value); }
         }
 #endif
         /// <summary>The collection of open extensions defined for the contact. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -148,16 +148,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The flag value that indicates the status, start date, due date, or completion date for the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public FollowupFlag? Flag
+        public Microsoft.Graph.Beta.Models.FollowupFlag? Flag
         {
-            get { return BackingStore?.Get<FollowupFlag?>("flag"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FollowupFlag?>("flag"); }
             set { BackingStore?.Set("flag", value); }
         }
 #nullable restore
 #else
-        public FollowupFlag Flag
+        public Microsoft.Graph.Beta.Models.FollowupFlag Flag
         {
-            get { return BackingStore?.Get<FollowupFlag>("flag"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FollowupFlag>("flag"); }
             set { BackingStore?.Set("flag", value); }
         }
 #endif
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("gender", value); }
         }
 #endif
-        /// <summary>The contact&apos;s generation.</summary>
+        /// <summary>The contact&apos;s suffix.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Generation
@@ -298,16 +298,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of multi-value extended properties defined for the contact. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty> MultiValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
 #endif
@@ -378,48 +378,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Phone numbers associated with the contact, for example, home phone, mobile phone, and business phone.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Phone>? Phones
+        public List<Microsoft.Graph.Beta.Models.Phone>? Phones
         {
-            get { return BackingStore?.Get<List<Phone>?>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Phone>?>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #nullable restore
 #else
-        public List<Phone> Phones
+        public List<Microsoft.Graph.Beta.Models.Phone> Phones
         {
-            get { return BackingStore?.Get<List<Phone>>("phones"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
 #endif
         /// <summary>Optional contact picture. You can get or set a photo for a contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProfilePhoto? Photo
+        public Microsoft.Graph.Beta.Models.ProfilePhoto? Photo
         {
-            get { return BackingStore?.Get<ProfilePhoto?>("photo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProfilePhoto?>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #nullable restore
 #else
-        public ProfilePhoto Photo
+        public Microsoft.Graph.Beta.Models.ProfilePhoto Photo
         {
-            get { return BackingStore?.Get<ProfilePhoto>("photo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProfilePhoto>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
 #endif
         /// <summary>Addresses associated with the contact, for example, home address and business address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PhysicalAddress>? PostalAddresses
+        public List<Microsoft.Graph.Beta.Models.PhysicalAddress>? PostalAddresses
         {
-            get { return BackingStore?.Get<List<PhysicalAddress>?>("postalAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PhysicalAddress>?>("postalAddresses"); }
             set { BackingStore?.Set("postalAddresses", value); }
         }
 #nullable restore
 #else
-        public List<PhysicalAddress> PostalAddresses
+        public List<Microsoft.Graph.Beta.Models.PhysicalAddress> PostalAddresses
         {
-            get { return BackingStore?.Get<List<PhysicalAddress>>("postalAddresses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PhysicalAddress>>("postalAddresses"); }
             set { BackingStore?.Set("postalAddresses", value); }
         }
 #endif
@@ -442,16 +442,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of single-value extended properties defined for the contact. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #nullable restore
 #else
-        public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
+        public List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty> SingleValueExtendedProperties
         {
-            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
 #endif
@@ -506,16 +506,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Web sites associated with the contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Website>? Websites
+        public List<Microsoft.Graph.Beta.Models.Website>? Websites
         {
-            get { return BackingStore?.Get<List<Website>?>("websites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Website>?>("websites"); }
             set { BackingStore?.Set("websites", value); }
         }
 #nullable restore
 #else
-        public List<Website> Websites
+        public List<Microsoft.Graph.Beta.Models.Website> Websites
         {
-            get { return BackingStore?.Get<List<Website>>("websites"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Website>>("websites"); }
             set { BackingStore?.Set("websites", value); }
         }
 #endif
@@ -574,7 +574,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Contact"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Contact"/> and sets the default values.
         /// </summary>
         public Contact() : base()
         {
@@ -583,12 +583,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Contact"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Contact"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Contact CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Contact CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Contact();
+            return new Microsoft.Graph.Beta.Models.Contact();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -604,10 +604,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "companyName", n => { CompanyName = n.GetStringValue(); } },
                 { "department", n => { Department = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "emailAddresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<TypedEmailAddress>(TypedEmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "emailAddresses", n => { EmailAddresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TypedEmailAddress>(Microsoft.Graph.Beta.Models.TypedEmailAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>(Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "fileAs", n => { FileAs = n.GetStringValue(); } },
-                { "flag", n => { Flag = n.GetObjectValue<FollowupFlag>(FollowupFlag.CreateFromDiscriminatorValue); } },
+                { "flag", n => { Flag = n.GetObjectValue<Microsoft.Graph.Beta.Models.FollowupFlag>(Microsoft.Graph.Beta.Models.FollowupFlag.CreateFromDiscriminatorValue); } },
                 { "gender", n => { Gender = n.GetStringValue(); } },
                 { "generation", n => { Generation = n.GetStringValue(); } },
                 { "givenName", n => { GivenName = n.GetStringValue(); } },
@@ -617,20 +617,20 @@ namespace Microsoft.Graph.Beta.Models
                 { "jobTitle", n => { JobTitle = n.GetStringValue(); } },
                 { "manager", n => { Manager = n.GetStringValue(); } },
                 { "middleName", n => { MiddleName = n.GetStringValue(); } },
-                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>(Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "nickName", n => { NickName = n.GetStringValue(); } },
                 { "officeLocation", n => { OfficeLocation = n.GetStringValue(); } },
                 { "parentFolderId", n => { ParentFolderId = n.GetStringValue(); } },
                 { "personalNotes", n => { PersonalNotes = n.GetStringValue(); } },
-                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "photo", n => { Photo = n.GetObjectValue<ProfilePhoto>(ProfilePhoto.CreateFromDiscriminatorValue); } },
-                { "postalAddresses", n => { PostalAddresses = n.GetCollectionOfObjectValues<PhysicalAddress>(PhysicalAddress.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "phones", n => { Phones = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Phone>(Microsoft.Graph.Beta.Models.Phone.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "photo", n => { Photo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ProfilePhoto>(Microsoft.Graph.Beta.Models.ProfilePhoto.CreateFromDiscriminatorValue); } },
+                { "postalAddresses", n => { PostalAddresses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PhysicalAddress>(Microsoft.Graph.Beta.Models.PhysicalAddress.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "profession", n => { Profession = n.GetStringValue(); } },
-                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>(Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "spouseName", n => { SpouseName = n.GetStringValue(); } },
                 { "surname", n => { Surname = n.GetStringValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "websites", n => { Websites = n.GetCollectionOfObjectValues<Website>(Website.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "websites", n => { Websites = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Website>(Microsoft.Graph.Beta.Models.Website.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "weddingAnniversary", n => { WeddingAnniversary = n.GetDateValue(); } },
                 { "yomiCompanyName", n => { YomiCompanyName = n.GetStringValue(); } },
                 { "yomiGivenName", n => { YomiGivenName = n.GetStringValue(); } },
@@ -651,10 +651,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("companyName", CompanyName);
             writer.WriteStringValue("department", Department);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<TypedEmailAddress>("emailAddresses", EmailAddresses);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TypedEmailAddress>("emailAddresses", EmailAddresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteStringValue("fileAs", FileAs);
-            writer.WriteObjectValue<FollowupFlag>("flag", Flag);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FollowupFlag>("flag", Flag);
             writer.WriteStringValue("gender", Gender);
             writer.WriteStringValue("generation", Generation);
             writer.WriteStringValue("givenName", GivenName);
@@ -664,20 +664,20 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("jobTitle", JobTitle);
             writer.WriteStringValue("manager", Manager);
             writer.WriteStringValue("middleName", MiddleName);
-            writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("nickName", NickName);
             writer.WriteStringValue("officeLocation", OfficeLocation);
             writer.WriteStringValue("parentFolderId", ParentFolderId);
             writer.WriteStringValue("personalNotes", PersonalNotes);
-            writer.WriteCollectionOfObjectValues<Phone>("phones", Phones);
-            writer.WriteObjectValue<ProfilePhoto>("photo", Photo);
-            writer.WriteCollectionOfObjectValues<PhysicalAddress>("postalAddresses", PostalAddresses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Phone>("phones", Phones);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ProfilePhoto>("photo", Photo);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PhysicalAddress>("postalAddresses", PostalAddresses);
             writer.WriteStringValue("profession", Profession);
-            writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteStringValue("spouseName", SpouseName);
             writer.WriteStringValue("surname", Surname);
             writer.WriteStringValue("title", Title);
-            writer.WriteCollectionOfObjectValues<Website>("websites", Websites);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Website>("websites", Websites);
             writer.WriteDateValue("weddingAnniversary", WeddingAnniversary);
             writer.WriteStringValue("yomiCompanyName", YomiCompanyName);
             writer.WriteStringValue("yomiGivenName", YomiGivenName);

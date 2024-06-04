@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PermissionsAnalytics : Entity, IParsable
+    public class PermissionsAnalytics : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The output of the permissions usage data analysis performed by Permissions Management to assess risk with identities and resources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Finding>? Findings
+        public List<Microsoft.Graph.Beta.Models.Finding>? Findings
         {
-            get { return BackingStore?.Get<List<Finding>?>("findings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Finding>?>("findings"); }
             set { BackingStore?.Set("findings", value); }
         }
 #nullable restore
 #else
-        public List<Finding> Findings
+        public List<Microsoft.Graph.Beta.Models.Finding> Findings
         {
-            get { return BackingStore?.Get<List<Finding>>("findings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Finding>>("findings"); }
             set { BackingStore?.Set("findings", value); }
         }
 #endif
         /// <summary>Represents the Permissions Creep Index (PCI) for the authorization system. PCI distribution chart shows the classification of human and nonhuman identities based on the PCI score in three buckets (low, medium, high).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionsCreepIndexDistribution>? PermissionsCreepIndexDistributions
+        public List<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution>? PermissionsCreepIndexDistributions
         {
-            get { return BackingStore?.Get<List<PermissionsCreepIndexDistribution>?>("permissionsCreepIndexDistributions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution>?>("permissionsCreepIndexDistributions"); }
             set { BackingStore?.Set("permissionsCreepIndexDistributions", value); }
         }
 #nullable restore
 #else
-        public List<PermissionsCreepIndexDistribution> PermissionsCreepIndexDistributions
+        public List<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution> PermissionsCreepIndexDistributions
         {
-            get { return BackingStore?.Get<List<PermissionsCreepIndexDistribution>>("permissionsCreepIndexDistributions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution>>("permissionsCreepIndexDistributions"); }
             set { BackingStore?.Set("permissionsCreepIndexDistributions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionsAnalytics"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsAnalytics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PermissionsAnalytics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PermissionsAnalytics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PermissionsAnalytics();
+            return new Microsoft.Graph.Beta.Models.PermissionsAnalytics();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "findings", n => { Findings = n.GetCollectionOfObjectValues<Finding>(Finding.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "permissionsCreepIndexDistributions", n => { PermissionsCreepIndexDistributions = n.GetCollectionOfObjectValues<PermissionsCreepIndexDistribution>(PermissionsCreepIndexDistribution.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "findings", n => { Findings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Finding>(Microsoft.Graph.Beta.Models.Finding.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "permissionsCreepIndexDistributions", n => { PermissionsCreepIndexDistributions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution>(Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Finding>("findings", Findings);
-            writer.WriteCollectionOfObjectValues<PermissionsCreepIndexDistribution>("permissionsCreepIndexDistributions", PermissionsCreepIndexDistributions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Finding>("findings", Findings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionsCreepIndexDistribution>("permissionsCreepIndexDistributions", PermissionsCreepIndexDistributions);
         }
     }
 }

@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AnalyzedEmailUrl"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl"/> and sets the default values.
         /// </summary>
         public AnalyzedEmailUrl()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AnalyzedEmailUrl"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AnalyzedEmailUrl CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AnalyzedEmailUrl();
+            return new Microsoft.Graph.Beta.Models.Security.AnalyzedEmailUrl();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models.Security
                 { "detectionMethod", n => { DetectionMethod = n.GetStringValue(); } },
                 { "detonationDetails", n => { DetonationDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationDetails>(Microsoft.Graph.Beta.Models.Security.DetonationDetails.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "threatType", n => { ThreatType = n.GetEnumValue<ThreatType>(); } },
+                { "threatType", n => { ThreatType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.ThreatType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
             };
         }
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             writer.WriteStringValue("detectionMethod", DetectionMethod);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.DetonationDetails>("detonationDetails", DetonationDetails);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ThreatType>("threatType", ThreatType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.ThreatType>("threatType", ThreatType);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

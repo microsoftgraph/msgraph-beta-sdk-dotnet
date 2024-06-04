@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("v14_0", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MacOSMinimumOperatingSystem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSMinimumOperatingSystem"/> and sets the default values.
         /// </summary>
         public MacOSMinimumOperatingSystem()
         {
@@ -125,12 +125,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSMinimumOperatingSystem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSMinimumOperatingSystem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MacOSMinimumOperatingSystem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MacOSMinimumOperatingSystem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSMinimumOperatingSystem();
+            return new Microsoft.Graph.Beta.Models.MacOSMinimumOperatingSystem();
         }
         /// <summary>
         /// The deserialization information for the current model

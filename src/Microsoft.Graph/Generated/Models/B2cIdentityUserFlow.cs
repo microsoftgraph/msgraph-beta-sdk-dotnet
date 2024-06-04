@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class B2cIdentityUserFlow : IdentityUserFlow, IParsable
+    public class B2cIdentityUserFlow : Microsoft.Graph.Beta.Models.IdentityUserFlow, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Configuration for enabling an API connector for use as part of the user flow. You can only obtain the value of this object using Get userFlowApiConnectorConfiguration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserFlowApiConnectorConfiguration? ApiConnectorConfiguration
+        public Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration? ApiConnectorConfiguration
         {
-            get { return BackingStore?.Get<UserFlowApiConnectorConfiguration?>("apiConnectorConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration?>("apiConnectorConfiguration"); }
             set { BackingStore?.Set("apiConnectorConfiguration", value); }
         }
 #nullable restore
 #else
-        public UserFlowApiConnectorConfiguration ApiConnectorConfiguration
+        public Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration ApiConnectorConfiguration
         {
-            get { return BackingStore?.Get<UserFlowApiConnectorConfiguration>("apiConnectorConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration>("apiConnectorConfiguration"); }
             set { BackingStore?.Set("apiConnectorConfiguration", value); }
         }
 #endif
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity providers included in the user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityProvider>? IdentityProviders
+        public List<Microsoft.Graph.Beta.Models.IdentityProvider>? IdentityProviders
         {
-            get { return BackingStore?.Get<List<IdentityProvider>?>("identityProviders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityProvider>?>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }
         }
 #nullable restore
 #else
-        public List<IdentityProvider> IdentityProviders
+        public List<Microsoft.Graph.Beta.Models.IdentityProvider> IdentityProviders
         {
-            get { return BackingStore?.Get<List<IdentityProvider>>("identityProviders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityProvider>>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }
         }
 #endif
@@ -67,60 +67,60 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserFlowLanguageConfiguration>? Languages
+        public List<Microsoft.Graph.Beta.Models.UserFlowLanguageConfiguration>? Languages
         {
-            get { return BackingStore?.Get<List<UserFlowLanguageConfiguration>?>("languages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserFlowLanguageConfiguration>?>("languages"); }
             set { BackingStore?.Set("languages", value); }
         }
 #nullable restore
 #else
-        public List<UserFlowLanguageConfiguration> Languages
+        public List<Microsoft.Graph.Beta.Models.UserFlowLanguageConfiguration> Languages
         {
-            get { return BackingStore?.Get<List<UserFlowLanguageConfiguration>>("languages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserFlowLanguageConfiguration>>("languages"); }
             set { BackingStore?.Set("languages", value); }
         }
 #endif
         /// <summary>The user attribute assignments included in the user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityUserFlowAttributeAssignment>? UserAttributeAssignments
+        public List<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment>? UserAttributeAssignments
         {
-            get { return BackingStore?.Get<List<IdentityUserFlowAttributeAssignment>?>("userAttributeAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment>?>("userAttributeAssignments"); }
             set { BackingStore?.Set("userAttributeAssignments", value); }
         }
 #nullable restore
 #else
-        public List<IdentityUserFlowAttributeAssignment> UserAttributeAssignments
+        public List<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment> UserAttributeAssignments
         {
-            get { return BackingStore?.Get<List<IdentityUserFlowAttributeAssignment>>("userAttributeAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment>>("userAttributeAssignments"); }
             set { BackingStore?.Set("userAttributeAssignments", value); }
         }
 #endif
         /// <summary>The identity providers included in the user flow.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityProviderBase>? UserFlowIdentityProviders
+        public List<Microsoft.Graph.Beta.Models.IdentityProviderBase>? UserFlowIdentityProviders
         {
-            get { return BackingStore?.Get<List<IdentityProviderBase>?>("userFlowIdentityProviders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityProviderBase>?>("userFlowIdentityProviders"); }
             set { BackingStore?.Set("userFlowIdentityProviders", value); }
         }
 #nullable restore
 #else
-        public List<IdentityProviderBase> UserFlowIdentityProviders
+        public List<Microsoft.Graph.Beta.Models.IdentityProviderBase> UserFlowIdentityProviders
         {
-            get { return BackingStore?.Get<List<IdentityProviderBase>>("userFlowIdentityProviders"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityProviderBase>>("userFlowIdentityProviders"); }
             set { BackingStore?.Set("userFlowIdentityProviders", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="B2cIdentityUserFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.B2cIdentityUserFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new B2cIdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.B2cIdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new B2cIdentityUserFlow();
+            return new Microsoft.Graph.Beta.Models.B2cIdentityUserFlow();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,13 +130,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "apiConnectorConfiguration", n => { ApiConnectorConfiguration = n.GetObjectValue<UserFlowApiConnectorConfiguration>(UserFlowApiConnectorConfiguration.CreateFromDiscriminatorValue); } },
+                { "apiConnectorConfiguration", n => { ApiConnectorConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration>(Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration.CreateFromDiscriminatorValue); } },
                 { "defaultLanguageTag", n => { DefaultLanguageTag = n.GetStringValue(); } },
-                { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<IdentityProvider>(IdentityProvider.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityProvider>(Microsoft.Graph.Beta.Models.IdentityProvider.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isLanguageCustomizationEnabled", n => { IsLanguageCustomizationEnabled = n.GetBoolValue(); } },
-                { "languages", n => { Languages = n.GetCollectionOfObjectValues<UserFlowLanguageConfiguration>(UserFlowLanguageConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userAttributeAssignments", n => { UserAttributeAssignments = n.GetCollectionOfObjectValues<IdentityUserFlowAttributeAssignment>(IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "userFlowIdentityProviders", n => { UserFlowIdentityProviders = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "languages", n => { Languages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserFlowLanguageConfiguration>(Microsoft.Graph.Beta.Models.UserFlowLanguageConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userAttributeAssignments", n => { UserAttributeAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment>(Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userFlowIdentityProviders", n => { UserFlowIdentityProviders = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityProviderBase>(Microsoft.Graph.Beta.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -147,13 +147,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UserFlowApiConnectorConfiguration>("apiConnectorConfiguration", ApiConnectorConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration>("apiConnectorConfiguration", ApiConnectorConfiguration);
             writer.WriteStringValue("defaultLanguageTag", DefaultLanguageTag);
-            writer.WriteCollectionOfObjectValues<IdentityProvider>("identityProviders", IdentityProviders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityProvider>("identityProviders", IdentityProviders);
             writer.WriteBoolValue("isLanguageCustomizationEnabled", IsLanguageCustomizationEnabled);
-            writer.WriteCollectionOfObjectValues<UserFlowLanguageConfiguration>("languages", Languages);
-            writer.WriteCollectionOfObjectValues<IdentityUserFlowAttributeAssignment>("userAttributeAssignments", UserAttributeAssignments);
-            writer.WriteCollectionOfObjectValues<IdentityProviderBase>("userFlowIdentityProviders", UserFlowIdentityProviders);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserFlowLanguageConfiguration>("languages", Languages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityUserFlowAttributeAssignment>("userAttributeAssignments", UserAttributeAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityProviderBase>("userFlowIdentityProviders", UserFlowIdentityProviders);
         }
     }
 }

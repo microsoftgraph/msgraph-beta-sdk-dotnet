@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("targetedDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ConfigManagerPolicySummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConfigManagerPolicySummary"/> and sets the default values.
         /// </summary>
         public ConfigManagerPolicySummary()
         {
@@ -83,12 +83,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConfigManagerPolicySummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConfigManagerPolicySummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConfigManagerPolicySummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConfigManagerPolicySummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConfigManagerPolicySummary();
+            return new Microsoft.Graph.Beta.Models.ConfigManagerPolicySummary();
         }
         /// <summary>
         /// The deserialization information for the current model

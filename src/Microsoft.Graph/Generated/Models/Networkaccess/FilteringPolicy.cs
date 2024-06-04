@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class FilteringPolicy : Policy, IParsable
+    public class FilteringPolicy : Microsoft.Graph.Beta.Models.Networkaccess.Policy, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action property</summary>
-        public FilteringPolicyAction? Action
+        public Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction? Action
         {
-            get { return BackingStore?.Get<FilteringPolicyAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The date and time when the filtering Policy was originally created.</summary>
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FilteringPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy"/> and sets the default values.
         /// </summary>
         public FilteringPolicy() : base()
         {
@@ -38,12 +38,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilteringPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilteringPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FilteringPolicy();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<FilteringPolicyAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<FilteringPolicyAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.FilteringPolicyAction>("action", Action);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
         }

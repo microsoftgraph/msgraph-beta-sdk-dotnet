@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
     public class SubmitTiIndicatorsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="SubmitTiIndicatorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SubmitTiIndicatorsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,55 +35,55 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
         /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="SubmitTiIndicatorsPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SubmitTiIndicatorsPostResponse?> PostAsSubmitTiIndicatorsPostResponseAsync(SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostResponse?> PostAsSubmitTiIndicatorsPostResponseAsync(Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SubmitTiIndicatorsPostResponse> PostAsSubmitTiIndicatorsPostResponseAsync(SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostResponse> PostAsSubmitTiIndicatorsPostResponseAsync(Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SubmitTiIndicatorsPostResponse>(requestInfo, SubmitTiIndicatorsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostResponse>(requestInfo, Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/tiindicator-submittiindicators?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="SubmitTiIndicatorsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsSubmitTiIndicatorsPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SubmitTiIndicatorsResponse?> PostAsync(SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsResponse?> PostAsync(Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SubmitTiIndicatorsResponse> PostAsync(SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsResponse> PostAsync(Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SubmitTiIndicatorsResponse>(requestInfo, SubmitTiIndicatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsResponse>(requestInfo, Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Upload multiple threat intelligence (TI) indicators in one request instead of multiple requests.
@@ -94,11 +94,11 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SubmitTiIndicatorsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public SubmitTiIndicatorsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SubmitTiIndicatorsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators.SubmitTiIndicatorsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

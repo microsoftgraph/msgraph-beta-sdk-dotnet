@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Android For Work certificate profile base.
     /// </summary>
-    public class AndroidForWorkCertificateProfileBase : DeviceConfiguration, IParsable
+    public class AndroidForWorkCertificateProfileBase : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale
@@ -26,16 +26,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Extended Key Usage (EKU) settings. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExtendedKeyUsage>? ExtendedKeyUsages
+        public List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>? ExtendedKeyUsages
         {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>?>("extendedKeyUsages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>?>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #nullable restore
 #else
-        public List<ExtendedKeyUsage> ExtendedKeyUsages
+        public List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage> ExtendedKeyUsages
         {
-            get { return BackingStore?.Get<List<ExtendedKeyUsage>>("extendedKeyUsages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>>("extendedKeyUsages"); }
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
 #endif
@@ -48,16 +48,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Trusted Root Certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidForWorkTrustedRootCertificate? RootCertificate
+        public Microsoft.Graph.Beta.Models.AndroidForWorkTrustedRootCertificate? RootCertificate
         {
-            get { return BackingStore?.Get<AndroidForWorkTrustedRootCertificate?>("rootCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkTrustedRootCertificate?>("rootCertificate"); }
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #nullable restore
 #else
-        public AndroidForWorkTrustedRootCertificate RootCertificate
+        public Microsoft.Graph.Beta.Models.AndroidForWorkTrustedRootCertificate RootCertificate
         {
-            get { return BackingStore?.Get<AndroidForWorkTrustedRootCertificate>("rootCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkTrustedRootCertificate>("rootCertificate"); }
             set { BackingStore?.Set("rootCertificate", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("subjectNameFormat", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidForWorkCertificateProfileBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkCertificateProfileBase"/> and sets the default values.
         /// </summary>
         public AndroidForWorkCertificateProfileBase() : base()
         {
@@ -83,17 +83,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidForWorkCertificateProfileBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidForWorkCertificateProfileBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidForWorkCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidForWorkCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidForWorkPkcsCertificateProfile" => new AndroidForWorkPkcsCertificateProfile(),
-                "#microsoft.graph.androidForWorkScepCertificateProfile" => new AndroidForWorkScepCertificateProfile(),
-                _ => new AndroidForWorkCertificateProfileBase(),
+                "#microsoft.graph.androidForWorkPkcsCertificateProfile" => new Microsoft.Graph.Beta.Models.AndroidForWorkPkcsCertificateProfile(),
+                "#microsoft.graph.androidForWorkScepCertificateProfile" => new Microsoft.Graph.Beta.Models.AndroidForWorkScepCertificateProfile(),
+                _ => new Microsoft.Graph.Beta.Models.AndroidForWorkCertificateProfileBase(),
             };
         }
         /// <summary>
@@ -104,13 +104,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
+                { "certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>(); } },
                 { "certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
-                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>(Microsoft.Graph.Beta.Models.ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
-                { "rootCertificate", n => { RootCertificate = n.GetObjectValue<AndroidForWorkTrustedRootCertificate>(AndroidForWorkTrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                { "subjectAlternativeNameType", n => { SubjectAlternativeNameType = n.GetEnumValue<SubjectAlternativeNameType>(); } },
-                { "subjectNameFormat", n => { SubjectNameFormat = n.GetEnumValue<SubjectNameFormat>(); } },
+                { "rootCertificate", n => { RootCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidForWorkTrustedRootCertificate>(Microsoft.Graph.Beta.Models.AndroidForWorkTrustedRootCertificate.CreateFromDiscriminatorValue); } },
+                { "subjectAlternativeNameType", n => { SubjectAlternativeNameType = n.GetEnumValue<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>(); } },
+                { "subjectNameFormat", n => { SubjectNameFormat = n.GetEnumValue<Microsoft.Graph.Beta.Models.SubjectNameFormat>(); } },
             };
         }
         /// <summary>
@@ -121,13 +121,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CertificateValidityPeriodScale>("certificateValidityPeriodScale", CertificateValidityPeriodScale);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale>("certificateValidityPeriodScale", CertificateValidityPeriodScale);
             writer.WriteIntValue("certificateValidityPeriodValue", CertificateValidityPeriodValue);
-            writer.WriteCollectionOfObjectValues<ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
             writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
-            writer.WriteObjectValue<AndroidForWorkTrustedRootCertificate>("rootCertificate", RootCertificate);
-            writer.WriteEnumValue<SubjectAlternativeNameType>("subjectAlternativeNameType", SubjectAlternativeNameType);
-            writer.WriteEnumValue<SubjectNameFormat>("subjectNameFormat", SubjectNameFormat);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidForWorkTrustedRootCertificate>("rootCertificate", RootCertificate);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SubjectAlternativeNameType>("subjectAlternativeNameType", SubjectAlternativeNameType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SubjectNameFormat>("subjectNameFormat", SubjectNameFormat);
         }
     }
 }

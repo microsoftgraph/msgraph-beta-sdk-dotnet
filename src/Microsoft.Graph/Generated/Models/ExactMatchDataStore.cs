@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExactMatchDataStore : ExactMatchDataStoreBase, IParsable
+    public class ExactMatchDataStore : Microsoft.Graph.Beta.Models.ExactMatchDataStoreBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The sessions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExactMatchSession>? Sessions
+        public List<Microsoft.Graph.Beta.Models.ExactMatchSession>? Sessions
         {
-            get { return BackingStore?.Get<List<ExactMatchSession>?>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExactMatchSession>?>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #nullable restore
 #else
-        public List<ExactMatchSession> Sessions
+        public List<Microsoft.Graph.Beta.Models.ExactMatchSession> Sessions
         {
-            get { return BackingStore?.Get<List<ExactMatchSession>>("sessions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExactMatchSession>>("sessions"); }
             set { BackingStore?.Set("sessions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExactMatchDataStore"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExactMatchDataStore"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExactMatchDataStore CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExactMatchDataStore CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExactMatchDataStore();
+            return new Microsoft.Graph.Beta.Models.ExactMatchDataStore();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<ExactMatchSession>(ExactMatchSession.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sessions", n => { Sessions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExactMatchSession>(Microsoft.Graph.Beta.Models.ExactMatchSession.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ExactMatchSession>("sessions", Sessions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExactMatchSession>("sessions", Sessions);
         }
     }
 }

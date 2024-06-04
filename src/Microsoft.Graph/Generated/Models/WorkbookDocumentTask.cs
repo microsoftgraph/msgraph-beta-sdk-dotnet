@@ -7,70 +7,70 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookDocumentTask : Entity, IParsable
+    public class WorkbookDocumentTask : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of user identities the task is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookEmailIdentity>? Assignees
+        public List<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>? Assignees
         {
-            get { return BackingStore?.Get<List<WorkbookEmailIdentity>?>("assignees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>?>("assignees"); }
             set { BackingStore?.Set("assignees", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookEmailIdentity> Assignees
+        public List<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity> Assignees
         {
-            get { return BackingStore?.Get<List<WorkbookEmailIdentity>>("assignees"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>>("assignees"); }
             set { BackingStore?.Set("assignees", value); }
         }
 #endif
         /// <summary>A collection of task change histories.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookDocumentTaskChange>? Changes
+        public List<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>? Changes
         {
-            get { return BackingStore?.Get<List<WorkbookDocumentTaskChange>?>("changes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>?>("changes"); }
             set { BackingStore?.Set("changes", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookDocumentTaskChange> Changes
+        public List<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange> Changes
         {
-            get { return BackingStore?.Get<List<WorkbookDocumentTaskChange>>("changes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>>("changes"); }
             set { BackingStore?.Set("changes", value); }
         }
 #endif
         /// <summary>The comment that the task is associated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookComment? Comment
+        public Microsoft.Graph.Beta.Models.WorkbookComment? Comment
         {
-            get { return BackingStore?.Get<WorkbookComment?>("comment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookComment?>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #nullable restore
 #else
-        public WorkbookComment Comment
+        public Microsoft.Graph.Beta.Models.WorkbookComment Comment
         {
-            get { return BackingStore?.Get<WorkbookComment>("comment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookComment>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
 #endif
         /// <summary>The identity of the user who completed the task. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookEmailIdentity? CompletedBy
+        public Microsoft.Graph.Beta.Models.WorkbookEmailIdentity? CompletedBy
         {
-            get { return BackingStore?.Get<WorkbookEmailIdentity?>("completedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity?>("completedBy"); }
             set { BackingStore?.Set("completedBy", value); }
         }
 #nullable restore
 #else
-        public WorkbookEmailIdentity CompletedBy
+        public Microsoft.Graph.Beta.Models.WorkbookEmailIdentity CompletedBy
         {
-            get { return BackingStore?.Get<WorkbookEmailIdentity>("completedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("completedBy"); }
             set { BackingStore?.Set("completedBy", value); }
         }
 #endif
@@ -83,16 +83,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A user identity that creates the task. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookEmailIdentity? CreatedBy
+        public Microsoft.Graph.Beta.Models.WorkbookEmailIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<WorkbookEmailIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public WorkbookEmailIdentity CreatedBy
+        public Microsoft.Graph.Beta.Models.WorkbookEmailIdentity CreatedBy
         {
-            get { return BackingStore?.Get<WorkbookEmailIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -117,16 +117,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Start and due date of the task. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WorkbookDocumentTaskSchedule? StartAndDueDateTime
+        public Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule? StartAndDueDateTime
         {
-            get { return BackingStore?.Get<WorkbookDocumentTaskSchedule?>("startAndDueDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule?>("startAndDueDateTime"); }
             set { BackingStore?.Set("startAndDueDateTime", value); }
         }
 #nullable restore
 #else
-        public WorkbookDocumentTaskSchedule StartAndDueDateTime
+        public Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule StartAndDueDateTime
         {
-            get { return BackingStore?.Get<WorkbookDocumentTaskSchedule>("startAndDueDateTime"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule>("startAndDueDateTime"); }
             set { BackingStore?.Set("startAndDueDateTime", value); }
         }
 #endif
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookDocumentTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkbookDocumentTask"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookDocumentTask CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WorkbookDocumentTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookDocumentTask();
+            return new Microsoft.Graph.Beta.Models.WorkbookDocumentTask();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,16 +164,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignees", n => { Assignees = n.GetCollectionOfObjectValues<WorkbookEmailIdentity>(WorkbookEmailIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "changes", n => { Changes = n.GetCollectionOfObjectValues<WorkbookDocumentTaskChange>(WorkbookDocumentTaskChange.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "comment", n => { Comment = n.GetObjectValue<WorkbookComment>(WorkbookComment.CreateFromDiscriminatorValue); } },
-                { "completedBy", n => { CompletedBy = n.GetObjectValue<WorkbookEmailIdentity>(WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
+                { "assignees", n => { Assignees = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>(Microsoft.Graph.Beta.Models.WorkbookEmailIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "changes", n => { Changes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>(Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "comment", n => { Comment = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookComment>(Microsoft.Graph.Beta.Models.WorkbookComment.CreateFromDiscriminatorValue); } },
+                { "completedBy", n => { CompletedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>(Microsoft.Graph.Beta.Models.WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<WorkbookEmailIdentity>(WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>(Microsoft.Graph.Beta.Models.WorkbookEmailIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "percentComplete", n => { PercentComplete = n.GetIntValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
-                { "startAndDueDateTime", n => { StartAndDueDateTime = n.GetObjectValue<WorkbookDocumentTaskSchedule>(WorkbookDocumentTaskSchedule.CreateFromDiscriminatorValue); } },
+                { "startAndDueDateTime", n => { StartAndDueDateTime = n.GetObjectValue<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule>(Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule.CreateFromDiscriminatorValue); } },
                 { "title", n => { Title = n.GetStringValue(); } },
             };
         }
@@ -185,16 +185,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WorkbookEmailIdentity>("assignees", Assignees);
-            writer.WriteCollectionOfObjectValues<WorkbookDocumentTaskChange>("changes", Changes);
-            writer.WriteObjectValue<WorkbookComment>("comment", Comment);
-            writer.WriteObjectValue<WorkbookEmailIdentity>("completedBy", CompletedBy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("assignees", Assignees);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskChange>("changes", Changes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookComment>("comment", Comment);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("completedBy", CompletedBy);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
-            writer.WriteObjectValue<WorkbookEmailIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookEmailIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteIntValue("percentComplete", PercentComplete);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteObjectValue<WorkbookDocumentTaskSchedule>("startAndDueDateTime", StartAndDueDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WorkbookDocumentTaskSchedule>("startAndDueDateTime", StartAndDueDateTime);
             writer.WriteStringValue("title", Title);
         }
     }

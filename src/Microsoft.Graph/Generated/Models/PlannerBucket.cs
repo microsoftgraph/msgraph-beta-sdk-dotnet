@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerBucket : PlannerDelta, IParsable
+    public class PlannerBucket : Microsoft.Graph.Beta.Models.PlannerDelta, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The archivalInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerArchivalInfo? ArchivalInfo
+        public Microsoft.Graph.Beta.Models.PlannerArchivalInfo? ArchivalInfo
         {
-            get { return BackingStore?.Get<PlannerArchivalInfo?>("archivalInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerArchivalInfo?>("archivalInfo"); }
             set { BackingStore?.Set("archivalInfo", value); }
         }
 #nullable restore
 #else
-        public PlannerArchivalInfo ArchivalInfo
+        public Microsoft.Graph.Beta.Models.PlannerArchivalInfo ArchivalInfo
         {
-            get { return BackingStore?.Get<PlannerArchivalInfo>("archivalInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerArchivalInfo>("archivalInfo"); }
             set { BackingStore?.Set("archivalInfo", value); }
         }
 #endif
         /// <summary>Contains information about the origin of the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerBucketCreation? CreationSource
+        public Microsoft.Graph.Beta.Models.PlannerBucketCreation? CreationSource
         {
-            get { return BackingStore?.Get<PlannerBucketCreation?>("creationSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerBucketCreation?>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
 #nullable restore
 #else
-        public PlannerBucketCreation CreationSource
+        public Microsoft.Graph.Beta.Models.PlannerBucketCreation CreationSource
         {
-            get { return BackingStore?.Get<PlannerBucketCreation>("creationSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerBucketCreation>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
 #endif
@@ -99,28 +99,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. Nullable. The collection of tasks in the bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerTask>? Tasks
+        public List<Microsoft.Graph.Beta.Models.PlannerTask>? Tasks
         {
-            get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<PlannerTask> Tasks
+        public List<Microsoft.Graph.Beta.Models.PlannerTask> Tasks
         {
-            get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerBucket"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerBucket"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerBucket CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerBucket CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerBucket();
+            return new Microsoft.Graph.Beta.Models.PlannerBucket();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,13 +130,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "archivalInfo", n => { ArchivalInfo = n.GetObjectValue<PlannerArchivalInfo>(PlannerArchivalInfo.CreateFromDiscriminatorValue); } },
-                { "creationSource", n => { CreationSource = n.GetObjectValue<PlannerBucketCreation>(PlannerBucketCreation.CreateFromDiscriminatorValue); } },
+                { "archivalInfo", n => { ArchivalInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerArchivalInfo>(Microsoft.Graph.Beta.Models.PlannerArchivalInfo.CreateFromDiscriminatorValue); } },
+                { "creationSource", n => { CreationSource = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerBucketCreation>(Microsoft.Graph.Beta.Models.PlannerBucketCreation.CreateFromDiscriminatorValue); } },
                 { "isArchived", n => { IsArchived = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "orderHint", n => { OrderHint = n.GetStringValue(); } },
                 { "planId", n => { PlanId = n.GetStringValue(); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerTask>(Microsoft.Graph.Beta.Models.PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -147,13 +147,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PlannerArchivalInfo>("archivalInfo", ArchivalInfo);
-            writer.WriteObjectValue<PlannerBucketCreation>("creationSource", CreationSource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerArchivalInfo>("archivalInfo", ArchivalInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerBucketCreation>("creationSource", CreationSource);
             writer.WriteBoolValue("isArchived", IsArchived);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orderHint", OrderHint);
             writer.WriteStringValue("planId", PlanId);
-            writer.WriteCollectionOfObjectValues<PlannerTask>("tasks", Tasks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerTask>("tasks", Tasks);
         }
     }
 }

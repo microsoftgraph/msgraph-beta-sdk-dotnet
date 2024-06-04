@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles
     public class OutboundSharedUserProfilesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the outboundSharedUserProfiles property of the microsoft.graph.directory entity.</summary>
         /// <param name="position">The unique identifier of outboundSharedUserProfile</param>
-        /// <returns>A <see cref="OutboundSharedUserProfileUserItemRequestBuilder"/></returns>
-        public OutboundSharedUserProfileUserItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Item.OutboundSharedUserProfileUserItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Item.OutboundSharedUserProfileUserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("outboundSharedUserProfile%2DuserId", position);
-                return new OutboundSharedUserProfileUserItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.Item.OutboundSharedUserProfileUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OutboundSharedUserProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OutboundSharedUserProfilesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles
         /// Retrieve the properties of all outboundSharedUserProfiles.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/directory-list-outboundshareduserprofiles?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="OutboundSharedUserProfileCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutboundSharedUserProfileCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OutboundSharedUserProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<OutboundSharedUserProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OutboundSharedUserProfileCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder.OutboundSharedUserProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OutboundSharedUserProfileCollectionResponse> GetAsync(Action<RequestConfiguration<OutboundSharedUserProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OutboundSharedUserProfileCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder.OutboundSharedUserProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OutboundSharedUserProfileCollectionResponse>(requestInfo, OutboundSharedUserProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OutboundSharedUserProfileCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.OutboundSharedUserProfileCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to outboundSharedUserProfiles for directory
         /// </summary>
-        /// <returns>A <see cref="OutboundSharedUserProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutboundSharedUserProfile"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OutboundSharedUserProfile?> PostAsync(OutboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile?> PostAsync(Microsoft.Graph.Beta.Models.OutboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OutboundSharedUserProfile> PostAsync(OutboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile> PostAsync(Microsoft.Graph.Beta.Models.OutboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OutboundSharedUserProfile>(requestInfo, OutboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>(requestInfo, Microsoft.Graph.Beta.Models.OutboundSharedUserProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve the properties of all outboundSharedUserProfiles.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OutboundSharedUserProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder.OutboundSharedUserProfilesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OutboundSharedUserProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder.OutboundSharedUserProfilesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(OutboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.OutboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(OutboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.OutboundSharedUserProfile body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OutboundSharedUserProfilesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OutboundSharedUserProfilesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder WithUrl(string rawUrl)
         {
-            return new OutboundSharedUserProfilesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Retrieve the properties of all outboundSharedUserProfiles.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OutboundSharedUserProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<OutboundSharedUserProfilesRequestBuilderGetQueryParameters>
+        public class OutboundSharedUserProfilesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DirectoryNamespace.OutboundSharedUserProfiles.OutboundSharedUserProfilesRequestBuilder.OutboundSharedUserProfilesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

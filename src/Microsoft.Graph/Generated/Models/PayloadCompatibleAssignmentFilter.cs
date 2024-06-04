@@ -9,16 +9,16 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for Payload Compatible Assignment Filter.
     /// </summary>
-    public class PayloadCompatibleAssignmentFilter : DeviceAndAppManagementAssignmentFilter, IParsable
+    public class PayloadCompatibleAssignmentFilter : Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter, IParsable
     {
         /// <summary>Represents the payload type AssignmentFilter is being assigned to.</summary>
-        public AssignmentFilterPayloadType? PayloadType
+        public Microsoft.Graph.Beta.Models.AssignmentFilterPayloadType? PayloadType
         {
-            get { return BackingStore?.Get<AssignmentFilterPayloadType?>("payloadType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentFilterPayloadType?>("payloadType"); }
             set { BackingStore?.Set("payloadType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PayloadCompatibleAssignmentFilter"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PayloadCompatibleAssignmentFilter"/> and sets the default values.
         /// </summary>
         public PayloadCompatibleAssignmentFilter() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PayloadCompatibleAssignmentFilter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PayloadCompatibleAssignmentFilter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PayloadCompatibleAssignmentFilter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PayloadCompatibleAssignmentFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PayloadCompatibleAssignmentFilter();
+            return new Microsoft.Graph.Beta.Models.PayloadCompatibleAssignmentFilter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "payloadType", n => { PayloadType = n.GetEnumValue<AssignmentFilterPayloadType>(); } },
+                { "payloadType", n => { PayloadType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AssignmentFilterPayloadType>(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AssignmentFilterPayloadType>("payloadType", PayloadType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AssignmentFilterPayloadType>("payloadType", PayloadType);
         }
     }
 }

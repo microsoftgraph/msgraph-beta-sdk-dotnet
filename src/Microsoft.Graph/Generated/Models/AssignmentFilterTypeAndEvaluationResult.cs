@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents type of the assignment filter.</summary>
-        public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
             set { BackingStore?.Set("assignmentFilterType", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Supported evaluation results for filter.</summary>
-        public AssignmentFilterEvaluationResult? EvaluationResult
+        public Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationResult? EvaluationResult
         {
-            get { return BackingStore?.Get<AssignmentFilterEvaluationResult?>("evaluationResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationResult?>("evaluationResult"); }
             set { BackingStore?.Set("evaluationResult", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentFilterTypeAndEvaluationResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult"/> and sets the default values.
         /// </summary>
         public AssignmentFilterTypeAndEvaluationResult()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignmentFilterTypeAndEvaluationResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignmentFilterTypeAndEvaluationResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignmentFilterTypeAndEvaluationResult();
+            return new Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
-                { "evaluationResult", n => { EvaluationResult = n.GetEnumValue<AssignmentFilterEvaluationResult>(); } },
+                { "assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>(); } },
+                { "evaluationResult", n => { EvaluationResult = n.GetEnumValue<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationResult>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -86,8 +86,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DeviceAndAppManagementAssignmentFilterType>("assignmentFilterType", AssignmentFilterType);
-            writer.WriteEnumValue<AssignmentFilterEvaluationResult>("evaluationResult", EvaluationResult);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>("assignmentFilterType", AssignmentFilterType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationResult>("evaluationResult", EvaluationResult);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

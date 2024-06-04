@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GovernanceRoleAssignment : Entity, IParsable
+    public class GovernanceRoleAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The state of the assignment. The value can be Eligible for eligible assignment or Active if it&apos;s directly assigned Active by administrators, or activated on an eligible assignment by the users.</summary>
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. If this is an active assignment and created due to activation on an eligible assignment, it represents the object of that eligible assignment; Otherwise, the value is null.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleAssignment? LinkedEligibleRoleAssignment
+        public Microsoft.Graph.Beta.Models.GovernanceRoleAssignment? LinkedEligibleRoleAssignment
         {
-            get { return BackingStore?.Get<GovernanceRoleAssignment?>("linkedEligibleRoleAssignment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleAssignment?>("linkedEligibleRoleAssignment"); }
             set { BackingStore?.Set("linkedEligibleRoleAssignment", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleAssignment LinkedEligibleRoleAssignment
+        public Microsoft.Graph.Beta.Models.GovernanceRoleAssignment LinkedEligibleRoleAssignment
         {
-            get { return BackingStore?.Get<GovernanceRoleAssignment>("linkedEligibleRoleAssignment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>("linkedEligibleRoleAssignment"); }
             set { BackingStore?.Set("linkedEligibleRoleAssignment", value); }
         }
 #endif
@@ -99,16 +99,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. The resource associated with the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceResource? Resource
+        public Microsoft.Graph.Beta.Models.GovernanceResource? Resource
         {
-            get { return BackingStore?.Get<GovernanceResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public GovernanceResource Resource
+        public Microsoft.Graph.Beta.Models.GovernanceResource Resource
         {
-            get { return BackingStore?.Get<GovernanceResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
@@ -131,16 +131,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. The role definition associated with the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceRoleDefinition? RoleDefinition
+        public Microsoft.Graph.Beta.Models.GovernanceRoleDefinition? RoleDefinition
         {
-            get { return BackingStore?.Get<GovernanceRoleDefinition?>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #nullable restore
 #else
-        public GovernanceRoleDefinition RoleDefinition
+        public Microsoft.Graph.Beta.Models.GovernanceRoleDefinition RoleDefinition
         {
-            get { return BackingStore?.Get<GovernanceRoleDefinition>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #endif
@@ -185,16 +185,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only. The subject associated with the role assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSubject? Subject
+        public Microsoft.Graph.Beta.Models.GovernanceSubject? Subject
         {
-            get { return BackingStore?.Get<GovernanceSubject?>("subject"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSubject?>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #nullable restore
 #else
-        public GovernanceSubject Subject
+        public Microsoft.Graph.Beta.Models.GovernanceSubject Subject
         {
-            get { return BackingStore?.Get<GovernanceSubject>("subject"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSubject>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
 #endif
@@ -217,12 +217,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernanceRoleAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernanceRoleAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GovernanceRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GovernanceRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernanceRoleAssignment();
+            return new Microsoft.Graph.Beta.Models.GovernanceRoleAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -235,16 +235,16 @@ namespace Microsoft.Graph.Beta.Models
                 { "assignmentState", n => { AssignmentState = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
-                { "linkedEligibleRoleAssignment", n => { LinkedEligibleRoleAssignment = n.GetObjectValue<GovernanceRoleAssignment>(GovernanceRoleAssignment.CreateFromDiscriminatorValue); } },
+                { "linkedEligibleRoleAssignment", n => { LinkedEligibleRoleAssignment = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>(Microsoft.Graph.Beta.Models.GovernanceRoleAssignment.CreateFromDiscriminatorValue); } },
                 { "linkedEligibleRoleAssignmentId", n => { LinkedEligibleRoleAssignmentId = n.GetStringValue(); } },
                 { "memberType", n => { MemberType = n.GetStringValue(); } },
-                { "resource", n => { Resource = n.GetObjectValue<GovernanceResource>(GovernanceResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceResource>(Microsoft.Graph.Beta.Models.GovernanceResource.CreateFromDiscriminatorValue); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
-                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<GovernanceRoleDefinition>(GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
+                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>(Microsoft.Graph.Beta.Models.GovernanceRoleDefinition.CreateFromDiscriminatorValue); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetStringValue(); } },
-                { "subject", n => { Subject = n.GetObjectValue<GovernanceSubject>(GovernanceSubject.CreateFromDiscriminatorValue); } },
+                { "subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceSubject>(Microsoft.Graph.Beta.Models.GovernanceSubject.CreateFromDiscriminatorValue); } },
                 { "subjectId", n => { SubjectId = n.GetStringValue(); } },
             };
         }
@@ -259,16 +259,16 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("assignmentState", AssignmentState);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("externalId", ExternalId);
-            writer.WriteObjectValue<GovernanceRoleAssignment>("linkedEligibleRoleAssignment", LinkedEligibleRoleAssignment);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleAssignment>("linkedEligibleRoleAssignment", LinkedEligibleRoleAssignment);
             writer.WriteStringValue("linkedEligibleRoleAssignmentId", LinkedEligibleRoleAssignmentId);
             writer.WriteStringValue("memberType", MemberType);
-            writer.WriteObjectValue<GovernanceResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceResource>("resource", Resource);
             writer.WriteStringValue("resourceId", ResourceId);
-            writer.WriteObjectValue<GovernanceRoleDefinition>("roleDefinition", RoleDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceRoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("status", Status);
-            writer.WriteObjectValue<GovernanceSubject>("subject", Subject);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceSubject>("subject", Subject);
             writer.WriteStringValue("subjectId", SubjectId);
         }
     }

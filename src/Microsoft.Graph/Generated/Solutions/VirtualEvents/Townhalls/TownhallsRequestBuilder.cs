@@ -21,24 +21,24 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls
     public class TownhallsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the townhalls property of the microsoft.graph.virtualEventsRoot entity.</summary>
         /// <param name="position">The unique identifier of virtualEventTownhall</param>
-        /// <returns>A <see cref="VirtualEventTownhallItemRequestBuilder"/></returns>
-        public VirtualEventTownhallItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.VirtualEventTownhallItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.VirtualEventTownhallItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("virtualEventTownhall%2Did", position);
-                return new VirtualEventTownhallItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.Item.VirtualEventTownhallItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TownhallsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TownhallsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -56,73 +56,73 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls
         /// <summary>
         /// Read the properties and relationships of a virtualEventTownhall object.
         /// </summary>
-        /// <returns>A <see cref="VirtualEventTownhallCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventTownhallCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventTownhallCollectionResponse?> GetAsync(Action<RequestConfiguration<TownhallsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEventTownhallCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder.TownhallsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<VirtualEventTownhallCollectionResponse> GetAsync(Action<RequestConfiguration<TownhallsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEventTownhallCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder.TownhallsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<VirtualEventTownhallCollectionResponse>(requestInfo, VirtualEventTownhallCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualEventTownhallCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.VirtualEventTownhallCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the getByUserIdAndRole method.
         /// </summary>
-        /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
         /// <param name="role">Usage: role=&apos;{role}&apos;</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder GetByUserIdAndRoleWithUserIdWithRole(string role, string userId)
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder GetByUserIdAndRoleWithUserIdWithRole(string role, string userId)
         {
             if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
             if(string.IsNullOrEmpty(userId)) throw new ArgumentNullException(nameof(userId));
-            return new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(PathParameters, RequestAdapter, role, userId);
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(PathParameters, RequestAdapter, role, userId);
         }
         /// <summary>
         /// Provides operations to call the getByUserRole method.
         /// </summary>
-        /// <returns>A <see cref="GetByUserRoleWithRoleRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder"/></returns>
         /// <param name="role">Usage: role=&apos;{role}&apos;</param>
-        public GetByUserRoleWithRoleRequestBuilder GetByUserRoleWithRole(string role)
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder GetByUserRoleWithRole(string role)
         {
             if(string.IsNullOrEmpty(role)) throw new ArgumentNullException(nameof(role));
-            return new GetByUserRoleWithRoleRequestBuilder(PathParameters, RequestAdapter, role);
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleRequestBuilder(PathParameters, RequestAdapter, role);
         }
         /// <summary>
         /// Create a new virtualEventTownhall object in draft mode.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/virtualeventsroot-post-townhalls?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="VirtualEventTownhall"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventTownhall"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<VirtualEventTownhall?> PostAsync(VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEventTownhall?> PostAsync(Microsoft.Graph.Beta.Models.VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<VirtualEventTownhall> PostAsync(VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.VirtualEventTownhall> PostAsync(Microsoft.Graph.Beta.Models.VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<VirtualEventTownhall>(requestInfo, VirtualEventTownhall.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.VirtualEventTownhall>(requestInfo, Microsoft.Graph.Beta.Models.VirtualEventTownhall.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the properties and relationships of a virtualEventTownhall object.
@@ -131,11 +131,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TownhallsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder.TownhallsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TownhallsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder.TownhallsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -151,11 +151,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.VirtualEventTownhall body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TownhallsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TownhallsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder WithUrl(string rawUrl)
         {
-            return new TownhallsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the properties and relationships of a virtualEventTownhall object.
@@ -243,7 +243,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TownhallsRequestBuilderGetRequestConfiguration : RequestConfiguration<TownhallsRequestBuilderGetQueryParameters>
+        public class TownhallsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.TownhallsRequestBuilder.TownhallsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

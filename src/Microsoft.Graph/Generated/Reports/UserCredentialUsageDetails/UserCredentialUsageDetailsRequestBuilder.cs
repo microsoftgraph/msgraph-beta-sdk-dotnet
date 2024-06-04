@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
     public class UserCredentialUsageDetailsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userCredentialUsageDetails property of the microsoft.graph.reportRoot entity.</summary>
         /// <param name="position">The unique identifier of userCredentialUsageDetails</param>
-        /// <returns>A <see cref="UserCredentialUsageDetailsItemRequestBuilder"/></returns>
-        public UserCredentialUsageDetailsItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item.UserCredentialUsageDetailsItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item.UserCredentialUsageDetailsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("userCredentialUsageDetails%2Did", position);
-                return new UserCredentialUsageDetailsItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.Item.UserCredentialUsageDetailsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserCredentialUsageDetailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserCredentialUsageDetailsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,25 +55,25 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/reportroot-list-usercredentialusagedetails?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="UserCredentialUsageDetailsCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserCredentialUsageDetailsCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserCredentialUsageDetailsCollectionResponse?> GetAsync(Action<RequestConfiguration<UserCredentialUsageDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserCredentialUsageDetailsCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder.UserCredentialUsageDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserCredentialUsageDetailsCollectionResponse> GetAsync(Action<RequestConfiguration<UserCredentialUsageDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserCredentialUsageDetailsCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder.UserCredentialUsageDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserCredentialUsageDetailsCollectionResponse>(requestInfo, UserCredentialUsageDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetailsCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userCredentialUsageDetails for reports
@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails?> PostAsync(Microsoft.Graph.Beta.Models.UserCredentialUsageDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserCredentialUsageDetails>(requestInfo, Microsoft.Graph.Beta.Models.UserCredentialUsageDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserCredentialUsageDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder.UserCredentialUsageDetailsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserCredentialUsageDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder.UserCredentialUsageDetailsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserCredentialUsageDetailsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserCredentialUsageDetailsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserCredentialUsageDetailsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of userCredentialUsageDetails objects for a given tenant. Details include user information, status of the reset, and the reason for failure.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserCredentialUsageDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<UserCredentialUsageDetailsRequestBuilderGetQueryParameters>
+        public class UserCredentialUsageDetailsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Reports.UserCredentialUsageDetails.UserCredentialUsageDetailsRequestBuilder.UserCredentialUsageDetailsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

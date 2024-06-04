@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items
     public class ItemsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the items property of the microsoft.graph.recycleBin entity.</summary>
         /// <param name="position">The unique identifier of recycleBinItem</param>
-        /// <returns>A <see cref="RecycleBinItemItemRequestBuilder"/></returns>
-        public RecycleBinItemItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.Item.RecycleBinItemItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.Item.RecycleBinItemItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("recycleBinItem%2Did", position);
-                return new RecycleBinItemItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.Item.RecycleBinItemItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="ItemsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -55,50 +55,50 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items
         /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/recyclebin-list-items?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="RecycleBinItemCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecycleBinItemCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RecycleBinItemCollectionResponse?> GetAsync(Action<RequestConfiguration<ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.RecycleBinItemCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RecycleBinItemCollectionResponse> GetAsync(Action<RequestConfiguration<ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.RecycleBinItemCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RecycleBinItemCollectionResponse>(requestInfo, RecycleBinItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RecycleBinItemCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.RecycleBinItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to items for sites
         /// </summary>
-        /// <returns>A <see cref="RecycleBinItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RecycleBinItem"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RecycleBinItem?> PostAsync(RecycleBinItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.RecycleBinItem?> PostAsync(Microsoft.Graph.Beta.Models.RecycleBinItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RecycleBinItem> PostAsync(RecycleBinItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.RecycleBinItem> PostAsync(Microsoft.Graph.Beta.Models.RecycleBinItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RecycleBinItem>(requestInfo, RecycleBinItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RecycleBinItem>(requestInfo, Microsoft.Graph.Beta.Models.RecycleBinItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -127,11 +127,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(RecycleBinItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.RecycleBinItem body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(RecycleBinItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.RecycleBinItem body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -144,11 +144,11 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="ItemsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public ItemsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder WithUrl(string rawUrl)
         {
-            return new ItemsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a collection of recycleBinItem resources in the recycleBin of the specified SharePoint site.
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class ItemsRequestBuilderGetRequestConfiguration : RequestConfiguration<ItemsRequestBuilderGetQueryParameters>
+        public class ItemsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Sites.Item.RecycleBin.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

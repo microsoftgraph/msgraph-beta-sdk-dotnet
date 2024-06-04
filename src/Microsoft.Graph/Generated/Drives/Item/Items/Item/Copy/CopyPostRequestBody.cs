@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The childrenOnly property</summary>
+        public bool? ChildrenOnly
+        {
+            get { return BackingStore?.Get<bool?>("childrenOnly"); }
+            set { BackingStore?.Set("childrenOnly", value); }
+        }
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,21 +45,21 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
         /// <summary>The parentReference property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ItemReference? ParentReference
+        public Microsoft.Graph.Beta.Models.ItemReference? ParentReference
         {
-            get { return BackingStore?.Get<ItemReference?>("parentReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemReference?>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
 #nullable restore
 #else
-        public ItemReference ParentReference
+        public Microsoft.Graph.Beta.Models.ItemReference ParentReference
         {
-            get { return BackingStore?.Get<ItemReference>("parentReference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ItemReference>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CopyPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy.CopyPostRequestBody"/> and sets the default values.
         /// </summary>
         public CopyPostRequestBody()
         {
@@ -63,12 +69,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CopyPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy.CopyPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CopyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy.CopyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CopyPostRequestBody();
+            return new Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy.CopyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +84,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "childrenOnly", n => { ChildrenOnly = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "parentReference", n => { ParentReference = n.GetObjectValue<ItemReference>(ItemReference.CreateFromDiscriminatorValue); } },
+                { "parentReference", n => { ParentReference = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemReference>(Microsoft.Graph.Beta.Models.ItemReference.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,8 +96,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Copy
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("childrenOnly", ChildrenOnly);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<ItemReference>("parentReference", ParentReference);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemReference>("parentReference", ParentReference);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

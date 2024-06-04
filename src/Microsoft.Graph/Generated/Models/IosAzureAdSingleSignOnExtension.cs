@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Represents an Azure AD-type Single Sign-On extension profile for iOS devices.
     /// </summary>
-    public class IosAzureAdSingleSignOnExtension : IosSingleSignOnExtension, IParsable
+    public class IosAzureAdSingleSignOnExtension : Microsoft.Graph.Beta.Models.IosSingleSignOnExtension, IParsable
     {
         /// <summary>An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -30,16 +30,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyTypedValuePair>? Configurations
+        public List<Microsoft.Graph.Beta.Models.KeyTypedValuePair>? Configurations
         {
-            get { return BackingStore?.Get<List<KeyTypedValuePair>?>("configurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyTypedValuePair>?>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #nullable restore
 #else
-        public List<KeyTypedValuePair> Configurations
+        public List<Microsoft.Graph.Beta.Models.KeyTypedValuePair> Configurations
         {
-            get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyTypedValuePair>>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
 #endif
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("enableSharedDeviceMode", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosAzureAdSingleSignOnExtension"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosAzureAdSingleSignOnExtension"/> and sets the default values.
         /// </summary>
         public IosAzureAdSingleSignOnExtension() : base()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosAzureAdSingleSignOnExtension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosAzureAdSingleSignOnExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosAzureAdSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosAzureAdSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosAzureAdSingleSignOnExtension();
+            return new Microsoft.Graph.Beta.Models.IosAzureAdSingleSignOnExtension();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "bundleIdAccessControlList", n => { BundleIdAccessControlList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "configurations", n => { Configurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyTypedValuePair>(Microsoft.Graph.Beta.Models.KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enableSharedDeviceMode", n => { EnableSharedDeviceMode = n.GetBoolValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("bundleIdAccessControlList", BundleIdAccessControlList);
-            writer.WriteCollectionOfObjectValues<KeyTypedValuePair>("configurations", Configurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyTypedValuePair>("configurations", Configurations);
             writer.WriteBoolValue("enableSharedDeviceMode", EnableSharedDeviceMode);
         }
     }

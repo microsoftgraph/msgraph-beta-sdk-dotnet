@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsIdentitySource : PermissionsDefinitionIdentitySource, IParsable
+    public class AwsIdentitySource : Microsoft.Graph.Beta.Models.PermissionsDefinitionIdentitySource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authorizationSystemInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsDefinitionAuthorizationSystem? AuthorizationSystemInfo
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem? AuthorizationSystemInfo
         {
-            get { return BackingStore?.Get<PermissionsDefinitionAuthorizationSystem?>("authorizationSystemInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem?>("authorizationSystemInfo"); }
             set { BackingStore?.Set("authorizationSystemInfo", value); }
         }
 #nullable restore
 #else
-        public PermissionsDefinitionAuthorizationSystem AuthorizationSystemInfo
+        public Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem AuthorizationSystemInfo
         {
-            get { return BackingStore?.Get<PermissionsDefinitionAuthorizationSystem>("authorizationSystemInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem>("authorizationSystemInfo"); }
             set { BackingStore?.Set("authorizationSystemInfo", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsIdentitySource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsIdentitySource"/> and sets the default values.
         /// </summary>
         public AwsIdentitySource() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsIdentitySource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsIdentitySource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsIdentitySource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsIdentitySource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsIdentitySource();
+            return new Microsoft.Graph.Beta.Models.AwsIdentitySource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authorizationSystemInfo", n => { AuthorizationSystemInfo = n.GetObjectValue<PermissionsDefinitionAuthorizationSystem>(PermissionsDefinitionAuthorizationSystem.CreateFromDiscriminatorValue); } },
+                { "authorizationSystemInfo", n => { AuthorizationSystemInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem>(Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PermissionsDefinitionAuthorizationSystem>("authorizationSystemInfo", AuthorizationSystemInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsDefinitionAuthorizationSystem>("authorizationSystemInfo", AuthorizationSystemInfo);
         }
     }
 }

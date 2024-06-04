@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IdentityUserFlow : Entity, IParsable
+    public class IdentityUserFlow : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The userFlowType property</summary>
@@ -25,17 +25,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityUserFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityUserFlow"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IdentityUserFlow CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.b2cIdentityUserFlow" => new B2cIdentityUserFlow(),
-                "#microsoft.graph.b2xIdentityUserFlow" => new B2xIdentityUserFlow(),
-                _ => new IdentityUserFlow(),
+                "#microsoft.graph.b2cIdentityUserFlow" => new Microsoft.Graph.Beta.Models.B2cIdentityUserFlow(),
+                "#microsoft.graph.b2xIdentityUserFlow" => new Microsoft.Graph.Beta.Models.B2xIdentityUserFlow(),
+                _ => new Microsoft.Graph.Beta.Models.IdentityUserFlow(),
             };
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "userFlowType", n => { UserFlowType = n.GetEnumValue<UserFlowType>(); } },
+                { "userFlowType", n => { UserFlowType = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserFlowType>(); } },
                 { "userFlowTypeVersion", n => { UserFlowTypeVersion = n.GetFloatValue(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<UserFlowType>("userFlowType", UserFlowType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserFlowType>("userFlowType", UserFlowType);
             writer.WriteFloatValue("userFlowTypeVersion", UserFlowTypeVersion);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ProgramResource : Identity, IParsable
+    public class ProgramResource : Microsoft.Graph.Beta.Models.Identity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Type of the resource, indicating whether it is a group or an app.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProgramResource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ProgramResource"/> and sets the default values.
         /// </summary>
         public ProgramResource() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProgramResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProgramResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ProgramResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ProgramResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProgramResource();
+            return new Microsoft.Graph.Beta.Models.ProgramResource();
         }
         /// <summary>
         /// The deserialization information for the current model

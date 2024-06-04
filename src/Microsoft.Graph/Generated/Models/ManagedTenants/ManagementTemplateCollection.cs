@@ -89,28 +89,28 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The managementTemplates property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagementTemplate>? ManagementTemplates
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>? ManagementTemplates
         {
-            get { return BackingStore?.Get<List<ManagementTemplate>?>("managementTemplates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>?>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
 #nullable restore
 #else
-        public List<ManagementTemplate> ManagementTemplates
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate> ManagementTemplates
         {
-            get { return BackingStore?.Get<List<ManagementTemplate>>("managementTemplates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementTemplateCollection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagementTemplateCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementTemplateCollection();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplateCollection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
-            writer.WriteCollectionOfObjectValues<ManagementTemplate>("managementTemplates", ManagementTemplates);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementTemplate>("managementTemplates", ManagementTemplates);
         }
     }
 }

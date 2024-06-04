@@ -28,62 +28,62 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item
     public class EventItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the accept method.</summary>
-        public AcceptRequestBuilder Accept
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Accept.AcceptRequestBuilder Accept
         {
-            get => new AcceptRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Accept.AcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
-        public AttachmentsRequestBuilder Attachments
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Attachments.AttachmentsRequestBuilder Attachments
         {
-            get => new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Attachments.AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
-        public CalendarRequestBuilder Calendar
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Calendar.CalendarRequestBuilder Calendar
         {
-            get => new CalendarRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Calendar.CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancel method.</summary>
-        public CancelRequestBuilder Cancel
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Cancel.CancelRequestBuilder Cancel
         {
-            get => new CancelRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the decline method.</summary>
-        public DeclineRequestBuilder Decline
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Decline.DeclineRequestBuilder Decline
         {
-            get => new DeclineRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Decline.DeclineRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the dismissReminder method.</summary>
-        public DismissReminderRequestBuilder DismissReminder
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.DismissReminder.DismissReminderRequestBuilder DismissReminder
         {
-            get => new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.DismissReminder.DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
-        public ExtensionsRequestBuilder Extensions
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Extensions.ExtensionsRequestBuilder Extensions
         {
-            get => new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Extensions.ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the forward method.</summary>
-        public ForwardRequestBuilder Forward
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Forward.ForwardRequestBuilder Forward
         {
-            get => new ForwardRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Forward.ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
-        public InstancesRequestBuilder Instances
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Instances.InstancesRequestBuilder Instances
         {
-            get => new InstancesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.Instances.InstancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the snoozeReminder method.</summary>
-        public SnoozeReminderRequestBuilder SnoozeReminder
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.SnoozeReminder.SnoozeReminderRequestBuilder SnoozeReminder
         {
-            get => new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.SnoozeReminder.SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the tentativelyAccept method.</summary>
-        public TentativelyAcceptRequestBuilder TentativelyAccept
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.TentativelyAccept.TentativelyAcceptRequestBuilder TentativelyAccept
         {
-            get => new TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.TentativelyAccept.TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EventItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EventItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -101,25 +101,25 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item
         /// <summary>
         /// Get exceptionOccurrences from users
         /// </summary>
-        /// <returns>A <see cref="Event"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Event"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Event?> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Event?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Event> GetAsync(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Event> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Event>(requestInfo, Microsoft.Graph.Beta.Models.Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get exceptionOccurrences from users
@@ -128,11 +128,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EventItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EventItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new EventItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get exceptionOccurrences from users
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EventItemRequestBuilderGetQueryParameters>
+        public class EventItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Events.Item.ExceptionOccurrences.Item.EventItemRequestBuilder.EventItemRequestBuilderGetQueryParameters>
         {
         }
     }

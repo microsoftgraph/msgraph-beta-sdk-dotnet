@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OutlookTaskFolderCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class OutlookTaskFolderCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutlookTaskFolder>? Value
+        public List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>? Value
         {
-            get { return BackingStore?.Get<List<OutlookTaskFolder>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<OutlookTaskFolder> Value
+        public List<Microsoft.Graph.Beta.Models.OutlookTaskFolder> Value
         {
-            get { return BackingStore?.Get<List<OutlookTaskFolder>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutlookTaskFolder>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutlookTaskFolderCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutlookTaskFolderCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutlookTaskFolderCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OutlookTaskFolderCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutlookTaskFolderCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.OutlookTaskFolderCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTaskFolder>(Microsoft.Graph.Beta.Models.OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OutlookTaskFolder>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutlookTaskFolder>("value", Value);
         }
     }
 }

@@ -7,10 +7,10 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CallTranscript : Entity, IParsable
+    public class CallTranscript : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The callId property</summary>
+        /// <summary>The unique identifier for the call that is related to this transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? CallId
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("content", value); }
         }
 #endif
-        /// <summary>The contentCorrelationId property</summary>
+        /// <summary>The unique identifier that links the transcript with its corresponding recording. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ContentCorrelationId
@@ -58,13 +58,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("contentCorrelationId", value); }
         }
 #endif
-        /// <summary>Date and time at which the transcript was created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
+        /// <summary>Date and time at which the transcript was created. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The endDateTime property</summary>
+        /// <summary>Date and time at which the transcription ends. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? EndDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
@@ -89,16 +89,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity information of the organizer of the onlineMeeting related to this transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? MeetingOrganizer
+        public Microsoft.Graph.Beta.Models.IdentitySet? MeetingOrganizer
         {
-            get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #nullable restore
 #else
-        public IdentitySet MeetingOrganizer
+        public Microsoft.Graph.Beta.Models.IdentitySet MeetingOrganizer
         {
-            get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
 #endif
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("metadataContent", value); }
         }
 #endif
-        /// <summary>The URL which can be used to access the content of the transcript. Read-only.</summary>
+        /// <summary>The URL that can be used to access the content of the transcript. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TranscriptContentUrl
@@ -153,12 +153,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CallTranscript"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CallTranscript"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CallTranscript CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CallTranscript CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CallTranscript();
+            return new Microsoft.Graph.Beta.Models.CallTranscript();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 { "meetingId", n => { MeetingId = n.GetStringValue(); } },
-                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "meetingOrganizer", n => { MeetingOrganizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "meetingOrganizerId", n => { MeetingOrganizerId = n.GetStringValue(); } },
                 { "metadataContent", n => { MetadataContent = n.GetByteArrayValue(); } },
                 { "transcriptContentUrl", n => { TranscriptContentUrl = n.GetStringValue(); } },
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("meetingId", MeetingId);
-            writer.WriteObjectValue<IdentitySet>("meetingOrganizer", MeetingOrganizer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("meetingOrganizer", MeetingOrganizer);
             writer.WriteStringValue("meetingOrganizerId", MeetingOrganizerId);
             writer.WriteByteArrayValue("metadataContent", MetadataContent);
             writer.WriteStringValue("transcriptContentUrl", TranscriptContentUrl);

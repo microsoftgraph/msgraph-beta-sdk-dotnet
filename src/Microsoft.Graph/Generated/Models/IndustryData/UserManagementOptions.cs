@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The different attribute choices for the users to be provisioned. The possible values are: userGradeLevel, userNumber, unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AdditionalUserAttributes?>? AdditionalAttributes
+        public List<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes?>? AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<AdditionalUserAttributes?>?>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes?>?>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #nullable restore
 #else
-        public List<AdditionalUserAttributes?> AdditionalAttributes
+        public List<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes?> AdditionalAttributes
         {
-            get { return BackingStore?.Get<List<AdditionalUserAttributes?>>("additionalAttributes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes?>>("additionalAttributes"); }
             set { BackingStore?.Set("additionalAttributes", value); }
         }
 #endif
@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The additionalOptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AdditionalUserOptions? AdditionalOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions? AdditionalOptions
         {
-            get { return BackingStore?.Get<AdditionalUserOptions?>("additionalOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions?>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
 #nullable restore
 #else
-        public AdditionalUserOptions AdditionalOptions
+        public Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions AdditionalOptions
         {
-            get { return BackingStore?.Get<AdditionalUserOptions>("additionalOptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions>("additionalOptions"); }
             set { BackingStore?.Set("additionalOptions", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserManagementOptions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions"/> and sets the default values.
         /// </summary>
         public UserManagementOptions()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserManagementOptions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserManagementOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserManagementOptions();
+            return new Microsoft.Graph.Beta.Models.IndustryData.UserManagementOptions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,8 +93,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfEnumValues<AdditionalUserAttributes>()?.ToList(); } },
-                { "additionalOptions", n => { AdditionalOptions = n.GetObjectValue<AdditionalUserOptions>(AdditionalUserOptions.CreateFromDiscriminatorValue); } },
+                { "additionalAttributes", n => { AdditionalAttributes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes>()?.ToList(); } },
+                { "additionalOptions", n => { AdditionalOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions>(Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<AdditionalUserAttributes>("additionalAttributes", AdditionalAttributes);
-            writer.WriteObjectValue<AdditionalUserOptions>("additionalOptions", AdditionalOptions);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserAttributes>("additionalAttributes", AdditionalAttributes);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.AdditionalUserOptions>("additionalOptions", AdditionalOptions);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

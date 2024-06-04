@@ -7,290 +7,290 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DirectoryObject1 : Entity, IParsable
+    public class DirectoryObject1 : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Conceptual container for user and group directory objects.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AdministrativeUnit>? AdministrativeUnits
+        public List<Microsoft.Graph.Beta.Models.AdministrativeUnit>? AdministrativeUnits
         {
-            get { return BackingStore?.Get<List<AdministrativeUnit>?>("administrativeUnits"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AdministrativeUnit>?>("administrativeUnits"); }
             set { BackingStore?.Set("administrativeUnits", value); }
         }
 #nullable restore
 #else
-        public List<AdministrativeUnit> AdministrativeUnits
+        public List<Microsoft.Graph.Beta.Models.AdministrativeUnit> AdministrativeUnits
         {
-            get { return BackingStore?.Get<List<AdministrativeUnit>>("administrativeUnits"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AdministrativeUnit>>("administrativeUnits"); }
             set { BackingStore?.Set("administrativeUnits", value); }
         }
 #endif
         /// <summary>Group of related custom security attribute definitions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AttributeSet>? AttributeSets
+        public List<Microsoft.Graph.Beta.Models.AttributeSet>? AttributeSets
         {
-            get { return BackingStore?.Get<List<AttributeSet>?>("attributeSets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttributeSet>?>("attributeSets"); }
             set { BackingStore?.Set("attributeSets", value); }
         }
 #nullable restore
 #else
-        public List<AttributeSet> AttributeSets
+        public List<Microsoft.Graph.Beta.Models.AttributeSet> AttributeSets
         {
-            get { return BackingStore?.Get<List<AttributeSet>>("attributeSets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttributeSet>>("attributeSets"); }
             set { BackingStore?.Set("attributeSets", value); }
         }
 #endif
         /// <summary>The certificateAuthorities property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CertificateAuthorityPath? CertificateAuthorities
+        public Microsoft.Graph.Beta.Models.CertificateAuthorityPath? CertificateAuthorities
         {
-            get { return BackingStore?.Get<CertificateAuthorityPath?>("certificateAuthorities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateAuthorityPath?>("certificateAuthorities"); }
             set { BackingStore?.Set("certificateAuthorities", value); }
         }
 #nullable restore
 #else
-        public CertificateAuthorityPath CertificateAuthorities
+        public Microsoft.Graph.Beta.Models.CertificateAuthorityPath CertificateAuthorities
         {
-            get { return BackingStore?.Get<CertificateAuthorityPath>("certificateAuthorities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateAuthorityPath>("certificateAuthorities"); }
             set { BackingStore?.Set("certificateAuthorities", value); }
         }
 #endif
         /// <summary>Schema of a custom security attributes (key-value pairs).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CustomSecurityAttributeDefinition>? CustomSecurityAttributeDefinitions
+        public List<Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition>? CustomSecurityAttributeDefinitions
         {
-            get { return BackingStore?.Get<List<CustomSecurityAttributeDefinition>?>("customSecurityAttributeDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition>?>("customSecurityAttributeDefinitions"); }
             set { BackingStore?.Set("customSecurityAttributeDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<CustomSecurityAttributeDefinition> CustomSecurityAttributeDefinitions
+        public List<Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition> CustomSecurityAttributeDefinitions
         {
-            get { return BackingStore?.Get<List<CustomSecurityAttributeDefinition>>("customSecurityAttributeDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition>>("customSecurityAttributeDefinitions"); }
             set { BackingStore?.Set("customSecurityAttributeDefinitions", value); }
         }
 #endif
         /// <summary>Recently deleted items. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DirectoryObject>? DeletedItems
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject>? DeletedItems
         {
-            get { return BackingStore?.Get<List<DirectoryObject>?>("deletedItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>?>("deletedItems"); }
             set { BackingStore?.Set("deletedItems", value); }
         }
 #nullable restore
 #else
-        public List<DirectoryObject> DeletedItems
+        public List<Microsoft.Graph.Beta.Models.DirectoryObject> DeletedItems
         {
-            get { return BackingStore?.Get<List<DirectoryObject>>("deletedItems"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DirectoryObject>>("deletedItems"); }
             set { BackingStore?.Set("deletedItems", value); }
         }
 #endif
         /// <summary>The credentials of the device&apos;s local administrator account backed up to Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceLocalCredentialInfo>? DeviceLocalCredentials
+        public List<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo>? DeviceLocalCredentials
         {
-            get { return BackingStore?.Get<List<DeviceLocalCredentialInfo>?>("deviceLocalCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo>?>("deviceLocalCredentials"); }
             set { BackingStore?.Set("deviceLocalCredentials", value); }
         }
 #nullable restore
 #else
-        public List<DeviceLocalCredentialInfo> DeviceLocalCredentials
+        public List<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo> DeviceLocalCredentials
         {
-            get { return BackingStore?.Get<List<DeviceLocalCredentialInfo>>("deviceLocalCredentials"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo>>("deviceLocalCredentials"); }
             set { BackingStore?.Set("deviceLocalCredentials", value); }
         }
 #endif
         /// <summary>Collection of external user profiles that represent collaborators in the directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalUserProfile>? ExternalUserProfiles
+        public List<Microsoft.Graph.Beta.Models.ExternalUserProfile>? ExternalUserProfiles
         {
-            get { return BackingStore?.Get<List<ExternalUserProfile>?>("externalUserProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalUserProfile>?>("externalUserProfiles"); }
             set { BackingStore?.Set("externalUserProfiles", value); }
         }
 #nullable restore
 #else
-        public List<ExternalUserProfile> ExternalUserProfiles
+        public List<Microsoft.Graph.Beta.Models.ExternalUserProfile> ExternalUserProfiles
         {
-            get { return BackingStore?.Get<List<ExternalUserProfile>>("externalUserProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalUserProfile>>("externalUserProfiles"); }
             set { BackingStore?.Set("externalUserProfiles", value); }
         }
 #endif
         /// <summary>The featureRolloutPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FeatureRolloutPolicy>? FeatureRolloutPolicies
+        public List<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>? FeatureRolloutPolicies
         {
-            get { return BackingStore?.Get<List<FeatureRolloutPolicy>?>("featureRolloutPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>?>("featureRolloutPolicies"); }
             set { BackingStore?.Set("featureRolloutPolicies", value); }
         }
 #nullable restore
 #else
-        public List<FeatureRolloutPolicy> FeatureRolloutPolicies
+        public List<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy> FeatureRolloutPolicies
         {
-            get { return BackingStore?.Get<List<FeatureRolloutPolicy>>("featureRolloutPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>>("featureRolloutPolicies"); }
             set { BackingStore?.Set("featureRolloutPolicies", value); }
         }
 #endif
         /// <summary>Configure domain federation with organizations whose identity provider (IdP) supports either the SAML or WS-Fed protocol.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IdentityProviderBase>? FederationConfigurations
+        public List<Microsoft.Graph.Beta.Models.IdentityProviderBase>? FederationConfigurations
         {
-            get { return BackingStore?.Get<List<IdentityProviderBase>?>("federationConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityProviderBase>?>("federationConfigurations"); }
             set { BackingStore?.Set("federationConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<IdentityProviderBase> FederationConfigurations
+        public List<Microsoft.Graph.Beta.Models.IdentityProviderBase> FederationConfigurations
         {
-            get { return BackingStore?.Get<List<IdentityProviderBase>>("federationConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IdentityProviderBase>>("federationConfigurations"); }
             set { BackingStore?.Set("federationConfigurations", value); }
         }
 #endif
         /// <summary>The impactedResources property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ImpactedResource>? ImpactedResources
+        public List<Microsoft.Graph.Beta.Models.ImpactedResource>? ImpactedResources
         {
-            get { return BackingStore?.Get<List<ImpactedResource>?>("impactedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImpactedResource>?>("impactedResources"); }
             set { BackingStore?.Set("impactedResources", value); }
         }
 #nullable restore
 #else
-        public List<ImpactedResource> ImpactedResources
+        public List<Microsoft.Graph.Beta.Models.ImpactedResource> ImpactedResources
         {
-            get { return BackingStore?.Get<List<ImpactedResource>>("impactedResources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImpactedResource>>("impactedResources"); }
             set { BackingStore?.Set("impactedResources", value); }
         }
 #endif
         /// <summary>A collection of external users whose profile data is shared with the Microsoft Entra tenant. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<InboundSharedUserProfile>? InboundSharedUserProfiles
+        public List<Microsoft.Graph.Beta.Models.InboundSharedUserProfile>? InboundSharedUserProfiles
         {
-            get { return BackingStore?.Get<List<InboundSharedUserProfile>?>("inboundSharedUserProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.InboundSharedUserProfile>?>("inboundSharedUserProfiles"); }
             set { BackingStore?.Set("inboundSharedUserProfiles", value); }
         }
 #nullable restore
 #else
-        public List<InboundSharedUserProfile> InboundSharedUserProfiles
+        public List<Microsoft.Graph.Beta.Models.InboundSharedUserProfile> InboundSharedUserProfiles
         {
-            get { return BackingStore?.Get<List<InboundSharedUserProfile>>("inboundSharedUserProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.InboundSharedUserProfile>>("inboundSharedUserProfiles"); }
             set { BackingStore?.Set("inboundSharedUserProfiles", value); }
         }
 #endif
         /// <summary>A container for on-premises directory synchronization functionalities that are available for the organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesDirectorySynchronization>? OnPremisesSynchronization
+        public List<Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronization>? OnPremisesSynchronization
         {
-            get { return BackingStore?.Get<List<OnPremisesDirectorySynchronization>?>("onPremisesSynchronization"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronization>?>("onPremisesSynchronization"); }
             set { BackingStore?.Set("onPremisesSynchronization", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesDirectorySynchronization> OnPremisesSynchronization
+        public List<Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronization> OnPremisesSynchronization
         {
-            get { return BackingStore?.Get<List<OnPremisesDirectorySynchronization>>("onPremisesSynchronization"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronization>>("onPremisesSynchronization"); }
             set { BackingStore?.Set("onPremisesSynchronization", value); }
         }
 #endif
         /// <summary>The outboundSharedUserProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutboundSharedUserProfile>? OutboundSharedUserProfiles
+        public List<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>? OutboundSharedUserProfiles
         {
-            get { return BackingStore?.Get<List<OutboundSharedUserProfile>?>("outboundSharedUserProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>?>("outboundSharedUserProfiles"); }
             set { BackingStore?.Set("outboundSharedUserProfiles", value); }
         }
 #nullable restore
 #else
-        public List<OutboundSharedUserProfile> OutboundSharedUserProfiles
+        public List<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile> OutboundSharedUserProfiles
         {
-            get { return BackingStore?.Get<List<OutboundSharedUserProfile>>("outboundSharedUserProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>>("outboundSharedUserProfiles"); }
             set { BackingStore?.Set("outboundSharedUserProfiles", value); }
         }
 #endif
         /// <summary>Collection of pending external user profiles representing collaborators in the directory that are unredeemed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PendingExternalUserProfile>? PendingExternalUserProfiles
+        public List<Microsoft.Graph.Beta.Models.PendingExternalUserProfile>? PendingExternalUserProfiles
         {
-            get { return BackingStore?.Get<List<PendingExternalUserProfile>?>("pendingExternalUserProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PendingExternalUserProfile>?>("pendingExternalUserProfiles"); }
             set { BackingStore?.Set("pendingExternalUserProfiles", value); }
         }
 #nullable restore
 #else
-        public List<PendingExternalUserProfile> PendingExternalUserProfiles
+        public List<Microsoft.Graph.Beta.Models.PendingExternalUserProfile> PendingExternalUserProfiles
         {
-            get { return BackingStore?.Get<List<PendingExternalUserProfile>>("pendingExternalUserProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PendingExternalUserProfile>>("pendingExternalUserProfiles"); }
             set { BackingStore?.Set("pendingExternalUserProfiles", value); }
         }
 #endif
         /// <summary>List of recommended improvements to improve tenant posture.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Recommendation>? Recommendations
+        public List<Microsoft.Graph.Beta.Models.Recommendation>? Recommendations
         {
-            get { return BackingStore?.Get<List<Recommendation>?>("recommendations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Recommendation>?>("recommendations"); }
             set { BackingStore?.Set("recommendations", value); }
         }
 #nullable restore
 #else
-        public List<Recommendation> Recommendations
+        public List<Microsoft.Graph.Beta.Models.Recommendation> Recommendations
         {
-            get { return BackingStore?.Get<List<Recommendation>>("recommendations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Recommendation>>("recommendations"); }
             set { BackingStore?.Set("recommendations", value); }
         }
 #endif
         /// <summary>The sharedEmailDomains property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SharedEmailDomain>? SharedEmailDomains
+        public List<Microsoft.Graph.Beta.Models.SharedEmailDomain>? SharedEmailDomains
         {
-            get { return BackingStore?.Get<List<SharedEmailDomain>?>("sharedEmailDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedEmailDomain>?>("sharedEmailDomains"); }
             set { BackingStore?.Set("sharedEmailDomains", value); }
         }
 #nullable restore
 #else
-        public List<SharedEmailDomain> SharedEmailDomains
+        public List<Microsoft.Graph.Beta.Models.SharedEmailDomain> SharedEmailDomains
         {
-            get { return BackingStore?.Get<List<SharedEmailDomain>>("sharedEmailDomains"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SharedEmailDomain>>("sharedEmailDomains"); }
             set { BackingStore?.Set("sharedEmailDomains", value); }
         }
 #endif
         /// <summary>List of commercial subscriptions that an organization has.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CompanySubscription>? Subscriptions
+        public List<Microsoft.Graph.Beta.Models.CompanySubscription>? Subscriptions
         {
-            get { return BackingStore?.Get<List<CompanySubscription>?>("subscriptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanySubscription>?>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
 #nullable restore
 #else
-        public List<CompanySubscription> Subscriptions
+        public List<Microsoft.Graph.Beta.Models.CompanySubscription> Subscriptions
         {
-            get { return BackingStore?.Get<List<CompanySubscription>>("subscriptions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CompanySubscription>>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DirectoryObject1"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DirectoryObject1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DirectoryObject1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DirectoryObject1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DirectoryObject1();
+            return new Microsoft.Graph.Beta.Models.DirectoryObject1();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -300,23 +300,23 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "administrativeUnits", n => { AdministrativeUnits = n.GetCollectionOfObjectValues<AdministrativeUnit>(AdministrativeUnit.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "attributeSets", n => { AttributeSets = n.GetCollectionOfObjectValues<AttributeSet>(AttributeSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "certificateAuthorities", n => { CertificateAuthorities = n.GetObjectValue<CertificateAuthorityPath>(CertificateAuthorityPath.CreateFromDiscriminatorValue); } },
-                { "customSecurityAttributeDefinitions", n => { CustomSecurityAttributeDefinitions = n.GetCollectionOfObjectValues<CustomSecurityAttributeDefinition>(CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deletedItems", n => { DeletedItems = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceLocalCredentials", n => { DeviceLocalCredentials = n.GetCollectionOfObjectValues<DeviceLocalCredentialInfo>(DeviceLocalCredentialInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "externalUserProfiles", n => { ExternalUserProfiles = n.GetCollectionOfObjectValues<ExternalUserProfile>(ExternalUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<FeatureRolloutPolicy>(FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "federationConfigurations", n => { FederationConfigurations = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "impactedResources", n => { ImpactedResources = n.GetCollectionOfObjectValues<ImpactedResource>(ImpactedResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "inboundSharedUserProfiles", n => { InboundSharedUserProfiles = n.GetCollectionOfObjectValues<InboundSharedUserProfile>(InboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "onPremisesSynchronization", n => { OnPremisesSynchronization = n.GetCollectionOfObjectValues<OnPremisesDirectorySynchronization>(OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "outboundSharedUserProfiles", n => { OutboundSharedUserProfiles = n.GetCollectionOfObjectValues<OutboundSharedUserProfile>(OutboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "pendingExternalUserProfiles", n => { PendingExternalUserProfiles = n.GetCollectionOfObjectValues<PendingExternalUserProfile>(PendingExternalUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "recommendations", n => { Recommendations = n.GetCollectionOfObjectValues<Recommendation>(Recommendation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "sharedEmailDomains", n => { SharedEmailDomains = n.GetCollectionOfObjectValues<SharedEmailDomain>(SharedEmailDomain.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<CompanySubscription>(CompanySubscription.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "administrativeUnits", n => { AdministrativeUnits = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AdministrativeUnit>(Microsoft.Graph.Beta.Models.AdministrativeUnit.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "attributeSets", n => { AttributeSets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttributeSet>(Microsoft.Graph.Beta.Models.AttributeSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "certificateAuthorities", n => { CertificateAuthorities = n.GetObjectValue<Microsoft.Graph.Beta.Models.CertificateAuthorityPath>(Microsoft.Graph.Beta.Models.CertificateAuthorityPath.CreateFromDiscriminatorValue); } },
+                { "customSecurityAttributeDefinitions", n => { CustomSecurityAttributeDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition>(Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deletedItems", n => { DeletedItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceLocalCredentials", n => { DeviceLocalCredentials = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo>(Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "externalUserProfiles", n => { ExternalUserProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalUserProfile>(Microsoft.Graph.Beta.Models.ExternalUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>(Microsoft.Graph.Beta.Models.FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "federationConfigurations", n => { FederationConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityProviderBase>(Microsoft.Graph.Beta.Models.IdentityProviderBase.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "impactedResources", n => { ImpactedResources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImpactedResource>(Microsoft.Graph.Beta.Models.ImpactedResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inboundSharedUserProfiles", n => { InboundSharedUserProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.InboundSharedUserProfile>(Microsoft.Graph.Beta.Models.InboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "onPremisesSynchronization", n => { OnPremisesSynchronization = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronization>(Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "outboundSharedUserProfiles", n => { OutboundSharedUserProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>(Microsoft.Graph.Beta.Models.OutboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "pendingExternalUserProfiles", n => { PendingExternalUserProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PendingExternalUserProfile>(Microsoft.Graph.Beta.Models.PendingExternalUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendations", n => { Recommendations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Recommendation>(Microsoft.Graph.Beta.Models.Recommendation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sharedEmailDomains", n => { SharedEmailDomains = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedEmailDomain>(Microsoft.Graph.Beta.Models.SharedEmailDomain.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CompanySubscription>(Microsoft.Graph.Beta.Models.CompanySubscription.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -327,23 +327,23 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
-            writer.WriteCollectionOfObjectValues<AttributeSet>("attributeSets", AttributeSets);
-            writer.WriteObjectValue<CertificateAuthorityPath>("certificateAuthorities", CertificateAuthorities);
-            writer.WriteCollectionOfObjectValues<CustomSecurityAttributeDefinition>("customSecurityAttributeDefinitions", CustomSecurityAttributeDefinitions);
-            writer.WriteCollectionOfObjectValues<DirectoryObject>("deletedItems", DeletedItems);
-            writer.WriteCollectionOfObjectValues<DeviceLocalCredentialInfo>("deviceLocalCredentials", DeviceLocalCredentials);
-            writer.WriteCollectionOfObjectValues<ExternalUserProfile>("externalUserProfiles", ExternalUserProfiles);
-            writer.WriteCollectionOfObjectValues<FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);
-            writer.WriteCollectionOfObjectValues<IdentityProviderBase>("federationConfigurations", FederationConfigurations);
-            writer.WriteCollectionOfObjectValues<ImpactedResource>("impactedResources", ImpactedResources);
-            writer.WriteCollectionOfObjectValues<InboundSharedUserProfile>("inboundSharedUserProfiles", InboundSharedUserProfiles);
-            writer.WriteCollectionOfObjectValues<OnPremisesDirectorySynchronization>("onPremisesSynchronization", OnPremisesSynchronization);
-            writer.WriteCollectionOfObjectValues<OutboundSharedUserProfile>("outboundSharedUserProfiles", OutboundSharedUserProfiles);
-            writer.WriteCollectionOfObjectValues<PendingExternalUserProfile>("pendingExternalUserProfiles", PendingExternalUserProfiles);
-            writer.WriteCollectionOfObjectValues<Recommendation>("recommendations", Recommendations);
-            writer.WriteCollectionOfObjectValues<SharedEmailDomain>("sharedEmailDomains", SharedEmailDomains);
-            writer.WriteCollectionOfObjectValues<CompanySubscription>("subscriptions", Subscriptions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AdministrativeUnit>("administrativeUnits", AdministrativeUnits);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttributeSet>("attributeSets", AttributeSets);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CertificateAuthorityPath>("certificateAuthorities", CertificateAuthorities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CustomSecurityAttributeDefinition>("customSecurityAttributeDefinitions", CustomSecurityAttributeDefinitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DirectoryObject>("deletedItems", DeletedItems);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceLocalCredentialInfo>("deviceLocalCredentials", DeviceLocalCredentials);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalUserProfile>("externalUserProfiles", ExternalUserProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentityProviderBase>("federationConfigurations", FederationConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImpactedResource>("impactedResources", ImpactedResources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.InboundSharedUserProfile>("inboundSharedUserProfiles", InboundSharedUserProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronization>("onPremisesSynchronization", OnPremisesSynchronization);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>("outboundSharedUserProfiles", OutboundSharedUserProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PendingExternalUserProfile>("pendingExternalUserProfiles", PendingExternalUserProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Recommendation>("recommendations", Recommendations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SharedEmailDomain>("sharedEmailDomains", SharedEmailDomains);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CompanySubscription>("subscriptions", Subscriptions);
         }
     }
 }

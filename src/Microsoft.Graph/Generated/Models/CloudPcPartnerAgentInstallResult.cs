@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.</summary>
-        public CloudPcPartnerAgentInstallStatus? InstallStatus
+        public Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallStatus? InstallStatus
         {
-            get { return BackingStore?.Get<CloudPcPartnerAgentInstallStatus?>("installStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallStatus?>("installStatus"); }
             set { BackingStore?.Set("installStatus", value); }
         }
         /// <summary>Indicates whether the partner agent is a third party. When true, the agent is a third-party (non-Microsoft) agent and when false, the agent is a Microsoft agent or isn&apos;t known.  The default value is false.</summary>
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The name of the first-party or third-party partner agent. Possible values for third-party partners are Citrix, VMware and HP. Read-Only.</summary>
-        public CloudPcPartnerAgentName? PartnerAgentName
+        public Microsoft.Graph.Beta.Models.CloudPcPartnerAgentName? PartnerAgentName
         {
-            get { return BackingStore?.Get<CloudPcPartnerAgentName?>("partnerAgentName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentName?>("partnerAgentName"); }
             set { BackingStore?.Set("partnerAgentName", value); }
         }
         /// <summary>Indicates whether the partner agent installation should be retried. The default value is false.</summary>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("retriable", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcPartnerAgentInstallResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult"/> and sets the default values.
         /// </summary>
         public CloudPcPartnerAgentInstallResult()
         {
@@ -86,12 +86,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcPartnerAgentInstallResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcPartnerAgentInstallResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcPartnerAgentInstallResult();
+            return new Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,10 +102,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
-                { "installStatus", n => { InstallStatus = n.GetEnumValue<CloudPcPartnerAgentInstallStatus>(); } },
+                { "installStatus", n => { InstallStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallStatus>(); } },
                 { "isThirdPartyPartner", n => { IsThirdPartyPartner = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "partnerAgentName", n => { PartnerAgentName = n.GetEnumValue<CloudPcPartnerAgentName>(); } },
+                { "partnerAgentName", n => { PartnerAgentName = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentName>(); } },
                 { "retriable", n => { Retriable = n.GetBoolValue(); } },
             };
         }
@@ -117,10 +117,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("errorMessage", ErrorMessage);
-            writer.WriteEnumValue<CloudPcPartnerAgentInstallStatus>("installStatus", InstallStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentInstallStatus>("installStatus", InstallStatus);
             writer.WriteBoolValue("isThirdPartyPartner", IsThirdPartyPartner);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<CloudPcPartnerAgentName>("partnerAgentName", PartnerAgentName);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcPartnerAgentName>("partnerAgentName", PartnerAgentName);
             writer.WriteBoolValue("retriable", Retriable);
             writer.WriteAdditionalData(AdditionalData);
         }

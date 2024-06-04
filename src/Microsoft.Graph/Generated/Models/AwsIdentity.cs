@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsIdentity : AuthorizationSystemIdentity, IParsable
+    public class AwsIdentity : Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="AwsIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsIdentity"/> and sets the default values.
         /// </summary>
         public AwsIdentity() : base()
         {
@@ -20,21 +20,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.awsAccessKey" => new AwsAccessKey(),
-                "#microsoft.graph.awsEc2Instance" => new AwsEc2Instance(),
-                "#microsoft.graph.awsGroup" => new AwsGroup(),
-                "#microsoft.graph.awsLambda" => new AwsLambda(),
-                "#microsoft.graph.awsRole" => new AwsRole(),
-                "#microsoft.graph.awsUser" => new AwsUser(),
-                _ => new AwsIdentity(),
+                "#microsoft.graph.awsAccessKey" => new Microsoft.Graph.Beta.Models.AwsAccessKey(),
+                "#microsoft.graph.awsEc2Instance" => new Microsoft.Graph.Beta.Models.AwsEc2Instance(),
+                "#microsoft.graph.awsGroup" => new Microsoft.Graph.Beta.Models.AwsGroup(),
+                "#microsoft.graph.awsLambda" => new Microsoft.Graph.Beta.Models.AwsLambda(),
+                "#microsoft.graph.awsRole" => new Microsoft.Graph.Beta.Models.AwsRole(),
+                "#microsoft.graph.awsUser" => new Microsoft.Graph.Beta.Models.AwsUser(),
+                _ => new Microsoft.Graph.Beta.Models.AwsIdentity(),
             };
         }
         /// <summary>

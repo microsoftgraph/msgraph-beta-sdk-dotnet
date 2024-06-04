@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>A list of possible states for application status on an individual device. When devices contact the Intune service and find targeted application enforcement intent, the status of the enforcement is recorded and becomes accessible in the Graph API. Since the application status is identified during device interaction with the Intune service, status records do not immediately appear upon application group assignment; it is created only after the assignment is evaluated in the service and devices start receiving the policy during check-ins.</summary>
-        public ResultantAppState? InstallState
+        public Microsoft.Graph.Beta.Models.ResultantAppState? InstallState
         {
-            get { return BackingStore?.Get<ResultantAppState?>("installState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResultantAppState?>("installState"); }
             set { BackingStore?.Set("installState", value); }
         }
         /// <summary>Indicates the status of the mobile app on the device.</summary>
@@ -99,21 +99,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The supported platforms for the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppSupportedDeviceType>? SupportedDeviceTypes
+        public List<Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType>? SupportedDeviceTypes
         {
-            get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>?>("supportedDeviceTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType>?>("supportedDeviceTypes"); }
             set { BackingStore?.Set("supportedDeviceTypes", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppSupportedDeviceType> SupportedDeviceTypes
+        public List<Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType> SupportedDeviceTypes
         {
-            get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>>("supportedDeviceTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType>>("supportedDeviceTypes"); }
             set { BackingStore?.Set("supportedDeviceTypes", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MobileAppIntentAndStateDetail"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail"/> and sets the default values.
         /// </summary>
         public MobileAppIntentAndStateDetail()
         {
@@ -123,12 +123,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppIntentAndStateDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MobileAppIntentAndStateDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppIntentAndStateDetail();
+            return new Microsoft.Graph.Beta.Models.MobileAppIntentAndStateDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,10 +141,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "applicationId", n => { ApplicationId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
-                { "installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
-                { "mobileAppIntent", n => { MobileAppIntent = n.GetEnumValue<MobileAppIntent>(); } },
+                { "installState", n => { InstallState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ResultantAppState>(); } },
+                { "mobileAppIntent", n => { MobileAppIntent = n.GetEnumValue<Microsoft.Graph.Beta.Models.MobileAppIntent>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "supportedDeviceTypes", n => { SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "supportedDeviceTypes", n => { SupportedDeviceTypes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType>(Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("applicationId", ApplicationId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("displayVersion", DisplayVersion);
-            writer.WriteEnumValue<ResultantAppState>("installState", InstallState);
-            writer.WriteEnumValue<MobileAppIntent>("mobileAppIntent", MobileAppIntent);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ResultantAppState>("installState", InstallState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MobileAppIntent>("mobileAppIntent", MobileAppIntent);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<MobileAppSupportedDeviceType>("supportedDeviceTypes", SupportedDeviceTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppSupportedDeviceType>("supportedDeviceTypes", SupportedDeviceTypes);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

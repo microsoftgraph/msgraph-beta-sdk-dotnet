@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthorizationSystemResource : Entity, IParsable
+    public class AuthorizationSystemResource : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The authorization system that the resource exists in.</summary>
@@ -77,18 +77,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthorizationSystemResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthorizationSystemResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthorizationSystemResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthorizationSystemResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.awsAuthorizationSystemResource" => new AwsAuthorizationSystemResource(),
-                "#microsoft.graph.azureAuthorizationSystemResource" => new AzureAuthorizationSystemResource(),
-                "#microsoft.graph.gcpAuthorizationSystemResource" => new GcpAuthorizationSystemResource(),
-                _ => new AuthorizationSystemResource(),
+                "#microsoft.graph.awsAuthorizationSystemResource" => new Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource(),
+                "#microsoft.graph.azureAuthorizationSystemResource" => new Microsoft.Graph.Beta.Models.AzureAuthorizationSystemResource(),
+                "#microsoft.graph.gcpAuthorizationSystemResource" => new Microsoft.Graph.Beta.Models.GcpAuthorizationSystemResource(),
+                _ => new Microsoft.Graph.Beta.Models.AuthorizationSystemResource(),
             };
         }
         /// <summary>

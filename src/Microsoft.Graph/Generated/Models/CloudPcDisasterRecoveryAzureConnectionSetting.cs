@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcDisasterRecoveryAzureConnectionSetting : CloudPcDisasterRecoveryNetworkSetting, IParsable
+    public class CloudPcDisasterRecoveryAzureConnectionSetting : Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryNetworkSetting, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The onPremisesConnectionId property</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcDisasterRecoveryAzureConnectionSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryAzureConnectionSetting"/> and sets the default values.
         /// </summary>
         public CloudPcDisasterRecoveryAzureConnectionSetting() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcDisasterRecoveryAzureConnectionSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryAzureConnectionSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcDisasterRecoveryAzureConnectionSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryAzureConnectionSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcDisasterRecoveryAzureConnectionSetting();
+            return new Microsoft.Graph.Beta.Models.CloudPcDisasterRecoveryAzureConnectionSetting();
         }
         /// <summary>
         /// The deserialization information for the current model

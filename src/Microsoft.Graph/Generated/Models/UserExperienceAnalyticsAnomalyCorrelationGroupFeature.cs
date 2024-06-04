@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the device&apos;s feature type. Possible values are: manufacturer, model, osVersion, application or driver.</summary>
-        public UserExperienceAnalyticsAnomalyDeviceFeatureType? DeviceFeatureType
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDeviceFeatureType? DeviceFeatureType
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsAnomalyDeviceFeatureType?>("deviceFeatureType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDeviceFeatureType?>("deviceFeatureType"); }
             set { BackingStore?.Set("deviceFeatureType", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsAnomalyCorrelationGroupFeature"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature"/> and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsAnomalyCorrelationGroupFeature()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsAnomalyCorrelationGroupFeature"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserExperienceAnalyticsAnomalyCorrelationGroupFeature CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsAnomalyCorrelationGroupFeature();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceFeatureType", n => { DeviceFeatureType = n.GetEnumValue<UserExperienceAnalyticsAnomalyDeviceFeatureType>(); } },
+                { "deviceFeatureType", n => { DeviceFeatureType = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDeviceFeatureType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<UserExperienceAnalyticsAnomalyDeviceFeatureType>("deviceFeatureType", DeviceFeatureType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDeviceFeatureType>("deviceFeatureType", DeviceFeatureType);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);
             writer.WriteAdditionalData(AdditionalData);

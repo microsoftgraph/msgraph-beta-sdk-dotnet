@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("requirementProvider", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationRequirementPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy"/> and sets the default values.
         /// </summary>
         public AuthenticationRequirementPolicy()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationRequirementPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AuthenticationRequirementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationRequirementPolicy();
+            return new Microsoft.Graph.Beta.Models.AuthenticationRequirementPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "detail", n => { Detail = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "requirementProvider", n => { RequirementProvider = n.GetEnumValue<RequirementProvider>(); } },
+                { "requirementProvider", n => { RequirementProvider = n.GetEnumValue<Microsoft.Graph.Beta.Models.RequirementProvider>(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detail", Detail);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<RequirementProvider>("requirementProvider", RequirementProvider);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RequirementProvider>("requirementProvider", RequirementProvider);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MessageEvent : Entity, IParsable
+    public class MessageEvent : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The dateTime property</summary>
@@ -33,20 +33,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The eventType property</summary>
-        public MessageEventType? EventType
+        public Microsoft.Graph.Beta.Models.MessageEventType? EventType
         {
-            get { return BackingStore?.Get<MessageEventType?>("eventType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MessageEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MessageEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MessageEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MessageEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MessageEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MessageEvent();
+            return new Microsoft.Graph.Beta.Models.MessageEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "eventType", n => { EventType = n.GetEnumValue<MessageEventType>(); } },
+                { "eventType", n => { EventType = n.GetEnumValue<Microsoft.Graph.Beta.Models.MessageEventType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("dateTime", DateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<MessageEventType>("eventType", EventType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MessageEventType>("eventType", EventType);
         }
     }
 }

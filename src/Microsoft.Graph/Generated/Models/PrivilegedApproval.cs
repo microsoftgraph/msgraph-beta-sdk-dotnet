@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegedApproval : Entity, IParsable
+    public class PrivilegedApproval : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The approvalDuration property</summary>
@@ -63,16 +63,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The request property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRoleAssignmentRequest? Request
+        public Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest? Request
         {
-            get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest?>("request"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest?>("request"); }
             set { BackingStore?.Set("request", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRoleAssignmentRequest Request
+        public Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest Request
         {
-            get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest>("request"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest>("request"); }
             set { BackingStore?.Set("request", value); }
         }
 #endif
@@ -111,16 +111,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRole? RoleInfo
+        public Microsoft.Graph.Beta.Models.PrivilegedRole? RoleInfo
         {
-            get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRole RoleInfo
+        public Microsoft.Graph.Beta.Models.PrivilegedRole RoleInfo
         {
-            get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #endif
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegedApproval"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegedApproval"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegedApproval CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrivilegedApproval CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrivilegedApproval();
+            return new Microsoft.Graph.Beta.Models.PrivilegedApproval();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,14 +165,14 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "approvalDuration", n => { ApprovalDuration = n.GetTimeSpanValue(); } },
-                { "approvalState", n => { ApprovalState = n.GetEnumValue<ApprovalState>(); } },
+                { "approvalState", n => { ApprovalState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ApprovalState>(); } },
                 { "approvalType", n => { ApprovalType = n.GetStringValue(); } },
                 { "approverReason", n => { ApproverReason = n.GetStringValue(); } },
                 { "endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
-                { "request", n => { Request = n.GetObjectValue<PrivilegedRoleAssignmentRequest>(PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
+                { "request", n => { Request = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest>(Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue); } },
                 { "requestorReason", n => { RequestorReason = n.GetStringValue(); } },
                 { "roleId", n => { RoleId = n.GetStringValue(); } },
-                { "roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
+                { "roleInfo", n => { RoleInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRole>(Microsoft.Graph.Beta.Models.PrivilegedRole.CreateFromDiscriminatorValue); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "userId", n => { UserId = n.GetStringValue(); } },
             };
@@ -186,14 +186,14 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteTimeSpanValue("approvalDuration", ApprovalDuration);
-            writer.WriteEnumValue<ApprovalState>("approvalState", ApprovalState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ApprovalState>("approvalState", ApprovalState);
             writer.WriteStringValue("approvalType", ApprovalType);
             writer.WriteStringValue("approverReason", ApproverReason);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
-            writer.WriteObjectValue<PrivilegedRoleAssignmentRequest>("request", Request);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest>("request", Request);
             writer.WriteStringValue("requestorReason", RequestorReason);
             writer.WriteStringValue("roleId", RoleId);
-            writer.WriteObjectValue<PrivilegedRole>("roleInfo", RoleInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRole>("roleInfo", RoleInfo);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("userId", UserId);
         }

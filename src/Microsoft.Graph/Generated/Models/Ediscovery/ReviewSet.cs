@@ -51,28 +51,28 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>The queries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ReviewSetQuery>? Queries
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSetQuery>? Queries
         {
-            get { return BackingStore?.Get<List<ReviewSetQuery>?>("queries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSetQuery>?>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #nullable restore
 #else
-        public List<ReviewSetQuery> Queries
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSetQuery> Queries
         {
-            get { return BackingStore?.Get<List<ReviewSetQuery>>("queries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSetQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReviewSet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ReviewSet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReviewSet();
+            return new Microsoft.Graph.Beta.Models.Ediscovery.ReviewSet();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "queries", n => { Queries = n.GetCollectionOfObjectValues<ReviewSetQuery>(ReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "queries", n => { Queries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSetQuery>(Microsoft.Graph.Beta.Models.Ediscovery.ReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<ReviewSetQuery>("queries", Queries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.ReviewSetQuery>("queries", Queries);
         }
     }
 }

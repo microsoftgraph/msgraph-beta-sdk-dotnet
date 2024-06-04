@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore.Set("AdditionalData", value); }
         }
         /// <summary>Represents type of the assignment filter.</summary>
-        public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
             set { BackingStore?.Set("assignmentFilterType", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -75,13 +75,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>This enum represents associated assignment payload type</summary>
-        public AssociatedAssignmentPayloadType? PayloadType
+        public Microsoft.Graph.Beta.Models.AssociatedAssignmentPayloadType? PayloadType
         {
-            get { return BackingStore?.Get<AssociatedAssignmentPayloadType?>("payloadType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssociatedAssignmentPayloadType?>("payloadType"); }
             set { BackingStore?.Set("payloadType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PayloadByFilter"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PayloadByFilter"/> and sets the default values.
         /// </summary>
         public PayloadByFilter()
         {
@@ -91,12 +91,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PayloadByFilter"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PayloadByFilter"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PayloadByFilter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PayloadByFilter CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PayloadByFilter();
+            return new Microsoft.Graph.Beta.Models.PayloadByFilter();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
+                { "assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>(); } },
                 { "groupId", n => { GroupId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "payloadId", n => { PayloadId = n.GetStringValue(); } },
-                { "payloadType", n => { PayloadType = n.GetEnumValue<AssociatedAssignmentPayloadType>(); } },
+                { "payloadType", n => { PayloadType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AssociatedAssignmentPayloadType>(); } },
             };
         }
         /// <summary>
@@ -120,11 +120,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DeviceAndAppManagementAssignmentFilterType>("assignmentFilterType", AssignmentFilterType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>("assignmentFilterType", AssignmentFilterType);
             writer.WriteStringValue("groupId", GroupId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("payloadId", PayloadId);
-            writer.WriteEnumValue<AssociatedAssignmentPayloadType>("payloadType", PayloadType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AssociatedAssignmentPayloadType>("payloadType", PayloadType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

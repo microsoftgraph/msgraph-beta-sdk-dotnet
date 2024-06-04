@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class IdentityFinding : Finding, IParsable
+    public class IdentityFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The actionSummary property</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemIdentity? Identity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity? Identity
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentity?>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemIdentity Identity
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity Identity
         {
-            get { return BackingStore?.Get<AuthorizationSystemIdentity>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #endif
@@ -77,34 +77,34 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentityFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentityFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IdentityFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IdentityFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.inactiveAwsResourceFinding" => new InactiveAwsResourceFinding(),
-                "#microsoft.graph.inactiveAwsRoleFinding" => new InactiveAwsRoleFinding(),
-                "#microsoft.graph.inactiveAzureServicePrincipalFinding" => new InactiveAzureServicePrincipalFinding(),
-                "#microsoft.graph.inactiveGcpServiceAccountFinding" => new InactiveGcpServiceAccountFinding(),
-                "#microsoft.graph.inactiveServerlessFunctionFinding" => new InactiveServerlessFunctionFinding(),
-                "#microsoft.graph.inactiveUserFinding" => new InactiveUserFinding(),
-                "#microsoft.graph.overprovisionedAwsResourceFinding" => new OverprovisionedAwsResourceFinding(),
-                "#microsoft.graph.overprovisionedAwsRoleFinding" => new OverprovisionedAwsRoleFinding(),
-                "#microsoft.graph.overprovisionedAzureServicePrincipalFinding" => new OverprovisionedAzureServicePrincipalFinding(),
-                "#microsoft.graph.overprovisionedGcpServiceAccountFinding" => new OverprovisionedGcpServiceAccountFinding(),
-                "#microsoft.graph.overprovisionedServerlessFunctionFinding" => new OverprovisionedServerlessFunctionFinding(),
-                "#microsoft.graph.overprovisionedUserFinding" => new OverprovisionedUserFinding(),
-                "#microsoft.graph.superAwsResourceFinding" => new SuperAwsResourceFinding(),
-                "#microsoft.graph.superAwsRoleFinding" => new SuperAwsRoleFinding(),
-                "#microsoft.graph.superAzureServicePrincipalFinding" => new SuperAzureServicePrincipalFinding(),
-                "#microsoft.graph.superGcpServiceAccountFinding" => new SuperGcpServiceAccountFinding(),
-                "#microsoft.graph.superServerlessFunctionFinding" => new SuperServerlessFunctionFinding(),
-                "#microsoft.graph.superUserFinding" => new SuperUserFinding(),
-                "#microsoft.graph.unenforcedMfaAwsUserFinding" => new UnenforcedMfaAwsUserFinding(),
-                _ => new IdentityFinding(),
+                "#microsoft.graph.inactiveAwsResourceFinding" => new Microsoft.Graph.Beta.Models.InactiveAwsResourceFinding(),
+                "#microsoft.graph.inactiveAwsRoleFinding" => new Microsoft.Graph.Beta.Models.InactiveAwsRoleFinding(),
+                "#microsoft.graph.inactiveAzureServicePrincipalFinding" => new Microsoft.Graph.Beta.Models.InactiveAzureServicePrincipalFinding(),
+                "#microsoft.graph.inactiveGcpServiceAccountFinding" => new Microsoft.Graph.Beta.Models.InactiveGcpServiceAccountFinding(),
+                "#microsoft.graph.inactiveServerlessFunctionFinding" => new Microsoft.Graph.Beta.Models.InactiveServerlessFunctionFinding(),
+                "#microsoft.graph.inactiveUserFinding" => new Microsoft.Graph.Beta.Models.InactiveUserFinding(),
+                "#microsoft.graph.overprovisionedAwsResourceFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedAwsResourceFinding(),
+                "#microsoft.graph.overprovisionedAwsRoleFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedAwsRoleFinding(),
+                "#microsoft.graph.overprovisionedAzureServicePrincipalFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedAzureServicePrincipalFinding(),
+                "#microsoft.graph.overprovisionedGcpServiceAccountFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedGcpServiceAccountFinding(),
+                "#microsoft.graph.overprovisionedServerlessFunctionFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedServerlessFunctionFinding(),
+                "#microsoft.graph.overprovisionedUserFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedUserFinding(),
+                "#microsoft.graph.superAwsResourceFinding" => new Microsoft.Graph.Beta.Models.SuperAwsResourceFinding(),
+                "#microsoft.graph.superAwsRoleFinding" => new Microsoft.Graph.Beta.Models.SuperAwsRoleFinding(),
+                "#microsoft.graph.superAzureServicePrincipalFinding" => new Microsoft.Graph.Beta.Models.SuperAzureServicePrincipalFinding(),
+                "#microsoft.graph.superGcpServiceAccountFinding" => new Microsoft.Graph.Beta.Models.SuperGcpServiceAccountFinding(),
+                "#microsoft.graph.superServerlessFunctionFinding" => new Microsoft.Graph.Beta.Models.SuperServerlessFunctionFinding(),
+                "#microsoft.graph.superUserFinding" => new Microsoft.Graph.Beta.Models.SuperUserFinding(),
+                "#microsoft.graph.unenforcedMfaAwsUserFinding" => new Microsoft.Graph.Beta.Models.UnenforcedMfaAwsUserFinding(),
+                _ => new Microsoft.Graph.Beta.Models.IdentityFinding(),
             };
         }
         /// <summary>
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "actionSummary", n => { ActionSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ActionSummary>(Microsoft.Graph.Beta.Models.ActionSummary.CreateFromDiscriminatorValue); } },
-                { "identity", n => { Identity = n.GetObjectValue<AuthorizationSystemIdentity>(AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
+                { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>(Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity.CreateFromDiscriminatorValue); } },
                 { "identityDetails", n => { IdentityDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityDetails>(Microsoft.Graph.Beta.Models.IdentityDetails.CreateFromDiscriminatorValue); } },
                 { "permissionsCreepIndex", n => { PermissionsCreepIndex = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>(Microsoft.Graph.Beta.Models.PermissionsCreepIndex.CreateFromDiscriminatorValue); } },
             };
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ActionSummary>("actionSummary", ActionSummary);
-            writer.WriteObjectValue<AuthorizationSystemIdentity>("identity", Identity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemIdentity>("identity", Identity);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityDetails>("identityDetails", IdentityDetails);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsCreepIndex>("permissionsCreepIndex", PermissionsCreepIndex);
         }

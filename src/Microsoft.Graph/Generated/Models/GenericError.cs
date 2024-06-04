@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GenericError"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GenericError"/> and sets the default values.
         /// </summary>
         public GenericError()
         {
@@ -78,16 +78,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GenericError"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GenericError"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GenericError CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.GenericError CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.accessReviewError" => new AccessReviewError(),
-                _ => new GenericError(),
+                "#microsoft.graph.accessReviewError" => new Microsoft.Graph.Beta.Models.AccessReviewError(),
+                _ => new Microsoft.Graph.Beta.Models.GenericError(),
             };
         }
         /// <summary>

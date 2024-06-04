@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppListItem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AppListItem"/> and sets the default values.
         /// </summary>
         public AppListItem()
         {
@@ -111,16 +111,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppListItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppListItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AppListItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AppListItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.appleAppListItem" => new AppleAppListItem(),
-                _ => new AppListItem(),
+                "#microsoft.graph.appleAppListItem" => new Microsoft.Graph.Beta.Models.AppleAppListItem(),
+                _ => new Microsoft.Graph.Beta.Models.AppListItem(),
             };
         }
         /// <summary>

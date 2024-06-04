@@ -9,37 +9,37 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing the defintion for a given setting
     /// </summary>
-    public class DeviceManagementSettingDefinition : Entity, IParsable
+    public class DeviceManagementSettingDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Collection of constraints for the setting value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConstraint>? Constraints
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>? Constraints
         {
-            get { return BackingStore?.Get<List<DeviceManagementConstraint>?>("constraints"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>?>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConstraint> Constraints
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConstraint> Constraints
         {
-            get { return BackingStore?.Get<List<DeviceManagementConstraint>>("constraints"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
 #endif
         /// <summary>Collection of dependencies on other settings</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingDependency>? Dependencies
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency>? Dependencies
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingDependency>?>("dependencies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency>?>("dependencies"); }
             set { BackingStore?.Set("dependencies", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingDependency> Dependencies
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency> Dependencies
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingDependency>>("dependencies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency>>("dependencies"); }
             set { BackingStore?.Set("dependencies", value); }
         }
 #endif
@@ -162,26 +162,26 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The valueType property</summary>
-        public DeviceManangementIntentValueType? ValueType
+        public Microsoft.Graph.Beta.Models.DeviceManangementIntentValueType? ValueType
         {
-            get { return BackingStore?.Get<DeviceManangementIntentValueType?>("valueType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManangementIntentValueType?>("valueType"); }
             set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementSettingDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceManagementAbstractComplexSettingDefinition" => new DeviceManagementAbstractComplexSettingDefinition(),
-                "#microsoft.graph.deviceManagementCollectionSettingDefinition" => new DeviceManagementCollectionSettingDefinition(),
-                "#microsoft.graph.deviceManagementComplexSettingDefinition" => new DeviceManagementComplexSettingDefinition(),
-                _ => new DeviceManagementSettingDefinition(),
+                "#microsoft.graph.deviceManagementAbstractComplexSettingDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementAbstractComplexSettingDefinition(),
+                "#microsoft.graph.deviceManagementCollectionSettingDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementCollectionSettingDefinition(),
+                "#microsoft.graph.deviceManagementComplexSettingDefinition" => new Microsoft.Graph.Beta.Models.DeviceManagementComplexSettingDefinition(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition(),
             };
         }
         /// <summary>
@@ -192,8 +192,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "dependencies", n => { Dependencies = n.GetCollectionOfObjectValues<DeviceManagementSettingDependency>(DeviceManagementSettingDependency.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "constraints", n => { Constraints = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>(Microsoft.Graph.Beta.Models.DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dependencies", n => { Dependencies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency>(Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "documentationUrl", n => { DocumentationUrl = n.GetStringValue(); } },
@@ -202,7 +202,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "isTopLevel", n => { IsTopLevel = n.GetBoolValue(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "placeholderText", n => { PlaceholderText = n.GetStringValue(); } },
-                { "valueType", n => { ValueType = n.GetEnumValue<DeviceManangementIntentValueType>(); } },
+                { "valueType", n => { ValueType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManangementIntentValueType>(); } },
             };
         }
         /// <summary>
@@ -213,8 +213,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementConstraint>("constraints", Constraints);
-            writer.WriteCollectionOfObjectValues<DeviceManagementSettingDependency>("dependencies", Dependencies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>("constraints", Constraints);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency>("dependencies", Dependencies);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("documentationUrl", DocumentationUrl);
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isTopLevel", IsTopLevel);
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
             writer.WriteStringValue("placeholderText", PlaceholderText);
-            writer.WriteEnumValue<DeviceManangementIntentValueType>("valueType", ValueType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManangementIntentValueType>("valueType", ValueType);
         }
     }
 }

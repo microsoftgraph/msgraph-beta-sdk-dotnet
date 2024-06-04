@@ -74,29 +74,29 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
 #endif
         /// <summary>The status property</summary>
-        public ManagementActionStatus? Status
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionStatus? Status
         {
-            get { return BackingStore?.Get<ManagementActionStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The collection of workload action deployment statues for the given management action. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkloadActionDeploymentStatus>? WorkloadActionDeploymentStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus>? WorkloadActionDeploymentStatuses
         {
-            get { return BackingStore?.Get<List<WorkloadActionDeploymentStatus>?>("workloadActionDeploymentStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus>?>("workloadActionDeploymentStatuses"); }
             set { BackingStore?.Set("workloadActionDeploymentStatuses", value); }
         }
 #nullable restore
 #else
-        public List<WorkloadActionDeploymentStatus> WorkloadActionDeploymentStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus> WorkloadActionDeploymentStatuses
         {
-            get { return BackingStore?.Get<List<WorkloadActionDeploymentStatus>>("workloadActionDeploymentStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus>>("workloadActionDeploymentStatuses"); }
             set { BackingStore?.Set("workloadActionDeploymentStatuses", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ManagementActionDeploymentStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus"/> and sets the default values.
         /// </summary>
         public ManagementActionDeploymentStatus()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagementActionDeploymentStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ManagementActionDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagementActionDeploymentStatus();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionDeploymentStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,8 +125,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
                 { "managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
                 { "managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ManagementActionStatus>(); } },
-                { "workloadActionDeploymentStatuses", n => { WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>(WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionStatus>(); } },
+                { "workloadActionDeploymentStatuses", n => { WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus>(Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -140,8 +140,8 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             writer.WriteStringValue("managementTemplateId", ManagementTemplateId);
             writer.WriteIntValue("managementTemplateVersion", ManagementTemplateVersion);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ManagementActionStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<WorkloadActionDeploymentStatus>("workloadActionDeploymentStatuses", WorkloadActionDeploymentStatuses);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementActionStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.WorkloadActionDeploymentStatus>("workloadActionDeploymentStatuses", WorkloadActionDeploymentStatuses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

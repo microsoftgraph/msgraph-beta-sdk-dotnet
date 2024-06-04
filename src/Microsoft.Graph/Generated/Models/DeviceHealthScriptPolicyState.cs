@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the type of execution status of the device management script.</summary>
-        public RunState? DetectionState
+        public Microsoft.Graph.Beta.Models.RunState? DetectionState
         {
-            get { return BackingStore?.Get<RunState?>("detectionState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RunState?>("detectionState"); }
             set { BackingStore?.Set("detectionState", value); }
         }
         /// <summary>The Intune device Id</summary>
@@ -275,7 +275,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceHealthScriptPolicyState"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState"/> and sets the default values.
         /// </summary>
         public DeviceHealthScriptPolicyState()
         {
@@ -285,12 +285,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceHealthScriptPolicyState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceHealthScriptPolicyState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceHealthScriptPolicyState();
+            return new Microsoft.Graph.Beta.Models.DeviceHealthScriptPolicyState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -301,7 +301,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "detectionState", n => { DetectionState = n.GetEnumValue<RunState>(); } },
+                { "detectionState", n => { DetectionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RunState>(); } },
                 { "deviceId", n => { DeviceId = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "expectedStateUpdateDateTime", n => { ExpectedStateUpdateDateTime = n.GetDateTimeOffsetValue(); } },
@@ -317,7 +317,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "preRemediationDetectionScriptError", n => { PreRemediationDetectionScriptError = n.GetStringValue(); } },
                 { "preRemediationDetectionScriptOutput", n => { PreRemediationDetectionScriptOutput = n.GetStringValue(); } },
                 { "remediationScriptError", n => { RemediationScriptError = n.GetStringValue(); } },
-                { "remediationState", n => { RemediationState = n.GetEnumValue<RemediationState>(); } },
+                { "remediationState", n => { RemediationState = n.GetEnumValue<Microsoft.Graph.Beta.Models.RemediationState>(); } },
                 { "userName", n => { UserName = n.GetStringValue(); } },
             };
         }
@@ -329,7 +329,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("assignmentFilterIds", AssignmentFilterIds);
-            writer.WriteEnumValue<RunState>("detectionState", DetectionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RunState>("detectionState", DetectionState);
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteDateTimeOffsetValue("expectedStateUpdateDateTime", ExpectedStateUpdateDateTime);
@@ -345,7 +345,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("preRemediationDetectionScriptError", PreRemediationDetectionScriptError);
             writer.WriteStringValue("preRemediationDetectionScriptOutput", PreRemediationDetectionScriptOutput);
             writer.WriteStringValue("remediationScriptError", RemediationScriptError);
-            writer.WriteEnumValue<RemediationState>("remediationState", RemediationState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RemediationState>("remediationState", RemediationState);
             writer.WriteStringValue("userName", UserName);
             writer.WriteAdditionalData(AdditionalData);
         }

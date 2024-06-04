@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class FileUrlThreatSubmission : FileThreatSubmission, IParsable
+    public class FileUrlThreatSubmission : Microsoft.Graph.Beta.Models.Security.FileThreatSubmission, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>It specifies the URL of the file that needs to be submitted.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="FileUrlThreatSubmission"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.FileUrlThreatSubmission"/> and sets the default values.
         /// </summary>
         public FileUrlThreatSubmission() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FileUrlThreatSubmission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.FileUrlThreatSubmission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FileUrlThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.FileUrlThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FileUrlThreatSubmission();
+            return new Microsoft.Graph.Beta.Models.Security.FileUrlThreatSubmission();
         }
         /// <summary>
         /// The deserialization information for the current model

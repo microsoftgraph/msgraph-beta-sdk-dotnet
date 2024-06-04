@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ContactMergeSuggestions : Entity, IParsable
+    public class ContactMergeSuggestions : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>true if the duplicate contact merge suggestions feature is enabled for the user; false if the feature is disabled. Default value is true.</summary>
@@ -19,12 +19,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContactMergeSuggestions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ContactMergeSuggestions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ContactMergeSuggestions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ContactMergeSuggestions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContactMergeSuggestions();
+            return new Microsoft.Graph.Beta.Models.ContactMergeSuggestions();
         }
         /// <summary>
         /// The deserialization information for the current model

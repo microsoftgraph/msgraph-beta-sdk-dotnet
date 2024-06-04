@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class MarkContent : LabelActionBase, IParsable
+    public class MarkContent : Microsoft.Graph.Beta.Models.LabelActionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fontColor property</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MarkContent"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MarkContent"/> and sets the default values.
         /// </summary>
         public MarkContent() : base()
         {
@@ -58,18 +58,18 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MarkContent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MarkContent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MarkContent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MarkContent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.addFooter" => new AddFooter(),
-                "#microsoft.graph.addHeader" => new AddHeader(),
-                "#microsoft.graph.addWatermark" => new AddWatermark(),
-                _ => new MarkContent(),
+                "#microsoft.graph.addFooter" => new Microsoft.Graph.Beta.Models.AddFooter(),
+                "#microsoft.graph.addHeader" => new Microsoft.Graph.Beta.Models.AddHeader(),
+                "#microsoft.graph.addWatermark" => new Microsoft.Graph.Beta.Models.AddWatermark(),
+                _ => new Microsoft.Graph.Beta.Models.MarkContent(),
             };
         }
         /// <summary>

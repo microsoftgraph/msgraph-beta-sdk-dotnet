@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPe
 {
     [Obsolete("This class is obsolete. Use RetrieveScopedPermissionsGetResponse instead.")]
     #pragma warning disable CS1591
-    public class RetrieveScopedPermissionsResponse : RetrieveScopedPermissionsGetResponse, IParsable
+    public class RetrieveScopedPermissionsResponse : Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPermissions.RetrieveScopedPermissionsGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RetrieveScopedPermissionsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPermissions.RetrieveScopedPermissionsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RetrieveScopedPermissionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPermissions.RetrieveScopedPermissionsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RetrieveScopedPermissionsResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.RetrieveScopedPermissions.RetrieveScopedPermissionsResponse();
         }
     }
 }

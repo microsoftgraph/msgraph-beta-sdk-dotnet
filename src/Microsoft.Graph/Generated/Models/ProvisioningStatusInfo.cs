@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>If status isn&apos;t success/ skipped details for the error are contained in this.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ProvisioningErrorInfo? ErrorInformation
+        public Microsoft.Graph.Beta.Models.ProvisioningErrorInfo? ErrorInformation
         {
-            get { return BackingStore?.Get<ProvisioningErrorInfo?>("errorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningErrorInfo?>("errorInformation"); }
             set { BackingStore?.Set("errorInformation", value); }
         }
 #nullable restore
 #else
-        public ProvisioningErrorInfo ErrorInformation
+        public Microsoft.Graph.Beta.Models.ProvisioningErrorInfo ErrorInformation
         {
-            get { return BackingStore?.Get<ProvisioningErrorInfo>("errorInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningErrorInfo>("errorInformation"); }
             set { BackingStore?.Set("errorInformation", value); }
         }
 #endif
@@ -52,13 +52,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values are: success, failure, skipped, warning, unknownFutureValue. Supports $filter (eq, contains).</summary>
-        public ProvisioningResult? Status
+        public Microsoft.Graph.Beta.Models.ProvisioningResult? Status
         {
-            get { return BackingStore?.Get<ProvisioningResult?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningResult?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ProvisioningStatusInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ProvisioningStatusInfo"/> and sets the default values.
         /// </summary>
         public ProvisioningStatusInfo()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProvisioningStatusInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProvisioningStatusInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProvisioningStatusInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ProvisioningStatusInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProvisioningStatusInfo();
+            return new Microsoft.Graph.Beta.Models.ProvisioningStatusInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errorInformation", n => { ErrorInformation = n.GetObjectValue<ProvisioningErrorInfo>(ProvisioningErrorInfo.CreateFromDiscriminatorValue); } },
+                { "errorInformation", n => { ErrorInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.ProvisioningErrorInfo>(Microsoft.Graph.Beta.Models.ProvisioningErrorInfo.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ProvisioningResult>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ProvisioningResult>(); } },
             };
         }
         /// <summary>
@@ -95,9 +95,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ProvisioningErrorInfo>("errorInformation", ErrorInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ProvisioningErrorInfo>("errorInformation", ErrorInformation);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ProvisioningResult>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ProvisioningResult>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,21 +9,21 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
     /// </summary>
-    public class IosLobAppProvisioningConfiguration : Entity, IParsable
+    public class IosLobAppProvisioningConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
-        /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration, this determines which devices/users the IOS LOB app provisioning conifguration will be targeted to.</summary>
+        /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IosLobAppProvisioningConfigurationAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<IosLobAppProvisioningConfigurationAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<IosLobAppProvisioningConfigurationAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of device installation states for this mobile app configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfigurationDeviceStatus>? DeviceStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>? DeviceStatuses
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>?>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>?>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>>("deviceStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
 #endif
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>Optional profile expiration date and time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 would look like this: &apos;2014-01-01T00:00:00Z&apos;. Returned by default.</summary>
+        /// <summary>Optional profile expiration date and time.</summary>
         public DateTimeOffset? ExpirationDateTime
         {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -90,16 +90,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The associated group assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppProvisioningConfigGroupAssignment>? GroupAssignments
+        public List<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>? GroupAssignments
         {
-            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>?>("groupAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>?>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppProvisioningConfigGroupAssignment> GroupAssignments
+        public List<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment> GroupAssignments
         {
-            get { return BackingStore?.Get<List<MobileAppProvisioningConfigGroupAssignment>>("groupAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>>("groupAssignments"); }
             set { BackingStore?.Set("groupAssignments", value); }
         }
 #endif
@@ -160,16 +160,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of user installation states for this mobile app configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedDeviceMobileAppConfigurationUserStatus>? UserStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>? UserStatuses
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>?>("userStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>?>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #nullable restore
 #else
-        public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses
         {
-            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>>("userStatuses"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
 #endif
@@ -182,12 +182,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosLobAppProvisioningConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosLobAppProvisioningConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosLobAppProvisioningConfiguration();
+            return new Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -197,18 +197,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>(IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>(Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>(ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>(MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupAssignments", n => { GroupAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>(Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "payload", n => { Payload = n.GetByteArrayValue(); } },
                 { "payloadFileName", n => { PayloadFileName = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>(ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>(Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "version", n => { Version = n.GetIntValue(); } },
             };
         }
@@ -220,18 +220,18 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<IosLobAppProvisioningConfigurationAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationAssignment>("assignments", Assignments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationDeviceStatus>("deviceStatuses", DeviceStatuses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationDeviceStatus>("deviceStatuses", DeviceStatuses);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
-            writer.WriteCollectionOfObjectValues<MobileAppProvisioningConfigGroupAssignment>("groupAssignments", GroupAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppProvisioningConfigGroupAssignment>("groupAssignments", GroupAssignments);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteByteArrayValue("payload", Payload);
             writer.WriteStringValue("payloadFileName", PayloadFileName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationUserStatus>("userStatuses", UserStatuses);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationUserStatus>("userStatuses", UserStatuses);
             writer.WriteIntValue("version", Version);
         }
     }

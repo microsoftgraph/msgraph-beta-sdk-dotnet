@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerPlanConfiguration : Entity, IParsable
+    public class PlannerPlanConfiguration : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List the buckets that should be created in the plan.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlanConfigurationBucketDefinition>? Buckets
+        public List<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationBucketDefinition>? Buckets
         {
-            get { return BackingStore?.Get<List<PlannerPlanConfigurationBucketDefinition>?>("buckets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationBucketDefinition>?>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlanConfigurationBucketDefinition> Buckets
+        public List<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationBucketDefinition> Buckets
         {
-            get { return BackingStore?.Get<List<PlannerPlanConfigurationBucketDefinition>>("buckets"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationBucketDefinition>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
 #endif
         /// <summary>The identity of the creator of the plan configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -67,16 +67,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The identity of the user who last modified the plan configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -89,28 +89,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Localized names for the plan configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PlannerPlanConfigurationLocalization>? Localizations
+        public List<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization>? Localizations
         {
-            get { return BackingStore?.Get<List<PlannerPlanConfigurationLocalization>?>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization>?>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #nullable restore
 #else
-        public List<PlannerPlanConfigurationLocalization> Localizations
+        public List<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization> Localizations
         {
-            get { return BackingStore?.Get<List<PlannerPlanConfigurationLocalization>>("localizations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization>>("localizations"); }
             set { BackingStore?.Set("localizations", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerPlanConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerPlanConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerPlanConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerPlanConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerPlanConfiguration();
+            return new Microsoft.Graph.Beta.Models.PlannerPlanConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,13 +120,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "buckets", n => { Buckets = n.GetCollectionOfObjectValues<PlannerPlanConfigurationBucketDefinition>(PlannerPlanConfigurationBucketDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "buckets", n => { Buckets = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationBucketDefinition>(Microsoft.Graph.Beta.Models.PlannerPlanConfigurationBucketDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "defaultLanguage", n => { DefaultLanguage = n.GetStringValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<PlannerPlanConfigurationLocalization>(PlannerPlanConfigurationLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localizations", n => { Localizations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization>(Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -137,13 +137,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PlannerPlanConfigurationBucketDefinition>("buckets", Buckets);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationBucketDefinition>("buckets", Buckets);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("defaultLanguage", DefaultLanguage);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfObjectValues<PlannerPlanConfigurationLocalization>("localizations", Localizations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PlannerPlanConfigurationLocalization>("localizations", Localizations);
         }
     }
 }

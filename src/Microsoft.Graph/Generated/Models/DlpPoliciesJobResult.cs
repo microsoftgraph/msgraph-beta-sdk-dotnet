@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The matchingRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MatchingDlpRule>? MatchingRules
+        public List<Microsoft.Graph.Beta.Models.MatchingDlpRule>? MatchingRules
         {
-            get { return BackingStore?.Get<List<MatchingDlpRule>?>("matchingRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MatchingDlpRule>?>("matchingRules"); }
             set { BackingStore?.Set("matchingRules", value); }
         }
 #nullable restore
 #else
-        public List<MatchingDlpRule> MatchingRules
+        public List<Microsoft.Graph.Beta.Models.MatchingDlpRule> MatchingRules
         {
-            get { return BackingStore?.Get<List<MatchingDlpRule>>("matchingRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MatchingDlpRule>>("matchingRules"); }
             set { BackingStore?.Set("matchingRules", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DlpPoliciesJobResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DlpPoliciesJobResult"/> and sets the default values.
         /// </summary>
         public DlpPoliciesJobResult()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DlpPoliciesJobResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DlpPoliciesJobResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DlpPoliciesJobResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DlpPoliciesJobResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DlpPoliciesJobResult();
+            return new Microsoft.Graph.Beta.Models.DlpPoliciesJobResult();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "auditCorrelationId", n => { AuditCorrelationId = n.GetStringValue(); } },
                 { "evaluationDateTime", n => { EvaluationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "matchingRules", n => { MatchingRules = n.GetCollectionOfObjectValues<MatchingDlpRule>(MatchingDlpRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matchingRules", n => { MatchingRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MatchingDlpRule>(Microsoft.Graph.Beta.Models.MatchingDlpRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -114,7 +114,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("auditCorrelationId", AuditCorrelationId);
             writer.WriteDateTimeOffsetValue("evaluationDateTime", EvaluationDateTime);
-            writer.WriteCollectionOfObjectValues<MatchingDlpRule>("matchingRules", MatchingRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MatchingDlpRule>("matchingRules", MatchingRules);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

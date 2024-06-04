@@ -8,7 +8,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class LongRunningOperation : Entity, IParsable
+    public class LongRunningOperation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The start time of the operation. The timestamp type represents date and time information using ISO 8601 format and is always in UTC. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
@@ -40,9 +40,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status of the operation. The possible values are: notStarted, running, succeeded, failed, skipped, unknownFutureValue.</summary>
-        public LongRunningOperationStatus? Status
+        public Microsoft.Graph.Beta.Models.LongRunningOperationStatus? Status
         {
-            get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Details about the status of the operation.</summary>
@@ -64,21 +64,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LongRunningOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.LongRunningOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new LongRunningOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.LongRunningOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.attackSimulationOperation" => new AttackSimulationOperation(),
-                "#microsoft.graph.engagementAsyncOperation" => new EngagementAsyncOperation(),
-                "#microsoft.graph.goalsExportJob" => new GoalsExportJob(),
-                "#microsoft.graph.industryData.fileValidateOperation" => new FileValidateOperation(),
-                "#microsoft.graph.industryData.validateOperation" => new ValidateOperation(),
-                "#microsoft.graph.richLongRunningOperation" => new RichLongRunningOperation(),
-                _ => new LongRunningOperation(),
+                "#microsoft.graph.attackSimulationOperation" => new Microsoft.Graph.Beta.Models.AttackSimulationOperation(),
+                "#microsoft.graph.engagementAsyncOperation" => new Microsoft.Graph.Beta.Models.EngagementAsyncOperation(),
+                "#microsoft.graph.goalsExportJob" => new Microsoft.Graph.Beta.Models.GoalsExportJob(),
+                "#microsoft.graph.industryData.fileValidateOperation" => new Microsoft.Graph.Beta.Models.IndustryData.FileValidateOperation(),
+                "#microsoft.graph.industryData.validateOperation" => new Microsoft.Graph.Beta.Models.IndustryData.ValidateOperation(),
+                "#microsoft.graph.richLongRunningOperation" => new Microsoft.Graph.Beta.Models.RichLongRunningOperation(),
+                _ => new Microsoft.Graph.Beta.Models.LongRunningOperation(),
             };
         }
         /// <summary>
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<LongRunningOperationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.LongRunningOperationStatus>(); } },
                 { "statusDetail", n => { StatusDetail = n.GetStringValue(); } },
             };
         }
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
             writer.WriteStringValue("resourceLocation", ResourceLocation);
-            writer.WriteEnumValue<LongRunningOperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.LongRunningOperationStatus>("status", Status);
             writer.WriteStringValue("statusDetail", StatusDetail);
         }
     }

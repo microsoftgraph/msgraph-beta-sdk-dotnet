@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.User
     public class UserRunStatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userRunStates property of the microsoft.graph.hardwareConfiguration entity.</summary>
         /// <param name="position">The unique identifier of hardwareConfigurationUserState</param>
-        /// <returns>A <see cref="HardwareConfigurationUserStateItemRequestBuilder"/></returns>
-        public HardwareConfigurationUserStateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.Item.HardwareConfigurationUserStateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.Item.HardwareConfigurationUserStateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("hardwareConfigurationUserState%2Did", position);
-                return new HardwareConfigurationUserStateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.Item.HardwareConfigurationUserStateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserRunStatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.User
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserRunStatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.User
         /// <summary>
         /// List of run states for the hardware configuration across all users. Read-Only.
         /// </summary>
-        /// <returns>A <see cref="HardwareConfigurationUserStateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HardwareConfigurationUserStateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HardwareConfigurationUserStateCollectionResponse?> GetAsync(Action<RequestConfiguration<UserRunStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.HardwareConfigurationUserStateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder.UserRunStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<HardwareConfigurationUserStateCollectionResponse> GetAsync(Action<RequestConfiguration<UserRunStatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.HardwareConfigurationUserStateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder.UserRunStatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<HardwareConfigurationUserStateCollectionResponse>(requestInfo, HardwareConfigurationUserStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.HardwareConfigurationUserStateCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.HardwareConfigurationUserStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userRunStates for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="HardwareConfigurationUserState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HardwareConfigurationUserState"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<HardwareConfigurationUserState?> PostAsync(HardwareConfigurationUserState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.HardwareConfigurationUserState?> PostAsync(Microsoft.Graph.Beta.Models.HardwareConfigurationUserState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<HardwareConfigurationUserState> PostAsync(HardwareConfigurationUserState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.HardwareConfigurationUserState> PostAsync(Microsoft.Graph.Beta.Models.HardwareConfigurationUserState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<HardwareConfigurationUserState>(requestInfo, HardwareConfigurationUserState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.HardwareConfigurationUserState>(requestInfo, Microsoft.Graph.Beta.Models.HardwareConfigurationUserState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// List of run states for the hardware configuration across all users. Read-Only.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.User
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserRunStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder.UserRunStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserRunStatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder.UserRunStatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.User
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(HardwareConfigurationUserState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.HardwareConfigurationUserState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(HardwareConfigurationUserState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.HardwareConfigurationUserState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.User
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserRunStatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserRunStatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserRunStatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// List of run states for the hardware configuration across all users. Read-Only.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.User
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserRunStatesRequestBuilderGetRequestConfiguration : RequestConfiguration<UserRunStatesRequestBuilderGetQueryParameters>
+        public class UserRunStatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.HardwareConfigurations.Item.UserRunStates.UserRunStatesRequestBuilder.UserRunStatesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

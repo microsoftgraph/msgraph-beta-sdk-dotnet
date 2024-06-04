@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup
 {
     [Obsolete("This class is obsolete. Use RenewGroupPostResponse instead.")]
     #pragma warning disable CS1591
-    public class RenewGroupResponse : RenewGroupPostResponse, IParsable
+    public class RenewGroupResponse : Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RenewGroupResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RenewGroupResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RenewGroupResponse();
+            return new Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupResponse();
         }
     }
 }

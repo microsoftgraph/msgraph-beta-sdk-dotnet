@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
     public class DailyInactiveUsersByApplicationMetricItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="DailyInactiveUsersByApplicationMetricItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DailyInactiveUsersByApplicationMetricItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,26 +35,26 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
         /// <summary>
         /// Get inactiveUsersByApplication from reports
         /// </summary>
-        /// <returns>A <see cref="DailyInactiveUsersByApplicationMetric"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DailyInactiveUsersByApplicationMetric?> GetAsync(Action<RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder.DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DailyInactiveUsersByApplicationMetric> GetAsync(Action<RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder.DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DailyInactiveUsersByApplicationMetric>(requestInfo, DailyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric>(requestInfo, Microsoft.Graph.Beta.Models.DailyInactiveUsersByApplicationMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get inactiveUsersByApplication from reports
@@ -64,11 +64,11 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
         [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder.DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder.DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DailyInactiveUsersByApplicationMetricItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The Inactive Users By Application Metric is deprecated and will stop returning data on February 16, 2024. Please use the existing Inactive Users API. as of 2024-02/Remove_Breakdown_APIs")]
-        public DailyInactiveUsersByApplicationMetricItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new DailyInactiveUsersByApplicationMetricItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get inactiveUsersByApplication from reports
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplica
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DailyInactiveUsersByApplicationMetricItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>
+        public class DailyInactiveUsersByApplicationMetricItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Reports.UserInsights.Daily.InactiveUsersByApplication.Item.DailyInactiveUsersByApplicationMetricItemRequestBuilder.DailyInactiveUsersByApplicationMetricItemRequestBuilderGetQueryParameters>
         {
         }
     }

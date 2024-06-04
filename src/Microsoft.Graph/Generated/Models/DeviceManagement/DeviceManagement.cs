@@ -951,6 +951,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("embeddedSIMActivationCodePools", value); }
         }
 #endif
+        /// <summary>Endpoint privilege management (EPM) tenant provisioning status contains tenant level license and onboarding state information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public Microsoft.Graph.Beta.Models.EndpointPrivilegeManagementProvisioningStatus? EndpointPrivilegeManagementProvisioningStatus
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointPrivilegeManagementProvisioningStatus?>("endpointPrivilegeManagementProvisioningStatus"); }
+            set { BackingStore?.Set("endpointPrivilegeManagementProvisioningStatus", value); }
+        }
+#nullable restore
+#else
+        public Microsoft.Graph.Beta.Models.EndpointPrivilegeManagementProvisioningStatus EndpointPrivilegeManagementProvisioningStatus
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointPrivilegeManagementProvisioningStatus>("endpointPrivilegeManagementProvisioningStatus"); }
+            set { BackingStore?.Set("endpointPrivilegeManagementProvisioningStatus", value); }
+        }
+#endif
         /// <summary>The list of Exchange Connectors configured by the tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -1125,6 +1141,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwareConfiguration>>("hardwareConfigurations"); }
             set { BackingStore?.Set("hardwareConfigurations", value); }
+        }
+#endif
+        /// <summary>Device BIOS password information for devices with managed BIOS and firmware configuration, which provides device serial number, list of previous passwords, and current password.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.HardwarePasswordDetail>? HardwarePasswordDetails
+        {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwarePasswordDetail>?>("hardwarePasswordDetails"); }
+            set { BackingStore?.Set("hardwarePasswordDetails", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.HardwarePasswordDetail> HardwarePasswordDetails
+        {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HardwarePasswordDetail>>("hardwarePasswordDetails"); }
+            set { BackingStore?.Set("hardwarePasswordDetails", value); }
         }
 #endif
         /// <summary>The hardware password info for this account.</summary>
@@ -1792,15 +1824,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         }
 #endif
         /// <summary>Tenant mobile device management subscriptions.</summary>
-        public DeviceManagementSubscriptions? Subscriptions
+        public Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions? Subscriptions
         {
-            get { return BackingStore?.Get<DeviceManagementSubscriptions?>("subscriptions"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions?>("subscriptions"); }
             set { BackingStore?.Set("subscriptions", value); }
         }
         /// <summary>Tenant mobile device management subscription state.</summary>
-        public DeviceManagementSubscriptionState? SubscriptionState
+        public Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState? SubscriptionState
         {
-            get { return BackingStore?.Get<DeviceManagementSubscriptionState?>("subscriptionState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState?>("subscriptionState"); }
             set { BackingStore?.Set("subscriptionState", value); }
         }
         /// <summary>The telecom expense management partners.</summary>
@@ -2833,6 +2865,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             set { BackingStore?.Set("windowsMalwareOverview", value); }
         }
 #endif
+        /// <summary>A collection of Windows quality update policies</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy>? WindowsQualityUpdatePolicies
+        {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy>?>("windowsQualityUpdatePolicies"); }
+            set { BackingStore?.Set("windowsQualityUpdatePolicies", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy> WindowsQualityUpdatePolicies
+        {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy>>("windowsQualityUpdatePolicies"); }
+            set { BackingStore?.Set("windowsQualityUpdatePolicies", value); }
+        }
+#endif
         /// <summary>A collection of windows quality update profiles</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -2916,12 +2964,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagement();
+            return new Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -2991,6 +3039,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "domainJoinConnectors", n => { DomainJoinConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>(Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "elevationRequests", n => { ElevationRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>(Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "embeddedSIMActivationCodePools", n => { EmbeddedSIMActivationCodePools = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>(Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "endpointPrivilegeManagementProvisioningStatus", n => { EndpointPrivilegeManagementProvisioningStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.EndpointPrivilegeManagementProvisioningStatus>(Microsoft.Graph.Beta.Models.EndpointPrivilegeManagementProvisioningStatus.CreateFromDiscriminatorValue); } },
                 { "exchangeConnectors", n => { ExchangeConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "exchangeOnPremisesPolicies", n => { ExchangeOnPremisesPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "exchangeOnPremisesPolicy", n => { ExchangeOnPremisesPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>(Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue); } },
@@ -3002,6 +3051,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "groupPolicyObjectFiles", n => { GroupPolicyObjectFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>(Microsoft.Graph.Beta.Models.GroupPolicyObjectFile.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "groupPolicyUploadedDefinitionFiles", n => { GroupPolicyUploadedDefinitionFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>(Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hardwareConfigurations", n => { HardwareConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwareConfiguration>(Microsoft.Graph.Beta.Models.HardwareConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "hardwarePasswordDetails", n => { HardwarePasswordDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwarePasswordDetail>(Microsoft.Graph.Beta.Models.HardwarePasswordDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hardwarePasswordInfo", n => { HardwarePasswordInfo = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>(Microsoft.Graph.Beta.Models.HardwarePasswordInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "importedDeviceIdentities", n => { ImportedDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "importedWindowsAutopilotDeviceIdentities", n => { ImportedWindowsAutopilotDeviceIdentities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>(Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -3046,8 +3096,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementSettings>(Microsoft.Graph.Beta.Models.DeviceManagementSettings.CreateFromDiscriminatorValue); } },
                 { "softwareUpdateStatusSummary", n => { SoftwareUpdateStatusSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>(Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary.CreateFromDiscriminatorValue); } },
-                { "subscriptionState", n => { SubscriptionState = n.GetEnumValue<DeviceManagementSubscriptionState>(); } },
-                { "subscriptions", n => { Subscriptions = n.GetEnumValue<DeviceManagementSubscriptions>(); } },
+                { "subscriptionState", n => { SubscriptionState = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState>(); } },
+                { "subscriptions", n => { Subscriptions = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions>(); } },
                 { "telecomExpenseManagementPartners", n => { TelecomExpenseManagementPartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>(Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "templateInsights", n => { TemplateInsights = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>(Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "templateSettings", n => { TemplateSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -3113,6 +3163,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
                 { "windowsInformationProtectionNetworkLearningSummaries", n => { WindowsInformationProtectionNetworkLearningSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>(Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "windowsMalwareInformation", n => { WindowsMalwareInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>(Microsoft.Graph.Beta.Models.WindowsMalwareInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "windowsMalwareOverview", n => { WindowsMalwareOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>(Microsoft.Graph.Beta.Models.WindowsMalwareOverview.CreateFromDiscriminatorValue); } },
+                { "windowsQualityUpdatePolicies", n => { WindowsQualityUpdatePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy>(Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "windowsQualityUpdateProfiles", n => { WindowsQualityUpdateProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>(Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "windowsUpdateCatalogItems", n => { WindowsUpdateCatalogItems = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>(Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "zebraFotaArtifacts", n => { ZebraFotaArtifacts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>(Microsoft.Graph.Beta.Models.ZebraFotaArtifact.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -3187,6 +3238,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>("domainJoinConnectors", DomainJoinConnectors);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegeManagementElevationRequest>("elevationRequests", ElevationRequests);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>("embeddedSIMActivationCodePools", EmbeddedSIMActivationCodePools);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EndpointPrivilegeManagementProvisioningStatus>("endpointPrivilegeManagementProvisioningStatus", EndpointPrivilegeManagementProvisioningStatus);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>("exchangeConnectors", ExchangeConnectors);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>("exchangeOnPremisesPolicies", ExchangeOnPremisesPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>("exchangeOnPremisesPolicy", ExchangeOnPremisesPolicy);
@@ -3198,6 +3250,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>("groupPolicyObjectFiles", GroupPolicyObjectFiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>("groupPolicyUploadedDefinitionFiles", GroupPolicyUploadedDefinitionFiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwareConfiguration>("hardwareConfigurations", HardwareConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwarePasswordDetail>("hardwarePasswordDetails", HardwarePasswordDetails);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HardwarePasswordInfo>("hardwarePasswordInfo", HardwarePasswordInfo);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>("importedDeviceIdentities", ImportedDeviceIdentities);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>("importedWindowsAutopilotDeviceIdentities", ImportedWindowsAutopilotDeviceIdentities);
@@ -3240,8 +3293,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>("settingDefinitions", SettingDefinitions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementSettings>("settings", Settings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary", SoftwareUpdateStatusSummary);
-            writer.WriteEnumValue<DeviceManagementSubscriptions>("subscriptions", Subscriptions);
-            writer.WriteEnumValue<DeviceManagementSubscriptionState>("subscriptionState", SubscriptionState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptions>("subscriptions", Subscriptions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementSubscriptionState>("subscriptionState", SubscriptionState);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>("telecomExpenseManagementPartners", TelecomExpenseManagementPartners);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplateInsightsDefinition>("templateInsights", TemplateInsights);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>("templates", Templates);
@@ -3306,6 +3359,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>("windowsInformationProtectionNetworkLearningSummaries", WindowsInformationProtectionNetworkLearningSummaries);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>("windowsMalwareInformation", WindowsMalwareInformation);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>("windowsMalwareOverview", WindowsMalwareOverview);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsQualityUpdatePolicy>("windowsQualityUpdatePolicies", WindowsQualityUpdatePolicies);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>("windowsQualityUpdateProfiles", WindowsQualityUpdateProfiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>("windowsUpdateCatalogItems", WindowsUpdateCatalogItems);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>("zebraFotaArtifacts", ZebraFotaArtifacts);

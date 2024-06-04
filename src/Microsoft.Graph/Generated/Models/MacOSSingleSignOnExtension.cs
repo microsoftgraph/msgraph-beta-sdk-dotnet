@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// An abstract base class for all macOS-specific single sign-on extension types.
     /// </summary>
-    public class MacOSSingleSignOnExtension : SingleSignOnExtension, IParsable
+    public class MacOSSingleSignOnExtension : Microsoft.Graph.Beta.Models.SingleSignOnExtension, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="MacOSSingleSignOnExtension"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension"/> and sets the default values.
         /// </summary>
         public MacOSSingleSignOnExtension() : base()
         {
@@ -21,19 +21,19 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSSingleSignOnExtension"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.macOSAzureAdSingleSignOnExtension" => new MacOSAzureAdSingleSignOnExtension(),
-                "#microsoft.graph.macOSCredentialSingleSignOnExtension" => new MacOSCredentialSingleSignOnExtension(),
-                "#microsoft.graph.macOSKerberosSingleSignOnExtension" => new MacOSKerberosSingleSignOnExtension(),
-                "#microsoft.graph.macOSRedirectSingleSignOnExtension" => new MacOSRedirectSingleSignOnExtension(),
-                _ => new MacOSSingleSignOnExtension(),
+                "#microsoft.graph.macOSAzureAdSingleSignOnExtension" => new Microsoft.Graph.Beta.Models.MacOSAzureAdSingleSignOnExtension(),
+                "#microsoft.graph.macOSCredentialSingleSignOnExtension" => new Microsoft.Graph.Beta.Models.MacOSCredentialSingleSignOnExtension(),
+                "#microsoft.graph.macOSKerberosSingleSignOnExtension" => new Microsoft.Graph.Beta.Models.MacOSKerberosSingleSignOnExtension(),
+                "#microsoft.graph.macOSRedirectSingleSignOnExtension" => new Microsoft.Graph.Beta.Models.MacOSRedirectSingleSignOnExtension(),
+                _ => new Microsoft.Graph.Beta.Models.MacOSSingleSignOnExtension(),
             };
         }
         /// <summary>

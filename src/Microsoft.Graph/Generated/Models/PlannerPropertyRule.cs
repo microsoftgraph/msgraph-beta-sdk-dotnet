@@ -36,13 +36,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.</summary>
-        public PlannerRuleKind? RuleKind
+        public Microsoft.Graph.Beta.Models.PlannerRuleKind? RuleKind
         {
-            get { return BackingStore?.Get<PlannerRuleKind?>("ruleKind"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerRuleKind?>("ruleKind"); }
             set { BackingStore?.Set("ruleKind", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PlannerPropertyRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerPropertyRule"/> and sets the default values.
         /// </summary>
         public PlannerPropertyRule()
         {
@@ -52,16 +52,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerPropertyRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerPropertyRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PlannerPropertyRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PlannerPropertyRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.plannerTaskPropertyRule" => new PlannerTaskPropertyRule(),
-                _ => new PlannerPropertyRule(),
+                "#microsoft.graph.plannerTaskPropertyRule" => new Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule(),
+                _ => new Microsoft.Graph.Beta.Models.PlannerPropertyRule(),
             };
         }
         /// <summary>
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "ruleKind", n => { RuleKind = n.GetEnumValue<PlannerRuleKind>(); } },
+                { "ruleKind", n => { RuleKind = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlannerRuleKind>(); } },
             };
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<PlannerRuleKind>("ruleKind", RuleKind);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlannerRuleKind>("ruleKind", RuleKind);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

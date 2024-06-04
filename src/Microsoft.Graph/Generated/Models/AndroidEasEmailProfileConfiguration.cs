@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing configurations in this profile you can instruct the native email client on KNOX devices to communicate with an Exchange server and get email, contacts, calendar, tasks, and notes. Furthermore, you can also specify how much email to sync and how often the device should sync.
     /// </summary>
-    public class AndroidEasEmailProfileConfiguration : DeviceConfiguration, IParsable
+    public class AndroidEasEmailProfileConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Exchange ActiveSync account name, displayed to users as name of EAS (this) profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Exchange Active Sync authentication method.</summary>
-        public EasAuthenticationMethod? AuthenticationMethod
+        public Microsoft.Graph.Beta.Models.EasAuthenticationMethod? AuthenticationMethod
         {
-            get { return BackingStore?.Get<EasAuthenticationMethod?>("authenticationMethod"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EasAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
@@ -50,15 +50,15 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values for email sync duration.</summary>
-        public EmailSyncDuration? DurationOfEmailToSync
+        public Microsoft.Graph.Beta.Models.EmailSyncDuration? DurationOfEmailToSync
         {
-            get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailSyncDuration?>("durationOfEmailToSync"); }
             set { BackingStore?.Set("durationOfEmailToSync", value); }
         }
         /// <summary>Possible values for username source or email source.</summary>
-        public UserEmailSource? EmailAddressSource
+        public Microsoft.Graph.Beta.Models.UserEmailSource? EmailAddressSource
         {
-            get { return BackingStore?.Get<UserEmailSource?>("emailAddressSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserEmailSource?>("emailAddressSource"); }
             set { BackingStore?.Set("emailAddressSource", value); }
         }
         /// <summary>Possible values for email sync schedule.</summary>
@@ -86,16 +86,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidCertificateProfileBase? IdentityCertificate
+        public Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase? IdentityCertificate
         {
-            get { return BackingStore?.Get<AndroidCertificateProfileBase?>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public AndroidCertificateProfileBase IdentityCertificate
+        public Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase IdentityCertificate
         {
-            get { return BackingStore?.Get<AndroidCertificateProfileBase>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #endif
@@ -114,16 +114,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>S/MIME signing certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidCertificateProfileBase? SmimeSigningCertificate
+        public Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase? SmimeSigningCertificate
         {
-            get { return BackingStore?.Get<AndroidCertificateProfileBase?>("smimeSigningCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase?>("smimeSigningCertificate"); }
             set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
 #nullable restore
 #else
-        public AndroidCertificateProfileBase SmimeSigningCertificate
+        public Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase SmimeSigningCertificate
         {
-            get { return BackingStore?.Get<AndroidCertificateProfileBase>("smimeSigningCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>("smimeSigningCertificate"); }
             set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
 #endif
@@ -152,19 +152,19 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("syncTasks", value); }
         }
         /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.</summary>
-        public DomainNameSource? UserDomainNameSource
+        public Microsoft.Graph.Beta.Models.DomainNameSource? UserDomainNameSource
         {
-            get { return BackingStore?.Get<DomainNameSource?>("userDomainNameSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DomainNameSource?>("userDomainNameSource"); }
             set { BackingStore?.Set("userDomainNameSource", value); }
         }
         /// <summary>Android username source.</summary>
-        public AndroidUsernameSource? UsernameSource
+        public Microsoft.Graph.Beta.Models.AndroidUsernameSource? UsernameSource
         {
-            get { return BackingStore?.Get<AndroidUsernameSource?>("usernameSource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidUsernameSource?>("usernameSource"); }
             set { BackingStore?.Set("usernameSource", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidEasEmailProfileConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidEasEmailProfileConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidEasEmailProfileConfiguration() : base()
         {
@@ -173,12 +173,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidEasEmailProfileConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidEasEmailProfileConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidEasEmailProfileConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidEasEmailProfileConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidEasEmailProfileConfiguration();
+            return new Microsoft.Graph.Beta.Models.AndroidEasEmailProfileConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -189,22 +189,22 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountName", n => { AccountName = n.GetStringValue(); } },
-                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<EasAuthenticationMethod>(); } },
+                { "authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Microsoft.Graph.Beta.Models.EasAuthenticationMethod>(); } },
                 { "customDomainName", n => { CustomDomainName = n.GetStringValue(); } },
-                { "durationOfEmailToSync", n => { DurationOfEmailToSync = n.GetEnumValue<EmailSyncDuration>(); } },
-                { "emailAddressSource", n => { EmailAddressSource = n.GetEnumValue<UserEmailSource>(); } },
-                { "emailSyncSchedule", n => { EmailSyncSchedule = n.GetEnumValue<EmailSyncSchedule>(); } },
+                { "durationOfEmailToSync", n => { DurationOfEmailToSync = n.GetEnumValue<Microsoft.Graph.Beta.Models.EmailSyncDuration>(); } },
+                { "emailAddressSource", n => { EmailAddressSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserEmailSource>(); } },
+                { "emailSyncSchedule", n => { EmailSyncSchedule = n.GetEnumValue<Microsoft.Graph.Beta.Models.EmailSyncSchedule>(); } },
                 { "hostName", n => { HostName = n.GetStringValue(); } },
-                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<AndroidCertificateProfileBase>(AndroidCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>(Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase.CreateFromDiscriminatorValue); } },
                 { "requireSmime", n => { RequireSmime = n.GetBoolValue(); } },
                 { "requireSsl", n => { RequireSsl = n.GetBoolValue(); } },
-                { "smimeSigningCertificate", n => { SmimeSigningCertificate = n.GetObjectValue<AndroidCertificateProfileBase>(AndroidCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "smimeSigningCertificate", n => { SmimeSigningCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>(Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase.CreateFromDiscriminatorValue); } },
                 { "syncCalendar", n => { SyncCalendar = n.GetBoolValue(); } },
                 { "syncContacts", n => { SyncContacts = n.GetBoolValue(); } },
                 { "syncNotes", n => { SyncNotes = n.GetBoolValue(); } },
                 { "syncTasks", n => { SyncTasks = n.GetBoolValue(); } },
-                { "userDomainNameSource", n => { UserDomainNameSource = n.GetEnumValue<DomainNameSource>(); } },
-                { "usernameSource", n => { UsernameSource = n.GetEnumValue<AndroidUsernameSource>(); } },
+                { "userDomainNameSource", n => { UserDomainNameSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.DomainNameSource>(); } },
+                { "usernameSource", n => { UsernameSource = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidUsernameSource>(); } },
             };
         }
         /// <summary>
@@ -216,22 +216,22 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountName", AccountName);
-            writer.WriteEnumValue<EasAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EasAuthenticationMethod>("authenticationMethod", AuthenticationMethod);
             writer.WriteStringValue("customDomainName", CustomDomainName);
-            writer.WriteEnumValue<EmailSyncDuration>("durationOfEmailToSync", DurationOfEmailToSync);
-            writer.WriteEnumValue<UserEmailSource>("emailAddressSource", EmailAddressSource);
-            writer.WriteEnumValue<EmailSyncSchedule>("emailSyncSchedule", EmailSyncSchedule);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EmailSyncDuration>("durationOfEmailToSync", DurationOfEmailToSync);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserEmailSource>("emailAddressSource", EmailAddressSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EmailSyncSchedule>("emailSyncSchedule", EmailSyncSchedule);
             writer.WriteStringValue("hostName", HostName);
-            writer.WriteObjectValue<AndroidCertificateProfileBase>("identityCertificate", IdentityCertificate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>("identityCertificate", IdentityCertificate);
             writer.WriteBoolValue("requireSmime", RequireSmime);
             writer.WriteBoolValue("requireSsl", RequireSsl);
-            writer.WriteObjectValue<AndroidCertificateProfileBase>("smimeSigningCertificate", SmimeSigningCertificate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidCertificateProfileBase>("smimeSigningCertificate", SmimeSigningCertificate);
             writer.WriteBoolValue("syncCalendar", SyncCalendar);
             writer.WriteBoolValue("syncContacts", SyncContacts);
             writer.WriteBoolValue("syncNotes", SyncNotes);
             writer.WriteBoolValue("syncTasks", SyncTasks);
-            writer.WriteEnumValue<DomainNameSource>("userDomainNameSource", UserDomainNameSource);
-            writer.WriteEnumValue<AndroidUsernameSource>("usernameSource", UsernameSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DomainNameSource>("userDomainNameSource", UserDomainNameSource);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidUsernameSource>("usernameSource", UsernameSource);
         }
     }
 }

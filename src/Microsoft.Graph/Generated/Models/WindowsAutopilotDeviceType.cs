@@ -7,22 +7,22 @@ namespace Microsoft.Graph.Beta.Models
     public enum WindowsAutopilotDeviceType
     #pragma warning restore CS1591
     {
-        /// <summary>Windows PC</summary>
+        /// <summary>Default. Indicates that the device type  is a Windows PC.</summary>
         [EnumMember(Value = "windowsPc")]
         WindowsPc,
+        /// <summary>Indicates that the device type is a HoloLens.</summary>
+        [EnumMember(Value = "holoLens")]
+        HoloLens,
         /// <summary>Surface Hub 2</summary>
         [EnumMember(Value = "surfaceHub2")]
         SurfaceHub2,
-        /// <summary>HoloLens</summary>
-        [EnumMember(Value = "holoLens")]
-        HoloLens,
         /// <summary>SurfaceHub2S</summary>
         [EnumMember(Value = "surfaceHub2S")]
         SurfaceHub2S,
         /// <summary>VirtualMachine</summary>
         [EnumMember(Value = "virtualMachine")]
         VirtualMachine,
-        /// <summary>Placeholder for evolvable enum, but this enum is never returned to the caller, so it shouldn&apos;t be necessary.         </summary>
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         [EnumMember(Value = "unknownFutureValue")]
         UnknownFutureValue,
     }

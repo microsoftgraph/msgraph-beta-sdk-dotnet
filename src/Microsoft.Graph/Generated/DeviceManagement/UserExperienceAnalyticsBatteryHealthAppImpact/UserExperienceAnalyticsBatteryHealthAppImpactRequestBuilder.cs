@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
     public class UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsBatteryHealthAppImpact property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of userExperienceAnalyticsBatteryHealthAppImpact</param>
-        /// <returns>A <see cref="UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder"/></returns>
-        public UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.Item.UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.Item.UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("userExperienceAnalyticsBatteryHealthAppImpact%2Did", position);
-                return new UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.Item.UserExperienceAnalyticsBatteryHealthAppImpactItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         /// <summary>
         /// User Experience Analytics Battery Health App Impact
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse?> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse> GetAsync(Action<RequestConfiguration<UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse>(requestInfo, UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsBatteryHealthAppImpact for deviceManagement
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact?> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>(requestInfo, Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder WithUrl(string rawUrl)
         {
-            return new UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// User Experience Analytics Battery Health App Impact
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHe
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetRequestConfiguration : RequestConfiguration<UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>
+        public class UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBatteryHealthAppImpact.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilder.UserExperienceAnalyticsBatteryHealthAppImpactRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

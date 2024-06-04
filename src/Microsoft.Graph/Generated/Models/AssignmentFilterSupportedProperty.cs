@@ -93,16 +93,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of all supported operators on this property.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignmentFilterOperator?>? SupportedOperators
+        public List<Microsoft.Graph.Beta.Models.AssignmentFilterOperator?>? SupportedOperators
         {
-            get { return BackingStore?.Get<List<AssignmentFilterOperator?>?>("supportedOperators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignmentFilterOperator?>?>("supportedOperators"); }
             set { BackingStore?.Set("supportedOperators", value); }
         }
 #nullable restore
 #else
-        public List<AssignmentFilterOperator?> SupportedOperators
+        public List<Microsoft.Graph.Beta.Models.AssignmentFilterOperator?> SupportedOperators
         {
-            get { return BackingStore?.Get<List<AssignmentFilterOperator?>>("supportedOperators"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignmentFilterOperator?>>("supportedOperators"); }
             set { BackingStore?.Set("supportedOperators", value); }
         }
 #endif
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentFilterSupportedProperty"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty"/> and sets the default values.
         /// </summary>
         public AssignmentFilterSupportedProperty()
         {
@@ -133,12 +133,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignmentFilterSupportedProperty"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignmentFilterSupportedProperty CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignmentFilterSupportedProperty();
+            return new Microsoft.Graph.Beta.Models.AssignmentFilterSupportedProperty();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "propertyRegexConstraint", n => { PropertyRegexConstraint = n.GetStringValue(); } },
-                { "supportedOperators", n => { SupportedOperators = n.GetCollectionOfEnumValues<AssignmentFilterOperator>()?.ToList(); } },
+                { "supportedOperators", n => { SupportedOperators = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AssignmentFilterOperator>()?.ToList(); } },
                 { "supportedValues", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("propertyRegexConstraint", PropertyRegexConstraint);
-            writer.WriteCollectionOfEnumValues<AssignmentFilterOperator>("supportedOperators", SupportedOperators);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AssignmentFilterOperator>("supportedOperators", SupportedOperators);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedValues", SupportedValues);
             writer.WriteAdditionalData(AdditionalData);
         }

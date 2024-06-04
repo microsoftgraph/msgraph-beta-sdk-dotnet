@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user. This profile provides limited and simpler security types than Enterprise Wi-Fi profile.
     /// </summary>
-    public class AndroidDeviceOwnerWiFiConfiguration : DeviceConfiguration, IParsable
+    public class AndroidDeviceOwnerWiFiConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("proxyManualPort", value); }
         }
         /// <summary>Wi-Fi Proxy Settings.</summary>
-        public WiFiProxySetting? ProxySettings
+        public Microsoft.Graph.Beta.Models.WiFiProxySetting? ProxySettings
         {
-            get { return BackingStore?.Get<WiFiProxySetting?>("proxySettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WiFiProxySetting?>("proxySettings"); }
             set { BackingStore?.Set("proxySettings", value); }
         }
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
@@ -144,13 +144,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Wi-Fi Security Types for Android Device Owner.</summary>
-        public AndroidDeviceOwnerWiFiSecurityType? WiFiSecurityType
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiSecurityType? WiFiSecurityType
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiSecurityType?>("wiFiSecurityType"); }
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerWiFiConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerWiFiConfiguration() : base()
         {
@@ -159,16 +159,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerWiFiConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.androidDeviceOwnerEnterpriseWiFiConfiguration" => new AndroidDeviceOwnerEnterpriseWiFiConfiguration(),
-                _ => new AndroidDeviceOwnerWiFiConfiguration(),
+                "#microsoft.graph.androidDeviceOwnerEnterpriseWiFiConfiguration" => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnterpriseWiFiConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiConfiguration(),
             };
         }
         /// <summary>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "connectAutomatically", n => { ConnectAutomatically = n.GetBoolValue(); } },
                 { "connectWhenNetworkNameIsHidden", n => { ConnectWhenNetworkNameIsHidden = n.GetBoolValue(); } },
-                { "macAddressRandomizationMode", n => { MacAddressRandomizationMode = n.GetEnumValue<MacAddressRandomizationMode>(); } },
+                { "macAddressRandomizationMode", n => { MacAddressRandomizationMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.MacAddressRandomizationMode>(); } },
                 { "networkName", n => { NetworkName = n.GetStringValue(); } },
                 { "preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
                 { "preSharedKeyIsSet", n => { PreSharedKeyIsSet = n.GetBoolValue(); } },
@@ -189,9 +189,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "proxyExclusionList", n => { ProxyExclusionList = n.GetStringValue(); } },
                 { "proxyManualAddress", n => { ProxyManualAddress = n.GetStringValue(); } },
                 { "proxyManualPort", n => { ProxyManualPort = n.GetIntValue(); } },
-                { "proxySettings", n => { ProxySettings = n.GetEnumValue<WiFiProxySetting>(); } },
+                { "proxySettings", n => { ProxySettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.WiFiProxySetting>(); } },
                 { "ssid", n => { Ssid = n.GetStringValue(); } },
-                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<AndroidDeviceOwnerWiFiSecurityType>(); } },
+                { "wiFiSecurityType", n => { WiFiSecurityType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiSecurityType>(); } },
             };
         }
         /// <summary>
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteBoolValue("connectAutomatically", ConnectAutomatically);
             writer.WriteBoolValue("connectWhenNetworkNameIsHidden", ConnectWhenNetworkNameIsHidden);
-            writer.WriteEnumValue<MacAddressRandomizationMode>("macAddressRandomizationMode", MacAddressRandomizationMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MacAddressRandomizationMode>("macAddressRandomizationMode", MacAddressRandomizationMode);
             writer.WriteStringValue("networkName", NetworkName);
             writer.WriteStringValue("preSharedKey", PreSharedKey);
             writer.WriteBoolValue("preSharedKeyIsSet", PreSharedKeyIsSet);
@@ -212,9 +212,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("proxyExclusionList", ProxyExclusionList);
             writer.WriteStringValue("proxyManualAddress", ProxyManualAddress);
             writer.WriteIntValue("proxyManualPort", ProxyManualPort);
-            writer.WriteEnumValue<WiFiProxySetting>("proxySettings", ProxySettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WiFiProxySetting>("proxySettings", ProxySettings);
             writer.WriteStringValue("ssid", Ssid);
-            writer.WriteEnumValue<AndroidDeviceOwnerWiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerWiFiSecurityType>("wiFiSecurityType", WiFiSecurityType);
         }
     }
 }

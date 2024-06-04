@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
     public class UpdateAlertsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="UpdateAlertsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="UpdateAlertsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,55 +35,55 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
         /// Update multiple alerts in one request instead of multiple requests.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="UpdateAlertsPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UpdateAlertsPostResponse?> PostAsUpdateAlertsPostResponseAsync(UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostResponse?> PostAsUpdateAlertsPostResponseAsync(Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UpdateAlertsPostResponse> PostAsUpdateAlertsPostResponseAsync(UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostResponse> PostAsUpdateAlertsPostResponseAsync(Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UpdateAlertsPostResponse>(requestInfo, UpdateAlertsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostResponse>(requestInfo, Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update multiple alerts in one request instead of multiple requests.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/alert-updatealerts?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="UpdateAlertsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsUpdateAlertsPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<UpdateAlertsResponse?> PostAsync(UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsResponse?> PostAsync(Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<UpdateAlertsResponse> PostAsync(UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsResponse> PostAsync(Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<UpdateAlertsResponse>(requestInfo, UpdateAlertsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsResponse>(requestInfo, Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update multiple alerts in one request instead of multiple requests.
@@ -94,11 +94,11 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="UpdateAlertsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The legacy Graph Security API is deprecated and will stop returning data on January 31, 2025. Please use the new Graph Security API. as of 2024-01/Deprecation")]
-        public UpdateAlertsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsRequestBuilder WithUrl(string rawUrl)
         {
-            return new UpdateAlertsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts.UpdateAlertsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

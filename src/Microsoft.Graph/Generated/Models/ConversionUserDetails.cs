@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConversionUserDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConversionUserDetails"/> and sets the default values.
         /// </summary>
         public ConversionUserDetails()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConversionUserDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConversionUserDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConversionUserDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConversionUserDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConversionUserDetails();
+            return new Microsoft.Graph.Beta.Models.ConversionUserDetails();
         }
         /// <summary>
         /// The deserialization information for the current model

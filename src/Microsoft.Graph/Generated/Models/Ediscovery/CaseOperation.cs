@@ -11,9 +11,9 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
     #pragma warning restore CS1591
     {
         /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
-        public CaseAction? Action
+        public Microsoft.Graph.Beta.Models.Ediscovery.CaseAction? Action
         {
-            get { return BackingStore?.Get<CaseAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.CaseAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The date and time the operation was completed.</summary>
@@ -67,30 +67,30 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         }
 #endif
         /// <summary>The status of the case operation. Possible values are: notStarted, submissionFailed, running, succeeded, partiallySucceeded, failed.</summary>
-        public CaseOperationStatus? Status
+        public Microsoft.Graph.Beta.Models.Ediscovery.CaseOperationStatus? Status
         {
-            get { return BackingStore?.Get<CaseOperationStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CaseOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CaseOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.ediscovery.addToReviewSetOperation" => new AddToReviewSetOperation(),
-                "#microsoft.graph.ediscovery.caseExportOperation" => new CaseExportOperation(),
-                "#microsoft.graph.ediscovery.caseHoldOperation" => new CaseHoldOperation(),
-                "#microsoft.graph.ediscovery.caseIndexOperation" => new CaseIndexOperation(),
-                "#microsoft.graph.ediscovery.estimateStatisticsOperation" => new EstimateStatisticsOperation(),
-                "#microsoft.graph.ediscovery.purgeDataOperation" => new PurgeDataOperation(),
-                "#microsoft.graph.ediscovery.tagOperation" => new TagOperation(),
-                _ => new CaseOperation(),
+                "#microsoft.graph.ediscovery.addToReviewSetOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation(),
+                "#microsoft.graph.ediscovery.caseExportOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation(),
+                "#microsoft.graph.ediscovery.caseHoldOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.CaseHoldOperation(),
+                "#microsoft.graph.ediscovery.caseIndexOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.CaseIndexOperation(),
+                "#microsoft.graph.ediscovery.estimateStatisticsOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.EstimateStatisticsOperation(),
+                "#microsoft.graph.ediscovery.purgeDataOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.PurgeDataOperation(),
+                "#microsoft.graph.ediscovery.tagOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.TagOperation(),
+                _ => new Microsoft.Graph.Beta.Models.Ediscovery.CaseOperation(),
             };
         }
         /// <summary>
@@ -101,13 +101,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<CaseAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseAction>(); } },
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "percentProgress", n => { PercentProgress = n.GetIntValue(); } },
                 { "resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<CaseOperationStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperationStatus>(); } },
             };
         }
         /// <summary>
@@ -118,13 +118,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<CaseAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseAction>("action", Action);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteIntValue("percentProgress", PercentProgress);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>("resultInfo", ResultInfo);
-            writer.WriteEnumValue<CaseOperationStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.CaseOperationStatus>("status", Status);
         }
     }
 }

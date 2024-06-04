@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The DepEnrollmentBaseProfile resource represents an Apple Device Enrollment Program (DEP) enrollment profile. This type of profile must be assigned to Apple DEP serial numbers before the corresponding devices can enroll via DEP.
     /// </summary>
-    public class DepEnrollmentBaseProfile : EnrollmentProfile, IParsable
+    public class DepEnrollmentBaseProfile : Microsoft.Graph.Beta.Models.EnrollmentProfile, IParsable
     {
         /// <summary>Indicates if Apple id setup pane is disabled</summary>
         public bool? AppleIdDisabled
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("waitForDeviceConfiguredConfirmation", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DepEnrollmentBaseProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DepEnrollmentBaseProfile"/> and sets the default values.
         /// </summary>
         public DepEnrollmentBaseProfile() : base()
         {
@@ -203,17 +203,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DepEnrollmentBaseProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DepEnrollmentBaseProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DepEnrollmentBaseProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DepEnrollmentBaseProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.depIOSEnrollmentProfile" => new DepIOSEnrollmentProfile(),
-                "#microsoft.graph.depMacOSEnrollmentProfile" => new DepMacOSEnrollmentProfile(),
-                _ => new DepEnrollmentBaseProfile(),
+                "#microsoft.graph.depIOSEnrollmentProfile" => new Microsoft.Graph.Beta.Models.DepIOSEnrollmentProfile(),
+                "#microsoft.graph.depMacOSEnrollmentProfile" => new Microsoft.Graph.Beta.Models.DepMacOSEnrollmentProfile(),
+                _ => new Microsoft.Graph.Beta.Models.DepEnrollmentBaseProfile(),
             };
         }
         /// <summary>

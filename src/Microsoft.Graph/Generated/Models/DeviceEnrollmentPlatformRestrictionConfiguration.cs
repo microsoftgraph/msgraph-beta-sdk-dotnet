@@ -9,32 +9,32 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Enrollment Configuration that restricts the types of devices a user can enroll for a single platform
     /// </summary>
-    public class DeviceEnrollmentPlatformRestrictionConfiguration : DeviceEnrollmentConfiguration, IParsable
+    public class DeviceEnrollmentPlatformRestrictionConfiguration : Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Restrictions based on platform, platform operating system version, and device ownership</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceEnrollmentPlatformRestriction? PlatformRestriction
+        public Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction? PlatformRestriction
         {
-            get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction?>("platformRestriction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction?>("platformRestriction"); }
             set { BackingStore?.Set("platformRestriction", value); }
         }
 #nullable restore
 #else
-        public DeviceEnrollmentPlatformRestriction PlatformRestriction
+        public Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction PlatformRestriction
         {
-            get { return BackingStore?.Get<DeviceEnrollmentPlatformRestriction>("platformRestriction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("platformRestriction"); }
             set { BackingStore?.Set("platformRestriction", value); }
         }
 #endif
         /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
-        public EnrollmentRestrictionPlatformType? PlatformType
+        public Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType? PlatformType
         {
-            get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>("platformType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceEnrollmentPlatformRestrictionConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionConfiguration"/> and sets the default values.
         /// </summary>
         public DeviceEnrollmentPlatformRestrictionConfiguration() : base()
         {
@@ -43,12 +43,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceEnrollmentPlatformRestrictionConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceEnrollmentPlatformRestrictionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceEnrollmentPlatformRestrictionConfiguration();
+            return new Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestrictionConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "platformRestriction", n => { PlatformRestriction = n.GetObjectValue<DeviceEnrollmentPlatformRestriction>(DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
-                { "platformType", n => { PlatformType = n.GetEnumValue<EnrollmentRestrictionPlatformType>(); } },
+                { "platformRestriction", n => { PlatformRestriction = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>(Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction.CreateFromDiscriminatorValue); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType>(); } },
             };
         }
         /// <summary>
@@ -70,8 +70,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceEnrollmentPlatformRestriction>("platformRestriction", PlatformRestriction);
-            writer.WriteEnumValue<EnrollmentRestrictionPlatformType>("platformType", PlatformType);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceEnrollmentPlatformRestriction>("platformRestriction", PlatformRestriction);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EnrollmentRestrictionPlatformType>("platformType", PlatformType);
         }
     }
 }

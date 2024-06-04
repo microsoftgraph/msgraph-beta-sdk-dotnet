@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan
         /// <summary>The target property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BusinessScenarioTaskTargetBase? Target
+        public Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase? Target
         {
-            get { return BackingStore?.Get<BusinessScenarioTaskTargetBase?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public BusinessScenarioTaskTargetBase Target
+        public Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase Target
         {
-            get { return BackingStore?.Get<BusinessScenarioTaskTargetBase>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GetPlanPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan.GetPlanPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetPlanPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetPlanPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan.GetPlanPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetPlanPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan.GetPlanPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetPlanPostRequestBody();
+            return new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan.GetPlanPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "target", n => { Target = n.GetObjectValue<BusinessScenarioTaskTargetBase>(BusinessScenarioTaskTargetBase.CreateFromDiscriminatorValue); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase>(Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<BusinessScenarioTaskTargetBase>("target", Target);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BusinessScenarioTaskTargetBase>("target", Target);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates
 {
     #pragma warning disable CS1591
-    public class QualityUpdateCatalogEntry : SoftwareUpdateCatalogEntry, IParsable
+    public class QualityUpdateCatalogEntry : Microsoft.Graph.Beta.Models.WindowsUpdates.SoftwareUpdateCatalogEntry, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The catalog name of the content. Read-only.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Severity information of the Common Vulnerabilities and Exposures associated with the content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public QualityUpdateCveSeverityInformation? CveSeverityInformation
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation? CveSeverityInformation
         {
-            get { return BackingStore?.Get<QualityUpdateCveSeverityInformation?>("cveSeverityInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation?>("cveSeverityInformation"); }
             set { BackingStore?.Set("cveSeverityInformation", value); }
         }
 #nullable restore
 #else
-        public QualityUpdateCveSeverityInformation CveSeverityInformation
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation CveSeverityInformation
         {
-            get { return BackingStore?.Get<QualityUpdateCveSeverityInformation>("cveSeverityInformation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation>("cveSeverityInformation"); }
             set { BackingStore?.Set("cveSeverityInformation", value); }
         }
 #endif
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>The operating system product revisions that are released as part of this quality update.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProductRevision>? ProductRevisions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>? ProductRevisions
         {
-            get { return BackingStore?.Get<List<ProductRevision>?>("productRevisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>?>("productRevisions"); }
             set { BackingStore?.Set("productRevisions", value); }
         }
 #nullable restore
 #else
-        public List<ProductRevision> ProductRevisions
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision> ProductRevisions
         {
-            get { return BackingStore?.Get<List<ProductRevision>>("productRevisions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>>("productRevisions"); }
             set { BackingStore?.Set("productRevisions", value); }
         }
 #endif
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="QualityUpdateCatalogEntry"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry"/> and sets the default values.
         /// </summary>
         public QualityUpdateCatalogEntry() : base()
         {
@@ -102,12 +102,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QualityUpdateCatalogEntry"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new QualityUpdateCatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QualityUpdateCatalogEntry();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCatalogEntry();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,11 +118,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "catalogName", n => { CatalogName = n.GetStringValue(); } },
-                { "cveSeverityInformation", n => { CveSeverityInformation = n.GetObjectValue<QualityUpdateCveSeverityInformation>(QualityUpdateCveSeverityInformation.CreateFromDiscriminatorValue); } },
+                { "cveSeverityInformation", n => { CveSeverityInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation>(Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation.CreateFromDiscriminatorValue); } },
                 { "isExpeditable", n => { IsExpeditable = n.GetBoolValue(); } },
-                { "productRevisions", n => { ProductRevisions = n.GetCollectionOfObjectValues<ProductRevision>(ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "qualityUpdateCadence", n => { QualityUpdateCadence = n.GetEnumValue<QualityUpdateCadence>(); } },
-                { "qualityUpdateClassification", n => { QualityUpdateClassification = n.GetEnumValue<QualityUpdateClassification>(); } },
+                { "productRevisions", n => { ProductRevisions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>(Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "qualityUpdateCadence", n => { QualityUpdateCadence = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence>(); } },
+                { "qualityUpdateClassification", n => { QualityUpdateClassification = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification>(); } },
                 { "shortName", n => { ShortName = n.GetStringValue(); } },
             };
         }
@@ -135,11 +135,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("catalogName", CatalogName);
-            writer.WriteObjectValue<QualityUpdateCveSeverityInformation>("cveSeverityInformation", CveSeverityInformation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCveSeverityInformation>("cveSeverityInformation", CveSeverityInformation);
             writer.WriteBoolValue("isExpeditable", IsExpeditable);
-            writer.WriteCollectionOfObjectValues<ProductRevision>("productRevisions", ProductRevisions);
-            writer.WriteEnumValue<QualityUpdateCadence>("qualityUpdateCadence", QualityUpdateCadence);
-            writer.WriteEnumValue<QualityUpdateClassification>("qualityUpdateClassification", QualityUpdateClassification);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsUpdates.ProductRevision>("productRevisions", ProductRevisions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateCadence>("qualityUpdateCadence", QualityUpdateCadence);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUpdates.QualityUpdateClassification>("qualityUpdateClassification", QualityUpdateClassification);
             writer.WriteStringValue("shortName", ShortName);
         }
     }

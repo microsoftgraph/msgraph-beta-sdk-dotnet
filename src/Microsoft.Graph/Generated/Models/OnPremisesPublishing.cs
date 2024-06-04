@@ -184,48 +184,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Represents the application segment collection for an on-premises wildcard application. This property is deprecated and will stop returning data on June 1, 2023. Use segmentsConfiguration instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesApplicationSegment>? OnPremisesApplicationSegments
+        public List<Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>? OnPremisesApplicationSegments
         {
-            get { return BackingStore?.Get<List<OnPremisesApplicationSegment>?>("onPremisesApplicationSegments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>?>("onPremisesApplicationSegments"); }
             set { BackingStore?.Set("onPremisesApplicationSegments", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesApplicationSegment> OnPremisesApplicationSegments
+        public List<Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment> OnPremisesApplicationSegments
         {
-            get { return BackingStore?.Get<List<OnPremisesApplicationSegment>>("onPremisesApplicationSegments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>>("onPremisesApplicationSegments"); }
             set { BackingStore?.Set("onPremisesApplicationSegments", value); }
         }
 #endif
         /// <summary>Represents the collection of application segments for an on-premises wildcard application that&apos;s published through Microsoft Entra application proxy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SegmentConfiguration? SegmentsConfiguration
+        public Microsoft.Graph.Beta.Models.SegmentConfiguration? SegmentsConfiguration
         {
-            get { return BackingStore?.Get<SegmentConfiguration?>("segmentsConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SegmentConfiguration?>("segmentsConfiguration"); }
             set { BackingStore?.Set("segmentsConfiguration", value); }
         }
 #nullable restore
 #else
-        public SegmentConfiguration SegmentsConfiguration
+        public Microsoft.Graph.Beta.Models.SegmentConfiguration SegmentsConfiguration
         {
-            get { return BackingStore?.Get<SegmentConfiguration>("segmentsConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SegmentConfiguration>("segmentsConfiguration"); }
             set { BackingStore?.Set("segmentsConfiguration", value); }
         }
 #endif
         /// <summary>Represents the single sign-on configuration for the on-premises application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesPublishingSingleSignOn? SingleSignOnSettings
+        public Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn? SingleSignOnSettings
         {
-            get { return BackingStore?.Get<OnPremisesPublishingSingleSignOn?>("singleSignOnSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn?>("singleSignOnSettings"); }
             set { BackingStore?.Set("singleSignOnSettings", value); }
         }
 #nullable restore
 #else
-        public OnPremisesPublishingSingleSignOn SingleSignOnSettings
+        public Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn SingleSignOnSettings
         {
-            get { return BackingStore?.Get<OnPremisesPublishingSingleSignOn>("singleSignOnSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn>("singleSignOnSettings"); }
             set { BackingStore?.Set("singleSignOnSettings", value); }
         }
 #endif
@@ -254,37 +254,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The associated key credential for the custom domain used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public KeyCredential? VerifiedCustomDomainKeyCredential
+        public Microsoft.Graph.Beta.Models.KeyCredential? VerifiedCustomDomainKeyCredential
         {
-            get { return BackingStore?.Get<KeyCredential?>("verifiedCustomDomainKeyCredential"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyCredential?>("verifiedCustomDomainKeyCredential"); }
             set { BackingStore?.Set("verifiedCustomDomainKeyCredential", value); }
         }
 #nullable restore
 #else
-        public KeyCredential VerifiedCustomDomainKeyCredential
+        public Microsoft.Graph.Beta.Models.KeyCredential VerifiedCustomDomainKeyCredential
         {
-            get { return BackingStore?.Get<KeyCredential>("verifiedCustomDomainKeyCredential"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyCredential>("verifiedCustomDomainKeyCredential"); }
             set { BackingStore?.Set("verifiedCustomDomainKeyCredential", value); }
         }
 #endif
         /// <summary>The associated password credential for the custom domain used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PasswordCredential? VerifiedCustomDomainPasswordCredential
+        public Microsoft.Graph.Beta.Models.PasswordCredential? VerifiedCustomDomainPasswordCredential
         {
-            get { return BackingStore?.Get<PasswordCredential?>("verifiedCustomDomainPasswordCredential"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordCredential?>("verifiedCustomDomainPasswordCredential"); }
             set { BackingStore?.Set("verifiedCustomDomainPasswordCredential", value); }
         }
 #nullable restore
 #else
-        public PasswordCredential VerifiedCustomDomainPasswordCredential
+        public Microsoft.Graph.Beta.Models.PasswordCredential VerifiedCustomDomainPasswordCredential
         {
-            get { return BackingStore?.Get<PasswordCredential>("verifiedCustomDomainPasswordCredential"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordCredential>("verifiedCustomDomainPasswordCredential"); }
             set { BackingStore?.Set("verifiedCustomDomainPasswordCredential", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnPremisesPublishing"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnPremisesPublishing"/> and sets the default values.
         /// </summary>
         public OnPremisesPublishing()
         {
@@ -294,12 +294,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnPremisesPublishing"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnPremisesPublishing"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnPremisesPublishing CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OnPremisesPublishing CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnPremisesPublishing();
+            return new Microsoft.Graph.Beta.Models.OnPremisesPublishing();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -312,7 +312,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "alternateUrl", n => { AlternateUrl = n.GetStringValue(); } },
                 { "applicationServerTimeout", n => { ApplicationServerTimeout = n.GetStringValue(); } },
                 { "applicationType", n => { ApplicationType = n.GetStringValue(); } },
-                { "externalAuthenticationType", n => { ExternalAuthenticationType = n.GetEnumValue<ExternalAuthenticationType>(); } },
+                { "externalAuthenticationType", n => { ExternalAuthenticationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExternalAuthenticationType>(); } },
                 { "externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
                 { "internalUrl", n => { InternalUrl = n.GetStringValue(); } },
                 { "isAccessibleViaZTNAClient", n => { IsAccessibleViaZTNAClient = n.GetBoolValue(); } },
@@ -326,13 +326,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "isTranslateHostHeaderEnabled", n => { IsTranslateHostHeaderEnabled = n.GetBoolValue(); } },
                 { "isTranslateLinksInBodyEnabled", n => { IsTranslateLinksInBodyEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<OnPremisesApplicationSegment>(OnPremisesApplicationSegment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "segmentsConfiguration", n => { SegmentsConfiguration = n.GetObjectValue<SegmentConfiguration>(SegmentConfiguration.CreateFromDiscriminatorValue); } },
-                { "singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
+                { "onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>(Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "segmentsConfiguration", n => { SegmentsConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.SegmentConfiguration>(Microsoft.Graph.Beta.Models.SegmentConfiguration.CreateFromDiscriminatorValue); } },
+                { "singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn>(Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
                 { "useAlternateUrlForTranslationAndRedirect", n => { UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
                 { "verifiedCustomDomainCertificatesMetadata", n => { VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
-                { "verifiedCustomDomainKeyCredential", n => { VerifiedCustomDomainKeyCredential = n.GetObjectValue<KeyCredential>(KeyCredential.CreateFromDiscriminatorValue); } },
-                { "verifiedCustomDomainPasswordCredential", n => { VerifiedCustomDomainPasswordCredential = n.GetObjectValue<PasswordCredential>(PasswordCredential.CreateFromDiscriminatorValue); } },
+                { "verifiedCustomDomainKeyCredential", n => { VerifiedCustomDomainKeyCredential = n.GetObjectValue<Microsoft.Graph.Beta.Models.KeyCredential>(Microsoft.Graph.Beta.Models.KeyCredential.CreateFromDiscriminatorValue); } },
+                { "verifiedCustomDomainPasswordCredential", n => { VerifiedCustomDomainPasswordCredential = n.GetObjectValue<Microsoft.Graph.Beta.Models.PasswordCredential>(Microsoft.Graph.Beta.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -345,7 +345,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("alternateUrl", AlternateUrl);
             writer.WriteStringValue("applicationServerTimeout", ApplicationServerTimeout);
             writer.WriteStringValue("applicationType", ApplicationType);
-            writer.WriteEnumValue<ExternalAuthenticationType>("externalAuthenticationType", ExternalAuthenticationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExternalAuthenticationType>("externalAuthenticationType", ExternalAuthenticationType);
             writer.WriteStringValue("externalUrl", ExternalUrl);
             writer.WriteStringValue("internalUrl", InternalUrl);
             writer.WriteBoolValue("isAccessibleViaZTNAClient", IsAccessibleViaZTNAClient);
@@ -359,13 +359,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("isTranslateHostHeaderEnabled", IsTranslateHostHeaderEnabled);
             writer.WriteBoolValue("isTranslateLinksInBodyEnabled", IsTranslateLinksInBodyEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<OnPremisesApplicationSegment>("onPremisesApplicationSegments", OnPremisesApplicationSegments);
-            writer.WriteObjectValue<SegmentConfiguration>("segmentsConfiguration", SegmentsConfiguration);
-            writer.WriteObjectValue<OnPremisesPublishingSingleSignOn>("singleSignOnSettings", SingleSignOnSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesApplicationSegment>("onPremisesApplicationSegments", OnPremisesApplicationSegments);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SegmentConfiguration>("segmentsConfiguration", SegmentsConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnPremisesPublishingSingleSignOn>("singleSignOnSettings", SingleSignOnSettings);
             writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", UseAlternateUrlForTranslationAndRedirect);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata", VerifiedCustomDomainCertificatesMetadata);
-            writer.WriteObjectValue<KeyCredential>("verifiedCustomDomainKeyCredential", VerifiedCustomDomainKeyCredential);
-            writer.WriteObjectValue<PasswordCredential>("verifiedCustomDomainPasswordCredential", VerifiedCustomDomainPasswordCredential);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.KeyCredential>("verifiedCustomDomainKeyCredential", VerifiedCustomDomainKeyCredential);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PasswordCredential>("verifiedCustomDomainPasswordCredential", VerifiedCustomDomainPasswordCredential);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

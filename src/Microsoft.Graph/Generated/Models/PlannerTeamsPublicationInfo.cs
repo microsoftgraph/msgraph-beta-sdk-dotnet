@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerTeamsPublicationInfo : PlannerTaskCreation, IParsable
+    public class PlannerTeamsPublicationInfo : Microsoft.Graph.Beta.Models.PlannerTaskCreation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The date and time when this task was last modified by the publication process. Read-only.</summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTeamsPublicationInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo"/> and sets the default values.
         /// </summary>
         public PlannerTeamsPublicationInfo() : base()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTeamsPublicationInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerTeamsPublicationInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerTeamsPublicationInfo();
+            return new Microsoft.Graph.Beta.Models.PlannerTeamsPublicationInfo();
         }
         /// <summary>
         /// The deserialization information for the current model

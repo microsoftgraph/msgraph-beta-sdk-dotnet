@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
     public class GraphManagedIOSLobAppRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
-        public AssignmentsRequestBuilder Assignments
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.Assignments.AssignmentsRequestBuilder Assignments
         {
-            get => new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.Assignments.AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
-        public CategoriesRequestBuilder Categories
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.Categories.CategoriesRequestBuilder Categories
         {
-            get => new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the contentVersions property of the microsoft.graph.managedMobileLobApp entity.</summary>
-        public ContentVersionsRequestBuilder ContentVersions
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.ContentVersionsRequestBuilder ContentVersions
         {
-            get => new ContentVersionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.ContentVersions.ContentVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
-        public RelationshipsRequestBuilder Relationships
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.Relationships.RelationshipsRequestBuilder Relationships
         {
-            get => new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.Relationships.RelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphManagedIOSLobAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphManagedIOSLobAppRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -59,25 +59,25 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
         /// </summary>
-        /// <returns>A <see cref="ManagedIOSLobApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedIOSLobApp"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedIOSLobApp?> GetAsync(Action<RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedIOSLobApp?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedIOSLobApp> GetAsync(Action<RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedIOSLobApp> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedIOSLobApp>(requestInfo, ManagedIOSLobApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedIOSLobApp>(requestInfo, Microsoft.Graph.Beta.Models.ManagedIOSLobApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
@@ -86,11 +86,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -101,11 +101,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphManagedIOSLobAppRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphManagedIOSLobAppRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphManagedIOSLobAppRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedIOSLobApp
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedI
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphManagedIOSLobAppRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphManagedIOSLobAppRequestBuilderGetQueryParameters>
+        public class GraphManagedIOSLobAppRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GraphManagedIOSLobApp.GraphManagedIOSLobAppRequestBuilder.GraphManagedIOSLobAppRequestBuilderGetQueryParameters>
         {
         }
     }

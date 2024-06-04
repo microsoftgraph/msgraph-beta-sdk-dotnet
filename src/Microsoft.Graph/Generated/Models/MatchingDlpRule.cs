@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DlpActionInfo>? Actions
+        public List<Microsoft.Graph.Beta.Models.DlpActionInfo>? Actions
         {
-            get { return BackingStore?.Get<List<DlpActionInfo>?>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DlpActionInfo>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<DlpActionInfo> Actions
+        public List<Microsoft.Graph.Beta.Models.DlpActionInfo> Actions
         {
-            get { return BackingStore?.Get<List<DlpActionInfo>>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DlpActionInfo>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MatchingDlpRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MatchingDlpRule"/> and sets the default values.
         /// </summary>
         public MatchingDlpRule()
         {
@@ -144,12 +144,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MatchingDlpRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MatchingDlpRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MatchingDlpRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MatchingDlpRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MatchingDlpRule();
+            return new Microsoft.Graph.Beta.Models.MatchingDlpRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -159,14 +159,14 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<DlpActionInfo>(DlpActionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DlpActionInfo>(Microsoft.Graph.Beta.Models.DlpActionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isMostRestrictive", n => { IsMostRestrictive = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "policyId", n => { PolicyId = n.GetStringValue(); } },
                 { "policyName", n => { PolicyName = n.GetStringValue(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "ruleId", n => { RuleId = n.GetStringValue(); } },
-                { "ruleMode", n => { RuleMode = n.GetEnumValue<RuleMode>(); } },
+                { "ruleMode", n => { RuleMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.RuleMode>(); } },
                 { "ruleName", n => { RuleName = n.GetStringValue(); } },
             };
         }
@@ -177,14 +177,14 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DlpActionInfo>("actions", Actions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DlpActionInfo>("actions", Actions);
             writer.WriteBoolValue("isMostRestrictive", IsMostRestrictive);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("policyName", PolicyName);
             writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("ruleId", RuleId);
-            writer.WriteEnumValue<RuleMode>("ruleMode", RuleMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RuleMode>("ruleMode", RuleMode);
             writer.WriteStringValue("ruleName", RuleName);
             writer.WriteAdditionalData(AdditionalData);
         }

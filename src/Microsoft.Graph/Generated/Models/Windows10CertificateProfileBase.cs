@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Base class for Windows 10 certificate profile.
     /// </summary>
-    public class Windows10CertificateProfileBase : WindowsCertificateProfileBase, IParsable
+    public class Windows10CertificateProfileBase : Microsoft.Graph.Beta.Models.WindowsCertificateProfileBase, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="Windows10CertificateProfileBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10CertificateProfileBase"/> and sets the default values.
         /// </summary>
         public Windows10CertificateProfileBase() : base()
         {
@@ -21,16 +21,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10CertificateProfileBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10CertificateProfileBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10CertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10CertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windows10PkcsCertificateProfile" => new Windows10PkcsCertificateProfile(),
-                _ => new Windows10CertificateProfileBase(),
+                "#microsoft.graph.windows10PkcsCertificateProfile" => new Microsoft.Graph.Beta.Models.Windows10PkcsCertificateProfile(),
+                _ => new Microsoft.Graph.Beta.Models.Windows10CertificateProfileBase(),
             };
         }
         /// <summary>

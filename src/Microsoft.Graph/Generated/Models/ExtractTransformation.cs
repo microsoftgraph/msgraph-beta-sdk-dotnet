@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExtractTransformation : CustomClaimTransformation, IParsable
+    public class ExtractTransformation : Microsoft.Graph.Beta.Models.CustomClaimTransformation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of extract transformation to apply.</summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExtractTransformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExtractTransformation"/> and sets the default values.
         /// </summary>
         public ExtractTransformation() : base()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExtractTransformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExtractTransformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExtractTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExtractTransformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExtractTransformation();
+            return new Microsoft.Graph.Beta.Models.ExtractTransformation();
         }
         /// <summary>
         /// The deserialization information for the current model
