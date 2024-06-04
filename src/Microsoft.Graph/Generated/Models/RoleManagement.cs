@@ -22,96 +22,96 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The cloudPC property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplicationMultiple? CloudPC
+        public Microsoft.Graph.Beta.Models.RbacApplicationMultiple? CloudPC
         {
-            get { return BackingStore?.Get<RbacApplicationMultiple?>("cloudPC"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RbacApplicationMultiple?>("cloudPC"); }
             set { BackingStore?.Set("cloudPC", value); }
         }
 #nullable restore
 #else
-        public RbacApplicationMultiple CloudPC
+        public Microsoft.Graph.Beta.Models.RbacApplicationMultiple CloudPC
         {
-            get { return BackingStore?.Get<RbacApplicationMultiple>("cloudPC"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RbacApplicationMultiple>("cloudPC"); }
             set { BackingStore?.Set("cloudPC", value); }
         }
 #endif
         /// <summary>The RbacApplication for Device Management</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplicationMultiple? DeviceManagement
+        public Microsoft.Graph.Beta.Models.RbacApplicationMultiple? DeviceManagement
         {
-            get { return BackingStore?.Get<RbacApplicationMultiple?>("deviceManagement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RbacApplicationMultiple?>("deviceManagement"); }
             set { BackingStore?.Set("deviceManagement", value); }
         }
 #nullable restore
 #else
-        public RbacApplicationMultiple DeviceManagement
+        public Microsoft.Graph.Beta.Models.RbacApplicationMultiple DeviceManagement
         {
-            get { return BackingStore?.Get<RbacApplicationMultiple>("deviceManagement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RbacApplicationMultiple>("deviceManagement"); }
             set { BackingStore?.Set("deviceManagement", value); }
         }
 #endif
         /// <summary>The directory property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplication? Directory
+        public Microsoft.Graph.Beta.Models.RbacApplication? Directory
         {
-            get { return BackingStore?.Get<RbacApplication?>("directory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RbacApplication?>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
 #nullable restore
 #else
-        public RbacApplication Directory
+        public Microsoft.Graph.Beta.Models.RbacApplication Directory
         {
-            get { return BackingStore?.Get<RbacApplication>("directory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RbacApplication>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
 #endif
         /// <summary>The enterpriseApps property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RbacApplication>? EnterpriseApps
+        public List<Microsoft.Graph.Beta.Models.RbacApplication>? EnterpriseApps
         {
-            get { return BackingStore?.Get<List<RbacApplication>?>("enterpriseApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RbacApplication>?>("enterpriseApps"); }
             set { BackingStore?.Set("enterpriseApps", value); }
         }
 #nullable restore
 #else
-        public List<RbacApplication> EnterpriseApps
+        public List<Microsoft.Graph.Beta.Models.RbacApplication> EnterpriseApps
         {
-            get { return BackingStore?.Get<List<RbacApplication>>("enterpriseApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RbacApplication>>("enterpriseApps"); }
             set { BackingStore?.Set("enterpriseApps", value); }
         }
 #endif
         /// <summary>The RbacApplication for Entitlement Management</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RbacApplication? EntitlementManagement
+        public Microsoft.Graph.Beta.Models.RbacApplication? EntitlementManagement
         {
-            get { return BackingStore?.Get<RbacApplication?>("entitlementManagement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RbacApplication?>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
 #nullable restore
 #else
-        public RbacApplication EntitlementManagement
+        public Microsoft.Graph.Beta.Models.RbacApplication EntitlementManagement
         {
-            get { return BackingStore?.Get<RbacApplication>("entitlementManagement"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RbacApplication>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }
         }
 #endif
         /// <summary>The exchange property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRbacApplication? Exchange
+        public Microsoft.Graph.Beta.Models.UnifiedRbacApplication? Exchange
         {
-            get { return BackingStore?.Get<UnifiedRbacApplication?>("exchange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRbacApplication?>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
 #nullable restore
 #else
-        public UnifiedRbacApplication Exchange
+        public Microsoft.Graph.Beta.Models.UnifiedRbacApplication Exchange
         {
-            get { return BackingStore?.Get<UnifiedRbacApplication>("exchange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRbacApplication>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
 #endif
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RoleManagement"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RoleManagement"/> and sets the default values.
         /// </summary>
         public RoleManagement()
         {
@@ -142,12 +142,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RoleManagement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RoleManagement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RoleManagement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RoleManagement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RoleManagement();
+            return new Microsoft.Graph.Beta.Models.RoleManagement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -157,12 +157,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cloudPC", n => { CloudPC = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
-                { "deviceManagement", n => { DeviceManagement = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
-                { "directory", n => { Directory = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
-                { "enterpriseApps", n => { EnterpriseApps = n.GetCollectionOfObjectValues<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
-                { "exchange", n => { Exchange = n.GetObjectValue<UnifiedRbacApplication>(UnifiedRbacApplication.CreateFromDiscriminatorValue); } },
+                { "cloudPC", n => { CloudPC = n.GetObjectValue<Microsoft.Graph.Beta.Models.RbacApplicationMultiple>(Microsoft.Graph.Beta.Models.RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
+                { "deviceManagement", n => { DeviceManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.RbacApplicationMultiple>(Microsoft.Graph.Beta.Models.RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
+                { "directory", n => { Directory = n.GetObjectValue<Microsoft.Graph.Beta.Models.RbacApplication>(Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue); } },
+                { "enterpriseApps", n => { EnterpriseApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RbacApplication>(Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<Microsoft.Graph.Beta.Models.RbacApplication>(Microsoft.Graph.Beta.Models.RbacApplication.CreateFromDiscriminatorValue); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<Microsoft.Graph.Beta.Models.UnifiedRbacApplication>(Microsoft.Graph.Beta.Models.UnifiedRbacApplication.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -173,12 +173,12 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<RbacApplicationMultiple>("cloudPC", CloudPC);
-            writer.WriteObjectValue<RbacApplicationMultiple>("deviceManagement", DeviceManagement);
-            writer.WriteObjectValue<RbacApplication>("directory", Directory);
-            writer.WriteCollectionOfObjectValues<RbacApplication>("enterpriseApps", EnterpriseApps);
-            writer.WriteObjectValue<RbacApplication>("entitlementManagement", EntitlementManagement);
-            writer.WriteObjectValue<UnifiedRbacApplication>("exchange", Exchange);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RbacApplicationMultiple>("cloudPC", CloudPC);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RbacApplicationMultiple>("deviceManagement", DeviceManagement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RbacApplication>("directory", Directory);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RbacApplication>("enterpriseApps", EnterpriseApps);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RbacApplication>("entitlementManagement", EntitlementManagement);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UnifiedRbacApplication>("exchange", Exchange);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

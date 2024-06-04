@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Autopilot Deployment Profile
     /// </summary>
-    public class AzureADWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable
+    public class AzureADWindowsAutopilotDeploymentProfile : Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="AzureADWindowsAutopilotDeploymentProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AzureADWindowsAutopilotDeploymentProfile"/> and sets the default values.
         /// </summary>
         public AzureADWindowsAutopilotDeploymentProfile() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureADWindowsAutopilotDeploymentProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AzureADWindowsAutopilotDeploymentProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AzureADWindowsAutopilotDeploymentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AzureADWindowsAutopilotDeploymentProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureADWindowsAutopilotDeploymentProfile();
+            return new Microsoft.Graph.Beta.Models.AzureADWindowsAutopilotDeploymentProfile();
         }
         /// <summary>
         /// The deserialization information for the current model

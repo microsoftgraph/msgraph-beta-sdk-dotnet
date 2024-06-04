@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the run summary of a hardware configuration script.
     /// </summary>
-    public class HardwareConfigurationRunSummary : Entity, IParsable
+    public class HardwareConfigurationRunSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of devices for which hardware configuration state is error</summary>
         public int? ErrorDeviceCount
@@ -92,12 +92,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HardwareConfigurationRunSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.HardwareConfigurationRunSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HardwareConfigurationRunSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.HardwareConfigurationRunSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HardwareConfigurationRunSummary();
+            return new Microsoft.Graph.Beta.Models.HardwareConfigurationRunSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

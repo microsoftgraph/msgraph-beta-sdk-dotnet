@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EntitlementsDataCollection : EntitlementsDataCollectionInfo, IParsable
+    public class EntitlementsDataCollection : Microsoft.Graph.Beta.Models.EntitlementsDataCollectionInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Last transformation time of entitlements.</summary>
@@ -23,13 +23,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("permissionsModificationCapability", value); }
         }
         /// <summary>The status property</summary>
-        public DataCollectionStatus? Status
+        public Microsoft.Graph.Beta.Models.DataCollectionStatus? Status
         {
-            get { return BackingStore?.Get<DataCollectionStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataCollectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EntitlementsDataCollection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EntitlementsDataCollection"/> and sets the default values.
         /// </summary>
         public EntitlementsDataCollection() : base()
         {
@@ -38,12 +38,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EntitlementsDataCollection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EntitlementsDataCollection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EntitlementsDataCollection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EntitlementsDataCollection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EntitlementsDataCollection();
+            return new Microsoft.Graph.Beta.Models.EntitlementsDataCollection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "lastCollectionDateTime", n => { LastCollectionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "permissionsModificationCapability", n => { PermissionsModificationCapability = n.GetEnumValue<PermissionsModificationCapability>(); } },
-                { "status", n => { Status = n.GetEnumValue<DataCollectionStatus>(); } },
+                { "permissionsModificationCapability", n => { PermissionsModificationCapability = n.GetEnumValue<Microsoft.Graph.Beta.Models.PermissionsModificationCapability>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.DataCollectionStatus>(); } },
             };
         }
         /// <summary>
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("lastCollectionDateTime", LastCollectionDateTime);
-            writer.WriteEnumValue<PermissionsModificationCapability>("permissionsModificationCapability", PermissionsModificationCapability);
-            writer.WriteEnumValue<DataCollectionStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PermissionsModificationCapability>("permissionsModificationCapability", PermissionsModificationCapability);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DataCollectionStatus>("status", Status);
         }
     }
 }

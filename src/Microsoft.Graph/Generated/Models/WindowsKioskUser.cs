@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskUser"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskUser"/> and sets the default values.
         /// </summary>
         public WindowsKioskUser()
         {
@@ -47,22 +47,22 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskUser"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsKioskUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsKioskUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsKioskActiveDirectoryGroup" => new WindowsKioskActiveDirectoryGroup(),
-                "#microsoft.graph.windowsKioskAutologon" => new WindowsKioskAutologon(),
-                "#microsoft.graph.windowsKioskAzureADGroup" => new WindowsKioskAzureADGroup(),
-                "#microsoft.graph.windowsKioskAzureADUser" => new WindowsKioskAzureADUser(),
-                "#microsoft.graph.windowsKioskLocalGroup" => new WindowsKioskLocalGroup(),
-                "#microsoft.graph.windowsKioskLocalUser" => new WindowsKioskLocalUser(),
-                "#microsoft.graph.windowsKioskVisitor" => new WindowsKioskVisitor(),
-                _ => new WindowsKioskUser(),
+                "#microsoft.graph.windowsKioskActiveDirectoryGroup" => new Microsoft.Graph.Beta.Models.WindowsKioskActiveDirectoryGroup(),
+                "#microsoft.graph.windowsKioskAutologon" => new Microsoft.Graph.Beta.Models.WindowsKioskAutologon(),
+                "#microsoft.graph.windowsKioskAzureADGroup" => new Microsoft.Graph.Beta.Models.WindowsKioskAzureADGroup(),
+                "#microsoft.graph.windowsKioskAzureADUser" => new Microsoft.Graph.Beta.Models.WindowsKioskAzureADUser(),
+                "#microsoft.graph.windowsKioskLocalGroup" => new Microsoft.Graph.Beta.Models.WindowsKioskLocalGroup(),
+                "#microsoft.graph.windowsKioskLocalUser" => new Microsoft.Graph.Beta.Models.WindowsKioskLocalUser(),
+                "#microsoft.graph.windowsKioskVisitor" => new Microsoft.Graph.Beta.Models.WindowsKioskVisitor(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsKioskUser(),
             };
         }
         /// <summary>

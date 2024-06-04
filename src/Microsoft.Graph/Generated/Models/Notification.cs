@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Notification : Entity, IParsable
+    public class Notification : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Sets how long (in seconds) this notification content stays in each platform&apos;s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification stays in the user&apos;s Windows Action Center.</summary>
@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PayloadTypes? Payload
+        public Microsoft.Graph.Beta.Models.PayloadTypes? Payload
         {
-            get { return BackingStore?.Get<PayloadTypes?>("payload"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PayloadTypes?>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
 #nullable restore
 #else
-        public PayloadTypes Payload
+        public Microsoft.Graph.Beta.Models.PayloadTypes Payload
         {
-            get { return BackingStore?.Get<PayloadTypes>("payload"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PayloadTypes>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
 #endif
@@ -79,28 +79,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TargetPolicyEndpoints? TargetPolicy
+        public Microsoft.Graph.Beta.Models.TargetPolicyEndpoints? TargetPolicy
         {
-            get { return BackingStore?.Get<TargetPolicyEndpoints?>("targetPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TargetPolicyEndpoints?>("targetPolicy"); }
             set { BackingStore?.Set("targetPolicy", value); }
         }
 #nullable restore
 #else
-        public TargetPolicyEndpoints TargetPolicy
+        public Microsoft.Graph.Beta.Models.TargetPolicyEndpoints TargetPolicy
         {
-            get { return BackingStore?.Get<TargetPolicyEndpoints>("targetPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TargetPolicyEndpoints>("targetPolicy"); }
             set { BackingStore?.Set("targetPolicy", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Notification"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Notification"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Notification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Notification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Notification();
+            return new Microsoft.Graph.Beta.Models.Notification();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,10 +113,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayTimeToLive", n => { DisplayTimeToLive = n.GetIntValue(); } },
                 { "expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 { "groupName", n => { GroupName = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetObjectValue<PayloadTypes>(PayloadTypes.CreateFromDiscriminatorValue); } },
-                { "priority", n => { Priority = n.GetEnumValue<Priority>(); } },
+                { "payload", n => { Payload = n.GetObjectValue<Microsoft.Graph.Beta.Models.PayloadTypes>(Microsoft.Graph.Beta.Models.PayloadTypes.CreateFromDiscriminatorValue); } },
+                { "priority", n => { Priority = n.GetEnumValue<Microsoft.Graph.Beta.Models.Priority>(); } },
                 { "targetHostName", n => { TargetHostName = n.GetStringValue(); } },
-                { "targetPolicy", n => { TargetPolicy = n.GetObjectValue<TargetPolicyEndpoints>(TargetPolicyEndpoints.CreateFromDiscriminatorValue); } },
+                { "targetPolicy", n => { TargetPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.TargetPolicyEndpoints>(Microsoft.Graph.Beta.Models.TargetPolicyEndpoints.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,10 +130,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("displayTimeToLive", DisplayTimeToLive);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
             writer.WriteStringValue("groupName", GroupName);
-            writer.WriteObjectValue<PayloadTypes>("payload", Payload);
-            writer.WriteEnumValue<Priority>("priority", Priority);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PayloadTypes>("payload", Payload);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Priority>("priority", Priority);
             writer.WriteStringValue("targetHostName", TargetHostName);
-            writer.WriteObjectValue<TargetPolicyEndpoints>("targetPolicy", TargetPolicy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TargetPolicyEndpoints>("targetPolicy", TargetPolicy);
         }
     }
 }

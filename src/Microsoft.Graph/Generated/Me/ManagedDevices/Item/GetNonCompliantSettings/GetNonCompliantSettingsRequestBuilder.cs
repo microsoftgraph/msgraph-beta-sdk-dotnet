@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings
     public class GetNonCompliantSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetNonCompliantSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetNonCompliantSettingsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings
         /// <summary>
         /// Invoke function getNonCompliantSettings
         /// </summary>
-        /// <returns>A <see cref="GetNonCompliantSettingsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetNonCompliantSettingsGetResponse?> GetAsGetNonCompliantSettingsGetResponseAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse?> GetAsGetNonCompliantSettingsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder.GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetNonCompliantSettingsGetResponse> GetAsGetNonCompliantSettingsGetResponseAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse> GetAsGetNonCompliantSettingsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder.GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetNonCompliantSettingsGetResponse>(requestInfo, GetNonCompliantSettingsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse>(requestInfo, Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getNonCompliantSettings
         /// </summary>
-        /// <returns>A <see cref="GetNonCompliantSettingsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetNonCompliantSettingsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetNonCompliantSettingsResponse?> GetAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder.GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetNonCompliantSettingsResponse> GetAsync(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder.GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetNonCompliantSettingsResponse>(requestInfo, GetNonCompliantSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsResponse>(requestInfo, Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getNonCompliantSettings
@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder.GetNonCompliantSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder.GetNonCompliantSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetNonCompliantSettingsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetNonCompliantSettingsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetNonCompliantSettingsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getNonCompliantSettings
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetNonCompliantSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetNonCompliantSettingsRequestBuilderGetQueryParameters>
+        public class GetNonCompliantSettingsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetNonCompliantSettings.GetNonCompliantSettingsRequestBuilder.GetNonCompliantSettingsRequestBuilderGetQueryParameters>
         {
         }
     }

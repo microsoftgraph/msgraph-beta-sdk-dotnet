@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DlpActionInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DlpActionInfo"/> and sets the default values.
         /// </summary>
         public DlpActionInfo()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DlpActionInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DlpActionInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DlpActionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DlpActionInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.blockAccessAction" => new BlockAccessAction(),
-                "#microsoft.graph.notifyUserAction" => new NotifyUserAction(),
-                _ => new DlpActionInfo(),
+                "#microsoft.graph.blockAccessAction" => new Microsoft.Graph.Beta.Models.BlockAccessAction(),
+                "#microsoft.graph.notifyUserAction" => new Microsoft.Graph.Beta.Models.NotifyUserAction(),
+                _ => new Microsoft.Graph.Beta.Models.DlpActionInfo(),
             };
         }
         /// <summary>

@@ -28,16 +28,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>If escalation is enabled and the primary approvers don&apos;t respond before the escalation time, the escalationApprovers are the users who will be asked to approve requests. This can be a collection of singleUser, groupMembers, requestorManager, internalSponsors and externalSponsors.  When creating or updating a policy, if there are no escalation approvers, or escalation approvers aren&apos;t required for the stage, the value of this property should be an empty collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSet>? EscalationApprovers
+        public List<Microsoft.Graph.Beta.Models.UserSet>? EscalationApprovers
         {
-            get { return BackingStore?.Get<List<UserSet>?>("escalationApprovers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSet>?>("escalationApprovers"); }
             set { BackingStore?.Set("escalationApprovers", value); }
         }
 #nullable restore
 #else
-        public List<UserSet> EscalationApprovers
+        public List<Microsoft.Graph.Beta.Models.UserSet> EscalationApprovers
         {
-            get { return BackingStore?.Get<List<UserSet>>("escalationApprovers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSet>>("escalationApprovers"); }
             set { BackingStore?.Set("escalationApprovers", value); }
         }
 #endif
@@ -78,21 +78,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The users who are asked to approve requests. A collection of singleUser, groupMembers, requestorManager, internalSponsors, externalSponsors and targetUserSponsors. When creating or updating a policy, include at least one userSet in this collection.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSet>? PrimaryApprovers
+        public List<Microsoft.Graph.Beta.Models.UserSet>? PrimaryApprovers
         {
-            get { return BackingStore?.Get<List<UserSet>?>("primaryApprovers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSet>?>("primaryApprovers"); }
             set { BackingStore?.Set("primaryApprovers", value); }
         }
 #nullable restore
 #else
-        public List<UserSet> PrimaryApprovers
+        public List<Microsoft.Graph.Beta.Models.UserSet> PrimaryApprovers
         {
-            get { return BackingStore?.Get<List<UserSet>>("primaryApprovers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSet>>("primaryApprovers"); }
             set { BackingStore?.Set("primaryApprovers", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApprovalStage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ApprovalStage"/> and sets the default values.
         /// </summary>
         public ApprovalStage()
         {
@@ -102,12 +102,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApprovalStage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ApprovalStage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ApprovalStage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApprovalStage();
+            return new Microsoft.Graph.Beta.Models.ApprovalStage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,12 +118,12 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "approvalStageTimeOutInDays", n => { ApprovalStageTimeOutInDays = n.GetIntValue(); } },
-                { "escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "escalationApprovers", n => { EscalationApprovers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSet>(Microsoft.Graph.Beta.Models.UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "escalationTimeInMinutes", n => { EscalationTimeInMinutes = n.GetIntValue(); } },
                 { "isApproverJustificationRequired", n => { IsApproverJustificationRequired = n.GetBoolValue(); } },
                 { "isEscalationEnabled", n => { IsEscalationEnabled = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "primaryApprovers", n => { PrimaryApprovers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "primaryApprovers", n => { PrimaryApprovers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSet>(Microsoft.Graph.Beta.Models.UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -134,12 +134,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("approvalStageTimeOutInDays", ApprovalStageTimeOutInDays);
-            writer.WriteCollectionOfObjectValues<UserSet>("escalationApprovers", EscalationApprovers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSet>("escalationApprovers", EscalationApprovers);
             writer.WriteIntValue("escalationTimeInMinutes", EscalationTimeInMinutes);
             writer.WriteBoolValue("isApproverJustificationRequired", IsApproverJustificationRequired);
             writer.WriteBoolValue("isEscalationEnabled", IsEscalationEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<UserSet>("primaryApprovers", PrimaryApprovers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSet>("primaryApprovers", PrimaryApprovers);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcSupportedRegion : Entity, IParsable
+    public class CloudPcSupportedRegion : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name for the supported region. Read-only.</summary>
@@ -27,32 +27,32 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The regionGroup property</summary>
-        public CloudPcRegionGroup? RegionGroup
+        public Microsoft.Graph.Beta.Models.CloudPcRegionGroup? RegionGroup
         {
-            get { return BackingStore?.Get<CloudPcRegionGroup?>("regionGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcRegionGroup?>("regionGroup"); }
             set { BackingStore?.Set("regionGroup", value); }
         }
         /// <summary>The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
-        public CloudPcSupportedRegionStatus? RegionStatus
+        public Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus? RegionStatus
         {
-            get { return BackingStore?.Get<CloudPcSupportedRegionStatus?>("regionStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus?>("regionStatus"); }
             set { BackingStore?.Set("regionStatus", value); }
         }
         /// <summary>The supportedSolution property</summary>
-        public CloudPcManagementService? SupportedSolution
+        public Microsoft.Graph.Beta.Models.CloudPcManagementService? SupportedSolution
         {
-            get { return BackingStore?.Get<CloudPcManagementService?>("supportedSolution"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcManagementService?>("supportedSolution"); }
             set { BackingStore?.Set("supportedSolution", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcSupportedRegion"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcSupportedRegion"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcSupportedRegion CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcSupportedRegion CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcSupportedRegion();
+            return new Microsoft.Graph.Beta.Models.CloudPcSupportedRegion();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +63,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
-                { "regionStatus", n => { RegionStatus = n.GetEnumValue<CloudPcSupportedRegionStatus>(); } },
-                { "supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
+                { "regionGroup", n => { RegionGroup = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcRegionGroup>(); } },
+                { "regionStatus", n => { RegionStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus>(); } },
+                { "supportedSolution", n => { SupportedSolution = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcManagementService>(); } },
             };
         }
         /// <summary>
@@ -77,9 +77,9 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<CloudPcRegionGroup>("regionGroup", RegionGroup);
-            writer.WriteEnumValue<CloudPcSupportedRegionStatus>("regionStatus", RegionStatus);
-            writer.WriteEnumValue<CloudPcManagementService>("supportedSolution", SupportedSolution);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcRegionGroup>("regionGroup", RegionGroup);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcSupportedRegionStatus>("regionStatus", RegionStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcManagementService>("supportedSolution", SupportedSolution);
         }
     }
 }

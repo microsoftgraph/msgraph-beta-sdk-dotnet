@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Agreement : Entity, IParsable
+    public class Agreement : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementAcceptance>? Acceptances
+        public List<Microsoft.Graph.Beta.Models.AgreementAcceptance>? Acceptances
         {
-            get { return BackingStore?.Get<List<AgreementAcceptance>?>("acceptances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgreementAcceptance>?>("acceptances"); }
             set { BackingStore?.Set("acceptances", value); }
         }
 #nullable restore
 #else
-        public List<AgreementAcceptance> Acceptances
+        public List<Microsoft.Graph.Beta.Models.AgreementAcceptance> Acceptances
         {
-            get { return BackingStore?.Get<List<AgreementAcceptance>>("acceptances"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgreementAcceptance>>("acceptances"); }
             set { BackingStore?.Set("acceptances", value); }
         }
 #endif
@@ -45,32 +45,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Default PDF linked to this agreement.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AgreementFile? File
+        public Microsoft.Graph.Beta.Models.AgreementFile? File
         {
-            get { return BackingStore?.Get<AgreementFile?>("file"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AgreementFile?>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #nullable restore
 #else
-        public AgreementFile File
+        public Microsoft.Graph.Beta.Models.AgreementFile File
         {
-            get { return BackingStore?.Get<AgreementFile>("file"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AgreementFile>("file"); }
             set { BackingStore?.Set("file", value); }
         }
 #endif
         /// <summary>PDFs linked to this agreement. Note: This property is in the process of being deprecated. Use the  file property instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AgreementFileLocalization>? Files
+        public List<Microsoft.Graph.Beta.Models.AgreementFileLocalization>? Files
         {
-            get { return BackingStore?.Get<List<AgreementFileLocalization>?>("files"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgreementFileLocalization>?>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #nullable restore
 #else
-        public List<AgreementFileLocalization> Files
+        public List<Microsoft.Graph.Beta.Models.AgreementFileLocalization> Files
         {
-            get { return BackingStore?.Get<List<AgreementFileLocalization>>("files"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AgreementFileLocalization>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
 #endif
@@ -111,12 +111,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Agreement"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Agreement"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Agreement CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Agreement CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Agreement();
+            return new Microsoft.Graph.Beta.Models.Agreement();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,10 +126,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "acceptances", n => { Acceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "acceptances", n => { Acceptances = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AgreementAcceptance>(Microsoft.Graph.Beta.Models.AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "file", n => { File = n.GetObjectValue<AgreementFile>(AgreementFile.CreateFromDiscriminatorValue); } },
-                { "files", n => { Files = n.GetCollectionOfObjectValues<AgreementFileLocalization>(AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "file", n => { File = n.GetObjectValue<Microsoft.Graph.Beta.Models.AgreementFile>(Microsoft.Graph.Beta.Models.AgreementFile.CreateFromDiscriminatorValue); } },
+                { "files", n => { Files = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AgreementFileLocalization>(Microsoft.Graph.Beta.Models.AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isPerDeviceAcceptanceRequired", n => { IsPerDeviceAcceptanceRequired = n.GetBoolValue(); } },
                 { "isViewingBeforeAcceptanceRequired", n => { IsViewingBeforeAcceptanceRequired = n.GetBoolValue(); } },
                 { "termsExpiration", n => { TermsExpiration = n.GetObjectValue<Microsoft.Graph.Beta.Models.TermsExpiration>(Microsoft.Graph.Beta.Models.TermsExpiration.CreateFromDiscriminatorValue); } },
@@ -144,10 +144,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AgreementAcceptance>("acceptances", Acceptances);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AgreementAcceptance>("acceptances", Acceptances);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<AgreementFile>("file", File);
-            writer.WriteCollectionOfObjectValues<AgreementFileLocalization>("files", Files);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AgreementFile>("file", File);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AgreementFileLocalization>("files", Files);
             writer.WriteBoolValue("isPerDeviceAcceptanceRequired", IsPerDeviceAcceptanceRequired);
             writer.WriteBoolValue("isViewingBeforeAcceptanceRequired", IsViewingBeforeAcceptanceRequired);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TermsExpiration>("termsExpiration", TermsExpiration);

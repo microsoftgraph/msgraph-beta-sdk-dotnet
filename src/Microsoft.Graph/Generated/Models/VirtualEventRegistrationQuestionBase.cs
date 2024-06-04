@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventRegistrationQuestionBase : Entity, IParsable
+    public class VirtualEventRegistrationQuestionBase : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The displayName property</summary>
@@ -35,17 +35,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventRegistrationQuestionBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventRegistrationQuestionBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.virtualEventRegistrationCustomQuestion" => new VirtualEventRegistrationCustomQuestion(),
-                "#microsoft.graph.virtualEventRegistrationPredefinedQuestion" => new VirtualEventRegistrationPredefinedQuestion(),
-                _ => new VirtualEventRegistrationQuestionBase(),
+                "#microsoft.graph.virtualEventRegistrationCustomQuestion" => new Microsoft.Graph.Beta.Models.VirtualEventRegistrationCustomQuestion(),
+                "#microsoft.graph.virtualEventRegistrationPredefinedQuestion" => new Microsoft.Graph.Beta.Models.VirtualEventRegistrationPredefinedQuestion(),
+                _ => new Microsoft.Graph.Beta.Models.VirtualEventRegistrationQuestionBase(),
             };
         }
         /// <summary>

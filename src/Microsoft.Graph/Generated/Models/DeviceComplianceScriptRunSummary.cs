@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties for the run summary of a device management script.
     /// </summary>
-    public class DeviceComplianceScriptRunSummary : Entity, IParsable
+    public class DeviceComplianceScriptRunSummary : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Number of devices on which the detection script execution encountered an error and did not complete. Valid values -2147483648 to 2147483647</summary>
         public int? DetectionScriptErrorDeviceCount
@@ -44,12 +44,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceComplianceScriptRunSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceComplianceScriptRunSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceComplianceScriptRunSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceComplianceScriptRunSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceComplianceScriptRunSummary();
+            return new Microsoft.Graph.Beta.Models.DeviceComplianceScriptRunSummary();
         }
         /// <summary>
         /// The deserialization information for the current model

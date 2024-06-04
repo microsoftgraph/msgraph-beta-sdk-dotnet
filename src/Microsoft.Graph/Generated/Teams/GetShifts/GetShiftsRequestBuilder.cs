@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
     public class GetShiftsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetShiftsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetShiftsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
         /// Get all shift objects across all teams to which a user is a direct member.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="GetShiftsGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetShiftsGetResponse?> GetAsGetShiftsGetResponseAsync(Action<RequestConfiguration<GetShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsGetResponse?> GetAsGetShiftsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder.GetShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetShiftsGetResponse> GetAsGetShiftsGetResponseAsync(Action<RequestConfiguration<GetShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsGetResponse> GetAsGetShiftsGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder.GetShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetShiftsGetResponse>(requestInfo, GetShiftsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsGetResponse>(requestInfo, Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all shift objects across all teams to which a user is a direct member.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/team-getshifts?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="GetShiftsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetShiftsGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetShiftsResponse?> GetAsync(Action<RequestConfiguration<GetShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder.GetShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetShiftsResponse> GetAsync(Action<RequestConfiguration<GetShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder.GetShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetShiftsResponse>(requestInfo, GetShiftsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse>(requestInfo, Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get all shift objects across all teams to which a user is a direct member.
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder.GetShiftsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder.GetShiftsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetShiftsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetShiftsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetShiftsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get all shift objects across all teams to which a user is a direct member.
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Teams.GetShifts
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetShiftsRequestBuilderGetRequestConfiguration : RequestConfiguration<GetShiftsRequestBuilderGetQueryParameters>
+        public class GetShiftsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Teams.GetShifts.GetShiftsRequestBuilder.GetShiftsRequestBuilderGetQueryParameters>
         {
         }
     }

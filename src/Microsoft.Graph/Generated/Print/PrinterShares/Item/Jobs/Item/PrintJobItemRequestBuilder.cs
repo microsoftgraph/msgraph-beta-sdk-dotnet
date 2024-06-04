@@ -26,54 +26,54 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item
     {
         /// <summary>Provides operations to call the abort method.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public AbortRequestBuilder Abort
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Abort.AbortRequestBuilder Abort
         {
-            get => new AbortRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Abort.AbortRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancel method.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public CancelRequestBuilder Cancel
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Cancel.CancelRequestBuilder Cancel
         {
-            get => new CancelRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Cancel.CancelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the cancelPrintJob method.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public CancelPrintJobRequestBuilder CancelPrintJob
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.CancelPrintJob.CancelPrintJobRequestBuilder CancelPrintJob
         {
-            get => new CancelPrintJobRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.CancelPrintJob.CancelPrintJobRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the documents property of the microsoft.graph.printJob entity.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public DocumentsRequestBuilder Documents
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Documents.DocumentsRequestBuilder Documents
         {
-            get => new DocumentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Documents.DocumentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the redirect method.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public RedirectRequestBuilder Redirect
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Redirect.RedirectRequestBuilder Redirect
         {
-            get => new RedirectRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Redirect.RedirectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the start method.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public StartRequestBuilder Start
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Start.StartRequestBuilder Start
         {
-            get => new StartRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Start.StartRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the startPrintJob method.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public StartPrintJobRequestBuilder StartPrintJob
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.StartPrintJob.StartPrintJobRequestBuilder StartPrintJob
         {
-            get => new StartPrintJobRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.StartPrintJob.StartPrintJobRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.printJob entity.</summary>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public TasksRequestBuilder Tasks
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.TasksRequestBuilder Tasks
         {
-            get => new TasksRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrintJobItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="PrintJobItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,59 +107,59 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get jobs from print
         /// </summary>
-        /// <returns>A <see cref="PrintJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrintJob"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintJob?> GetAsync(Action<RequestConfiguration<PrintJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrintJob?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder.PrintJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrintJob> GetAsync(Action<RequestConfiguration<PrintJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrintJob> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder.PrintJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrintJob>(requestInfo, PrintJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrintJob>(requestInfo, Microsoft.Graph.Beta.Models.PrintJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the navigation property jobs in print
         /// </summary>
-        /// <returns>A <see cref="PrintJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrintJob"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PrintJob?> PatchAsync(PrintJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrintJob?> PatchAsync(Microsoft.Graph.Beta.Models.PrintJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PrintJob> PatchAsync(PrintJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PrintJob> PatchAsync(Microsoft.Graph.Beta.Models.PrintJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PrintJob>(requestInfo, PrintJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PrintJob>(requestInfo, Microsoft.Graph.Beta.Models.PrintJob.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property jobs for print
@@ -189,11 +189,11 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrintJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder.PrintJobItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<PrintJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder.PrintJobItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -210,11 +210,11 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(PrintJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.PrintJob body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(PrintJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.PrintJob body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -227,12 +227,12 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="PrintJobItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The printerShares navigation property is deprecated and will stop returning data on July 31, 2023. Please use the shares navigation property instead of this. as of 2023-06/Tasks_And_Plans")]
-        public PrintJobItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new PrintJobItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -271,7 +271,7 @@ namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class PrintJobItemRequestBuilderGetRequestConfiguration : RequestConfiguration<PrintJobItemRequestBuilderGetQueryParameters>
+        public class PrintJobItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Print.PrinterShares.Item.Jobs.Item.PrintJobItemRequestBuilder.PrintJobItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

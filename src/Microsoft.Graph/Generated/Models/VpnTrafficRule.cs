@@ -35,9 +35,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the type of app that a VPN traffic rule is associated with.</summary>
-        public VpnTrafficRuleAppType? AppType
+        public Microsoft.Graph.Beta.Models.VpnTrafficRuleAppType? AppType
         {
-            get { return BackingStore?.Get<VpnTrafficRuleAppType?>("appType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnTrafficRuleAppType?>("appType"); }
             set { BackingStore?.Set("appType", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -61,32 +61,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Local address range. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IPv4Range>? LocalAddressRanges
+        public List<Microsoft.Graph.Beta.Models.IPv4Range>? LocalAddressRanges
         {
-            get { return BackingStore?.Get<List<IPv4Range>?>("localAddressRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IPv4Range>?>("localAddressRanges"); }
             set { BackingStore?.Set("localAddressRanges", value); }
         }
 #nullable restore
 #else
-        public List<IPv4Range> LocalAddressRanges
+        public List<Microsoft.Graph.Beta.Models.IPv4Range> LocalAddressRanges
         {
-            get { return BackingStore?.Get<List<IPv4Range>>("localAddressRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IPv4Range>>("localAddressRanges"); }
             set { BackingStore?.Set("localAddressRanges", value); }
         }
 #endif
         /// <summary>Local port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NumberRange>? LocalPortRanges
+        public List<Microsoft.Graph.Beta.Models.NumberRange>? LocalPortRanges
         {
-            get { return BackingStore?.Get<List<NumberRange>?>("localPortRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NumberRange>?>("localPortRanges"); }
             set { BackingStore?.Set("localPortRanges", value); }
         }
 #nullable restore
 #else
-        public List<NumberRange> LocalPortRanges
+        public List<Microsoft.Graph.Beta.Models.NumberRange> LocalPortRanges
         {
-            get { return BackingStore?.Get<List<NumberRange>>("localPortRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NumberRange>>("localPortRanges"); }
             set { BackingStore?.Set("localPortRanges", value); }
         }
 #endif
@@ -131,39 +131,39 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Remote address range. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IPv4Range>? RemoteAddressRanges
+        public List<Microsoft.Graph.Beta.Models.IPv4Range>? RemoteAddressRanges
         {
-            get { return BackingStore?.Get<List<IPv4Range>?>("remoteAddressRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IPv4Range>?>("remoteAddressRanges"); }
             set { BackingStore?.Set("remoteAddressRanges", value); }
         }
 #nullable restore
 #else
-        public List<IPv4Range> RemoteAddressRanges
+        public List<Microsoft.Graph.Beta.Models.IPv4Range> RemoteAddressRanges
         {
-            get { return BackingStore?.Get<List<IPv4Range>>("remoteAddressRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IPv4Range>>("remoteAddressRanges"); }
             set { BackingStore?.Set("remoteAddressRanges", value); }
         }
 #endif
         /// <summary>Remote port range can be set only when protocol is either TCP or UDP (6 or 17). This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NumberRange>? RemotePortRanges
+        public List<Microsoft.Graph.Beta.Models.NumberRange>? RemotePortRanges
         {
-            get { return BackingStore?.Get<List<NumberRange>?>("remotePortRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NumberRange>?>("remotePortRanges"); }
             set { BackingStore?.Set("remotePortRanges", value); }
         }
 #nullable restore
 #else
-        public List<NumberRange> RemotePortRanges
+        public List<Microsoft.Graph.Beta.Models.NumberRange> RemotePortRanges
         {
-            get { return BackingStore?.Get<List<NumberRange>>("remotePortRanges"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NumberRange>>("remotePortRanges"); }
             set { BackingStore?.Set("remotePortRanges", value); }
         }
 #endif
         /// <summary>Specifies the routing policy for a VPN traffic rule.</summary>
-        public VpnTrafficRuleRoutingPolicyType? RoutingPolicyType
+        public Microsoft.Graph.Beta.Models.VpnTrafficRuleRoutingPolicyType? RoutingPolicyType
         {
-            get { return BackingStore?.Get<VpnTrafficRuleRoutingPolicyType?>("routingPolicyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnTrafficRuleRoutingPolicyType?>("routingPolicyType"); }
             set { BackingStore?.Set("routingPolicyType", value); }
         }
         /// <summary>Specify whether the rule applies to inbound traffic or outbound traffic.</summary>
@@ -173,7 +173,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("vpnTrafficDirection", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="VpnTrafficRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VpnTrafficRule"/> and sets the default values.
         /// </summary>
         public VpnTrafficRule()
         {
@@ -183,12 +183,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VpnTrafficRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VpnTrafficRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VpnTrafficRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.VpnTrafficRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VpnTrafficRule();
+            return new Microsoft.Graph.Beta.Models.VpnTrafficRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,17 +199,17 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
-                { "appType", n => { AppType = n.GetEnumValue<VpnTrafficRuleAppType>(); } },
+                { "appType", n => { AppType = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnTrafficRuleAppType>(); } },
                 { "claims", n => { Claims = n.GetStringValue(); } },
-                { "localAddressRanges", n => { LocalAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "localPortRanges", n => { LocalPortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localAddressRanges", n => { LocalAddressRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IPv4Range>(Microsoft.Graph.Beta.Models.IPv4Range.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "localPortRanges", n => { LocalPortRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NumberRange>(Microsoft.Graph.Beta.Models.NumberRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "protocols", n => { Protocols = n.GetIntValue(); } },
-                { "remoteAddressRanges", n => { RemoteAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "remotePortRanges", n => { RemotePortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "routingPolicyType", n => { RoutingPolicyType = n.GetEnumValue<VpnTrafficRuleRoutingPolicyType>(); } },
-                { "vpnTrafficDirection", n => { VpnTrafficDirection = n.GetEnumValue<VpnTrafficDirection>(); } },
+                { "remoteAddressRanges", n => { RemoteAddressRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IPv4Range>(Microsoft.Graph.Beta.Models.IPv4Range.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "remotePortRanges", n => { RemotePortRanges = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NumberRange>(Microsoft.Graph.Beta.Models.NumberRange.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "routingPolicyType", n => { RoutingPolicyType = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnTrafficRuleRoutingPolicyType>(); } },
+                { "vpnTrafficDirection", n => { VpnTrafficDirection = n.GetEnumValue<Microsoft.Graph.Beta.Models.VpnTrafficDirection>(); } },
             };
         }
         /// <summary>
@@ -220,17 +220,17 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("appId", AppId);
-            writer.WriteEnumValue<VpnTrafficRuleAppType>("appType", AppType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnTrafficRuleAppType>("appType", AppType);
             writer.WriteStringValue("claims", Claims);
-            writer.WriteCollectionOfObjectValues<IPv4Range>("localAddressRanges", LocalAddressRanges);
-            writer.WriteCollectionOfObjectValues<NumberRange>("localPortRanges", LocalPortRanges);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IPv4Range>("localAddressRanges", LocalAddressRanges);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NumberRange>("localPortRanges", LocalPortRanges);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("protocols", Protocols);
-            writer.WriteCollectionOfObjectValues<IPv4Range>("remoteAddressRanges", RemoteAddressRanges);
-            writer.WriteCollectionOfObjectValues<NumberRange>("remotePortRanges", RemotePortRanges);
-            writer.WriteEnumValue<VpnTrafficRuleRoutingPolicyType>("routingPolicyType", RoutingPolicyType);
-            writer.WriteEnumValue<VpnTrafficDirection>("vpnTrafficDirection", VpnTrafficDirection);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IPv4Range>("remoteAddressRanges", RemoteAddressRanges);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NumberRange>("remotePortRanges", RemotePortRanges);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnTrafficRuleRoutingPolicyType>("routingPolicyType", RoutingPolicyType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VpnTrafficDirection>("vpnTrafficDirection", VpnTrafficDirection);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

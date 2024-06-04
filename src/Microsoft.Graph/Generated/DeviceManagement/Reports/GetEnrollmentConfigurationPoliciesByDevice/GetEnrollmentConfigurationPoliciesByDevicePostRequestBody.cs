@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurati
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetEnrollmentConfigurationPoliciesByDevicePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice.GetEnrollmentConfigurationPoliciesByDevicePostRequestBody"/> and sets the default values.
         /// </summary>
         public GetEnrollmentConfigurationPoliciesByDevicePostRequestBody()
         {
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurati
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetEnrollmentConfigurationPoliciesByDevicePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice.GetEnrollmentConfigurationPoliciesByDevicePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetEnrollmentConfigurationPoliciesByDevicePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice.GetEnrollmentConfigurationPoliciesByDevicePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetEnrollmentConfigurationPoliciesByDevicePostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice.GetEnrollmentConfigurationPoliciesByDevicePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -57,30 +57,30 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("assignmentFilterLastModifiedDateTime", value); }
         }
         /// <summary>Supported platform types.</summary>
-        public DevicePlatformType? AssignmentFilterPlatform
+        public Microsoft.Graph.Beta.Models.DevicePlatformType? AssignmentFilterPlatform
         {
-            get { return BackingStore?.Get<DevicePlatformType?>("assignmentFilterPlatform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DevicePlatformType?>("assignmentFilterPlatform"); }
             set { BackingStore?.Set("assignmentFilterPlatform", value); }
         }
         /// <summary>Represents type of the assignment filter.</summary>
-        public DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType? AssignmentFilterType
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType?>("assignmentFilterType"); }
             set { BackingStore?.Set("assignmentFilterType", value); }
         }
         /// <summary>A collection of filter types and their corresponding evaluation results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignmentFilterTypeAndEvaluationResult>? AssignmentFilterTypeAndEvaluationResults
+        public List<Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult>? AssignmentFilterTypeAndEvaluationResults
         {
-            get { return BackingStore?.Get<List<AssignmentFilterTypeAndEvaluationResult>?>("assignmentFilterTypeAndEvaluationResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult>?>("assignmentFilterTypeAndEvaluationResults"); }
             set { BackingStore?.Set("assignmentFilterTypeAndEvaluationResults", value); }
         }
 #nullable restore
 #else
-        public List<AssignmentFilterTypeAndEvaluationResult> AssignmentFilterTypeAndEvaluationResults
+        public List<Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult> AssignmentFilterTypeAndEvaluationResults
         {
-            get { return BackingStore?.Get<List<AssignmentFilterTypeAndEvaluationResult>>("assignmentFilterTypeAndEvaluationResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult>>("assignmentFilterTypeAndEvaluationResults"); }
             set { BackingStore?.Set("assignmentFilterTypeAndEvaluationResults", value); }
         }
 #endif
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("evaluationDateTime", value); }
         }
         /// <summary>Supported evaluation results for filter.</summary>
-        public AssignmentFilterEvaluationResult? EvaluationResult
+        public Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationResult? EvaluationResult
         {
-            get { return BackingStore?.Get<AssignmentFilterEvaluationResult?>("evaluationResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationResult?>("evaluationResult"); }
             set { BackingStore?.Set("evaluationResult", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentFilterEvaluationSummary"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary"/> and sets the default values.
         /// </summary>
         public AssignmentFilterEvaluationSummary()
         {
@@ -125,12 +125,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignmentFilterEvaluationSummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignmentFilterEvaluationSummary CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignmentFilterEvaluationSummary();
+            return new Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationSummary();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "assignmentFilterDisplayName", n => { AssignmentFilterDisplayName = n.GetStringValue(); } },
                 { "assignmentFilterId", n => { AssignmentFilterId = n.GetStringValue(); } },
                 { "assignmentFilterLastModifiedDateTime", n => { AssignmentFilterLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "assignmentFilterPlatform", n => { AssignmentFilterPlatform = n.GetEnumValue<DevicePlatformType>(); } },
-                { "assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
-                { "assignmentFilterTypeAndEvaluationResults", n => { AssignmentFilterTypeAndEvaluationResults = n.GetCollectionOfObjectValues<AssignmentFilterTypeAndEvaluationResult>(AssignmentFilterTypeAndEvaluationResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignmentFilterPlatform", n => { AssignmentFilterPlatform = n.GetEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>(); } },
+                { "assignmentFilterType", n => { AssignmentFilterType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>(); } },
+                { "assignmentFilterTypeAndEvaluationResults", n => { AssignmentFilterTypeAndEvaluationResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult>(Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "evaluationDateTime", n => { EvaluationDateTime = n.GetDateTimeOffsetValue(); } },
-                { "evaluationResult", n => { EvaluationResult = n.GetEnumValue<AssignmentFilterEvaluationResult>(); } },
+                { "evaluationResult", n => { EvaluationResult = n.GetEnumValue<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationResult>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -161,11 +161,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("assignmentFilterDisplayName", AssignmentFilterDisplayName);
             writer.WriteStringValue("assignmentFilterId", AssignmentFilterId);
             writer.WriteDateTimeOffsetValue("assignmentFilterLastModifiedDateTime", AssignmentFilterLastModifiedDateTime);
-            writer.WriteEnumValue<DevicePlatformType>("assignmentFilterPlatform", AssignmentFilterPlatform);
-            writer.WriteEnumValue<DeviceAndAppManagementAssignmentFilterType>("assignmentFilterType", AssignmentFilterType);
-            writer.WriteCollectionOfObjectValues<AssignmentFilterTypeAndEvaluationResult>("assignmentFilterTypeAndEvaluationResults", AssignmentFilterTypeAndEvaluationResults);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>("assignmentFilterPlatform", AssignmentFilterPlatform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType>("assignmentFilterType", AssignmentFilterType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignmentFilterTypeAndEvaluationResult>("assignmentFilterTypeAndEvaluationResults", AssignmentFilterTypeAndEvaluationResults);
             writer.WriteDateTimeOffsetValue("evaluationDateTime", EvaluationDateTime);
-            writer.WriteEnumValue<AssignmentFilterEvaluationResult>("evaluationResult", EvaluationResult);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationResult>("evaluationResult", EvaluationResult);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcBulkResize : CloudPcBulkAction, IParsable
+    public class CloudPcBulkResize : Microsoft.Graph.Beta.Models.CloudPcBulkAction, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The target service plan ID of the resize configuration with new vCPU and storage size.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcBulkResize"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkResize"/> and sets the default values.
         /// </summary>
         public CloudPcBulkResize() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcBulkResize"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcBulkResize"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcBulkResize CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcBulkResize CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcBulkResize();
+            return new Microsoft.Graph.Beta.Models.CloudPcBulkResize();
         }
         /// <summary>
         /// The deserialization information for the current model

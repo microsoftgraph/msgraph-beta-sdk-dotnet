@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
     public class GetRoleScopeTagsByResourceWithResourceRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetRoleScopeTagsByResourceWithResourceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
             if (!string.IsNullOrWhiteSpace(resource)) PathParameters.Add("resource", resource);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetRoleScopeTagsByResourceWithResourceRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,49 +36,49 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
         /// <summary>
         /// Invoke function getRoleScopeTagsByResource
         /// </summary>
-        /// <returns>A <see cref="GetRoleScopeTagsByResourceWithResourceGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRoleScopeTagsByResourceWithResourceGetResponse?> GetAsGetRoleScopeTagsByResourceWithResourceGetResponseAsync(Action<RequestConfiguration<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceGetResponse?> GetAsGetRoleScopeTagsByResourceWithResourceGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder.GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetRoleScopeTagsByResourceWithResourceGetResponse> GetAsGetRoleScopeTagsByResourceWithResourceGetResponseAsync(Action<RequestConfiguration<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceGetResponse> GetAsGetRoleScopeTagsByResourceWithResourceGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder.GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetRoleScopeTagsByResourceWithResourceGetResponse>(requestInfo, GetRoleScopeTagsByResourceWithResourceGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceGetResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getRoleScopeTagsByResource
         /// </summary>
-        /// <returns>A <see cref="GetRoleScopeTagsByResourceWithResourceResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetRoleScopeTagsByResourceWithResourceGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetRoleScopeTagsByResourceWithResourceResponse?> GetAsync(Action<RequestConfiguration<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder.GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetRoleScopeTagsByResourceWithResourceResponse> GetAsync(Action<RequestConfiguration<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder.GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetRoleScopeTagsByResourceWithResourceResponse>(requestInfo, GetRoleScopeTagsByResourceWithResourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceResponse>(requestInfo, Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getRoleScopeTagsByResource
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder.GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder.GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetRoleScopeTagsByResourceWithResourceRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetRoleScopeTagsByResourceWithResourceRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetRoleScopeTagsByResourceWithResourceRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getRoleScopeTagsByResource
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration : RequestConfiguration<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>
+        public class GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource.GetRoleScopeTagsByResourceWithResourceRequestBuilder.GetRoleScopeTagsByResourceWithResourceRequestBuilderGetQueryParameters>
         {
         }
     }

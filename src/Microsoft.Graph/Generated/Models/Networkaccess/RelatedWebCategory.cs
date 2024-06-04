@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class RelatedWebCategory : RelatedResource, IParsable
+    public class RelatedWebCategory : Microsoft.Graph.Beta.Models.Networkaccess.RelatedResource, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The webCategoryName property</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RelatedWebCategory"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.RelatedWebCategory"/> and sets the default values.
         /// </summary>
         public RelatedWebCategory() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RelatedWebCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.RelatedWebCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RelatedWebCategory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.RelatedWebCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RelatedWebCategory();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.RelatedWebCategory();
         }
         /// <summary>
         /// The deserialization information for the current model

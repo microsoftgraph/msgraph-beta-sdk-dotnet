@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelatio
         /// <summary>The relationships property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobileAppRelationship>? Relationships
+        public List<Microsoft.Graph.Beta.Models.MobileAppRelationship>? Relationships
         {
-            get { return BackingStore?.Get<List<MobileAppRelationship>?>("relationships"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppRelationship>?>("relationships"); }
             set { BackingStore?.Set("relationships", value); }
         }
 #nullable restore
 #else
-        public List<MobileAppRelationship> Relationships
+        public List<Microsoft.Graph.Beta.Models.MobileAppRelationship> Relationships
         {
-            get { return BackingStore?.Get<List<MobileAppRelationship>>("relationships"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppRelationship>>("relationships"); }
             set { BackingStore?.Set("relationships", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdateRelationshipsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships.UpdateRelationshipsPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateRelationshipsPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelatio
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateRelationshipsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships.UpdateRelationshipsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateRelationshipsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships.UpdateRelationshipsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateRelationshipsPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelationships.UpdateRelationshipsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelatio
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<MobileAppRelationship>(MobileAppRelationship.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "relationships", n => { Relationships = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppRelationship>(Microsoft.Graph.Beta.Models.MobileAppRelationship.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.UpdateRelatio
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<MobileAppRelationship>("relationships", Relationships);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobileAppRelationship>("relationships", Relationships);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

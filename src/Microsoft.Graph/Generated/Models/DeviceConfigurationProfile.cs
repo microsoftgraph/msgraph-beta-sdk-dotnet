@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The listing service profile entity contains the meta data of an Intune configuration profile 
     /// </summary>
-    public class DeviceConfigurationProfile : Entity, IParsable
+    public class DeviceConfigurationProfile : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Account Id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -108,12 +108,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceConfigurationProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceConfigurationProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceConfigurationProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceConfigurationProfile();
+            return new Microsoft.Graph.Beta.Models.DeviceConfigurationProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -127,9 +127,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "configurationTechnologies", n => { ConfigurationTechnologies = n.GetIntValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "platformType", n => { PlatformType = n.GetEnumValue<PlatformType>(); } },
+                { "platformType", n => { PlatformType = n.GetEnumValue<Microsoft.Graph.Beta.Models.PlatformType>(); } },
                 { "profileName", n => { ProfileName = n.GetStringValue(); } },
-                { "profileType", n => { ProfileType = n.GetEnumValue<ProfileType>(); } },
+                { "profileType", n => { ProfileType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ProfileType>(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
             };
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("configurationTechnologies", ConfigurationTechnologies);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<PlatformType>("platformType", PlatformType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PlatformType>("platformType", PlatformType);
             writer.WriteStringValue("profileName", ProfileName);
-            writer.WriteEnumValue<ProfileType>("profileType", ProfileType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ProfileType>("profileType", ProfileType);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteStringValue("templateId", TemplateId);
         }

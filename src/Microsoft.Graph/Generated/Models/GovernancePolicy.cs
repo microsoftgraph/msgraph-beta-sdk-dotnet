@@ -22,32 +22,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The decisionMakerCriteria property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GovernanceCriteria>? DecisionMakerCriteria
+        public List<Microsoft.Graph.Beta.Models.GovernanceCriteria>? DecisionMakerCriteria
         {
-            get { return BackingStore?.Get<List<GovernanceCriteria>?>("decisionMakerCriteria"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceCriteria>?>("decisionMakerCriteria"); }
             set { BackingStore?.Set("decisionMakerCriteria", value); }
         }
 #nullable restore
 #else
-        public List<GovernanceCriteria> DecisionMakerCriteria
+        public List<Microsoft.Graph.Beta.Models.GovernanceCriteria> DecisionMakerCriteria
         {
-            get { return BackingStore?.Get<List<GovernanceCriteria>>("decisionMakerCriteria"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GovernanceCriteria>>("decisionMakerCriteria"); }
             set { BackingStore?.Set("decisionMakerCriteria", value); }
         }
 #endif
         /// <summary>The notificationPolicy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceNotificationPolicy? NotificationPolicy
+        public Microsoft.Graph.Beta.Models.GovernanceNotificationPolicy? NotificationPolicy
         {
-            get { return BackingStore?.Get<GovernanceNotificationPolicy?>("notificationPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceNotificationPolicy?>("notificationPolicy"); }
             set { BackingStore?.Set("notificationPolicy", value); }
         }
 #nullable restore
 #else
-        public GovernanceNotificationPolicy NotificationPolicy
+        public Microsoft.Graph.Beta.Models.GovernanceNotificationPolicy NotificationPolicy
         {
-            get { return BackingStore?.Get<GovernanceNotificationPolicy>("notificationPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceNotificationPolicy>("notificationPolicy"); }
             set { BackingStore?.Set("notificationPolicy", value); }
         }
 #endif
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GovernancePolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GovernancePolicy"/> and sets the default values.
         /// </summary>
         public GovernancePolicy()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernancePolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernancePolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GovernancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.GovernancePolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernancePolicy();
+            return new Microsoft.Graph.Beta.Models.GovernancePolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -93,8 +93,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "decisionMakerCriteria", n => { DecisionMakerCriteria = n.GetCollectionOfObjectValues<GovernanceCriteria>(GovernanceCriteria.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "notificationPolicy", n => { NotificationPolicy = n.GetObjectValue<GovernanceNotificationPolicy>(GovernanceNotificationPolicy.CreateFromDiscriminatorValue); } },
+                { "decisionMakerCriteria", n => { DecisionMakerCriteria = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceCriteria>(Microsoft.Graph.Beta.Models.GovernanceCriteria.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "notificationPolicy", n => { NotificationPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceNotificationPolicy>(Microsoft.Graph.Beta.Models.GovernanceNotificationPolicy.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<GovernanceCriteria>("decisionMakerCriteria", DecisionMakerCriteria);
-            writer.WriteObjectValue<GovernanceNotificationPolicy>("notificationPolicy", NotificationPolicy);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GovernanceCriteria>("decisionMakerCriteria", DecisionMakerCriteria);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceNotificationPolicy>("notificationPolicy", NotificationPolicy);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

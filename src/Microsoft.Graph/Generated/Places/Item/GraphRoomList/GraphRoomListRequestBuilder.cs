@@ -21,17 +21,17 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
     public class GraphRoomListRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the rooms property of the microsoft.graph.roomList entity.</summary>
-        public RoomsRequestBuilder Rooms
+        public Microsoft.Graph.Beta.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder Rooms
         {
-            get => new RoomsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Places.Item.GraphRoomList.Rooms.RoomsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.</summary>
-        public WorkspacesRequestBuilder Workspaces
+        public Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.WorkspacesRequestBuilder Workspaces
         {
-            get => new WorkspacesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Places.Item.GraphRoomList.Workspaces.WorkspacesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphRoomListRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GraphRoomListRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,35 +49,35 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
         /// <summary>
         /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
         /// </summary>
-        /// <returns>A <see cref="RoomList"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RoomList"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<RoomList?> GetAsync(Action<RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.RoomList?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder.GraphRoomListRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<RoomList> GetAsync(Action<RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.RoomList> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder.GraphRoomListRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<RoomList>(requestInfo, RoomList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.RoomList>(requestInfo, Microsoft.Graph.Beta.Models.RoomList.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to manage the rooms property of the microsoft.graph.roomList entity.
         /// </summary>
-        /// <returns>A <see cref="RoomsWithPlaceIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId.RoomsWithPlaceIdRequestBuilder"/></returns>
         /// <param name="placeId">Alternate key of room</param>
-        public RoomsWithPlaceIdRequestBuilder RoomsWithPlaceId(string placeId)
+        public Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId.RoomsWithPlaceIdRequestBuilder RoomsWithPlaceId(string placeId)
         {
             if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
-            return new RoomsWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
+            return new Microsoft.Graph.Beta.Places.Item.GraphRoomList.RoomsWithPlaceId.RoomsWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
@@ -86,11 +86,11 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder.GraphRoomListRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder.GraphRoomListRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -101,21 +101,21 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GraphRoomListRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GraphRoomListRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder WithUrl(string rawUrl)
         {
-            return new GraphRoomListRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to manage the workspaces property of the microsoft.graph.roomList entity.
         /// </summary>
-        /// <returns>A <see cref="WorkspacesWithPlaceIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Places.Item.GraphRoomList.WorkspacesWithPlaceId.WorkspacesWithPlaceIdRequestBuilder"/></returns>
         /// <param name="placeId">Alternate key of workspace</param>
-        public WorkspacesWithPlaceIdRequestBuilder WorkspacesWithPlaceId(string placeId)
+        public Microsoft.Graph.Beta.Places.Item.GraphRoomList.WorkspacesWithPlaceId.WorkspacesWithPlaceIdRequestBuilder WorkspacesWithPlaceId(string placeId)
         {
             if(string.IsNullOrEmpty(placeId)) throw new ArgumentNullException(nameof(placeId));
-            return new WorkspacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
+            return new Microsoft.Graph.Beta.Places.Item.GraphRoomList.WorkspacesWithPlaceId.WorkspacesWithPlaceIdRequestBuilder(PathParameters, RequestAdapter, placeId);
         }
         /// <summary>
         /// Get the item of type microsoft.graph.place as microsoft.graph.roomList
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.Places.Item.GraphRoomList
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GraphRoomListRequestBuilderGetRequestConfiguration : RequestConfiguration<GraphRoomListRequestBuilderGetQueryParameters>
+        public class GraphRoomListRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Places.Item.GraphRoomList.GraphRoomListRequestBuilder.GraphRoomListRequestBuilderGetQueryParameters>
         {
         }
     }

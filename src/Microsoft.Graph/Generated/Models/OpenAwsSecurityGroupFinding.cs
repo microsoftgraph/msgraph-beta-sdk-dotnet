@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OpenAwsSecurityGroupFinding : Finding, IParsable
+    public class OpenAwsSecurityGroupFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A set of AWS EC2 compute instances related to this open security group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AssignedComputeInstanceDetails>? AssignedComputeInstancesDetails
+        public List<Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails>? AssignedComputeInstancesDetails
         {
-            get { return BackingStore?.Get<List<AssignedComputeInstanceDetails>?>("assignedComputeInstancesDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails>?>("assignedComputeInstancesDetails"); }
             set { BackingStore?.Set("assignedComputeInstancesDetails", value); }
         }
 #nullable restore
 #else
-        public List<AssignedComputeInstanceDetails> AssignedComputeInstancesDetails
+        public List<Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails> AssignedComputeInstancesDetails
         {
-            get { return BackingStore?.Get<List<AssignedComputeInstanceDetails>>("assignedComputeInstancesDetails"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails>>("assignedComputeInstancesDetails"); }
             set { BackingStore?.Set("assignedComputeInstancesDetails", value); }
         }
 #endif
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The securityGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsAuthorizationSystemResource? SecurityGroup
+        public Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource? SecurityGroup
         {
-            get { return BackingStore?.Get<AwsAuthorizationSystemResource?>("securityGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource?>("securityGroup"); }
             set { BackingStore?.Set("securityGroup", value); }
         }
 #nullable restore
 #else
-        public AwsAuthorizationSystemResource SecurityGroup
+        public Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource SecurityGroup
         {
-            get { return BackingStore?.Get<AwsAuthorizationSystemResource>("securityGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>("securityGroup"); }
             set { BackingStore?.Set("securityGroup", value); }
         }
 #endif
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OpenAwsSecurityGroupFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OpenAwsSecurityGroupFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OpenAwsSecurityGroupFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OpenAwsSecurityGroupFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OpenAwsSecurityGroupFinding();
+            return new Microsoft.Graph.Beta.Models.OpenAwsSecurityGroupFinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignedComputeInstancesDetails", n => { AssignedComputeInstancesDetails = n.GetCollectionOfObjectValues<AssignedComputeInstanceDetails>(AssignedComputeInstanceDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedComputeInstancesDetails", n => { AssignedComputeInstancesDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails>(Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "inboundPorts", n => { InboundPorts = n.GetObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>(Microsoft.Graph.Beta.Models.InboundPorts.CreateFromDiscriminatorValue); } },
-                { "securityGroup", n => { SecurityGroup = n.GetObjectValue<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "securityGroup", n => { SecurityGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource.CreateFromDiscriminatorValue); } },
                 { "totalStorageBucketCount", n => { TotalStorageBucketCount = n.GetIntValue(); } },
             };
         }
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AssignedComputeInstanceDetails>("assignedComputeInstancesDetails", AssignedComputeInstancesDetails);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignedComputeInstanceDetails>("assignedComputeInstancesDetails", AssignedComputeInstancesDetails);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>("inboundPorts", InboundPorts);
-            writer.WriteObjectValue<AwsAuthorizationSystemResource>("securityGroup", SecurityGroup);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>("securityGroup", SecurityGroup);
             writer.WriteIntValue("totalStorageBucketCount", TotalStorageBucketCount);
         }
     }

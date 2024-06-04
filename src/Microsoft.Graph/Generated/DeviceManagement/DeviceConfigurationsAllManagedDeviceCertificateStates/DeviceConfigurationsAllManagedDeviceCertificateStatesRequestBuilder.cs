@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
     public class DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the deviceConfigurationsAllManagedDeviceCertificateStates property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of managedAllDeviceCertificateState</param>
-        /// <returns>A <see cref="ManagedAllDeviceCertificateStateItemRequestBuilder"/></returns>
-        public ManagedAllDeviceCertificateStateItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.Item.ManagedAllDeviceCertificateStateItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.Item.ManagedAllDeviceCertificateStateItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("managedAllDeviceCertificateState%2Did", position);
-                return new ManagedAllDeviceCertificateStateItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.Item.ManagedAllDeviceCertificateStateItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
         /// <summary>
         /// Summary of all certificates for all devices.
         /// </summary>
-        /// <returns>A <see cref="ManagedAllDeviceCertificateStateCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateStateCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAllDeviceCertificateStateCollectionResponse?> GetAsync(Action<RequestConfiguration<DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateStateCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAllDeviceCertificateStateCollectionResponse> GetAsync(Action<RequestConfiguration<DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateStateCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAllDeviceCertificateStateCollectionResponse>(requestInfo, ManagedAllDeviceCertificateStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateStateCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to deviceConfigurationsAllManagedDeviceCertificateStates for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="ManagedAllDeviceCertificateState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<ManagedAllDeviceCertificateState?> PostAsync(ManagedAllDeviceCertificateState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState?> PostAsync(Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<ManagedAllDeviceCertificateState> PostAsync(ManagedAllDeviceCertificateState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState> PostAsync(Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<ManagedAllDeviceCertificateState>(requestInfo, ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>(requestInfo, Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Summary of all certificates for all devices.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(ManagedAllDeviceCertificateState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(ManagedAllDeviceCertificateState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Summary of all certificates for all devices.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDe
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetRequestConfiguration : RequestConfiguration<DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>
+        public class DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationsAllManagedDeviceCertificateStates.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilder.DeviceConfigurationsAllManagedDeviceCertificateStatesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

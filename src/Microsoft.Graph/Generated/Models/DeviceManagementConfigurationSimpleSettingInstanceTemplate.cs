@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Simple Setting Instance Template
     /// </summary>
-    public class DeviceManagementConfigurationSimpleSettingInstanceTemplate : DeviceManagementConfigurationSettingInstanceTemplate, IParsable
+    public class DeviceManagementConfigurationSimpleSettingInstanceTemplate : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingInstanceTemplate, IParsable
     {
         /// <summary>Simple Setting Value Template</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementConfigurationSimpleSettingValueTemplate? SimpleSettingValueTemplate
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate? SimpleSettingValueTemplate
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValueTemplate?>("simpleSettingValueTemplate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate?>("simpleSettingValueTemplate"); }
             set { BackingStore?.Set("simpleSettingValueTemplate", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementConfigurationSimpleSettingValueTemplate SimpleSettingValueTemplate
+        public Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate SimpleSettingValueTemplate
         {
-            get { return BackingStore?.Get<DeviceManagementConfigurationSimpleSettingValueTemplate>("simpleSettingValueTemplate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate>("simpleSettingValueTemplate"); }
             set { BackingStore?.Set("simpleSettingValueTemplate", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationSimpleSettingInstanceTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingInstanceTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSimpleSettingInstanceTemplate() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationSimpleSettingInstanceTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingInstanceTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationSimpleSettingInstanceTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingInstanceTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationSimpleSettingInstanceTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingInstanceTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "simpleSettingValueTemplate", n => { SimpleSettingValueTemplate = n.GetObjectValue<DeviceManagementConfigurationSimpleSettingValueTemplate>(DeviceManagementConfigurationSimpleSettingValueTemplate.CreateFromDiscriminatorValue); } },
+                { "simpleSettingValueTemplate", n => { SimpleSettingValueTemplate = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate>(Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeviceManagementConfigurationSimpleSettingValueTemplate>("simpleSettingValueTemplate", SimpleSettingValueTemplate);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSimpleSettingValueTemplate>("simpleSettingValueTemplate", SimpleSettingValueTemplate);
         }
     }
 }

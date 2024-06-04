@@ -36,16 +36,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>If approval is required, the one or two elements of this collection define each of the stages of approval. An empty array if no approval is required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ApprovalStage>? ApprovalStages
+        public List<Microsoft.Graph.Beta.Models.ApprovalStage>? ApprovalStages
         {
-            get { return BackingStore?.Get<List<ApprovalStage>?>("approvalStages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApprovalStage>?>("approvalStages"); }
             set { BackingStore?.Set("approvalStages", value); }
         }
 #nullable restore
 #else
-        public List<ApprovalStage> ApprovalStages
+        public List<Microsoft.Graph.Beta.Models.ApprovalStage> ApprovalStages
         {
-            get { return BackingStore?.Get<List<ApprovalStage>>("approvalStages"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ApprovalStage>>("approvalStages"); }
             set { BackingStore?.Set("approvalStages", value); }
         }
 #endif
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApprovalSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ApprovalSettings"/> and sets the default values.
         /// </summary>
         public ApprovalSettings()
         {
@@ -96,12 +96,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApprovalSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ApprovalSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApprovalSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ApprovalSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApprovalSettings();
+            return new Microsoft.Graph.Beta.Models.ApprovalSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "approvalMode", n => { ApprovalMode = n.GetStringValue(); } },
-                { "approvalStages", n => { ApprovalStages = n.GetCollectionOfObjectValues<ApprovalStage>(ApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "approvalStages", n => { ApprovalStages = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApprovalStage>(Microsoft.Graph.Beta.Models.ApprovalStage.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isApprovalRequired", n => { IsApprovalRequired = n.GetBoolValue(); } },
                 { "isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
                 { "isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
@@ -127,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("approvalMode", ApprovalMode);
-            writer.WriteCollectionOfObjectValues<ApprovalStage>("approvalStages", ApprovalStages);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ApprovalStage>("approvalStages", ApprovalStages);
             writer.WriteBoolValue("isApprovalRequired", IsApprovalRequired);
             writer.WriteBoolValue("isApprovalRequiredForExtension", IsApprovalRequiredForExtension);
             writer.WriteBoolValue("isRequestorJustificationRequired", IsRequestorJustificationRequired);

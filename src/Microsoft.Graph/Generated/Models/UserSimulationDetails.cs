@@ -90,53 +90,53 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of simulation events of a user in the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSimulationEventInfo>? SimulationEvents
+        public List<Microsoft.Graph.Beta.Models.UserSimulationEventInfo>? SimulationEvents
         {
-            get { return BackingStore?.Get<List<UserSimulationEventInfo>?>("simulationEvents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSimulationEventInfo>?>("simulationEvents"); }
             set { BackingStore?.Set("simulationEvents", value); }
         }
 #nullable restore
 #else
-        public List<UserSimulationEventInfo> SimulationEvents
+        public List<Microsoft.Graph.Beta.Models.UserSimulationEventInfo> SimulationEvents
         {
-            get { return BackingStore?.Get<List<UserSimulationEventInfo>>("simulationEvents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSimulationEventInfo>>("simulationEvents"); }
             set { BackingStore?.Set("simulationEvents", value); }
         }
 #endif
         /// <summary>The user in an attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AttackSimulationUser? SimulationUser
+        public Microsoft.Graph.Beta.Models.AttackSimulationUser? SimulationUser
         {
-            get { return BackingStore?.Get<AttackSimulationUser?>("simulationUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser?>("simulationUser"); }
             set { BackingStore?.Set("simulationUser", value); }
         }
 #nullable restore
 #else
-        public AttackSimulationUser SimulationUser
+        public Microsoft.Graph.Beta.Models.AttackSimulationUser SimulationUser
         {
-            get { return BackingStore?.Get<AttackSimulationUser>("simulationUser"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>("simulationUser"); }
             set { BackingStore?.Set("simulationUser", value); }
         }
 #endif
         /// <summary>List of training events of a user in the attack simulation and training campaign.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserTrainingEventInfo>? TrainingEvents
+        public List<Microsoft.Graph.Beta.Models.UserTrainingEventInfo>? TrainingEvents
         {
-            get { return BackingStore?.Get<List<UserTrainingEventInfo>?>("trainingEvents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserTrainingEventInfo>?>("trainingEvents"); }
             set { BackingStore?.Set("trainingEvents", value); }
         }
 #nullable restore
 #else
-        public List<UserTrainingEventInfo> TrainingEvents
+        public List<Microsoft.Graph.Beta.Models.UserTrainingEventInfo> TrainingEvents
         {
-            get { return BackingStore?.Get<List<UserTrainingEventInfo>>("trainingEvents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserTrainingEventInfo>>("trainingEvents"); }
             set { BackingStore?.Set("trainingEvents", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserSimulationDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UserSimulationDetails"/> and sets the default values.
         /// </summary>
         public UserSimulationDetails()
         {
@@ -146,12 +146,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserSimulationDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserSimulationDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserSimulationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.UserSimulationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserSimulationDetails();
+            return new Microsoft.Graph.Beta.Models.UserSimulationDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,9 +169,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "latestSimulationActivity", n => { LatestSimulationActivity = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "reportedPhishDateTime", n => { ReportedPhishDateTime = n.GetDateTimeOffsetValue(); } },
-                { "simulationEvents", n => { SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>(UserSimulationEventInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "simulationUser", n => { SimulationUser = n.GetObjectValue<AttackSimulationUser>(AttackSimulationUser.CreateFromDiscriminatorValue); } },
-                { "trainingEvents", n => { TrainingEvents = n.GetCollectionOfObjectValues<UserTrainingEventInfo>(UserTrainingEventInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "simulationEvents", n => { SimulationEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSimulationEventInfo>(Microsoft.Graph.Beta.Models.UserSimulationEventInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "simulationUser", n => { SimulationUser = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttackSimulationUser>(Microsoft.Graph.Beta.Models.AttackSimulationUser.CreateFromDiscriminatorValue); } },
+                { "trainingEvents", n => { TrainingEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserTrainingEventInfo>(Microsoft.Graph.Beta.Models.UserTrainingEventInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -189,9 +189,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("latestSimulationActivity", LatestSimulationActivity);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("reportedPhishDateTime", ReportedPhishDateTime);
-            writer.WriteCollectionOfObjectValues<UserSimulationEventInfo>("simulationEvents", SimulationEvents);
-            writer.WriteObjectValue<AttackSimulationUser>("simulationUser", SimulationUser);
-            writer.WriteCollectionOfObjectValues<UserTrainingEventInfo>("trainingEvents", TrainingEvents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSimulationEventInfo>("simulationEvents", SimulationEvents);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttackSimulationUser>("simulationUser", SimulationUser);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserTrainingEventInfo>("trainingEvents", TrainingEvents);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

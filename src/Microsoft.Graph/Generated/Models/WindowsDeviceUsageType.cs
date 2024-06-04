@@ -7,11 +7,14 @@ namespace Microsoft.Graph.Beta.Models
     public enum WindowsDeviceUsageType
     #pragma warning restore CS1591
     {
-        /// <summary>Single User Device Type</summary>
+        /// <summary>Default. Indicates that a device is a single-user device.</summary>
         [EnumMember(Value = "singleUser")]
         SingleUser,
-        /// <summary>Shared Device Type</summary>
+        /// <summary>Indicates that a device is a multi-user device.</summary>
         [EnumMember(Value = "shared")]
         Shared,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        [EnumMember(Value = "unknownFutureValue")]
+        UnknownFutureValue,
     }
 }

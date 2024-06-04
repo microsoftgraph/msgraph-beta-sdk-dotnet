@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExactMatchSession : ExactMatchSessionBase, IParsable
+    public class ExactMatchSession : Microsoft.Graph.Beta.Models.ExactMatchSessionBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The checksum property</summary>
@@ -99,16 +99,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The uploadAgent property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ExactMatchUploadAgent? UploadAgent
+        public Microsoft.Graph.Beta.Models.ExactMatchUploadAgent? UploadAgent
         {
-            get { return BackingStore?.Get<ExactMatchUploadAgent?>("uploadAgent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent?>("uploadAgent"); }
             set { BackingStore?.Set("uploadAgent", value); }
         }
 #nullable restore
 #else
-        public ExactMatchUploadAgent UploadAgent
+        public Microsoft.Graph.Beta.Models.ExactMatchUploadAgent UploadAgent
         {
-            get { return BackingStore?.Get<ExactMatchUploadAgent>("uploadAgent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent>("uploadAgent"); }
             set { BackingStore?.Set("uploadAgent", value); }
         }
 #endif
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExactMatchSession"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExactMatchSession"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExactMatchSession CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExactMatchSession CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExactMatchSession();
+            return new Microsoft.Graph.Beta.Models.ExactMatchSession();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "fileName", n => { FileName = n.GetStringValue(); } },
                 { "rowsPerBlock", n => { RowsPerBlock = n.GetIntValue(); } },
                 { "salt", n => { Salt = n.GetStringValue(); } },
-                { "uploadAgent", n => { UploadAgent = n.GetObjectValue<ExactMatchUploadAgent>(ExactMatchUploadAgent.CreateFromDiscriminatorValue); } },
+                { "uploadAgent", n => { UploadAgent = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent>(Microsoft.Graph.Beta.Models.ExactMatchUploadAgent.CreateFromDiscriminatorValue); } },
                 { "uploadAgentId", n => { UploadAgentId = n.GetStringValue(); } },
             };
         }
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("fileName", FileName);
             writer.WriteIntValue("rowsPerBlock", RowsPerBlock);
             writer.WriteStringValue("salt", Salt);
-            writer.WriteObjectValue<ExactMatchUploadAgent>("uploadAgent", UploadAgent);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExactMatchUploadAgent>("uploadAgent", UploadAgent);
             writer.WriteStringValue("uploadAgentId", UploadAgentId);
         }
     }

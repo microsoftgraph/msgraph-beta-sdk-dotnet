@@ -91,24 +91,24 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         }
 #endif
         /// <summary>The list of content experiences the connection will participate in. Possible values are search.</summary>
-        public ContentExperienceType? EnabledContentExperiences
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.ContentExperienceType? EnabledContentExperiences
         {
-            get { return BackingStore?.Get<ContentExperienceType?>("enabledContentExperiences"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ContentExperienceType?>("enabledContentExperiences"); }
             set { BackingStore?.Set("enabledContentExperiences", value); }
         }
         /// <summary>The groups property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalGroup>? Groups
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup>? Groups
         {
-            get { return BackingStore?.Get<List<ExternalGroup>?>("groups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup>?>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #nullable restore
 #else
-        public List<ExternalGroup> Groups
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup> Groups
         {
-            get { return BackingStore?.Get<List<ExternalGroup>>("groups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup>>("groups"); }
             set { BackingStore?.Set("groups", value); }
         }
 #endif
@@ -121,16 +121,16 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>The items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ExternalItem>? Items
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem>? Items
         {
-            get { return BackingStore?.Get<List<ExternalItem>?>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem>?>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #nullable restore
 #else
-        public List<ExternalItem> Items
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem> Items
         {
-            get { return BackingStore?.Get<List<ExternalItem>>("items"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
 #endif
@@ -153,32 +153,32 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         /// <summary>The operations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConnectionOperation>? Operations
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation>? Operations
         {
-            get { return BackingStore?.Get<List<ConnectionOperation>?>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation>?>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #nullable restore
 #else
-        public List<ConnectionOperation> Operations
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation> Operations
         {
-            get { return BackingStore?.Get<List<ConnectionOperation>>("operations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
 #endif
         /// <summary>The quota property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConnectionQuota? Quota
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionQuota? Quota
         {
-            get { return BackingStore?.Get<ConnectionQuota?>("quota"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionQuota?>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
 #nullable restore
 #else
-        public ConnectionQuota Quota
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionQuota Quota
         {
-            get { return BackingStore?.Get<ConnectionQuota>("quota"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionQuota>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
 #endif
@@ -215,20 +215,20 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
         }
 #endif
         /// <summary>Indicates the current state of the connection. Possible values are draft, ready, obsolete, and limitExceeded. Required.</summary>
-        public ConnectionState? State
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionState? State
         {
-            get { return BackingStore?.Get<ConnectionState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExternalConnection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExternalConnection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExternalConnection();
+            return new Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalConnection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -243,16 +243,16 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
                 { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>(Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
                 { "connectorId", n => { ConnectorId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "enabledContentExperiences", n => { EnabledContentExperiences = n.GetEnumValue<ContentExperienceType>(); } },
-                { "groups", n => { Groups = n.GetCollectionOfObjectValues<ExternalGroup>(ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "enabledContentExperiences", n => { EnabledContentExperiences = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ContentExperienceType>(); } },
+                { "groups", n => { Groups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup>(Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "ingestedItemsCount", n => { IngestedItemsCount = n.GetLongValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<ExternalItem>(ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem>(Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "operations", n => { Operations = n.GetCollectionOfObjectValues<ConnectionOperation>(ConnectionOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "quota", n => { Quota = n.GetObjectValue<ConnectionQuota>(ConnectionQuota.CreateFromDiscriminatorValue); } },
+                { "operations", n => { Operations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation>(Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "quota", n => { Quota = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionQuota>(Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionQuota.CreateFromDiscriminatorValue); } },
                 { "schema", n => { Schema = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>(Microsoft.Graph.Beta.Models.ExternalConnectors.Schema.CreateFromDiscriminatorValue); } },
                 { "searchSettings", n => { SearchSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings>(Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetEnumValue<ConnectionState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionState>(); } },
             };
         }
         /// <summary>
@@ -268,13 +268,13 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>("configuration", Configuration);
             writer.WriteStringValue("connectorId", ConnectorId);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<ContentExperienceType>("enabledContentExperiences", EnabledContentExperiences);
-            writer.WriteCollectionOfObjectValues<ExternalGroup>("groups", Groups);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ContentExperienceType>("enabledContentExperiences", EnabledContentExperiences);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalGroup>("groups", Groups);
             writer.WriteLongValue("ingestedItemsCount", IngestedItemsCount);
-            writer.WriteCollectionOfObjectValues<ExternalItem>("items", Items);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ExternalItem>("items", Items);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfObjectValues<ConnectionOperation>("operations", Operations);
-            writer.WriteObjectValue<ConnectionQuota>("quota", Quota);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionOperation>("operations", Operations);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ConnectionQuota>("quota", Quota);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Schema>("schema", Schema);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.SearchSettings>("searchSettings", SearchSettings);
         }

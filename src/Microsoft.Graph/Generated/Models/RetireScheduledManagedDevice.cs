@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The complianceState property</summary>
-        public ComplianceStatus? ComplianceState
+        public Microsoft.Graph.Beta.Models.ComplianceStatus? ComplianceState
         {
-            get { return BackingStore?.Get<ComplianceStatus?>("complianceState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ComplianceStatus?>("complianceState"); }
             set { BackingStore?.Set("complianceState", value); }
         }
         /// <summary>Device Compliance PolicyId</summary>
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Management agent type.</summary>
-        public ManagementAgentType? ManagementAgent
+        public Microsoft.Graph.Beta.Models.ManagementAgentType? ManagementAgent
         {
-            get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagementAgentType?>("managementAgent"); }
             set { BackingStore?.Set("managementAgent", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -135,9 +135,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Owner type of device.</summary>
-        public ManagedDeviceOwnerType? OwnerType
+        public Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType? OwnerType
         {
-            get { return BackingStore?.Get<ManagedDeviceOwnerType?>("ownerType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType?>("ownerType"); }
             set { BackingStore?.Set("ownerType", value); }
         }
         /// <summary>Managed Device Retire After DateTime</summary>
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RetireScheduledManagedDevice"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RetireScheduledManagedDevice"/> and sets the default values.
         /// </summary>
         public RetireScheduledManagedDevice()
         {
@@ -173,12 +173,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RetireScheduledManagedDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RetireScheduledManagedDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RetireScheduledManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RetireScheduledManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RetireScheduledManagedDevice();
+            return new Microsoft.Graph.Beta.Models.RetireScheduledManagedDevice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -188,16 +188,16 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "complianceState", n => { ComplianceState = n.GetEnumValue<ComplianceStatus>(); } },
+                { "complianceState", n => { ComplianceState = n.GetEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>(); } },
                 { "deviceCompliancePolicyId", n => { DeviceCompliancePolicyId = n.GetStringValue(); } },
                 { "deviceCompliancePolicyName", n => { DeviceCompliancePolicyName = n.GetStringValue(); } },
-                { "deviceType", n => { DeviceType = n.GetEnumValue<DeviceType>(); } },
+                { "deviceType", n => { DeviceType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
                 { "managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
-                { "managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
+                { "managementAgent", n => { ManagementAgent = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagementAgentType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "ownerType", n => { OwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
+                { "ownerType", n => { OwnerType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType>(); } },
                 { "retireAfterDateTime", n => { RetireAfterDateTime = n.GetDateTimeOffsetValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -209,16 +209,16 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ComplianceStatus>("complianceState", ComplianceState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ComplianceStatus>("complianceState", ComplianceState);
             writer.WriteStringValue("deviceCompliancePolicyId", DeviceCompliancePolicyId);
             writer.WriteStringValue("deviceCompliancePolicyName", DeviceCompliancePolicyName);
-            writer.WriteEnumValue<DeviceType>("deviceType", DeviceType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceType>("deviceType", DeviceType);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
-            writer.WriteEnumValue<ManagementAgentType>("managementAgent", ManagementAgent);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagementAgentType>("managementAgent", ManagementAgent);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ManagedDeviceOwnerType>("ownerType", OwnerType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedDeviceOwnerType>("ownerType", OwnerType);
             writer.WriteDateTimeOffsetValue("retireAfterDateTime", RetireAfterDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteAdditionalData(AdditionalData);

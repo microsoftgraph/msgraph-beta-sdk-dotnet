@@ -9,48 +9,48 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign a WinGet app to a group.
     /// </summary>
-    public class WinGetAppAssignmentSettings : MobileAppAssignmentSettings, IParsable
+    public class WinGetAppAssignmentSettings : Microsoft.Graph.Beta.Models.MobileAppAssignmentSettings, IParsable
     {
         /// <summary>The install time settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WinGetAppInstallTimeSettings? InstallTimeSettings
+        public Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings? InstallTimeSettings
         {
-            get { return BackingStore?.Get<WinGetAppInstallTimeSettings?>("installTimeSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings?>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #nullable restore
 #else
-        public WinGetAppInstallTimeSettings InstallTimeSettings
+        public Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings InstallTimeSettings
         {
-            get { return BackingStore?.Get<WinGetAppInstallTimeSettings>("installTimeSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
 #endif
         /// <summary>Contains value for notification status.</summary>
-        public WinGetAppNotification? Notifications
+        public Microsoft.Graph.Beta.Models.WinGetAppNotification? Notifications
         {
-            get { return BackingStore?.Get<WinGetAppNotification?>("notifications"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WinGetAppNotification?>("notifications"); }
             set { BackingStore?.Set("notifications", value); }
         }
         /// <summary>The reboot settings to apply for this app assignment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WinGetAppRestartSettings? RestartSettings
+        public Microsoft.Graph.Beta.Models.WinGetAppRestartSettings? RestartSettings
         {
-            get { return BackingStore?.Get<WinGetAppRestartSettings?>("restartSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WinGetAppRestartSettings?>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
 #nullable restore
 #else
-        public WinGetAppRestartSettings RestartSettings
+        public Microsoft.Graph.Beta.Models.WinGetAppRestartSettings RestartSettings
         {
-            get { return BackingStore?.Get<WinGetAppRestartSettings>("restartSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WinGetAppRestartSettings>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WinGetAppAssignmentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WinGetAppAssignmentSettings"/> and sets the default values.
         /// </summary>
         public WinGetAppAssignmentSettings() : base()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WinGetAppAssignmentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WinGetAppAssignmentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WinGetAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WinGetAppAssignmentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WinGetAppAssignmentSettings();
+            return new Microsoft.Graph.Beta.Models.WinGetAppAssignmentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<WinGetAppInstallTimeSettings>(WinGetAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
-                { "notifications", n => { Notifications = n.GetEnumValue<WinGetAppNotification>(); } },
-                { "restartSettings", n => { RestartSettings = n.GetObjectValue<WinGetAppRestartSettings>(WinGetAppRestartSettings.CreateFromDiscriminatorValue); } },
+                { "installTimeSettings", n => { InstallTimeSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings>(Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings.CreateFromDiscriminatorValue); } },
+                { "notifications", n => { Notifications = n.GetEnumValue<Microsoft.Graph.Beta.Models.WinGetAppNotification>(); } },
+                { "restartSettings", n => { RestartSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WinGetAppRestartSettings>(Microsoft.Graph.Beta.Models.WinGetAppRestartSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,9 +87,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WinGetAppInstallTimeSettings>("installTimeSettings", InstallTimeSettings);
-            writer.WriteEnumValue<WinGetAppNotification>("notifications", Notifications);
-            writer.WriteObjectValue<WinGetAppRestartSettings>("restartSettings", RestartSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WinGetAppInstallTimeSettings>("installTimeSettings", InstallTimeSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WinGetAppNotification>("notifications", Notifications);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WinGetAppRestartSettings>("restartSettings", RestartSettings);
         }
     }
 }

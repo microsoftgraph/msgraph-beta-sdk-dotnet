@@ -90,13 +90,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         }
 #endif
         /// <summary>The valueType property</summary>
-        public ManagementParameterValueType? ValueType
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagementParameterValueType? ValueType
         {
-            get { return BackingStore?.Get<ManagementParameterValueType?>("valueType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementParameterValueType?>("valueType"); }
             set { BackingStore?.Set("valueType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Setting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.Setting"/> and sets the default values.
         /// </summary>
         public Setting()
         {
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Setting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.Setting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Setting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ManagedTenants.Setting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Setting();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.Setting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "overwriteAllowed", n => { OverwriteAllowed = n.GetBoolValue(); } },
                 { "settingId", n => { SettingId = n.GetStringValue(); } },
-                { "valueType", n => { ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
+                { "valueType", n => { ValueType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementParameterValueType>(); } },
             };
         }
         /// <summary>
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("overwriteAllowed", OverwriteAllowed);
             writer.WriteStringValue("settingId", SettingId);
-            writer.WriteEnumValue<ManagementParameterValueType>("valueType", ValueType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagementParameterValueType>("valueType", ValueType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

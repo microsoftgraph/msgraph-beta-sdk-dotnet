@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class FilteringProfile : Profile, IParsable
+    public class FilteringProfile : Microsoft.Graph.Beta.Models.Networkaccess.Profile, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A set of associated policies defined to regulate access to resources or systems based on specific conditions. Automatically expanded.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessPolicy>? ConditionalAccessPolicies
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessPolicy>? ConditionalAccessPolicies
         {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>?>("conditionalAccessPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessPolicy>?>("conditionalAccessPolicies"); }
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessPolicy> ConditionalAccessPolicies
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessPolicy> ConditionalAccessPolicies
         {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("conditionalAccessPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessPolicy>>("conditionalAccessPolicies"); }
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
 #endif
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="FilteringProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile"/> and sets the default values.
         /// </summary>
         public FilteringProfile() : base()
         {
@@ -48,12 +48,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FilteringProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FilteringProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FilteringProfile();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.FilteringProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessPolicy>(Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "priority", n => { Priority = n.GetLongValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ConditionalAccessPolicy>("conditionalAccessPolicies", ConditionalAccessPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.ConditionalAccessPolicy>("conditionalAccessPolicies", ConditionalAccessPolicies);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteLongValue("priority", Priority);
         }

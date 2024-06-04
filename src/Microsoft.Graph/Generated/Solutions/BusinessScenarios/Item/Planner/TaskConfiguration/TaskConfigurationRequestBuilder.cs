@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
     public class TaskConfigurationRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="TaskConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TaskConfigurationRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -50,57 +50,59 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// The configuration of Planner tasks that will be created for the scenario.
+        /// Read the properties and relationships of a plannerTaskConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertaskconfiguration-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTaskConfiguration"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerTaskConfiguration?> GetAsync(Action<RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder.TaskConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerTaskConfiguration> GetAsync(Action<RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder.TaskConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerTaskConfiguration>(requestInfo, PlannerTaskConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.PlannerTaskConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update the navigation property taskConfiguration in solutions
+        /// Update the properties of a plannerTaskConfiguration object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/plannertaskconfiguration-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTaskConfiguration"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<PlannerTaskConfiguration?> PatchAsync(PlannerTaskConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration?> PatchAsync(Microsoft.Graph.Beta.Models.PlannerTaskConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<PlannerTaskConfiguration> PatchAsync(PlannerTaskConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration> PatchAsync(Microsoft.Graph.Beta.Models.PlannerTaskConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<PlannerTaskConfiguration>(requestInfo, PlannerTaskConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.PlannerTaskConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.PlannerTaskConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete navigation property taskConfiguration for solutions
@@ -122,17 +124,17 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
             return requestInfo;
         }
         /// <summary>
-        /// The configuration of Planner tasks that will be created for the scenario.
+        /// Read the properties and relationships of a plannerTaskConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder.TaskConfigurationRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder.TaskConfigurationRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -141,18 +143,18 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property taskConfiguration in solutions
+        /// Update the properties of a plannerTaskConfiguration object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(PlannerTaskConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.PlannerTaskConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(PlannerTaskConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.PlannerTaskConfiguration body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -165,11 +167,11 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TaskConfigurationRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TaskConfigurationRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder WithUrl(string rawUrl)
         {
-            return new TaskConfigurationRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -179,7 +181,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
         {
         }
         /// <summary>
-        /// The configuration of Planner tasks that will be created for the scenario.
+        /// Read the properties and relationships of a plannerTaskConfiguration object.
         /// </summary>
         public class TaskConfigurationRequestBuilderGetQueryParameters 
         {
@@ -208,7 +210,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConf
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TaskConfigurationRequestBuilderGetRequestConfiguration : RequestConfiguration<TaskConfigurationRequestBuilderGetQueryParameters>
+        public class TaskConfigurationRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.TaskConfiguration.TaskConfigurationRequestBuilder.TaskConfigurationRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

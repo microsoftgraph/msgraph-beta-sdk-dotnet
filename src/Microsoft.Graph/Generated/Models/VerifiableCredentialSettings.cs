@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The types of verifiable credentials that a requestor must present when requesting an access package that has the policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VerifiableCredentialType>? CredentialTypes
+        public List<Microsoft.Graph.Beta.Models.VerifiableCredentialType>? CredentialTypes
         {
-            get { return BackingStore?.Get<List<VerifiableCredentialType>?>("credentialTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VerifiableCredentialType>?>("credentialTypes"); }
             set { BackingStore?.Set("credentialTypes", value); }
         }
 #nullable restore
 #else
-        public List<VerifiableCredentialType> CredentialTypes
+        public List<Microsoft.Graph.Beta.Models.VerifiableCredentialType> CredentialTypes
         {
-            get { return BackingStore?.Get<List<VerifiableCredentialType>>("credentialTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VerifiableCredentialType>>("credentialTypes"); }
             set { BackingStore?.Set("credentialTypes", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VerifiableCredentialSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VerifiableCredentialSettings"/> and sets the default values.
         /// </summary>
         public VerifiableCredentialSettings()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VerifiableCredentialSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VerifiableCredentialSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static VerifiableCredentialSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.VerifiableCredentialSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VerifiableCredentialSettings();
+            return new Microsoft.Graph.Beta.Models.VerifiableCredentialSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "credentialTypes", n => { CredentialTypes = n.GetCollectionOfObjectValues<VerifiableCredentialType>(VerifiableCredentialType.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "credentialTypes", n => { CredentialTypes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VerifiableCredentialType>(Microsoft.Graph.Beta.Models.VerifiableCredentialType.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<VerifiableCredentialType>("credentialTypes", CredentialTypes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VerifiableCredentialType>("credentialTypes", CredentialTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

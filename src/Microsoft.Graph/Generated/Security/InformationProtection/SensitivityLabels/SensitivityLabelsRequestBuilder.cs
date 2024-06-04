@@ -23,44 +23,44 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels
     public class SensitivityLabelsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateApplication method.</summary>
-        public MicrosoftGraphSecurityEvaluateApplicationRequestBuilder MicrosoftGraphSecurityEvaluateApplication
+        public Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication.MicrosoftGraphSecurityEvaluateApplicationRequestBuilder MicrosoftGraphSecurityEvaluateApplication
         {
-            get => new MicrosoftGraphSecurityEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateApplication.MicrosoftGraphSecurityEvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
-        public MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder MicrosoftGraphSecurityEvaluateClassificationResults
+        public Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults.MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder MicrosoftGraphSecurityEvaluateClassificationResults
         {
-            get => new MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults.MicrosoftGraphSecurityEvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the evaluateRemoval method.</summary>
-        public MicrosoftGraphSecurityEvaluateRemovalRequestBuilder MicrosoftGraphSecurityEvaluateRemoval
+        public Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval.MicrosoftGraphSecurityEvaluateRemovalRequestBuilder MicrosoftGraphSecurityEvaluateRemoval
         {
-            get => new MicrosoftGraphSecurityEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateRemoval.MicrosoftGraphSecurityEvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the extractContentLabel method.</summary>
-        public MicrosoftGraphSecurityExtractContentLabelRequestBuilder MicrosoftGraphSecurityExtractContentLabel
+        public Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel.MicrosoftGraphSecurityExtractContentLabelRequestBuilder MicrosoftGraphSecurityExtractContentLabel
         {
-            get => new MicrosoftGraphSecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityExtractContentLabel.MicrosoftGraphSecurityExtractContentLabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>
         /// <param name="position">The unique identifier of sensitivityLabel</param>
-        /// <returns>A <see cref="SensitivityLabelItemRequestBuilder"/></returns>
-        public SensitivityLabelItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("sensitivityLabel%2Did", position);
-                return new SensitivityLabelItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.Item.SensitivityLabelItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SensitivityLabelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="SensitivityLabelsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -78,50 +78,50 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels
         /// <summary>
         /// Read the Microsoft Purview Information Protection labels for the user or organization.
         /// </summary>
-        /// <returns>A <see cref="SensitivityLabelCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.SensitivityLabelCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SensitivityLabelCollectionResponse?> GetAsync(Action<RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.SensitivityLabelCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder.SensitivityLabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SensitivityLabelCollectionResponse> GetAsync(Action<RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.SensitivityLabelCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder.SensitivityLabelsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SensitivityLabelCollectionResponse>(requestInfo, SensitivityLabelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.SensitivityLabelCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.Security.SensitivityLabelCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to sensitivityLabels for security
         /// </summary>
-        /// <returns>A <see cref="SensitivityLabel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.SensitivityLabel"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<SensitivityLabel?> PostAsync(SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.SensitivityLabel?> PostAsync(Microsoft.Graph.Beta.Models.Security.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<SensitivityLabel> PostAsync(SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Security.SensitivityLabel> PostAsync(Microsoft.Graph.Beta.Models.Security.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<SensitivityLabel>(requestInfo, SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.SensitivityLabel>(requestInfo, Microsoft.Graph.Beta.Models.Security.SensitivityLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Read the Microsoft Purview Information Protection labels for the user or organization.
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder.SensitivityLabelsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder.SensitivityLabelsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -150,11 +150,11 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Security.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.Security.SensitivityLabel body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -167,11 +167,11 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="SensitivityLabelsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public SensitivityLabelsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder WithUrl(string rawUrl)
         {
-            return new SensitivityLabelsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Read the Microsoft Purview Information Protection labels for the user or organization.
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class SensitivityLabelsRequestBuilderGetRequestConfiguration : RequestConfiguration<SensitivityLabelsRequestBuilderGetQueryParameters>
+        public class SensitivityLabelsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.SensitivityLabelsRequestBuilder.SensitivityLabelsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

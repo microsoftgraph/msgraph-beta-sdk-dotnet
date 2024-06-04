@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The alert property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedTenantAlert? Alert
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert? Alert
         {
-            get { return BackingStore?.Get<ManagedTenantAlert?>("alert"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert?>("alert"); }
             set { BackingStore?.Set("alert", value); }
         }
 #nullable restore
 #else
-        public ManagedTenantAlert Alert
+        public Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert Alert
         {
-            get { return BackingStore?.Get<ManagedTenantAlert>("alert"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert>("alert"); }
             set { BackingStore?.Set("alert", value); }
         }
 #endif
@@ -127,12 +127,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedTenantApiNotification"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedTenantApiNotification CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ManagedTenantApiNotification();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantApiNotification();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alert", n => { Alert = n.GetObjectValue<ManagedTenantAlert>(ManagedTenantAlert.CreateFromDiscriminatorValue); } },
+                { "alert", n => { Alert = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert>(Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert.CreateFromDiscriminatorValue); } },
                 { "createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "isAcknowledged", n => { IsAcknowledged = n.GetBoolValue(); } },
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<ManagedTenantAlert>("alert", Alert);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.ManagedTenantAlert>("alert", Alert);
             writer.WriteStringValue("createdByUserId", CreatedByUserId);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteBoolValue("isAcknowledged", IsAcknowledged);

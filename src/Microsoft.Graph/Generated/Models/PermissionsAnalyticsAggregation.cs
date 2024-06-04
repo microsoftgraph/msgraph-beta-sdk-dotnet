@@ -7,66 +7,66 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PermissionsAnalyticsAggregation : Entity, IParsable
+    public class PermissionsAnalyticsAggregation : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The aws property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsAnalytics? Aws
+        public Microsoft.Graph.Beta.Models.PermissionsAnalytics? Aws
         {
-            get { return BackingStore?.Get<PermissionsAnalytics?>("aws"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalytics?>("aws"); }
             set { BackingStore?.Set("aws", value); }
         }
 #nullable restore
 #else
-        public PermissionsAnalytics Aws
+        public Microsoft.Graph.Beta.Models.PermissionsAnalytics Aws
         {
-            get { return BackingStore?.Get<PermissionsAnalytics>("aws"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalytics>("aws"); }
             set { BackingStore?.Set("aws", value); }
         }
 #endif
         /// <summary>The azure property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsAnalytics? Azure
+        public Microsoft.Graph.Beta.Models.PermissionsAnalytics? Azure
         {
-            get { return BackingStore?.Get<PermissionsAnalytics?>("azure"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalytics?>("azure"); }
             set { BackingStore?.Set("azure", value); }
         }
 #nullable restore
 #else
-        public PermissionsAnalytics Azure
+        public Microsoft.Graph.Beta.Models.PermissionsAnalytics Azure
         {
-            get { return BackingStore?.Get<PermissionsAnalytics>("azure"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalytics>("azure"); }
             set { BackingStore?.Set("azure", value); }
         }
 #endif
         /// <summary>The gcp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PermissionsAnalytics? Gcp
+        public Microsoft.Graph.Beta.Models.PermissionsAnalytics? Gcp
         {
-            get { return BackingStore?.Get<PermissionsAnalytics?>("gcp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalytics?>("gcp"); }
             set { BackingStore?.Set("gcp", value); }
         }
 #nullable restore
 #else
-        public PermissionsAnalytics Gcp
+        public Microsoft.Graph.Beta.Models.PermissionsAnalytics Gcp
         {
-            get { return BackingStore?.Get<PermissionsAnalytics>("gcp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PermissionsAnalytics>("gcp"); }
             set { BackingStore?.Set("gcp", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionsAnalyticsAggregation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PermissionsAnalyticsAggregation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PermissionsAnalyticsAggregation();
+            return new Microsoft.Graph.Beta.Models.PermissionsAnalyticsAggregation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "aws", n => { Aws = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
-                { "azure", n => { Azure = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
-                { "gcp", n => { Gcp = n.GetObjectValue<PermissionsAnalytics>(PermissionsAnalytics.CreateFromDiscriminatorValue); } },
+                { "aws", n => { Aws = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalytics>(Microsoft.Graph.Beta.Models.PermissionsAnalytics.CreateFromDiscriminatorValue); } },
+                { "azure", n => { Azure = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalytics>(Microsoft.Graph.Beta.Models.PermissionsAnalytics.CreateFromDiscriminatorValue); } },
+                { "gcp", n => { Gcp = n.GetObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalytics>(Microsoft.Graph.Beta.Models.PermissionsAnalytics.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PermissionsAnalytics>("aws", Aws);
-            writer.WriteObjectValue<PermissionsAnalytics>("azure", Azure);
-            writer.WriteObjectValue<PermissionsAnalytics>("gcp", Gcp);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalytics>("aws", Aws);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalytics>("azure", Azure);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PermissionsAnalytics>("gcp", Gcp);
         }
     }
 }

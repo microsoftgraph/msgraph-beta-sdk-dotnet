@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device Configuration.
     /// </summary>
-    public class IosCertificateProfile : DeviceConfiguration, IParsable
+    public class IosCertificateProfile : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="IosCertificateProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosCertificateProfile"/> and sets the default values.
         /// </summary>
         public IosCertificateProfile() : base()
         {
@@ -21,19 +21,19 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosCertificateProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosCertificateProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosCertificateProfileBase" => new IosCertificateProfileBase(),
-                "#microsoft.graph.iosImportedPFXCertificateProfile" => new IosImportedPFXCertificateProfile(),
-                "#microsoft.graph.iosPkcsCertificateProfile" => new IosPkcsCertificateProfile(),
-                "#microsoft.graph.iosScepCertificateProfile" => new IosScepCertificateProfile(),
-                _ => new IosCertificateProfile(),
+                "#microsoft.graph.iosCertificateProfileBase" => new Microsoft.Graph.Beta.Models.IosCertificateProfileBase(),
+                "#microsoft.graph.iosImportedPFXCertificateProfile" => new Microsoft.Graph.Beta.Models.IosImportedPFXCertificateProfile(),
+                "#microsoft.graph.iosPkcsCertificateProfile" => new Microsoft.Graph.Beta.Models.IosPkcsCertificateProfile(),
+                "#microsoft.graph.iosScepCertificateProfile" => new Microsoft.Graph.Beta.Models.IosScepCertificateProfile(),
+                _ => new Microsoft.Graph.Beta.Models.IosCertificateProfile(),
             };
         }
         /// <summary>

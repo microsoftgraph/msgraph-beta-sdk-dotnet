@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsLambda : AwsIdentity, IParsable
+    public class AwsLambda : Microsoft.Graph.Beta.Models.AwsIdentity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the resources in an authorization system..</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsAuthorizationSystemResource? Resource
+        public Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource? Resource
         {
-            get { return BackingStore?.Get<AwsAuthorizationSystemResource?>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource?>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #nullable restore
 #else
-        public AwsAuthorizationSystemResource Resource
+        public Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource Resource
         {
-            get { return BackingStore?.Get<AwsAuthorizationSystemResource>("resource"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsLambda"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsLambda"/> and sets the default values.
         /// </summary>
         public AwsLambda() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsLambda"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsLambda"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsLambda CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsLambda CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsLambda();
+            return new Microsoft.Graph.Beta.Models.AwsLambda();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "resource", n => { Resource = n.GetObjectValue<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "resource", n => { Resource = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AwsAuthorizationSystemResource>("resource", Resource);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>("resource", Resource);
         }
     }
 }

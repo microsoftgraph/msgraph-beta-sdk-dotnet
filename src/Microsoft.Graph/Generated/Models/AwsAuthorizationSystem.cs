@@ -7,91 +7,91 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AwsAuthorizationSystem : AuthorizationSystem, IParsable
+    public class AwsAuthorizationSystem : Microsoft.Graph.Beta.Models.AuthorizationSystem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of actions for service in authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsAuthorizationSystemTypeAction>? Actions
+        public List<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemTypeAction>? Actions
         {
-            get { return BackingStore?.Get<List<AwsAuthorizationSystemTypeAction>?>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemTypeAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<AwsAuthorizationSystemTypeAction> Actions
+        public List<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemTypeAction> Actions
         {
-            get { return BackingStore?.Get<List<AwsAuthorizationSystemTypeAction>>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemTypeAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>Identities in the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AwsAssociatedIdentities? AssociatedIdentities
+        public Microsoft.Graph.Beta.Models.AwsAssociatedIdentities? AssociatedIdentities
         {
-            get { return BackingStore?.Get<AwsAssociatedIdentities?>("associatedIdentities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAssociatedIdentities?>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #nullable restore
 #else
-        public AwsAssociatedIdentities AssociatedIdentities
+        public Microsoft.Graph.Beta.Models.AwsAssociatedIdentities AssociatedIdentities
         {
-            get { return BackingStore?.Get<AwsAssociatedIdentities>("associatedIdentities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AwsAssociatedIdentities>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #endif
         /// <summary>Policies associated with the AWS authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsPolicy>? Policies
+        public List<Microsoft.Graph.Beta.Models.AwsPolicy>? Policies
         {
-            get { return BackingStore?.Get<List<AwsPolicy>?>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsPolicy>?>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #nullable restore
 #else
-        public List<AwsPolicy> Policies
+        public List<Microsoft.Graph.Beta.Models.AwsPolicy> Policies
         {
-            get { return BackingStore?.Get<List<AwsPolicy>>("policies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
 #endif
         /// <summary>Resources associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsAuthorizationSystemResource>? Resources
+        public List<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>? Resources
         {
-            get { return BackingStore?.Get<List<AwsAuthorizationSystemResource>?>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<AwsAuthorizationSystemResource> Resources
+        public List<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource> Resources
         {
-            get { return BackingStore?.Get<List<AwsAuthorizationSystemResource>>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #endif
         /// <summary>Services associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemTypeService>? Services
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>? Services
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemTypeService>?>("services"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemTypeService> Services
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService> Services
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemTypeService>>("services"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsAuthorizationSystem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsAuthorizationSystem"/> and sets the default values.
         /// </summary>
         public AwsAuthorizationSystem() : base()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsAuthorizationSystem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsAuthorizationSystem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AwsAuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AwsAuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsAuthorizationSystem();
+            return new Microsoft.Graph.Beta.Models.AwsAuthorizationSystem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<AwsAuthorizationSystemTypeAction>(AwsAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<AwsAssociatedIdentities>(AwsAssociatedIdentities.CreateFromDiscriminatorValue); } },
-                { "policies", n => { Policies = n.GetCollectionOfObjectValues<AwsPolicy>(AwsPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<AwsAuthorizationSystemResource>(AwsAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "services", n => { Services = n.GetCollectionOfObjectValues<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemTypeAction>(Microsoft.Graph.Beta.Models.AwsAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<Microsoft.Graph.Beta.Models.AwsAssociatedIdentities>(Microsoft.Graph.Beta.Models.AwsAssociatedIdentities.CreateFromDiscriminatorValue); } },
+                { "policies", n => { Policies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsPolicy>(Microsoft.Graph.Beta.Models.AwsPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "services", n => { Services = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>(Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AwsAuthorizationSystemTypeAction>("actions", Actions);
-            writer.WriteObjectValue<AwsAssociatedIdentities>("associatedIdentities", AssociatedIdentities);
-            writer.WriteCollectionOfObjectValues<AwsPolicy>("policies", Policies);
-            writer.WriteCollectionOfObjectValues<AwsAuthorizationSystemResource>("resources", Resources);
-            writer.WriteCollectionOfObjectValues<AuthorizationSystemTypeService>("services", Services);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemTypeAction>("actions", Actions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AwsAssociatedIdentities>("associatedIdentities", AssociatedIdentities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsPolicy>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsAuthorizationSystemResource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>("services", Services);
         }
     }
 }

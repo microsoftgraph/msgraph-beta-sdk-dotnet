@@ -53,13 +53,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Criteria which defines the type of device this access rule will apply to</summary>
-        public DeviceManagementExchangeAccessRuleType? Type
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRuleType? Type
         {
-            get { return BackingStore?.Get<DeviceManagementExchangeAccessRuleType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRuleType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementExchangeDeviceClass"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass"/> and sets the default values.
         /// </summary>
         public DeviceManagementExchangeDeviceClass()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementExchangeDeviceClass"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementExchangeDeviceClass CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementExchangeDeviceClass();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementExchangeDeviceClass();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<DeviceManagementExchangeAccessRuleType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRuleType>(); } },
             };
         }
         /// <summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DeviceManagementExchangeAccessRuleType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementExchangeAccessRuleType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

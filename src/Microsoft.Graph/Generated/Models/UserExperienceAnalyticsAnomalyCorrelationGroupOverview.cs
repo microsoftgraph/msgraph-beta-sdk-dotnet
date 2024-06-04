@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics anomaly correlation group overview entity contains the information for each correlation group of an anomaly.
     /// </summary>
-    public class UserExperienceAnalyticsAnomalyCorrelationGroupOverview : Entity, IParsable
+    public class UserExperienceAnalyticsAnomalyCorrelationGroupOverview : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates the number of correlation groups in the anomaly. Valid values -2147483648 to 2147483647</summary>
         public int? AnomalyCorrelationGroupCount
@@ -54,16 +54,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Describes the features of a device that are shared between all devices in a correlation group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserExperienceAnalyticsAnomalyCorrelationGroupFeature>? CorrelationGroupFeatures
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature>? CorrelationGroupFeatures
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsAnomalyCorrelationGroupFeature>?>("correlationGroupFeatures"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature>?>("correlationGroupFeatures"); }
             set { BackingStore?.Set("correlationGroupFeatures", value); }
         }
 #nullable restore
 #else
-        public List<UserExperienceAnalyticsAnomalyCorrelationGroupFeature> CorrelationGroupFeatures
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature> CorrelationGroupFeatures
         {
-            get { return BackingStore?.Get<List<UserExperienceAnalyticsAnomalyCorrelationGroupFeature>>("correlationGroupFeatures"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature>>("correlationGroupFeatures"); }
             set { BackingStore?.Set("correlationGroupFeatures", value); }
         }
 #endif
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Indicates the level of prevalence of the correlation group features in the anomaly. Possible values are: high, medium or low</summary>
-        public UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence? CorrelationGroupPrevalence
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence? CorrelationGroupPrevalence
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence?>("correlationGroupPrevalence"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence?>("correlationGroupPrevalence"); }
             set { BackingStore?.Set("correlationGroupPrevalence", value); }
         }
         /// <summary>The percentage of the devices in the correlation group that are anomalous. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
@@ -104,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsAnomalyCorrelationGroupOverview"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsAnomalyCorrelationGroupOverview CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsAnomalyCorrelationGroupOverview();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupOverview();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "correlationGroupAnomalousDeviceCount", n => { CorrelationGroupAnomalousDeviceCount = n.GetIntValue(); } },
                 { "correlationGroupAtRiskDeviceCount", n => { CorrelationGroupAtRiskDeviceCount = n.GetIntValue(); } },
                 { "correlationGroupDeviceCount", n => { CorrelationGroupDeviceCount = n.GetIntValue(); } },
-                { "correlationGroupFeatures", n => { CorrelationGroupFeatures = n.GetCollectionOfObjectValues<UserExperienceAnalyticsAnomalyCorrelationGroupFeature>(UserExperienceAnalyticsAnomalyCorrelationGroupFeature.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "correlationGroupFeatures", n => { CorrelationGroupFeatures = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "correlationGroupId", n => { CorrelationGroupId = n.GetStringValue(); } },
-                { "correlationGroupPrevalence", n => { CorrelationGroupPrevalence = n.GetEnumValue<UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence>(); } },
+                { "correlationGroupPrevalence", n => { CorrelationGroupPrevalence = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence>(); } },
                 { "correlationGroupPrevalencePercentage", n => { CorrelationGroupPrevalencePercentage = n.GetDoubleValue(); } },
                 { "totalDeviceCount", n => { TotalDeviceCount = n.GetIntValue(); } },
             };
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("correlationGroupAnomalousDeviceCount", CorrelationGroupAnomalousDeviceCount);
             writer.WriteIntValue("correlationGroupAtRiskDeviceCount", CorrelationGroupAtRiskDeviceCount);
             writer.WriteIntValue("correlationGroupDeviceCount", CorrelationGroupDeviceCount);
-            writer.WriteCollectionOfObjectValues<UserExperienceAnalyticsAnomalyCorrelationGroupFeature>("correlationGroupFeatures", CorrelationGroupFeatures);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupFeature>("correlationGroupFeatures", CorrelationGroupFeatures);
             writer.WriteStringValue("correlationGroupId", CorrelationGroupId);
-            writer.WriteEnumValue<UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence>("correlationGroupPrevalence", CorrelationGroupPrevalence);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyCorrelationGroupPrevalence>("correlationGroupPrevalence", CorrelationGroupPrevalence);
             writer.WriteDoubleValue("correlationGroupPrevalencePercentage", CorrelationGroupPrevalencePercentage);
             writer.WriteIntValue("totalDeviceCount", TotalDeviceCount);
         }

@@ -53,9 +53,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Supported platform types.</summary>
-        public DevicePlatformType? Platform
+        public Microsoft.Graph.Beta.Models.DevicePlatformType? Platform
         {
-            get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DevicePlatformType?>("platform"); }
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>Rule definition of the Assignment Filter.</summary>
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentFilterEvaluateRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterEvaluateRequest"/> and sets the default values.
         /// </summary>
         public AssignmentFilterEvaluateRequest()
         {
@@ -113,12 +113,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignmentFilterEvaluateRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AssignmentFilterEvaluateRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignmentFilterEvaluateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AssignmentFilterEvaluateRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignmentFilterEvaluateRequest();
+            return new Microsoft.Graph.Beta.Models.AssignmentFilterEvaluateRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
+                { "platform", n => { Platform = n.GetEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>(); } },
                 { "rule", n => { Rule = n.GetStringValue(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "skip", n => { Skip = n.GetIntValue(); } },
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
-            writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DevicePlatformType>("platform", Platform);
             writer.WriteStringValue("rule", Rule);
             writer.WriteStringValue("search", Search);
             writer.WriteIntValue("skip", Skip);

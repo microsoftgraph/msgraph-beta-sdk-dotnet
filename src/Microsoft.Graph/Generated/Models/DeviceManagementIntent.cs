@@ -9,37 +9,37 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents an intent to apply settings to a device
     /// </summary>
-    public class DeviceManagementIntent : Entity, IParsable
+    public class DeviceManagementIntent : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Collection of assignments</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementIntentAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementIntentAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Collection of setting categories within the intent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementIntentSettingCategory>? Categories
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory>? Categories
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentSettingCategory>?>("categories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory>?>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementIntentSettingCategory> Categories
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory> Categories
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentSettingCategory>>("categories"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
 #endif
@@ -62,48 +62,48 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of settings and their states and counts of devices that belong to corresponding state for all settings within the intent</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementIntentDeviceSettingStateSummary>? DeviceSettingStateSummaries
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceSettingStateSummary>? DeviceSettingStateSummaries
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceSettingStateSummary>?>("deviceSettingStateSummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceSettingStateSummary>?>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementIntentDeviceSettingStateSummary> DeviceSettingStateSummaries
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceSettingStateSummary> DeviceSettingStateSummaries
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceSettingStateSummary>>("deviceSettingStateSummaries"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceSettingStateSummary>>("deviceSettingStateSummaries"); }
             set { BackingStore?.Set("deviceSettingStateSummaries", value); }
         }
 #endif
         /// <summary>Collection of states of all devices that the intent is applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementIntentDeviceState>? DeviceStates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceState>? DeviceStates
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceState>?>("deviceStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceState>?>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementIntentDeviceState> DeviceStates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceState> DeviceStates
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentDeviceState>>("deviceStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceState>>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
 #endif
         /// <summary>A summary of device states and counts of devices that belong to corresponding state for all devices that the intent is applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementIntentDeviceStateSummary? DeviceStateSummary
+        public Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary? DeviceStateSummary
         {
-            get { return BackingStore?.Get<DeviceManagementIntentDeviceStateSummary?>("deviceStateSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary?>("deviceStateSummary"); }
             set { BackingStore?.Set("deviceStateSummary", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementIntentDeviceStateSummary DeviceStateSummary
+        public Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary DeviceStateSummary
         {
-            get { return BackingStore?.Get<DeviceManagementIntentDeviceStateSummary>("deviceStateSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary>("deviceStateSummary"); }
             set { BackingStore?.Set("deviceStateSummary", value); }
         }
 #endif
@@ -160,16 +160,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of all settings to be applied</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>? Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> Settings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance> Settings
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
@@ -192,44 +192,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of states of all users that the intent is applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementIntentUserState>? UserStates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState>? UserStates
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentUserState>?>("userStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState>?>("userStates"); }
             set { BackingStore?.Set("userStates", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementIntentUserState> UserStates
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState> UserStates
         {
-            get { return BackingStore?.Get<List<DeviceManagementIntentUserState>>("userStates"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState>>("userStates"); }
             set { BackingStore?.Set("userStates", value); }
         }
 #endif
         /// <summary>A summary of user states and counts of users that belong to corresponding state for all users that the intent is applied to</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementIntentUserStateSummary? UserStateSummary
+        public Microsoft.Graph.Beta.Models.DeviceManagementIntentUserStateSummary? UserStateSummary
         {
-            get { return BackingStore?.Get<DeviceManagementIntentUserStateSummary?>("userStateSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserStateSummary?>("userStateSummary"); }
             set { BackingStore?.Set("userStateSummary", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementIntentUserStateSummary UserStateSummary
+        public Microsoft.Graph.Beta.Models.DeviceManagementIntentUserStateSummary UserStateSummary
         {
-            get { return BackingStore?.Get<DeviceManagementIntentUserStateSummary>("userStateSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserStateSummary>("userStateSummary"); }
             set { BackingStore?.Set("userStateSummary", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementIntent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementIntent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementIntent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementIntent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementIntent();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementIntent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -239,21 +239,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementIntentAssignment>(DeviceManagementIntentAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "categories", n => { Categories = n.GetCollectionOfObjectValues<DeviceManagementIntentSettingCategory>(DeviceManagementIntentSettingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentAssignment>(Microsoft.Graph.Beta.Models.DeviceManagementIntentAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "categories", n => { Categories = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory>(Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "deviceSettingStateSummaries", n => { DeviceSettingStateSummaries = n.GetCollectionOfObjectValues<DeviceManagementIntentDeviceSettingStateSummary>(DeviceManagementIntentDeviceSettingStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "deviceStateSummary", n => { DeviceStateSummary = n.GetObjectValue<DeviceManagementIntentDeviceStateSummary>(DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue); } },
-                { "deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<DeviceManagementIntentDeviceState>(DeviceManagementIntentDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceSettingStateSummaries", n => { DeviceSettingStateSummaries = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceSettingStateSummary>(Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceSettingStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceStateSummary", n => { DeviceStateSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary>(Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary.CreateFromDiscriminatorValue); } },
+                { "deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceState>(Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "isAssigned", n => { IsAssigned = n.GetBoolValue(); } },
                 { "isMigratingToConfigurationPolicy", n => { IsMigratingToConfigurationPolicy = n.GetBoolValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "settings", n => { Settings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
-                { "userStateSummary", n => { UserStateSummary = n.GetObjectValue<DeviceManagementIntentUserStateSummary>(DeviceManagementIntentUserStateSummary.CreateFromDiscriminatorValue); } },
-                { "userStates", n => { UserStates = n.GetCollectionOfObjectValues<DeviceManagementIntentUserState>(DeviceManagementIntentUserState.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "userStateSummary", n => { UserStateSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserStateSummary>(Microsoft.Graph.Beta.Models.DeviceManagementIntentUserStateSummary.CreateFromDiscriminatorValue); } },
+                { "userStates", n => { UserStates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState>(Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -264,21 +264,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementIntentAssignment>("assignments", Assignments);
-            writer.WriteCollectionOfObjectValues<DeviceManagementIntentSettingCategory>("categories", Categories);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentSettingCategory>("categories", Categories);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfObjectValues<DeviceManagementIntentDeviceSettingStateSummary>("deviceSettingStateSummaries", DeviceSettingStateSummaries);
-            writer.WriteCollectionOfObjectValues<DeviceManagementIntentDeviceState>("deviceStates", DeviceStates);
-            writer.WriteObjectValue<DeviceManagementIntentDeviceStateSummary>("deviceStateSummary", DeviceStateSummary);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceSettingStateSummary>("deviceSettingStateSummaries", DeviceSettingStateSummaries);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceState>("deviceStates", DeviceStates);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementIntentDeviceStateSummary>("deviceStateSummary", DeviceStateSummary);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("isAssigned", IsAssigned);
             writer.WriteBoolValue("isMigratingToConfigurationPolicy", IsMigratingToConfigurationPolicy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
-            writer.WriteCollectionOfObjectValues<DeviceManagementSettingInstance>("settings", Settings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>("settings", Settings);
             writer.WriteStringValue("templateId", TemplateId);
-            writer.WriteCollectionOfObjectValues<DeviceManagementIntentUserState>("userStates", UserStates);
-            writer.WriteObjectValue<DeviceManagementIntentUserStateSummary>("userStateSummary", UserStateSummary);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserState>("userStates", UserStates);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementIntentUserStateSummary>("userStateSummary", UserStateSummary);
         }
     }
 }

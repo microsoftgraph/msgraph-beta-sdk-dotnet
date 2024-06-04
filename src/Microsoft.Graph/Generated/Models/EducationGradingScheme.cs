@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EducationGradingScheme : Entity, IParsable
+    public class EducationGradingScheme : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the grading scheme.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The grades that make up the scheme.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EducationGradingSchemeGrade>? Grades
+        public List<Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>? Grades
         {
-            get { return BackingStore?.Get<List<EducationGradingSchemeGrade>?>("grades"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>?>("grades"); }
             set { BackingStore?.Set("grades", value); }
         }
 #nullable restore
 #else
-        public List<EducationGradingSchemeGrade> Grades
+        public List<Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade> Grades
         {
-            get { return BackingStore?.Get<List<EducationGradingSchemeGrade>>("grades"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>>("grades"); }
             set { BackingStore?.Set("grades", value); }
         }
 #endif
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationGradingScheme"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationGradingScheme"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationGradingScheme CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EducationGradingScheme CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationGradingScheme();
+            return new Microsoft.Graph.Beta.Models.EducationGradingScheme();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "grades", n => { Grades = n.GetCollectionOfObjectValues<EducationGradingSchemeGrade>(EducationGradingSchemeGrade.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "grades", n => { Grades = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>(Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "hidePointsDuringGrading", n => { HidePointsDuringGrading = n.GetBoolValue(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<EducationGradingSchemeGrade>("grades", Grades);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.EducationGradingSchemeGrade>("grades", Grades);
             writer.WriteBoolValue("hidePointsDuringGrading", HidePointsDuringGrading);
         }
     }

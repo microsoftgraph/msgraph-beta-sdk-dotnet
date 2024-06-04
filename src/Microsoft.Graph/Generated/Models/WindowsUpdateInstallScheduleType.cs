@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsUpdateInstallScheduleType"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdateInstallScheduleType"/> and sets the default values.
         /// </summary>
         public WindowsUpdateInstallScheduleType()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsUpdateInstallScheduleType"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdateInstallScheduleType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static WindowsUpdateInstallScheduleType CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdateInstallScheduleType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUpdateActiveHoursInstall" => new WindowsUpdateActiveHoursInstall(),
-                "#microsoft.graph.windowsUpdateScheduledInstall" => new WindowsUpdateScheduledInstall(),
-                _ => new WindowsUpdateInstallScheduleType(),
+                "#microsoft.graph.windowsUpdateActiveHoursInstall" => new Microsoft.Graph.Beta.Models.WindowsUpdateActiveHoursInstall(),
+                "#microsoft.graph.windowsUpdateScheduledInstall" => new Microsoft.Graph.Beta.Models.WindowsUpdateScheduledInstall(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsUpdateInstallScheduleType(),
             };
         }
         /// <summary>

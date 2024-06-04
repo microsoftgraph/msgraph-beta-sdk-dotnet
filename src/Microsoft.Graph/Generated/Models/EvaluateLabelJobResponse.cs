@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EvaluateLabelJobResponse : JobResponseBase, IParsable
+    public class EvaluateLabelJobResponse : Microsoft.Graph.Beta.Models.JobResponseBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The result property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EvaluateLabelJobResultGroup? Result
+        public Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup? Result
         {
-            get { return BackingStore?.Get<EvaluateLabelJobResultGroup?>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #nullable restore
 #else
-        public EvaluateLabelJobResultGroup Result
+        public Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup Result
         {
-            get { return BackingStore?.Get<EvaluateLabelJobResultGroup>("result"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup>("result"); }
             set { BackingStore?.Set("result", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EvaluateLabelJobResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EvaluateLabelJobResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EvaluateLabelJobResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EvaluateLabelJobResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EvaluateLabelJobResponse();
+            return new Microsoft.Graph.Beta.Models.EvaluateLabelJobResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "result", n => { Result = n.GetObjectValue<EvaluateLabelJobResultGroup>(EvaluateLabelJobResultGroup.CreateFromDiscriminatorValue); } },
+                { "result", n => { Result = n.GetObjectValue<Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup>(Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EvaluateLabelJobResultGroup>("result", Result);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EvaluateLabelJobResultGroup>("result", Result);
         }
     }
 }

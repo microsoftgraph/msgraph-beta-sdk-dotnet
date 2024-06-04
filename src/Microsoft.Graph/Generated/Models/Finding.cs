@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Finding : Entity, IParsable
+    public class Finding : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Defines when the finding was created.</summary>
@@ -19,64 +19,64 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Finding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Finding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Finding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Finding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.awsExternalSystemAccessFinding" => new AwsExternalSystemAccessFinding(),
-                "#microsoft.graph.awsExternalSystemAccessRoleFinding" => new AwsExternalSystemAccessRoleFinding(),
-                "#microsoft.graph.awsIdentityAccessManagementKeyAgeFinding" => new AwsIdentityAccessManagementKeyAgeFinding(),
-                "#microsoft.graph.awsIdentityAccessManagementKeyUsageFinding" => new AwsIdentityAccessManagementKeyUsageFinding(),
-                "#microsoft.graph.awsSecretInformationAccessFinding" => new AwsSecretInformationAccessFinding(),
-                "#microsoft.graph.awsSecurityToolAdministrationFinding" => new AwsSecurityToolAdministrationFinding(),
-                "#microsoft.graph.encryptedAwsStorageBucketFinding" => new EncryptedAwsStorageBucketFinding(),
-                "#microsoft.graph.encryptedAzureStorageAccountFinding" => new EncryptedAzureStorageAccountFinding(),
-                "#microsoft.graph.encryptedGcpStorageBucketFinding" => new EncryptedGcpStorageBucketFinding(),
-                "#microsoft.graph.externallyAccessibleAwsStorageBucketFinding" => new ExternallyAccessibleAwsStorageBucketFinding(),
-                "#microsoft.graph.externallyAccessibleAzureBlobContainerFinding" => new ExternallyAccessibleAzureBlobContainerFinding(),
-                "#microsoft.graph.externallyAccessibleGcpStorageBucketFinding" => new ExternallyAccessibleGcpStorageBucketFinding(),
-                "#microsoft.graph.identityFinding" => new IdentityFinding(),
-                "#microsoft.graph.inactiveAwsResourceFinding" => new InactiveAwsResourceFinding(),
-                "#microsoft.graph.inactiveAwsRoleFinding" => new InactiveAwsRoleFinding(),
-                "#microsoft.graph.inactiveAzureServicePrincipalFinding" => new InactiveAzureServicePrincipalFinding(),
-                "#microsoft.graph.inactiveGcpServiceAccountFinding" => new InactiveGcpServiceAccountFinding(),
-                "#microsoft.graph.inactiveGroupFinding" => new InactiveGroupFinding(),
-                "#microsoft.graph.inactiveServerlessFunctionFinding" => new InactiveServerlessFunctionFinding(),
-                "#microsoft.graph.inactiveUserFinding" => new InactiveUserFinding(),
-                "#microsoft.graph.openAwsSecurityGroupFinding" => new OpenAwsSecurityGroupFinding(),
-                "#microsoft.graph.openNetworkAzureSecurityGroupFinding" => new OpenNetworkAzureSecurityGroupFinding(),
-                "#microsoft.graph.overprovisionedAwsResourceFinding" => new OverprovisionedAwsResourceFinding(),
-                "#microsoft.graph.overprovisionedAwsRoleFinding" => new OverprovisionedAwsRoleFinding(),
-                "#microsoft.graph.overprovisionedAzureServicePrincipalFinding" => new OverprovisionedAzureServicePrincipalFinding(),
-                "#microsoft.graph.overprovisionedGcpServiceAccountFinding" => new OverprovisionedGcpServiceAccountFinding(),
-                "#microsoft.graph.overprovisionedServerlessFunctionFinding" => new OverprovisionedServerlessFunctionFinding(),
-                "#microsoft.graph.overprovisionedUserFinding" => new OverprovisionedUserFinding(),
-                "#microsoft.graph.privilegeEscalationAwsResourceFinding" => new PrivilegeEscalationAwsResourceFinding(),
-                "#microsoft.graph.privilegeEscalationAwsRoleFinding" => new PrivilegeEscalationAwsRoleFinding(),
-                "#microsoft.graph.privilegeEscalationFinding" => new PrivilegeEscalationFinding(),
-                "#microsoft.graph.privilegeEscalationGcpServiceAccountFinding" => new PrivilegeEscalationGcpServiceAccountFinding(),
-                "#microsoft.graph.privilegeEscalationUserFinding" => new PrivilegeEscalationUserFinding(),
-                "#microsoft.graph.secretInformationAccessAwsResourceFinding" => new SecretInformationAccessAwsResourceFinding(),
-                "#microsoft.graph.secretInformationAccessAwsRoleFinding" => new SecretInformationAccessAwsRoleFinding(),
-                "#microsoft.graph.secretInformationAccessAwsServerlessFunctionFinding" => new SecretInformationAccessAwsServerlessFunctionFinding(),
-                "#microsoft.graph.secretInformationAccessAwsUserFinding" => new SecretInformationAccessAwsUserFinding(),
-                "#microsoft.graph.securityToolAwsResourceAdministratorFinding" => new SecurityToolAwsResourceAdministratorFinding(),
-                "#microsoft.graph.securityToolAwsRoleAdministratorFinding" => new SecurityToolAwsRoleAdministratorFinding(),
-                "#microsoft.graph.securityToolAwsServerlessFunctionAdministratorFinding" => new SecurityToolAwsServerlessFunctionAdministratorFinding(),
-                "#microsoft.graph.securityToolAwsUserAdministratorFinding" => new SecurityToolAwsUserAdministratorFinding(),
-                "#microsoft.graph.superAwsResourceFinding" => new SuperAwsResourceFinding(),
-                "#microsoft.graph.superAwsRoleFinding" => new SuperAwsRoleFinding(),
-                "#microsoft.graph.superAzureServicePrincipalFinding" => new SuperAzureServicePrincipalFinding(),
-                "#microsoft.graph.superGcpServiceAccountFinding" => new SuperGcpServiceAccountFinding(),
-                "#microsoft.graph.superServerlessFunctionFinding" => new SuperServerlessFunctionFinding(),
-                "#microsoft.graph.superUserFinding" => new SuperUserFinding(),
-                "#microsoft.graph.unenforcedMfaAwsUserFinding" => new UnenforcedMfaAwsUserFinding(),
-                "#microsoft.graph.virtualMachineWithAwsStorageBucketAccessFinding" => new VirtualMachineWithAwsStorageBucketAccessFinding(),
-                _ => new Finding(),
+                "#microsoft.graph.awsExternalSystemAccessFinding" => new Microsoft.Graph.Beta.Models.AwsExternalSystemAccessFinding(),
+                "#microsoft.graph.awsExternalSystemAccessRoleFinding" => new Microsoft.Graph.Beta.Models.AwsExternalSystemAccessRoleFinding(),
+                "#microsoft.graph.awsIdentityAccessManagementKeyAgeFinding" => new Microsoft.Graph.Beta.Models.AwsIdentityAccessManagementKeyAgeFinding(),
+                "#microsoft.graph.awsIdentityAccessManagementKeyUsageFinding" => new Microsoft.Graph.Beta.Models.AwsIdentityAccessManagementKeyUsageFinding(),
+                "#microsoft.graph.awsSecretInformationAccessFinding" => new Microsoft.Graph.Beta.Models.AwsSecretInformationAccessFinding(),
+                "#microsoft.graph.awsSecurityToolAdministrationFinding" => new Microsoft.Graph.Beta.Models.AwsSecurityToolAdministrationFinding(),
+                "#microsoft.graph.encryptedAwsStorageBucketFinding" => new Microsoft.Graph.Beta.Models.EncryptedAwsStorageBucketFinding(),
+                "#microsoft.graph.encryptedAzureStorageAccountFinding" => new Microsoft.Graph.Beta.Models.EncryptedAzureStorageAccountFinding(),
+                "#microsoft.graph.encryptedGcpStorageBucketFinding" => new Microsoft.Graph.Beta.Models.EncryptedGcpStorageBucketFinding(),
+                "#microsoft.graph.externallyAccessibleAwsStorageBucketFinding" => new Microsoft.Graph.Beta.Models.ExternallyAccessibleAwsStorageBucketFinding(),
+                "#microsoft.graph.externallyAccessibleAzureBlobContainerFinding" => new Microsoft.Graph.Beta.Models.ExternallyAccessibleAzureBlobContainerFinding(),
+                "#microsoft.graph.externallyAccessibleGcpStorageBucketFinding" => new Microsoft.Graph.Beta.Models.ExternallyAccessibleGcpStorageBucketFinding(),
+                "#microsoft.graph.identityFinding" => new Microsoft.Graph.Beta.Models.IdentityFinding(),
+                "#microsoft.graph.inactiveAwsResourceFinding" => new Microsoft.Graph.Beta.Models.InactiveAwsResourceFinding(),
+                "#microsoft.graph.inactiveAwsRoleFinding" => new Microsoft.Graph.Beta.Models.InactiveAwsRoleFinding(),
+                "#microsoft.graph.inactiveAzureServicePrincipalFinding" => new Microsoft.Graph.Beta.Models.InactiveAzureServicePrincipalFinding(),
+                "#microsoft.graph.inactiveGcpServiceAccountFinding" => new Microsoft.Graph.Beta.Models.InactiveGcpServiceAccountFinding(),
+                "#microsoft.graph.inactiveGroupFinding" => new Microsoft.Graph.Beta.Models.InactiveGroupFinding(),
+                "#microsoft.graph.inactiveServerlessFunctionFinding" => new Microsoft.Graph.Beta.Models.InactiveServerlessFunctionFinding(),
+                "#microsoft.graph.inactiveUserFinding" => new Microsoft.Graph.Beta.Models.InactiveUserFinding(),
+                "#microsoft.graph.openAwsSecurityGroupFinding" => new Microsoft.Graph.Beta.Models.OpenAwsSecurityGroupFinding(),
+                "#microsoft.graph.openNetworkAzureSecurityGroupFinding" => new Microsoft.Graph.Beta.Models.OpenNetworkAzureSecurityGroupFinding(),
+                "#microsoft.graph.overprovisionedAwsResourceFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedAwsResourceFinding(),
+                "#microsoft.graph.overprovisionedAwsRoleFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedAwsRoleFinding(),
+                "#microsoft.graph.overprovisionedAzureServicePrincipalFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedAzureServicePrincipalFinding(),
+                "#microsoft.graph.overprovisionedGcpServiceAccountFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedGcpServiceAccountFinding(),
+                "#microsoft.graph.overprovisionedServerlessFunctionFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedServerlessFunctionFinding(),
+                "#microsoft.graph.overprovisionedUserFinding" => new Microsoft.Graph.Beta.Models.OverprovisionedUserFinding(),
+                "#microsoft.graph.privilegeEscalationAwsResourceFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationAwsResourceFinding(),
+                "#microsoft.graph.privilegeEscalationAwsRoleFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationAwsRoleFinding(),
+                "#microsoft.graph.privilegeEscalationFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationFinding(),
+                "#microsoft.graph.privilegeEscalationGcpServiceAccountFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationGcpServiceAccountFinding(),
+                "#microsoft.graph.privilegeEscalationUserFinding" => new Microsoft.Graph.Beta.Models.PrivilegeEscalationUserFinding(),
+                "#microsoft.graph.secretInformationAccessAwsResourceFinding" => new Microsoft.Graph.Beta.Models.SecretInformationAccessAwsResourceFinding(),
+                "#microsoft.graph.secretInformationAccessAwsRoleFinding" => new Microsoft.Graph.Beta.Models.SecretInformationAccessAwsRoleFinding(),
+                "#microsoft.graph.secretInformationAccessAwsServerlessFunctionFinding" => new Microsoft.Graph.Beta.Models.SecretInformationAccessAwsServerlessFunctionFinding(),
+                "#microsoft.graph.secretInformationAccessAwsUserFinding" => new Microsoft.Graph.Beta.Models.SecretInformationAccessAwsUserFinding(),
+                "#microsoft.graph.securityToolAwsResourceAdministratorFinding" => new Microsoft.Graph.Beta.Models.SecurityToolAwsResourceAdministratorFinding(),
+                "#microsoft.graph.securityToolAwsRoleAdministratorFinding" => new Microsoft.Graph.Beta.Models.SecurityToolAwsRoleAdministratorFinding(),
+                "#microsoft.graph.securityToolAwsServerlessFunctionAdministratorFinding" => new Microsoft.Graph.Beta.Models.SecurityToolAwsServerlessFunctionAdministratorFinding(),
+                "#microsoft.graph.securityToolAwsUserAdministratorFinding" => new Microsoft.Graph.Beta.Models.SecurityToolAwsUserAdministratorFinding(),
+                "#microsoft.graph.superAwsResourceFinding" => new Microsoft.Graph.Beta.Models.SuperAwsResourceFinding(),
+                "#microsoft.graph.superAwsRoleFinding" => new Microsoft.Graph.Beta.Models.SuperAwsRoleFinding(),
+                "#microsoft.graph.superAzureServicePrincipalFinding" => new Microsoft.Graph.Beta.Models.SuperAzureServicePrincipalFinding(),
+                "#microsoft.graph.superGcpServiceAccountFinding" => new Microsoft.Graph.Beta.Models.SuperGcpServiceAccountFinding(),
+                "#microsoft.graph.superServerlessFunctionFinding" => new Microsoft.Graph.Beta.Models.SuperServerlessFunctionFinding(),
+                "#microsoft.graph.superUserFinding" => new Microsoft.Graph.Beta.Models.SuperUserFinding(),
+                "#microsoft.graph.unenforcedMfaAwsUserFinding" => new Microsoft.Graph.Beta.Models.UnenforcedMfaAwsUserFinding(),
+                "#microsoft.graph.virtualMachineWithAwsStorageBucketAccessFinding" => new Microsoft.Graph.Beta.Models.VirtualMachineWithAwsStorageBucketAccessFinding(),
+                _ => new Microsoft.Graph.Beta.Models.Finding(),
             };
         }
         /// <summary>

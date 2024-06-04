@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains product code and version properties to detect a Win32 App
     /// </summary>
-    public class Win32LobAppProductCodeDetection : Win32LobAppDetection, IParsable
+    public class Win32LobAppProductCodeDetection : Microsoft.Graph.Beta.Models.Win32LobAppDetection, IParsable
     {
         /// <summary>The product code of Win32 Line of Business (LoB) app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,13 +44,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Contains properties for detection operator.</summary>
-        public Win32LobAppDetectionOperator? ProductVersionOperator
+        public Microsoft.Graph.Beta.Models.Win32LobAppDetectionOperator? ProductVersionOperator
         {
-            get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("productVersionOperator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Win32LobAppDetectionOperator?>("productVersionOperator"); }
             set { BackingStore?.Set("productVersionOperator", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppProductCodeDetection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Win32LobAppProductCodeDetection"/> and sets the default values.
         /// </summary>
         public Win32LobAppProductCodeDetection() : base()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppProductCodeDetection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Win32LobAppProductCodeDetection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobAppProductCodeDetection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Win32LobAppProductCodeDetection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppProductCodeDetection();
+            return new Microsoft.Graph.Beta.Models.Win32LobAppProductCodeDetection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "productCode", n => { ProductCode = n.GetStringValue(); } },
                 { "productVersion", n => { ProductVersion = n.GetStringValue(); } },
-                { "productVersionOperator", n => { ProductVersionOperator = n.GetEnumValue<Win32LobAppDetectionOperator>(); } },
+                { "productVersionOperator", n => { ProductVersionOperator = n.GetEnumValue<Microsoft.Graph.Beta.Models.Win32LobAppDetectionOperator>(); } },
             };
         }
         /// <summary>
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("productCode", ProductCode);
             writer.WriteStringValue("productVersion", ProductVersion);
-            writer.WriteEnumValue<Win32LobAppDetectionOperator>("productVersionOperator", ProductVersionOperator);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Win32LobAppDetectionOperator>("productVersionOperator", ProductVersionOperator);
         }
     }
 }

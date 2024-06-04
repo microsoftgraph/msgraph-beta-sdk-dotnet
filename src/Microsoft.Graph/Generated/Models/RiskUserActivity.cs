@@ -20,24 +20,24 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The possible values are none, adminGeneratedTemporaryPassword, userPerformedSecuredPasswordChange, userPerformedSecuredPasswordReset, adminConfirmedSigninSafe, aiConfirmedSigninSafe, userPassedMFADrivenByRiskBasedPolicy, adminDismissedAllRiskForUser, adminConfirmedSigninCompromised, hidden, adminConfirmedUserCompromised, unknownFutureValue.</summary>
-        public RiskDetail? Detail
+        public Microsoft.Graph.Beta.Models.RiskDetail? Detail
         {
-            get { return BackingStore?.Get<RiskDetail?>("detail"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>List of risk event types. Deprecated. Use riskEventType instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RiskEventType?>? EventTypes
+        public List<Microsoft.Graph.Beta.Models.RiskEventType?>? EventTypes
         {
-            get { return BackingStore?.Get<List<RiskEventType?>?>("eventTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RiskEventType?>?>("eventTypes"); }
             set { BackingStore?.Set("eventTypes", value); }
         }
 #nullable restore
 #else
-        public List<RiskEventType?> EventTypes
+        public List<Microsoft.Graph.Beta.Models.RiskEventType?> EventTypes
         {
-            get { return BackingStore?.Get<List<RiskEventType?>>("eventTypes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RiskEventType?>>("eventTypes"); }
             set { BackingStore?.Set("eventTypes", value); }
         }
 #endif
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RiskUserActivity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.RiskUserActivity"/> and sets the default values.
         /// </summary>
         public RiskUserActivity()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RiskUserActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RiskUserActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RiskUserActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.RiskUserActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RiskUserActivity();
+            return new Microsoft.Graph.Beta.Models.RiskUserActivity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
-                { "eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<RiskEventType>()?.ToList(); } },
+                { "detail", n => { Detail = n.GetEnumValue<Microsoft.Graph.Beta.Models.RiskDetail>(); } },
+                { "eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.RiskEventType>()?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -112,8 +112,8 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<RiskDetail>("detail", Detail);
-            writer.WriteCollectionOfEnumValues<RiskEventType>("eventTypes", EventTypes);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RiskDetail>("detail", Detail);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.RiskEventType>("eventTypes", EventTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes", RiskEventTypes);
             writer.WriteAdditionalData(AdditionalData);

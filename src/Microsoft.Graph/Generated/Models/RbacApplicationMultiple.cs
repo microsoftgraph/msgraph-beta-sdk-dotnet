@@ -7,66 +7,66 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class RbacApplicationMultiple : Entity, IParsable
+    public class RbacApplicationMultiple : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The resourceNamespaces property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRbacResourceNamespace>? ResourceNamespaces
+        public List<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>? ResourceNamespaces
         {
-            get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>?>("resourceNamespaces"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>?>("resourceNamespaces"); }
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRbacResourceNamespace> ResourceNamespaces
+        public List<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace> ResourceNamespaces
         {
-            get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>>("resourceNamespaces"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>>("resourceNamespaces"); }
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
 #endif
         /// <summary>The roleAssignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleAssignmentMultiple>? RoleAssignments
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple>? RoleAssignments
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>?>("roleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple>?>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleAssignmentMultiple> RoleAssignments
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple> RoleAssignments
         {
-            get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>>("roleAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple>>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
 #endif
         /// <summary>The roleDefinitions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleDefinition>? RoleDefinitions
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>? RoleDefinitions
         {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>?>("roleDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>?>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleDefinition> RoleDefinitions
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition> RoleDefinitions
         {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("roleDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RbacApplicationMultiple"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RbacApplicationMultiple"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RbacApplicationMultiple CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RbacApplicationMultiple CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RbacApplicationMultiple();
+            return new Microsoft.Graph.Beta.Models.RbacApplicationMultiple();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "resourceNamespaces", n => { ResourceNamespaces = n.GetCollectionOfObjectValues<UnifiedRbacResourceNamespace>(UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<UnifiedRoleAssignmentMultiple>(UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceNamespaces", n => { ResourceNamespaces = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>(Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleAssignments", n => { RoleAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple>(Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>(Microsoft.Graph.Beta.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<UnifiedRbacResourceNamespace>("resourceNamespaces", ResourceNamespaces);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleAssignmentMultiple>("roleAssignments", RoleAssignments);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleDefinition>("roleDefinitions", RoleDefinitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRbacResourceNamespace>("resourceNamespaces", ResourceNamespaces);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleAssignmentMultiple>("roleAssignments", RoleAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>("roleDefinitions", RoleDefinitions);
         }
     }
 }

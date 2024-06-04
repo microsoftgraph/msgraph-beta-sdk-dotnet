@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DataProcessorServiceForWindowsFeaturesOnboarding"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding"/> and sets the default values.
         /// </summary>
         public DataProcessorServiceForWindowsFeaturesOnboarding()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DataProcessorServiceForWindowsFeaturesOnboarding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DataProcessorServiceForWindowsFeaturesOnboarding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DataProcessorServiceForWindowsFeaturesOnboarding();
+            return new Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries
 {
     #pragma warning disable CS1591
-    public class GetHealthMetricTimeSeriesPostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetHealthMetricTimeSeriesPostResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MetricTimeSeriesDataPoint>? Value
+        public List<Microsoft.Graph.Beta.Models.MetricTimeSeriesDataPoint>? Value
         {
-            get { return BackingStore?.Get<List<MetricTimeSeriesDataPoint>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MetricTimeSeriesDataPoint>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<MetricTimeSeriesDataPoint> Value
+        public List<Microsoft.Graph.Beta.Models.MetricTimeSeriesDataPoint> Value
         {
-            get { return BackingStore?.Get<List<MetricTimeSeriesDataPoint>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MetricTimeSeriesDataPoint>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetHealthMetricTimeSeriesPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries.GetHealthMetricTimeSeriesPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetHealthMetricTimeSeriesPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries.GetHealthMetricTimeSeriesPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetHealthMetricTimeSeriesPostResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries.GetHealthMetricTimeSeriesPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<MetricTimeSeriesDataPoint>(MetricTimeSeriesDataPoint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MetricTimeSeriesDataPoint>(Microsoft.Graph.Beta.Models.MetricTimeSeriesDataPoint.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<MetricTimeSeriesDataPoint>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MetricTimeSeriesDataPoint>("value", Value);
         }
     }
 }

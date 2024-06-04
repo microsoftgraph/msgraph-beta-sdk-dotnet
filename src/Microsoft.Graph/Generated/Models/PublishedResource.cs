@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PublishedResource : Entity, IParsable
+    public class PublishedResource : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OnPremisesAgentGroup>? AgentGroups
+        public List<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>? AgentGroups
         {
-            get { return BackingStore?.Get<List<OnPremisesAgentGroup>?>("agentGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>?>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
 #nullable restore
 #else
-        public List<OnPremisesAgentGroup> AgentGroups
+        public List<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup> AgentGroups
         {
-            get { return BackingStore?.Get<List<OnPremisesAgentGroup>>("agentGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>>("agentGroups"); }
             set { BackingStore?.Set("agentGroups", value); }
         }
 #endif
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The publishingType property</summary>
-        public OnPremisesPublishingType? PublishingType
+        public Microsoft.Graph.Beta.Models.OnPremisesPublishingType? PublishingType
         {
-            get { return BackingStore?.Get<OnPremisesPublishingType?>("publishingType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesPublishingType?>("publishingType"); }
             set { BackingStore?.Set("publishingType", value); }
         }
         /// <summary>Name of the publishedResource.</summary>
@@ -67,12 +67,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PublishedResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PublishedResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PublishedResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PublishedResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PublishedResource();
+            return new Microsoft.Graph.Beta.Models.PublishedResource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>(Microsoft.Graph.Beta.Models.OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "publishingType", n => { PublishingType = n.GetEnumValue<OnPremisesPublishingType>(); } },
+                { "publishingType", n => { PublishingType = n.GetEnumValue<Microsoft.Graph.Beta.Models.OnPremisesPublishingType>(); } },
                 { "resourceName", n => { ResourceName = n.GetStringValue(); } },
             };
         }
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OnPremisesAgentGroup>("agentGroups", AgentGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OnPremisesAgentGroup>("agentGroups", AgentGroups);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<OnPremisesPublishingType>("publishingType", PublishingType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OnPremisesPublishingType>("publishingType", PublishingType);
             writer.WriteStringValue("resourceName", ResourceName);
         }
     }

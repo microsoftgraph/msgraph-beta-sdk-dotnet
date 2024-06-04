@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity provides descriptions of the declared methods, properties and relationships exposed by the kiosk resource.
     /// </summary>
-    public class WindowsKioskConfiguration : DeviceConfiguration, IParsable
+    public class WindowsKioskConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Enable public browsing kiosk mode for the Microsoft Edge browser. The Default is false.</summary>
         public bool? EdgeKioskEnablePublicBrowsing
@@ -92,16 +92,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>This policy setting allows to define a list of Kiosk profiles for a Kiosk configuration. This collection can contain a maximum of 3 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsKioskProfile>? KioskProfiles
+        public List<Microsoft.Graph.Beta.Models.WindowsKioskProfile>? KioskProfiles
         {
-            get { return BackingStore?.Get<List<WindowsKioskProfile>?>("kioskProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsKioskProfile>?>("kioskProfiles"); }
             set { BackingStore?.Set("kioskProfiles", value); }
         }
 #nullable restore
 #else
-        public List<WindowsKioskProfile> KioskProfiles
+        public List<Microsoft.Graph.Beta.Models.WindowsKioskProfile> KioskProfiles
         {
-            get { return BackingStore?.Get<List<WindowsKioskProfile>>("kioskProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsKioskProfile>>("kioskProfiles"); }
             set { BackingStore?.Set("kioskProfiles", value); }
         }
 #endif
@@ -122,7 +122,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsKioskConfiguration() : base()
         {
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsKioskConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsKioskConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskConfiguration();
+            return new Microsoft.Graph.Beta.Models.WindowsKioskConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "kioskBrowserEnableHomeButton", n => { KioskBrowserEnableHomeButton = n.GetBoolValue(); } },
                 { "kioskBrowserEnableNavigationButtons", n => { KioskBrowserEnableNavigationButtons = n.GetBoolValue(); } },
                 { "kioskBrowserRestartOnIdleTimeInMinutes", n => { KioskBrowserRestartOnIdleTimeInMinutes = n.GetIntValue(); } },
-                { "kioskProfiles", n => { KioskProfiles = n.GetCollectionOfObjectValues<WindowsKioskProfile>(WindowsKioskProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "kioskProfiles", n => { KioskProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsKioskProfile>(Microsoft.Graph.Beta.Models.WindowsKioskProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "windowsKioskForceUpdateSchedule", n => { WindowsKioskForceUpdateSchedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule>(Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule.CreateFromDiscriminatorValue); } },
             };
         }
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("kioskBrowserEnableHomeButton", KioskBrowserEnableHomeButton);
             writer.WriteBoolValue("kioskBrowserEnableNavigationButtons", KioskBrowserEnableNavigationButtons);
             writer.WriteIntValue("kioskBrowserRestartOnIdleTimeInMinutes", KioskBrowserRestartOnIdleTimeInMinutes);
-            writer.WriteCollectionOfObjectValues<WindowsKioskProfile>("kioskProfiles", KioskProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsKioskProfile>("kioskProfiles", KioskProfiles);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule>("windowsKioskForceUpdateSchedule", WindowsKioskForceUpdateSchedule);
         }
     }

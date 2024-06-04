@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
     #pragma warning restore CS1591
     {
         /// <summary>An enum type to represent approval actions of single or list of drivers.</summary>
-        public DriverApprovalAction? ActionName
+        public Microsoft.Graph.Beta.Models.DriverApprovalAction? ActionName
         {
-            get { return BackingStore?.Get<DriverApprovalAction?>("actionName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriverApprovalAction?>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExecuteActionPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction.ExecuteActionPostRequestBody"/> and sets the default values.
         /// </summary>
         public ExecuteActionPostRequestBody()
         {
@@ -59,12 +59,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExecuteActionPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction.ExecuteActionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ExecuteActionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction.ExecuteActionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExecuteActionPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction.ExecuteActionPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actionName", n => { ActionName = n.GetEnumValue<DriverApprovalAction>(); } },
+                { "actionName", n => { ActionName = n.GetEnumValue<Microsoft.Graph.Beta.Models.DriverApprovalAction>(); } },
                 { "deploymentDate", n => { DeploymentDate = n.GetDateTimeOffsetValue(); } },
                 { "driverIds", n => { DriverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DriverApprovalAction>("actionName", ActionName);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DriverApprovalAction>("actionName", ActionName);
             writer.WriteDateTimeOffsetValue("deploymentDate", DeploymentDate);
             writer.WriteCollectionOfPrimitiveValues<string>("driverIds", DriverIds);
             writer.WriteAdditionalData(AdditionalData);

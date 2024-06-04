@@ -7,11 +7,11 @@ using System;
 namespace Microsoft.Graph.Beta.Models.IndustryData
 {
     #pragma warning disable CS1591
-    public class YearReferenceValue : ReferenceValue, IParsable
+    public class YearReferenceValue : Microsoft.Graph.Beta.Models.IndustryData.ReferenceValue, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
-        /// Instantiates a new <see cref="YearReferenceValue"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue"/> and sets the default values.
         /// </summary>
         public YearReferenceValue() : base()
         {
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="YearReferenceValue"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new YearReferenceValue CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new YearReferenceValue();
+            return new Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue();
         }
         /// <summary>
         /// The deserialization information for the current model

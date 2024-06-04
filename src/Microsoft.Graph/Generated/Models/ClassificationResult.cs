@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ClassificationResult"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ClassificationResult"/> and sets the default values.
         /// </summary>
         public ClassificationResult()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ClassificationResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ClassificationResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ClassificationResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ClassificationResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ClassificationResult();
+            return new Microsoft.Graph.Beta.Models.ClassificationResult();
         }
         /// <summary>
         /// The deserialization information for the current model

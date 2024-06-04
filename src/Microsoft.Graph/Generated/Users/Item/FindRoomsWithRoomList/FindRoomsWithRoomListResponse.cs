@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomsWithRoomList
 {
     [Obsolete("This class is obsolete. Use FindRoomsWithRoomListGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FindRoomsWithRoomListResponse : FindRoomsWithRoomListGetResponse, IParsable
+    public class FindRoomsWithRoomListResponse : Microsoft.Graph.Beta.Users.Item.FindRoomsWithRoomList.FindRoomsWithRoomListGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FindRoomsWithRoomListResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.FindRoomsWithRoomList.FindRoomsWithRoomListResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FindRoomsWithRoomListResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Users.Item.FindRoomsWithRoomList.FindRoomsWithRoomListResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FindRoomsWithRoomListResponse();
+            return new Microsoft.Graph.Beta.Users.Item.FindRoomsWithRoomList.FindRoomsWithRoomListResponse();
         }
     }
 }

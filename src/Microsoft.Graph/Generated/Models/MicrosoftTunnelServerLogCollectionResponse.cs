@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that stores the server log collection status.
     /// </summary>
-    public class MicrosoftTunnelServerLogCollectionResponse : Entity, IParsable
+    public class MicrosoftTunnelServerLogCollectionResponse : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The end time of the logs collected</summary>
         public DateTimeOffset? EndDateTime
@@ -58,20 +58,20 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Enum type that represent the status of log collection</summary>
-        public MicrosoftTunnelLogCollectionStatus? Status
+        public Microsoft.Graph.Beta.Models.MicrosoftTunnelLogCollectionStatus? Status
         {
-            get { return BackingStore?.Get<MicrosoftTunnelLogCollectionStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftTunnelLogCollectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftTunnelServerLogCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftTunnelServerLogCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftTunnelServerLogCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "serverId", n => { ServerId = n.GetStringValue(); } },
                 { "sizeInBytes", n => { SizeInBytes = n.GetLongValue(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetEnumValue<MicrosoftTunnelLogCollectionStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelLogCollectionStatus>(); } },
             };
         }
         /// <summary>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("serverId", ServerId);
             writer.WriteLongValue("sizeInBytes", SizeInBytes);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
-            writer.WriteEnumValue<MicrosoftTunnelLogCollectionStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelLogCollectionStatus>("status", Status);
         }
     }
 }

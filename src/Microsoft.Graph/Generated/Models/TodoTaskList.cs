@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TodoTaskList : Entity, IParsable
+    public class TodoTaskList : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the task list.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The collection of open extensions defined for the task list. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Extension>? Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension>? Extensions
         {
-            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>?>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #nullable restore
 #else
-        public List<Extension> Extensions
+        public List<Microsoft.Graph.Beta.Models.Extension> Extensions
         {
-            get { return BackingStore?.Get<List<Extension>>("extensions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
 #endif
@@ -57,16 +57,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The tasks in this task list. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TodoTask>? Tasks
+        public List<Microsoft.Graph.Beta.Models.TodoTask>? Tasks
         {
-            get { return BackingStore?.Get<List<TodoTask>?>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TodoTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<TodoTask> Tasks
+        public List<Microsoft.Graph.Beta.Models.TodoTask> Tasks
         {
-            get { return BackingStore?.Get<List<TodoTask>>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TodoTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TodoTaskList"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TodoTaskList"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TodoTaskList CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TodoTaskList CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TodoTaskList();
+            return new Microsoft.Graph.Beta.Models.TodoTaskList();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -95,11 +95,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "extensions", n => { Extensions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>(Microsoft.Graph.Beta.Models.Extension.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isOwner", n => { IsOwner = n.GetBoolValue(); } },
                 { "isShared", n => { IsShared = n.GetBoolValue(); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<TodoTask>(TodoTask.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "wellknownListName", n => { WellknownListName = n.GetEnumValue<WellknownListName>(); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TodoTask>(Microsoft.Graph.Beta.Models.TodoTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "wellknownListName", n => { WellknownListName = n.GetEnumValue<Microsoft.Graph.Beta.Models.WellknownListName>(); } },
             };
         }
         /// <summary>
@@ -111,11 +111,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Extension>("extensions", Extensions);
             writer.WriteBoolValue("isOwner", IsOwner);
             writer.WriteBoolValue("isShared", IsShared);
-            writer.WriteCollectionOfObjectValues<TodoTask>("tasks", Tasks);
-            writer.WriteEnumValue<WellknownListName>("wellknownListName", WellknownListName);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TodoTask>("tasks", Tasks);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WellknownListName>("wellknownListName", WellknownListName);
         }
     }
 }

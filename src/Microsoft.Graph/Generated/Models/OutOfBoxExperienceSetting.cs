@@ -21,9 +21,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceUsageType property</summary>
-        public WindowsDeviceUsageType? DeviceUsageType
+        public Microsoft.Graph.Beta.Models.WindowsDeviceUsageType? DeviceUsageType
         {
-            get { return BackingStore?.Get<WindowsDeviceUsageType?>("deviceUsageType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsDeviceUsageType?>("deviceUsageType"); }
             set { BackingStore?.Set("deviceUsageType", value); }
         }
         /// <summary>When TRUE, the link that allows user to start over with a different account on company sign-in is hidden. When false, the link that allows user to start over with a different account on company sign-in is available. Default value is FALSE.</summary>
@@ -67,13 +67,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("privacySettingsHidden", value); }
         }
         /// <summary>The userType property</summary>
-        public WindowsUserType? UserType
+        public Microsoft.Graph.Beta.Models.WindowsUserType? UserType
         {
-            get { return BackingStore?.Get<WindowsUserType?>("userType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OutOfBoxExperienceSetting"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting"/> and sets the default values.
         /// </summary>
         public OutOfBoxExperienceSetting()
         {
@@ -83,12 +83,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutOfBoxExperienceSetting"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OutOfBoxExperienceSetting CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutOfBoxExperienceSetting();
+            return new Microsoft.Graph.Beta.Models.OutOfBoxExperienceSetting();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,13 +98,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceUsageType", n => { DeviceUsageType = n.GetEnumValue<WindowsDeviceUsageType>(); } },
+                { "deviceUsageType", n => { DeviceUsageType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsDeviceUsageType>(); } },
                 { "escapeLinkHidden", n => { EscapeLinkHidden = n.GetBoolValue(); } },
                 { "eulaHidden", n => { EulaHidden = n.GetBoolValue(); } },
                 { "keyboardSelectionPageSkipped", n => { KeyboardSelectionPageSkipped = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "privacySettingsHidden", n => { PrivacySettingsHidden = n.GetBoolValue(); } },
-                { "userType", n => { UserType = n.GetEnumValue<WindowsUserType>(); } },
+                { "userType", n => { UserType = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsUserType>(); } },
             };
         }
         /// <summary>
@@ -114,13 +114,13 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<WindowsDeviceUsageType>("deviceUsageType", DeviceUsageType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsDeviceUsageType>("deviceUsageType", DeviceUsageType);
             writer.WriteBoolValue("escapeLinkHidden", EscapeLinkHidden);
             writer.WriteBoolValue("eulaHidden", EulaHidden);
             writer.WriteBoolValue("keyboardSelectionPageSkipped", KeyboardSelectionPageSkipped);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("privacySettingsHidden", PrivacySettingsHidden);
-            writer.WriteEnumValue<WindowsUserType>("userType", UserType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsUserType>("userType", UserType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

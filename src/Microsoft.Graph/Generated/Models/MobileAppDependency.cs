@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Describes a dependency type between two mobile apps.
     /// </summary>
-    public class MobileAppDependency : MobileAppRelationship, IParsable
+    public class MobileAppDependency : Microsoft.Graph.Beta.Models.MobileAppRelationship, IParsable
     {
         /// <summary>Indicates the dependency type associated with a relationship between two mobile apps.</summary>
-        public MobileAppDependencyType? DependencyType
+        public Microsoft.Graph.Beta.Models.MobileAppDependencyType? DependencyType
         {
-            get { return BackingStore?.Get<MobileAppDependencyType?>("dependencyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppDependencyType?>("dependencyType"); }
             set { BackingStore?.Set("dependencyType", value); }
         }
         /// <summary>The total number of apps that directly or indirectly depend on the parent app. This property is read-only.</summary>
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dependsOnAppCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MobileAppDependency"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MobileAppDependency"/> and sets the default values.
         /// </summary>
         public MobileAppDependency() : base()
         {
@@ -39,12 +39,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MobileAppDependency"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MobileAppDependency"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MobileAppDependency CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MobileAppDependency CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MobileAppDependency();
+            return new Microsoft.Graph.Beta.Models.MobileAppDependency();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "dependencyType", n => { DependencyType = n.GetEnumValue<MobileAppDependencyType>(); } },
+                { "dependencyType", n => { DependencyType = n.GetEnumValue<Microsoft.Graph.Beta.Models.MobileAppDependencyType>(); } },
                 { "dependentAppCount", n => { DependentAppCount = n.GetIntValue(); } },
                 { "dependsOnAppCount", n => { DependsOnAppCount = n.GetIntValue(); } },
             };
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<MobileAppDependencyType>("dependencyType", DependencyType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MobileAppDependencyType>("dependencyType", DependencyType);
         }
     }
 }

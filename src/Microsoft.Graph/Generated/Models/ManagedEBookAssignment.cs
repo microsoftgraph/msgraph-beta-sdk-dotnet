@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains properties used to assign a eBook to a group.
     /// </summary>
-    public class ManagedEBookAssignment : Entity, IParsable
+    public class ManagedEBookAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>
         public Microsoft.Graph.Beta.Models.InstallIntent? InstallIntent
@@ -20,32 +20,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The assignment target for eBook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceAndAppManagementAssignmentTarget? Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget? Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget?>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #nullable restore
 #else
-        public DeviceAndAppManagementAssignmentTarget Target
+        public Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget Target
         {
-            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ManagedEBookAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedEBookAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ManagedEBookAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedEBookAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosVppEBookAssignment" => new IosVppEBookAssignment(),
-                _ => new ManagedEBookAssignment(),
+                "#microsoft.graph.iosVppEBookAssignment" => new Microsoft.Graph.Beta.Models.IosVppEBookAssignment(),
+                _ => new Microsoft.Graph.Beta.Models.ManagedEBookAssignment(),
             };
         }
         /// <summary>
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "installIntent", n => { InstallIntent = n.GetEnumValue<InstallIntent>(); } },
-                { "target", n => { Target = n.GetObjectValue<DeviceAndAppManagementAssignmentTarget>(DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
+                { "installIntent", n => { InstallIntent = n.GetEnumValue<Microsoft.Graph.Beta.Models.InstallIntent>(); } },
+                { "target", n => { Target = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>(Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<InstallIntent>("installIntent", InstallIntent);
-            writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.InstallIntent>("installIntent", InstallIntent);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }
 }

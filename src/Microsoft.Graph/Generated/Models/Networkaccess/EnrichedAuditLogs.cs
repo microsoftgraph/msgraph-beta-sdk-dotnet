@@ -13,60 +13,60 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>Exchange Online enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EnrichedAuditLogsSettings? Exchange
+        public Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings? Exchange
         {
-            get { return BackingStore?.Get<EnrichedAuditLogsSettings?>("exchange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings?>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
 #nullable restore
 #else
-        public EnrichedAuditLogsSettings Exchange
+        public Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings Exchange
         {
-            get { return BackingStore?.Get<EnrichedAuditLogsSettings>("exchange"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>("exchange"); }
             set { BackingStore?.Set("exchange", value); }
         }
 #endif
         /// <summary>SharePoint Online enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EnrichedAuditLogsSettings? Sharepoint
+        public Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings? Sharepoint
         {
-            get { return BackingStore?.Get<EnrichedAuditLogsSettings?>("sharepoint"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings?>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
 #nullable restore
 #else
-        public EnrichedAuditLogsSettings Sharepoint
+        public Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings Sharepoint
         {
-            get { return BackingStore?.Get<EnrichedAuditLogsSettings>("sharepoint"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>("sharepoint"); }
             set { BackingStore?.Set("sharepoint", value); }
         }
 #endif
         /// <summary>Teams enriched audit logs settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EnrichedAuditLogsSettings? Teams
+        public Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings? Teams
         {
-            get { return BackingStore?.Get<EnrichedAuditLogsSettings?>("teams"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings?>("teams"); }
             set { BackingStore?.Set("teams", value); }
         }
 #nullable restore
 #else
-        public EnrichedAuditLogsSettings Teams
+        public Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings Teams
         {
-            get { return BackingStore?.Get<EnrichedAuditLogsSettings>("teams"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>("teams"); }
             set { BackingStore?.Set("teams", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EnrichedAuditLogs"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EnrichedAuditLogs CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EnrichedAuditLogs();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogs();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "exchange", n => { Exchange = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
-                { "sharepoint", n => { Sharepoint = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
-                { "teams", n => { Teams = n.GetObjectValue<EnrichedAuditLogsSettings>(EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
+                { "exchange", n => { Exchange = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>(Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
+                { "sharepoint", n => { Sharepoint = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>(Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
+                { "teams", n => { Teams = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>(Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EnrichedAuditLogsSettings>("exchange", Exchange);
-            writer.WriteObjectValue<EnrichedAuditLogsSettings>("sharepoint", Sharepoint);
-            writer.WriteObjectValue<EnrichedAuditLogsSettings>("teams", Teams);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>("exchange", Exchange);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>("sharepoint", Sharepoint);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.EnrichedAuditLogsSettings>("teams", Teams);
         }
     }
 }

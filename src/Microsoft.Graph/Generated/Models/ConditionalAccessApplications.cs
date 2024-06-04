@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ConditionalAccessFilter? ApplicationFilter
+        public Microsoft.Graph.Beta.Models.ConditionalAccessFilter? ApplicationFilter
         {
-            get { return BackingStore?.Get<ConditionalAccessFilter?>("applicationFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessFilter?>("applicationFilter"); }
             set { BackingStore?.Set("applicationFilter", value); }
         }
 #nullable restore
 #else
-        public ConditionalAccessFilter ApplicationFilter
+        public Microsoft.Graph.Beta.Models.ConditionalAccessFilter ApplicationFilter
         {
-            get { return BackingStore?.Get<ConditionalAccessFilter>("applicationFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConditionalAccessFilter>("applicationFilter"); }
             set { BackingStore?.Set("applicationFilter", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ConditionalAccessApplications"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessApplications"/> and sets the default values.
         /// </summary>
         public ConditionalAccessApplications()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ConditionalAccessApplications"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ConditionalAccessApplications"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ConditionalAccessApplications CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ConditionalAccessApplications CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ConditionalAccessApplications();
+            return new Microsoft.Graph.Beta.Models.ConditionalAccessApplications();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "applicationFilter", n => { ApplicationFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
+                { "applicationFilter", n => { ApplicationFilter = n.GetObjectValue<Microsoft.Graph.Beta.Models.ConditionalAccessFilter>(Microsoft.Graph.Beta.Models.ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
                 { "excludeApplications", n => { ExcludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "includeApplications", n => { IncludeApplications = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "includeAuthenticationContextClassReferences", n => { IncludeAuthenticationContextClassReferences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -156,7 +156,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<ConditionalAccessFilter>("applicationFilter", ApplicationFilter);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConditionalAccessFilter>("applicationFilter", ApplicationFilter);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeApplications", ExcludeApplications);
             writer.WriteCollectionOfPrimitiveValues<string>("includeApplications", IncludeApplications);
             writer.WriteCollectionOfPrimitiveValues<string>("includeAuthenticationContextClassReferences", IncludeAuthenticationContextClassReferences);

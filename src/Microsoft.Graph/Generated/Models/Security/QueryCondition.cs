@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="QueryCondition"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.QueryCondition"/> and sets the default values.
         /// </summary>
         public QueryCondition()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="QueryCondition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.QueryCondition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static QueryCondition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Security.QueryCondition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new QueryCondition();
+            return new Microsoft.Graph.Beta.Models.Security.QueryCondition();
         }
         /// <summary>
         /// The deserialization information for the current model

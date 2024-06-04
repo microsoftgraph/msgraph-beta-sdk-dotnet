@@ -61,25 +61,25 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>BitLockerRecoveryInformationType types</summary>
-        public BitLockerRecoveryInformationType? RecoveryInformationToStore
+        public Microsoft.Graph.Beta.Models.BitLockerRecoveryInformationType? RecoveryInformationToStore
         {
-            get { return BackingStore?.Get<BitLockerRecoveryInformationType?>("recoveryInformationToStore"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerRecoveryInformationType?>("recoveryInformationToStore"); }
             set { BackingStore?.Set("recoveryInformationToStore", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? RecoveryKeyUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? RecoveryKeyUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("recoveryKeyUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("recoveryKeyUsage"); }
             set { BackingStore?.Set("recoveryKeyUsage", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? RecoveryPasswordUsage
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? RecoveryPasswordUsage
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("recoveryPasswordUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("recoveryPasswordUsage"); }
             set { BackingStore?.Set("recoveryPasswordUsage", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BitLockerRecoveryOptions"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions"/> and sets the default values.
         /// </summary>
         public BitLockerRecoveryOptions()
         {
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BitLockerRecoveryOptions"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BitLockerRecoveryOptions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BitLockerRecoveryOptions();
+            return new Microsoft.Graph.Beta.Models.BitLockerRecoveryOptions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "enableRecoveryInformationSaveToStore", n => { EnableRecoveryInformationSaveToStore = n.GetBoolValue(); } },
                 { "hideRecoveryOptions", n => { HideRecoveryOptions = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "recoveryInformationToStore", n => { RecoveryInformationToStore = n.GetEnumValue<BitLockerRecoveryInformationType>(); } },
-                { "recoveryKeyUsage", n => { RecoveryKeyUsage = n.GetEnumValue<ConfigurationUsage>(); } },
-                { "recoveryPasswordUsage", n => { RecoveryPasswordUsage = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "recoveryInformationToStore", n => { RecoveryInformationToStore = n.GetEnumValue<Microsoft.Graph.Beta.Models.BitLockerRecoveryInformationType>(); } },
+                { "recoveryKeyUsage", n => { RecoveryKeyUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
+                { "recoveryPasswordUsage", n => { RecoveryPasswordUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
             };
         }
         /// <summary>
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("enableRecoveryInformationSaveToStore", EnableRecoveryInformationSaveToStore);
             writer.WriteBoolValue("hideRecoveryOptions", HideRecoveryOptions);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<BitLockerRecoveryInformationType>("recoveryInformationToStore", RecoveryInformationToStore);
-            writer.WriteEnumValue<ConfigurationUsage>("recoveryKeyUsage", RecoveryKeyUsage);
-            writer.WriteEnumValue<ConfigurationUsage>("recoveryPasswordUsage", RecoveryPasswordUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BitLockerRecoveryInformationType>("recoveryInformationToStore", RecoveryInformationToStore);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("recoveryKeyUsage", RecoveryKeyUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("recoveryPasswordUsage", RecoveryPasswordUsage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

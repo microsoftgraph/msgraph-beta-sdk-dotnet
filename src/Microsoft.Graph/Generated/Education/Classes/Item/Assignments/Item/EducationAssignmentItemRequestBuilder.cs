@@ -28,62 +28,62 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
     public class EducationAssignmentItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the activate method.</summary>
-        public ActivateRequestBuilder Activate
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Activate.ActivateRequestBuilder Activate
         {
-            get => new ActivateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Activate.ActivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.</summary>
-        public CategoriesRequestBuilder Categories
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder Categories
         {
-            get => new CategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the deactivate method.</summary>
-        public DeactivateRequestBuilder Deactivate
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Deactivate.DeactivateRequestBuilder Deactivate
         {
-            get => new DeactivateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Deactivate.DeactivateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the gradingCategory property of the microsoft.graph.educationAssignment entity.</summary>
-        public GradingCategoryRequestBuilder GradingCategory
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingCategory.GradingCategoryRequestBuilder GradingCategory
         {
-            get => new GradingCategoryRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingCategory.GradingCategoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the gradingScheme property of the microsoft.graph.educationAssignment entity.</summary>
-        public GradingSchemeRequestBuilder GradingScheme
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingScheme.GradingSchemeRequestBuilder GradingScheme
         {
-            get => new GradingSchemeRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.GradingScheme.GradingSchemeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the publish method.</summary>
-        public PublishRequestBuilder Publish
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Publish.PublishRequestBuilder Publish
         {
-            get => new PublishRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Publish.PublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.</summary>
-        public ResourcesRequestBuilder Resources
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources.ResourcesRequestBuilder Resources
         {
-            get => new ResourcesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources.ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.</summary>
-        public RubricRequestBuilder Rubric
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric.RubricRequestBuilder Rubric
         {
-            get => new RubricRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric.RubricRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setUpFeedbackResourcesFolder method.</summary>
-        public SetUpFeedbackResourcesFolderRequestBuilder SetUpFeedbackResourcesFolder
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.SetUpFeedbackResourcesFolder.SetUpFeedbackResourcesFolderRequestBuilder SetUpFeedbackResourcesFolder
         {
-            get => new SetUpFeedbackResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.SetUpFeedbackResourcesFolder.SetUpFeedbackResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the setUpResourcesFolder method.</summary>
-        public SetUpResourcesFolderRequestBuilder SetUpResourcesFolder
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder SetUpResourcesFolder
         {
-            get => new SetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.SetUpResourcesFolder.SetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.</summary>
-        public SubmissionsRequestBuilder Submissions
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.SubmissionsRequestBuilder Submissions
         {
-            get => new SubmissionsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.SubmissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationAssignmentItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="EducationAssignmentItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -125,51 +125,51 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
         /// Get the properties and relationships of an assignment. Only teachers, students, and applications with application permissions can perform this operation. Students can only see assignments assigned to them; teachers and applications with application permissions can see all assignments in a class. You can use the Prefer header in your request to get the inactive status in case the assignment is deactivated; otherwise, the response value for the status property is unknownFutureValue.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="EducationAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationAssignment"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationAssignment?> GetAsync(Action<RequestConfiguration<EducationAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationAssignment?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder.EducationAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationAssignment> GetAsync(Action<RequestConfiguration<EducationAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationAssignment> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder.EducationAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationAssignment>(requestInfo, EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EducationAssignment>(requestInfo, Microsoft.Graph.Beta.Models.EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update an educationAssignment object.  Only teachers in the class can do this. You can&apos;t use a PATCH request to change the status of an assignment. Use the publish action to change the assignment status.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationassignment-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="EducationAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationAssignment"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<EducationAssignment?> PatchAsync(EducationAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationAssignment?> PatchAsync(Microsoft.Graph.Beta.Models.EducationAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<EducationAssignment> PatchAsync(EducationAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.EducationAssignment> PatchAsync(Microsoft.Graph.Beta.Models.EducationAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<EducationAssignment>(requestInfo, EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.EducationAssignment>(requestInfo, Microsoft.Graph.Beta.Models.EducationAssignment.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete an existing assignment. Only teachers within a class can delete assignments.
@@ -197,11 +197,11 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder.EducationAssignmentItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<EducationAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder.EducationAssignmentItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -217,11 +217,11 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(EducationAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.EducationAssignment body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(EducationAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.EducationAssignment body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -234,11 +234,11 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="EducationAssignmentItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public EducationAssignmentItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new EducationAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -277,7 +277,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class EducationAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<EducationAssignmentItemRequestBuilderGetQueryParameters>
+        public class EducationAssignmentItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.EducationAssignmentItemRequestBuilder.EducationAssignmentItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("region", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="LocalConnectivityConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.LocalConnectivityConfiguration"/> and sets the default values.
         /// </summary>
         public LocalConnectivityConfiguration()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="LocalConnectivityConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.LocalConnectivityConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static LocalConnectivityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.LocalConnectivityConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new LocalConnectivityConfiguration();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.LocalConnectivityConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "bgpAddress", n => { BgpAddress = n.GetStringValue(); } },
                 { "endpoint", n => { Endpoint = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<Region>(); } },
+                { "region", n => { Region = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Region>(); } },
             };
         }
         /// <summary>
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteStringValue("bgpAddress", BgpAddress);
             writer.WriteStringValue("endpoint", Endpoint);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<Region>("region", Region);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Region>("region", Region);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

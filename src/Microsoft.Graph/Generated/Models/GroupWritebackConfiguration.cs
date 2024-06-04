@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GroupWritebackConfiguration : WritebackConfiguration, IParsable
+    public class GroupWritebackConfiguration : Microsoft.Graph.Beta.Models.WritebackConfiguration, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates the target on-premises group type the cloud object is written back as. Nullable. The possible values are: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup.If the cloud group is a unified (Microsoft 365) group, this property can be one of the following: universalDistributionGroup, universalSecurityGroup, universalMailEnabledSecurityGroup. Microsoft Entra security groups can be written back as universalSecurityGroup. If isEnabled or the NewUnifiedGroupWritebackDefault group setting is true but this property isn&apos;t explicitly configured: Microsoft 365 groups are written back as universalDistributionGroup by defaultSecurity groups are written back as universalSecurityGroup by default</summary>
@@ -29,12 +29,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupWritebackConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupWritebackConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupWritebackConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupWritebackConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupWritebackConfiguration();
+            return new Microsoft.Graph.Beta.Models.GroupWritebackConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

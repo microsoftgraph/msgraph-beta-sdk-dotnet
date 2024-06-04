@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OutboundSharedUserProfileCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class OutboundSharedUserProfileCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OutboundSharedUserProfile>? Value
+        public List<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>? Value
         {
-            get { return BackingStore?.Get<List<OutboundSharedUserProfile>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<OutboundSharedUserProfile> Value
+        public List<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile> Value
         {
-            get { return BackingStore?.Get<List<OutboundSharedUserProfile>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OutboundSharedUserProfileCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutboundSharedUserProfileCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OutboundSharedUserProfileCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OutboundSharedUserProfileCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OutboundSharedUserProfileCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.OutboundSharedUserProfileCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<OutboundSharedUserProfile>(OutboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>(Microsoft.Graph.Beta.Models.OutboundSharedUserProfile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<OutboundSharedUserProfile>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OutboundSharedUserProfile>("value", Value);
         }
     }
 }

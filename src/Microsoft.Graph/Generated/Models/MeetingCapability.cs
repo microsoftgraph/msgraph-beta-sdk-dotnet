@@ -30,9 +30,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allowAnonymousUsersToStartMeeting", value); }
         }
         /// <summary>The autoAdmittedUsers property</summary>
-        public AutoAdmittedUsersType? AutoAdmittedUsers
+        public Microsoft.Graph.Beta.Models.AutoAdmittedUsersType? AutoAdmittedUsers
         {
-            get { return BackingStore?.Get<AutoAdmittedUsersType?>("autoAdmittedUsers"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoAdmittedUsersType?>("autoAdmittedUsers"); }
             set { BackingStore?.Set("autoAdmittedUsers", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MeetingCapability"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MeetingCapability"/> and sets the default values.
         /// </summary>
         public MeetingCapability()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingCapability"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingCapability"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MeetingCapability CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MeetingCapability CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MeetingCapability();
+            return new Microsoft.Graph.Beta.Models.MeetingCapability();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "allowAnonymousUsersToDialOut", n => { AllowAnonymousUsersToDialOut = n.GetBoolValue(); } },
                 { "allowAnonymousUsersToStartMeeting", n => { AllowAnonymousUsersToStartMeeting = n.GetBoolValue(); } },
-                { "autoAdmittedUsers", n => { AutoAdmittedUsers = n.GetEnumValue<AutoAdmittedUsersType>(); } },
+                { "autoAdmittedUsers", n => { AutoAdmittedUsers = n.GetEnumValue<Microsoft.Graph.Beta.Models.AutoAdmittedUsersType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowAnonymousUsersToDialOut", AllowAnonymousUsersToDialOut);
             writer.WriteBoolValue("allowAnonymousUsersToStartMeeting", AllowAnonymousUsersToStartMeeting);
-            writer.WriteEnumValue<AutoAdmittedUsersType>("autoAdmittedUsers", AutoAdmittedUsers);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AutoAdmittedUsersType>("autoAdmittedUsers", AutoAdmittedUsers);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

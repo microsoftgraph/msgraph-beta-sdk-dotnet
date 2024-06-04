@@ -13,32 +13,32 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Specifies the audience to which content is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeploymentAudience? Audience
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience? Audience
         {
-            get { return BackingStore?.Get<DeploymentAudience?>("audience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience?>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
 #nullable restore
 #else
-        public DeploymentAudience Audience
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience Audience
         {
-            get { return BackingStore?.Get<DeploymentAudience>("audience"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
 #endif
         /// <summary>Specifies what content to deploy. Cannot be changed. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeployableContent? Content
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent? Content
         {
-            get { return BackingStore?.Get<DeployableContent?>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent?>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #nullable restore
 #else
-        public DeployableContent Content
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent Content
         {
-            get { return BackingStore?.Get<DeployableContent>("content"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
 #endif
@@ -57,44 +57,44 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>Settings specified on the specific deployment governing how to deploy content. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeploymentSettings? Settings
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings? Settings
         {
-            get { return BackingStore?.Get<DeploymentSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public DeploymentSettings Settings
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings Settings
         {
-            get { return BackingStore?.Get<DeploymentSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>Execution status of the deployment. Returned by default.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeploymentState? State
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentState? State
         {
-            get { return BackingStore?.Get<DeploymentState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #nullable restore
 #else
-        public DeploymentState State
+        public Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentState State
         {
-            get { return BackingStore?.Get<DeploymentState>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentState>("state"); }
             set { BackingStore?.Set("state", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Deployment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Deployment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Deployment();
+            return new Microsoft.Graph.Beta.Models.WindowsUpdates.Deployment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "audience", n => { Audience = n.GetObjectValue<DeploymentAudience>(DeploymentAudience.CreateFromDiscriminatorValue); } },
-                { "content", n => { Content = n.GetObjectValue<DeployableContent>(DeployableContent.CreateFromDiscriminatorValue); } },
+                { "audience", n => { Audience = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience.CreateFromDiscriminatorValue); } },
+                { "content", n => { Content = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<DeploymentSettings>(DeploymentSettings.CreateFromDiscriminatorValue); } },
-                { "state", n => { State = n.GetObjectValue<DeploymentState>(DeploymentState.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings.CreateFromDiscriminatorValue); } },
+                { "state", n => { State = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentState>(Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentState.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -120,12 +120,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<DeploymentAudience>("audience", Audience);
-            writer.WriteObjectValue<DeployableContent>("content", Content);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentAudience>("audience", Audience);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeployableContent>("content", Content);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<DeploymentSettings>("settings", Settings);
-            writer.WriteObjectValue<DeploymentState>("state", State);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentSettings>("settings", Settings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsUpdates.DeploymentState>("state", State);
         }
     }
 }

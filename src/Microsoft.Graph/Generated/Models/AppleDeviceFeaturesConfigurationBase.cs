@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Apple device features configuration profile.
     /// </summary>
-    public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable
+    public class AppleDeviceFeaturesConfigurationBase : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AirPrintDestination>? AirPrintDestinations
+        public List<Microsoft.Graph.Beta.Models.AirPrintDestination>? AirPrintDestinations
         {
-            get { return BackingStore?.Get<List<AirPrintDestination>?>("airPrintDestinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AirPrintDestination>?>("airPrintDestinations"); }
             set { BackingStore?.Set("airPrintDestinations", value); }
         }
 #nullable restore
 #else
-        public List<AirPrintDestination> AirPrintDestinations
+        public List<Microsoft.Graph.Beta.Models.AirPrintDestination> AirPrintDestinations
         {
-            get { return BackingStore?.Get<List<AirPrintDestination>>("airPrintDestinations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AirPrintDestination>>("airPrintDestinations"); }
             set { BackingStore?.Set("airPrintDestinations", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AppleDeviceFeaturesConfigurationBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AppleDeviceFeaturesConfigurationBase"/> and sets the default values.
         /// </summary>
         public AppleDeviceFeaturesConfigurationBase() : base()
         {
@@ -37,17 +37,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AppleDeviceFeaturesConfigurationBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AppleDeviceFeaturesConfigurationBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AppleDeviceFeaturesConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AppleDeviceFeaturesConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.iosDeviceFeaturesConfiguration" => new IosDeviceFeaturesConfiguration(),
-                "#microsoft.graph.macOSDeviceFeaturesConfiguration" => new MacOSDeviceFeaturesConfiguration(),
-                _ => new AppleDeviceFeaturesConfigurationBase(),
+                "#microsoft.graph.iosDeviceFeaturesConfiguration" => new Microsoft.Graph.Beta.Models.IosDeviceFeaturesConfiguration(),
+                "#microsoft.graph.macOSDeviceFeaturesConfiguration" => new Microsoft.Graph.Beta.Models.MacOSDeviceFeaturesConfiguration(),
+                _ => new Microsoft.Graph.Beta.Models.AppleDeviceFeaturesConfigurationBase(),
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "airPrintDestinations", n => { AirPrintDestinations = n.GetCollectionOfObjectValues<AirPrintDestination>(AirPrintDestination.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "airPrintDestinations", n => { AirPrintDestinations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AirPrintDestination>(Microsoft.Graph.Beta.Models.AirPrintDestination.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AirPrintDestination>("airPrintDestinations", AirPrintDestinations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AirPrintDestination>("airPrintDestinations", AirPrintDestinations);
         }
     }
 }

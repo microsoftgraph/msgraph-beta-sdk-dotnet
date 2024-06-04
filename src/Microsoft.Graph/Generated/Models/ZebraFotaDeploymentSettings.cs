@@ -50,9 +50,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Represents various network types for Zebra FOTA deployment.</summary>
-        public ZebraFotaNetworkType? DownloadRuleNetworkType
+        public Microsoft.Graph.Beta.Models.ZebraFotaNetworkType? DownloadRuleNetworkType
         {
-            get { return BackingStore?.Get<ZebraFotaNetworkType?>("downloadRuleNetworkType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaNetworkType?>("downloadRuleNetworkType"); }
             set { BackingStore?.Set("downloadRuleNetworkType", value); }
         }
         /// <summary>Date and time in the device time zone when the download will start (e.g., 2018-07-25T10:20:32). The default value is UTC now and the maximum is 10 days from deployment creation.</summary>
@@ -166,9 +166,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("scheduleDurationInDays", value); }
         }
         /// <summary>Represents various schedule modes for Zebra FOTA deployment.</summary>
-        public ZebraFotaScheduleMode? ScheduleMode
+        public Microsoft.Graph.Beta.Models.ZebraFotaScheduleMode? ScheduleMode
         {
-            get { return BackingStore?.Get<ZebraFotaScheduleMode?>("scheduleMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaScheduleMode?>("scheduleMode"); }
             set { BackingStore?.Set("scheduleMode", value); }
         }
         /// <summary>This attribute indicates the deployment time offset (e.g.180 represents an offset of +03:00, and -270 represents an offset of -04:30). The time offset is the time timezone where the devices are located. The deployment start and end data uses this timezone</summary>
@@ -178,13 +178,13 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("timeZoneOffsetInMinutes", value); }
         }
         /// <summary>Represents various update types for Zebra FOTA deployment.</summary>
-        public ZebraFotaUpdateType? UpdateType
+        public Microsoft.Graph.Beta.Models.ZebraFotaUpdateType? UpdateType
         {
-            get { return BackingStore?.Get<ZebraFotaUpdateType?>("updateType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaUpdateType?>("updateType"); }
             set { BackingStore?.Set("updateType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ZebraFotaDeploymentSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ZebraFotaDeploymentSettings"/> and sets the default values.
         /// </summary>
         public ZebraFotaDeploymentSettings()
         {
@@ -194,12 +194,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ZebraFotaDeploymentSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ZebraFotaDeploymentSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ZebraFotaDeploymentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ZebraFotaDeploymentSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ZebraFotaDeploymentSettings();
+            return new Microsoft.Graph.Beta.Models.ZebraFotaDeploymentSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "batteryRuleMinimumBatteryLevelPercentage", n => { BatteryRuleMinimumBatteryLevelPercentage = n.GetIntValue(); } },
                 { "batteryRuleRequireCharger", n => { BatteryRuleRequireCharger = n.GetBoolValue(); } },
                 { "deviceModel", n => { DeviceModel = n.GetStringValue(); } },
-                { "downloadRuleNetworkType", n => { DownloadRuleNetworkType = n.GetEnumValue<ZebraFotaNetworkType>(); } },
+                { "downloadRuleNetworkType", n => { DownloadRuleNetworkType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaNetworkType>(); } },
                 { "downloadRuleStartDateTime", n => { DownloadRuleStartDateTime = n.GetDateTimeOffsetValue(); } },
                 { "firmwareTargetArtifactDescription", n => { FirmwareTargetArtifactDescription = n.GetStringValue(); } },
                 { "firmwareTargetBoardSupportPackageVersion", n => { FirmwareTargetBoardSupportPackageVersion = n.GetStringValue(); } },
@@ -223,9 +223,9 @@ namespace Microsoft.Graph.Beta.Models
                 { "installRuleWindowStartTime", n => { InstallRuleWindowStartTime = n.GetTimeValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "scheduleDurationInDays", n => { ScheduleDurationInDays = n.GetIntValue(); } },
-                { "scheduleMode", n => { ScheduleMode = n.GetEnumValue<ZebraFotaScheduleMode>(); } },
+                { "scheduleMode", n => { ScheduleMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaScheduleMode>(); } },
                 { "timeZoneOffsetInMinutes", n => { TimeZoneOffsetInMinutes = n.GetIntValue(); } },
-                { "updateType", n => { UpdateType = n.GetEnumValue<ZebraFotaUpdateType>(); } },
+                { "updateType", n => { UpdateType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaUpdateType>(); } },
             };
         }
         /// <summary>
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("batteryRuleMinimumBatteryLevelPercentage", BatteryRuleMinimumBatteryLevelPercentage);
             writer.WriteBoolValue("batteryRuleRequireCharger", BatteryRuleRequireCharger);
             writer.WriteStringValue("deviceModel", DeviceModel);
-            writer.WriteEnumValue<ZebraFotaNetworkType>("downloadRuleNetworkType", DownloadRuleNetworkType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaNetworkType>("downloadRuleNetworkType", DownloadRuleNetworkType);
             writer.WriteDateTimeOffsetValue("downloadRuleStartDateTime", DownloadRuleStartDateTime);
             writer.WriteStringValue("firmwareTargetArtifactDescription", FirmwareTargetArtifactDescription);
             writer.WriteStringValue("firmwareTargetBoardSupportPackageVersion", FirmwareTargetBoardSupportPackageVersion);
@@ -249,9 +249,9 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteTimeValue("installRuleWindowStartTime", InstallRuleWindowStartTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("scheduleDurationInDays", ScheduleDurationInDays);
-            writer.WriteEnumValue<ZebraFotaScheduleMode>("scheduleMode", ScheduleMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaScheduleMode>("scheduleMode", ScheduleMode);
             writer.WriteIntValue("timeZoneOffsetInMinutes", TimeZoneOffsetInMinutes);
-            writer.WriteEnumValue<ZebraFotaUpdateType>("updateType", UpdateType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ZebraFotaUpdateType>("updateType", UpdateType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

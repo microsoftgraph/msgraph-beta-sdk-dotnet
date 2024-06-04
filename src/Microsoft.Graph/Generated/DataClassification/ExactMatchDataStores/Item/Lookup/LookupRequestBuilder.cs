@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
     public class LookupRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="LookupRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="LookupRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,53 +34,53 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         /// <summary>
         /// Invoke action lookup
         /// </summary>
-        /// <returns>A <see cref="LookupPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LookupPostResponse?> PostAsLookupPostResponseAsync(LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostResponse?> PostAsLookupPostResponseAsync(Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LookupPostResponse> PostAsLookupPostResponseAsync(LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostResponse> PostAsLookupPostResponseAsync(Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LookupPostResponse>(requestInfo, LookupPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostResponse>(requestInfo, Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action lookup
         /// </summary>
-        /// <returns>A <see cref="LookupResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsLookupPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<LookupResponse?> PostAsync(LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupResponse?> PostAsync(Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<LookupResponse> PostAsync(LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupResponse> PostAsync(Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<LookupResponse>(requestInfo, LookupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupResponse>(requestInfo, Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke action lookup
@@ -90,11 +90,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupPostRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -107,11 +107,11 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="LookupRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public LookupRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupRequestBuilder WithUrl(string rawUrl)
         {
-            return new LookupRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup.LookupRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

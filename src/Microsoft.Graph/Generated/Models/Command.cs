@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Command : Entity, IParsable
+    public class Command : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The appServiceName property</summary>
@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PayloadRequest? Payload
+        public Microsoft.Graph.Beta.Models.PayloadRequest? Payload
         {
-            get { return BackingStore?.Get<PayloadRequest?>("payload"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PayloadRequest?>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
 #nullable restore
 #else
-        public PayloadRequest Payload
+        public Microsoft.Graph.Beta.Models.PayloadRequest Payload
         {
-            get { return BackingStore?.Get<PayloadRequest>("payload"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PayloadRequest>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
 #endif
@@ -109,16 +109,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The responsepayload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PayloadResponse? Responsepayload
+        public Microsoft.Graph.Beta.Models.PayloadResponse? Responsepayload
         {
-            get { return BackingStore?.Get<PayloadResponse?>("responsepayload"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PayloadResponse?>("responsepayload"); }
             set { BackingStore?.Set("responsepayload", value); }
         }
 #nullable restore
 #else
-        public PayloadResponse Responsepayload
+        public Microsoft.Graph.Beta.Models.PayloadResponse Responsepayload
         {
-            get { return BackingStore?.Get<PayloadResponse>("responsepayload"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PayloadResponse>("responsepayload"); }
             set { BackingStore?.Set("responsepayload", value); }
         }
 #endif
@@ -157,12 +157,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Command"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Command"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Command CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Command CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Command();
+            return new Microsoft.Graph.Beta.Models.Command();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -175,10 +175,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "appServiceName", n => { AppServiceName = n.GetStringValue(); } },
                 { "error", n => { Error = n.GetStringValue(); } },
                 { "packageFamilyName", n => { PackageFamilyName = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetObjectValue<PayloadRequest>(PayloadRequest.CreateFromDiscriminatorValue); } },
+                { "payload", n => { Payload = n.GetObjectValue<Microsoft.Graph.Beta.Models.PayloadRequest>(Microsoft.Graph.Beta.Models.PayloadRequest.CreateFromDiscriminatorValue); } },
                 { "permissionTicket", n => { PermissionTicket = n.GetStringValue(); } },
                 { "postBackUri", n => { PostBackUri = n.GetStringValue(); } },
-                { "responsepayload", n => { Responsepayload = n.GetObjectValue<PayloadResponse>(PayloadResponse.CreateFromDiscriminatorValue); } },
+                { "responsepayload", n => { Responsepayload = n.GetObjectValue<Microsoft.Graph.Beta.Models.PayloadResponse>(Microsoft.Graph.Beta.Models.PayloadResponse.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -194,10 +194,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("appServiceName", AppServiceName);
             writer.WriteStringValue("error", Error);
             writer.WriteStringValue("packageFamilyName", PackageFamilyName);
-            writer.WriteObjectValue<PayloadRequest>("payload", Payload);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PayloadRequest>("payload", Payload);
             writer.WriteStringValue("permissionTicket", PermissionTicket);
             writer.WriteStringValue("postBackUri", PostBackUri);
-            writer.WriteObjectValue<PayloadResponse>("responsepayload", Responsepayload);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PayloadResponse>("responsepayload", Responsepayload);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("type", Type);
         }

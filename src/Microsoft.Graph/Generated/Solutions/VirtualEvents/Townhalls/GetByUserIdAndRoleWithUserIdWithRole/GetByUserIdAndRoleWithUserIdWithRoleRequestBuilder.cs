@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndR
     public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndR
             if (!string.IsNullOrWhiteSpace(userId)) PathParameters.Add("userId", userId);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -38,49 +38,49 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndR
         /// <summary>
         /// Invoke function getByUserIdAndRole
         /// </summary>
-        /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse?> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleGetResponse?> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleGetResponse> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleGetResponse> GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetByUserIdAndRoleWithUserIdWithRoleGetResponse>(requestInfo, GetByUserIdAndRoleWithUserIdWithRoleGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleGetResponse>(requestInfo, Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
         /// </summary>
-        /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsGetByUserIdAndRoleWithUserIdWithRoleGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse?> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GetByUserIdAndRoleWithUserIdWithRoleResponse> GetAsync(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GetByUserIdAndRoleWithUserIdWithRoleResponse>(requestInfo, GetByUserIdAndRoleWithUserIdWithRoleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleResponse>(requestInfo, Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -104,11 +104,11 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndR
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder WithUrl(string rawUrl)
         {
-            return new GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function getByUserIdAndRole
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndR
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration : RequestConfiguration<GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>
+        public class GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserIdAndRoleWithUserIdWithRole.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilder.GetByUserIdAndRoleWithUserIdWithRoleRequestBuilderGetQueryParameters>
         {
         }
     }

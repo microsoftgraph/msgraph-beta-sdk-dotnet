@@ -29,22 +29,22 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicyRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.PolicyRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PolicyRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.PolicyRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.networkaccess.filteringRule" => new FilteringRule(),
-                "#microsoft.graph.networkaccess.forwardingRule" => new ForwardingRule(),
-                "#microsoft.graph.networkaccess.fqdnFilteringRule" => new FqdnFilteringRule(),
-                "#microsoft.graph.networkaccess.internetAccessForwardingRule" => new InternetAccessForwardingRule(),
-                "#microsoft.graph.networkaccess.m365ForwardingRule" => new M365ForwardingRule(),
-                "#microsoft.graph.networkaccess.privateAccessForwardingRule" => new PrivateAccessForwardingRule(),
-                "#microsoft.graph.networkaccess.webCategoryFilteringRule" => new WebCategoryFilteringRule(),
-                _ => new PolicyRule(),
+                "#microsoft.graph.networkaccess.filteringRule" => new Microsoft.Graph.Beta.Models.Networkaccess.FilteringRule(),
+                "#microsoft.graph.networkaccess.forwardingRule" => new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRule(),
+                "#microsoft.graph.networkaccess.fqdnFilteringRule" => new Microsoft.Graph.Beta.Models.Networkaccess.FqdnFilteringRule(),
+                "#microsoft.graph.networkaccess.internetAccessForwardingRule" => new Microsoft.Graph.Beta.Models.Networkaccess.InternetAccessForwardingRule(),
+                "#microsoft.graph.networkaccess.m365ForwardingRule" => new Microsoft.Graph.Beta.Models.Networkaccess.M365ForwardingRule(),
+                "#microsoft.graph.networkaccess.privateAccessForwardingRule" => new Microsoft.Graph.Beta.Models.Networkaccess.PrivateAccessForwardingRule(),
+                "#microsoft.graph.networkaccess.webCategoryFilteringRule" => new Microsoft.Graph.Beta.Models.Networkaccess.WebCategoryFilteringRule(),
+                _ => new Microsoft.Graph.Beta.Models.Networkaccess.PolicyRule(),
             };
         }
         /// <summary>

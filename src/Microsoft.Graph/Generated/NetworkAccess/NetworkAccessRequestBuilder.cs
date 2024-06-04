@@ -28,62 +28,62 @@ namespace Microsoft.Graph.Beta.NetworkAccess
     public class NetworkAccessRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the alerts property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public AlertsRequestBuilder Alerts
+        public Microsoft.Graph.Beta.NetworkAccess.Alerts.AlertsRequestBuilder Alerts
         {
-            get => new AlertsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.Alerts.AlertsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the connectivity property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public ConnectivityRequestBuilder Connectivity
+        public Microsoft.Graph.Beta.NetworkAccess.Connectivity.ConnectivityRequestBuilder Connectivity
         {
-            get => new ConnectivityRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.Connectivity.ConnectivityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filteringPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public FilteringPoliciesRequestBuilder FilteringPolicies
+        public Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder FilteringPolicies
         {
-            get => new FilteringPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.FilteringPolicies.FilteringPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the filteringProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public FilteringProfilesRequestBuilder FilteringProfiles
+        public Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.FilteringProfilesRequestBuilder FilteringProfiles
         {
-            get => new FilteringProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.FilteringProfiles.FilteringProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forwardingPolicies property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public ForwardingPoliciesRequestBuilder ForwardingPolicies
+        public Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder ForwardingPolicies
         {
-            get => new ForwardingPoliciesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.ForwardingPolicies.ForwardingPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the forwardingProfiles property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public ForwardingProfilesRequestBuilder ForwardingProfiles
+        public Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.ForwardingProfilesRequestBuilder ForwardingProfiles
         {
-            get => new ForwardingProfilesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.ForwardingProfiles.ForwardingProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the logs property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public LogsRequestBuilder Logs
+        public Microsoft.Graph.Beta.NetworkAccess.Logs.LogsRequestBuilder Logs
         {
-            get => new LogsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.Logs.LogsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the onboard method.</summary>
-        public MicrosoftGraphNetworkaccessOnboardRequestBuilder MicrosoftGraphNetworkaccessOnboard
+        public Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard.MicrosoftGraphNetworkaccessOnboardRequestBuilder MicrosoftGraphNetworkaccessOnboard
         {
-            get => new MicrosoftGraphNetworkaccessOnboardRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.MicrosoftGraphNetworkaccessOnboard.MicrosoftGraphNetworkaccessOnboardRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the reports property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public ReportsRequestBuilder Reports
+        public Microsoft.Graph.Beta.NetworkAccess.Reports.ReportsRequestBuilder Reports
         {
-            get => new ReportsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.Reports.ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public SettingsRequestBuilder Settings
+        public Microsoft.Graph.Beta.NetworkAccess.Settings.SettingsRequestBuilder Settings
         {
-            get => new SettingsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.Settings.SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tenantStatus property of the microsoft.graph.networkaccess.networkAccessRoot entity.</summary>
-        public TenantStatusRequestBuilder TenantStatus
+        public Microsoft.Graph.Beta.NetworkAccess.TenantStatus.TenantStatusRequestBuilder TenantStatus
         {
-            get => new TenantStatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.NetworkAccess.TenantStatus.TenantStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="NetworkAccessRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="NetworkAccessRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -101,50 +101,50 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         /// <summary>
         /// Get networkAccess
         /// </summary>
-        /// <returns>A <see cref="NetworkAccessRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<NetworkAccessRoot?> GetAsync(Action<RequestConfiguration<NetworkAccessRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder.NetworkAccessRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<NetworkAccessRoot> GetAsync(Action<RequestConfiguration<NetworkAccessRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder.NetworkAccessRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<NetworkAccessRoot>(requestInfo, NetworkAccessRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update networkAccess
         /// </summary>
-        /// <returns>A <see cref="NetworkAccessRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<NetworkAccessRoot?> PatchAsync(NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot?> PatchAsync(Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<NetworkAccessRoot> PatchAsync(NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot> PatchAsync(Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<NetworkAccessRoot>(requestInfo, NetworkAccessRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot>(requestInfo, Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get networkAccess
@@ -153,11 +153,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NetworkAccessRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder.NetworkAccessRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<NetworkAccessRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder.NetworkAccessRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -173,11 +173,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.Networkaccess.NetworkAccessRoot body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -190,11 +190,11 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="NetworkAccessRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public NetworkAccessRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder WithUrl(string rawUrl)
         {
-            return new NetworkAccessRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get networkAccess
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.NetworkAccess
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class NetworkAccessRequestBuilderGetRequestConfiguration : RequestConfiguration<NetworkAccessRequestBuilderGetQueryParameters>
+        public class NetworkAccessRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.NetworkAccess.NetworkAccessRequestBuilder.NetworkAccessRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

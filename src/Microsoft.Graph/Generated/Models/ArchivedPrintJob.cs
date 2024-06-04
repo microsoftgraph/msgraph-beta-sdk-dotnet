@@ -58,16 +58,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The user who created the print job. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? CreatedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity CreatedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The processingState property</summary>
-        public PrintJobProcessingState? ProcessingState
+        public Microsoft.Graph.Beta.Models.PrintJobProcessingState? ProcessingState
         {
-            get { return BackingStore?.Get<PrintJobProcessingState?>("processingState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintJobProcessingState?>("processingState"); }
             set { BackingStore?.Set("processingState", value); }
         }
         /// <summary>The number of simplex (single-sided) pages that were printed. Read-only.</summary>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("simplexPageCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ArchivedPrintJob"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ArchivedPrintJob"/> and sets the default values.
         /// </summary>
         public ArchivedPrintJob()
         {
@@ -176,12 +176,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ArchivedPrintJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ArchivedPrintJob"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ArchivedPrintJob CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ArchivedPrintJob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ArchivedPrintJob();
+            return new Microsoft.Graph.Beta.Models.ArchivedPrintJob();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "colorPageCount", n => { ColorPageCount = n.GetIntValue(); } },
                 { "completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 { "copiesPrinted", n => { CopiesPrinted = n.GetIntValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "duplexPageCount", n => { DuplexPageCount = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -205,7 +205,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "pageCount", n => { PageCount = n.GetIntValue(); } },
                 { "printerId", n => { PrinterId = n.GetStringValue(); } },
                 { "printerName", n => { PrinterName = n.GetStringValue(); } },
-                { "processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
+                { "processingState", n => { ProcessingState = n.GetEnumValue<Microsoft.Graph.Beta.Models.PrintJobProcessingState>(); } },
                 { "simplexPageCount", n => { SimplexPageCount = n.GetIntValue(); } },
             };
         }
@@ -222,7 +222,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("colorPageCount", ColorPageCount);
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
             writer.WriteIntValue("copiesPrinted", CopiesPrinted);
-            writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteIntValue("duplexPageCount", DuplexPageCount);
             writer.WriteStringValue("id", Id);
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("pageCount", PageCount);
             writer.WriteStringValue("printerId", PrinterId);
             writer.WriteStringValue("printerName", PrinterName);
-            writer.WriteEnumValue<PrintJobProcessingState>("processingState", ProcessingState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PrintJobProcessingState>("processingState", ProcessingState);
             writer.WriteIntValue("simplexPageCount", SimplexPageCount);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class EmailThreatSubmission : ThreatSubmission, IParsable
+    public class EmailThreatSubmission : Microsoft.Graph.Beta.Models.Security.ThreatSubmission, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>If the email is phishing simulation, this field won&apos;t be null.</summary>
@@ -43,9 +43,9 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.</summary>
-        public SubmissionCategory? OriginalCategory
+        public Microsoft.Graph.Beta.Models.Security.SubmissionCategory? OriginalCategory
         {
-            get { return BackingStore?.Get<SubmissionCategory?>("originalCategory"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.SubmissionCategory?>("originalCategory"); }
             set { BackingStore?.Set("originalCategory", value); }
         }
         /// <summary>Specifies the date and time stamp when the email was received.</summary>
@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EmailThreatSubmission"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.EmailThreatSubmission"/> and sets the default values.
         /// </summary>
         public EmailThreatSubmission() : base()
         {
@@ -144,17 +144,17 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EmailThreatSubmission"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EmailThreatSubmission"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EmailThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.EmailThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.security.emailContentThreatSubmission" => new EmailContentThreatSubmission(),
-                "#microsoft.graph.security.emailUrlThreatSubmission" => new EmailUrlThreatSubmission(),
-                _ => new EmailThreatSubmission(),
+                "#microsoft.graph.security.emailContentThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.EmailContentThreatSubmission(),
+                "#microsoft.graph.security.emailUrlThreatSubmission" => new Microsoft.Graph.Beta.Models.Security.EmailUrlThreatSubmission(),
+                _ => new Microsoft.Graph.Beta.Models.Security.EmailThreatSubmission(),
             };
         }
         /// <summary>
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             {
                 { "attackSimulationInfo", n => { AttackSimulationInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>(Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo.CreateFromDiscriminatorValue); } },
                 { "internetMessageId", n => { InternetMessageId = n.GetStringValue(); } },
-                { "originalCategory", n => { OriginalCategory = n.GetEnumValue<SubmissionCategory>(); } },
+                { "originalCategory", n => { OriginalCategory = n.GetEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionCategory>(); } },
                 { "receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "recipientEmailAddress", n => { RecipientEmailAddress = n.GetStringValue(); } },
                 { "sender", n => { Sender = n.GetStringValue(); } },
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.Models.Security
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>("attackSimulationInfo", AttackSimulationInfo);
             writer.WriteStringValue("internetMessageId", InternetMessageId);
-            writer.WriteEnumValue<SubmissionCategory>("originalCategory", OriginalCategory);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Security.SubmissionCategory>("originalCategory", OriginalCategory);
             writer.WriteDateTimeOffsetValue("receivedDateTime", ReceivedDateTime);
             writer.WriteStringValue("recipientEmailAddress", RecipientEmailAddress);
             writer.WriteStringValue("sender", Sender);

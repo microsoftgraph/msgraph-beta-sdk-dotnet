@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The display name of the identity. This property is read-only.</summary>
+        /// <summary>The display name of the identity. The display name might not always be available or up to date. For example, if a user changes their display name the API might show the new value in a future response, but the items associated with the user won&apos;t show up as having changed when using delta.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DisplayName
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("displayName", value); }
         }
 #endif
-        /// <summary>The identifier of the identity. This property is read-only.</summary>
+        /// <summary>Unique identifier for the identity. When the unique identifier is unavailable, the displayName property is provided for the identity, but the id property isn&apos;t included in the response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Identity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Identity"/> and sets the default values.
         /// </summary>
         public Identity()
         {
@@ -80,40 +80,40 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Identity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Identity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Identity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Identity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.auditUserIdentity" => new AuditUserIdentity(),
-                "#microsoft.graph.azureCommunicationServicesUserIdentity" => new AzureCommunicationServicesUserIdentity(),
+                "#microsoft.graph.auditUserIdentity" => new Microsoft.Graph.Beta.Models.AuditUserIdentity(),
+                "#microsoft.graph.azureCommunicationServicesUserIdentity" => new Microsoft.Graph.Beta.Models.AzureCommunicationServicesUserIdentity(),
                 "#microsoft.graph.callRecords.userIdentity" => new Microsoft.Graph.Beta.Models.CallRecords.UserIdentity(),
-                "#microsoft.graph.communicationsApplicationIdentity" => new CommunicationsApplicationIdentity(),
-                "#microsoft.graph.communicationsApplicationInstanceIdentity" => new CommunicationsApplicationInstanceIdentity(),
-                "#microsoft.graph.communicationsEncryptedIdentity" => new CommunicationsEncryptedIdentity(),
-                "#microsoft.graph.communicationsGuestIdentity" => new CommunicationsGuestIdentity(),
-                "#microsoft.graph.communicationsPhoneIdentity" => new CommunicationsPhoneIdentity(),
-                "#microsoft.graph.communicationsUserIdentity" => new CommunicationsUserIdentity(),
-                "#microsoft.graph.emailIdentity" => new EmailIdentity(),
-                "#microsoft.graph.initiator" => new Initiator(),
-                "#microsoft.graph.programResource" => new ProgramResource(),
-                "#microsoft.graph.provisionedIdentity" => new ProvisionedIdentity(),
-                "#microsoft.graph.provisioningServicePrincipal" => new ProvisioningServicePrincipal(),
-                "#microsoft.graph.provisioningSystem" => new ProvisioningSystem(),
-                "#microsoft.graph.security.submissionUserIdentity" => new SubmissionUserIdentity(),
-                "#microsoft.graph.servicePrincipalIdentity" => new ServicePrincipalIdentity(),
-                "#microsoft.graph.sharePointIdentity" => new SharePointIdentity(),
-                "#microsoft.graph.sourceProvisionedIdentity" => new SourceProvisionedIdentity(),
-                "#microsoft.graph.targetProvisionedIdentity" => new TargetProvisionedIdentity(),
-                "#microsoft.graph.teamworkApplicationIdentity" => new TeamworkApplicationIdentity(),
-                "#microsoft.graph.teamworkConversationIdentity" => new TeamworkConversationIdentity(),
-                "#microsoft.graph.teamworkTagIdentity" => new TeamworkTagIdentity(),
-                "#microsoft.graph.teamworkUserIdentity" => new TeamworkUserIdentity(),
-                "#microsoft.graph.userIdentity" => new UserIdentity(),
-                _ => new Identity(),
+                "#microsoft.graph.communicationsApplicationIdentity" => new Microsoft.Graph.Beta.Models.CommunicationsApplicationIdentity(),
+                "#microsoft.graph.communicationsApplicationInstanceIdentity" => new Microsoft.Graph.Beta.Models.CommunicationsApplicationInstanceIdentity(),
+                "#microsoft.graph.communicationsEncryptedIdentity" => new Microsoft.Graph.Beta.Models.CommunicationsEncryptedIdentity(),
+                "#microsoft.graph.communicationsGuestIdentity" => new Microsoft.Graph.Beta.Models.CommunicationsGuestIdentity(),
+                "#microsoft.graph.communicationsPhoneIdentity" => new Microsoft.Graph.Beta.Models.CommunicationsPhoneIdentity(),
+                "#microsoft.graph.communicationsUserIdentity" => new Microsoft.Graph.Beta.Models.CommunicationsUserIdentity(),
+                "#microsoft.graph.emailIdentity" => new Microsoft.Graph.Beta.Models.EmailIdentity(),
+                "#microsoft.graph.initiator" => new Microsoft.Graph.Beta.Models.Initiator(),
+                "#microsoft.graph.programResource" => new Microsoft.Graph.Beta.Models.ProgramResource(),
+                "#microsoft.graph.provisionedIdentity" => new Microsoft.Graph.Beta.Models.ProvisionedIdentity(),
+                "#microsoft.graph.provisioningServicePrincipal" => new Microsoft.Graph.Beta.Models.ProvisioningServicePrincipal(),
+                "#microsoft.graph.provisioningSystem" => new Microsoft.Graph.Beta.Models.ProvisioningSystem(),
+                "#microsoft.graph.security.submissionUserIdentity" => new Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity(),
+                "#microsoft.graph.servicePrincipalIdentity" => new Microsoft.Graph.Beta.Models.ServicePrincipalIdentity(),
+                "#microsoft.graph.sharePointIdentity" => new Microsoft.Graph.Beta.Models.SharePointIdentity(),
+                "#microsoft.graph.sourceProvisionedIdentity" => new Microsoft.Graph.Beta.Models.SourceProvisionedIdentity(),
+                "#microsoft.graph.targetProvisionedIdentity" => new Microsoft.Graph.Beta.Models.TargetProvisionedIdentity(),
+                "#microsoft.graph.teamworkApplicationIdentity" => new Microsoft.Graph.Beta.Models.TeamworkApplicationIdentity(),
+                "#microsoft.graph.teamworkConversationIdentity" => new Microsoft.Graph.Beta.Models.TeamworkConversationIdentity(),
+                "#microsoft.graph.teamworkTagIdentity" => new Microsoft.Graph.Beta.Models.TeamworkTagIdentity(),
+                "#microsoft.graph.teamworkUserIdentity" => new Microsoft.Graph.Beta.Models.TeamworkUserIdentity(),
+                "#microsoft.graph.userIdentity" => new Microsoft.Graph.Beta.Models.UserIdentity(),
+                _ => new Microsoft.Graph.Beta.Models.Identity(),
             };
         }
         /// <summary>

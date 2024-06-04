@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// <summary>The classificationResults property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ClassificationResult>? ClassificationResults
+        public List<Microsoft.Graph.Beta.Models.Security.ClassificationResult>? ClassificationResults
         {
-            get { return BackingStore?.Get<List<ClassificationResult>?>("classificationResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ClassificationResult>?>("classificationResults"); }
             set { BackingStore?.Set("classificationResults", value); }
         }
 #nullable restore
 #else
-        public List<ClassificationResult> ClassificationResults
+        public List<Microsoft.Graph.Beta.Models.Security.ClassificationResult> ClassificationResults
         {
-            get { return BackingStore?.Get<List<ClassificationResult>>("classificationResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.ClassificationResult>>("classificationResults"); }
             set { BackingStore?.Set("classificationResults", value); }
         }
 #endif
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EvaluateClassificationResultsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults.EvaluateClassificationResultsPostRequestBody"/> and sets the default values.
         /// </summary>
         public EvaluateClassificationResultsPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EvaluateClassificationResultsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults.EvaluateClassificationResultsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EvaluateClassificationResultsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults.EvaluateClassificationResultsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EvaluateClassificationResultsPostRequestBody();
+            return new Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.MicrosoftGraphSecurityEvaluateClassificationResults.EvaluateClassificationResultsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "classificationResults", n => { ClassificationResults = n.GetCollectionOfObjectValues<ClassificationResult>(ClassificationResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "classificationResults", n => { ClassificationResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ClassificationResult>(Microsoft.Graph.Beta.Models.Security.ClassificationResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "contentInfo", n => { ContentInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.ContentInfo>(Microsoft.Graph.Beta.Models.Security.ContentInfo.CreateFromDiscriminatorValue); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<ClassificationResult>("classificationResults", ClassificationResults);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.ClassificationResult>("classificationResults", ClassificationResults);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.ContentInfo>("contentInfo", ContentInfo);
             writer.WriteAdditionalData(AdditionalData);
         }

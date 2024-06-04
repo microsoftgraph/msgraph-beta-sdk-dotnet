@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AccountsWithAccess"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AccountsWithAccess"/> and sets the default values.
         /// </summary>
         public AccountsWithAccess()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccountsWithAccess"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccountsWithAccess"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AccountsWithAccess CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AccountsWithAccess CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.allAccountsWithAccess" => new AllAccountsWithAccess(),
-                "#microsoft.graph.enumeratedAccountsWithAccess" => new EnumeratedAccountsWithAccess(),
-                _ => new AccountsWithAccess(),
+                "#microsoft.graph.allAccountsWithAccess" => new Microsoft.Graph.Beta.Models.AllAccountsWithAccess(),
+                "#microsoft.graph.enumeratedAccountsWithAccess" => new Microsoft.Graph.Beta.Models.EnumeratedAccountsWithAccess(),
+                _ => new Microsoft.Graph.Beta.Models.AccountsWithAccess(),
             };
         }
         /// <summary>

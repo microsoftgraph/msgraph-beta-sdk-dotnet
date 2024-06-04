@@ -7,70 +7,70 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PlannerTaskPropertyRule : PlannerPropertyRule, IParsable
+    public class PlannerTaskPropertyRule : Microsoft.Graph.Beta.Models.PlannerPropertyRule, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Rules and restrictions for applied categories. This value doesn&apos;t currently support overrides. Accepted values for the default rule and individual overrides are allow, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerFieldRules? AppliedCategories
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules? AppliedCategories
         {
-            get { return BackingStore?.Get<PlannerFieldRules?>("appliedCategories"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules?>("appliedCategories"); }
             set { BackingStore?.Set("appliedCategories", value); }
         }
 #nullable restore
 #else
-        public PlannerFieldRules AppliedCategories
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules AppliedCategories
         {
-            get { return BackingStore?.Get<PlannerFieldRules>("appliedCategories"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules>("appliedCategories"); }
             set { BackingStore?.Set("appliedCategories", value); }
         }
 #endif
         /// <summary>Rules and restrictions for approval. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are: allow, add, remove, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerFieldRules? ApprovalAttachment
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules? ApprovalAttachment
         {
-            get { return BackingStore?.Get<PlannerFieldRules?>("approvalAttachment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules?>("approvalAttachment"); }
             set { BackingStore?.Set("approvalAttachment", value); }
         }
 #nullable restore
 #else
-        public PlannerFieldRules ApprovalAttachment
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules ApprovalAttachment
         {
-            get { return BackingStore?.Get<PlannerFieldRules>("approvalAttachment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules>("approvalAttachment"); }
             set { BackingStore?.Set("approvalAttachment", value); }
         }
 #endif
         /// <summary>Rules and restrictions for assignments. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, addSelf, addOther, remove, removeSelf, removeOther, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerFieldRules? Assignments
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules? Assignments
         {
-            get { return BackingStore?.Get<PlannerFieldRules?>("assignments"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public PlannerFieldRules Assignments
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules Assignments
         {
-            get { return BackingStore?.Get<PlannerFieldRules>("assignments"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
         /// <summary>Rules and restrictions for checklist. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, update, check, reorder, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerFieldRules? CheckLists
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules? CheckLists
         {
-            get { return BackingStore?.Get<PlannerFieldRules?>("checkLists"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules?>("checkLists"); }
             set { BackingStore?.Set("checkLists", value); }
         }
 #nullable restore
 #else
-        public PlannerFieldRules CheckLists
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules CheckLists
         {
-            get { return BackingStore?.Get<PlannerFieldRules>("checkLists"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules>("checkLists"); }
             set { BackingStore?.Set("checkLists", value); }
         }
 #endif
@@ -125,16 +125,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Rules and restrictions for forms. Allowed overrides are userCreated and applicationCreated. The following are the accepted values for the default rule and individual overrides: allow, add, addResponse, remove, update, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerFieldRules? Forms
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules? Forms
         {
-            get { return BackingStore?.Get<PlannerFieldRules?>("forms"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules?>("forms"); }
             set { BackingStore?.Set("forms", value); }
         }
 #nullable restore
 #else
-        public PlannerFieldRules Forms
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules Forms
         {
-            get { return BackingStore?.Get<PlannerFieldRules>("forms"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules>("forms"); }
             set { BackingStore?.Set("forms", value); }
         }
 #endif
@@ -237,16 +237,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Rules and restrictions for references. Allowed overrides are userCreated and applicationCreated. Accepted values for the default rule and individual overrides are allow, add, remove, block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PlannerFieldRules? References
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules? References
         {
-            get { return BackingStore?.Get<PlannerFieldRules?>("references"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules?>("references"); }
             set { BackingStore?.Set("references", value); }
         }
 #nullable restore
 #else
-        public PlannerFieldRules References
+        public Microsoft.Graph.Beta.Models.PlannerFieldRules References
         {
-            get { return BackingStore?.Get<PlannerFieldRules>("references"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PlannerFieldRules>("references"); }
             set { BackingStore?.Set("references", value); }
         }
 #endif
@@ -283,7 +283,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PlannerTaskPropertyRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule"/> and sets the default values.
         /// </summary>
         public PlannerTaskPropertyRule() : base()
         {
@@ -292,12 +292,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PlannerTaskPropertyRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PlannerTaskPropertyRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerTaskPropertyRule();
+            return new Microsoft.Graph.Beta.Models.PlannerTaskPropertyRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -307,21 +307,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "appliedCategories", n => { AppliedCategories = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
-                { "approvalAttachment", n => { ApprovalAttachment = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
-                { "assignments", n => { Assignments = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
-                { "checkLists", n => { CheckLists = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
+                { "appliedCategories", n => { AppliedCategories = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>(Microsoft.Graph.Beta.Models.PlannerFieldRules.CreateFromDiscriminatorValue); } },
+                { "approvalAttachment", n => { ApprovalAttachment = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>(Microsoft.Graph.Beta.Models.PlannerFieldRules.CreateFromDiscriminatorValue); } },
+                { "assignments", n => { Assignments = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>(Microsoft.Graph.Beta.Models.PlannerFieldRules.CreateFromDiscriminatorValue); } },
+                { "checkLists", n => { CheckLists = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>(Microsoft.Graph.Beta.Models.PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 { "completionRequirements", n => { CompletionRequirements = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "delete", n => { Delete = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "dueDate", n => { DueDate = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "forms", n => { Forms = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
+                { "forms", n => { Forms = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>(Microsoft.Graph.Beta.Models.PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 { "move", n => { Move = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "notes", n => { Notes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "order", n => { Order = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "percentComplete", n => { PercentComplete = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "previewType", n => { PreviewType = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "priority", n => { Priority = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "references", n => { References = n.GetObjectValue<PlannerFieldRules>(PlannerFieldRules.CreateFromDiscriminatorValue); } },
+                { "references", n => { References = n.GetObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>(Microsoft.Graph.Beta.Models.PlannerFieldRules.CreateFromDiscriminatorValue); } },
                 { "startDate", n => { StartDate = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "title", n => { Title = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -334,21 +334,21 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PlannerFieldRules>("appliedCategories", AppliedCategories);
-            writer.WriteObjectValue<PlannerFieldRules>("approvalAttachment", ApprovalAttachment);
-            writer.WriteObjectValue<PlannerFieldRules>("assignments", Assignments);
-            writer.WriteObjectValue<PlannerFieldRules>("checkLists", CheckLists);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>("appliedCategories", AppliedCategories);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>("approvalAttachment", ApprovalAttachment);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>("assignments", Assignments);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>("checkLists", CheckLists);
             writer.WriteCollectionOfPrimitiveValues<string>("completionRequirements", CompletionRequirements);
             writer.WriteCollectionOfPrimitiveValues<string>("delete", Delete);
             writer.WriteCollectionOfPrimitiveValues<string>("dueDate", DueDate);
-            writer.WriteObjectValue<PlannerFieldRules>("forms", Forms);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>("forms", Forms);
             writer.WriteCollectionOfPrimitiveValues<string>("move", Move);
             writer.WriteCollectionOfPrimitiveValues<string>("notes", Notes);
             writer.WriteCollectionOfPrimitiveValues<string>("order", Order);
             writer.WriteCollectionOfPrimitiveValues<string>("percentComplete", PercentComplete);
             writer.WriteCollectionOfPrimitiveValues<string>("previewType", PreviewType);
             writer.WriteCollectionOfPrimitiveValues<string>("priority", Priority);
-            writer.WriteObjectValue<PlannerFieldRules>("references", References);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PlannerFieldRules>("references", References);
             writer.WriteCollectionOfPrimitiveValues<string>("startDate", StartDate);
             writer.WriteCollectionOfPrimitiveValues<string>("title", Title);
         }

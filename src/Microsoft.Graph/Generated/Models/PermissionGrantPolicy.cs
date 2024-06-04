@@ -7,38 +7,44 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PermissionGrantPolicy : PolicyBase, IParsable
+    public class PermissionGrantPolicy : Microsoft.Graph.Beta.Models.PolicyBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Condition sets that are excluded in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionGrantConditionSet>? Excludes
+        public List<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>? Excludes
         {
-            get { return BackingStore?.Get<List<PermissionGrantConditionSet>?>("excludes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>?>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
 #nullable restore
 #else
-        public List<PermissionGrantConditionSet> Excludes
+        public List<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet> Excludes
         {
-            get { return BackingStore?.Get<List<PermissionGrantConditionSet>>("excludes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
 #endif
+        /// <summary>Set to true to create all pre-approval policies in the tenant. Set to false to disable all pre-approval policies in the tenant. The default is false.</summary>
+        public bool? IncludeAllPreApprovedApplications
+        {
+            get { return BackingStore?.Get<bool?>("includeAllPreApprovedApplications"); }
+            set { BackingStore?.Set("includeAllPreApprovedApplications", value); }
+        }
         /// <summary>Condition sets that are included in this permission grant policy. Automatically expanded on GET.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionGrantConditionSet>? Includes
+        public List<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>? Includes
         {
-            get { return BackingStore?.Get<List<PermissionGrantConditionSet>?>("includes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>?>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #nullable restore
 #else
-        public List<PermissionGrantConditionSet> Includes
+        public List<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet> Includes
         {
-            get { return BackingStore?.Get<List<PermissionGrantConditionSet>>("includes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
 #endif
@@ -49,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resourceScopeType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="PermissionGrantPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PermissionGrantPolicy"/> and sets the default values.
         /// </summary>
         public PermissionGrantPolicy() : base()
         {
@@ -58,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PermissionGrantPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PermissionGrantPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PermissionGrantPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PermissionGrantPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PermissionGrantPolicy();
+            return new Microsoft.Graph.Beta.Models.PermissionGrantPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,9 +79,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "excludes", n => { Excludes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "includes", n => { Includes = n.GetCollectionOfObjectValues<PermissionGrantConditionSet>(PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "resourceScopeType", n => { ResourceScopeType = n.GetEnumValue<ResourceScopeType>(); } },
+                { "excludes", n => { Excludes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>(Microsoft.Graph.Beta.Models.PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "includeAllPreApprovedApplications", n => { IncludeAllPreApprovedApplications = n.GetBoolValue(); } },
+                { "includes", n => { Includes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>(Microsoft.Graph.Beta.Models.PermissionGrantConditionSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resourceScopeType", n => { ResourceScopeType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ResourceScopeType>(); } },
             };
         }
         /// <summary>
@@ -86,9 +93,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PermissionGrantConditionSet>("excludes", Excludes);
-            writer.WriteCollectionOfObjectValues<PermissionGrantConditionSet>("includes", Includes);
-            writer.WriteEnumValue<ResourceScopeType>("resourceScopeType", ResourceScopeType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>("excludes", Excludes);
+            writer.WriteBoolValue("includeAllPreApprovedApplications", IncludeAllPreApprovedApplications);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionGrantConditionSet>("includes", Includes);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ResourceScopeType>("resourceScopeType", ResourceScopeType);
         }
     }
 }

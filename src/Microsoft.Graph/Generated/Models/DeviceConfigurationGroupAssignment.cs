@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device configuration group assignment.
     /// </summary>
-    public class DeviceConfigurationGroupAssignment : Entity, IParsable
+    public class DeviceConfigurationGroupAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The navigation link to the Device Configuration being targeted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceConfigurationGroupAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceConfigurationGroupAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceConfigurationGroupAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceConfigurationGroupAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceConfigurationGroupAssignment();
+            return new Microsoft.Graph.Beta.Models.DeviceConfigurationGroupAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model

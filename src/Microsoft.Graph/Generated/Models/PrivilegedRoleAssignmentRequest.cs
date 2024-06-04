@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegedRoleAssignmentRequest : Entity, IParsable
+    public class PrivilegedRoleAssignmentRequest : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignmentState property</summary>
@@ -83,32 +83,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The roleInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRole? RoleInfo
+        public Microsoft.Graph.Beta.Models.PrivilegedRole? RoleInfo
         {
-            get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRole?>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRole RoleInfo
+        public Microsoft.Graph.Beta.Models.PrivilegedRole RoleInfo
         {
-            get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
 #endif
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.GovernanceSchedule? Schedule
         {
-            get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public GovernanceSchedule Schedule
+        public Microsoft.Graph.Beta.Models.GovernanceSchedule Schedule
         {
-            get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
@@ -195,12 +195,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegedRoleAssignmentRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegedRoleAssignmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrivilegedRoleAssignmentRequest();
+            return new Microsoft.Graph.Beta.Models.PrivilegedRoleAssignmentRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -215,8 +215,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "requestedDateTime", n => { RequestedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "roleId", n => { RoleId = n.GetStringValue(); } },
-                { "roleInfo", n => { RoleInfo = n.GetObjectValue<PrivilegedRole>(PrivilegedRole.CreateFromDiscriminatorValue); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
+                { "roleInfo", n => { RoleInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRole>(Microsoft.Graph.Beta.Models.PrivilegedRole.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceSchedule>(Microsoft.Graph.Beta.Models.GovernanceSchedule.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetStringValue(); } },
                 { "ticketNumber", n => { TicketNumber = n.GetStringValue(); } },
                 { "ticketSystem", n => { TicketSystem = n.GetStringValue(); } },
@@ -237,8 +237,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("reason", Reason);
             writer.WriteDateTimeOffsetValue("requestedDateTime", RequestedDateTime);
             writer.WriteStringValue("roleId", RoleId);
-            writer.WriteObjectValue<PrivilegedRole>("roleInfo", RoleInfo);
-            writer.WriteObjectValue<GovernanceSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRole>("roleInfo", RoleInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceSchedule>("schedule", Schedule);
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("ticketNumber", TicketNumber);
             writer.WriteStringValue("ticketSystem", TicketSystem);

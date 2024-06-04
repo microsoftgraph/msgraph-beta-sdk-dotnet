@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ExactMatchLookupJob : ExactMatchJobBase, IParsable
+    public class ExactMatchLookupJob : Microsoft.Graph.Beta.Models.ExactMatchJobBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The matchingRows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<LookupResultRow>? MatchingRows
+        public List<Microsoft.Graph.Beta.Models.LookupResultRow>? MatchingRows
         {
-            get { return BackingStore?.Get<List<LookupResultRow>?>("matchingRows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LookupResultRow>?>("matchingRows"); }
             set { BackingStore?.Set("matchingRows", value); }
         }
 #nullable restore
 #else
-        public List<LookupResultRow> MatchingRows
+        public List<Microsoft.Graph.Beta.Models.LookupResultRow> MatchingRows
         {
-            get { return BackingStore?.Get<List<LookupResultRow>>("matchingRows"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LookupResultRow>>("matchingRows"); }
             set { BackingStore?.Set("matchingRows", value); }
         }
 #endif
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ExactMatchLookupJob"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ExactMatchLookupJob"/> and sets the default values.
         /// </summary>
         public ExactMatchLookupJob() : base()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ExactMatchLookupJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ExactMatchLookupJob"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ExactMatchLookupJob CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ExactMatchLookupJob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ExactMatchLookupJob();
+            return new Microsoft.Graph.Beta.Models.ExactMatchLookupJob();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "matchingRows", n => { MatchingRows = n.GetCollectionOfObjectValues<LookupResultRow>(LookupResultRow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "matchingRows", n => { MatchingRows = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LookupResultRow>(Microsoft.Graph.Beta.Models.LookupResultRow.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "state", n => { State = n.GetStringValue(); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<LookupResultRow>("matchingRows", MatchingRows);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.LookupResultRow>("matchingRows", MatchingRows);
             writer.WriteStringValue("state", State);
         }
     }

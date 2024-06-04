@@ -71,21 +71,21 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <summary>The schedule property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernanceSchedule? Schedule
+        public Microsoft.Graph.Beta.Models.GovernanceSchedule? Schedule
         {
-            get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSchedule?>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #nullable restore
 #else
-        public GovernanceSchedule Schedule
+        public Microsoft.Graph.Beta.Models.GovernanceSchedule Schedule
         {
-            get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernanceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdateRequestPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.UpdateRequest.UpdateRequestPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateRequestPostRequestBody()
         {
@@ -95,12 +95,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateRequestPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.UpdateRequest.UpdateRequestPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateRequestPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.UpdateRequest.UpdateRequestPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateRequestPostRequestBody();
+            return new Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignmentRequests.Item.UpdateRequest.UpdateRequestPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
                 { "assignmentState", n => { AssignmentState = n.GetStringValue(); } },
                 { "decision", n => { Decision = n.GetStringValue(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "schedule", n => { Schedule = n.GetObjectValue<GovernanceSchedule>(GovernanceSchedule.CreateFromDiscriminatorValue); } },
+                { "schedule", n => { Schedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernanceSchedule>(Microsoft.Graph.Beta.Models.GovernanceSchedule.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleAssignme
             writer.WriteStringValue("assignmentState", AssignmentState);
             writer.WriteStringValue("decision", Decision);
             writer.WriteStringValue("reason", Reason);
-            writer.WriteObjectValue<GovernanceSchedule>("schedule", Schedule);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernanceSchedule>("schedule", Schedule);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

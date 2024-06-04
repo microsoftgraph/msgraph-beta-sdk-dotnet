@@ -21,23 +21,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
         /// <summary>The assignedAccessMultiModeProfiles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsAssignedAccessProfile>? AssignedAccessMultiModeProfiles
+        public List<Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile>? AssignedAccessMultiModeProfiles
         {
-            get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>?>("assignedAccessMultiModeProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile>?>("assignedAccessMultiModeProfiles"); }
             set { BackingStore?.Set("assignedAccessMultiModeProfiles", value); }
         }
 #nullable restore
 #else
-        public List<WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles
+        public List<Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile> AssignedAccessMultiModeProfiles
         {
-            get { return BackingStore?.Get<List<WindowsAssignedAccessProfile>>("assignedAccessMultiModeProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile>>("assignedAccessMultiModeProfiles"); }
             set { BackingStore?.Set("assignedAccessMultiModeProfiles", value); }
         }
 #endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>
-        /// Instantiates a new <see cref="AssignedAccessMultiModeProfilesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles.AssignedAccessMultiModeProfilesPostRequestBody"/> and sets the default values.
         /// </summary>
         public AssignedAccessMultiModeProfilesPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignedAccessMultiModeProfilesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles.AssignedAccessMultiModeProfilesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignedAccessMultiModeProfilesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles.AssignedAccessMultiModeProfilesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignedAccessMultiModeProfilesPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.AssignedAccessMultiModeProfiles.AssignedAccessMultiModeProfilesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "assignedAccessMultiModeProfiles", n => { AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>(WindowsAssignedAccessProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignedAccessMultiModeProfiles", n => { AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile>(Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<WindowsAssignedAccessProfile>("assignedAccessMultiModeProfiles", AssignedAccessMultiModeProfiles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsAssignedAccessProfile>("assignedAccessMultiModeProfiles", AssignedAccessMultiModeProfiles);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

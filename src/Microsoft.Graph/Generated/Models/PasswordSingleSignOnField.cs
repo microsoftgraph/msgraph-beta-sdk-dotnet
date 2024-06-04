@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PasswordSingleSignOnField"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PasswordSingleSignOnField"/> and sets the default values.
         /// </summary>
         public PasswordSingleSignOnField()
         {
@@ -110,12 +110,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PasswordSingleSignOnField"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PasswordSingleSignOnField"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PasswordSingleSignOnField CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PasswordSingleSignOnField CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PasswordSingleSignOnField();
+            return new Microsoft.Graph.Beta.Models.PasswordSingleSignOnField();
         }
         /// <summary>
         /// The deserialization information for the current model

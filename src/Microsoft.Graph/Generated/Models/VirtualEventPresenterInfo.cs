@@ -7,27 +7,27 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class VirtualEventPresenterInfo : MeetingParticipantInfo, IParsable
+    public class VirtualEventPresenterInfo : Microsoft.Graph.Beta.Models.MeetingParticipantInfo, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The presenterDetails property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VirtualEventPresenterDetails? PresenterDetails
+        public Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails? PresenterDetails
         {
-            get { return BackingStore?.Get<VirtualEventPresenterDetails?>("presenterDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails?>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
         }
 #nullable restore
 #else
-        public VirtualEventPresenterDetails PresenterDetails
+        public Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails PresenterDetails
         {
-            get { return BackingStore?.Get<VirtualEventPresenterDetails>("presenterDetails"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails>("presenterDetails"); }
             set { BackingStore?.Set("presenterDetails", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="VirtualEventPresenterInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.VirtualEventPresenterInfo"/> and sets the default values.
         /// </summary>
         public VirtualEventPresenterInfo() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VirtualEventPresenterInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VirtualEventPresenterInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VirtualEventPresenterInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VirtualEventPresenterInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VirtualEventPresenterInfo();
+            return new Microsoft.Graph.Beta.Models.VirtualEventPresenterInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "presenterDetails", n => { PresenterDetails = n.GetObjectValue<VirtualEventPresenterDetails>(VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
+                { "presenterDetails", n => { PresenterDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails>(Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<VirtualEventPresenterDetails>("presenterDetails", PresenterDetails);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VirtualEventPresenterDetails>("presenterDetails", PresenterDetails);
         }
     }
 }

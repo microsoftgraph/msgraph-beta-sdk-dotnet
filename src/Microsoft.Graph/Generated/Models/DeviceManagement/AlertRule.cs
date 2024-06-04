@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         /// <summary>The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RuleCondition>? Conditions
+        public List<Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition>? Conditions
         {
-            get { return BackingStore?.Get<List<RuleCondition>?>("conditions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition>?>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #nullable restore
 #else
-        public List<RuleCondition> Conditions
+        public List<Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition> Conditions
         {
-            get { return BackingStore?.Get<List<RuleCondition>>("conditions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition>>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
 #endif
@@ -79,50 +79,50 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         /// <summary>The notification channels of the rule selected by the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<NotificationChannel>? NotificationChannels
+        public List<Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannel>? NotificationChannels
         {
-            get { return BackingStore?.Get<List<NotificationChannel>?>("notificationChannels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannel>?>("notificationChannels"); }
             set { BackingStore?.Set("notificationChannels", value); }
         }
 #nullable restore
 #else
-        public List<NotificationChannel> NotificationChannels
+        public List<Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannel> NotificationChannels
         {
-            get { return BackingStore?.Get<List<NotificationChannel>>("notificationChannels"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannel>>("notificationChannels"); }
             set { BackingStore?.Set("notificationChannels", value); }
         }
 #endif
         /// <summary>The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.</summary>
-        public RuleSeverityType? Severity
+        public Microsoft.Graph.Beta.Models.DeviceManagement.RuleSeverityType? Severity
         {
-            get { return BackingStore?.Get<RuleSeverityType?>("severity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.RuleSeverityType?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The conditions that determine when to send alerts. For example, you can configure a condition to send an alert when provisioning fails for six or more Cloud PCs. This property is deprecated. Use conditions instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RuleThreshold? Threshold
+        public Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold? Threshold
         {
-            get { return BackingStore?.Get<RuleThreshold?>("threshold"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold?>("threshold"); }
             set { BackingStore?.Set("threshold", value); }
         }
 #nullable restore
 #else
-        public RuleThreshold Threshold
+        public Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold Threshold
         {
-            get { return BackingStore?.Get<RuleThreshold>("threshold"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold>("threshold"); }
             set { BackingStore?.Set("threshold", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AlertRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AlertRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AlertRule();
+            return new Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,15 +132,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "alertRuleTemplate", n => { AlertRuleTemplate = n.GetEnumValue<AlertRuleTemplate>(); } },
-                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<RuleCondition>(RuleCondition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "alertRuleTemplate", n => { AlertRuleTemplate = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate>(); } },
+                { "conditions", n => { Conditions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition>(Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "isSystemRule", n => { IsSystemRule = n.GetBoolValue(); } },
-                { "notificationChannels", n => { NotificationChannels = n.GetCollectionOfObjectValues<NotificationChannel>(NotificationChannel.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "severity", n => { Severity = n.GetEnumValue<RuleSeverityType>(); } },
-                { "threshold", n => { Threshold = n.GetObjectValue<RuleThreshold>(RuleThreshold.CreateFromDiscriminatorValue); } },
+                { "notificationChannels", n => { NotificationChannels = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannel>(Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannel.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "severity", n => { Severity = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagement.RuleSeverityType>(); } },
+                { "threshold", n => { Threshold = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold>(Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -151,15 +151,15 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AlertRuleTemplate>("alertRuleTemplate", AlertRuleTemplate);
-            writer.WriteCollectionOfObjectValues<RuleCondition>("conditions", Conditions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate>("alertRuleTemplate", AlertRuleTemplate);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagement.RuleCondition>("conditions", Conditions);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("isSystemRule", IsSystemRule);
-            writer.WriteCollectionOfObjectValues<NotificationChannel>("notificationChannels", NotificationChannels);
-            writer.WriteEnumValue<RuleSeverityType>("severity", Severity);
-            writer.WriteObjectValue<RuleThreshold>("threshold", Threshold);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagement.NotificationChannel>("notificationChannels", NotificationChannels);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagement.RuleSeverityType>("severity", Severity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagement.RuleThreshold>("threshold", Threshold);
         }
     }
 }

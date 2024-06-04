@@ -29,32 +29,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Custom availability of the service in a given time frame of the service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<BookingsAvailabilityWindow>? CustomAvailabilities
+        public List<Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow>? CustomAvailabilities
         {
-            get { return BackingStore?.Get<List<BookingsAvailabilityWindow>?>("customAvailabilities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow>?>("customAvailabilities"); }
             set { BackingStore?.Set("customAvailabilities", value); }
         }
 #nullable restore
 #else
-        public List<BookingsAvailabilityWindow> CustomAvailabilities
+        public List<Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow> CustomAvailabilities
         {
-            get { return BackingStore?.Get<List<BookingsAvailabilityWindow>>("customAvailabilities"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow>>("customAvailabilities"); }
             set { BackingStore?.Set("customAvailabilities", value); }
         }
 #endif
         /// <summary>General availability of the service defined by the scheduling policy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BookingsAvailability? GeneralAvailability
+        public Microsoft.Graph.Beta.Models.BookingsAvailability? GeneralAvailability
         {
-            get { return BackingStore?.Get<BookingsAvailability?>("generalAvailability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingsAvailability?>("generalAvailability"); }
             set { BackingStore?.Set("generalAvailability", value); }
         }
 #nullable restore
 #else
-        public BookingsAvailability GeneralAvailability
+        public Microsoft.Graph.Beta.Models.BookingsAvailability GeneralAvailability
         {
-            get { return BackingStore?.Get<BookingsAvailability>("generalAvailability"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BookingsAvailability>("generalAvailability"); }
             set { BackingStore?.Set("generalAvailability", value); }
         }
 #endif
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("timeSlotInterval", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="BookingSchedulingPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.BookingSchedulingPolicy"/> and sets the default values.
         /// </summary>
         public BookingSchedulingPolicy()
         {
@@ -115,12 +115,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BookingSchedulingPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.BookingSchedulingPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BookingSchedulingPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.BookingSchedulingPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BookingSchedulingPolicy();
+            return new Microsoft.Graph.Beta.Models.BookingSchedulingPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,8 +131,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "allowStaffSelection", n => { AllowStaffSelection = n.GetBoolValue(); } },
-                { "customAvailabilities", n => { CustomAvailabilities = n.GetCollectionOfObjectValues<BookingsAvailabilityWindow>(BookingsAvailabilityWindow.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "generalAvailability", n => { GeneralAvailability = n.GetObjectValue<BookingsAvailability>(BookingsAvailability.CreateFromDiscriminatorValue); } },
+                { "customAvailabilities", n => { CustomAvailabilities = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow>(Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "generalAvailability", n => { GeneralAvailability = n.GetObjectValue<Microsoft.Graph.Beta.Models.BookingsAvailability>(Microsoft.Graph.Beta.Models.BookingsAvailability.CreateFromDiscriminatorValue); } },
                 { "isMeetingInviteToCustomersEnabled", n => { IsMeetingInviteToCustomersEnabled = n.GetBoolValue(); } },
                 { "maximumAdvance", n => { MaximumAdvance = n.GetTimeSpanValue(); } },
                 { "minimumLeadTime", n => { MinimumLeadTime = n.GetTimeSpanValue(); } },
@@ -149,8 +149,8 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowStaffSelection", AllowStaffSelection);
-            writer.WriteCollectionOfObjectValues<BookingsAvailabilityWindow>("customAvailabilities", CustomAvailabilities);
-            writer.WriteObjectValue<BookingsAvailability>("generalAvailability", GeneralAvailability);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.BookingsAvailabilityWindow>("customAvailabilities", CustomAvailabilities);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BookingsAvailability>("generalAvailability", GeneralAvailability);
             writer.WriteBoolValue("isMeetingInviteToCustomersEnabled", IsMeetingInviteToCustomersEnabled);
             writer.WriteTimeSpanValue("maximumAdvance", MaximumAdvance);
             writer.WriteTimeSpanValue("minimumLeadTime", MinimumLeadTime);

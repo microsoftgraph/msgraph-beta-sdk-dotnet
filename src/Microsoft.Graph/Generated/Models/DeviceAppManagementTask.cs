@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A device app management task.
     /// </summary>
-    public class DeviceAppManagementTask : Entity, IParsable
+    public class DeviceAppManagementTask : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The name or email of the admin this task is assigned to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,9 +28,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Device app management task category.</summary>
-        public DeviceAppManagementTaskCategory? Category
+        public Microsoft.Graph.Beta.Models.DeviceAppManagementTaskCategory? Category
         {
-            get { return BackingStore?.Get<DeviceAppManagementTaskCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The created date.</summary>
@@ -110,32 +110,32 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("dueDateTime", value); }
         }
         /// <summary>Device app management task priority.</summary>
-        public DeviceAppManagementTaskPriority? Priority
+        public Microsoft.Graph.Beta.Models.DeviceAppManagementTaskPriority? Priority
         {
-            get { return BackingStore?.Get<DeviceAppManagementTaskPriority?>("priority"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskPriority?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Device app management task status.</summary>
-        public DeviceAppManagementTaskStatus? Status
+        public Microsoft.Graph.Beta.Models.DeviceAppManagementTaskStatus? Status
         {
-            get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceAppManagementTask"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceAppManagementTask"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceAppManagementTask CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceAppManagementTask CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.appVulnerabilityTask" => new AppVulnerabilityTask(),
-                "#microsoft.graph.securityConfigurationTask" => new SecurityConfigurationTask(),
-                "#microsoft.graph.unmanagedDeviceDiscoveryTask" => new UnmanagedDeviceDiscoveryTask(),
-                _ => new DeviceAppManagementTask(),
+                "#microsoft.graph.appVulnerabilityTask" => new Microsoft.Graph.Beta.Models.AppVulnerabilityTask(),
+                "#microsoft.graph.securityConfigurationTask" => new Microsoft.Graph.Beta.Models.SecurityConfigurationTask(),
+                "#microsoft.graph.unmanagedDeviceDiscoveryTask" => new Microsoft.Graph.Beta.Models.UnmanagedDeviceDiscoveryTask(),
+                _ => new Microsoft.Graph.Beta.Models.DeviceAppManagementTask(),
             };
         }
         /// <summary>
@@ -147,15 +147,15 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                { "category", n => { Category = n.GetEnumValue<DeviceAppManagementTaskCategory>(); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskCategory>(); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "creator", n => { Creator = n.GetStringValue(); } },
                 { "creatorNotes", n => { CreatorNotes = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "dueDateTime", n => { DueDateTime = n.GetDateTimeOffsetValue(); } },
-                { "priority", n => { Priority = n.GetEnumValue<DeviceAppManagementTaskPriority>(); } },
-                { "status", n => { Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
+                { "priority", n => { Priority = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskPriority>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskStatus>(); } },
             };
         }
         /// <summary>
@@ -167,15 +167,15 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("assignedTo", AssignedTo);
-            writer.WriteEnumValue<DeviceAppManagementTaskCategory>("category", Category);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskCategory>("category", Category);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("creator", Creator);
             writer.WriteStringValue("creatorNotes", CreatorNotes);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
-            writer.WriteEnumValue<DeviceAppManagementTaskPriority>("priority", Priority);
-            writer.WriteEnumValue<DeviceAppManagementTaskStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskPriority>("priority", Priority);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskStatus>("status", Status);
         }
     }
 }

@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The all property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsIdentity>? All
+        public List<Microsoft.Graph.Beta.Models.AwsIdentity>? All
         {
-            get { return BackingStore?.Get<List<AwsIdentity>?>("all"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsIdentity>?>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #nullable restore
 #else
-        public List<AwsIdentity> All
+        public List<Microsoft.Graph.Beta.Models.AwsIdentity> All
         {
-            get { return BackingStore?.Get<List<AwsIdentity>>("all"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsIdentity>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #endif
@@ -54,37 +54,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The roles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsRole>? Roles
+        public List<Microsoft.Graph.Beta.Models.AwsRole>? Roles
         {
-            get { return BackingStore?.Get<List<AwsRole>?>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsRole>?>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #nullable restore
 #else
-        public List<AwsRole> Roles
+        public List<Microsoft.Graph.Beta.Models.AwsRole> Roles
         {
-            get { return BackingStore?.Get<List<AwsRole>>("roles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsRole>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AwsUser>? Users
+        public List<Microsoft.Graph.Beta.Models.AwsUser>? Users
         {
-            get { return BackingStore?.Get<List<AwsUser>?>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsUser>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<AwsUser> Users
+        public List<Microsoft.Graph.Beta.Models.AwsUser> Users
         {
-            get { return BackingStore?.Get<List<AwsUser>>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AwsUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AwsAssociatedIdentities"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AwsAssociatedIdentities"/> and sets the default values.
         /// </summary>
         public AwsAssociatedIdentities()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AwsAssociatedIdentities"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AwsAssociatedIdentities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AwsAssociatedIdentities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AwsAssociatedIdentities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AwsAssociatedIdentities();
+            return new Microsoft.Graph.Beta.Models.AwsAssociatedIdentities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "all", n => { All = n.GetCollectionOfObjectValues<AwsIdentity>(AwsIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "all", n => { All = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsIdentity>(Microsoft.Graph.Beta.Models.AwsIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "roles", n => { Roles = n.GetCollectionOfObjectValues<AwsRole>(AwsRole.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<AwsUser>(AwsUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roles", n => { Roles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsRole>(Microsoft.Graph.Beta.Models.AwsRole.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsUser>(Microsoft.Graph.Beta.Models.AwsUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<AwsIdentity>("all", All);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsIdentity>("all", All);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<AwsRole>("roles", Roles);
-            writer.WriteCollectionOfObjectValues<AwsUser>("users", Users);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsRole>("roles", Roles);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AwsUser>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("@odata.type", value); }
         }
 #endif
-        /// <summary>The names of properties that have data from this source.</summary>
+        /// <summary>Names of properties that have data from this source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Properties
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ProfileSourceAnnotation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ProfileSourceAnnotation"/> and sets the default values.
         /// </summary>
         public ProfileSourceAnnotation()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ProfileSourceAnnotation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ProfileSourceAnnotation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ProfileSourceAnnotation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ProfileSourceAnnotation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ProfileSourceAnnotation();
+            return new Microsoft.Graph.Beta.Models.ProfileSourceAnnotation();
         }
         /// <summary>
         /// The deserialization information for the current model

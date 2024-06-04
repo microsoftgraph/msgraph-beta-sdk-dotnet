@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrivilegedRole : Entity, IParsable
+    public class PrivilegedRole : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The assignments property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrivilegedRoleAssignment>? Assignments
+        public List<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>? Assignments
         {
-            get { return BackingStore?.Get<List<PrivilegedRoleAssignment>?>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>?>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #nullable restore
 #else
-        public List<PrivilegedRoleAssignment> Assignments
+        public List<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment> Assignments
         {
-            get { return BackingStore?.Get<List<PrivilegedRoleAssignment>>("assignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
 #endif
@@ -45,44 +45,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRoleSettings? Settings
+        public Microsoft.Graph.Beta.Models.PrivilegedRoleSettings? Settings
         {
-            get { return BackingStore?.Get<PrivilegedRoleSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRoleSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRoleSettings Settings
+        public Microsoft.Graph.Beta.Models.PrivilegedRoleSettings Settings
         {
-            get { return BackingStore?.Get<PrivilegedRoleSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrivilegedRoleSummary? Summary
+        public Microsoft.Graph.Beta.Models.PrivilegedRoleSummary? Summary
         {
-            get { return BackingStore?.Get<PrivilegedRoleSummary?>("summary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRoleSummary?>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #nullable restore
 #else
-        public PrivilegedRoleSummary Summary
+        public Microsoft.Graph.Beta.Models.PrivilegedRoleSummary Summary
         {
-            get { return BackingStore?.Get<PrivilegedRoleSummary>("summary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrivilegedRoleSummary>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrivilegedRole"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrivilegedRole"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrivilegedRole CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrivilegedRole CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrivilegedRole();
+            return new Microsoft.Graph.Beta.Models.PrivilegedRole();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,10 +92,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<PrivilegedRoleAssignment>(PrivilegedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "assignments", n => { Assignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>(Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "settings", n => { Settings = n.GetObjectValue<PrivilegedRoleSettings>(PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
-                { "summary", n => { Summary = n.GetObjectValue<PrivilegedRoleSummary>(PrivilegedRoleSummary.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>(Microsoft.Graph.Beta.Models.PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
+                { "summary", n => { Summary = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRoleSummary>(Microsoft.Graph.Beta.Models.PrivilegedRoleSummary.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -106,10 +106,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<PrivilegedRoleAssignment>("assignments", Assignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrivilegedRoleAssignment>("assignments", Assignments);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<PrivilegedRoleSettings>("settings", Settings);
-            writer.WriteObjectValue<PrivilegedRoleSummary>("summary", Summary);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRoleSettings>("settings", Settings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrivilegedRoleSummary>("summary", Summary);
         }
     }
 }

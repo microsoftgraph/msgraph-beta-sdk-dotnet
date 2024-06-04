@@ -58,13 +58,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.</summary>
-        public MembershipRuleProcessingStatusDetails? Status
+        public Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatusDetails? Status
         {
-            get { return BackingStore?.Get<MembershipRuleProcessingStatusDetails?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatusDetails?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MembershipRuleProcessingStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus"/> and sets the default values.
         /// </summary>
         public MembershipRuleProcessingStatus()
         {
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MembershipRuleProcessingStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MembershipRuleProcessingStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MembershipRuleProcessingStatus();
+            return new Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 { "lastMembershipUpdated", n => { LastMembershipUpdated = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<MembershipRuleProcessingStatusDetails>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatusDetails>(); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteDateTimeOffsetValue("lastMembershipUpdated", LastMembershipUpdated);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<MembershipRuleProcessingStatusDetails>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MembershipRuleProcessingStatusDetails>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

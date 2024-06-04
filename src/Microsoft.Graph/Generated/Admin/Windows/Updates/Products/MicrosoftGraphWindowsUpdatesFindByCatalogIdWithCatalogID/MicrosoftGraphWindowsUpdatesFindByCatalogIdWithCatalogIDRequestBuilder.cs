@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
     public class MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="catalogID">Usage: catalogID=&apos;{catalogID}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
             if (!string.IsNullOrWhiteSpace(catalogID)) PathParameters.Add("catalogID", catalogID);
         }
         /// <summary>
-        /// Instantiates a new <see cref="MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -36,49 +36,49 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// <summary>
         /// Invoke function findByCatalogId
         /// </summary>
-        /// <returns>A <see cref="FindByCatalogIdWithCatalogIDGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindByCatalogIdWithCatalogIDGetResponse?> GetAsFindByCatalogIdWithCatalogIDGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse?> GetAsFindByCatalogIdWithCatalogIDGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindByCatalogIdWithCatalogIDGetResponse> GetAsFindByCatalogIdWithCatalogIDGetResponseAsync(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse> GetAsFindByCatalogIdWithCatalogIDGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindByCatalogIdWithCatalogIDGetResponse>(requestInfo, FindByCatalogIdWithCatalogIDGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse>(requestInfo, Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function findByCatalogId
         /// </summary>
-        /// <returns>A <see cref="FindByCatalogIdWithCatalogIDResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsFindByCatalogIdWithCatalogIDGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindByCatalogIdWithCatalogIDResponse?> GetAsync(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindByCatalogIdWithCatalogIDResponse> GetAsync(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindByCatalogIdWithCatalogIDResponse>(requestInfo, FindByCatalogIdWithCatalogIDResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDResponse>(requestInfo, Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.FindByCatalogIdWithCatalogIDResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function findByCatalogId
@@ -87,11 +87,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder WithUrl(string rawUrl)
         {
-            return new MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Invoke function findByCatalogId
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWind
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetRequestConfiguration : RequestConfiguration<MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>
+        public class MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Admin.Windows.Updates.Products.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogID.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilder.MicrosoftGraphWindowsUpdatesFindByCatalogIdWithCatalogIDRequestBuilderGetQueryParameters>
         {
         }
     }

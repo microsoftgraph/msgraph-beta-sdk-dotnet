@@ -13,48 +13,48 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>Specifies the connectivity details of all device links associated with a remote network.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RemoteNetworkConnectivityConfiguration? ConnectivityConfiguration
+        public Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration? ConnectivityConfiguration
         {
-            get { return BackingStore?.Get<RemoteNetworkConnectivityConfiguration?>("connectivityConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration?>("connectivityConfiguration"); }
             set { BackingStore?.Set("connectivityConfiguration", value); }
         }
 #nullable restore
 #else
-        public RemoteNetworkConnectivityConfiguration ConnectivityConfiguration
+        public Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration ConnectivityConfiguration
         {
-            get { return BackingStore?.Get<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration>("connectivityConfiguration"); }
             set { BackingStore?.Set("connectivityConfiguration", value); }
         }
 #endif
         /// <summary>Each unique CPE device associated with a remote network is specified. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceLink>? DeviceLinks
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>? DeviceLinks
         {
-            get { return BackingStore?.Get<List<DeviceLink>?>("deviceLinks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>?>("deviceLinks"); }
             set { BackingStore?.Set("deviceLinks", value); }
         }
 #nullable restore
 #else
-        public List<DeviceLink> DeviceLinks
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink> DeviceLinks
         {
-            get { return BackingStore?.Get<List<DeviceLink>>("deviceLinks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>>("deviceLinks"); }
             set { BackingStore?.Set("deviceLinks", value); }
         }
 #endif
         /// <summary>Each forwarding profile associated with a remote network is specified. Supports $expand and $select.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ForwardingProfile>? ForwardingProfiles
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>? ForwardingProfiles
         {
-            get { return BackingStore?.Get<List<ForwardingProfile>?>("forwardingProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>?>("forwardingProfiles"); }
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #nullable restore
 #else
-        public List<ForwardingProfile> ForwardingProfiles
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile> ForwardingProfiles
         {
-            get { return BackingStore?.Get<List<ForwardingProfile>>("forwardingProfiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>>("forwardingProfiles"); }
             set { BackingStore?.Set("forwardingProfiles", value); }
         }
 #endif
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RemoteNetwork"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RemoteNetwork CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RemoteNetwork();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetwork();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,12 +120,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "connectivityConfiguration", n => { ConnectivityConfiguration = n.GetObjectValue<RemoteNetworkConnectivityConfiguration>(RemoteNetworkConnectivityConfiguration.CreateFromDiscriminatorValue); } },
-                { "deviceLinks", n => { DeviceLinks = n.GetCollectionOfObjectValues<DeviceLink>(DeviceLink.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<ForwardingProfile>(ForwardingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "connectivityConfiguration", n => { ConnectivityConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration>(Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration.CreateFromDiscriminatorValue); } },
+                { "deviceLinks", n => { DeviceLinks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>(Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "forwardingProfiles", n => { ForwardingProfiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>(Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetEnumValue<Region>(); } },
+                { "region", n => { Region = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Region>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", ConnectivityConfiguration);
-            writer.WriteCollectionOfObjectValues<DeviceLink>("deviceLinks", DeviceLinks);
-            writer.WriteCollectionOfObjectValues<ForwardingProfile>("forwardingProfiles", ForwardingProfiles);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Networkaccess.RemoteNetworkConnectivityConfiguration>("connectivityConfiguration", ConnectivityConfiguration);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.DeviceLink>("deviceLinks", DeviceLinks);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile>("forwardingProfiles", ForwardingProfiles);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<Region>("region", Region);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.Region>("region", Region);
             writer.WriteStringValue("version", Version);
         }
     }

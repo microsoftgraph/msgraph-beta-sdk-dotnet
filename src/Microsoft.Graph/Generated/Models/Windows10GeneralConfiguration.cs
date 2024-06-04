@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the windows10GeneralConfiguration resource.
     /// </summary>
-    public class Windows10GeneralConfiguration : DeviceConfiguration, IParsable
+    public class Windows10GeneralConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Indicates whether or not to Block the user from adding email accounts to the device that are not associated with a Microsoft account.</summary>
         public bool? AccountsBlockAddingNonMicrosoftAccountEmail
@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("accountsBlockAddingNonMicrosoftAccountEmail", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? ActivateAppsWithVoice
+        public Microsoft.Graph.Beta.Models.Enablement? ActivateAppsWithVoice
         {
-            get { return BackingStore?.Get<Enablement?>("activateAppsWithVoice"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("activateAppsWithVoice"); }
             set { BackingStore?.Set("activateAppsWithVoice", value); }
         }
         /// <summary>Indicates whether or not to block the user from selecting an AntiTheft mode preference (Windows 10 Mobile only).</summary>
@@ -59,9 +59,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>State Management Setting.</summary>
-        public StateManagementSetting? AppsAllowTrustedAppsSideloading
+        public Microsoft.Graph.Beta.Models.StateManagementSetting? AppsAllowTrustedAppsSideloading
         {
-            get { return BackingStore?.Get<StateManagementSetting?>("appsAllowTrustedAppsSideloading"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StateManagementSetting?>("appsAllowTrustedAppsSideloading"); }
             set { BackingStore?.Set("appsAllowTrustedAppsSideloading", value); }
         }
         /// <summary>Indicates whether or not to disable the launch of all apps from Windows Store that came pre-installed or were downloaded.</summary>
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values of a property</summary>
-        public Enablement? AuthenticationWebSignIn
+        public Microsoft.Graph.Beta.Models.Enablement? AuthenticationWebSignIn
         {
-            get { return BackingStore?.Get<Enablement?>("authenticationWebSignIn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("authenticationWebSignIn"); }
             set { BackingStore?.Set("authenticationWebSignIn", value); }
         }
         /// <summary>Specify a list of allowed Bluetooth services and profiles in hex formatted strings.</summary>
@@ -169,9 +169,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("cellularBlockVpnWhenRoaming", value); }
         }
         /// <summary>Possible values of the ConfigurationUsage list.</summary>
-        public ConfigurationUsage? CellularData
+        public Microsoft.Graph.Beta.Models.ConfigurationUsage? CellularData
         {
-            get { return BackingStore?.Get<ConfigurationUsage?>("cellularData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationUsage?>("cellularData"); }
             set { BackingStore?.Set("cellularData", value); }
         }
         /// <summary>Whether or not to Block the user from doing manual root certificate installation.</summary>
@@ -239,9 +239,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defenderBlockOnAccessProtection", value); }
         }
         /// <summary>Possible values of Cloud Block Level</summary>
-        public DefenderCloudBlockLevelType? DefenderCloudBlockLevel
+        public Microsoft.Graph.Beta.Models.DefenderCloudBlockLevelType? DefenderCloudBlockLevel
         {
-            get { return BackingStore?.Get<DefenderCloudBlockLevelType?>("defenderCloudBlockLevel"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderCloudBlockLevelType?>("defenderCloudBlockLevel"); }
             set { BackingStore?.Set("defenderCloudBlockLevel", value); }
         }
         /// <summary>Timeout extension for file scanning by the cloud. Valid values 0 to 50</summary>
@@ -335,9 +335,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defenderPotentiallyUnwantedAppAction", value); }
         }
         /// <summary>Possible values of Defender PUA Protection</summary>
-        public DefenderProtectionType? DefenderPotentiallyUnwantedAppActionSetting
+        public Microsoft.Graph.Beta.Models.DefenderProtectionType? DefenderPotentiallyUnwantedAppActionSetting
         {
-            get { return BackingStore?.Get<DefenderProtectionType?>("defenderPotentiallyUnwantedAppActionSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderProtectionType?>("defenderPotentiallyUnwantedAppActionSetting"); }
             set { BackingStore?.Set("defenderPotentiallyUnwantedAppActionSetting", value); }
         }
         /// <summary>Processes to exclude from scans and real time protection.</summary>
@@ -471,15 +471,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("defenderSubmitSamplesConsentType", value); }
         }
         /// <summary>Possible values for a weekly schedule.</summary>
-        public WeeklySchedule? DefenderSystemScanSchedule
+        public Microsoft.Graph.Beta.Models.WeeklySchedule? DefenderSystemScanSchedule
         {
-            get { return BackingStore?.Get<WeeklySchedule?>("defenderSystemScanSchedule"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WeeklySchedule?>("defenderSystemScanSchedule"); }
             set { BackingStore?.Set("defenderSystemScanSchedule", value); }
         }
         /// <summary>State Management Setting.</summary>
-        public StateManagementSetting? DeveloperUnlockSetting
+        public Microsoft.Graph.Beta.Models.StateManagementSetting? DeveloperUnlockSetting
         {
-            get { return BackingStore?.Get<StateManagementSetting?>("developerUnlockSetting"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StateManagementSetting?>("developerUnlockSetting"); }
             set { BackingStore?.Set("developerUnlockSetting", value); }
         }
         /// <summary>Indicates whether or not to Block the user from resetting their phone.</summary>
@@ -495,9 +495,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("deviceManagementBlockManualUnenroll", value); }
         }
         /// <summary>Allow the device to send diagnostic and usage telemetry data, such as Watson.</summary>
-        public DiagnosticDataSubmissionMode? DiagnosticsDataSubmissionMode
+        public Microsoft.Graph.Beta.Models.DiagnosticDataSubmissionMode? DiagnosticsDataSubmissionMode
         {
-            get { return BackingStore?.Get<DiagnosticDataSubmissionMode?>("diagnosticsDataSubmissionMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiagnosticDataSubmissionMode?>("diagnosticsDataSubmissionMode"); }
             set { BackingStore?.Set("diagnosticsDataSubmissionMode", value); }
         }
         /// <summary>List of legacy applications that have GDI DPI Scaling turned off.</summary>
@@ -717,9 +717,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? EdgeFavoritesBarVisibility
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? EdgeFavoritesBarVisibility
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("edgeFavoritesBarVisibility"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("edgeFavoritesBarVisibility"); }
             set { BackingStore?.Set("edgeFavoritesBarVisibility", value); }
         }
         /// <summary>The location of the favorites list to provision. Could be a local file, local network or http location.</summary>
@@ -793,9 +793,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Specify how the Microsoft Edge settings are restricted based on kiosk mode.</summary>
-        public EdgeKioskModeRestrictionType? EdgeKioskModeRestriction
+        public Microsoft.Graph.Beta.Models.EdgeKioskModeRestrictionType? EdgeKioskModeRestriction
         {
-            get { return BackingStore?.Get<EdgeKioskModeRestrictionType?>("edgeKioskModeRestriction"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeKioskModeRestrictionType?>("edgeKioskModeRestriction"); }
             set { BackingStore?.Set("edgeKioskModeRestriction", value); }
         }
         /// <summary>Specifies the time in minutes from the last user activity before Microsoft Edge kiosk resets.  Valid values are 0-1440. The default is 5. 0 indicates no reset. Valid values 0 to 1440</summary>
@@ -821,9 +821,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Possible values for the EdgeOpensWith setting.</summary>
-        public EdgeOpenOptions? EdgeOpensWith
+        public Microsoft.Graph.Beta.Models.EdgeOpenOptions? EdgeOpensWith
         {
-            get { return BackingStore?.Get<EdgeOpenOptions?>("edgeOpensWith"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeOpenOptions?>("edgeOpensWith"); }
             set { BackingStore?.Set("edgeOpensWith", value); }
         }
         /// <summary>Allow or prevent users from overriding certificate errors.</summary>
@@ -857,16 +857,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Allows IT admins to set a default search engine for MDM-Controlled devices. Users can override this and change their default search engine provided the AllowSearchEngineCustomization policy is not set.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdgeSearchEngineBase? EdgeSearchEngine
+        public Microsoft.Graph.Beta.Models.EdgeSearchEngineBase? EdgeSearchEngine
         {
-            get { return BackingStore?.Get<EdgeSearchEngineBase?>("edgeSearchEngine"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeSearchEngineBase?>("edgeSearchEngine"); }
             set { BackingStore?.Set("edgeSearchEngine", value); }
         }
 #nullable restore
 #else
-        public EdgeSearchEngineBase EdgeSearchEngine
+        public Microsoft.Graph.Beta.Models.EdgeSearchEngineBase EdgeSearchEngine
         {
-            get { return BackingStore?.Get<EdgeSearchEngineBase>("edgeSearchEngine"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeSearchEngineBase>("edgeSearchEngine"); }
             set { BackingStore?.Set("edgeSearchEngine", value); }
         }
 #endif
@@ -877,9 +877,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("edgeSendIntranetTrafficToInternetExplorer", value); }
         }
         /// <summary>What message will be displayed by Edge before switching to Internet Explorer.</summary>
-        public InternetExplorerMessageSetting? EdgeShowMessageWhenOpeningInternetExplorerSites
+        public Microsoft.Graph.Beta.Models.InternetExplorerMessageSetting? EdgeShowMessageWhenOpeningInternetExplorerSites
         {
-            get { return BackingStore?.Get<InternetExplorerMessageSetting?>("edgeShowMessageWhenOpeningInternetExplorerSites"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InternetExplorerMessageSetting?>("edgeShowMessageWhenOpeningInternetExplorerSites"); }
             set { BackingStore?.Set("edgeShowMessageWhenOpeningInternetExplorerSites", value); }
         }
         /// <summary>Enable favorites sync between Internet Explorer and Microsoft Edge. Additions, deletions, modifications and order changes to favorites are shared between browsers.</summary>
@@ -889,9 +889,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("edgeSyncFavoritesWithInternetExplorer", value); }
         }
         /// <summary>Type of browsing data sent to Microsoft 365 analytics</summary>
-        public EdgeTelemetryMode? EdgeTelemetryForMicrosoft365Analytics
+        public Microsoft.Graph.Beta.Models.EdgeTelemetryMode? EdgeTelemetryForMicrosoft365Analytics
         {
-            get { return BackingStore?.Get<EdgeTelemetryMode?>("edgeTelemetryForMicrosoft365Analytics"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EdgeTelemetryMode?>("edgeTelemetryForMicrosoft365Analytics"); }
             set { BackingStore?.Set("edgeTelemetryForMicrosoft365Analytics", value); }
         }
         /// <summary>Allow users with administrative rights to delete all user data and settings using CTRL + Win + R at the device lock screen so that the device can be automatically re-configured and re-enrolled into management.</summary>
@@ -1017,15 +1017,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("experienceBlockTaskSwitcher", value); }
         }
         /// <summary>Allow(Not Configured) or prevent(Block) the syncing of Microsoft Edge Browser settings. Option to prevent syncing across devices, but allow user override.</summary>
-        public BrowserSyncSetting? ExperienceDoNotSyncBrowserSettings
+        public Microsoft.Graph.Beta.Models.BrowserSyncSetting? ExperienceDoNotSyncBrowserSettings
         {
-            get { return BackingStore?.Get<BrowserSyncSetting?>("experienceDoNotSyncBrowserSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BrowserSyncSetting?>("experienceDoNotSyncBrowserSettings"); }
             set { BackingStore?.Set("experienceDoNotSyncBrowserSettings", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? FindMyFiles
+        public Microsoft.Graph.Beta.Models.Enablement? FindMyFiles
         {
-            get { return BackingStore?.Get<Enablement?>("findMyFiles"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("findMyFiles"); }
             set { BackingStore?.Set("findMyFiles", value); }
         }
         /// <summary>Indicates whether or not to block DVR and broadcasting.</summary>
@@ -1035,15 +1035,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("gameDvrBlocked", value); }
         }
         /// <summary>Values for the InkWorkspaceAccess setting.</summary>
-        public InkAccessSetting? InkWorkspaceAccess
+        public Microsoft.Graph.Beta.Models.InkAccessSetting? InkWorkspaceAccess
         {
-            get { return BackingStore?.Get<InkAccessSetting?>("inkWorkspaceAccess"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InkAccessSetting?>("inkWorkspaceAccess"); }
             set { BackingStore?.Set("inkWorkspaceAccess", value); }
         }
         /// <summary>State Management Setting.</summary>
-        public StateManagementSetting? InkWorkspaceAccessState
+        public Microsoft.Graph.Beta.Models.StateManagementSetting? InkWorkspaceAccessState
         {
-            get { return BackingStore?.Get<StateManagementSetting?>("inkWorkspaceAccessState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StateManagementSetting?>("inkWorkspaceAccessState"); }
             set { BackingStore?.Set("inkWorkspaceAccessState", value); }
         }
         /// <summary>Specify whether to show recommended app suggestions in the ink workspace.</summary>
@@ -1065,9 +1065,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("locationServicesBlocked", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? LockScreenActivateAppsWithVoice
+        public Microsoft.Graph.Beta.Models.Enablement? LockScreenActivateAppsWithVoice
         {
-            get { return BackingStore?.Get<Enablement?>("lockScreenActivateAppsWithVoice"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("lockScreenActivateAppsWithVoice"); }
             set { BackingStore?.Set("lockScreenActivateAppsWithVoice", value); }
         }
         /// <summary>Specify whether to show a user-configurable setting to control the screen timeout while on the lock screen of Windows 10 Mobile devices. If this policy is set to Allow, the value set by lockScreenTimeoutInSeconds is ignored.</summary>
@@ -1137,9 +1137,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("microsoftAccountBlockSettingsSync", value); }
         }
         /// <summary>Values for the SignInAssistantSettings.</summary>
-        public SignInAssistantOptions? MicrosoftAccountSignInAssistantSettings
+        public Microsoft.Graph.Beta.Models.SignInAssistantOptions? MicrosoftAccountSignInAssistantSettings
         {
-            get { return BackingStore?.Get<SignInAssistantOptions?>("microsoftAccountSignInAssistantSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInAssistantOptions?>("microsoftAccountSignInAssistantSettings"); }
             set { BackingStore?.Set("microsoftAccountSignInAssistantSettings", value); }
         }
         /// <summary>If set, proxy settings will be applied to all processes and accounts in the device. Otherwise, it will be applied to the user account that’s enrolled into MDM.</summary>
@@ -1173,16 +1173,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies manual proxy server settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Windows10NetworkProxyServer? NetworkProxyServer
+        public Microsoft.Graph.Beta.Models.Windows10NetworkProxyServer? NetworkProxyServer
         {
-            get { return BackingStore?.Get<Windows10NetworkProxyServer?>("networkProxyServer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10NetworkProxyServer?>("networkProxyServer"); }
             set { BackingStore?.Set("networkProxyServer", value); }
         }
 #nullable restore
 #else
-        public Windows10NetworkProxyServer NetworkProxyServer
+        public Microsoft.Graph.Beta.Models.Windows10NetworkProxyServer NetworkProxyServer
         {
-            get { return BackingStore?.Get<Windows10NetworkProxyServer>("networkProxyServer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Windows10NetworkProxyServer>("networkProxyServer"); }
             set { BackingStore?.Set("networkProxyServer", value); }
         }
 #endif
@@ -1247,9 +1247,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.RequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>Indicates whether or not to require a password upon resuming from an idle state.</summary>
@@ -1297,51 +1297,51 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Power action types</summary>
-        public PowerActionType? PowerButtonActionOnBattery
+        public Microsoft.Graph.Beta.Models.PowerActionType? PowerButtonActionOnBattery
         {
-            get { return BackingStore?.Get<PowerActionType?>("powerButtonActionOnBattery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PowerActionType?>("powerButtonActionOnBattery"); }
             set { BackingStore?.Set("powerButtonActionOnBattery", value); }
         }
         /// <summary>Power action types</summary>
-        public PowerActionType? PowerButtonActionPluggedIn
+        public Microsoft.Graph.Beta.Models.PowerActionType? PowerButtonActionPluggedIn
         {
-            get { return BackingStore?.Get<PowerActionType?>("powerButtonActionPluggedIn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PowerActionType?>("powerButtonActionPluggedIn"); }
             set { BackingStore?.Set("powerButtonActionPluggedIn", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? PowerHybridSleepOnBattery
+        public Microsoft.Graph.Beta.Models.Enablement? PowerHybridSleepOnBattery
         {
-            get { return BackingStore?.Get<Enablement?>("powerHybridSleepOnBattery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("powerHybridSleepOnBattery"); }
             set { BackingStore?.Set("powerHybridSleepOnBattery", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? PowerHybridSleepPluggedIn
+        public Microsoft.Graph.Beta.Models.Enablement? PowerHybridSleepPluggedIn
         {
-            get { return BackingStore?.Get<Enablement?>("powerHybridSleepPluggedIn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("powerHybridSleepPluggedIn"); }
             set { BackingStore?.Set("powerHybridSleepPluggedIn", value); }
         }
         /// <summary>Power action types</summary>
-        public PowerActionType? PowerLidCloseActionOnBattery
+        public Microsoft.Graph.Beta.Models.PowerActionType? PowerLidCloseActionOnBattery
         {
-            get { return BackingStore?.Get<PowerActionType?>("powerLidCloseActionOnBattery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PowerActionType?>("powerLidCloseActionOnBattery"); }
             set { BackingStore?.Set("powerLidCloseActionOnBattery", value); }
         }
         /// <summary>Power action types</summary>
-        public PowerActionType? PowerLidCloseActionPluggedIn
+        public Microsoft.Graph.Beta.Models.PowerActionType? PowerLidCloseActionPluggedIn
         {
-            get { return BackingStore?.Get<PowerActionType?>("powerLidCloseActionPluggedIn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PowerActionType?>("powerLidCloseActionPluggedIn"); }
             set { BackingStore?.Set("powerLidCloseActionPluggedIn", value); }
         }
         /// <summary>Power action types</summary>
-        public PowerActionType? PowerSleepButtonActionOnBattery
+        public Microsoft.Graph.Beta.Models.PowerActionType? PowerSleepButtonActionOnBattery
         {
-            get { return BackingStore?.Get<PowerActionType?>("powerSleepButtonActionOnBattery"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PowerActionType?>("powerSleepButtonActionOnBattery"); }
             set { BackingStore?.Set("powerSleepButtonActionOnBattery", value); }
         }
         /// <summary>Power action types</summary>
-        public PowerActionType? PowerSleepButtonActionPluggedIn
+        public Microsoft.Graph.Beta.Models.PowerActionType? PowerSleepButtonActionPluggedIn
         {
-            get { return BackingStore?.Get<PowerActionType?>("powerSleepButtonActionPluggedIn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PowerActionType?>("powerSleepButtonActionPluggedIn"); }
             set { BackingStore?.Set("powerSleepButtonActionPluggedIn", value); }
         }
         /// <summary>Prevent user installation of additional printers from printers settings.</summary>
@@ -1385,23 +1385,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Indicates a list of applications with their access control levels over privacy data categories, and/or the default access levels per category. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WindowsPrivacyDataAccessControlItem>? PrivacyAccessControls
+        public List<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>? PrivacyAccessControls
         {
-            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>?>("privacyAccessControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>?>("privacyAccessControls"); }
             set { BackingStore?.Set("privacyAccessControls", value); }
         }
 #nullable restore
 #else
-        public List<WindowsPrivacyDataAccessControlItem> PrivacyAccessControls
+        public List<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem> PrivacyAccessControls
         {
-            get { return BackingStore?.Get<List<WindowsPrivacyDataAccessControlItem>>("privacyAccessControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>>("privacyAccessControls"); }
             set { BackingStore?.Set("privacyAccessControls", value); }
         }
 #endif
         /// <summary>State Management Setting.</summary>
-        public StateManagementSetting? PrivacyAdvertisingId
+        public Microsoft.Graph.Beta.Models.StateManagementSetting? PrivacyAdvertisingId
         {
-            get { return BackingStore?.Get<StateManagementSetting?>("privacyAdvertisingId"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StateManagementSetting?>("privacyAdvertisingId"); }
             set { BackingStore?.Set("privacyAdvertisingId", value); }
         }
         /// <summary>Indicates whether or not to allow the automatic acceptance of the pairing and privacy user consent dialog when launching apps.</summary>
@@ -1441,9 +1441,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("resetProtectionModeBlocked", value); }
         }
         /// <summary>Specifies what level of safe search (filtering adult content) is required</summary>
-        public SafeSearchFilterType? SafeSearchFilter
+        public Microsoft.Graph.Beta.Models.SafeSearchFilterType? SafeSearchFilter
         {
-            get { return BackingStore?.Get<SafeSearchFilterType?>("safeSearchFilter"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SafeSearchFilterType?>("safeSearchFilter"); }
             set { BackingStore?.Set("safeSearchFilter", value); }
         }
         /// <summary>Indicates whether or not to Block the user from taking Screenshots.</summary>
@@ -1639,9 +1639,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("sharedUserAppDataAllowed", value); }
         }
         /// <summary>App Install control Setting</summary>
-        public AppInstallControlType? SmartScreenAppInstallControl
+        public Microsoft.Graph.Beta.Models.AppInstallControlType? SmartScreenAppInstallControl
         {
-            get { return BackingStore?.Get<AppInstallControlType?>("smartScreenAppInstallControl"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppInstallControlType?>("smartScreenAppInstallControl"); }
             set { BackingStore?.Set("smartScreenAppInstallControl", value); }
         }
         /// <summary>Indicates whether or not users can override SmartScreen Filter warnings about potentially malicious websites.</summary>
@@ -1669,9 +1669,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startBlockUnpinningAppsFromTaskbar", value); }
         }
         /// <summary>Type of start menu app list visibility.</summary>
-        public WindowsStartMenuAppListVisibilityType? StartMenuAppListVisibility
+        public Microsoft.Graph.Beta.Models.WindowsStartMenuAppListVisibilityType? StartMenuAppListVisibility
         {
-            get { return BackingStore?.Get<WindowsStartMenuAppListVisibilityType?>("startMenuAppListVisibility"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsStartMenuAppListVisibilityType?>("startMenuAppListVisibility"); }
             set { BackingStore?.Set("startMenuAppListVisibility", value); }
         }
         /// <summary>Enabling this policy hides the change account setting from appearing in the user tile in the start menu.</summary>
@@ -1785,69 +1785,69 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Type of display modes for the start menu.</summary>
-        public WindowsStartMenuModeType? StartMenuMode
+        public Microsoft.Graph.Beta.Models.WindowsStartMenuModeType? StartMenuMode
         {
-            get { return BackingStore?.Get<WindowsStartMenuModeType?>("startMenuMode"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsStartMenuModeType?>("startMenuMode"); }
             set { BackingStore?.Set("startMenuMode", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderDocuments
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderDocuments
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderDocuments"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderDocuments"); }
             set { BackingStore?.Set("startMenuPinnedFolderDocuments", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderDownloads
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderDownloads
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderDownloads"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderDownloads"); }
             set { BackingStore?.Set("startMenuPinnedFolderDownloads", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderFileExplorer
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderFileExplorer
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderFileExplorer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderFileExplorer"); }
             set { BackingStore?.Set("startMenuPinnedFolderFileExplorer", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderHomeGroup
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderHomeGroup
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderHomeGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderHomeGroup"); }
             set { BackingStore?.Set("startMenuPinnedFolderHomeGroup", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderMusic
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderMusic
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderMusic"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderMusic"); }
             set { BackingStore?.Set("startMenuPinnedFolderMusic", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderNetwork
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderNetwork
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderNetwork"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderNetwork"); }
             set { BackingStore?.Set("startMenuPinnedFolderNetwork", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderPersonalFolder
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderPersonalFolder
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderPersonalFolder"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderPersonalFolder"); }
             set { BackingStore?.Set("startMenuPinnedFolderPersonalFolder", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderPictures
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderPictures
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderPictures"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderPictures"); }
             set { BackingStore?.Set("startMenuPinnedFolderPictures", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderSettings
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderSettings
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderSettings"); }
             set { BackingStore?.Set("startMenuPinnedFolderSettings", value); }
         }
         /// <summary>Generic visibility state.</summary>
-        public VisibilitySetting? StartMenuPinnedFolderVideos
+        public Microsoft.Graph.Beta.Models.VisibilitySetting? StartMenuPinnedFolderVideos
         {
-            get { return BackingStore?.Get<VisibilitySetting?>("startMenuPinnedFolderVideos"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VisibilitySetting?>("startMenuPinnedFolderVideos"); }
             set { BackingStore?.Set("startMenuPinnedFolderVideos", value); }
         }
         /// <summary>Indicates whether or not to Block the user from using removable storage.</summary>
@@ -2009,9 +2009,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("windowsSpotlightBlockWindowsTips", value); }
         }
         /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>
-        public WindowsSpotlightEnablementSettings? WindowsSpotlightConfigureOnLockScreen
+        public Microsoft.Graph.Beta.Models.WindowsSpotlightEnablementSettings? WindowsSpotlightConfigureOnLockScreen
         {
-            get { return BackingStore?.Get<WindowsSpotlightEnablementSettings?>("windowsSpotlightConfigureOnLockScreen"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsSpotlightEnablementSettings?>("windowsSpotlightConfigureOnLockScreen"); }
             set { BackingStore?.Set("windowsSpotlightConfigureOnLockScreen", value); }
         }
         /// <summary>Indicates whether or not to block automatic update of apps from Windows Store.</summary>
@@ -2051,7 +2051,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("wirelessDisplayRequirePinForPairing", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Windows10GeneralConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Windows10GeneralConfiguration"/> and sets the default values.
         /// </summary>
         public Windows10GeneralConfiguration() : base()
         {
@@ -2060,12 +2060,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Windows10GeneralConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Windows10GeneralConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Windows10GeneralConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Windows10GeneralConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Windows10GeneralConfiguration();
+            return new Microsoft.Graph.Beta.Models.Windows10GeneralConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -2076,16 +2076,16 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accountsBlockAddingNonMicrosoftAccountEmail", n => { AccountsBlockAddingNonMicrosoftAccountEmail = n.GetBoolValue(); } },
-                { "activateAppsWithVoice", n => { ActivateAppsWithVoice = n.GetEnumValue<Enablement>(); } },
+                { "activateAppsWithVoice", n => { ActivateAppsWithVoice = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "antiTheftModeBlocked", n => { AntiTheftModeBlocked = n.GetBoolValue(); } },
                 { "appManagementMSIAllowUserControlOverInstall", n => { AppManagementMSIAllowUserControlOverInstall = n.GetBoolValue(); } },
                 { "appManagementMSIAlwaysInstallWithElevatedPrivileges", n => { AppManagementMSIAlwaysInstallWithElevatedPrivileges = n.GetBoolValue(); } },
                 { "appManagementPackageFamilyNamesToLaunchAfterLogOn", n => { AppManagementPackageFamilyNamesToLaunchAfterLogOn = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "appsAllowTrustedAppsSideloading", n => { AppsAllowTrustedAppsSideloading = n.GetEnumValue<StateManagementSetting>(); } },
+                { "appsAllowTrustedAppsSideloading", n => { AppsAllowTrustedAppsSideloading = n.GetEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>(); } },
                 { "appsBlockWindowsStoreOriginatedApps", n => { AppsBlockWindowsStoreOriginatedApps = n.GetBoolValue(); } },
                 { "authenticationAllowSecondaryDevice", n => { AuthenticationAllowSecondaryDevice = n.GetBoolValue(); } },
                 { "authenticationPreferredAzureADTenantDomainName", n => { AuthenticationPreferredAzureADTenantDomainName = n.GetStringValue(); } },
-                { "authenticationWebSignIn", n => { AuthenticationWebSignIn = n.GetEnumValue<Enablement>(); } },
+                { "authenticationWebSignIn", n => { AuthenticationWebSignIn = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "bluetoothAllowedServices", n => { BluetoothAllowedServices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "bluetoothBlockAdvertising", n => { BluetoothBlockAdvertising = n.GetBoolValue(); } },
                 { "bluetoothBlockDiscoverableMode", n => { BluetoothBlockDiscoverableMode = n.GetBoolValue(); } },
@@ -2096,7 +2096,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "cellularBlockDataWhenRoaming", n => { CellularBlockDataWhenRoaming = n.GetBoolValue(); } },
                 { "cellularBlockVpn", n => { CellularBlockVpn = n.GetBoolValue(); } },
                 { "cellularBlockVpnWhenRoaming", n => { CellularBlockVpnWhenRoaming = n.GetBoolValue(); } },
-                { "cellularData", n => { CellularData = n.GetEnumValue<ConfigurationUsage>(); } },
+                { "cellularData", n => { CellularData = n.GetEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>(); } },
                 { "certificatesBlockManualRootCertificateInstallation", n => { CertificatesBlockManualRootCertificateInstallation = n.GetBoolValue(); } },
                 { "configureTimeZone", n => { ConfigureTimeZone = n.GetStringValue(); } },
                 { "connectedDevicesServiceBlocked", n => { ConnectedDevicesServiceBlocked = n.GetBoolValue(); } },
@@ -2106,7 +2106,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "dataProtectionBlockDirectMemoryAccess", n => { DataProtectionBlockDirectMemoryAccess = n.GetBoolValue(); } },
                 { "defenderBlockEndUserAccess", n => { DefenderBlockEndUserAccess = n.GetBoolValue(); } },
                 { "defenderBlockOnAccessProtection", n => { DefenderBlockOnAccessProtection = n.GetBoolValue(); } },
-                { "defenderCloudBlockLevel", n => { DefenderCloudBlockLevel = n.GetEnumValue<DefenderCloudBlockLevelType>(); } },
+                { "defenderCloudBlockLevel", n => { DefenderCloudBlockLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DefenderCloudBlockLevelType>(); } },
                 { "defenderCloudExtendedTimeout", n => { DefenderCloudExtendedTimeout = n.GetIntValue(); } },
                 { "defenderCloudExtendedTimeoutInSeconds", n => { DefenderCloudExtendedTimeoutInSeconds = n.GetIntValue(); } },
                 { "defenderDaysBeforeDeletingQuarantinedMalware", n => { DefenderDaysBeforeDeletingQuarantinedMalware = n.GetIntValue(); } },
@@ -2115,11 +2115,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "defenderDisableCatchupQuickScan", n => { DefenderDisableCatchupQuickScan = n.GetBoolValue(); } },
                 { "defenderFileExtensionsToExclude", n => { DefenderFileExtensionsToExclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "defenderFilesAndFoldersToExclude", n => { DefenderFilesAndFoldersToExclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "defenderMonitorFileActivity", n => { DefenderMonitorFileActivity = n.GetEnumValue<DefenderMonitorFileActivity>(); } },
-                { "defenderPotentiallyUnwantedAppAction", n => { DefenderPotentiallyUnwantedAppAction = n.GetEnumValue<DefenderPotentiallyUnwantedAppAction>(); } },
-                { "defenderPotentiallyUnwantedAppActionSetting", n => { DefenderPotentiallyUnwantedAppActionSetting = n.GetEnumValue<DefenderProtectionType>(); } },
+                { "defenderMonitorFileActivity", n => { DefenderMonitorFileActivity = n.GetEnumValue<Microsoft.Graph.Beta.Models.DefenderMonitorFileActivity>(); } },
+                { "defenderPotentiallyUnwantedAppAction", n => { DefenderPotentiallyUnwantedAppAction = n.GetEnumValue<Microsoft.Graph.Beta.Models.DefenderPotentiallyUnwantedAppAction>(); } },
+                { "defenderPotentiallyUnwantedAppActionSetting", n => { DefenderPotentiallyUnwantedAppActionSetting = n.GetEnumValue<Microsoft.Graph.Beta.Models.DefenderProtectionType>(); } },
                 { "defenderProcessesToExclude", n => { DefenderProcessesToExclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "defenderPromptForSampleSubmission", n => { DefenderPromptForSampleSubmission = n.GetEnumValue<DefenderPromptForSampleSubmission>(); } },
+                { "defenderPromptForSampleSubmission", n => { DefenderPromptForSampleSubmission = n.GetEnumValue<Microsoft.Graph.Beta.Models.DefenderPromptForSampleSubmission>(); } },
                 { "defenderRequireBehaviorMonitoring", n => { DefenderRequireBehaviorMonitoring = n.GetBoolValue(); } },
                 { "defenderRequireCloudProtection", n => { DefenderRequireCloudProtection = n.GetBoolValue(); } },
                 { "defenderRequireNetworkInspectionSystem", n => { DefenderRequireNetworkInspectionSystem = n.GetBoolValue(); } },
@@ -2132,17 +2132,17 @@ namespace Microsoft.Graph.Beta.Models
                 { "defenderScanNetworkFiles", n => { DefenderScanNetworkFiles = n.GetBoolValue(); } },
                 { "defenderScanRemovableDrivesDuringFullScan", n => { DefenderScanRemovableDrivesDuringFullScan = n.GetBoolValue(); } },
                 { "defenderScanScriptsLoadedInInternetExplorer", n => { DefenderScanScriptsLoadedInInternetExplorer = n.GetBoolValue(); } },
-                { "defenderScanType", n => { DefenderScanType = n.GetEnumValue<DefenderScanType>(); } },
+                { "defenderScanType", n => { DefenderScanType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DefenderScanType>(); } },
                 { "defenderScheduleScanEnableLowCpuPriority", n => { DefenderScheduleScanEnableLowCpuPriority = n.GetBoolValue(); } },
                 { "defenderScheduledQuickScanTime", n => { DefenderScheduledQuickScanTime = n.GetTimeValue(); } },
                 { "defenderScheduledScanTime", n => { DefenderScheduledScanTime = n.GetTimeValue(); } },
                 { "defenderSignatureUpdateIntervalInHours", n => { DefenderSignatureUpdateIntervalInHours = n.GetIntValue(); } },
-                { "defenderSubmitSamplesConsentType", n => { DefenderSubmitSamplesConsentType = n.GetEnumValue<DefenderSubmitSamplesConsentType>(); } },
-                { "defenderSystemScanSchedule", n => { DefenderSystemScanSchedule = n.GetEnumValue<WeeklySchedule>(); } },
-                { "developerUnlockSetting", n => { DeveloperUnlockSetting = n.GetEnumValue<StateManagementSetting>(); } },
+                { "defenderSubmitSamplesConsentType", n => { DefenderSubmitSamplesConsentType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType>(); } },
+                { "defenderSystemScanSchedule", n => { DefenderSystemScanSchedule = n.GetEnumValue<Microsoft.Graph.Beta.Models.WeeklySchedule>(); } },
+                { "developerUnlockSetting", n => { DeveloperUnlockSetting = n.GetEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>(); } },
                 { "deviceManagementBlockFactoryResetOnMobile", n => { DeviceManagementBlockFactoryResetOnMobile = n.GetBoolValue(); } },
                 { "deviceManagementBlockManualUnenroll", n => { DeviceManagementBlockManualUnenroll = n.GetBoolValue(); } },
-                { "diagnosticsDataSubmissionMode", n => { DiagnosticsDataSubmissionMode = n.GetEnumValue<DiagnosticDataSubmissionMode>(); } },
+                { "diagnosticsDataSubmissionMode", n => { DiagnosticsDataSubmissionMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.DiagnosticDataSubmissionMode>(); } },
                 { "displayAppListWithGdiDPIScalingTurnedOff", n => { DisplayAppListWithGdiDPIScalingTurnedOff = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "displayAppListWithGdiDPIScalingTurnedOn", n => { DisplayAppListWithGdiDPIScalingTurnedOn = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "edgeAllowStartPagesModification", n => { EdgeAllowStartPagesModification = n.GetBoolValue(); } },
@@ -2171,27 +2171,27 @@ namespace Microsoft.Graph.Beta.Models
                 { "edgeBlockWebContentOnNewTabPage", n => { EdgeBlockWebContentOnNewTabPage = n.GetBoolValue(); } },
                 { "edgeBlocked", n => { EdgeBlocked = n.GetBoolValue(); } },
                 { "edgeClearBrowsingDataOnExit", n => { EdgeClearBrowsingDataOnExit = n.GetBoolValue(); } },
-                { "edgeCookiePolicy", n => { EdgeCookiePolicy = n.GetEnumValue<EdgeCookiePolicy>(); } },
+                { "edgeCookiePolicy", n => { EdgeCookiePolicy = n.GetEnumValue<Microsoft.Graph.Beta.Models.EdgeCookiePolicy>(); } },
                 { "edgeDisableFirstRunPage", n => { EdgeDisableFirstRunPage = n.GetBoolValue(); } },
                 { "edgeEnterpriseModeSiteListLocation", n => { EdgeEnterpriseModeSiteListLocation = n.GetStringValue(); } },
-                { "edgeFavoritesBarVisibility", n => { EdgeFavoritesBarVisibility = n.GetEnumValue<VisibilitySetting>(); } },
+                { "edgeFavoritesBarVisibility", n => { EdgeFavoritesBarVisibility = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
                 { "edgeFavoritesListLocation", n => { EdgeFavoritesListLocation = n.GetStringValue(); } },
                 { "edgeFirstRunUrl", n => { EdgeFirstRunUrl = n.GetStringValue(); } },
                 { "edgeHomeButtonConfiguration", n => { EdgeHomeButtonConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration>(Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration.CreateFromDiscriminatorValue); } },
                 { "edgeHomeButtonConfigurationEnabled", n => { EdgeHomeButtonConfigurationEnabled = n.GetBoolValue(); } },
                 { "edgeHomepageUrls", n => { EdgeHomepageUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "edgeKioskModeRestriction", n => { EdgeKioskModeRestriction = n.GetEnumValue<EdgeKioskModeRestrictionType>(); } },
+                { "edgeKioskModeRestriction", n => { EdgeKioskModeRestriction = n.GetEnumValue<Microsoft.Graph.Beta.Models.EdgeKioskModeRestrictionType>(); } },
                 { "edgeKioskResetAfterIdleTimeInMinutes", n => { EdgeKioskResetAfterIdleTimeInMinutes = n.GetIntValue(); } },
                 { "edgeNewTabPageURL", n => { EdgeNewTabPageURL = n.GetStringValue(); } },
-                { "edgeOpensWith", n => { EdgeOpensWith = n.GetEnumValue<EdgeOpenOptions>(); } },
+                { "edgeOpensWith", n => { EdgeOpensWith = n.GetEnumValue<Microsoft.Graph.Beta.Models.EdgeOpenOptions>(); } },
                 { "edgePreventCertificateErrorOverride", n => { EdgePreventCertificateErrorOverride = n.GetBoolValue(); } },
                 { "edgeRequireSmartScreen", n => { EdgeRequireSmartScreen = n.GetBoolValue(); } },
                 { "edgeRequiredExtensionPackageFamilyNames", n => { EdgeRequiredExtensionPackageFamilyNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "edgeSearchEngine", n => { EdgeSearchEngine = n.GetObjectValue<EdgeSearchEngineBase>(EdgeSearchEngineBase.CreateFromDiscriminatorValue); } },
+                { "edgeSearchEngine", n => { EdgeSearchEngine = n.GetObjectValue<Microsoft.Graph.Beta.Models.EdgeSearchEngineBase>(Microsoft.Graph.Beta.Models.EdgeSearchEngineBase.CreateFromDiscriminatorValue); } },
                 { "edgeSendIntranetTrafficToInternetExplorer", n => { EdgeSendIntranetTrafficToInternetExplorer = n.GetBoolValue(); } },
-                { "edgeShowMessageWhenOpeningInternetExplorerSites", n => { EdgeShowMessageWhenOpeningInternetExplorerSites = n.GetEnumValue<InternetExplorerMessageSetting>(); } },
+                { "edgeShowMessageWhenOpeningInternetExplorerSites", n => { EdgeShowMessageWhenOpeningInternetExplorerSites = n.GetEnumValue<Microsoft.Graph.Beta.Models.InternetExplorerMessageSetting>(); } },
                 { "edgeSyncFavoritesWithInternetExplorer", n => { EdgeSyncFavoritesWithInternetExplorer = n.GetBoolValue(); } },
-                { "edgeTelemetryForMicrosoft365Analytics", n => { EdgeTelemetryForMicrosoft365Analytics = n.GetEnumValue<EdgeTelemetryMode>(); } },
+                { "edgeTelemetryForMicrosoft365Analytics", n => { EdgeTelemetryForMicrosoft365Analytics = n.GetEnumValue<Microsoft.Graph.Beta.Models.EdgeTelemetryMode>(); } },
                 { "enableAutomaticRedeployment", n => { EnableAutomaticRedeployment = n.GetBoolValue(); } },
                 { "energySaverOnBatteryThresholdPercentage", n => { EnergySaverOnBatteryThresholdPercentage = n.GetIntValue(); } },
                 { "energySaverPluggedInThresholdPercentage", n => { EnergySaverPluggedInThresholdPercentage = n.GetIntValue(); } },
@@ -2204,15 +2204,15 @@ namespace Microsoft.Graph.Beta.Models
                 { "experienceBlockDeviceDiscovery", n => { ExperienceBlockDeviceDiscovery = n.GetBoolValue(); } },
                 { "experienceBlockErrorDialogWhenNoSIM", n => { ExperienceBlockErrorDialogWhenNoSIM = n.GetBoolValue(); } },
                 { "experienceBlockTaskSwitcher", n => { ExperienceBlockTaskSwitcher = n.GetBoolValue(); } },
-                { "experienceDoNotSyncBrowserSettings", n => { ExperienceDoNotSyncBrowserSettings = n.GetEnumValue<BrowserSyncSetting>(); } },
-                { "findMyFiles", n => { FindMyFiles = n.GetEnumValue<Enablement>(); } },
+                { "experienceDoNotSyncBrowserSettings", n => { ExperienceDoNotSyncBrowserSettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.BrowserSyncSetting>(); } },
+                { "findMyFiles", n => { FindMyFiles = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "gameDvrBlocked", n => { GameDvrBlocked = n.GetBoolValue(); } },
-                { "inkWorkspaceAccess", n => { InkWorkspaceAccess = n.GetEnumValue<InkAccessSetting>(); } },
-                { "inkWorkspaceAccessState", n => { InkWorkspaceAccessState = n.GetEnumValue<StateManagementSetting>(); } },
+                { "inkWorkspaceAccess", n => { InkWorkspaceAccess = n.GetEnumValue<Microsoft.Graph.Beta.Models.InkAccessSetting>(); } },
+                { "inkWorkspaceAccessState", n => { InkWorkspaceAccessState = n.GetEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>(); } },
                 { "inkWorkspaceBlockSuggestedApps", n => { InkWorkspaceBlockSuggestedApps = n.GetBoolValue(); } },
                 { "internetSharingBlocked", n => { InternetSharingBlocked = n.GetBoolValue(); } },
                 { "locationServicesBlocked", n => { LocationServicesBlocked = n.GetBoolValue(); } },
-                { "lockScreenActivateAppsWithVoice", n => { LockScreenActivateAppsWithVoice = n.GetEnumValue<Enablement>(); } },
+                { "lockScreenActivateAppsWithVoice", n => { LockScreenActivateAppsWithVoice = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "lockScreenAllowTimeoutConfiguration", n => { LockScreenAllowTimeoutConfiguration = n.GetBoolValue(); } },
                 { "lockScreenBlockActionCenterNotifications", n => { LockScreenBlockActionCenterNotifications = n.GetBoolValue(); } },
                 { "lockScreenBlockCortana", n => { LockScreenBlockCortana = n.GetBoolValue(); } },
@@ -2224,11 +2224,11 @@ namespace Microsoft.Graph.Beta.Models
                 { "messagingBlockSync", n => { MessagingBlockSync = n.GetBoolValue(); } },
                 { "microsoftAccountBlockSettingsSync", n => { MicrosoftAccountBlockSettingsSync = n.GetBoolValue(); } },
                 { "microsoftAccountBlocked", n => { MicrosoftAccountBlocked = n.GetBoolValue(); } },
-                { "microsoftAccountSignInAssistantSettings", n => { MicrosoftAccountSignInAssistantSettings = n.GetEnumValue<SignInAssistantOptions>(); } },
+                { "microsoftAccountSignInAssistantSettings", n => { MicrosoftAccountSignInAssistantSettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.SignInAssistantOptions>(); } },
                 { "networkProxyApplySettingsDeviceWide", n => { NetworkProxyApplySettingsDeviceWide = n.GetBoolValue(); } },
                 { "networkProxyAutomaticConfigurationUrl", n => { NetworkProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
                 { "networkProxyDisableAutoDetect", n => { NetworkProxyDisableAutoDetect = n.GetBoolValue(); } },
-                { "networkProxyServer", n => { NetworkProxyServer = n.GetObjectValue<Windows10NetworkProxyServer>(Windows10NetworkProxyServer.CreateFromDiscriminatorValue); } },
+                { "networkProxyServer", n => { NetworkProxyServer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Windows10NetworkProxyServer>(Microsoft.Graph.Beta.Models.Windows10NetworkProxyServer.CreateFromDiscriminatorValue); } },
                 { "nfcBlocked", n => { NfcBlocked = n.GetBoolValue(); } },
                 { "oneDriveDisableFileSync", n => { OneDriveDisableFileSync = n.GetBoolValue(); } },
                 { "passwordBlockSimple", n => { PasswordBlockSimple = n.GetBoolValue(); } },
@@ -2240,30 +2240,30 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "passwordRequireWhenResumeFromIdleState", n => { PasswordRequireWhenResumeFromIdleState = n.GetBoolValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>(); } },
                 { "passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
                 { "personalizationDesktopImageUrl", n => { PersonalizationDesktopImageUrl = n.GetStringValue(); } },
                 { "personalizationLockScreenImageUrl", n => { PersonalizationLockScreenImageUrl = n.GetStringValue(); } },
-                { "powerButtonActionOnBattery", n => { PowerButtonActionOnBattery = n.GetEnumValue<PowerActionType>(); } },
-                { "powerButtonActionPluggedIn", n => { PowerButtonActionPluggedIn = n.GetEnumValue<PowerActionType>(); } },
-                { "powerHybridSleepOnBattery", n => { PowerHybridSleepOnBattery = n.GetEnumValue<Enablement>(); } },
-                { "powerHybridSleepPluggedIn", n => { PowerHybridSleepPluggedIn = n.GetEnumValue<Enablement>(); } },
-                { "powerLidCloseActionOnBattery", n => { PowerLidCloseActionOnBattery = n.GetEnumValue<PowerActionType>(); } },
-                { "powerLidCloseActionPluggedIn", n => { PowerLidCloseActionPluggedIn = n.GetEnumValue<PowerActionType>(); } },
-                { "powerSleepButtonActionOnBattery", n => { PowerSleepButtonActionOnBattery = n.GetEnumValue<PowerActionType>(); } },
-                { "powerSleepButtonActionPluggedIn", n => { PowerSleepButtonActionPluggedIn = n.GetEnumValue<PowerActionType>(); } },
+                { "powerButtonActionOnBattery", n => { PowerButtonActionOnBattery = n.GetEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>(); } },
+                { "powerButtonActionPluggedIn", n => { PowerButtonActionPluggedIn = n.GetEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>(); } },
+                { "powerHybridSleepOnBattery", n => { PowerHybridSleepOnBattery = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "powerHybridSleepPluggedIn", n => { PowerHybridSleepPluggedIn = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "powerLidCloseActionOnBattery", n => { PowerLidCloseActionOnBattery = n.GetEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>(); } },
+                { "powerLidCloseActionPluggedIn", n => { PowerLidCloseActionPluggedIn = n.GetEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>(); } },
+                { "powerSleepButtonActionOnBattery", n => { PowerSleepButtonActionOnBattery = n.GetEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>(); } },
+                { "powerSleepButtonActionPluggedIn", n => { PowerSleepButtonActionPluggedIn = n.GetEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>(); } },
                 { "printerBlockAddition", n => { PrinterBlockAddition = n.GetBoolValue(); } },
                 { "printerDefaultName", n => { PrinterDefaultName = n.GetStringValue(); } },
                 { "printerNames", n => { PrinterNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "privacyAccessControls", n => { PrivacyAccessControls = n.GetCollectionOfObjectValues<WindowsPrivacyDataAccessControlItem>(WindowsPrivacyDataAccessControlItem.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "privacyAdvertisingId", n => { PrivacyAdvertisingId = n.GetEnumValue<StateManagementSetting>(); } },
+                { "privacyAccessControls", n => { PrivacyAccessControls = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>(Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "privacyAdvertisingId", n => { PrivacyAdvertisingId = n.GetEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>(); } },
                 { "privacyAutoAcceptPairingAndConsentPrompts", n => { PrivacyAutoAcceptPairingAndConsentPrompts = n.GetBoolValue(); } },
                 { "privacyBlockActivityFeed", n => { PrivacyBlockActivityFeed = n.GetBoolValue(); } },
                 { "privacyBlockInputPersonalization", n => { PrivacyBlockInputPersonalization = n.GetBoolValue(); } },
                 { "privacyBlockPublishUserActivities", n => { PrivacyBlockPublishUserActivities = n.GetBoolValue(); } },
                 { "privacyDisableLaunchExperience", n => { PrivacyDisableLaunchExperience = n.GetBoolValue(); } },
                 { "resetProtectionModeBlocked", n => { ResetProtectionModeBlocked = n.GetBoolValue(); } },
-                { "safeSearchFilter", n => { SafeSearchFilter = n.GetEnumValue<SafeSearchFilterType>(); } },
+                { "safeSearchFilter", n => { SafeSearchFilter = n.GetEnumValue<Microsoft.Graph.Beta.Models.SafeSearchFilterType>(); } },
                 { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
                 { "searchBlockDiacritics", n => { SearchBlockDiacritics = n.GetBoolValue(); } },
                 { "searchBlockWebResults", n => { SearchBlockWebResults = n.GetBoolValue(); } },
@@ -2296,12 +2296,12 @@ namespace Microsoft.Graph.Beta.Models
                 { "settingsBlockTimeLanguagePage", n => { SettingsBlockTimeLanguagePage = n.GetBoolValue(); } },
                 { "settingsBlockUpdateSecurityPage", n => { SettingsBlockUpdateSecurityPage = n.GetBoolValue(); } },
                 { "sharedUserAppDataAllowed", n => { SharedUserAppDataAllowed = n.GetBoolValue(); } },
-                { "smartScreenAppInstallControl", n => { SmartScreenAppInstallControl = n.GetEnumValue<AppInstallControlType>(); } },
+                { "smartScreenAppInstallControl", n => { SmartScreenAppInstallControl = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppInstallControlType>(); } },
                 { "smartScreenBlockPromptOverride", n => { SmartScreenBlockPromptOverride = n.GetBoolValue(); } },
                 { "smartScreenBlockPromptOverrideForFiles", n => { SmartScreenBlockPromptOverrideForFiles = n.GetBoolValue(); } },
                 { "smartScreenEnableAppInstallControl", n => { SmartScreenEnableAppInstallControl = n.GetBoolValue(); } },
                 { "startBlockUnpinningAppsFromTaskbar", n => { StartBlockUnpinningAppsFromTaskbar = n.GetBoolValue(); } },
-                { "startMenuAppListVisibility", n => { StartMenuAppListVisibility = n.GetEnumValue<WindowsStartMenuAppListVisibilityType>(); } },
+                { "startMenuAppListVisibility", n => { StartMenuAppListVisibility = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsStartMenuAppListVisibilityType>(); } },
                 { "startMenuHideChangeAccountSettings", n => { StartMenuHideChangeAccountSettings = n.GetBoolValue(); } },
                 { "startMenuHideFrequentlyUsedApps", n => { StartMenuHideFrequentlyUsedApps = n.GetBoolValue(); } },
                 { "startMenuHideHibernate", n => { StartMenuHideHibernate = n.GetBoolValue(); } },
@@ -2317,17 +2317,17 @@ namespace Microsoft.Graph.Beta.Models
                 { "startMenuHideUserTile", n => { StartMenuHideUserTile = n.GetBoolValue(); } },
                 { "startMenuLayoutEdgeAssetsXml", n => { StartMenuLayoutEdgeAssetsXml = n.GetByteArrayValue(); } },
                 { "startMenuLayoutXml", n => { StartMenuLayoutXml = n.GetByteArrayValue(); } },
-                { "startMenuMode", n => { StartMenuMode = n.GetEnumValue<WindowsStartMenuModeType>(); } },
-                { "startMenuPinnedFolderDocuments", n => { StartMenuPinnedFolderDocuments = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderDownloads", n => { StartMenuPinnedFolderDownloads = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderFileExplorer", n => { StartMenuPinnedFolderFileExplorer = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderHomeGroup", n => { StartMenuPinnedFolderHomeGroup = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderMusic", n => { StartMenuPinnedFolderMusic = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderNetwork", n => { StartMenuPinnedFolderNetwork = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderPersonalFolder", n => { StartMenuPinnedFolderPersonalFolder = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderPictures", n => { StartMenuPinnedFolderPictures = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderSettings", n => { StartMenuPinnedFolderSettings = n.GetEnumValue<VisibilitySetting>(); } },
-                { "startMenuPinnedFolderVideos", n => { StartMenuPinnedFolderVideos = n.GetEnumValue<VisibilitySetting>(); } },
+                { "startMenuMode", n => { StartMenuMode = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsStartMenuModeType>(); } },
+                { "startMenuPinnedFolderDocuments", n => { StartMenuPinnedFolderDocuments = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderDownloads", n => { StartMenuPinnedFolderDownloads = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderFileExplorer", n => { StartMenuPinnedFolderFileExplorer = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderHomeGroup", n => { StartMenuPinnedFolderHomeGroup = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderMusic", n => { StartMenuPinnedFolderMusic = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderNetwork", n => { StartMenuPinnedFolderNetwork = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderPersonalFolder", n => { StartMenuPinnedFolderPersonalFolder = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderPictures", n => { StartMenuPinnedFolderPictures = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderSettings", n => { StartMenuPinnedFolderSettings = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
+                { "startMenuPinnedFolderVideos", n => { StartMenuPinnedFolderVideos = n.GetEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>(); } },
                 { "storageBlockRemovableStorage", n => { StorageBlockRemovableStorage = n.GetBoolValue(); } },
                 { "storageRequireMobileDeviceEncryption", n => { StorageRequireMobileDeviceEncryption = n.GetBoolValue(); } },
                 { "storageRestrictAppDataToSystemVolume", n => { StorageRestrictAppDataToSystemVolume = n.GetBoolValue(); } },
@@ -2351,7 +2351,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "windowsSpotlightBlockWelcomeExperience", n => { WindowsSpotlightBlockWelcomeExperience = n.GetBoolValue(); } },
                 { "windowsSpotlightBlockWindowsTips", n => { WindowsSpotlightBlockWindowsTips = n.GetBoolValue(); } },
                 { "windowsSpotlightBlocked", n => { WindowsSpotlightBlocked = n.GetBoolValue(); } },
-                { "windowsSpotlightConfigureOnLockScreen", n => { WindowsSpotlightConfigureOnLockScreen = n.GetEnumValue<WindowsSpotlightEnablementSettings>(); } },
+                { "windowsSpotlightConfigureOnLockScreen", n => { WindowsSpotlightConfigureOnLockScreen = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsSpotlightEnablementSettings>(); } },
                 { "windowsStoreBlockAutoUpdate", n => { WindowsStoreBlockAutoUpdate = n.GetBoolValue(); } },
                 { "windowsStoreBlocked", n => { WindowsStoreBlocked = n.GetBoolValue(); } },
                 { "windowsStoreEnablePrivateStoreOnly", n => { WindowsStoreEnablePrivateStoreOnly = n.GetBoolValue(); } },
@@ -2369,16 +2369,16 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("accountsBlockAddingNonMicrosoftAccountEmail", AccountsBlockAddingNonMicrosoftAccountEmail);
-            writer.WriteEnumValue<Enablement>("activateAppsWithVoice", ActivateAppsWithVoice);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("activateAppsWithVoice", ActivateAppsWithVoice);
             writer.WriteBoolValue("antiTheftModeBlocked", AntiTheftModeBlocked);
             writer.WriteBoolValue("appManagementMSIAllowUserControlOverInstall", AppManagementMSIAllowUserControlOverInstall);
             writer.WriteBoolValue("appManagementMSIAlwaysInstallWithElevatedPrivileges", AppManagementMSIAlwaysInstallWithElevatedPrivileges);
             writer.WriteCollectionOfPrimitiveValues<string>("appManagementPackageFamilyNamesToLaunchAfterLogOn", AppManagementPackageFamilyNamesToLaunchAfterLogOn);
-            writer.WriteEnumValue<StateManagementSetting>("appsAllowTrustedAppsSideloading", AppsAllowTrustedAppsSideloading);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>("appsAllowTrustedAppsSideloading", AppsAllowTrustedAppsSideloading);
             writer.WriteBoolValue("appsBlockWindowsStoreOriginatedApps", AppsBlockWindowsStoreOriginatedApps);
             writer.WriteBoolValue("authenticationAllowSecondaryDevice", AuthenticationAllowSecondaryDevice);
             writer.WriteStringValue("authenticationPreferredAzureADTenantDomainName", AuthenticationPreferredAzureADTenantDomainName);
-            writer.WriteEnumValue<Enablement>("authenticationWebSignIn", AuthenticationWebSignIn);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("authenticationWebSignIn", AuthenticationWebSignIn);
             writer.WriteCollectionOfPrimitiveValues<string>("bluetoothAllowedServices", BluetoothAllowedServices);
             writer.WriteBoolValue("bluetoothBlockAdvertising", BluetoothBlockAdvertising);
             writer.WriteBoolValue("bluetoothBlockDiscoverableMode", BluetoothBlockDiscoverableMode);
@@ -2389,7 +2389,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("cellularBlockDataWhenRoaming", CellularBlockDataWhenRoaming);
             writer.WriteBoolValue("cellularBlockVpn", CellularBlockVpn);
             writer.WriteBoolValue("cellularBlockVpnWhenRoaming", CellularBlockVpnWhenRoaming);
-            writer.WriteEnumValue<ConfigurationUsage>("cellularData", CellularData);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ConfigurationUsage>("cellularData", CellularData);
             writer.WriteBoolValue("certificatesBlockManualRootCertificateInstallation", CertificatesBlockManualRootCertificateInstallation);
             writer.WriteStringValue("configureTimeZone", ConfigureTimeZone);
             writer.WriteBoolValue("connectedDevicesServiceBlocked", ConnectedDevicesServiceBlocked);
@@ -2399,7 +2399,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("dataProtectionBlockDirectMemoryAccess", DataProtectionBlockDirectMemoryAccess);
             writer.WriteBoolValue("defenderBlockEndUserAccess", DefenderBlockEndUserAccess);
             writer.WriteBoolValue("defenderBlockOnAccessProtection", DefenderBlockOnAccessProtection);
-            writer.WriteEnumValue<DefenderCloudBlockLevelType>("defenderCloudBlockLevel", DefenderCloudBlockLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DefenderCloudBlockLevelType>("defenderCloudBlockLevel", DefenderCloudBlockLevel);
             writer.WriteIntValue("defenderCloudExtendedTimeout", DefenderCloudExtendedTimeout);
             writer.WriteIntValue("defenderCloudExtendedTimeoutInSeconds", DefenderCloudExtendedTimeoutInSeconds);
             writer.WriteIntValue("defenderDaysBeforeDeletingQuarantinedMalware", DefenderDaysBeforeDeletingQuarantinedMalware);
@@ -2408,11 +2408,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("defenderDisableCatchupQuickScan", DefenderDisableCatchupQuickScan);
             writer.WriteCollectionOfPrimitiveValues<string>("defenderFileExtensionsToExclude", DefenderFileExtensionsToExclude);
             writer.WriteCollectionOfPrimitiveValues<string>("defenderFilesAndFoldersToExclude", DefenderFilesAndFoldersToExclude);
-            writer.WriteEnumValue<DefenderMonitorFileActivity>("defenderMonitorFileActivity", DefenderMonitorFileActivity);
-            writer.WriteEnumValue<DefenderPotentiallyUnwantedAppAction>("defenderPotentiallyUnwantedAppAction", DefenderPotentiallyUnwantedAppAction);
-            writer.WriteEnumValue<DefenderProtectionType>("defenderPotentiallyUnwantedAppActionSetting", DefenderPotentiallyUnwantedAppActionSetting);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DefenderMonitorFileActivity>("defenderMonitorFileActivity", DefenderMonitorFileActivity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DefenderPotentiallyUnwantedAppAction>("defenderPotentiallyUnwantedAppAction", DefenderPotentiallyUnwantedAppAction);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DefenderProtectionType>("defenderPotentiallyUnwantedAppActionSetting", DefenderPotentiallyUnwantedAppActionSetting);
             writer.WriteCollectionOfPrimitiveValues<string>("defenderProcessesToExclude", DefenderProcessesToExclude);
-            writer.WriteEnumValue<DefenderPromptForSampleSubmission>("defenderPromptForSampleSubmission", DefenderPromptForSampleSubmission);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DefenderPromptForSampleSubmission>("defenderPromptForSampleSubmission", DefenderPromptForSampleSubmission);
             writer.WriteBoolValue("defenderRequireBehaviorMonitoring", DefenderRequireBehaviorMonitoring);
             writer.WriteBoolValue("defenderRequireCloudProtection", DefenderRequireCloudProtection);
             writer.WriteBoolValue("defenderRequireNetworkInspectionSystem", DefenderRequireNetworkInspectionSystem);
@@ -2425,17 +2425,17 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("defenderScanNetworkFiles", DefenderScanNetworkFiles);
             writer.WriteBoolValue("defenderScanRemovableDrivesDuringFullScan", DefenderScanRemovableDrivesDuringFullScan);
             writer.WriteBoolValue("defenderScanScriptsLoadedInInternetExplorer", DefenderScanScriptsLoadedInInternetExplorer);
-            writer.WriteEnumValue<DefenderScanType>("defenderScanType", DefenderScanType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DefenderScanType>("defenderScanType", DefenderScanType);
             writer.WriteTimeValue("defenderScheduledQuickScanTime", DefenderScheduledQuickScanTime);
             writer.WriteTimeValue("defenderScheduledScanTime", DefenderScheduledScanTime);
             writer.WriteBoolValue("defenderScheduleScanEnableLowCpuPriority", DefenderScheduleScanEnableLowCpuPriority);
             writer.WriteIntValue("defenderSignatureUpdateIntervalInHours", DefenderSignatureUpdateIntervalInHours);
-            writer.WriteEnumValue<DefenderSubmitSamplesConsentType>("defenderSubmitSamplesConsentType", DefenderSubmitSamplesConsentType);
-            writer.WriteEnumValue<WeeklySchedule>("defenderSystemScanSchedule", DefenderSystemScanSchedule);
-            writer.WriteEnumValue<StateManagementSetting>("developerUnlockSetting", DeveloperUnlockSetting);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DefenderSubmitSamplesConsentType>("defenderSubmitSamplesConsentType", DefenderSubmitSamplesConsentType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WeeklySchedule>("defenderSystemScanSchedule", DefenderSystemScanSchedule);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>("developerUnlockSetting", DeveloperUnlockSetting);
             writer.WriteBoolValue("deviceManagementBlockFactoryResetOnMobile", DeviceManagementBlockFactoryResetOnMobile);
             writer.WriteBoolValue("deviceManagementBlockManualUnenroll", DeviceManagementBlockManualUnenroll);
-            writer.WriteEnumValue<DiagnosticDataSubmissionMode>("diagnosticsDataSubmissionMode", DiagnosticsDataSubmissionMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DiagnosticDataSubmissionMode>("diagnosticsDataSubmissionMode", DiagnosticsDataSubmissionMode);
             writer.WriteCollectionOfPrimitiveValues<string>("displayAppListWithGdiDPIScalingTurnedOff", DisplayAppListWithGdiDPIScalingTurnedOff);
             writer.WriteCollectionOfPrimitiveValues<string>("displayAppListWithGdiDPIScalingTurnedOn", DisplayAppListWithGdiDPIScalingTurnedOn);
             writer.WriteBoolValue("edgeAllowStartPagesModification", EdgeAllowStartPagesModification);
@@ -2464,27 +2464,27 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("edgeBlockTabPreloading", EdgeBlockTabPreloading);
             writer.WriteBoolValue("edgeBlockWebContentOnNewTabPage", EdgeBlockWebContentOnNewTabPage);
             writer.WriteBoolValue("edgeClearBrowsingDataOnExit", EdgeClearBrowsingDataOnExit);
-            writer.WriteEnumValue<EdgeCookiePolicy>("edgeCookiePolicy", EdgeCookiePolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EdgeCookiePolicy>("edgeCookiePolicy", EdgeCookiePolicy);
             writer.WriteBoolValue("edgeDisableFirstRunPage", EdgeDisableFirstRunPage);
             writer.WriteStringValue("edgeEnterpriseModeSiteListLocation", EdgeEnterpriseModeSiteListLocation);
-            writer.WriteEnumValue<VisibilitySetting>("edgeFavoritesBarVisibility", EdgeFavoritesBarVisibility);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("edgeFavoritesBarVisibility", EdgeFavoritesBarVisibility);
             writer.WriteStringValue("edgeFavoritesListLocation", EdgeFavoritesListLocation);
             writer.WriteStringValue("edgeFirstRunUrl", EdgeFirstRunUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EdgeHomeButtonConfiguration>("edgeHomeButtonConfiguration", EdgeHomeButtonConfiguration);
             writer.WriteBoolValue("edgeHomeButtonConfigurationEnabled", EdgeHomeButtonConfigurationEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("edgeHomepageUrls", EdgeHomepageUrls);
-            writer.WriteEnumValue<EdgeKioskModeRestrictionType>("edgeKioskModeRestriction", EdgeKioskModeRestriction);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EdgeKioskModeRestrictionType>("edgeKioskModeRestriction", EdgeKioskModeRestriction);
             writer.WriteIntValue("edgeKioskResetAfterIdleTimeInMinutes", EdgeKioskResetAfterIdleTimeInMinutes);
             writer.WriteStringValue("edgeNewTabPageURL", EdgeNewTabPageURL);
-            writer.WriteEnumValue<EdgeOpenOptions>("edgeOpensWith", EdgeOpensWith);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EdgeOpenOptions>("edgeOpensWith", EdgeOpensWith);
             writer.WriteBoolValue("edgePreventCertificateErrorOverride", EdgePreventCertificateErrorOverride);
             writer.WriteCollectionOfPrimitiveValues<string>("edgeRequiredExtensionPackageFamilyNames", EdgeRequiredExtensionPackageFamilyNames);
             writer.WriteBoolValue("edgeRequireSmartScreen", EdgeRequireSmartScreen);
-            writer.WriteObjectValue<EdgeSearchEngineBase>("edgeSearchEngine", EdgeSearchEngine);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EdgeSearchEngineBase>("edgeSearchEngine", EdgeSearchEngine);
             writer.WriteBoolValue("edgeSendIntranetTrafficToInternetExplorer", EdgeSendIntranetTrafficToInternetExplorer);
-            writer.WriteEnumValue<InternetExplorerMessageSetting>("edgeShowMessageWhenOpeningInternetExplorerSites", EdgeShowMessageWhenOpeningInternetExplorerSites);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.InternetExplorerMessageSetting>("edgeShowMessageWhenOpeningInternetExplorerSites", EdgeShowMessageWhenOpeningInternetExplorerSites);
             writer.WriteBoolValue("edgeSyncFavoritesWithInternetExplorer", EdgeSyncFavoritesWithInternetExplorer);
-            writer.WriteEnumValue<EdgeTelemetryMode>("edgeTelemetryForMicrosoft365Analytics", EdgeTelemetryForMicrosoft365Analytics);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EdgeTelemetryMode>("edgeTelemetryForMicrosoft365Analytics", EdgeTelemetryForMicrosoft365Analytics);
             writer.WriteBoolValue("enableAutomaticRedeployment", EnableAutomaticRedeployment);
             writer.WriteIntValue("energySaverOnBatteryThresholdPercentage", EnergySaverOnBatteryThresholdPercentage);
             writer.WriteIntValue("energySaverPluggedInThresholdPercentage", EnergySaverPluggedInThresholdPercentage);
@@ -2497,15 +2497,15 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("experienceBlockDeviceDiscovery", ExperienceBlockDeviceDiscovery);
             writer.WriteBoolValue("experienceBlockErrorDialogWhenNoSIM", ExperienceBlockErrorDialogWhenNoSIM);
             writer.WriteBoolValue("experienceBlockTaskSwitcher", ExperienceBlockTaskSwitcher);
-            writer.WriteEnumValue<BrowserSyncSetting>("experienceDoNotSyncBrowserSettings", ExperienceDoNotSyncBrowserSettings);
-            writer.WriteEnumValue<Enablement>("findMyFiles", FindMyFiles);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.BrowserSyncSetting>("experienceDoNotSyncBrowserSettings", ExperienceDoNotSyncBrowserSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("findMyFiles", FindMyFiles);
             writer.WriteBoolValue("gameDvrBlocked", GameDvrBlocked);
-            writer.WriteEnumValue<InkAccessSetting>("inkWorkspaceAccess", InkWorkspaceAccess);
-            writer.WriteEnumValue<StateManagementSetting>("inkWorkspaceAccessState", InkWorkspaceAccessState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.InkAccessSetting>("inkWorkspaceAccess", InkWorkspaceAccess);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>("inkWorkspaceAccessState", InkWorkspaceAccessState);
             writer.WriteBoolValue("inkWorkspaceBlockSuggestedApps", InkWorkspaceBlockSuggestedApps);
             writer.WriteBoolValue("internetSharingBlocked", InternetSharingBlocked);
             writer.WriteBoolValue("locationServicesBlocked", LocationServicesBlocked);
-            writer.WriteEnumValue<Enablement>("lockScreenActivateAppsWithVoice", LockScreenActivateAppsWithVoice);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("lockScreenActivateAppsWithVoice", LockScreenActivateAppsWithVoice);
             writer.WriteBoolValue("lockScreenAllowTimeoutConfiguration", LockScreenAllowTimeoutConfiguration);
             writer.WriteBoolValue("lockScreenBlockActionCenterNotifications", LockScreenBlockActionCenterNotifications);
             writer.WriteBoolValue("lockScreenBlockCortana", LockScreenBlockCortana);
@@ -2517,11 +2517,11 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("messagingBlockSync", MessagingBlockSync);
             writer.WriteBoolValue("microsoftAccountBlocked", MicrosoftAccountBlocked);
             writer.WriteBoolValue("microsoftAccountBlockSettingsSync", MicrosoftAccountBlockSettingsSync);
-            writer.WriteEnumValue<SignInAssistantOptions>("microsoftAccountSignInAssistantSettings", MicrosoftAccountSignInAssistantSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SignInAssistantOptions>("microsoftAccountSignInAssistantSettings", MicrosoftAccountSignInAssistantSettings);
             writer.WriteBoolValue("networkProxyApplySettingsDeviceWide", NetworkProxyApplySettingsDeviceWide);
             writer.WriteStringValue("networkProxyAutomaticConfigurationUrl", NetworkProxyAutomaticConfigurationUrl);
             writer.WriteBoolValue("networkProxyDisableAutoDetect", NetworkProxyDisableAutoDetect);
-            writer.WriteObjectValue<Windows10NetworkProxyServer>("networkProxyServer", NetworkProxyServer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Windows10NetworkProxyServer>("networkProxyServer", NetworkProxyServer);
             writer.WriteBoolValue("nfcBlocked", NfcBlocked);
             writer.WriteBoolValue("oneDriveDisableFileSync", OneDriveDisableFileSync);
             writer.WriteBoolValue("passwordBlockSimple", PasswordBlockSimple);
@@ -2532,31 +2532,31 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passwordMinutesOfInactivityBeforeScreenTimeout", PasswordMinutesOfInactivityBeforeScreenTimeout);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteBoolValue("passwordRequireWhenResumeFromIdleState", PasswordRequireWhenResumeFromIdleState);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
             writer.WriteStringValue("personalizationDesktopImageUrl", PersonalizationDesktopImageUrl);
             writer.WriteStringValue("personalizationLockScreenImageUrl", PersonalizationLockScreenImageUrl);
-            writer.WriteEnumValue<PowerActionType>("powerButtonActionOnBattery", PowerButtonActionOnBattery);
-            writer.WriteEnumValue<PowerActionType>("powerButtonActionPluggedIn", PowerButtonActionPluggedIn);
-            writer.WriteEnumValue<Enablement>("powerHybridSleepOnBattery", PowerHybridSleepOnBattery);
-            writer.WriteEnumValue<Enablement>("powerHybridSleepPluggedIn", PowerHybridSleepPluggedIn);
-            writer.WriteEnumValue<PowerActionType>("powerLidCloseActionOnBattery", PowerLidCloseActionOnBattery);
-            writer.WriteEnumValue<PowerActionType>("powerLidCloseActionPluggedIn", PowerLidCloseActionPluggedIn);
-            writer.WriteEnumValue<PowerActionType>("powerSleepButtonActionOnBattery", PowerSleepButtonActionOnBattery);
-            writer.WriteEnumValue<PowerActionType>("powerSleepButtonActionPluggedIn", PowerSleepButtonActionPluggedIn);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>("powerButtonActionOnBattery", PowerButtonActionOnBattery);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>("powerButtonActionPluggedIn", PowerButtonActionPluggedIn);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("powerHybridSleepOnBattery", PowerHybridSleepOnBattery);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("powerHybridSleepPluggedIn", PowerHybridSleepPluggedIn);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>("powerLidCloseActionOnBattery", PowerLidCloseActionOnBattery);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>("powerLidCloseActionPluggedIn", PowerLidCloseActionPluggedIn);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>("powerSleepButtonActionOnBattery", PowerSleepButtonActionOnBattery);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PowerActionType>("powerSleepButtonActionPluggedIn", PowerSleepButtonActionPluggedIn);
             writer.WriteBoolValue("printerBlockAddition", PrinterBlockAddition);
             writer.WriteStringValue("printerDefaultName", PrinterDefaultName);
             writer.WriteCollectionOfPrimitiveValues<string>("printerNames", PrinterNames);
-            writer.WriteCollectionOfObjectValues<WindowsPrivacyDataAccessControlItem>("privacyAccessControls", PrivacyAccessControls);
-            writer.WriteEnumValue<StateManagementSetting>("privacyAdvertisingId", PrivacyAdvertisingId);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WindowsPrivacyDataAccessControlItem>("privacyAccessControls", PrivacyAccessControls);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.StateManagementSetting>("privacyAdvertisingId", PrivacyAdvertisingId);
             writer.WriteBoolValue("privacyAutoAcceptPairingAndConsentPrompts", PrivacyAutoAcceptPairingAndConsentPrompts);
             writer.WriteBoolValue("privacyBlockActivityFeed", PrivacyBlockActivityFeed);
             writer.WriteBoolValue("privacyBlockInputPersonalization", PrivacyBlockInputPersonalization);
             writer.WriteBoolValue("privacyBlockPublishUserActivities", PrivacyBlockPublishUserActivities);
             writer.WriteBoolValue("privacyDisableLaunchExperience", PrivacyDisableLaunchExperience);
             writer.WriteBoolValue("resetProtectionModeBlocked", ResetProtectionModeBlocked);
-            writer.WriteEnumValue<SafeSearchFilterType>("safeSearchFilter", SafeSearchFilter);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.SafeSearchFilterType>("safeSearchFilter", SafeSearchFilter);
             writer.WriteBoolValue("screenCaptureBlocked", ScreenCaptureBlocked);
             writer.WriteBoolValue("searchBlockDiacritics", SearchBlockDiacritics);
             writer.WriteBoolValue("searchBlockWebResults", SearchBlockWebResults);
@@ -2589,12 +2589,12 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("settingsBlockTimeLanguagePage", SettingsBlockTimeLanguagePage);
             writer.WriteBoolValue("settingsBlockUpdateSecurityPage", SettingsBlockUpdateSecurityPage);
             writer.WriteBoolValue("sharedUserAppDataAllowed", SharedUserAppDataAllowed);
-            writer.WriteEnumValue<AppInstallControlType>("smartScreenAppInstallControl", SmartScreenAppInstallControl);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppInstallControlType>("smartScreenAppInstallControl", SmartScreenAppInstallControl);
             writer.WriteBoolValue("smartScreenBlockPromptOverride", SmartScreenBlockPromptOverride);
             writer.WriteBoolValue("smartScreenBlockPromptOverrideForFiles", SmartScreenBlockPromptOverrideForFiles);
             writer.WriteBoolValue("smartScreenEnableAppInstallControl", SmartScreenEnableAppInstallControl);
             writer.WriteBoolValue("startBlockUnpinningAppsFromTaskbar", StartBlockUnpinningAppsFromTaskbar);
-            writer.WriteEnumValue<WindowsStartMenuAppListVisibilityType>("startMenuAppListVisibility", StartMenuAppListVisibility);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsStartMenuAppListVisibilityType>("startMenuAppListVisibility", StartMenuAppListVisibility);
             writer.WriteBoolValue("startMenuHideChangeAccountSettings", StartMenuHideChangeAccountSettings);
             writer.WriteBoolValue("startMenuHideFrequentlyUsedApps", StartMenuHideFrequentlyUsedApps);
             writer.WriteBoolValue("startMenuHideHibernate", StartMenuHideHibernate);
@@ -2610,17 +2610,17 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("startMenuHideUserTile", StartMenuHideUserTile);
             writer.WriteByteArrayValue("startMenuLayoutEdgeAssetsXml", StartMenuLayoutEdgeAssetsXml);
             writer.WriteByteArrayValue("startMenuLayoutXml", StartMenuLayoutXml);
-            writer.WriteEnumValue<WindowsStartMenuModeType>("startMenuMode", StartMenuMode);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderDocuments", StartMenuPinnedFolderDocuments);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderDownloads", StartMenuPinnedFolderDownloads);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderFileExplorer", StartMenuPinnedFolderFileExplorer);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderHomeGroup", StartMenuPinnedFolderHomeGroup);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderMusic", StartMenuPinnedFolderMusic);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderNetwork", StartMenuPinnedFolderNetwork);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderPersonalFolder", StartMenuPinnedFolderPersonalFolder);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderPictures", StartMenuPinnedFolderPictures);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderSettings", StartMenuPinnedFolderSettings);
-            writer.WriteEnumValue<VisibilitySetting>("startMenuPinnedFolderVideos", StartMenuPinnedFolderVideos);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsStartMenuModeType>("startMenuMode", StartMenuMode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderDocuments", StartMenuPinnedFolderDocuments);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderDownloads", StartMenuPinnedFolderDownloads);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderFileExplorer", StartMenuPinnedFolderFileExplorer);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderHomeGroup", StartMenuPinnedFolderHomeGroup);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderMusic", StartMenuPinnedFolderMusic);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderNetwork", StartMenuPinnedFolderNetwork);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderPersonalFolder", StartMenuPinnedFolderPersonalFolder);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderPictures", StartMenuPinnedFolderPictures);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderSettings", StartMenuPinnedFolderSettings);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.VisibilitySetting>("startMenuPinnedFolderVideos", StartMenuPinnedFolderVideos);
             writer.WriteBoolValue("storageBlockRemovableStorage", StorageBlockRemovableStorage);
             writer.WriteBoolValue("storageRequireMobileDeviceEncryption", StorageRequireMobileDeviceEncryption);
             writer.WriteBoolValue("storageRestrictAppDataToSystemVolume", StorageRestrictAppDataToSystemVolume);
@@ -2644,7 +2644,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("windowsSpotlightBlockThirdPartyNotifications", WindowsSpotlightBlockThirdPartyNotifications);
             writer.WriteBoolValue("windowsSpotlightBlockWelcomeExperience", WindowsSpotlightBlockWelcomeExperience);
             writer.WriteBoolValue("windowsSpotlightBlockWindowsTips", WindowsSpotlightBlockWindowsTips);
-            writer.WriteEnumValue<WindowsSpotlightEnablementSettings>("windowsSpotlightConfigureOnLockScreen", WindowsSpotlightConfigureOnLockScreen);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsSpotlightEnablementSettings>("windowsSpotlightConfigureOnLockScreen", WindowsSpotlightConfigureOnLockScreen);
             writer.WriteBoolValue("windowsStoreBlockAutoUpdate", WindowsStoreBlockAutoUpdate);
             writer.WriteBoolValue("windowsStoreBlocked", WindowsStoreBlocked);
             writer.WriteBoolValue("windowsStoreEnablePrivateStoreOnly", WindowsStoreEnablePrivateStoreOnly);

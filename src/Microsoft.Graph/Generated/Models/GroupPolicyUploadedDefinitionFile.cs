@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The entity represents an ADMX (Administrative Template) XML file uploaded by Administrator. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.
     /// </summary>
-    public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable
+    public class GroupPolicyUploadedDefinitionFile : Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile, IParsable
     {
         /// <summary>The contents of the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,39 +46,39 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of operations on the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyOperation>? GroupPolicyOperations
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyOperation>? GroupPolicyOperations
         {
-            get { return BackingStore?.Get<List<GroupPolicyOperation>?>("groupPolicyOperations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyOperation>?>("groupPolicyOperations"); }
             set { BackingStore?.Set("groupPolicyOperations", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyOperation> GroupPolicyOperations
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyOperation> GroupPolicyOperations
         {
-            get { return BackingStore?.Get<List<GroupPolicyOperation>>("groupPolicyOperations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyOperation>>("groupPolicyOperations"); }
             set { BackingStore?.Set("groupPolicyOperations", value); }
         }
 #endif
         /// <summary>The list of ADML files associated with the uploaded ADMX file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GroupPolicyUploadedLanguageFile>? GroupPolicyUploadedLanguageFiles
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedLanguageFile>? GroupPolicyUploadedLanguageFiles
         {
-            get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>?>("groupPolicyUploadedLanguageFiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedLanguageFile>?>("groupPolicyUploadedLanguageFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
 #nullable restore
 #else
-        public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles
         {
-            get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
 #endif
         /// <summary>Type of Group Policy uploaded definition file status.</summary>
-        public GroupPolicyUploadedDefinitionFileStatus? Status
+        public Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileStatus? Status
         {
-            get { return BackingStore?.Get<GroupPolicyUploadedDefinitionFileStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The uploaded time of the uploaded ADMX file.</summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("uploadDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GroupPolicyUploadedDefinitionFile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile"/> and sets the default values.
         /// </summary>
         public GroupPolicyUploadedDefinitionFile() : base()
         {
@@ -97,12 +97,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GroupPolicyUploadedDefinitionFile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GroupPolicyUploadedDefinitionFile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GroupPolicyUploadedDefinitionFile();
+            return new Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -114,9 +114,9 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "content", n => { Content = n.GetByteArrayValue(); } },
                 { "defaultLanguageCode", n => { DefaultLanguageCode = n.GetStringValue(); } },
-                { "groupPolicyOperations", n => { GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "groupPolicyUploadedLanguageFiles", n => { GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "status", n => { Status = n.GetEnumValue<GroupPolicyUploadedDefinitionFileStatus>(); } },
+                { "groupPolicyOperations", n => { GroupPolicyOperations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyOperation>(Microsoft.Graph.Beta.Models.GroupPolicyOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "groupPolicyUploadedLanguageFiles", n => { GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyUploadedLanguageFile>(Microsoft.Graph.Beta.Models.GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileStatus>(); } },
                 { "uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteByteArrayValue("content", Content);
             writer.WriteStringValue("defaultLanguageCode", DefaultLanguageCode);
-            writer.WriteCollectionOfObjectValues<GroupPolicyOperation>("groupPolicyOperations", GroupPolicyOperations);
-            writer.WriteCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", GroupPolicyUploadedLanguageFiles);
-            writer.WriteEnumValue<GroupPolicyUploadedDefinitionFileStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyOperation>("groupPolicyOperations", GroupPolicyOperations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GroupPolicyUploadedLanguageFile>("groupPolicyUploadedLanguageFiles", GroupPolicyUploadedLanguageFiles);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFileStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("uploadDateTime", UploadDateTime);
         }
     }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CloudPcAuditEvent : Entity, IParsable
+    public class CloudPcAuditEvent : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Friendly name of the activity. Optional.</summary>
@@ -33,15 +33,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>The activityOperationType property</summary>
-        public CloudPcAuditActivityOperationType? ActivityOperationType
+        public Microsoft.Graph.Beta.Models.CloudPcAuditActivityOperationType? ActivityOperationType
         {
-            get { return BackingStore?.Get<CloudPcAuditActivityOperationType?>("activityOperationType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcAuditActivityOperationType?>("activityOperationType"); }
             set { BackingStore?.Set("activityOperationType", value); }
         }
         /// <summary>The activityResult property</summary>
-        public CloudPcAuditActivityResult? ActivityResult
+        public Microsoft.Graph.Beta.Models.CloudPcAuditActivityResult? ActivityResult
         {
-            get { return BackingStore?.Get<CloudPcAuditActivityResult?>("activityResult"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcAuditActivityResult?>("activityResult"); }
             set { BackingStore?.Set("activityResult", value); }
         }
         /// <summary>The type of the activity that was performed. Read-only.</summary>
@@ -63,23 +63,23 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The actor property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public CloudPcAuditActor? Actor
+        public Microsoft.Graph.Beta.Models.CloudPcAuditActor? Actor
         {
-            get { return BackingStore?.Get<CloudPcAuditActor?>("actor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcAuditActor?>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #nullable restore
 #else
-        public CloudPcAuditActor Actor
+        public Microsoft.Graph.Beta.Models.CloudPcAuditActor Actor
         {
-            get { return BackingStore?.Get<CloudPcAuditActor>("actor"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcAuditActor>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
 #endif
         /// <summary>The category property</summary>
-        public CloudPcAuditCategory? Category
+        public Microsoft.Graph.Beta.Models.CloudPcAuditCategory? Category
         {
-            get { return BackingStore?.Get<CloudPcAuditCategory?>("category"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPcAuditCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>Component name. Read-only.</summary>
@@ -133,28 +133,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of cloudPcAuditResource objects. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcAuditResource>? Resources
+        public List<Microsoft.Graph.Beta.Models.CloudPcAuditResource>? Resources
         {
-            get { return BackingStore?.Get<List<CloudPcAuditResource>?>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcAuditResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcAuditResource> Resources
+        public List<Microsoft.Graph.Beta.Models.CloudPcAuditResource> Resources
         {
-            get { return BackingStore?.Get<List<CloudPcAuditResource>>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcAuditResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcAuditEvent"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcAuditEvent"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CloudPcAuditEvent CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CloudPcAuditEvent CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcAuditEvent();
+            return new Microsoft.Graph.Beta.Models.CloudPcAuditEvent();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -166,15 +166,15 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "activity", n => { Activity = n.GetStringValue(); } },
                 { "activityDateTime", n => { ActivityDateTime = n.GetDateTimeOffsetValue(); } },
-                { "activityOperationType", n => { ActivityOperationType = n.GetEnumValue<CloudPcAuditActivityOperationType>(); } },
-                { "activityResult", n => { ActivityResult = n.GetEnumValue<CloudPcAuditActivityResult>(); } },
+                { "activityOperationType", n => { ActivityOperationType = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcAuditActivityOperationType>(); } },
+                { "activityResult", n => { ActivityResult = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcAuditActivityResult>(); } },
                 { "activityType", n => { ActivityType = n.GetStringValue(); } },
-                { "actor", n => { Actor = n.GetObjectValue<CloudPcAuditActor>(CloudPcAuditActor.CreateFromDiscriminatorValue); } },
-                { "category", n => { Category = n.GetEnumValue<CloudPcAuditCategory>(); } },
+                { "actor", n => { Actor = n.GetObjectValue<Microsoft.Graph.Beta.Models.CloudPcAuditActor>(Microsoft.Graph.Beta.Models.CloudPcAuditActor.CreateFromDiscriminatorValue); } },
+                { "category", n => { Category = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPcAuditCategory>(); } },
                 { "componentName", n => { ComponentName = n.GetStringValue(); } },
                 { "correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>(CloudPcAuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcAuditResource>(Microsoft.Graph.Beta.Models.CloudPcAuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -187,15 +187,15 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("activity", Activity);
             writer.WriteDateTimeOffsetValue("activityDateTime", ActivityDateTime);
-            writer.WriteEnumValue<CloudPcAuditActivityOperationType>("activityOperationType", ActivityOperationType);
-            writer.WriteEnumValue<CloudPcAuditActivityResult>("activityResult", ActivityResult);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcAuditActivityOperationType>("activityOperationType", ActivityOperationType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcAuditActivityResult>("activityResult", ActivityResult);
             writer.WriteStringValue("activityType", ActivityType);
-            writer.WriteObjectValue<CloudPcAuditActor>("actor", Actor);
-            writer.WriteEnumValue<CloudPcAuditCategory>("category", Category);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CloudPcAuditActor>("actor", Actor);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPcAuditCategory>("category", Category);
             writer.WriteStringValue("componentName", ComponentName);
             writer.WriteStringValue("correlationId", CorrelationId);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<CloudPcAuditResource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcAuditResource>("resources", Resources);
         }
     }
 }

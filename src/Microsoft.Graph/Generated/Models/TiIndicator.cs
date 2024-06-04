@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TiIndicator : Entity, IParsable
+    public class TiIndicator : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.</summary>
-        public TiAction? Action
+        public Microsoft.Graph.Beta.Models.TiAction? Action
         {
-            get { return BackingStore?.Get<TiAction?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TiAction?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>The cyber threat intelligence name(s) for the parties responsible for the malicious activity covered by the threat indicator.</summary>
@@ -741,12 +741,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TiIndicator"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TiIndicator"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TiIndicator CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TiIndicator CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TiIndicator();
+            return new Microsoft.Graph.Beta.Models.TiIndicator();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -756,13 +756,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "action", n => { Action = n.GetEnumValue<TiAction>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.TiAction>(); } },
                 { "activityGroupNames", n => { ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 { "azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
                 { "confidence", n => { Confidence = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "diamondModel", n => { DiamondModel = n.GetEnumValue<DiamondModel>(); } },
+                { "diamondModel", n => { DiamondModel = n.GetEnumValue<Microsoft.Graph.Beta.Models.DiamondModel>(); } },
                 { "domainName", n => { DomainName = n.GetStringValue(); } },
                 { "emailEncoding", n => { EmailEncoding = n.GetStringValue(); } },
                 { "emailLanguage", n => { EmailLanguage = n.GetStringValue(); } },
@@ -777,7 +777,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "externalId", n => { ExternalId = n.GetStringValue(); } },
                 { "fileCompileDateTime", n => { FileCompileDateTime = n.GetDateTimeOffsetValue(); } },
                 { "fileCreatedDateTime", n => { FileCreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "fileHashType", n => { FileHashType = n.GetEnumValue<FileHashType>(); } },
+                { "fileHashType", n => { FileHashType = n.GetEnumValue<Microsoft.Graph.Beta.Models.FileHashType>(); } },
                 { "fileHashValue", n => { FileHashValue = n.GetStringValue(); } },
                 { "fileMutexName", n => { FileMutexName = n.GetStringValue(); } },
                 { "fileName", n => { FileName = n.GetStringValue(); } },
@@ -811,7 +811,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "targetProduct", n => { TargetProduct = n.GetStringValue(); } },
                 { "threatType", n => { ThreatType = n.GetStringValue(); } },
-                { "tlpLevel", n => { TlpLevel = n.GetEnumValue<TlpLevel>(); } },
+                { "tlpLevel", n => { TlpLevel = n.GetEnumValue<Microsoft.Graph.Beta.Models.TlpLevel>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "userAgent", n => { UserAgent = n.GetStringValue(); } },
             };
@@ -824,13 +824,13 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<TiAction>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TiAction>("action", Action);
             writer.WriteCollectionOfPrimitiveValues<string>("activityGroupNames", ActivityGroupNames);
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
             writer.WriteStringValue("azureTenantId", AzureTenantId);
             writer.WriteIntValue("confidence", Confidence);
             writer.WriteStringValue("description", Description);
-            writer.WriteEnumValue<DiamondModel>("diamondModel", DiamondModel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DiamondModel>("diamondModel", DiamondModel);
             writer.WriteStringValue("domainName", DomainName);
             writer.WriteStringValue("emailEncoding", EmailEncoding);
             writer.WriteStringValue("emailLanguage", EmailLanguage);
@@ -845,7 +845,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("externalId", ExternalId);
             writer.WriteDateTimeOffsetValue("fileCompileDateTime", FileCompileDateTime);
             writer.WriteDateTimeOffsetValue("fileCreatedDateTime", FileCreatedDateTime);
-            writer.WriteEnumValue<FileHashType>("fileHashType", FileHashType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.FileHashType>("fileHashType", FileHashType);
             writer.WriteStringValue("fileHashValue", FileHashValue);
             writer.WriteStringValue("fileMutexName", FileMutexName);
             writer.WriteStringValue("fileName", FileName);
@@ -879,7 +879,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("targetProduct", TargetProduct);
             writer.WriteStringValue("threatType", ThreatType);
-            writer.WriteEnumValue<TlpLevel>("tlpLevel", TlpLevel);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TlpLevel>("tlpLevel", TlpLevel);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("userAgent", UserAgent);
         }

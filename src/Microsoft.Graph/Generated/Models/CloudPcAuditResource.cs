@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of modified properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<CloudPcAuditProperty>? ModifiedProperties
+        public List<Microsoft.Graph.Beta.Models.CloudPcAuditProperty>? ModifiedProperties
         {
-            get { return BackingStore?.Get<List<CloudPcAuditProperty>?>("modifiedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcAuditProperty>?>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #nullable restore
 #else
-        public List<CloudPcAuditProperty> ModifiedProperties
+        public List<Microsoft.Graph.Beta.Models.CloudPcAuditProperty> ModifiedProperties
         {
-            get { return BackingStore?.Get<List<CloudPcAuditProperty>>("modifiedProperties"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPcAuditProperty>>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
 #endif
@@ -116,7 +116,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CloudPcAuditResource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CloudPcAuditResource"/> and sets the default values.
         /// </summary>
         public CloudPcAuditResource()
         {
@@ -126,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CloudPcAuditResource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CloudPcAuditResource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CloudPcAuditResource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CloudPcAuditResource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CloudPcAuditResource();
+            return new Microsoft.Graph.Beta.Models.CloudPcAuditResource();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -142,7 +142,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<CloudPcAuditProperty>(CloudPcAuditProperty.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcAuditProperty>(Microsoft.Graph.Beta.Models.CloudPcAuditProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "resourceType", n => { ResourceType = n.GetStringValue(); } },
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<CloudPcAuditProperty>("modifiedProperties", ModifiedProperties);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.CloudPcAuditProperty>("modifiedProperties", ModifiedProperties);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("resourceType", ResourceType);

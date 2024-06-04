@@ -23,39 +23,39 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests
     public class OperationApprovalRequestsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to call the cancelMyRequest method.</summary>
-        public CancelMyRequestRequestBuilder CancelMyRequest
+        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.CancelMyRequest.CancelMyRequestRequestBuilder CancelMyRequest
         {
-            get => new CancelMyRequestRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.CancelMyRequest.CancelMyRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveMyRequests method.</summary>
-        public RetrieveMyRequestsRequestBuilder RetrieveMyRequests
+        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveMyRequests.RetrieveMyRequestsRequestBuilder RetrieveMyRequests
         {
-            get => new RetrieveMyRequestsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveMyRequests.RetrieveMyRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the retrieveRequestStatus method.</summary>
-        public RetrieveRequestStatusRequestBuilder RetrieveRequestStatus
+        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveRequestStatus.RetrieveRequestStatusRequestBuilder RetrieveRequestStatus
         {
-            get => new RetrieveRequestStatusRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveRequestStatus.RetrieveRequestStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operationApprovalRequests property of the microsoft.graph.deviceManagement entity.</summary>
         /// <param name="position">The unique identifier of operationApprovalRequest</param>
-        /// <returns>A <see cref="OperationApprovalRequestItemRequestBuilder"/></returns>
-        public OperationApprovalRequestItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.OperationApprovalRequestItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.OperationApprovalRequestItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("operationApprovalRequest%2Did", position);
-                return new OperationApprovalRequestItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.Item.OperationApprovalRequestItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="OperationApprovalRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OperationApprovalRequestsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -73,60 +73,60 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests
         /// <summary>
         /// The Operation Approval Requests
         /// </summary>
-        /// <returns>A <see cref="OperationApprovalRequestCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OperationApprovalRequestCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OperationApprovalRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<OperationApprovalRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OperationApprovalRequestCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder.OperationApprovalRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OperationApprovalRequestCollectionResponse> GetAsync(Action<RequestConfiguration<OperationApprovalRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OperationApprovalRequestCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder.OperationApprovalRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OperationApprovalRequestCollectionResponse>(requestInfo, OperationApprovalRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OperationApprovalRequestCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.OperationApprovalRequestCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to operationApprovalRequests for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="OperationApprovalRequest"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OperationApprovalRequest"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OperationApprovalRequest?> PostAsync(OperationApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OperationApprovalRequest?> PostAsync(Microsoft.Graph.Beta.Models.OperationApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OperationApprovalRequest> PostAsync(OperationApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OperationApprovalRequest> PostAsync(Microsoft.Graph.Beta.Models.OperationApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OperationApprovalRequest>(requestInfo, OperationApprovalRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OperationApprovalRequest>(requestInfo, Microsoft.Graph.Beta.Models.OperationApprovalRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the retrieveMyRequestById method.
         /// </summary>
-        /// <returns>A <see cref="RetrieveMyRequestByIdWithIdRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveMyRequestByIdWithId.RetrieveMyRequestByIdWithIdRequestBuilder"/></returns>
         /// <param name="id">Usage: id=&apos;{id}&apos;</param>
-        public RetrieveMyRequestByIdWithIdRequestBuilder RetrieveMyRequestByIdWithId(string id)
+        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveMyRequestByIdWithId.RetrieveMyRequestByIdWithIdRequestBuilder RetrieveMyRequestByIdWithId(string id)
         {
             if(string.IsNullOrEmpty(id)) throw new ArgumentNullException(nameof(id));
-            return new RetrieveMyRequestByIdWithIdRequestBuilder(PathParameters, RequestAdapter, id);
+            return new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.RetrieveMyRequestByIdWithId.RetrieveMyRequestByIdWithIdRequestBuilder(PathParameters, RequestAdapter, id);
         }
         /// <summary>
         /// The Operation Approval Requests
@@ -135,11 +135,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OperationApprovalRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder.OperationApprovalRequestsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OperationApprovalRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder.OperationApprovalRequestsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(OperationApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.OperationApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(OperationApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.OperationApprovalRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -172,11 +172,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OperationApprovalRequestsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OperationApprovalRequestsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder WithUrl(string rawUrl)
         {
-            return new OperationApprovalRequestsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The Operation Approval Requests
@@ -247,7 +247,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OperationApprovalRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<OperationApprovalRequestsRequestBuilderGetQueryParameters>
+        public class OperationApprovalRequestsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.OperationApprovalRequests.OperationApprovalRequestsRequestBuilder.OperationApprovalRequestsRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

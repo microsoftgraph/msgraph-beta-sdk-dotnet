@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy status detail item contained by an autopilot event.
     /// </summary>
-    public class DeviceManagementAutopilotPolicyStatusDetail : Entity, IParsable
+    public class DeviceManagementAutopilotPolicyStatusDetail : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The complianceStatus property</summary>
-        public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus
+        public Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus
         {
-            get { return BackingStore?.Get<DeviceManagementAutopilotPolicyComplianceStatus?>("complianceStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyComplianceStatus?>("complianceStatus"); }
             set { BackingStore?.Set("complianceStatus", value); }
         }
         /// <summary>The friendly name of the policy.</summary>
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastReportedDateTime", value); }
         }
         /// <summary>The policyType property</summary>
-        public DeviceManagementAutopilotPolicyType? PolicyType
+        public Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyType? PolicyType
         {
-            get { return BackingStore?.Get<DeviceManagementAutopilotPolicyType?>("policyType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyType?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>Indicates if this policy was tracked as part of the autopilot bootstrap enrollment sync session</summary>
@@ -60,12 +60,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementAutopilotPolicyStatusDetail"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementAutopilotPolicyStatusDetail CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementAutopilotPolicyStatusDetail();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyStatusDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,11 +75,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "complianceStatus", n => { ComplianceStatus = n.GetEnumValue<DeviceManagementAutopilotPolicyComplianceStatus>(); } },
+                { "complianceStatus", n => { ComplianceStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyComplianceStatus>(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
                 { "lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "policyType", n => { PolicyType = n.GetEnumValue<DeviceManagementAutopilotPolicyType>(); } },
+                { "policyType", n => { PolicyType = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyType>(); } },
                 { "trackedOnEnrollmentStatus", n => { TrackedOnEnrollmentStatus = n.GetBoolValue(); } },
             };
         }
@@ -91,11 +91,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<DeviceManagementAutopilotPolicyComplianceStatus>("complianceStatus", ComplianceStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyComplianceStatus>("complianceStatus", ComplianceStatus);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteDateTimeOffsetValue("lastReportedDateTime", LastReportedDateTime);
-            writer.WriteEnumValue<DeviceManagementAutopilotPolicyType>("policyType", PolicyType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotPolicyType>("policyType", PolicyType);
             writer.WriteBoolValue("trackedOnEnrollmentStatus", TrackedOnEnrollmentStatus);
         }
     }

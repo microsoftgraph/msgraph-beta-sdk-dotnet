@@ -22,16 +22,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity information of the participant. Only the user property is used for onlineMeeting participants.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? Identity
+        public Microsoft.Graph.Beta.Models.IdentitySet? Identity
         {
-            get { return BackingStore?.Get<IdentitySet?>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #nullable restore
 #else
-        public IdentitySet Identity
+        public Microsoft.Graph.Beta.Models.IdentitySet Identity
         {
-            get { return BackingStore?.Get<IdentitySet>("identity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
 #endif
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Specifies the participant&apos;s role in the meeting.</summary>
-        public OnlineMeetingRole? Role
+        public Microsoft.Graph.Beta.Models.OnlineMeetingRole? Role
         {
-            get { return BackingStore?.Get<OnlineMeetingRole?>("role"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnlineMeetingRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>User principal name of the participant.</summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="MeetingParticipantInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MeetingParticipantInfo"/> and sets the default values.
         /// </summary>
         public MeetingParticipantInfo()
         {
@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MeetingParticipantInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MeetingParticipantInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static MeetingParticipantInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.MeetingParticipantInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.virtualEventPresenterInfo" => new VirtualEventPresenterInfo(),
-                _ => new MeetingParticipantInfo(),
+                "#microsoft.graph.virtualEventPresenterInfo" => new Microsoft.Graph.Beta.Models.VirtualEventPresenterInfo(),
+                _ => new Microsoft.Graph.Beta.Models.MeetingParticipantInfo(),
             };
         }
         /// <summary>
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "identity", n => { Identity = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "role", n => { Role = n.GetEnumValue<OnlineMeetingRole>(); } },
+                { "role", n => { Role = n.GetEnumValue<Microsoft.Graph.Beta.Models.OnlineMeetingRole>(); } },
                 { "upn", n => { Upn = n.GetStringValue(); } },
             };
         }
@@ -117,9 +117,9 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<IdentitySet>("identity", Identity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("identity", Identity);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<OnlineMeetingRole>("role", Role);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OnlineMeetingRole>("role", Role);
             writer.WriteStringValue("upn", Upn);
             writer.WriteAdditionalData(AdditionalData);
         }

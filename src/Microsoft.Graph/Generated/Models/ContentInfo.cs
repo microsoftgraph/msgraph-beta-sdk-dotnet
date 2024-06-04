@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The format property</summary>
-        public ContentFormat? Format
+        public Microsoft.Graph.Beta.Models.ContentFormat? Format
         {
-            get { return BackingStore?.Get<ContentFormat?>("format"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
         /// <summary>Identifier used for Azure Information Protection Analytics.</summary>
@@ -44,16 +44,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Existing Microsoft Purview Information Protection metadata is passed as key/value pairs, where the key is the MSIPLabelGUID_PropName.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? Metadata
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? Metadata
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> Metadata
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> Metadata
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("metadata"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
 #endif
@@ -74,13 +74,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The state property</summary>
-        public ContentState? State
+        public Microsoft.Graph.Beta.Models.ContentState? State
         {
-            get { return BackingStore?.Get<ContentState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ContentInfo"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ContentInfo"/> and sets the default values.
         /// </summary>
         public ContentInfo()
         {
@@ -90,12 +90,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ContentInfo"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ContentInfo"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ContentInfo CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.ContentInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentInfo();
+            return new Microsoft.Graph.Beta.Models.ContentInfo();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,11 +105,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "format", n => { Format = n.GetEnumValue<ContentFormat>(); } },
+                { "format", n => { Format = n.GetEnumValue<Microsoft.Graph.Beta.Models.ContentFormat>(); } },
                 { "identifier", n => { Identifier = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "metadata", n => { Metadata = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "state", n => { State = n.GetEnumValue<ContentState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.ContentState>(); } },
             };
         }
         /// <summary>
@@ -119,11 +119,11 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<ContentFormat>("format", Format);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ContentFormat>("format", Format);
             writer.WriteStringValue("identifier", Identifier);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("metadata", Metadata);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("metadata", Metadata);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<ContentState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ContentState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

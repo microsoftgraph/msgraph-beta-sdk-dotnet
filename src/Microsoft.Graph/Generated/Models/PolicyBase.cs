@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PolicyBase : DirectoryObject, IParsable
+    public class PolicyBase : Microsoft.Graph.Beta.Models.DirectoryObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Description for this policy. Required.</summary>
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PolicyBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PolicyBase"/> and sets the default values.
         /// </summary>
         public PolicyBase() : base()
         {
@@ -52,30 +52,30 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicyBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PolicyBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PolicyBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PolicyBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.activityBasedTimeoutPolicy" => new ActivityBasedTimeoutPolicy(),
-                "#microsoft.graph.appManagementPolicy" => new AppManagementPolicy(),
-                "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
-                "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
-                "#microsoft.graph.crossTenantAccessPolicy" => new CrossTenantAccessPolicy(),
-                "#microsoft.graph.externalIdentitiesPolicy" => new ExternalIdentitiesPolicy(),
-                "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
-                "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
-                "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),
-                "#microsoft.graph.servicePrincipalCreationPolicy" => new ServicePrincipalCreationPolicy(),
-                "#microsoft.graph.stsPolicy" => new StsPolicy(),
-                "#microsoft.graph.tenantAppManagementPolicy" => new TenantAppManagementPolicy(),
-                "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new TenantRelationshipAccessPolicyBase(),
-                "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
-                "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
-                _ => new PolicyBase(),
+                "#microsoft.graph.activityBasedTimeoutPolicy" => new Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy(),
+                "#microsoft.graph.appManagementPolicy" => new Microsoft.Graph.Beta.Models.AppManagementPolicy(),
+                "#microsoft.graph.authorizationPolicy" => new Microsoft.Graph.Beta.Models.AuthorizationPolicy(),
+                "#microsoft.graph.claimsMappingPolicy" => new Microsoft.Graph.Beta.Models.ClaimsMappingPolicy(),
+                "#microsoft.graph.crossTenantAccessPolicy" => new Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy(),
+                "#microsoft.graph.externalIdentitiesPolicy" => new Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy(),
+                "#microsoft.graph.homeRealmDiscoveryPolicy" => new Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy(),
+                "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy(),
+                "#microsoft.graph.permissionGrantPolicy" => new Microsoft.Graph.Beta.Models.PermissionGrantPolicy(),
+                "#microsoft.graph.servicePrincipalCreationPolicy" => new Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy(),
+                "#microsoft.graph.stsPolicy" => new Microsoft.Graph.Beta.Models.StsPolicy(),
+                "#microsoft.graph.tenantAppManagementPolicy" => new Microsoft.Graph.Beta.Models.TenantAppManagementPolicy(),
+                "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new Microsoft.Graph.Beta.Models.TenantRelationshipAccessPolicyBase(),
+                "#microsoft.graph.tokenIssuancePolicy" => new Microsoft.Graph.Beta.Models.TokenIssuancePolicy(),
+                "#microsoft.graph.tokenLifetimePolicy" => new Microsoft.Graph.Beta.Models.TokenLifetimePolicy(),
+                _ => new Microsoft.Graph.Beta.Models.PolicyBase(),
             };
         }
         /// <summary>

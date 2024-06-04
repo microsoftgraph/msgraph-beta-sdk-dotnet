@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy used to configure detailed management settings targeted to specific security groups and for a specified set of apps on an iOS device
     /// </summary>
-    public class IosManagedAppProtection : TargetedManagedAppProtection, IParsable
+    public class IosManagedAppProtection : Microsoft.Graph.Beta.Models.TargetedManagedAppProtection, IParsable
     {
         /// <summary>Semicolon seperated list of device models allowed, as a string, for the managed app to work.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,36 +34,36 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("allowWidgetContentSync", value); }
         }
         /// <summary>Defines a managed app behavior, either block or warn, if the user is clocked out (non-working time). Possible values are: block, wipe, warn.</summary>
-        public ManagedAppRemediationAction? AppActionIfAccountIsClockedOut
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfAccountIsClockedOut
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfAccountIsClockedOut"); }
             set { BackingStore?.Set("appActionIfAccountIsClockedOut", value); }
         }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
-        public ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed
+        public Microsoft.Graph.Beta.Models.ManagedAppRemediationAction? AppActionIfIosDeviceModelNotAllowed
         {
-            get { return BackingStore?.Get<ManagedAppRemediationAction?>("appActionIfIosDeviceModelNotAllowed"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction?>("appActionIfIosDeviceModelNotAllowed"); }
             set { BackingStore?.Set("appActionIfIosDeviceModelNotAllowed", value); }
         }
         /// <summary>Represents the level to which app data is encrypted for managed apps</summary>
-        public ManagedAppDataEncryptionType? AppDataEncryptionType
+        public Microsoft.Graph.Beta.Models.ManagedAppDataEncryptionType? AppDataEncryptionType
         {
-            get { return BackingStore?.Get<ManagedAppDataEncryptionType?>("appDataEncryptionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppDataEncryptionType?>("appDataEncryptionType"); }
             set { BackingStore?.Set("appDataEncryptionType", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ManagedMobileApp>? Apps
+        public List<Microsoft.Graph.Beta.Models.ManagedMobileApp>? Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedMobileApp>?>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #nullable restore
 #else
-        public List<ManagedMobileApp> Apps
+        public List<Microsoft.Graph.Beta.Models.ManagedMobileApp> Apps
         {
-            get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
 #endif
@@ -108,16 +108,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Navigation property to deployment summary of the configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public ManagedAppPolicyDeploymentSummary? DeploymentSummary
+        public Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary? DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary?>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #nullable restore
 #else
-        public ManagedAppPolicyDeploymentSummary DeploymentSummary
+        public Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary DeploymentSummary
         {
-            get { return BackingStore?.Get<ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary"); }
             set { BackingStore?.Set("deploymentSummary", value); }
         }
 #endif
@@ -130,16 +130,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Apps in this list will be exempt from the policy and will be able to receive data from managed apps.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? ExemptedAppProtocols
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? ExemptedAppProtocols
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("exemptedAppProtocols"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("exemptedAppProtocols"); }
             set { BackingStore?.Set("exemptedAppProtocols", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> ExemptedAppProtocols
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> ExemptedAppProtocols
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("exemptedAppProtocols"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("exemptedAppProtocols"); }
             set { BackingStore?.Set("exemptedAppProtocols", value); }
         }
 #endif
@@ -264,7 +264,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("thirdPartyKeyboardsBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IosManagedAppProtection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IosManagedAppProtection"/> and sets the default values.
         /// </summary>
         public IosManagedAppProtection() : base()
         {
@@ -273,12 +273,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IosManagedAppProtection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IosManagedAppProtection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new IosManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IosManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IosManagedAppProtection();
+            return new Microsoft.Graph.Beta.Models.IosManagedAppProtection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -290,16 +290,16 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "allowWidgetContentSync", n => { AllowWidgetContentSync = n.GetBoolValue(); } },
                 { "allowedIosDeviceModels", n => { AllowedIosDeviceModels = n.GetStringValue(); } },
-                { "appActionIfAccountIsClockedOut", n => { AppActionIfAccountIsClockedOut = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appActionIfIosDeviceModelNotAllowed", n => { AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<ManagedAppRemediationAction>(); } },
-                { "appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<ManagedAppDataEncryptionType>(); } },
-                { "apps", n => { Apps = n.GetCollectionOfObjectValues<ManagedMobileApp>(ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appActionIfAccountIsClockedOut", n => { AppActionIfAccountIsClockedOut = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appActionIfIosDeviceModelNotAllowed", n => { AppActionIfIosDeviceModelNotAllowed = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>(); } },
+                { "appDataEncryptionType", n => { AppDataEncryptionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ManagedAppDataEncryptionType>(); } },
+                { "apps", n => { Apps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedMobileApp>(Microsoft.Graph.Beta.Models.ManagedMobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "customBrowserProtocol", n => { CustomBrowserProtocol = n.GetStringValue(); } },
                 { "customDialerAppProtocol", n => { CustomDialerAppProtocol = n.GetStringValue(); } },
                 { "deployedAppCount", n => { DeployedAppCount = n.GetIntValue(); } },
-                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<ManagedAppPolicyDeploymentSummary>(ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
+                { "deploymentSummary", n => { DeploymentSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>(Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 { "disableProtectionOfManagedOutboundOpenInData", n => { DisableProtectionOfManagedOutboundOpenInData = n.GetBoolValue(); } },
-                { "exemptedAppProtocols", n => { ExemptedAppProtocols = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "exemptedAppProtocols", n => { ExemptedAppProtocols = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "exemptedUniversalLinks", n => { ExemptedUniversalLinks = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "faceIdBlocked", n => { FaceIdBlocked = n.GetBoolValue(); } },
                 { "filterOpenInToOnlyManagedApps", n => { FilterOpenInToOnlyManagedApps = n.GetBoolValue(); } },
@@ -322,16 +322,16 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("allowedIosDeviceModels", AllowedIosDeviceModels);
             writer.WriteBoolValue("allowWidgetContentSync", AllowWidgetContentSync);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfAccountIsClockedOut", AppActionIfAccountIsClockedOut);
-            writer.WriteEnumValue<ManagedAppRemediationAction>("appActionIfIosDeviceModelNotAllowed", AppActionIfIosDeviceModelNotAllowed);
-            writer.WriteEnumValue<ManagedAppDataEncryptionType>("appDataEncryptionType", AppDataEncryptionType);
-            writer.WriteCollectionOfObjectValues<ManagedMobileApp>("apps", Apps);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfAccountIsClockedOut", AppActionIfAccountIsClockedOut);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppRemediationAction>("appActionIfIosDeviceModelNotAllowed", AppActionIfIosDeviceModelNotAllowed);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ManagedAppDataEncryptionType>("appDataEncryptionType", AppDataEncryptionType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedMobileApp>("apps", Apps);
             writer.WriteStringValue("customBrowserProtocol", CustomBrowserProtocol);
             writer.WriteStringValue("customDialerAppProtocol", CustomDialerAppProtocol);
             writer.WriteIntValue("deployedAppCount", DeployedAppCount);
-            writer.WriteObjectValue<ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedAppPolicyDeploymentSummary>("deploymentSummary", DeploymentSummary);
             writer.WriteBoolValue("disableProtectionOfManagedOutboundOpenInData", DisableProtectionOfManagedOutboundOpenInData);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("exemptedAppProtocols", ExemptedAppProtocols);
             writer.WriteCollectionOfPrimitiveValues<string>("exemptedUniversalLinks", ExemptedUniversalLinks);
             writer.WriteBoolValue("faceIdBlocked", FaceIdBlocked);
             writer.WriteBoolValue("filterOpenInToOnlyManagedApps", FilterOpenInToOnlyManagedApps);

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="IdentitySource"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IdentitySource"/> and sets the default values.
         /// </summary>
         public IdentitySource()
         {
@@ -46,20 +46,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IdentitySource"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IdentitySource"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IdentitySource CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IdentitySource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.azureActiveDirectoryTenant" => new AzureActiveDirectoryTenant(),
-                "#microsoft.graph.crossCloudAzureActiveDirectoryTenant" => new CrossCloudAzureActiveDirectoryTenant(),
-                "#microsoft.graph.domainIdentitySource" => new DomainIdentitySource(),
-                "#microsoft.graph.externalDomainFederation" => new ExternalDomainFederation(),
-                "#microsoft.graph.socialIdentitySource" => new SocialIdentitySource(),
-                _ => new IdentitySource(),
+                "#microsoft.graph.azureActiveDirectoryTenant" => new Microsoft.Graph.Beta.Models.AzureActiveDirectoryTenant(),
+                "#microsoft.graph.crossCloudAzureActiveDirectoryTenant" => new Microsoft.Graph.Beta.Models.CrossCloudAzureActiveDirectoryTenant(),
+                "#microsoft.graph.domainIdentitySource" => new Microsoft.Graph.Beta.Models.DomainIdentitySource(),
+                "#microsoft.graph.externalDomainFederation" => new Microsoft.Graph.Beta.Models.ExternalDomainFederation(),
+                "#microsoft.graph.socialIdentitySource" => new Microsoft.Graph.Beta.Models.SocialIdentitySource(),
+                _ => new Microsoft.Graph.Beta.Models.IdentitySource(),
             };
         }
         /// <summary>

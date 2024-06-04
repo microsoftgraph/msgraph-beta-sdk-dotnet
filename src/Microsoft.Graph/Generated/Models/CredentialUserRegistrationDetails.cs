@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class CredentialUserRegistrationDetails : Entity, IParsable
+    public class CredentialUserRegistrationDetails : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<RegistrationAuthMethod?>? AuthMethods
+        public List<Microsoft.Graph.Beta.Models.RegistrationAuthMethod?>? AuthMethods
         {
-            get { return BackingStore?.Get<List<RegistrationAuthMethod?>?>("authMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RegistrationAuthMethod?>?>("authMethods"); }
             set { BackingStore?.Set("authMethods", value); }
         }
 #nullable restore
 #else
-        public List<RegistrationAuthMethod?> AuthMethods
+        public List<Microsoft.Graph.Beta.Models.RegistrationAuthMethod?> AuthMethods
         {
-            get { return BackingStore?.Get<List<RegistrationAuthMethod?>>("authMethods"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RegistrationAuthMethod?>>("authMethods"); }
             set { BackingStore?.Set("authMethods", value); }
         }
 #endif
@@ -85,12 +85,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CredentialUserRegistrationDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new CredentialUserRegistrationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CredentialUserRegistrationDetails();
+            return new Microsoft.Graph.Beta.Models.CredentialUserRegistrationDetails();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "authMethods", n => { AuthMethods = n.GetCollectionOfEnumValues<RegistrationAuthMethod>()?.ToList(); } },
+                { "authMethods", n => { AuthMethods = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.RegistrationAuthMethod>()?.ToList(); } },
                 { "isCapable", n => { IsCapable = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isMfaRegistered", n => { IsMfaRegistered = n.GetBoolValue(); } },
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfEnumValues<RegistrationAuthMethod>("authMethods", AuthMethods);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.RegistrationAuthMethod>("authMethods", AuthMethods);
             writer.WriteBoolValue("isCapable", IsCapable);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isMfaRegistered", IsMfaRegistered);

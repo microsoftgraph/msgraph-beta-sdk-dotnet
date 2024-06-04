@@ -38,53 +38,53 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The postAttributeCollection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentityApiConnector? PostAttributeCollection
+        public Microsoft.Graph.Beta.Models.IdentityApiConnector? PostAttributeCollection
         {
-            get { return BackingStore?.Get<IdentityApiConnector?>("postAttributeCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityApiConnector?>("postAttributeCollection"); }
             set { BackingStore?.Set("postAttributeCollection", value); }
         }
 #nullable restore
 #else
-        public IdentityApiConnector PostAttributeCollection
+        public Microsoft.Graph.Beta.Models.IdentityApiConnector PostAttributeCollection
         {
-            get { return BackingStore?.Get<IdentityApiConnector>("postAttributeCollection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityApiConnector>("postAttributeCollection"); }
             set { BackingStore?.Set("postAttributeCollection", value); }
         }
 #endif
         /// <summary>The postFederationSignup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentityApiConnector? PostFederationSignup
+        public Microsoft.Graph.Beta.Models.IdentityApiConnector? PostFederationSignup
         {
-            get { return BackingStore?.Get<IdentityApiConnector?>("postFederationSignup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityApiConnector?>("postFederationSignup"); }
             set { BackingStore?.Set("postFederationSignup", value); }
         }
 #nullable restore
 #else
-        public IdentityApiConnector PostFederationSignup
+        public Microsoft.Graph.Beta.Models.IdentityApiConnector PostFederationSignup
         {
-            get { return BackingStore?.Get<IdentityApiConnector>("postFederationSignup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityApiConnector>("postFederationSignup"); }
             set { BackingStore?.Set("postFederationSignup", value); }
         }
 #endif
         /// <summary>The preTokenIssuance property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentityApiConnector? PreTokenIssuance
+        public Microsoft.Graph.Beta.Models.IdentityApiConnector? PreTokenIssuance
         {
-            get { return BackingStore?.Get<IdentityApiConnector?>("preTokenIssuance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityApiConnector?>("preTokenIssuance"); }
             set { BackingStore?.Set("preTokenIssuance", value); }
         }
 #nullable restore
 #else
-        public IdentityApiConnector PreTokenIssuance
+        public Microsoft.Graph.Beta.Models.IdentityApiConnector PreTokenIssuance
         {
-            get { return BackingStore?.Get<IdentityApiConnector>("preTokenIssuance"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityApiConnector>("preTokenIssuance"); }
             set { BackingStore?.Set("preTokenIssuance", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UserFlowApiConnectorConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration"/> and sets the default values.
         /// </summary>
         public UserFlowApiConnectorConfiguration()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserFlowApiConnectorConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UserFlowApiConnectorConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserFlowApiConnectorConfiguration();
+            return new Microsoft.Graph.Beta.Models.UserFlowApiConnectorConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "postAttributeCollection", n => { PostAttributeCollection = n.GetObjectValue<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue); } },
-                { "postFederationSignup", n => { PostFederationSignup = n.GetObjectValue<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue); } },
-                { "preTokenIssuance", n => { PreTokenIssuance = n.GetObjectValue<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue); } },
+                { "postAttributeCollection", n => { PostAttributeCollection = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityApiConnector>(Microsoft.Graph.Beta.Models.IdentityApiConnector.CreateFromDiscriminatorValue); } },
+                { "postFederationSignup", n => { PostFederationSignup = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityApiConnector>(Microsoft.Graph.Beta.Models.IdentityApiConnector.CreateFromDiscriminatorValue); } },
+                { "preTokenIssuance", n => { PreTokenIssuance = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityApiConnector>(Microsoft.Graph.Beta.Models.IdentityApiConnector.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -123,9 +123,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteObjectValue<IdentityApiConnector>("postAttributeCollection", PostAttributeCollection);
-            writer.WriteObjectValue<IdentityApiConnector>("postFederationSignup", PostFederationSignup);
-            writer.WriteObjectValue<IdentityApiConnector>("preTokenIssuance", PreTokenIssuance);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityApiConnector>("postAttributeCollection", PostAttributeCollection);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityApiConnector>("postFederationSignup", PostFederationSignup);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentityApiConnector>("preTokenIssuance", PreTokenIssuance);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

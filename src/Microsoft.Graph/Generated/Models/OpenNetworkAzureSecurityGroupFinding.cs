@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OpenNetworkAzureSecurityGroupFinding : Finding, IParsable
+    public class OpenNetworkAzureSecurityGroupFinding : Microsoft.Graph.Beta.Models.Finding, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The inboundPorts property</summary>
@@ -29,44 +29,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The securityGroup property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthorizationSystemResource? SecurityGroup
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource? SecurityGroup
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource?>("securityGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource?>("securityGroup"); }
             set { BackingStore?.Set("securityGroup", value); }
         }
 #nullable restore
 #else
-        public AuthorizationSystemResource SecurityGroup
+        public Microsoft.Graph.Beta.Models.AuthorizationSystemResource SecurityGroup
         {
-            get { return BackingStore?.Get<AuthorizationSystemResource>("securityGroup"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("securityGroup"); }
             set { BackingStore?.Set("securityGroup", value); }
         }
 #endif
         /// <summary>Represents a virtual machine in an authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualMachineDetails>? VirtualMachines
+        public List<Microsoft.Graph.Beta.Models.VirtualMachineDetails>? VirtualMachines
         {
-            get { return BackingStore?.Get<List<VirtualMachineDetails>?>("virtualMachines"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualMachineDetails>?>("virtualMachines"); }
             set { BackingStore?.Set("virtualMachines", value); }
         }
 #nullable restore
 #else
-        public List<VirtualMachineDetails> VirtualMachines
+        public List<Microsoft.Graph.Beta.Models.VirtualMachineDetails> VirtualMachines
         {
-            get { return BackingStore?.Get<List<VirtualMachineDetails>>("virtualMachines"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualMachineDetails>>("virtualMachines"); }
             set { BackingStore?.Set("virtualMachines", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OpenNetworkAzureSecurityGroupFinding"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OpenNetworkAzureSecurityGroupFinding"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OpenNetworkAzureSecurityGroupFinding CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OpenNetworkAzureSecurityGroupFinding CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OpenNetworkAzureSecurityGroupFinding();
+            return new Microsoft.Graph.Beta.Models.OpenNetworkAzureSecurityGroupFinding();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "inboundPorts", n => { InboundPorts = n.GetObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>(Microsoft.Graph.Beta.Models.InboundPorts.CreateFromDiscriminatorValue); } },
-                { "securityGroup", n => { SecurityGroup = n.GetObjectValue<AuthorizationSystemResource>(AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
-                { "virtualMachines", n => { VirtualMachines = n.GetCollectionOfObjectValues<VirtualMachineDetails>(VirtualMachineDetails.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "securityGroup", n => { SecurityGroup = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AuthorizationSystemResource.CreateFromDiscriminatorValue); } },
+                { "virtualMachines", n => { VirtualMachines = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualMachineDetails>(Microsoft.Graph.Beta.Models.VirtualMachineDetails.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -90,8 +90,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InboundPorts>("inboundPorts", InboundPorts);
-            writer.WriteObjectValue<AuthorizationSystemResource>("securityGroup", SecurityGroup);
-            writer.WriteCollectionOfObjectValues<VirtualMachineDetails>("virtualMachines", VirtualMachines);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthorizationSystemResource>("securityGroup", SecurityGroup);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualMachineDetails>("virtualMachines", VirtualMachines);
         }
     }
 }

@@ -68,13 +68,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.</summary>
-        public TeamworkSoftwareFreshness? SoftwareFreshness
+        public Microsoft.Graph.Beta.Models.TeamworkSoftwareFreshness? SoftwareFreshness
         {
-            get { return BackingStore?.Get<TeamworkSoftwareFreshness?>("softwareFreshness"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkSoftwareFreshness?>("softwareFreshness"); }
             set { BackingStore?.Set("softwareFreshness", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamworkSoftwareUpdateStatus"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateStatus"/> and sets the default values.
         /// </summary>
         public TeamworkSoftwareUpdateStatus()
         {
@@ -84,12 +84,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkSoftwareUpdateStatus"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateStatus"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeamworkSoftwareUpdateStatus CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkSoftwareUpdateStatus();
+            return new Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateStatus();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "availableVersion", n => { AvailableVersion = n.GetStringValue(); } },
                 { "currentVersion", n => { CurrentVersion = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "softwareFreshness", n => { SoftwareFreshness = n.GetEnumValue<TeamworkSoftwareFreshness>(); } },
+                { "softwareFreshness", n => { SoftwareFreshness = n.GetEnumValue<Microsoft.Graph.Beta.Models.TeamworkSoftwareFreshness>(); } },
             };
         }
         /// <summary>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("availableVersion", AvailableVersion);
             writer.WriteStringValue("currentVersion", CurrentVersion);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<TeamworkSoftwareFreshness>("softwareFreshness", SoftwareFreshness);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.TeamworkSoftwareFreshness>("softwareFreshness", SoftwareFreshness);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

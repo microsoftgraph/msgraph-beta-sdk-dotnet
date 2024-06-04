@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("validFromDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ThirdPartyTokenDetails"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails"/> and sets the default values.
         /// </summary>
         public ThirdPartyTokenDetails()
         {
@@ -80,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ThirdPartyTokenDetails"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ThirdPartyTokenDetails CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ThirdPartyTokenDetails();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.ThirdPartyTokenDetails();
         }
         /// <summary>
         /// The deserialization information for the current model

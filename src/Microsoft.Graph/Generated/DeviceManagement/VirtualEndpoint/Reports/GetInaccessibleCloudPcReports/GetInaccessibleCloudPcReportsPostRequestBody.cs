@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInacc
         }
 #endif
         /// <summary>The reportName property</summary>
-        public CloudPCInaccessibleReportName? ReportName
+        public Microsoft.Graph.Beta.Models.CloudPCInaccessibleReportName? ReportName
         {
-            get { return BackingStore?.Get<CloudPCInaccessibleReportName?>("reportName"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CloudPCInaccessibleReportName?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
         /// <summary>The search property</summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInacc
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetInaccessibleCloudPcReportsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInaccessibleCloudPcReports.GetInaccessibleCloudPcReportsPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetInaccessibleCloudPcReportsPostRequestBody()
         {
@@ -129,12 +129,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInacc
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetInaccessibleCloudPcReportsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInaccessibleCloudPcReports.GetInaccessibleCloudPcReportsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetInaccessibleCloudPcReportsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInaccessibleCloudPcReports.GetInaccessibleCloudPcReportsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetInaccessibleCloudPcReportsPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInaccessibleCloudPcReports.GetInaccessibleCloudPcReportsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +147,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInacc
                 { "filter", n => { Filter = n.GetStringValue(); } },
                 { "groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "reportName", n => { ReportName = n.GetEnumValue<CloudPCInaccessibleReportName>(); } },
+                { "reportName", n => { ReportName = n.GetEnumValue<Microsoft.Graph.Beta.Models.CloudPCInaccessibleReportName>(); } },
                 { "search", n => { Search = n.GetStringValue(); } },
                 { "select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "skip", n => { Skip = n.GetIntValue(); } },
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetInacc
             writer.WriteStringValue("filter", Filter);
             writer.WriteCollectionOfPrimitiveValues<string>("groupBy", GroupBy);
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
-            writer.WriteEnumValue<CloudPCInaccessibleReportName>("reportName", ReportName);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.CloudPCInaccessibleReportName>("reportName", ReportName);
             writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
             writer.WriteIntValue("skip", Skip);

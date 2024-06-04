@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.HasPayloadLinks
 {
     #pragma warning disable CS1591
-    public class HasPayloadLinksPostResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class HasPayloadLinksPostResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HasPayloadLinkResultItem>? Value
+        public List<Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem>? Value
         {
-            get { return BackingStore?.Get<List<HasPayloadLinkResultItem>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<HasPayloadLinkResultItem> Value
+        public List<Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem> Value
         {
-            get { return BackingStore?.Get<List<HasPayloadLinkResultItem>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="HasPayloadLinksPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.HasPayloadLinks.HasPayloadLinksPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new HasPayloadLinksPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.HasPayloadLinks.HasPayloadLinksPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new HasPayloadLinksPostResponse();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.HasPayloadLinks.HasPayloadLinksPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.HasP
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<HasPayloadLinkResultItem>(HasPayloadLinkResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem>(Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosManagedAppProtections.HasP
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<HasPayloadLinkResultItem>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HasPayloadLinkResultItem>("value", Value);
         }
     }
 }

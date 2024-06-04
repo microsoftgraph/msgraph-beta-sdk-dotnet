@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify an Azure Directory group for the kiosk configuration
     /// </summary>
-    public class WindowsKioskActiveDirectoryGroup : WindowsKioskUser, IParsable
+    public class WindowsKioskActiveDirectoryGroup : Microsoft.Graph.Beta.Models.WindowsKioskUser, IParsable
     {
         /// <summary>The name of the AD group that will be locked to this kiosk configuration</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskActiveDirectoryGroup"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskActiveDirectoryGroup"/> and sets the default values.
         /// </summary>
         public WindowsKioskActiveDirectoryGroup() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskActiveDirectoryGroup"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskActiveDirectoryGroup"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsKioskActiveDirectoryGroup CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsKioskActiveDirectoryGroup CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskActiveDirectoryGroup();
+            return new Microsoft.Graph.Beta.Models.WindowsKioskActiveDirectoryGroup();
         }
         /// <summary>
         /// The deserialization information for the current model

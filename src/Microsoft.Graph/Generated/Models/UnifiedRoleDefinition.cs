@@ -7,13 +7,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleDefinition : Entity, IParsable
+    public class UnifiedRoleDefinition : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Types of principals that can be assigned the role. Read-only. The possible values are: user, servicePrincipal, group, unknownFutureValue. This is a multi-valued enumeration that can contain up to three values as a comma-separated string. For example, user, group. Supports $filter (eq).</summary>
-        public AllowedRolePrincipalTypes? AllowedPrincipalTypes
+        public Microsoft.Graph.Beta.Models.AllowedRolePrincipalTypes? AllowedPrincipalTypes
         {
-            get { return BackingStore?.Get<AllowedRolePrincipalTypes?>("allowedPrincipalTypes"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowedRolePrincipalTypes?>("allowedPrincipalTypes"); }
             set { BackingStore?.Set("allowedPrincipalTypes", value); }
         }
         /// <summary>The description for the unifiedRoleDefinition. Read-only when isBuiltIn is true.</summary>
@@ -51,16 +51,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Read-only collection of role definitions that the given role definition inherits from. Only Microsoft Entra built-in roles support this attribute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleDefinition>? InheritsPermissionsFrom
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>? InheritsPermissionsFrom
         {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>?>("inheritsPermissionsFrom"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>?>("inheritsPermissionsFrom"); }
             set { BackingStore?.Set("inheritsPermissionsFrom", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleDefinition> InheritsPermissionsFrom
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition> InheritsPermissionsFrom
         {
-            get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("inheritsPermissionsFrom"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>>("inheritsPermissionsFrom"); }
             set { BackingStore?.Set("inheritsPermissionsFrom", value); }
         }
 #endif
@@ -101,16 +101,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>List of permissions included in the role. Read-only when isBuiltIn is true. Required.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRolePermission>? RolePermissions
+        public List<Microsoft.Graph.Beta.Models.UnifiedRolePermission>? RolePermissions
         {
-            get { return BackingStore?.Get<List<UnifiedRolePermission>?>("rolePermissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRolePermission>?>("rolePermissions"); }
             set { BackingStore?.Set("rolePermissions", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRolePermission> RolePermissions
+        public List<Microsoft.Graph.Beta.Models.UnifiedRolePermission> RolePermissions
         {
-            get { return BackingStore?.Get<List<UnifiedRolePermission>>("rolePermissions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRolePermission>>("rolePermissions"); }
             set { BackingStore?.Set("rolePermissions", value); }
         }
 #endif
@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UnifiedRoleDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleDefinition();
+            return new Microsoft.Graph.Beta.Models.UnifiedRoleDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -164,15 +164,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedPrincipalTypes", n => { AllowedPrincipalTypes = n.GetEnumValue<AllowedRolePrincipalTypes>(); } },
+                { "allowedPrincipalTypes", n => { AllowedPrincipalTypes = n.GetEnumValue<Microsoft.Graph.Beta.Models.AllowedRolePrincipalTypes>(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inheritsPermissionsFrom", n => { InheritsPermissionsFrom = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>(Microsoft.Graph.Beta.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "isBuiltIn", n => { IsBuiltIn = n.GetBoolValue(); } },
                 { "isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 { "isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
                 { "resourceScopes", n => { ResourceScopes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<UnifiedRolePermission>(UnifiedRolePermission.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "rolePermissions", n => { RolePermissions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRolePermission>(Microsoft.Graph.Beta.Models.UnifiedRolePermission.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "templateId", n => { TemplateId = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -185,15 +185,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AllowedRolePrincipalTypes>("allowedPrincipalTypes", AllowedPrincipalTypes);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AllowedRolePrincipalTypes>("allowedPrincipalTypes", AllowedPrincipalTypes);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>("inheritsPermissionsFrom", InheritsPermissionsFrom);
             writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isPrivileged", IsPrivileged);
             writer.WriteCollectionOfPrimitiveValues<string>("resourceScopes", ResourceScopes);
-            writer.WriteCollectionOfObjectValues<UnifiedRolePermission>("rolePermissions", RolePermissions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRolePermission>("rolePermissions", RolePermissions);
             writer.WriteStringValue("templateId", TemplateId);
             writer.WriteStringValue("version", Version);
         }

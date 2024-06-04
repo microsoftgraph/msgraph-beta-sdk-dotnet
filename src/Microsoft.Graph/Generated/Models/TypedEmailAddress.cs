@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TypedEmailAddress : EmailAddress, IParsable
+    public class TypedEmailAddress : Microsoft.Graph.Beta.Models.EmailAddress, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>To specify a custom type of email address, set type to other, and assign otherLabel to a custom string. For example, you may use a specific email address for your volunteer activities. Set type to other, and set otherLabel to a custom string such as Volunteer work.</summary>
@@ -27,13 +27,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.</summary>
-        public EmailType? Type
+        public Microsoft.Graph.Beta.Models.EmailType? Type
         {
-            get { return BackingStore?.Get<EmailType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TypedEmailAddress"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TypedEmailAddress"/> and sets the default values.
         /// </summary>
         public TypedEmailAddress() : base()
         {
@@ -42,12 +42,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TypedEmailAddress"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TypedEmailAddress"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TypedEmailAddress CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TypedEmailAddress CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TypedEmailAddress();
+            return new Microsoft.Graph.Beta.Models.TypedEmailAddress();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "otherLabel", n => { OtherLabel = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<EmailType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.EmailType>(); } },
             };
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("otherLabel", OtherLabel);
-            writer.WriteEnumValue<EmailType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.EmailType>("type", Type);
         }
     }
 }

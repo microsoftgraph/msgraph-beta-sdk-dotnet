@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Determines if Microsoft Entra registered is allowed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceRegistrationMembership? AllowedToRegister
+        public Microsoft.Graph.Beta.Models.DeviceRegistrationMembership? AllowedToRegister
         {
-            get { return BackingStore?.Get<DeviceRegistrationMembership?>("allowedToRegister"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceRegistrationMembership?>("allowedToRegister"); }
             set { BackingStore?.Set("allowedToRegister", value); }
         }
 #nullable restore
 #else
-        public DeviceRegistrationMembership AllowedToRegister
+        public Microsoft.Graph.Beta.Models.DeviceRegistrationMembership AllowedToRegister
         {
-            get { return BackingStore?.Get<DeviceRegistrationMembership>("allowedToRegister"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceRegistrationMembership>("allowedToRegister"); }
             set { BackingStore?.Set("allowedToRegister", value); }
         }
 #endif
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AzureADRegistrationPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy"/> and sets the default values.
         /// </summary>
         public AzureADRegistrationPolicy()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureADRegistrationPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AzureADRegistrationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureADRegistrationPolicy();
+            return new Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "allowedToRegister", n => { AllowedToRegister = n.GetObjectValue<DeviceRegistrationMembership>(DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
+                { "allowedToRegister", n => { AllowedToRegister = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceRegistrationMembership>(Microsoft.Graph.Beta.Models.DeviceRegistrationMembership.CreateFromDiscriminatorValue); } },
                 { "isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DeviceRegistrationMembership>("allowedToRegister", AllowedToRegister);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceRegistrationMembership>("allowedToRegister", AllowedToRegister);
             writer.WriteBoolValue("isAdminConfigurable", IsAdminConfigurable);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

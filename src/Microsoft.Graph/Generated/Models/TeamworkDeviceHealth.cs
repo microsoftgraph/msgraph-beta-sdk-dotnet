@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class TeamworkDeviceHealth : Entity, IParsable
+    public class TeamworkDeviceHealth : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The connection property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkConnection? Connection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection? Connection
         {
-            get { return BackingStore?.Get<TeamworkConnection?>("connection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection?>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
 #nullable restore
 #else
-        public TeamworkConnection Connection
+        public Microsoft.Graph.Beta.Models.TeamworkConnection Connection
         {
-            get { return BackingStore?.Get<TeamworkConnection>("connection"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkConnection>("connection"); }
             set { BackingStore?.Set("connection", value); }
         }
 #endif
         /// <summary>Identity of the user who created the device health document.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -51,32 +51,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Health details about the device hardware.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkHardwareHealth? HardwareHealth
+        public Microsoft.Graph.Beta.Models.TeamworkHardwareHealth? HardwareHealth
         {
-            get { return BackingStore?.Get<TeamworkHardwareHealth?>("hardwareHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkHardwareHealth?>("hardwareHealth"); }
             set { BackingStore?.Set("hardwareHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkHardwareHealth HardwareHealth
+        public Microsoft.Graph.Beta.Models.TeamworkHardwareHealth HardwareHealth
         {
-            get { return BackingStore?.Get<TeamworkHardwareHealth>("hardwareHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkHardwareHealth>("hardwareHealth"); }
             set { BackingStore?.Set("hardwareHealth", value); }
         }
 #endif
         /// <summary>Identity of the user who last modified the device health details.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -89,60 +89,60 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The login status of Microsoft Teams, Skype for Business, and Exchange.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkLoginStatus? LoginStatus
+        public Microsoft.Graph.Beta.Models.TeamworkLoginStatus? LoginStatus
         {
-            get { return BackingStore?.Get<TeamworkLoginStatus?>("loginStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkLoginStatus?>("loginStatus"); }
             set { BackingStore?.Set("loginStatus", value); }
         }
 #nullable restore
 #else
-        public TeamworkLoginStatus LoginStatus
+        public Microsoft.Graph.Beta.Models.TeamworkLoginStatus LoginStatus
         {
-            get { return BackingStore?.Get<TeamworkLoginStatus>("loginStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkLoginStatus>("loginStatus"); }
             set { BackingStore?.Set("loginStatus", value); }
         }
 #endif
         /// <summary>Health details about all peripherals (for example, speaker and microphone) attached to a device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkPeripheralsHealth? PeripheralsHealth
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheralsHealth? PeripheralsHealth
         {
-            get { return BackingStore?.Get<TeamworkPeripheralsHealth?>("peripheralsHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheralsHealth?>("peripheralsHealth"); }
             set { BackingStore?.Set("peripheralsHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkPeripheralsHealth PeripheralsHealth
+        public Microsoft.Graph.Beta.Models.TeamworkPeripheralsHealth PeripheralsHealth
         {
-            get { return BackingStore?.Get<TeamworkPeripheralsHealth>("peripheralsHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkPeripheralsHealth>("peripheralsHealth"); }
             set { BackingStore?.Set("peripheralsHealth", value); }
         }
 #endif
         /// <summary>Software updates available for the device.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TeamworkSoftwareUpdateHealth? SoftwareUpdateHealth
+        public Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateHealth? SoftwareUpdateHealth
         {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth?>("softwareUpdateHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateHealth?>("softwareUpdateHealth"); }
             set { BackingStore?.Set("softwareUpdateHealth", value); }
         }
 #nullable restore
 #else
-        public TeamworkSoftwareUpdateHealth SoftwareUpdateHealth
+        public Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateHealth SoftwareUpdateHealth
         {
-            get { return BackingStore?.Get<TeamworkSoftwareUpdateHealth>("softwareUpdateHealth"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateHealth>("softwareUpdateHealth"); }
             set { BackingStore?.Set("softwareUpdateHealth", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeamworkDeviceHealth"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeamworkDeviceHealth"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TeamworkDeviceHealth CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.TeamworkDeviceHealth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeamworkDeviceHealth();
+            return new Microsoft.Graph.Beta.Models.TeamworkDeviceHealth();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -152,15 +152,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "connection", n => { Connection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "connection", n => { Connection = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>(Microsoft.Graph.Beta.Models.TeamworkConnection.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "hardwareHealth", n => { HardwareHealth = n.GetObjectValue<TeamworkHardwareHealth>(TeamworkHardwareHealth.CreateFromDiscriminatorValue); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "hardwareHealth", n => { HardwareHealth = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkHardwareHealth>(Microsoft.Graph.Beta.Models.TeamworkHardwareHealth.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "loginStatus", n => { LoginStatus = n.GetObjectValue<TeamworkLoginStatus>(TeamworkLoginStatus.CreateFromDiscriminatorValue); } },
-                { "peripheralsHealth", n => { PeripheralsHealth = n.GetObjectValue<TeamworkPeripheralsHealth>(TeamworkPeripheralsHealth.CreateFromDiscriminatorValue); } },
-                { "softwareUpdateHealth", n => { SoftwareUpdateHealth = n.GetObjectValue<TeamworkSoftwareUpdateHealth>(TeamworkSoftwareUpdateHealth.CreateFromDiscriminatorValue); } },
+                { "loginStatus", n => { LoginStatus = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkLoginStatus>(Microsoft.Graph.Beta.Models.TeamworkLoginStatus.CreateFromDiscriminatorValue); } },
+                { "peripheralsHealth", n => { PeripheralsHealth = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheralsHealth>(Microsoft.Graph.Beta.Models.TeamworkPeripheralsHealth.CreateFromDiscriminatorValue); } },
+                { "softwareUpdateHealth", n => { SoftwareUpdateHealth = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateHealth>(Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateHealth.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -171,15 +171,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TeamworkConnection>("connection", Connection);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkConnection>("connection", Connection);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<TeamworkHardwareHealth>("hardwareHealth", HardwareHealth);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkHardwareHealth>("hardwareHealth", HardwareHealth);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<TeamworkLoginStatus>("loginStatus", LoginStatus);
-            writer.WriteObjectValue<TeamworkPeripheralsHealth>("peripheralsHealth", PeripheralsHealth);
-            writer.WriteObjectValue<TeamworkSoftwareUpdateHealth>("softwareUpdateHealth", SoftwareUpdateHealth);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkLoginStatus>("loginStatus", LoginStatus);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkPeripheralsHealth>("peripheralsHealth", PeripheralsHealth);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamworkSoftwareUpdateHealth>("softwareUpdateHealth", SoftwareUpdateHealth);
         }
     }
 }

@@ -44,21 +44,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ValidationResult>? ValidationResults
+        public List<Microsoft.Graph.Beta.Models.ValidationResult>? ValidationResults
         {
-            get { return BackingStore?.Get<List<ValidationResult>?>("validationResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ValidationResult>?>("validationResults"); }
             set { BackingStore?.Set("validationResults", value); }
         }
 #nullable restore
 #else
-        public List<ValidationResult> ValidationResults
+        public List<Microsoft.Graph.Beta.Models.ValidationResult> ValidationResults
         {
-            get { return BackingStore?.Get<List<ValidationResult>>("validationResults"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ValidationResult>>("validationResults"); }
             set { BackingStore?.Set("validationResults", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="PasswordValidationInformation"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.PasswordValidationInformation"/> and sets the default values.
         /// </summary>
         public PasswordValidationInformation()
         {
@@ -68,12 +68,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PasswordValidationInformation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PasswordValidationInformation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static PasswordValidationInformation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.PasswordValidationInformation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PasswordValidationInformation();
+            return new Microsoft.Graph.Beta.Models.PasswordValidationInformation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "isValid", n => { IsValid = n.GetBoolValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "validationResults", n => { ValidationResults = n.GetCollectionOfObjectValues<ValidationResult>(ValidationResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "validationResults", n => { ValidationResults = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ValidationResult>(Microsoft.Graph.Beta.Models.ValidationResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isValid", IsValid);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<ValidationResult>("validationResults", ValidationResults);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ValidationResult>("validationResults", ValidationResults);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

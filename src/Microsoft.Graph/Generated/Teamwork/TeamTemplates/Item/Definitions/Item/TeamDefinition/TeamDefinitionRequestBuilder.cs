@@ -37,107 +37,107 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
     public class TeamDefinitionRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the allChannels property of the microsoft.graph.team entity.</summary>
-        public AllChannelsRequestBuilder AllChannels
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.AllChannels.AllChannelsRequestBuilder AllChannels
         {
-            get => new AllChannelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.AllChannels.AllChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the archive method.</summary>
-        public ArchiveRequestBuilder Archive
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Archive.ArchiveRequestBuilder Archive
         {
-            get => new ArchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the channels property of the microsoft.graph.team entity.</summary>
-        public ChannelsRequestBuilder Channels
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.ChannelsRequestBuilder Channels
         {
-            get => new ChannelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.ChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the clone method.</summary>
-        public CloneRequestBuilder Clone
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Clone.CloneRequestBuilder Clone
         {
-            get => new CloneRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Clone.CloneRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the completeMigration method.</summary>
-        public CompleteMigrationRequestBuilder CompleteMigration
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.CompleteMigration.CompleteMigrationRequestBuilder CompleteMigration
         {
-            get => new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.CompleteMigration.CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the group property of the microsoft.graph.team entity.</summary>
-        public GroupRequestBuilder Group
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Group.GroupRequestBuilder Group
         {
-            get => new GroupRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.</summary>
-        public IncomingChannelsRequestBuilder IncomingChannels
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.IncomingChannels.IncomingChannelsRequestBuilder IncomingChannels
         {
-            get => new IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.IncomingChannels.IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.team entity.</summary>
-        public InstalledAppsRequestBuilder InstalledApps
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.InstalledApps.InstalledAppsRequestBuilder InstalledApps
         {
-            get => new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.InstalledApps.InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the members property of the microsoft.graph.team entity.</summary>
-        public MembersRequestBuilder Members
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Members.MembersRequestBuilder Members
         {
-            get => new MembersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the operations property of the microsoft.graph.team entity.</summary>
-        public OperationsRequestBuilder Operations
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Operations.OperationsRequestBuilder Operations
         {
-            get => new OperationsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Operations.OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the owners property of the microsoft.graph.team entity.</summary>
-        public OwnersRequestBuilder Owners
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Owners.OwnersRequestBuilder Owners
         {
-            get => new OwnersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Owners.OwnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.</summary>
-        public PermissionGrantsRequestBuilder PermissionGrants
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PermissionGrants.PermissionGrantsRequestBuilder PermissionGrants
         {
-            get => new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PermissionGrants.PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the photo property of the microsoft.graph.team entity.</summary>
-        public PhotoRequestBuilder Photo
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Photo.PhotoRequestBuilder Photo
         {
-            get => new PhotoRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Photo.PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.</summary>
-        public PrimaryChannelRequestBuilder PrimaryChannel
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.PrimaryChannelRequestBuilder PrimaryChannel
         {
-            get => new PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the schedule property of the microsoft.graph.team entity.</summary>
-        public ScheduleRequestBuilder Schedule
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.ScheduleRequestBuilder Schedule
         {
-            get => new ScheduleRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Schedule.ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the sendActivityNotification method.</summary>
-        public SendActivityNotificationRequestBuilder SendActivityNotification
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.SendActivityNotification.SendActivityNotificationRequestBuilder SendActivityNotification
         {
-            get => new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.SendActivityNotification.SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tags property of the microsoft.graph.team entity.</summary>
-        public TagsRequestBuilder Tags
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Tags.TagsRequestBuilder Tags
         {
-            get => new TagsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Tags.TagsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the template property of the microsoft.graph.team entity.</summary>
-        public TemplateRequestBuilder Template
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Template.TemplateRequestBuilder Template
         {
-            get => new TemplateRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Template.TemplateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the templateDefinition property of the microsoft.graph.team entity.</summary>
-        public TemplateDefinitionRequestBuilder TemplateDefinition
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TemplateDefinition.TemplateDefinitionRequestBuilder TemplateDefinition
         {
-            get => new TemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TemplateDefinition.TemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the unarchive method.</summary>
-        public UnarchiveRequestBuilder Unarchive
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Unarchive.UnarchiveRequestBuilder Unarchive
         {
-            get => new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamDefinitionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeamDefinitionRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -170,30 +170,31 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+        /// Get the properties of the team associated with a teamTemplateDefinition object.
+        /// Find more info here <see href="https://learn.microsoft.com/graph/api/teamtemplatedefinition-get-teamdefinition?view=graph-rest-beta" />
         /// </summary>
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Team"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.Team?> GetAsync(Action<RequestConfiguration<TeamDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Team?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder.TeamDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.Team> GetAsync(Action<RequestConfiguration<TeamDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.Team> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder.TeamDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -204,7 +205,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Microsoft.Graph.Beta.Models.Team?> PatchAsync(Microsoft.Graph.Beta.Models.Team body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -218,7 +219,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -242,17 +243,17 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
             return requestInfo;
         }
         /// <summary>
-        /// Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+        /// Get the properties of the team associated with a teamTemplateDefinition object.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder.TeamDefinitionRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<TeamDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder.TeamDefinitionRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -285,11 +286,11 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="TeamDefinitionRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public TeamDefinitionRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder WithUrl(string rawUrl)
         {
-            return new TeamDefinitionRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -299,7 +300,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         {
         }
         /// <summary>
-        /// Collection of channel objects. A channel represents a topic, and therefore a logical isolation of discussion, within a team.
+        /// Get the properties of the team associated with a teamTemplateDefinition object.
         /// </summary>
         public class TeamDefinitionRequestBuilderGetQueryParameters 
         {
@@ -328,7 +329,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class TeamDefinitionRequestBuilderGetRequestConfiguration : RequestConfiguration<TeamDefinitionRequestBuilderGetQueryParameters>
+        public class TeamDefinitionRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.TeamDefinitionRequestBuilder.TeamDefinitionRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

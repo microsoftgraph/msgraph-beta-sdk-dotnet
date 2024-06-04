@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify the single app configuration for the kiosk win32 configuration
     /// </summary>
-    public class WindowsKioskSingleWin32App : WindowsKioskAppConfiguration, IParsable
+    public class WindowsKioskSingleWin32App : Microsoft.Graph.Beta.Models.WindowsKioskAppConfiguration, IParsable
     {
         /// <summary>The win32App property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsKioskWin32App? Win32App
+        public Microsoft.Graph.Beta.Models.WindowsKioskWin32App? Win32App
         {
-            get { return BackingStore?.Get<WindowsKioskWin32App?>("win32App"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskWin32App?>("win32App"); }
             set { BackingStore?.Set("win32App", value); }
         }
 #nullable restore
 #else
-        public WindowsKioskWin32App Win32App
+        public Microsoft.Graph.Beta.Models.WindowsKioskWin32App Win32App
         {
-            get { return BackingStore?.Get<WindowsKioskWin32App>("win32App"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskWin32App>("win32App"); }
             set { BackingStore?.Set("win32App", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskSingleWin32App"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskSingleWin32App"/> and sets the default values.
         /// </summary>
         public WindowsKioskSingleWin32App() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskSingleWin32App"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskSingleWin32App"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsKioskSingleWin32App CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsKioskSingleWin32App CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskSingleWin32App();
+            return new Microsoft.Graph.Beta.Models.WindowsKioskSingleWin32App();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "win32App", n => { Win32App = n.GetObjectValue<WindowsKioskWin32App>(WindowsKioskWin32App.CreateFromDiscriminatorValue); } },
+                { "win32App", n => { Win32App = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskWin32App>(Microsoft.Graph.Beta.Models.WindowsKioskWin32App.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WindowsKioskWin32App>("win32App", Win32App);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskWin32App>("win32App", Win32App);
         }
     }
 }

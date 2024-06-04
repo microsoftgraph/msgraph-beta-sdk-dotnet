@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="RenewGroupPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupPostRequestBody"/> and sets the default values.
         /// </summary>
         public RenewGroupPostRequestBody()
         {
@@ -46,12 +46,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RenewGroupPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static RenewGroupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RenewGroupPostRequestBody();
+            return new Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.RenewGroup.RenewGroupPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

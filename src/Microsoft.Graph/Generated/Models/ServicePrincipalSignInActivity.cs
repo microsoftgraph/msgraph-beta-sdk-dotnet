@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ServicePrincipalSignInActivity : Entity, IParsable
+    public class ServicePrincipalSignInActivity : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The application ID of the resource.</summary>
@@ -29,92 +29,92 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? ApplicationAuthenticationClientSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity? ApplicationAuthenticationClientSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity?>("applicationAuthenticationClientSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity?>("applicationAuthenticationClientSignInActivity"); }
             set { BackingStore?.Set("applicationAuthenticationClientSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity ApplicationAuthenticationClientSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity ApplicationAuthenticationClientSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity>("applicationAuthenticationClientSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity>("applicationAuthenticationClientSignInActivity"); }
             set { BackingStore?.Set("applicationAuthenticationClientSignInActivity", value); }
         }
 #endif
         /// <summary>The sign-in activity of the application in a app-only authentication flow (app-to-app tokens) where the application acts like a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? ApplicationAuthenticationResourceSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity? ApplicationAuthenticationResourceSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity?>("applicationAuthenticationResourceSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity?>("applicationAuthenticationResourceSignInActivity"); }
             set { BackingStore?.Set("applicationAuthenticationResourceSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity ApplicationAuthenticationResourceSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity ApplicationAuthenticationResourceSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity>("applicationAuthenticationResourceSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity>("applicationAuthenticationResourceSignInActivity"); }
             set { BackingStore?.Set("applicationAuthenticationResourceSignInActivity", value); }
         }
 #endif
         /// <summary>The sign-in activity of the application in a delegated flow (user sign-in) where the application acts like a client.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? DelegatedClientSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity? DelegatedClientSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity?>("delegatedClientSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity?>("delegatedClientSignInActivity"); }
             set { BackingStore?.Set("delegatedClientSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity DelegatedClientSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity DelegatedClientSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity>("delegatedClientSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity>("delegatedClientSignInActivity"); }
             set { BackingStore?.Set("delegatedClientSignInActivity", value); }
         }
 #endif
         /// <summary>The sign-in activity of the application in a delegated flow (user sign-in) where the application acts like a resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? DelegatedResourceSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity? DelegatedResourceSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity?>("delegatedResourceSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity?>("delegatedResourceSignInActivity"); }
             set { BackingStore?.Set("delegatedResourceSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity DelegatedResourceSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity DelegatedResourceSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity>("delegatedResourceSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity>("delegatedResourceSignInActivity"); }
             set { BackingStore?.Set("delegatedResourceSignInActivity", value); }
         }
 #endif
         /// <summary>The most recent sign-in activity of the application across delegated or app-only flows where the application is used either as a client or resource.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public SignInActivity? LastSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity? LastSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity?>("lastSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity?>("lastSignInActivity"); }
             set { BackingStore?.Set("lastSignInActivity", value); }
         }
 #nullable restore
 #else
-        public SignInActivity LastSignInActivity
+        public Microsoft.Graph.Beta.Models.SignInActivity LastSignInActivity
         {
-            get { return BackingStore?.Get<SignInActivity>("lastSignInActivity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity>("lastSignInActivity"); }
             set { BackingStore?.Set("lastSignInActivity", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServicePrincipalSignInActivity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServicePrincipalSignInActivity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServicePrincipalSignInActivity();
+            return new Microsoft.Graph.Beta.Models.ServicePrincipalSignInActivity();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -125,11 +125,11 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "appId", n => { AppId = n.GetStringValue(); } },
-                { "applicationAuthenticationClientSignInActivity", n => { ApplicationAuthenticationClientSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
-                { "applicationAuthenticationResourceSignInActivity", n => { ApplicationAuthenticationResourceSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
-                { "delegatedClientSignInActivity", n => { DelegatedClientSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
-                { "delegatedResourceSignInActivity", n => { DelegatedResourceSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
-                { "lastSignInActivity", n => { LastSignInActivity = n.GetObjectValue<SignInActivity>(SignInActivity.CreateFromDiscriminatorValue); } },
+                { "applicationAuthenticationClientSignInActivity", n => { ApplicationAuthenticationClientSignInActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>(Microsoft.Graph.Beta.Models.SignInActivity.CreateFromDiscriminatorValue); } },
+                { "applicationAuthenticationResourceSignInActivity", n => { ApplicationAuthenticationResourceSignInActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>(Microsoft.Graph.Beta.Models.SignInActivity.CreateFromDiscriminatorValue); } },
+                { "delegatedClientSignInActivity", n => { DelegatedClientSignInActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>(Microsoft.Graph.Beta.Models.SignInActivity.CreateFromDiscriminatorValue); } },
+                { "delegatedResourceSignInActivity", n => { DelegatedResourceSignInActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>(Microsoft.Graph.Beta.Models.SignInActivity.CreateFromDiscriminatorValue); } },
+                { "lastSignInActivity", n => { LastSignInActivity = n.GetObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>(Microsoft.Graph.Beta.Models.SignInActivity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -141,11 +141,11 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("appId", AppId);
-            writer.WriteObjectValue<SignInActivity>("applicationAuthenticationClientSignInActivity", ApplicationAuthenticationClientSignInActivity);
-            writer.WriteObjectValue<SignInActivity>("applicationAuthenticationResourceSignInActivity", ApplicationAuthenticationResourceSignInActivity);
-            writer.WriteObjectValue<SignInActivity>("delegatedClientSignInActivity", DelegatedClientSignInActivity);
-            writer.WriteObjectValue<SignInActivity>("delegatedResourceSignInActivity", DelegatedResourceSignInActivity);
-            writer.WriteObjectValue<SignInActivity>("lastSignInActivity", LastSignInActivity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>("applicationAuthenticationClientSignInActivity", ApplicationAuthenticationClientSignInActivity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>("applicationAuthenticationResourceSignInActivity", ApplicationAuthenticationResourceSignInActivity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>("delegatedClientSignInActivity", DelegatedClientSignInActivity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>("delegatedResourceSignInActivity", DelegatedResourceSignInActivity);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SignInActivity>("lastSignInActivity", LastSignInActivity);
         }
     }
 }

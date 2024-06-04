@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class GovernancePolicyTemplate : Entity, IParsable
+    public class GovernancePolicyTemplate : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The displayName property</summary>
@@ -29,44 +29,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GovernancePolicy? Policy
+        public Microsoft.Graph.Beta.Models.GovernancePolicy? Policy
         {
-            get { return BackingStore?.Get<GovernancePolicy?>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernancePolicy?>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #nullable restore
 #else
-        public GovernancePolicy Policy
+        public Microsoft.Graph.Beta.Models.GovernancePolicy Policy
         {
-            get { return BackingStore?.Get<GovernancePolicy>("policy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GovernancePolicy>("policy"); }
             set { BackingStore?.Set("policy", value); }
         }
 #endif
         /// <summary>The settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public BusinessFlowSettings? Settings
+        public Microsoft.Graph.Beta.Models.BusinessFlowSettings? Settings
         {
-            get { return BackingStore?.Get<BusinessFlowSettings?>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessFlowSettings?>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #nullable restore
 #else
-        public BusinessFlowSettings Settings
+        public Microsoft.Graph.Beta.Models.BusinessFlowSettings Settings
         {
-            get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessFlowSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GovernancePolicyTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GovernancePolicyTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GovernancePolicyTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.GovernancePolicyTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GovernancePolicyTemplate();
+            return new Microsoft.Graph.Beta.Models.GovernancePolicyTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "policy", n => { Policy = n.GetObjectValue<GovernancePolicy>(GovernancePolicy.CreateFromDiscriminatorValue); } },
-                { "settings", n => { Settings = n.GetObjectValue<BusinessFlowSettings>(BusinessFlowSettings.CreateFromDiscriminatorValue); } },
+                { "policy", n => { Policy = n.GetObjectValue<Microsoft.Graph.Beta.Models.GovernancePolicy>(Microsoft.Graph.Beta.Models.GovernancePolicy.CreateFromDiscriminatorValue); } },
+                { "settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.BusinessFlowSettings>(Microsoft.Graph.Beta.Models.BusinessFlowSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,8 +90,8 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<GovernancePolicy>("policy", Policy);
-            writer.WriteObjectValue<BusinessFlowSettings>("settings", Settings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GovernancePolicy>("policy", Policy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.BusinessFlowSettings>("settings", Settings);
         }
     }
 }

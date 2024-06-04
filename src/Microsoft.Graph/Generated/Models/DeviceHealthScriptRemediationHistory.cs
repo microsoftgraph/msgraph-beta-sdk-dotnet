@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The number of devices remediated by the device health script on the given date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceHealthScriptRemediationHistoryData>? HistoryData
+        public List<Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData>? HistoryData
         {
-            get { return BackingStore?.Get<List<DeviceHealthScriptRemediationHistoryData>?>("historyData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData>?>("historyData"); }
             set { BackingStore?.Set("historyData", value); }
         }
 #nullable restore
 #else
-        public List<DeviceHealthScriptRemediationHistoryData> HistoryData
+        public List<Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData> HistoryData
         {
-            get { return BackingStore?.Get<List<DeviceHealthScriptRemediationHistoryData>>("historyData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData>>("historyData"); }
             set { BackingStore?.Set("historyData", value); }
         }
 #endif
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceHealthScriptRemediationHistory"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistory"/> and sets the default values.
         /// </summary>
         public DeviceHealthScriptRemediationHistory()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceHealthScriptRemediationHistory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceHealthScriptRemediationHistory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceHealthScriptRemediationHistory();
+            return new Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "historyData", n => { HistoryData = n.GetCollectionOfObjectValues<DeviceHealthScriptRemediationHistoryData>(DeviceHealthScriptRemediationHistoryData.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "historyData", n => { HistoryData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData>(Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceHealthScriptRemediationHistoryData>("historyData", HistoryData);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceHealthScriptRemediationHistoryData>("historyData", HistoryData);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

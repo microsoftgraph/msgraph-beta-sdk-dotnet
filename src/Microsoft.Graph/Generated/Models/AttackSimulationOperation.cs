@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AttackSimulationOperation : LongRunningOperation, IParsable
+    public class AttackSimulationOperation : Microsoft.Graph.Beta.Models.LongRunningOperation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Percentage of completion of the respective operation.</summary>
@@ -33,20 +33,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The attack simulation operation type. Possible values are: createSimulation, updateSimulation, unknownFutureValue.</summary>
-        public AttackSimulationOperationType? Type
+        public Microsoft.Graph.Beta.Models.AttackSimulationOperationType? Type
         {
-            get { return BackingStore?.Get<AttackSimulationOperationType?>("type"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationOperationType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttackSimulationOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AttackSimulationOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AttackSimulationOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AttackSimulationOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttackSimulationOperation();
+            return new Microsoft.Graph.Beta.Models.AttackSimulationOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "percentageCompleted", n => { PercentageCompleted = n.GetIntValue(); } },
                 { "tenantId", n => { TenantId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<AttackSimulationOperationType>(); } },
+                { "type", n => { Type = n.GetEnumValue<Microsoft.Graph.Beta.Models.AttackSimulationOperationType>(); } },
             };
         }
         /// <summary>
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteIntValue("percentageCompleted", PercentageCompleted);
             writer.WriteStringValue("tenantId", TenantId);
-            writer.WriteEnumValue<AttackSimulationOperationType>("type", Type);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AttackSimulationOperationType>("type", Type);
         }
     }
 }

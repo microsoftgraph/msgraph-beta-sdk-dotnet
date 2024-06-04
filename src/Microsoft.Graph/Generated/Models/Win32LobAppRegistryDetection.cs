@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Contains registry properties to detect a Win32 App
     /// </summary>
-    public class Win32LobAppRegistryDetection : Win32LobAppDetection, IParsable
+    public class Win32LobAppRegistryDetection : Microsoft.Graph.Beta.Models.Win32LobAppDetection, IParsable
     {
         /// <summary>A value indicating whether this registry path is for checking 32-bit app on 64-bit system</summary>
         public bool? Check32BitOn64System
@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("check32BitOn64System", value); }
         }
         /// <summary>Contains all supported registry data detection type.</summary>
-        public Win32LobAppRegistryDetectionType? DetectionType
+        public Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetectionType? DetectionType
         {
-            get { return BackingStore?.Get<Win32LobAppRegistryDetectionType?>("detectionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetectionType?>("detectionType"); }
             set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The registry detection value</summary>
@@ -56,9 +56,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Contains properties for detection operator.</summary>
-        public Win32LobAppDetectionOperator? Operator
+        public Microsoft.Graph.Beta.Models.Win32LobAppDetectionOperator? Operator
         {
-            get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("operator"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Win32LobAppDetectionOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The registry value name</summary>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Win32LobAppRegistryDetection"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetection"/> and sets the default values.
         /// </summary>
         public Win32LobAppRegistryDetection() : base()
         {
@@ -87,12 +87,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32LobAppRegistryDetection"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetection"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32LobAppRegistryDetection CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetection CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32LobAppRegistryDetection();
+            return new Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetection();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -103,10 +103,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
-                { "detectionType", n => { DetectionType = n.GetEnumValue<Win32LobAppRegistryDetectionType>(); } },
+                { "detectionType", n => { DetectionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetectionType>(); } },
                 { "detectionValue", n => { DetectionValue = n.GetStringValue(); } },
                 { "keyPath", n => { KeyPath = n.GetStringValue(); } },
-                { "operator", n => { Operator = n.GetEnumValue<Win32LobAppDetectionOperator>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<Microsoft.Graph.Beta.Models.Win32LobAppDetectionOperator>(); } },
                 { "valueName", n => { ValueName = n.GetStringValue(); } },
             };
         }
@@ -119,10 +119,10 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("check32BitOn64System", Check32BitOn64System);
-            writer.WriteEnumValue<Win32LobAppRegistryDetectionType>("detectionType", DetectionType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Win32LobAppRegistryDetectionType>("detectionType", DetectionType);
             writer.WriteStringValue("detectionValue", DetectionValue);
             writer.WriteStringValue("keyPath", KeyPath);
-            writer.WriteEnumValue<Win32LobAppDetectionOperator>("operator", Operator);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Win32LobAppDetectionOperator>("operator", Operator);
             writer.WriteStringValue("valueName", ValueName);
         }
     }

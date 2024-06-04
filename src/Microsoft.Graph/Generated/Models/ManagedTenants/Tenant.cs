@@ -13,16 +13,16 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The relationship details for the tenant with the managing entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TenantContract? Contract
+        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantContract? Contract
         {
-            get { return BackingStore?.Get<TenantContract?>("contract"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContract?>("contract"); }
             set { BackingStore?.Set("contract", value); }
         }
 #nullable restore
 #else
-        public TenantContract Contract
+        public Microsoft.Graph.Beta.Models.ManagedTenants.TenantContract Contract
         {
-            get { return BackingStore?.Get<TenantContract>("contract"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContract>("contract"); }
             set { BackingStore?.Set("contract", value); }
         }
 #endif
@@ -89,12 +89,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Tenant"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.Tenant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Tenant CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.Tenant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Tenant();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.Tenant();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "contract", n => { Contract = n.GetObjectValue<TenantContract>(TenantContract.CreateFromDiscriminatorValue); } },
+                { "contract", n => { Contract = n.GetObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContract>(Microsoft.Graph.Beta.Models.ManagedTenants.TenantContract.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<TenantContract>("contract", Contract);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedTenants.TenantContract>("contract", Contract);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);

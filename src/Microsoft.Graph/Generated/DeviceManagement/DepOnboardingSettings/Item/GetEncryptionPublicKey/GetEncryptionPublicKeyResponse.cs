@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEn
 {
     [Obsolete("This class is obsolete. Use GetEncryptionPublicKeyGetResponse instead.")]
     #pragma warning disable CS1591
-    public class GetEncryptionPublicKeyResponse : GetEncryptionPublicKeyGetResponse, IParsable
+    public class GetEncryptionPublicKeyResponse : Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey.GetEncryptionPublicKeyGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetEncryptionPublicKeyResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey.GetEncryptionPublicKeyResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetEncryptionPublicKeyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey.GetEncryptionPublicKeyResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetEncryptionPublicKeyResponse();
+            return new Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.GetEncryptionPublicKey.GetEncryptionPublicKeyResponse();
         }
     }
 }

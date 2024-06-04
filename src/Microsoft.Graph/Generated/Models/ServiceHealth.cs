@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ServiceHealth : Entity, IParsable
+    public class ServiceHealth : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>A collection of issues that happened on the service, with detailed information for each issue.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServiceHealthIssue>? Issues
+        public List<Microsoft.Graph.Beta.Models.ServiceHealthIssue>? Issues
         {
-            get { return BackingStore?.Get<List<ServiceHealthIssue>?>("issues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceHealthIssue>?>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
 #nullable restore
 #else
-        public List<ServiceHealthIssue> Issues
+        public List<Microsoft.Graph.Beta.Models.ServiceHealthIssue> Issues
         {
-            get { return BackingStore?.Get<List<ServiceHealthIssue>>("issues"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServiceHealthIssue>>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
 #endif
@@ -43,20 +43,20 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The status property</summary>
-        public ServiceHealthStatus? Status
+        public Microsoft.Graph.Beta.Models.ServiceHealthStatus? Status
         {
-            get { return BackingStore?.Get<ServiceHealthStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServiceHealthStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ServiceHealth"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ServiceHealth"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ServiceHealth CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ServiceHealth CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ServiceHealth();
+            return new Microsoft.Graph.Beta.Models.ServiceHealth();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "issues", n => { Issues = n.GetCollectionOfObjectValues<ServiceHealthIssue>(ServiceHealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "issues", n => { Issues = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceHealthIssue>(Microsoft.Graph.Beta.Models.ServiceHealthIssue.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "service", n => { Service = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<ServiceHealthStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.ServiceHealthStatus>(); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<ServiceHealthIssue>("issues", Issues);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServiceHealthIssue>("issues", Issues);
             writer.WriteStringValue("service", Service);
-            writer.WriteEnumValue<ServiceHealthStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ServiceHealthStatus>("status", Status);
         }
     }
 }

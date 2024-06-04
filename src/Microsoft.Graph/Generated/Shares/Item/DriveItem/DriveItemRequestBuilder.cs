@@ -19,17 +19,17 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem
     public class DriveItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the media for the sharedDriveItem entity.</summary>
-        public ContentRequestBuilder Content
+        public Microsoft.Graph.Beta.Shares.Item.DriveItem.Content.ContentRequestBuilder Content
         {
-            get => new ContentRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Shares.Item.DriveItem.Content.ContentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the media for the sharedDriveItem entity.</summary>
-        public ContentStreamRequestBuilder ContentStream
+        public Microsoft.Graph.Beta.Shares.Item.DriveItem.ContentStream.ContentStreamRequestBuilder ContentStream
         {
-            get => new ContentStreamRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Shares.Item.DriveItem.ContentStream.ContentStreamRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="DriveItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DriveItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -51,20 +51,20 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem
         /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DriveItem"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Microsoft.Graph.Beta.Models.DriveItem?> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DriveItem?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder.DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Microsoft.Graph.Beta.Models.DriveItem> GetAsync(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DriveItem> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder.DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -75,11 +75,11 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder.DriveItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder.DriveItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -90,11 +90,11 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DriveItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DriveItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new DriveItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Access a shared DriveItem or a collection of shared items by using a shareId or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DriveItemRequestBuilderGetRequestConfiguration : RequestConfiguration<DriveItemRequestBuilderGetQueryParameters>
+        public class DriveItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Shares.Item.DriveItem.DriveItemRequestBuilder.DriveItemRequestBuilderGetQueryParameters>
         {
         }
     }

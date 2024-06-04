@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
 {
     [Obsolete("This class is obsolete. Use FindByMethodModeWithAuthenticationMethodModesGetResponse instead.")]
     #pragma warning disable CS1591
-    public class FindByMethodModeWithAuthenticationMethodModesResponse : FindByMethodModeWithAuthenticationMethodModesGetResponse, IParsable
+    public class FindByMethodModeWithAuthenticationMethodModesResponse : Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="FindByMethodModeWithAuthenticationMethodModesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new FindByMethodModeWithAuthenticationMethodModesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new FindByMethodModeWithAuthenticationMethodModesResponse();
+            return new Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse();
         }
     }
 }

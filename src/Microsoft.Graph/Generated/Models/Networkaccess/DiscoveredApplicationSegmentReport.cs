@@ -132,9 +132,9 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("transactionCount", value); }
         }
         /// <summary>The transportProtocol property</summary>
-        public NetworkingProtocol? TransportProtocol
+        public Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? TransportProtocol
         {
-            get { return BackingStore?.Get<NetworkingProtocol?>("transportProtocol"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("transportProtocol"); }
             set { BackingStore?.Set("transportProtocol", value); }
         }
         /// <summary>The userCount property</summary>
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("userCount", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DiscoveredApplicationSegmentReport"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.DiscoveredApplicationSegmentReport"/> and sets the default values.
         /// </summary>
         public DiscoveredApplicationSegmentReport()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DiscoveredApplicationSegmentReport"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.DiscoveredApplicationSegmentReport"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DiscoveredApplicationSegmentReport CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Networkaccess.DiscoveredApplicationSegmentReport CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DiscoveredApplicationSegmentReport();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.DiscoveredApplicationSegmentReport();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
+                { "accessType", n => { AccessType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.AccessType>(); } },
                 { "deviceCount", n => { DeviceCount = n.GetIntValue(); } },
                 { "discoveredApplicationSegmentId", n => { DiscoveredApplicationSegmentId = n.GetStringValue(); } },
                 { "firstAccessDateTime", n => { FirstAccessDateTime = n.GetDateTimeOffsetValue(); } },
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
                 { "totalBytesReceived", n => { TotalBytesReceived = n.GetLongValue(); } },
                 { "totalBytesSent", n => { TotalBytesSent = n.GetLongValue(); } },
                 { "transactionCount", n => { TransactionCount = n.GetIntValue(); } },
-                { "transportProtocol", n => { TransportProtocol = n.GetEnumValue<NetworkingProtocol>(); } },
+                { "transportProtocol", n => { TransportProtocol = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
                 { "userCount", n => { UserCount = n.GetIntValue(); } },
             };
         }
@@ -192,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AccessType>("accessType", AccessType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.AccessType>("accessType", AccessType);
             writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteStringValue("discoveredApplicationSegmentId", DiscoveredApplicationSegmentId);
             writer.WriteDateTimeOffsetValue("firstAccessDateTime", FirstAccessDateTime);
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             writer.WriteLongValue("totalBytesReceived", TotalBytesReceived);
             writer.WriteLongValue("totalBytesSent", TotalBytesSent);
             writer.WriteIntValue("transactionCount", TransactionCount);
-            writer.WriteEnumValue<NetworkingProtocol>("transportProtocol", TransportProtocol);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("transportProtocol", TransportProtocol);
             writer.WriteIntValue("userCount", UserCount);
             writer.WriteAdditionalData(AdditionalData);
         }

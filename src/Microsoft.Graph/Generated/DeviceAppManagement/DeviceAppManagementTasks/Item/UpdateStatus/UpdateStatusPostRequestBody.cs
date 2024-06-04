@@ -37,13 +37,13 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         }
 #endif
         /// <summary>Device app management task status.</summary>
-        public DeviceAppManagementTaskStatus? Status
+        public Microsoft.Graph.Beta.Models.DeviceAppManagementTaskStatus? Status
         {
-            get { return BackingStore?.Get<DeviceAppManagementTaskStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="UpdateStatusPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus.UpdateStatusPostRequestBody"/> and sets the default values.
         /// </summary>
         public UpdateStatusPostRequestBody()
         {
@@ -53,12 +53,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateStatusPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus.UpdateStatusPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdateStatusPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus.UpdateStatusPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateStatusPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item.UpdateStatus.UpdateStatusPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "note", n => { Note = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<DeviceAppManagementTaskStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskStatus>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.DeviceAppManagementTasks.Item
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("note", Note);
-            writer.WriteEnumValue<DeviceAppManagementTaskStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceAppManagementTaskStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

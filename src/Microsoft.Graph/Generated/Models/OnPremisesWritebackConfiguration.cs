@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnPremisesWritebackConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration"/> and sets the default values.
         /// </summary>
         public OnPremisesWritebackConfiguration()
         {
@@ -78,12 +78,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnPremisesWritebackConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnPremisesWritebackConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnPremisesWritebackConfiguration();
+            return new Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model

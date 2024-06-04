@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class ForwardingProfile : Profile, IParsable
+    public class ForwardingProfile : Microsoft.Graph.Beta.Models.Networkaccess.Profile, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the users, groups, devices, and remote networks whose traffic is associated with the given traffic forwarding profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Association>? Associations
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.Association>? Associations
         {
-            get { return BackingStore?.Get<List<Association>?>("associations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.Association>?>("associations"); }
             set { BackingStore?.Set("associations", value); }
         }
 #nullable restore
 #else
-        public List<Association> Associations
+        public List<Microsoft.Graph.Beta.Models.Networkaccess.Association> Associations
         {
-            get { return BackingStore?.Get<List<Association>>("associations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Networkaccess.Association>>("associations"); }
             set { BackingStore?.Set("associations", value); }
         }
 #endif
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
             set { BackingStore?.Set("trafficForwardingType", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="ForwardingProfile"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile"/> and sets the default values.
         /// </summary>
         public ForwardingProfile() : base()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ForwardingProfile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ForwardingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ForwardingProfile();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.ForwardingProfile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,10 +79,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "associations", n => { Associations = n.GetCollectionOfObjectValues<Association>(Association.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "associations", n => { Associations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.Association>(Microsoft.Graph.Beta.Models.Networkaccess.Association.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "priority", n => { Priority = n.GetIntValue(); } },
                 { "servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServicePrincipal>(Microsoft.Graph.Beta.Models.ServicePrincipal.CreateFromDiscriminatorValue); } },
-                { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<TrafficForwardingType>(); } },
+                { "trafficForwardingType", n => { TrafficForwardingType = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>(); } },
             };
         }
         /// <summary>
@@ -93,10 +93,10 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<Association>("associations", Associations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Networkaccess.Association>("associations", Associations);
             writer.WriteIntValue("priority", Priority);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServicePrincipal>("servicePrincipal", ServicePrincipal);
-            writer.WriteEnumValue<TrafficForwardingType>("trafficForwardingType", TrafficForwardingType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.TrafficForwardingType>("trafficForwardingType", TrafficForwardingType);
         }
     }
 }

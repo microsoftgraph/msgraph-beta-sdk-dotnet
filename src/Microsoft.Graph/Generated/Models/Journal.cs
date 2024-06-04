@@ -98,16 +98,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The journalLines property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<JournalLine>? JournalLines
+        public List<Microsoft.Graph.Beta.Models.JournalLine>? JournalLines
         {
-            get { return BackingStore?.Get<List<JournalLine>?>("journalLines"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JournalLine>?>("journalLines"); }
             set { BackingStore?.Set("journalLines", value); }
         }
 #nullable restore
 #else
-        public List<JournalLine> JournalLines
+        public List<Microsoft.Graph.Beta.Models.JournalLine> JournalLines
         {
-            get { return BackingStore?.Get<List<JournalLine>>("journalLines"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.JournalLine>>("journalLines"); }
             set { BackingStore?.Set("journalLines", value); }
         }
 #endif
@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="Journal"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Journal"/> and sets the default values.
         /// </summary>
         public Journal()
         {
@@ -144,12 +144,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Journal"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Journal"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static Journal CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.Journal CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Journal();
+            return new Microsoft.Graph.Beta.Models.Journal();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -165,7 +165,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetGuidValue(); } },
-                { "journalLines", n => { JournalLines = n.GetCollectionOfObjectValues<JournalLine>(JournalLine.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "journalLines", n => { JournalLines = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JournalLine>(Microsoft.Graph.Beta.Models.JournalLine.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteGuidValue("id", Id);
-            writer.WriteCollectionOfObjectValues<JournalLine>("journalLines", JournalLines);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.JournalLine>("journalLines", JournalLines);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

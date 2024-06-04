@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This entity represents a device associated with a task.
     /// </summary>
-    public class VulnerableManagedDevice : Entity, IParsable
+    public class VulnerableManagedDevice : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The device name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="VulnerableManagedDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.VulnerableManagedDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new VulnerableManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.VulnerableManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new VulnerableManagedDevice();
+            return new Microsoft.Graph.Beta.Models.VulnerableManagedDevice();
         }
         /// <summary>
         /// The deserialization information for the current model

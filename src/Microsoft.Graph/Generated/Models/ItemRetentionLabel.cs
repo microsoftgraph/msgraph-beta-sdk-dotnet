@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ItemRetentionLabel : Entity, IParsable
+    public class ItemRetentionLabel : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the label is applied explicitly on the item. True indicates that the label is applied explicitly; otherwise, the label is inherited from its parent. Read-only.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Identity of the user who applied the label. Read-only.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LabelAppliedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LabelAppliedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("labelAppliedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("labelAppliedBy"); }
             set { BackingStore?.Set("labelAppliedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LabelAppliedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LabelAppliedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("labelAppliedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("labelAppliedBy"); }
             set { BackingStore?.Set("labelAppliedBy", value); }
         }
 #endif
@@ -57,28 +57,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The retention settings enforced on the item. Read-write.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RetentionLabelSettings? RetentionSettings
+        public Microsoft.Graph.Beta.Models.RetentionLabelSettings? RetentionSettings
         {
-            get { return BackingStore?.Get<RetentionLabelSettings?>("retentionSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RetentionLabelSettings?>("retentionSettings"); }
             set { BackingStore?.Set("retentionSettings", value); }
         }
 #nullable restore
 #else
-        public RetentionLabelSettings RetentionSettings
+        public Microsoft.Graph.Beta.Models.RetentionLabelSettings RetentionSettings
         {
-            get { return BackingStore?.Get<RetentionLabelSettings>("retentionSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RetentionLabelSettings>("retentionSettings"); }
             set { BackingStore?.Set("retentionSettings", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemRetentionLabel"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ItemRetentionLabel"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ItemRetentionLabel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ItemRetentionLabel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ItemRetentionLabel();
+            return new Microsoft.Graph.Beta.Models.ItemRetentionLabel();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,10 +89,10 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "isLabelAppliedExplicitly", n => { IsLabelAppliedExplicitly = n.GetBoolValue(); } },
-                { "labelAppliedBy", n => { LabelAppliedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "labelAppliedBy", n => { LabelAppliedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "labelAppliedDateTime", n => { LabelAppliedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "retentionSettings", n => { RetentionSettings = n.GetObjectValue<RetentionLabelSettings>(RetentionLabelSettings.CreateFromDiscriminatorValue); } },
+                { "retentionSettings", n => { RetentionSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RetentionLabelSettings>(Microsoft.Graph.Beta.Models.RetentionLabelSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,10 +104,10 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isLabelAppliedExplicitly", IsLabelAppliedExplicitly);
-            writer.WriteObjectValue<IdentitySet>("labelAppliedBy", LabelAppliedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("labelAppliedBy", LabelAppliedBy);
             writer.WriteDateTimeOffsetValue("labelAppliedDateTime", LabelAppliedDateTime);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<RetentionLabelSettings>("retentionSettings", RetentionSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RetentionLabelSettings>("retentionSettings", RetentionSettings);
         }
     }
 }

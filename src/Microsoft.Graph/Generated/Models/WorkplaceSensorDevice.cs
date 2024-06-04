@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WorkplaceSensorDevice : Entity, IParsable
+    public class WorkplaceSensorDevice : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The description of the device.</summary>
@@ -141,16 +141,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of sensors associated with the device that collect and report data about physical or environmental conditions, such as occupancy, people count, inferred occupancy, temperature, and more.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkplaceSensor>? Sensors
+        public List<Microsoft.Graph.Beta.Models.WorkplaceSensor>? Sensors
         {
-            get { return BackingStore?.Get<List<WorkplaceSensor>?>("sensors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkplaceSensor>?>("sensors"); }
             set { BackingStore?.Set("sensors", value); }
         }
 #nullable restore
 #else
-        public List<WorkplaceSensor> Sensors
+        public List<Microsoft.Graph.Beta.Models.WorkplaceSensor> Sensors
         {
-            get { return BackingStore?.Get<List<WorkplaceSensor>>("sensors"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkplaceSensor>>("sensors"); }
             set { BackingStore?.Set("sensors", value); }
         }
 #endif
@@ -173,12 +173,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkplaceSensorDevice"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkplaceSensorDevice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkplaceSensorDevice CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WorkplaceSensorDevice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkplaceSensorDevice();
+            return new Microsoft.Graph.Beta.Models.WorkplaceSensorDevice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "macAddress", n => { MacAddress = n.GetStringValue(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "placeId", n => { PlaceId = n.GetStringValue(); } },
-                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<WorkplaceSensor>(WorkplaceSensor.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "sensors", n => { Sensors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkplaceSensor>(Microsoft.Graph.Beta.Models.WorkplaceSensor.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -216,7 +216,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("macAddress", MacAddress);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("placeId", PlaceId);
-            writer.WriteCollectionOfObjectValues<WorkplaceSensor>("sensors", Sensors);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkplaceSensor>("sensors", Sensors);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
         }
     }

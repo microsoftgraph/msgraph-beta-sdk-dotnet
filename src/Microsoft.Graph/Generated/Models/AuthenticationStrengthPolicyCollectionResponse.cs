@@ -7,34 +7,34 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AuthenticationStrengthPolicyCollectionResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class AuthenticationStrengthPolicyCollectionResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationStrengthPolicy>? Value
+        public List<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>? Value
         {
-            get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationStrengthPolicy> Value
+        public List<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy> Value
         {
-            get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AuthenticationStrengthPolicyCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicyCollectionResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AuthenticationStrengthPolicyCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicyCollectionResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AuthenticationStrengthPolicyCollectionResponse();
+            return new Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicyCollectionResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>(Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AuthenticationStrengthPolicy>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>("value", Value);
         }
     }
 }

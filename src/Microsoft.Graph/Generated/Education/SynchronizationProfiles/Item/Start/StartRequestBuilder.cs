@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start
     public class StartRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="StartRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="StartRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,50 +35,50 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start
         /// Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won&apos;t start. If the response contains only warnings, synchronization starts.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="StartPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartPostResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<StartPostResponse?> PostAsStartPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartPostResponse?> PostAsStartPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<StartPostResponse> PostAsStartPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartPostResponse> PostAsStartPostResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<StartPostResponse>(requestInfo, StartPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartPostResponse>(requestInfo, Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won&apos;t start. If the response contains only warnings, synchronization starts.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/educationsynchronizationprofile-start?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="StartResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use PostAsStartPostResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<StartResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<StartResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<StartResponse>(requestInfo, StartResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartResponse>(requestInfo, Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Verify the files uploaded to a specific school data synchronization profile in the tenant. If the verification is successful, synchronization starts on the profile. Otherwise, the response contains errors and warnings. If the response contains errors, the synchronization won&apos;t start. If the response contains only warnings, synchronization starts.
@@ -102,11 +102,11 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="StartRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public StartRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartRequestBuilder WithUrl(string rawUrl)
         {
-            return new StartRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start.StartRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// RotateBitLockerKeys device action result
     /// </summary>
-    public class RotateBitLockerKeysDeviceActionResult : DeviceActionResult, IParsable
+    public class RotateBitLockerKeysDeviceActionResult : Microsoft.Graph.Beta.Models.DeviceActionResult, IParsable
     {
         /// <summary>RotateBitLockerKeys action error code</summary>
         public int? ErrorCode
@@ -20,12 +20,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="RotateBitLockerKeysDeviceActionResult"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.RotateBitLockerKeysDeviceActionResult"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new RotateBitLockerKeysDeviceActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.RotateBitLockerKeysDeviceActionResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new RotateBitLockerKeysDeviceActionResult();
+            return new Microsoft.Graph.Beta.Models.RotateBitLockerKeysDeviceActionResult();
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents a Chromebook tenant settings
     /// </summary>
-    public class ChromeOSOnboardingSettings : Entity, IParsable
+    public class ChromeOSOnboardingSettings : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
         public DateTimeOffset? LastDirectorySyncDateTime
@@ -48,12 +48,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ChromeOSOnboardingSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ChromeOSOnboardingSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ChromeOSOnboardingSettings();
+            return new Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "lastDirectorySyncDateTime", n => { LastDirectorySyncDateTime = n.GetDateTimeOffsetValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
+                { "onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.OnboardingStatus>(); } },
                 { "ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
             };
         }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("lastDirectorySyncDateTime", LastDirectorySyncDateTime);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteEnumValue<OnboardingStatus>("onboardingStatus", OnboardingStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.OnboardingStatus>("onboardingStatus", OnboardingStatus);
             writer.WriteStringValue("ownerUserPrincipalName", OwnerUserPrincipalName);
         }
     }

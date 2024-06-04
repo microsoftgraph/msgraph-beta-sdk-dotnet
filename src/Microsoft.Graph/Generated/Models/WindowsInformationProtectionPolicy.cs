@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Policy for Windows information protection without MDM
     /// </summary>
-    public class WindowsInformationProtectionPolicy : WindowsInformationProtection, IParsable
+    public class WindowsInformationProtectionPolicy : Microsoft.Graph.Beta.Models.WindowsInformationProtection, IParsable
     {
         /// <summary>Offline interval before app data is wiped (days)</summary>
         public int? DaysWithoutContactBeforeUnenroll
@@ -58,9 +58,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("pinExpirationDays", value); }
         }
         /// <summary>Pin Character Requirements</summary>
-        public WindowsInformationProtectionPinCharacterRequirements? PinLowercaseLetters
+        public Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements? PinLowercaseLetters
         {
-            get { return BackingStore?.Get<WindowsInformationProtectionPinCharacterRequirements?>("pinLowercaseLetters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements?>("pinLowercaseLetters"); }
             set { BackingStore?.Set("pinLowercaseLetters", value); }
         }
         /// <summary>Integer value that sets the minimum number of characters required for the PIN. Default value is 4. The lowest number you can configure for this policy setting is 4. The largest number you can configure must be less than the number configured in the Maximum PIN length policy setting or the number 127, whichever is the lowest.</summary>
@@ -70,15 +70,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("pinMinimumLength", value); }
         }
         /// <summary>Pin Character Requirements</summary>
-        public WindowsInformationProtectionPinCharacterRequirements? PinSpecialCharacters
+        public Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements? PinSpecialCharacters
         {
-            get { return BackingStore?.Get<WindowsInformationProtectionPinCharacterRequirements?>("pinSpecialCharacters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements?>("pinSpecialCharacters"); }
             set { BackingStore?.Set("pinSpecialCharacters", value); }
         }
         /// <summary>Pin Character Requirements</summary>
-        public WindowsInformationProtectionPinCharacterRequirements? PinUppercaseLetters
+        public Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements? PinUppercaseLetters
         {
-            get { return BackingStore?.Get<WindowsInformationProtectionPinCharacterRequirements?>("pinUppercaseLetters"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements?>("pinUppercaseLetters"); }
             set { BackingStore?.Set("pinUppercaseLetters", value); }
         }
         /// <summary>New property in RS2, pending documentation</summary>
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("windowsHelloForBusinessBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsInformationProtectionPolicy"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy"/> and sets the default values.
         /// </summary>
         public WindowsInformationProtectionPolicy() : base()
         {
@@ -103,12 +103,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsInformationProtectionPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsInformationProtectionPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsInformationProtectionPolicy();
+            return new Microsoft.Graph.Beta.Models.WindowsInformationProtectionPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -124,10 +124,10 @@ namespace Microsoft.Graph.Beta.Models
                 { "numberOfPastPinsRemembered", n => { NumberOfPastPinsRemembered = n.GetIntValue(); } },
                 { "passwordMaximumAttemptCount", n => { PasswordMaximumAttemptCount = n.GetIntValue(); } },
                 { "pinExpirationDays", n => { PinExpirationDays = n.GetIntValue(); } },
-                { "pinLowercaseLetters", n => { PinLowercaseLetters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
+                { "pinLowercaseLetters", n => { PinLowercaseLetters = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements>(); } },
                 { "pinMinimumLength", n => { PinMinimumLength = n.GetIntValue(); } },
-                { "pinSpecialCharacters", n => { PinSpecialCharacters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
-                { "pinUppercaseLetters", n => { PinUppercaseLetters = n.GetEnumValue<WindowsInformationProtectionPinCharacterRequirements>(); } },
+                { "pinSpecialCharacters", n => { PinSpecialCharacters = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements>(); } },
+                { "pinUppercaseLetters", n => { PinUppercaseLetters = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements>(); } },
                 { "revokeOnMdmHandoffDisabled", n => { RevokeOnMdmHandoffDisabled = n.GetBoolValue(); } },
                 { "windowsHelloForBusinessBlocked", n => { WindowsHelloForBusinessBlocked = n.GetBoolValue(); } },
             };
@@ -146,10 +146,10 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("numberOfPastPinsRemembered", NumberOfPastPinsRemembered);
             writer.WriteIntValue("passwordMaximumAttemptCount", PasswordMaximumAttemptCount);
             writer.WriteIntValue("pinExpirationDays", PinExpirationDays);
-            writer.WriteEnumValue<WindowsInformationProtectionPinCharacterRequirements>("pinLowercaseLetters", PinLowercaseLetters);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements>("pinLowercaseLetters", PinLowercaseLetters);
             writer.WriteIntValue("pinMinimumLength", PinMinimumLength);
-            writer.WriteEnumValue<WindowsInformationProtectionPinCharacterRequirements>("pinSpecialCharacters", PinSpecialCharacters);
-            writer.WriteEnumValue<WindowsInformationProtectionPinCharacterRequirements>("pinUppercaseLetters", PinUppercaseLetters);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements>("pinSpecialCharacters", PinSpecialCharacters);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsInformationProtectionPinCharacterRequirements>("pinUppercaseLetters", PinUppercaseLetters);
             writer.WriteBoolValue("revokeOnMdmHandoffDisabled", RevokeOnMdmHandoffDisabled);
             writer.WriteBoolValue("windowsHelloForBusinessBlocked", WindowsHelloForBusinessBlocked);
         }

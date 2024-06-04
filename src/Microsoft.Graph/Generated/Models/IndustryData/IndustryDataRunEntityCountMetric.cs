@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             set { BackingStore?.Set("total", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IndustryDataRunEntityCountMetric"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunEntityCountMetric"/> and sets the default values.
         /// </summary>
         public IndustryDataRunEntityCountMetric()
         {
@@ -64,12 +64,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IndustryDataRunEntityCountMetric"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunEntityCountMetric"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IndustryDataRunEntityCountMetric CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunEntityCountMetric CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IndustryDataRunEntityCountMetric();
+            return new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunEntityCountMetric();
         }
         /// <summary>
         /// The deserialization information for the current model

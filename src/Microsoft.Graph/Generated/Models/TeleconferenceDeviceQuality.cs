@@ -130,16 +130,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The list of media qualities in a media session (call), such as audio quality, video quality, and/or screen sharing quality.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TeleconferenceDeviceMediaQuality>? MediaQualityList
+        public List<Microsoft.Graph.Beta.Models.TeleconferenceDeviceMediaQuality>? MediaQualityList
         {
-            get { return BackingStore?.Get<List<TeleconferenceDeviceMediaQuality>?>("mediaQualityList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeleconferenceDeviceMediaQuality>?>("mediaQualityList"); }
             set { BackingStore?.Set("mediaQualityList", value); }
         }
 #nullable restore
 #else
-        public List<TeleconferenceDeviceMediaQuality> MediaQualityList
+        public List<Microsoft.Graph.Beta.Models.TeleconferenceDeviceMediaQuality> MediaQualityList
         {
-            get { return BackingStore?.Get<List<TeleconferenceDeviceMediaQuality>>("mediaQualityList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TeleconferenceDeviceMediaQuality>>("mediaQualityList"); }
             set { BackingStore?.Set("mediaQualityList", value); }
         }
 #endif
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("participantId", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="TeleconferenceDeviceQuality"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TeleconferenceDeviceQuality"/> and sets the default values.
         /// </summary>
         public TeleconferenceDeviceQuality()
         {
@@ -176,12 +176,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TeleconferenceDeviceQuality"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TeleconferenceDeviceQuality"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TeleconferenceDeviceQuality CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TeleconferenceDeviceQuality CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TeleconferenceDeviceQuality();
+            return new Microsoft.Graph.Beta.Models.TeleconferenceDeviceQuality();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "deviceDescription", n => { DeviceDescription = n.GetStringValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "mediaLegId", n => { MediaLegId = n.GetGuidValue(); } },
-                { "mediaQualityList", n => { MediaQualityList = n.GetCollectionOfObjectValues<TeleconferenceDeviceMediaQuality>(TeleconferenceDeviceMediaQuality.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mediaQualityList", n => { MediaQualityList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeleconferenceDeviceMediaQuality>(Microsoft.Graph.Beta.Models.TeleconferenceDeviceMediaQuality.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "participantId", n => { ParticipantId = n.GetGuidValue(); } },
             };
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("deviceDescription", DeviceDescription);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteGuidValue("mediaLegId", MediaLegId);
-            writer.WriteCollectionOfObjectValues<TeleconferenceDeviceMediaQuality>("mediaQualityList", MediaQualityList);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TeleconferenceDeviceMediaQuality>("mediaQualityList", MediaQualityList);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteGuidValue("participantId", ParticipantId);
             writer.WriteAdditionalData(AdditionalData);

@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
     public class GeneralLedgerEntryItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the account property of the microsoft.graph.generalLedgerEntry entity.</summary>
-        public AccountRequestBuilder Account
+        public Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.Account.AccountRequestBuilder Account
         {
-            get => new AccountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.Account.AccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="GeneralLedgerEntryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="GeneralLedgerEntryItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -41,25 +41,25 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         /// <summary>
         /// Get generalLedgerEntries from financials
         /// </summary>
-        /// <returns>A <see cref="GeneralLedgerEntry"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GeneralLedgerEntry"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<GeneralLedgerEntry?> GetAsync(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GeneralLedgerEntry?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder.GeneralLedgerEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<GeneralLedgerEntry> GetAsync(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.GeneralLedgerEntry> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder.GeneralLedgerEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<GeneralLedgerEntry>(requestInfo, GeneralLedgerEntry.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.GeneralLedgerEntry>(requestInfo, Microsoft.Graph.Beta.Models.GeneralLedgerEntry.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get generalLedgerEntries from financials
@@ -68,11 +68,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder.GeneralLedgerEntryItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder.GeneralLedgerEntryItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,11 +83,11 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="GeneralLedgerEntryItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public GeneralLedgerEntryItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new GeneralLedgerEntryItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get generalLedgerEntries from financials
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.It
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<GeneralLedgerEntryItemRequestBuilderGetQueryParameters>
+        public class GeneralLedgerEntryItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Financials.Companies.Item.GeneralLedgerEntries.Item.GeneralLedgerEntryItemRequestBuilder.GeneralLedgerEntryItemRequestBuilderGetQueryParameters>
         {
         }
     }

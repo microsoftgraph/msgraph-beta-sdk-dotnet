@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// By providing the configurations in this profile you can instruct the Android Fully Managed device to connect to desired VPN endpoint. By specifying the authentication method and security types expected by VPN endpoint you can make the VPN connection seamless for end user.
     /// </summary>
-    public class AndroidDeviceOwnerVpnConfiguration : VpnConfiguration, IParsable
+    public class AndroidDeviceOwnerVpnConfiguration : Microsoft.Graph.Beta.Models.VpnConfiguration, IParsable
     {
         /// <summary>Whether or not to enable always-on VPN connection.</summary>
         public bool? AlwaysOn
@@ -24,72 +24,72 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("alwaysOnLockdown", value); }
         }
         /// <summary>Android VPN connection type.</summary>
-        public AndroidVpnConnectionType? ConnectionType
+        public Microsoft.Graph.Beta.Models.AndroidVpnConnectionType? ConnectionType
         {
-            get { return BackingStore?.Get<AndroidVpnConnectionType?>("connectionType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidVpnConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValue>? CustomData
+        public List<Microsoft.Graph.Beta.Models.KeyValue>? CustomData
         {
-            get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
 #nullable restore
 #else
-        public List<KeyValue> CustomData
+        public List<Microsoft.Graph.Beta.Models.KeyValue> CustomData
         {
-            get { return BackingStore?.Get<List<KeyValue>>("customData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
 #endif
         /// <summary>Custom data to define key/value pairs specific to a VPN provider. This collection can contain a maximum of 25 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<KeyValuePair>? CustomKeyValueData
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? CustomKeyValueData
         {
-            get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
 #nullable restore
 #else
-        public List<KeyValuePair> CustomKeyValueData
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair> CustomKeyValueData
         {
-            get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
 #endif
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
+        public Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings
         {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #nullable restore
 #else
-        public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
+        public Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings DerivedCredentialSettings
         {
-            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
 #endif
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AndroidDeviceOwnerCertificateProfileBase? IdentityCertificate
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase? IdentityCertificate
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase?>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase?>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #nullable restore
 #else
-        public AndroidDeviceOwnerCertificateProfileBase IdentityCertificate
+        public Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase IdentityCertificate
         {
-            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateProfileBase>("identityCertificate"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
 #endif
@@ -128,32 +128,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Proxy server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public VpnProxyServer? ProxyServer
+        public Microsoft.Graph.Beta.Models.VpnProxyServer? ProxyServer
         {
-            get { return BackingStore?.Get<VpnProxyServer?>("proxyServer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnProxyServer?>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #nullable restore
 #else
-        public VpnProxyServer ProxyServer
+        public Microsoft.Graph.Beta.Models.VpnProxyServer ProxyServer
         {
-            get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
 #endif
         /// <summary>Targeted mobile apps. This collection can contain a maximum of 500 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? TargetedMobileApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? TargetedMobileApps
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("targetedMobileApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> TargetedMobileApps
+        public List<Microsoft.Graph.Beta.Models.AppListItem> TargetedMobileApps
         {
-            get { return BackingStore?.Get<List<AppListItem>>("targetedMobileApps"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
 #endif
@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidDeviceOwnerVpnConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVpnConfiguration"/> and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerVpnConfiguration() : base()
         {
@@ -183,12 +183,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidDeviceOwnerVpnConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVpnConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AndroidDeviceOwnerVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidDeviceOwnerVpnConfiguration();
+            return new Microsoft.Graph.Beta.Models.AndroidDeviceOwnerVpnConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -200,15 +200,15 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "alwaysOn", n => { AlwaysOn = n.GetBoolValue(); } },
                 { "alwaysOnLockdown", n => { AlwaysOnLockdown = n.GetBoolValue(); } },
-                { "connectionType", n => { ConnectionType = n.GetEnumValue<AndroidVpnConnectionType>(); } },
-                { "customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
-                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<AndroidDeviceOwnerCertificateProfileBase>(AndroidDeviceOwnerCertificateProfileBase.CreateFromDiscriminatorValue); } },
+                { "connectionType", n => { ConnectionType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidVpnConnectionType>(); } },
+                { "customData", n => { CustomData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>(Microsoft.Graph.Beta.Models.KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>(Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
+                { "identityCertificate", n => { IdentityCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase>(Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase.CreateFromDiscriminatorValue); } },
                 { "microsoftTunnelSiteId", n => { MicrosoftTunnelSiteId = n.GetStringValue(); } },
                 { "proxyExclusionList", n => { ProxyExclusionList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                { "proxyServer", n => { ProxyServer = n.GetObjectValue<VpnProxyServer>(VpnProxyServer.CreateFromDiscriminatorValue); } },
-                { "targetedMobileApps", n => { TargetedMobileApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "proxyServer", n => { ProxyServer = n.GetObjectValue<Microsoft.Graph.Beta.Models.VpnProxyServer>(Microsoft.Graph.Beta.Models.VpnProxyServer.CreateFromDiscriminatorValue); } },
+                { "targetedMobileApps", n => { TargetedMobileApps = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "targetedPackageIds", n => { TargetedPackageIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -222,15 +222,15 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteBoolValue("alwaysOn", AlwaysOn);
             writer.WriteBoolValue("alwaysOnLockdown", AlwaysOnLockdown);
-            writer.WriteEnumValue<AndroidVpnConnectionType>("connectionType", ConnectionType);
-            writer.WriteCollectionOfObjectValues<KeyValue>("customData", CustomData);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("customKeyValueData", CustomKeyValueData);
-            writer.WriteObjectValue<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
-            writer.WriteObjectValue<AndroidDeviceOwnerCertificateProfileBase>("identityCertificate", IdentityCertificate);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidVpnConnectionType>("connectionType", ConnectionType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValue>("customData", CustomData);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>("customKeyValueData", CustomKeyValueData);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerCertificateProfileBase>("identityCertificate", IdentityCertificate);
             writer.WriteStringValue("microsoftTunnelSiteId", MicrosoftTunnelSiteId);
             writer.WriteCollectionOfPrimitiveValues<string>("proxyExclusionList", ProxyExclusionList);
-            writer.WriteObjectValue<VpnProxyServer>("proxyServer", ProxyServer);
-            writer.WriteCollectionOfObjectValues<AppListItem>("targetedMobileApps", TargetedMobileApps);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VpnProxyServer>("proxyServer", ProxyServer);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("targetedMobileApps", TargetedMobileApps);
             writer.WriteCollectionOfPrimitiveValues<string>("targetedPackageIds", TargetedPackageIds);
         }
     }

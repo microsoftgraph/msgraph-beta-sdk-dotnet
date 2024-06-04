@@ -7,107 +7,107 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class EducationSynchronizationCustomizations : EducationSynchronizationCustomizationsBase, IParsable
+    public class EducationSynchronizationCustomizations : Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizationsBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Customizations for School entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationCustomization? School
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? School
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization?>("school"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization?>("school"); }
             set { BackingStore?.Set("school", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationCustomization School
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization School
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>("school"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("school"); }
             set { BackingStore?.Set("school", value); }
         }
 #endif
         /// <summary>Customizations for Section entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationCustomization? Section
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? Section
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization?>("section"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization?>("section"); }
             set { BackingStore?.Set("section", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationCustomization Section
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization Section
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>("section"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("section"); }
             set { BackingStore?.Set("section", value); }
         }
 #endif
         /// <summary>Customizations for Student entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationCustomization? Student
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? Student
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization?>("student"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization?>("student"); }
             set { BackingStore?.Set("student", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationCustomization Student
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization Student
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>("student"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("student"); }
             set { BackingStore?.Set("student", value); }
         }
 #endif
         /// <summary>Customizations for Student Enrollments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationCustomization? StudentEnrollment
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? StudentEnrollment
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization?>("studentEnrollment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization?>("studentEnrollment"); }
             set { BackingStore?.Set("studentEnrollment", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationCustomization StudentEnrollment
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization StudentEnrollment
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>("studentEnrollment"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("studentEnrollment"); }
             set { BackingStore?.Set("studentEnrollment", value); }
         }
 #endif
         /// <summary>Customizations for Teacher entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationCustomization? Teacher
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? Teacher
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization?>("teacher"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization?>("teacher"); }
             set { BackingStore?.Set("teacher", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationCustomization Teacher
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization Teacher
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>("teacher"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("teacher"); }
             set { BackingStore?.Set("teacher", value); }
         }
 #endif
         /// <summary>Customizations for Teacher Rosters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EducationSynchronizationCustomization? TeacherRoster
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization? TeacherRoster
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization?>("teacherRoster"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization?>("teacherRoster"); }
             set { BackingStore?.Set("teacherRoster", value); }
         }
 #nullable restore
 #else
-        public EducationSynchronizationCustomization TeacherRoster
+        public Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization TeacherRoster
         {
-            get { return BackingStore?.Get<EducationSynchronizationCustomization>("teacherRoster"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("teacherRoster"); }
             set { BackingStore?.Set("teacherRoster", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="EducationSynchronizationCustomizations"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizations"/> and sets the default values.
         /// </summary>
         public EducationSynchronizationCustomizations() : base()
         {
@@ -116,12 +116,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EducationSynchronizationCustomizations"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizations"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EducationSynchronizationCustomizations CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizations CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EducationSynchronizationCustomizations();
+            return new Microsoft.Graph.Beta.Models.EducationSynchronizationCustomizations();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -131,12 +131,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "school", n => { School = n.GetObjectValue<EducationSynchronizationCustomization>(EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
-                { "section", n => { Section = n.GetObjectValue<EducationSynchronizationCustomization>(EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
-                { "student", n => { Student = n.GetObjectValue<EducationSynchronizationCustomization>(EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
-                { "studentEnrollment", n => { StudentEnrollment = n.GetObjectValue<EducationSynchronizationCustomization>(EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
-                { "teacher", n => { Teacher = n.GetObjectValue<EducationSynchronizationCustomization>(EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
-                { "teacherRoster", n => { TeacherRoster = n.GetObjectValue<EducationSynchronizationCustomization>(EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
+                { "school", n => { School = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>(Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
+                { "section", n => { Section = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>(Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
+                { "student", n => { Student = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>(Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
+                { "studentEnrollment", n => { StudentEnrollment = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>(Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
+                { "teacher", n => { Teacher = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>(Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
+                { "teacherRoster", n => { TeacherRoster = n.GetObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>(Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -147,12 +147,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EducationSynchronizationCustomization>("school", School);
-            writer.WriteObjectValue<EducationSynchronizationCustomization>("section", Section);
-            writer.WriteObjectValue<EducationSynchronizationCustomization>("student", Student);
-            writer.WriteObjectValue<EducationSynchronizationCustomization>("studentEnrollment", StudentEnrollment);
-            writer.WriteObjectValue<EducationSynchronizationCustomization>("teacher", Teacher);
-            writer.WriteObjectValue<EducationSynchronizationCustomization>("teacherRoster", TeacherRoster);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("school", School);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("section", Section);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("student", Student);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("studentEnrollment", StudentEnrollment);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("teacher", Teacher);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EducationSynchronizationCustomization>("teacherRoster", TeacherRoster);
         }
     }
 }

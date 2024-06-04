@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.
     /// </summary>
-    public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable
+    public class MacOSGeneralDeviceConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>When TRUE, activation lock is allowed when the devices is in the supervised mode. When FALSE, activation lock is not allowed. Default is false.</summary>
         public bool? ActivationLockWhenSupervisedAllowed
@@ -72,24 +72,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("classroomForceUnpromptedAppAndDeviceLock", value); }
         }
         /// <summary>Possible values of the compliance app list.</summary>
-        public AppListType? CompliantAppListType
+        public Microsoft.Graph.Beta.Models.AppListType? CompliantAppListType
         {
-            get { return BackingStore?.Get<AppListType?>("compliantAppListType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AppListType?>("compliantAppListType"); }
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppListItem>? CompliantAppsList
+        public List<Microsoft.Graph.Beta.Models.AppListItem>? CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>?>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #nullable restore
 #else
-        public List<AppListItem> CompliantAppsList
+        public List<Microsoft.Graph.Beta.Models.AppListItem> CompliantAppsList
         {
-            get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
 #endif
@@ -320,24 +320,24 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("passwordRequired", value); }
         }
         /// <summary>Possible values of required passwords.</summary>
-        public RequiredPasswordType? PasswordRequiredType
+        public Microsoft.Graph.Beta.Models.RequiredPasswordType? PasswordRequiredType
         {
-            get { return BackingStore?.Get<RequiredPasswordType?>("passwordRequiredType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequiredPasswordType?>("passwordRequiredType"); }
             set { BackingStore?.Set("passwordRequiredType", value); }
         }
         /// <summary>List of privacy preference policy controls. This collection can contain a maximum of 10000 elements.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MacOSPrivacyAccessControlItem>? PrivacyAccessControls
+        public List<Microsoft.Graph.Beta.Models.MacOSPrivacyAccessControlItem>? PrivacyAccessControls
         {
-            get { return BackingStore?.Get<List<MacOSPrivacyAccessControlItem>?>("privacyAccessControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSPrivacyAccessControlItem>?>("privacyAccessControls"); }
             set { BackingStore?.Set("privacyAccessControls", value); }
         }
 #nullable restore
 #else
-        public List<MacOSPrivacyAccessControlItem> PrivacyAccessControls
+        public List<Microsoft.Graph.Beta.Models.MacOSPrivacyAccessControlItem> PrivacyAccessControls
         {
-            get { return BackingStore?.Get<List<MacOSPrivacyAccessControlItem>>("privacyAccessControls"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSPrivacyAccessControlItem>>("privacyAccessControls"); }
             set { BackingStore?.Set("privacyAccessControls", value); }
         }
 #endif
@@ -390,9 +390,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("touchIdTimeoutInHours", value); }
         }
         /// <summary>Determines whether to delay OS and/or app updates for macOS. Possible values are: none, delayOSUpdateVisibility, delayAppUpdateVisibility, unknownFutureValue, delayMajorOsUpdateVisibility.</summary>
-        public MacOSSoftwareUpdateDelayPolicy? UpdateDelayPolicy
+        public Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateDelayPolicy? UpdateDelayPolicy
         {
-            get { return BackingStore?.Get<MacOSSoftwareUpdateDelayPolicy?>("updateDelayPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateDelayPolicy?>("updateDelayPolicy"); }
             set { BackingStore?.Set("updateDelayPolicy", value); }
         }
         /// <summary>TRUE prevents the wallpaper from being changed. FALSE allows the wallpaper to be changed. Available for devices running macOS versions 10.13 and later.</summary>
@@ -402,7 +402,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("wallpaperModificationBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="MacOSGeneralDeviceConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.MacOSGeneralDeviceConfiguration"/> and sets the default values.
         /// </summary>
         public MacOSGeneralDeviceConfiguration() : base()
         {
@@ -411,12 +411,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MacOSGeneralDeviceConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSGeneralDeviceConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MacOSGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MacOSGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MacOSGeneralDeviceConfiguration();
+            return new Microsoft.Graph.Beta.Models.MacOSGeneralDeviceConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -436,8 +436,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "classroomForceAutomaticallyJoinClasses", n => { ClassroomForceAutomaticallyJoinClasses = n.GetBoolValue(); } },
                 { "classroomForceRequestPermissionToLeaveClasses", n => { ClassroomForceRequestPermissionToLeaveClasses = n.GetBoolValue(); } },
                 { "classroomForceUnpromptedAppAndDeviceLock", n => { ClassroomForceUnpromptedAppAndDeviceLock = n.GetBoolValue(); } },
-                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<AppListType>(); } },
-                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<Microsoft.Graph.Beta.Models.AppListType>(); } },
+                { "compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>(Microsoft.Graph.Beta.Models.AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "contentCachingBlocked", n => { ContentCachingBlocked = n.GetBoolValue(); } },
                 { "definitionLookupBlocked", n => { DefinitionLookupBlocked = n.GetBoolValue(); } },
                 { "emailInDomainSuffixes", n => { EmailInDomainSuffixes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -474,8 +474,8 @@ namespace Microsoft.Graph.Beta.Models
                 { "passwordMinutesUntilFailedLoginReset", n => { PasswordMinutesUntilFailedLoginReset = n.GetIntValue(); } },
                 { "passwordPreviousPasswordBlockCount", n => { PasswordPreviousPasswordBlockCount = n.GetIntValue(); } },
                 { "passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
-                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<RequiredPasswordType>(); } },
-                { "privacyAccessControls", n => { PrivacyAccessControls = n.GetCollectionOfObjectValues<MacOSPrivacyAccessControlItem>(MacOSPrivacyAccessControlItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>(); } },
+                { "privacyAccessControls", n => { PrivacyAccessControls = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSPrivacyAccessControlItem>(Microsoft.Graph.Beta.Models.MacOSPrivacyAccessControlItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "safariBlockAutofill", n => { SafariBlockAutofill = n.GetBoolValue(); } },
                 { "screenCaptureBlocked", n => { ScreenCaptureBlocked = n.GetBoolValue(); } },
                 { "softwareUpdateMajorOSDeferredInstallDelayInDays", n => { SoftwareUpdateMajorOSDeferredInstallDelayInDays = n.GetIntValue(); } },
@@ -484,7 +484,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "softwareUpdatesEnforcedDelayInDays", n => { SoftwareUpdatesEnforcedDelayInDays = n.GetIntValue(); } },
                 { "spotlightBlockInternetResults", n => { SpotlightBlockInternetResults = n.GetBoolValue(); } },
                 { "touchIdTimeoutInHours", n => { TouchIdTimeoutInHours = n.GetIntValue(); } },
-                { "updateDelayPolicy", n => { UpdateDelayPolicy = n.GetEnumValue<MacOSSoftwareUpdateDelayPolicy>(); } },
+                { "updateDelayPolicy", n => { UpdateDelayPolicy = n.GetEnumValue<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateDelayPolicy>(); } },
                 { "wallpaperModificationBlocked", n => { WallpaperModificationBlocked = n.GetBoolValue(); } },
             };
         }
@@ -506,8 +506,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteBoolValue("classroomForceAutomaticallyJoinClasses", ClassroomForceAutomaticallyJoinClasses);
             writer.WriteBoolValue("classroomForceRequestPermissionToLeaveClasses", ClassroomForceRequestPermissionToLeaveClasses);
             writer.WriteBoolValue("classroomForceUnpromptedAppAndDeviceLock", ClassroomForceUnpromptedAppAndDeviceLock);
-            writer.WriteEnumValue<AppListType>("compliantAppListType", CompliantAppListType);
-            writer.WriteCollectionOfObjectValues<AppListItem>("compliantAppsList", CompliantAppsList);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AppListType>("compliantAppListType", CompliantAppListType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppListItem>("compliantAppsList", CompliantAppsList);
             writer.WriteBoolValue("contentCachingBlocked", ContentCachingBlocked);
             writer.WriteBoolValue("definitionLookupBlocked", DefinitionLookupBlocked);
             writer.WriteCollectionOfPrimitiveValues<string>("emailInDomainSuffixes", EmailInDomainSuffixes);
@@ -544,8 +544,8 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("passwordMinutesUntilFailedLoginReset", PasswordMinutesUntilFailedLoginReset);
             writer.WriteIntValue("passwordPreviousPasswordBlockCount", PasswordPreviousPasswordBlockCount);
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
-            writer.WriteEnumValue<RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
-            writer.WriteCollectionOfObjectValues<MacOSPrivacyAccessControlItem>("privacyAccessControls", PrivacyAccessControls);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.RequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSPrivacyAccessControlItem>("privacyAccessControls", PrivacyAccessControls);
             writer.WriteBoolValue("safariBlockAutofill", SafariBlockAutofill);
             writer.WriteBoolValue("screenCaptureBlocked", ScreenCaptureBlocked);
             writer.WriteIntValue("softwareUpdateMajorOSDeferredInstallDelayInDays", SoftwareUpdateMajorOSDeferredInstallDelayInDays);
@@ -554,7 +554,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteIntValue("softwareUpdatesEnforcedDelayInDays", SoftwareUpdatesEnforcedDelayInDays);
             writer.WriteBoolValue("spotlightBlockInternetResults", SpotlightBlockInternetResults);
             writer.WriteIntValue("touchIdTimeoutInHours", TouchIdTimeoutInHours);
-            writer.WriteEnumValue<MacOSSoftwareUpdateDelayPolicy>("updateDelayPolicy", UpdateDelayPolicy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateDelayPolicy>("updateDelayPolicy", UpdateDelayPolicy);
             writer.WriteBoolValue("wallpaperModificationBlocked", WallpaperModificationBlocked);
         }
     }

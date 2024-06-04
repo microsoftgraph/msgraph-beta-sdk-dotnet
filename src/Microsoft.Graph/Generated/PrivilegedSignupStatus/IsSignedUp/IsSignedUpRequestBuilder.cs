@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp
     public class IsSignedUpRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="IsSignedUpRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="IsSignedUpRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -34,49 +34,49 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp
         /// <summary>
         /// Invoke function isSignedUp
         /// </summary>
-        /// <returns>A <see cref="IsSignedUpGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IsSignedUpGetResponse?> GetAsIsSignedUpGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpGetResponse?> GetAsIsSignedUpGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<IsSignedUpGetResponse> GetAsIsSignedUpGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpGetResponse> GetAsIsSignedUpGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<IsSignedUpGetResponse>(requestInfo, IsSignedUpGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpGetResponse>(requestInfo, Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function isSignedUp
         /// </summary>
-        /// <returns>A <see cref="IsSignedUpResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsIsSignedUpGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<IsSignedUpResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<IsSignedUpResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<IsSignedUpResponse>(requestInfo, IsSignedUpResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpResponse>(requestInfo, Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Invoke function isSignedUp
@@ -100,11 +100,11 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="IsSignedUpRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public IsSignedUpRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpRequestBuilder WithUrl(string rawUrl)
         {
-            return new IsSignedUpRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.PrivilegedSignupStatus.IsSignedUp.IsSignedUpRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

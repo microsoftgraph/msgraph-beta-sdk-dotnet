@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows management app health state entity.
     /// </summary>
-    public class WindowsManagementAppHealthState : Entity, IParsable
+    public class WindowsManagementAppHealthState : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Name of the device on which Windows management app is installed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,12 +74,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsManagementAppHealthState"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsManagementAppHealthState CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsManagementAppHealthState();
+            return new Microsoft.Graph.Beta.Models.WindowsManagementAppHealthState();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "deviceOSVersion", n => { DeviceOSVersion = n.GetStringValue(); } },
-                { "healthState", n => { HealthState = n.GetEnumValue<HealthState>(); } },
+                { "healthState", n => { HealthState = n.GetEnumValue<Microsoft.Graph.Beta.Models.HealthState>(); } },
                 { "installedVersion", n => { InstalledVersion = n.GetStringValue(); } },
                 { "lastCheckInDateTime", n => { LastCheckInDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteStringValue("deviceOSVersion", DeviceOSVersion);
-            writer.WriteEnumValue<HealthState>("healthState", HealthState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.HealthState>("healthState", HealthState);
             writer.WriteStringValue("installedVersion", InstalledVersion);
             writer.WriteDateTimeOffsetValue("lastCheckInDateTime", LastCheckInDateTime);
         }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ItemFacet : Entity, IParsable
+    public class ItemFacet : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet CreatedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -41,16 +41,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contains inference detail if the entity is inferred by the creating or modifying application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public InferenceData? Inference
+        public Microsoft.Graph.Beta.Models.InferenceData? Inference
         {
-            get { return BackingStore?.Get<InferenceData?>("inference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InferenceData?>("inference"); }
             set { BackingStore?.Set("inference", value); }
         }
 #nullable restore
 #else
-        public InferenceData Inference
+        public Microsoft.Graph.Beta.Models.InferenceData Inference
         {
-            get { return BackingStore?.Get<InferenceData>("inference"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InferenceData>("inference"); }
             set { BackingStore?.Set("inference", value); }
         }
 #endif
@@ -63,16 +63,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The lastModifiedBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public IdentitySet? LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #nullable restore
 #else
-        public IdentitySet LastModifiedBy
+        public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy
         {
-            get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
 #endif
@@ -85,67 +85,67 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Where the values within an entity originated if synced from another service.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PersonDataSources? Source
+        public Microsoft.Graph.Beta.Models.PersonDataSources? Source
         {
-            get { return BackingStore?.Get<PersonDataSources?>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersonDataSources?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #nullable restore
 #else
-        public PersonDataSources Source
+        public Microsoft.Graph.Beta.Models.PersonDataSources Source
         {
-            get { return BackingStore?.Get<PersonDataSources>("source"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PersonDataSources>("source"); }
             set { BackingStore?.Set("source", value); }
         }
 #endif
         /// <summary>Where the values within an entity originated if synced from another source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ProfileSourceAnnotation>? Sources
+        public List<Microsoft.Graph.Beta.Models.ProfileSourceAnnotation>? Sources
         {
-            get { return BackingStore?.Get<List<ProfileSourceAnnotation>?>("sources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProfileSourceAnnotation>?>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
 #nullable restore
 #else
-        public List<ProfileSourceAnnotation> Sources
+        public List<Microsoft.Graph.Beta.Models.ProfileSourceAnnotation> Sources
         {
-            get { return BackingStore?.Get<List<ProfileSourceAnnotation>>("sources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ProfileSourceAnnotation>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ItemFacet"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ItemFacet"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ItemFacet CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ItemFacet CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.educationalActivity" => new EducationalActivity(),
-                "#microsoft.graph.itemAddress" => new ItemAddress(),
-                "#microsoft.graph.itemEmail" => new ItemEmail(),
-                "#microsoft.graph.itemPatent" => new ItemPatent(),
-                "#microsoft.graph.itemPhone" => new ItemPhone(),
-                "#microsoft.graph.itemPublication" => new ItemPublication(),
-                "#microsoft.graph.languageProficiency" => new LanguageProficiency(),
-                "#microsoft.graph.personAnnotation" => new PersonAnnotation(),
-                "#microsoft.graph.personAnnualEvent" => new PersonAnnualEvent(),
-                "#microsoft.graph.personAward" => new PersonAward(),
-                "#microsoft.graph.personCertification" => new PersonCertification(),
-                "#microsoft.graph.personInterest" => new PersonInterest(),
-                "#microsoft.graph.personName" => new PersonName(),
-                "#microsoft.graph.personResponsibility" => new PersonResponsibility(),
-                "#microsoft.graph.personWebsite" => new PersonWebsite(),
-                "#microsoft.graph.projectParticipation" => new ProjectParticipation(),
-                "#microsoft.graph.skillProficiency" => new SkillProficiency(),
-                "#microsoft.graph.userAccountInformation" => new UserAccountInformation(),
-                "#microsoft.graph.webAccount" => new WebAccount(),
-                "#microsoft.graph.workPosition" => new WorkPosition(),
-                _ => new ItemFacet(),
+                "#microsoft.graph.educationalActivity" => new Microsoft.Graph.Beta.Models.EducationalActivity(),
+                "#microsoft.graph.itemAddress" => new Microsoft.Graph.Beta.Models.ItemAddress(),
+                "#microsoft.graph.itemEmail" => new Microsoft.Graph.Beta.Models.ItemEmail(),
+                "#microsoft.graph.itemPatent" => new Microsoft.Graph.Beta.Models.ItemPatent(),
+                "#microsoft.graph.itemPhone" => new Microsoft.Graph.Beta.Models.ItemPhone(),
+                "#microsoft.graph.itemPublication" => new Microsoft.Graph.Beta.Models.ItemPublication(),
+                "#microsoft.graph.languageProficiency" => new Microsoft.Graph.Beta.Models.LanguageProficiency(),
+                "#microsoft.graph.personAnnotation" => new Microsoft.Graph.Beta.Models.PersonAnnotation(),
+                "#microsoft.graph.personAnnualEvent" => new Microsoft.Graph.Beta.Models.PersonAnnualEvent(),
+                "#microsoft.graph.personAward" => new Microsoft.Graph.Beta.Models.PersonAward(),
+                "#microsoft.graph.personCertification" => new Microsoft.Graph.Beta.Models.PersonCertification(),
+                "#microsoft.graph.personInterest" => new Microsoft.Graph.Beta.Models.PersonInterest(),
+                "#microsoft.graph.personName" => new Microsoft.Graph.Beta.Models.PersonName(),
+                "#microsoft.graph.personResponsibility" => new Microsoft.Graph.Beta.Models.PersonResponsibility(),
+                "#microsoft.graph.personWebsite" => new Microsoft.Graph.Beta.Models.PersonWebsite(),
+                "#microsoft.graph.projectParticipation" => new Microsoft.Graph.Beta.Models.ProjectParticipation(),
+                "#microsoft.graph.skillProficiency" => new Microsoft.Graph.Beta.Models.SkillProficiency(),
+                "#microsoft.graph.userAccountInformation" => new Microsoft.Graph.Beta.Models.UserAccountInformation(),
+                "#microsoft.graph.webAccount" => new Microsoft.Graph.Beta.Models.WebAccount(),
+                "#microsoft.graph.workPosition" => new Microsoft.Graph.Beta.Models.WorkPosition(),
+                _ => new Microsoft.Graph.Beta.Models.ItemFacet(),
             };
         }
         /// <summary>
@@ -156,15 +156,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowedAudiences", n => { AllowedAudiences = n.GetEnumValue<AllowedAudiences>(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "allowedAudiences", n => { AllowedAudiences = n.GetEnumValue<Microsoft.Graph.Beta.Models.AllowedAudiences>(); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "inference", n => { Inference = n.GetObjectValue<InferenceData>(InferenceData.CreateFromDiscriminatorValue); } },
+                { "inference", n => { Inference = n.GetObjectValue<Microsoft.Graph.Beta.Models.InferenceData>(Microsoft.Graph.Beta.Models.InferenceData.CreateFromDiscriminatorValue); } },
                 { "isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                { "lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "source", n => { Source = n.GetObjectValue<PersonDataSources>(PersonDataSources.CreateFromDiscriminatorValue); } },
-                { "sources", n => { Sources = n.GetCollectionOfObjectValues<ProfileSourceAnnotation>(ProfileSourceAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "source", n => { Source = n.GetObjectValue<Microsoft.Graph.Beta.Models.PersonDataSources>(Microsoft.Graph.Beta.Models.PersonDataSources.CreateFromDiscriminatorValue); } },
+                { "sources", n => { Sources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProfileSourceAnnotation>(Microsoft.Graph.Beta.Models.ProfileSourceAnnotation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -175,15 +175,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AllowedAudiences>("allowedAudiences", AllowedAudiences);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AllowedAudiences>("allowedAudiences", AllowedAudiences);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteObjectValue<InferenceData>("inference", Inference);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.InferenceData>("inference", Inference);
             writer.WriteBoolValue("isSearchable", IsSearchable);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<PersonDataSources>("source", Source);
-            writer.WriteCollectionOfObjectValues<ProfileSourceAnnotation>("sources", Sources);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PersonDataSources>("source", Source);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ProfileSourceAnnotation>("sources", Sources);
         }
     }
 }

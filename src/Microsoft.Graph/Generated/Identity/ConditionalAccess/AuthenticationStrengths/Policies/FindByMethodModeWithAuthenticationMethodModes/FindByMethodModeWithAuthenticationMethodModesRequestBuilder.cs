@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
     public class FindByMethodModeWithAuthenticationMethodModesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="FindByMethodModeWithAuthenticationMethodModesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
             if (!string.IsNullOrWhiteSpace(authenticationMethodModes)) PathParameters.Add("authenticationMethodModes", authenticationMethodModes);
         }
         /// <summary>
-        /// Instantiates a new <see cref="FindByMethodModeWithAuthenticationMethodModesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -37,51 +37,51 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="FindByMethodModeWithAuthenticationMethodModesGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindByMethodModeWithAuthenticationMethodModesGetResponse?> GetAsFindByMethodModeWithAuthenticationMethodModesGetResponseAsync(Action<RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse?> GetAsFindByMethodModeWithAuthenticationMethodModesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindByMethodModeWithAuthenticationMethodModesGetResponse> GetAsFindByMethodModeWithAuthenticationMethodModesGetResponseAsync(Action<RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse> GetAsFindByMethodModeWithAuthenticationMethodModesGetResponseAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindByMethodModeWithAuthenticationMethodModesGetResponse>(requestInfo, FindByMethodModeWithAuthenticationMethodModesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse>(requestInfo, Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/authenticationstrengthpolicy-findbymethodmode?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="FindByMethodModeWithAuthenticationMethodModesResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
         [Obsolete("This method is obsolete. Use GetAsFindByMethodModeWithAuthenticationMethodModesGetResponseAsync instead.")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<FindByMethodModeWithAuthenticationMethodModesResponse?> GetAsync(Action<RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<FindByMethodModeWithAuthenticationMethodModesResponse> GetAsync(Action<RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<FindByMethodModeWithAuthenticationMethodModesResponse>(requestInfo, FindByMethodModeWithAuthenticationMethodModesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse>(requestInfo, Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
@@ -91,11 +91,11 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -106,12 +106,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="FindByMethodModeWithAuthenticationMethodModesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         [Obsolete("The &apos;authenticationStrengths&apos; segment is deprecated. Please use &apos;authenticationStrength&apos; instead. as of 2023-02/AuthenticationStrengthsRemove")]
-        public FindByMethodModeWithAuthenticationMethodModesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder WithUrl(string rawUrl)
         {
-            return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties filtered to only include policies that include the authentication method mode specified in the request.
@@ -182,7 +182,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrength
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetRequestConfiguration : RequestConfiguration<FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>
+        public class FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths.Policies.FindByMethodModeWithAuthenticationMethodModes.FindByMethodModeWithAuthenticationMethodModesRequestBuilder.FindByMethodModeWithAuthenticationMethodModesRequestBuilderGetQueryParameters>
         {
         }
     }

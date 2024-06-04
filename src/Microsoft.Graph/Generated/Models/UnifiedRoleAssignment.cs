@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRoleAssignment : Entity, IParsable
+    public class UnifiedRoleAssignment : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Details of the app specific scope when the assignment scope is app specific. Containment entity. Supports $expand for the entitlement provider only.</summary>
@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The directory object that is the scope of the assignment. Provided so that callers can get the directory object using $expand at the same time as getting the role assignment. Read-only. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? DirectoryScope
+        public Microsoft.Graph.Beta.Models.DirectoryObject? DirectoryScope
         {
-            get { return BackingStore?.Get<DirectoryObject?>("directoryScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryObject?>("directoryScope"); }
             set { BackingStore?.Set("directoryScope", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject DirectoryScope
+        public Microsoft.Graph.Beta.Models.DirectoryObject DirectoryScope
         {
-            get { return BackingStore?.Get<DirectoryObject>("directoryScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryObject>("directoryScope"); }
             set { BackingStore?.Set("directoryScope", value); }
         }
 #endif
@@ -93,16 +93,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The assigned principal. Provided so that callers can get the principal using $expand at the same time as getting the role assignment. Read-only. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public DirectoryObject? Principal
+        public Microsoft.Graph.Beta.Models.DirectoryObject? Principal
         {
-            get { return BackingStore?.Get<DirectoryObject?>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryObject?>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #nullable restore
 #else
-        public DirectoryObject Principal
+        public Microsoft.Graph.Beta.Models.DirectoryObject Principal
         {
-            get { return BackingStore?.Get<DirectoryObject>("principal"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
 #endif
@@ -157,16 +157,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The roleDefinition the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment. roleDefinition.id will be auto expanded. Supports $expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRoleDefinition? RoleDefinition
+        public Microsoft.Graph.Beta.Models.UnifiedRoleDefinition? RoleDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleDefinition?>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition?>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #nullable restore
 #else
-        public UnifiedRoleDefinition RoleDefinition
+        public Microsoft.Graph.Beta.Models.UnifiedRoleDefinition RoleDefinition
         {
-            get { return BackingStore?.Get<UnifiedRoleDefinition>("roleDefinition"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
 #endif
@@ -189,12 +189,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRoleAssignment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRoleAssignment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UnifiedRoleAssignment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRoleAssignment();
+            return new Microsoft.Graph.Beta.Models.UnifiedRoleAssignment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -207,13 +207,13 @@ namespace Microsoft.Graph.Beta.Models
                 { "appScope", n => { AppScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AppScope>(Microsoft.Graph.Beta.Models.AppScope.CreateFromDiscriminatorValue); } },
                 { "appScopeId", n => { AppScopeId = n.GetStringValue(); } },
                 { "condition", n => { Condition = n.GetStringValue(); } },
-                { "directoryScope", n => { DirectoryScope = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "directoryScope", n => { DirectoryScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "directoryScopeId", n => { DirectoryScopeId = n.GetStringValue(); } },
-                { "principal", n => { Principal = n.GetObjectValue<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue); } },
+                { "principal", n => { Principal = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectoryObject>(Microsoft.Graph.Beta.Models.DirectoryObject.CreateFromDiscriminatorValue); } },
                 { "principalId", n => { PrincipalId = n.GetStringValue(); } },
                 { "principalOrganizationId", n => { PrincipalOrganizationId = n.GetStringValue(); } },
                 { "resourceScope", n => { ResourceScope = n.GetStringValue(); } },
-                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<UnifiedRoleDefinition>(UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
+                { "roleDefinition", n => { RoleDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>(Microsoft.Graph.Beta.Models.UnifiedRoleDefinition.CreateFromDiscriminatorValue); } },
                 { "roleDefinitionId", n => { RoleDefinitionId = n.GetStringValue(); } },
             };
         }
@@ -228,13 +228,13 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AppScope>("appScope", AppScope);
             writer.WriteStringValue("appScopeId", AppScopeId);
             writer.WriteStringValue("condition", Condition);
-            writer.WriteObjectValue<DirectoryObject>("directoryScope", DirectoryScope);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DirectoryObject>("directoryScope", DirectoryScope);
             writer.WriteStringValue("directoryScopeId", DirectoryScopeId);
-            writer.WriteObjectValue<DirectoryObject>("principal", Principal);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DirectoryObject>("principal", Principal);
             writer.WriteStringValue("principalId", PrincipalId);
             writer.WriteStringValue("principalOrganizationId", PrincipalOrganizationId);
             writer.WriteStringValue("resourceScope", ResourceScope);
-            writer.WriteObjectValue<UnifiedRoleDefinition>("roleDefinition", RoleDefinition);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UnifiedRoleDefinition>("roleDefinition", RoleDefinition);
             writer.WriteStringValue("roleDefinitionId", RoleDefinitionId);
         }
     }

@@ -21,27 +21,27 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
     public class B2cIdentityUserFlowItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the identityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
-        public IdentityProvidersRequestBuilder IdentityProviders
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder IdentityProviders
         {
-            get => new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.IdentityProviders.IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
-        public LanguagesRequestBuilder Languages
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.LanguagesRequestBuilder Languages
         {
-            get => new LanguagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.LanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userAttributeAssignments property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
-        public UserAttributeAssignmentsRequestBuilder UserAttributeAssignments
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder UserAttributeAssignments
         {
-            get => new UserAttributeAssignmentsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserAttributeAssignments.UserAttributeAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
-        public UserFlowIdentityProvidersRequestBuilder UserFlowIdentityProviders
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder UserFlowIdentityProviders
         {
-            get => new UserFlowIdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProviders.UserFlowIdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="B2cIdentityUserFlowItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="B2cIdentityUserFlowItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -83,51 +83,51 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
         /// Retrieve the properties and relationships of a b2cUserFlow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-get?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="B2cIdentityUserFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.B2cIdentityUserFlow"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<B2cIdentityUserFlow?> GetAsync(Action<RequestConfiguration<B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.B2cIdentityUserFlow?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder.B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<B2cIdentityUserFlow> GetAsync(Action<RequestConfiguration<B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.B2cIdentityUserFlow> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder.B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.B2cIdentityUserFlow>(requestInfo, Microsoft.Graph.Beta.Models.B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Update the properties of a b2cIdentityUserFlow object.
         /// Find more info here <see href="https://learn.microsoft.com/graph/api/b2cidentityuserflow-update?view=graph-rest-beta" />
         /// </summary>
-        /// <returns>A <see cref="B2cIdentityUserFlow"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.B2cIdentityUserFlow"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<B2cIdentityUserFlow?> PatchAsync(B2cIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.B2cIdentityUserFlow?> PatchAsync(Microsoft.Graph.Beta.Models.B2cIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<B2cIdentityUserFlow> PatchAsync(B2cIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.B2cIdentityUserFlow> PatchAsync(Microsoft.Graph.Beta.Models.B2cIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<B2cIdentityUserFlow>(requestInfo, B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.B2cIdentityUserFlow>(requestInfo, Microsoft.Graph.Beta.Models.B2cIdentityUserFlow.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Delete a b2cIdentityUserFlow object.
@@ -155,11 +155,11 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder.B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder.B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -175,11 +175,11 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPatchRequestInformation(B2cIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.B2cIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPatchRequestInformation(B2cIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPatchRequestInformation(Microsoft.Graph.Beta.Models.B2cIdentityUserFlow body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -192,11 +192,11 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="B2cIdentityUserFlowItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public B2cIdentityUserFlowItemRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new B2cIdentityUserFlowItemRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.
@@ -235,7 +235,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class B2cIdentityUserFlowItemRequestBuilderGetRequestConfiguration : RequestConfiguration<B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>
+        public class B2cIdentityUserFlowItemRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.B2cIdentityUserFlowItemRequestBuilder.B2cIdentityUserFlowItemRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

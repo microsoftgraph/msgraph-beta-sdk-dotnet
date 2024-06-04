@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.Security
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="SubmissionUserIdentity"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity"/> and sets the default values.
         /// </summary>
         public SubmissionUserIdentity() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models.Security
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SubmissionUserIdentity"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new SubmissionUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SubmissionUserIdentity();
+            return new Microsoft.Graph.Beta.Models.Security.SubmissionUserIdentity();
         }
         /// <summary>
         /// The deserialization information for the current model

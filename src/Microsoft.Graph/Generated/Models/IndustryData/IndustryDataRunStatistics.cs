@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The collection of statistics for each activity included in this run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<IndustryDataActivityStatistics>? ActivityStatistics
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics>? ActivityStatistics
         {
-            get { return BackingStore?.Get<List<IndustryDataActivityStatistics>?>("activityStatistics"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics>?>("activityStatistics"); }
             set { BackingStore?.Set("activityStatistics", value); }
         }
 #nullable restore
 #else
-        public List<IndustryDataActivityStatistics> ActivityStatistics
+        public List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics> ActivityStatistics
         {
-            get { return BackingStore?.Get<List<IndustryDataActivityStatistics>>("activityStatistics"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics>>("activityStatistics"); }
             set { BackingStore?.Set("activityStatistics", value); }
         }
 #endif
@@ -38,16 +38,16 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The aggregate statistics for all inbound flows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AggregatedInboundStatistics? InboundTotals
+        public Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics? InboundTotals
         {
-            get { return BackingStore?.Get<AggregatedInboundStatistics?>("inboundTotals"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics?>("inboundTotals"); }
             set { BackingStore?.Set("inboundTotals", value); }
         }
 #nullable restore
 #else
-        public AggregatedInboundStatistics InboundTotals
+        public Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics InboundTotals
         {
-            get { return BackingStore?.Get<AggregatedInboundStatistics>("inboundTotals"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics>("inboundTotals"); }
             set { BackingStore?.Set("inboundTotals", value); }
         }
 #endif
@@ -84,13 +84,13 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         }
 #endif
         /// <summary>The status property</summary>
-        public IndustryDataRunStatus? Status
+        public Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatus? Status
         {
-            get { return BackingStore?.Get<IndustryDataRunStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="IndustryDataRunStatistics"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatistics"/> and sets the default values.
         /// </summary>
         public IndustryDataRunStatistics()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="IndustryDataRunStatistics"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatistics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static IndustryDataRunStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new IndustryDataRunStatistics();
+            return new Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatistics();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<IndustryDataActivityStatistics>(IndustryDataActivityStatistics.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "inboundTotals", n => { InboundTotals = n.GetObjectValue<AggregatedInboundStatistics>(AggregatedInboundStatistics.CreateFromDiscriminatorValue); } },
+                { "activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics>(Microsoft.Graph.Beta.Models.IndustryData.IndustryDataActivityStatistics.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "inboundTotals", n => { InboundTotals = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics>(Microsoft.Graph.Beta.Models.IndustryData.AggregatedInboundStatistics.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "runId", n => { RunId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<IndustryDataRunStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatus>(); } },
             };
         }
         /// <summary>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<IndustryDataRunStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.IndustryData.IndustryDataRunStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

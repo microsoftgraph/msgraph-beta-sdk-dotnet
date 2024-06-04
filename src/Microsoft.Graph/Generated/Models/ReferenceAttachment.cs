@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ReferenceAttachment : Attachment, IParsable
+    public class ReferenceAttachment : Microsoft.Graph.Beta.Models.Attachment, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies whether the attachment is a link to a folder. Must set this to true if sourceUrl is a link to a folder. Optional.</summary>
@@ -17,9 +17,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("isFolder", value); }
         }
         /// <summary>Specifies the permissions granted for the attachment by the type of provider in providerType. Possible values are: other, view, edit, anonymousView, anonymousEdit, organizationView, organizationEdit. Optional.</summary>
-        public ReferenceAttachmentPermission? Permission
+        public Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission? Permission
         {
-            get { return BackingStore?.Get<ReferenceAttachmentPermission?>("permission"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission?>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
         /// <summary>Applies to only a reference attachment of an image - URL to get a preview image. Use thumbnailUrl and previewUrl only when sourceUrl identifies an image file. Optional.</summary>
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The type of provider that supports an attachment of this contentType. Possible values are: other, oneDriveBusiness, oneDriveConsumer, dropbox. Optional.</summary>
-        public ReferenceAttachmentProvider? ProviderType
+        public Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider? ProviderType
         {
-            get { return BackingStore?.Get<ReferenceAttachmentProvider?>("providerType"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider?>("providerType"); }
             set { BackingStore?.Set("providerType", value); }
         }
         /// <summary>URL to get the attachment content. If this is a URL to a folder, then for the folder to be displayed correctly in Outlook or Outlook on the web, set isFolder to true. Required.</summary>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ReferenceAttachment"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ReferenceAttachment"/> and sets the default values.
         /// </summary>
         public ReferenceAttachment() : base()
         {
@@ -86,12 +86,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ReferenceAttachment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ReferenceAttachment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ReferenceAttachment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ReferenceAttachment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ReferenceAttachment();
+            return new Microsoft.Graph.Beta.Models.ReferenceAttachment();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "isFolder", n => { IsFolder = n.GetBoolValue(); } },
-                { "permission", n => { Permission = n.GetEnumValue<ReferenceAttachmentPermission>(); } },
+                { "permission", n => { Permission = n.GetEnumValue<Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission>(); } },
                 { "previewUrl", n => { PreviewUrl = n.GetStringValue(); } },
-                { "providerType", n => { ProviderType = n.GetEnumValue<ReferenceAttachmentProvider>(); } },
+                { "providerType", n => { ProviderType = n.GetEnumValue<Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider>(); } },
                 { "sourceUrl", n => { SourceUrl = n.GetStringValue(); } },
                 { "thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
             };
@@ -118,9 +118,9 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isFolder", IsFolder);
-            writer.WriteEnumValue<ReferenceAttachmentPermission>("permission", Permission);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ReferenceAttachmentPermission>("permission", Permission);
             writer.WriteStringValue("previewUrl", PreviewUrl);
-            writer.WriteEnumValue<ReferenceAttachmentProvider>("providerType", ProviderType);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ReferenceAttachmentProvider>("providerType", ProviderType);
             writer.WriteStringValue("sourceUrl", SourceUrl);
             writer.WriteStringValue("thumbnailUrl", ThumbnailUrl);
         }

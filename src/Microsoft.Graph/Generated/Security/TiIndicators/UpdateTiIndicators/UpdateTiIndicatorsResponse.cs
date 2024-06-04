@@ -8,18 +8,18 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators
 {
     [Obsolete("This class is obsolete. Use UpdateTiIndicatorsPostResponse instead.")]
     #pragma warning disable CS1591
-    public class UpdateTiIndicatorsResponse : UpdateTiIndicatorsPostResponse, IParsable
+    public class UpdateTiIndicatorsResponse : Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators.UpdateTiIndicatorsPostResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdateTiIndicatorsResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators.UpdateTiIndicatorsResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UpdateTiIndicatorsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators.UpdateTiIndicatorsResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UpdateTiIndicatorsResponse();
+            return new Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators.UpdateTiIndicatorsResponse();
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PolicyRoot : Entity, IParsable
+    public class PolicyRoot : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The policy that contains directory-level access review settings.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policy that controls the idle time-out for web sessions for applications.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ActivityBasedTimeoutPolicy>? ActivityBasedTimeoutPolicies
+        public List<Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy>? ActivityBasedTimeoutPolicies
         {
-            get { return BackingStore?.Get<List<ActivityBasedTimeoutPolicy>?>("activityBasedTimeoutPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy>?>("activityBasedTimeoutPolicies"); }
             set { BackingStore?.Set("activityBasedTimeoutPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ActivityBasedTimeoutPolicy> ActivityBasedTimeoutPolicies
+        public List<Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy> ActivityBasedTimeoutPolicies
         {
-            get { return BackingStore?.Get<List<ActivityBasedTimeoutPolicy>>("activityBasedTimeoutPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy>>("activityBasedTimeoutPolicies"); }
             set { BackingStore?.Set("activityBasedTimeoutPolicies", value); }
         }
 #endif
@@ -61,16 +61,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AppManagementPolicy>? AppManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.AppManagementPolicy>? AppManagementPolicies
         {
-            get { return BackingStore?.Get<List<AppManagementPolicy>?>("appManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppManagementPolicy>?>("appManagementPolicies"); }
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AppManagementPolicy> AppManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.AppManagementPolicy> AppManagementPolicies
         {
-            get { return BackingStore?.Get<List<AppManagementPolicy>>("appManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppManagementPolicy>>("appManagementPolicies"); }
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
 #endif
@@ -109,16 +109,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The authentication method combinations that are to be used in scenarios defined by Microsoft Entra Conditional Access.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthenticationStrengthPolicy>? AuthenticationStrengthPolicies
+        public List<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>? AuthenticationStrengthPolicies
         {
-            get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>?>("authenticationStrengthPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>?>("authenticationStrengthPolicies"); }
             set { BackingStore?.Set("authenticationStrengthPolicies", value); }
         }
 #nullable restore
 #else
-        public List<AuthenticationStrengthPolicy> AuthenticationStrengthPolicies
+        public List<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy> AuthenticationStrengthPolicies
         {
-            get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("authenticationStrengthPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>>("authenticationStrengthPolicies"); }
             set { BackingStore?.Set("authenticationStrengthPolicies", value); }
         }
 #endif
@@ -157,32 +157,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ClaimsMappingPolicy>? ClaimsMappingPolicies
+        public List<Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>? ClaimsMappingPolicies
         {
-            get { return BackingStore?.Get<List<ClaimsMappingPolicy>?>("claimsMappingPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>?>("claimsMappingPolicies"); }
             set { BackingStore?.Set("claimsMappingPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ClaimsMappingPolicy> ClaimsMappingPolicies
+        public List<Microsoft.Graph.Beta.Models.ClaimsMappingPolicy> ClaimsMappingPolicies
         {
-            get { return BackingStore?.Get<List<ClaimsMappingPolicy>>("claimsMappingPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>>("claimsMappingPolicies"); }
             set { BackingStore?.Set("claimsMappingPolicies", value); }
         }
 #endif
         /// <summary>The custom rules that define an access scenario.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ConditionalAccessPolicy>? ConditionalAccessPolicies
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>? ConditionalAccessPolicies
         {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>?>("conditionalAccessPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>?>("conditionalAccessPolicies"); }
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ConditionalAccessPolicy> ConditionalAccessPolicies
+        public List<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy> ConditionalAccessPolicies
         {
-            get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("conditionalAccessPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>>("conditionalAccessPolicies"); }
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
 #endif
@@ -205,16 +205,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The tenant-wide policy that enforces app management restrictions for all applications and service principals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public TenantAppManagementPolicy? DefaultAppManagementPolicy
+        public Microsoft.Graph.Beta.Models.TenantAppManagementPolicy? DefaultAppManagementPolicy
         {
-            get { return BackingStore?.Get<TenantAppManagementPolicy?>("defaultAppManagementPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAppManagementPolicy?>("defaultAppManagementPolicy"); }
             set { BackingStore?.Set("defaultAppManagementPolicy", value); }
         }
 #nullable restore
 #else
-        public TenantAppManagementPolicy DefaultAppManagementPolicy
+        public Microsoft.Graph.Beta.Models.TenantAppManagementPolicy DefaultAppManagementPolicy
         {
-            get { return BackingStore?.Get<TenantAppManagementPolicy>("defaultAppManagementPolicy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAppManagementPolicy>("defaultAppManagementPolicy"); }
             set { BackingStore?.Set("defaultAppManagementPolicy", value); }
         }
 #endif
@@ -269,16 +269,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The feature rollout policy associated with a directory object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<FeatureRolloutPolicy>? FeatureRolloutPolicies
+        public List<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>? FeatureRolloutPolicies
         {
-            get { return BackingStore?.Get<List<FeatureRolloutPolicy>?>("featureRolloutPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>?>("featureRolloutPolicies"); }
             set { BackingStore?.Set("featureRolloutPolicies", value); }
         }
 #nullable restore
 #else
-        public List<FeatureRolloutPolicy> FeatureRolloutPolicies
+        public List<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy> FeatureRolloutPolicies
         {
-            get { return BackingStore?.Get<List<FeatureRolloutPolicy>>("featureRolloutPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>>("featureRolloutPolicies"); }
             set { BackingStore?.Set("featureRolloutPolicies", value); }
         }
 #endif
@@ -301,16 +301,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policy to control Microsoft Entra authentication behavior for federated users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<HomeRealmDiscoveryPolicy>? HomeRealmDiscoveryPolicies
+        public List<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>? HomeRealmDiscoveryPolicies
         {
-            get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>?>("homeRealmDiscoveryPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>?>("homeRealmDiscoveryPolicies"); }
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
 #nullable restore
 #else
-        public List<HomeRealmDiscoveryPolicy> HomeRealmDiscoveryPolicies
+        public List<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy> HomeRealmDiscoveryPolicies
         {
-            get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>>("homeRealmDiscoveryPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>>("homeRealmDiscoveryPolicies"); }
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
 #endif
@@ -333,140 +333,156 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The policy that defines autoenrollment configuration for a mobility management (MDM or MAM) application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobilityManagementPolicy>? MobileAppManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>? MobileAppManagementPolicies
         {
-            get { return BackingStore?.Get<List<MobilityManagementPolicy>?>("mobileAppManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>?>("mobileAppManagementPolicies"); }
             set { BackingStore?.Set("mobileAppManagementPolicies", value); }
         }
 #nullable restore
 #else
-        public List<MobilityManagementPolicy> MobileAppManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.MobilityManagementPolicy> MobileAppManagementPolicies
         {
-            get { return BackingStore?.Get<List<MobilityManagementPolicy>>("mobileAppManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>>("mobileAppManagementPolicies"); }
             set { BackingStore?.Set("mobileAppManagementPolicies", value); }
         }
 #endif
         /// <summary>The mobileDeviceManagementPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MobilityManagementPolicy>? MobileDeviceManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>? MobileDeviceManagementPolicies
         {
-            get { return BackingStore?.Get<List<MobilityManagementPolicy>?>("mobileDeviceManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>?>("mobileDeviceManagementPolicies"); }
             set { BackingStore?.Set("mobileDeviceManagementPolicies", value); }
         }
 #nullable restore
 #else
-        public List<MobilityManagementPolicy> MobileDeviceManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.MobilityManagementPolicy> MobileDeviceManagementPolicies
         {
-            get { return BackingStore?.Get<List<MobilityManagementPolicy>>("mobileDeviceManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>>("mobileDeviceManagementPolicies"); }
             set { BackingStore?.Set("mobileDeviceManagementPolicies", value); }
         }
 #endif
         /// <summary>The policy that specifies the conditions under which consent can be granted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PermissionGrantPolicy>? PermissionGrantPolicies
+        public List<Microsoft.Graph.Beta.Models.PermissionGrantPolicy>? PermissionGrantPolicies
         {
-            get { return BackingStore?.Get<List<PermissionGrantPolicy>?>("permissionGrantPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionGrantPolicy>?>("permissionGrantPolicies"); }
             set { BackingStore?.Set("permissionGrantPolicies", value); }
         }
 #nullable restore
 #else
-        public List<PermissionGrantPolicy> PermissionGrantPolicies
+        public List<Microsoft.Graph.Beta.Models.PermissionGrantPolicy> PermissionGrantPolicies
         {
-            get { return BackingStore?.Get<List<PermissionGrantPolicy>>("permissionGrantPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionGrantPolicy>>("permissionGrantPolicies"); }
             set { BackingStore?.Set("permissionGrantPolicies", value); }
+        }
+#endif
+        /// <summary>Policies that specify the conditions under which consent can be granted to a specific application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>? PermissionGrantPreApprovalPolicies
+        {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>?>("permissionGrantPreApprovalPolicies"); }
+            set { BackingStore?.Set("permissionGrantPreApprovalPolicies", value); }
+        }
+#nullable restore
+#else
+        public List<Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy> PermissionGrantPreApprovalPolicies
+        {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>>("permissionGrantPreApprovalPolicies"); }
+            set { BackingStore?.Set("permissionGrantPreApprovalPolicies", value); }
         }
 #endif
         /// <summary>Represents the role management policies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementPolicy>? RoleManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>? RoleManagementPolicies
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicy>?>("roleManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>?>("roleManagementPolicies"); }
             set { BackingStore?.Set("roleManagementPolicies", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementPolicy> RoleManagementPolicies
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy> RoleManagementPolicies
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicy>>("roleManagementPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>>("roleManagementPolicies"); }
             set { BackingStore?.Set("roleManagementPolicies", value); }
         }
 #endif
         /// <summary>Represents the role management policy assignments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UnifiedRoleManagementPolicyAssignment>? RoleManagementPolicyAssignments
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyAssignment>? RoleManagementPolicyAssignments
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyAssignment>?>("roleManagementPolicyAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyAssignment>?>("roleManagementPolicyAssignments"); }
             set { BackingStore?.Set("roleManagementPolicyAssignments", value); }
         }
 #nullable restore
 #else
-        public List<UnifiedRoleManagementPolicyAssignment> RoleManagementPolicyAssignments
+        public List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyAssignment> RoleManagementPolicyAssignments
         {
-            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyAssignment>>("roleManagementPolicyAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyAssignment>>("roleManagementPolicyAssignments"); }
             set { BackingStore?.Set("roleManagementPolicyAssignments", value); }
         }
 #endif
         /// <summary>The servicePrincipalCreationPolicies property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ServicePrincipalCreationPolicy>? ServicePrincipalCreationPolicies
+        public List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy>? ServicePrincipalCreationPolicies
         {
-            get { return BackingStore?.Get<List<ServicePrincipalCreationPolicy>?>("servicePrincipalCreationPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy>?>("servicePrincipalCreationPolicies"); }
             set { BackingStore?.Set("servicePrincipalCreationPolicies", value); }
         }
 #nullable restore
 #else
-        public List<ServicePrincipalCreationPolicy> ServicePrincipalCreationPolicies
+        public List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy> ServicePrincipalCreationPolicies
         {
-            get { return BackingStore?.Get<List<ServicePrincipalCreationPolicy>>("servicePrincipalCreationPolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy>>("servicePrincipalCreationPolicies"); }
             set { BackingStore?.Set("servicePrincipalCreationPolicies", value); }
         }
 #endif
         /// <summary>The policy that specifies the characteristics of SAML tokens issued by Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TokenIssuancePolicy>? TokenIssuancePolicies
+        public List<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>? TokenIssuancePolicies
         {
-            get { return BackingStore?.Get<List<TokenIssuancePolicy>?>("tokenIssuancePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>?>("tokenIssuancePolicies"); }
             set { BackingStore?.Set("tokenIssuancePolicies", value); }
         }
 #nullable restore
 #else
-        public List<TokenIssuancePolicy> TokenIssuancePolicies
+        public List<Microsoft.Graph.Beta.Models.TokenIssuancePolicy> TokenIssuancePolicies
         {
-            get { return BackingStore?.Get<List<TokenIssuancePolicy>>("tokenIssuancePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>>("tokenIssuancePolicies"); }
             set { BackingStore?.Set("tokenIssuancePolicies", value); }
         }
 #endif
         /// <summary>The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Microsoft Entra ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TokenLifetimePolicy>? TokenLifetimePolicies
+        public List<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>? TokenLifetimePolicies
         {
-            get { return BackingStore?.Get<List<TokenLifetimePolicy>?>("tokenLifetimePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>?>("tokenLifetimePolicies"); }
             set { BackingStore?.Set("tokenLifetimePolicies", value); }
         }
 #nullable restore
 #else
-        public List<TokenLifetimePolicy> TokenLifetimePolicies
+        public List<Microsoft.Graph.Beta.Models.TokenLifetimePolicy> TokenLifetimePolicies
         {
-            get { return BackingStore?.Get<List<TokenLifetimePolicy>>("tokenLifetimePolicies"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>>("tokenLifetimePolicies"); }
             set { BackingStore?.Set("tokenLifetimePolicies", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicyRoot"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PolicyRoot"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PolicyRoot CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PolicyRoot CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PolicyRoot();
+            return new Microsoft.Graph.Beta.Models.PolicyRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -477,33 +493,34 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "accessReviewPolicy", n => { AccessReviewPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessReviewPolicy>(Microsoft.Graph.Beta.Models.AccessReviewPolicy.CreateFromDiscriminatorValue); } },
-                { "activityBasedTimeoutPolicies", n => { ActivityBasedTimeoutPolicies = n.GetCollectionOfObjectValues<ActivityBasedTimeoutPolicy>(ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "activityBasedTimeoutPolicies", n => { ActivityBasedTimeoutPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy>(Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "adminConsentRequestPolicy", n => { AdminConsentRequestPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy>(Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy.CreateFromDiscriminatorValue); } },
-                { "appManagementPolicies", n => { AppManagementPolicies = n.GetCollectionOfObjectValues<AppManagementPolicy>(AppManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "appManagementPolicies", n => { AppManagementPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppManagementPolicy>(Microsoft.Graph.Beta.Models.AppManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "authenticationFlowsPolicy", n => { AuthenticationFlowsPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy>(Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy.CreateFromDiscriminatorValue); } },
                 { "authenticationMethodsPolicy", n => { AuthenticationMethodsPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy>(Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy.CreateFromDiscriminatorValue); } },
-                { "authenticationStrengthPolicies", n => { AuthenticationStrengthPolicies = n.GetCollectionOfObjectValues<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "authenticationStrengthPolicies", n => { AuthenticationStrengthPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>(Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "authorizationPolicy", n => { AuthorizationPolicy = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationPolicy>(Microsoft.Graph.Beta.Models.AuthorizationPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "b2cAuthenticationMethodsPolicy", n => { B2cAuthenticationMethodsPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>(Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy.CreateFromDiscriminatorValue); } },
-                { "claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<ClaimsMappingPolicy>(ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "claimsMappingPolicies", n => { ClaimsMappingPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>(Microsoft.Graph.Beta.Models.ClaimsMappingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "conditionalAccessPolicies", n => { ConditionalAccessPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>(Microsoft.Graph.Beta.Models.ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "crossTenantAccessPolicy", n => { CrossTenantAccessPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy>(Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy.CreateFromDiscriminatorValue); } },
-                { "defaultAppManagementPolicy", n => { DefaultAppManagementPolicy = n.GetObjectValue<TenantAppManagementPolicy>(TenantAppManagementPolicy.CreateFromDiscriminatorValue); } },
+                { "defaultAppManagementPolicy", n => { DefaultAppManagementPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAppManagementPolicy>(Microsoft.Graph.Beta.Models.TenantAppManagementPolicy.CreateFromDiscriminatorValue); } },
                 { "deviceRegistrationPolicy", n => { DeviceRegistrationPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>(Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue); } },
                 { "directoryRoleAccessReviewPolicy", n => { DirectoryRoleAccessReviewPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy>(Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy.CreateFromDiscriminatorValue); } },
                 { "externalIdentitiesPolicy", n => { ExternalIdentitiesPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy>(Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy.CreateFromDiscriminatorValue); } },
-                { "featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<FeatureRolloutPolicy>(FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "featureRolloutPolicies", n => { FeatureRolloutPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>(Microsoft.Graph.Beta.Models.FeatureRolloutPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "federatedTokenValidationPolicy", n => { FederatedTokenValidationPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>(Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy.CreateFromDiscriminatorValue); } },
-                { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<HomeRealmDiscoveryPolicy>(HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "homeRealmDiscoveryPolicies", n => { HomeRealmDiscoveryPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>(Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "identitySecurityDefaultsEnforcementPolicy", n => { IdentitySecurityDefaultsEnforcementPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>(Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy.CreateFromDiscriminatorValue); } },
-                { "mobileAppManagementPolicies", n => { MobileAppManagementPolicies = n.GetCollectionOfObjectValues<MobilityManagementPolicy>(MobilityManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "mobileDeviceManagementPolicies", n => { MobileDeviceManagementPolicies = n.GetCollectionOfObjectValues<MobilityManagementPolicy>(MobilityManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "permissionGrantPolicies", n => { PermissionGrantPolicies = n.GetCollectionOfObjectValues<PermissionGrantPolicy>(PermissionGrantPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleManagementPolicies", n => { RoleManagementPolicies = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicy>(UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleManagementPolicyAssignments", n => { RoleManagementPolicyAssignments = n.GetCollectionOfObjectValues<UnifiedRoleManagementPolicyAssignment>(UnifiedRoleManagementPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "servicePrincipalCreationPolicies", n => { ServicePrincipalCreationPolicies = n.GetCollectionOfObjectValues<ServicePrincipalCreationPolicy>(ServicePrincipalCreationPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "tokenIssuancePolicies", n => { TokenIssuancePolicies = n.GetCollectionOfObjectValues<TokenIssuancePolicy>(TokenIssuancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "tokenLifetimePolicies", n => { TokenLifetimePolicies = n.GetCollectionOfObjectValues<TokenLifetimePolicy>(TokenLifetimePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileAppManagementPolicies", n => { MobileAppManagementPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>(Microsoft.Graph.Beta.Models.MobilityManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "mobileDeviceManagementPolicies", n => { MobileDeviceManagementPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>(Microsoft.Graph.Beta.Models.MobilityManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "permissionGrantPolicies", n => { PermissionGrantPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionGrantPolicy>(Microsoft.Graph.Beta.Models.PermissionGrantPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "permissionGrantPreApprovalPolicies", n => { PermissionGrantPreApprovalPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>(Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleManagementPolicies", n => { RoleManagementPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>(Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleManagementPolicyAssignments", n => { RoleManagementPolicyAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyAssignment>(Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "servicePrincipalCreationPolicies", n => { ServicePrincipalCreationPolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy>(Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tokenIssuancePolicies", n => { TokenIssuancePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>(Microsoft.Graph.Beta.Models.TokenIssuancePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tokenLifetimePolicies", n => { TokenLifetimePolicies = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>(Microsoft.Graph.Beta.Models.TokenLifetimePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -515,33 +532,34 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessReviewPolicy>("accessReviewPolicy", AccessReviewPolicy);
-            writer.WriteCollectionOfObjectValues<ActivityBasedTimeoutPolicy>("activityBasedTimeoutPolicies", ActivityBasedTimeoutPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActivityBasedTimeoutPolicy>("activityBasedTimeoutPolicies", ActivityBasedTimeoutPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy>("adminConsentRequestPolicy", AdminConsentRequestPolicy);
-            writer.WriteCollectionOfObjectValues<AppManagementPolicy>("appManagementPolicies", AppManagementPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AppManagementPolicy>("appManagementPolicies", AppManagementPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy>("authenticationFlowsPolicy", AuthenticationFlowsPolicy);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy>("authenticationMethodsPolicy", AuthenticationMethodsPolicy);
-            writer.WriteCollectionOfObjectValues<AuthenticationStrengthPolicy>("authenticationStrengthPolicies", AuthenticationStrengthPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthenticationStrengthPolicy>("authenticationStrengthPolicies", AuthenticationStrengthPolicies);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationPolicy>("authorizationPolicy", AuthorizationPolicy);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>("b2cAuthenticationMethodsPolicy", B2cAuthenticationMethodsPolicy);
-            writer.WriteCollectionOfObjectValues<ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
-            writer.WriteCollectionOfObjectValues<ConditionalAccessPolicy>("conditionalAccessPolicies", ConditionalAccessPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ClaimsMappingPolicy>("claimsMappingPolicies", ClaimsMappingPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ConditionalAccessPolicy>("conditionalAccessPolicies", ConditionalAccessPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy>("crossTenantAccessPolicy", CrossTenantAccessPolicy);
-            writer.WriteObjectValue<TenantAppManagementPolicy>("defaultAppManagementPolicy", DefaultAppManagementPolicy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAppManagementPolicy>("defaultAppManagementPolicy", DefaultAppManagementPolicy);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>("deviceRegistrationPolicy", DeviceRegistrationPolicy);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy>("directoryRoleAccessReviewPolicy", DirectoryRoleAccessReviewPolicy);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy>("externalIdentitiesPolicy", ExternalIdentitiesPolicy);
-            writer.WriteCollectionOfObjectValues<FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.FeatureRolloutPolicy>("featureRolloutPolicies", FeatureRolloutPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.FederatedTokenValidationPolicy>("federatedTokenValidationPolicy", FederatedTokenValidationPolicy);
-            writer.WriteCollectionOfObjectValues<HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.HomeRealmDiscoveryPolicy>("homeRealmDiscoveryPolicies", HomeRealmDiscoveryPolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>("identitySecurityDefaultsEnforcementPolicy", IdentitySecurityDefaultsEnforcementPolicy);
-            writer.WriteCollectionOfObjectValues<MobilityManagementPolicy>("mobileAppManagementPolicies", MobileAppManagementPolicies);
-            writer.WriteCollectionOfObjectValues<MobilityManagementPolicy>("mobileDeviceManagementPolicies", MobileDeviceManagementPolicies);
-            writer.WriteCollectionOfObjectValues<PermissionGrantPolicy>("permissionGrantPolicies", PermissionGrantPolicies);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleManagementPolicy>("roleManagementPolicies", RoleManagementPolicies);
-            writer.WriteCollectionOfObjectValues<UnifiedRoleManagementPolicyAssignment>("roleManagementPolicyAssignments", RoleManagementPolicyAssignments);
-            writer.WriteCollectionOfObjectValues<ServicePrincipalCreationPolicy>("servicePrincipalCreationPolicies", ServicePrincipalCreationPolicies);
-            writer.WriteCollectionOfObjectValues<TokenIssuancePolicy>("tokenIssuancePolicies", TokenIssuancePolicies);
-            writer.WriteCollectionOfObjectValues<TokenLifetimePolicy>("tokenLifetimePolicies", TokenLifetimePolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>("mobileAppManagementPolicies", MobileAppManagementPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MobilityManagementPolicy>("mobileDeviceManagementPolicies", MobileDeviceManagementPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionGrantPolicy>("permissionGrantPolicies", PermissionGrantPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PermissionGrantPreApprovalPolicy>("permissionGrantPreApprovalPolicies", PermissionGrantPreApprovalPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicy>("roleManagementPolicies", RoleManagementPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UnifiedRoleManagementPolicyAssignment>("roleManagementPolicyAssignments", RoleManagementPolicyAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ServicePrincipalCreationPolicy>("servicePrincipalCreationPolicies", ServicePrincipalCreationPolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TokenIssuancePolicy>("tokenIssuancePolicies", TokenIssuancePolicies);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TokenLifetimePolicy>("tokenLifetimePolicies", TokenLifetimePolicies);
         }
     }
 }

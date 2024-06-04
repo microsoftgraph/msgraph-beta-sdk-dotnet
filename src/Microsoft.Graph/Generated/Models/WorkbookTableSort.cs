@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class WorkbookTableSort : Entity, IParsable
+    public class WorkbookTableSort : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The fields property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<WorkbookSortField>? Fields
+        public List<Microsoft.Graph.Beta.Models.WorkbookSortField>? Fields
         {
-            get { return BackingStore?.Get<List<WorkbookSortField>?>("fields"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookSortField>?>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #nullable restore
 #else
-        public List<WorkbookSortField> Fields
+        public List<Microsoft.Graph.Beta.Models.WorkbookSortField> Fields
         {
-            get { return BackingStore?.Get<List<WorkbookSortField>>("fields"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WorkbookSortField>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
 #endif
@@ -51,12 +51,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WorkbookTableSort"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WorkbookTableSort"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WorkbookTableSort CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WorkbookTableSort CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WorkbookTableSort();
+            return new Microsoft.Graph.Beta.Models.WorkbookTableSort();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "fields", n => { Fields = n.GetCollectionOfObjectValues<WorkbookSortField>(WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "fields", n => { Fields = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookSortField>(Microsoft.Graph.Beta.Models.WorkbookSortField.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "matchCase", n => { MatchCase = n.GetBoolValue(); } },
                 { "method", n => { Method = n.GetStringValue(); } },
             };
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<WorkbookSortField>("fields", Fields);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.WorkbookSortField>("fields", Fields);
             writer.WriteBoolValue("matchCase", MatchCase);
             writer.WriteStringValue("method", Method);
         }

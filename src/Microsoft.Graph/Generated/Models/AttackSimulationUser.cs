@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AttackSimulationUser"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AttackSimulationUser"/> and sets the default values.
         /// </summary>
         public AttackSimulationUser()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AttackSimulationUser"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AttackSimulationUser"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AttackSimulationUser CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AttackSimulationUser CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AttackSimulationUser();
+            return new Microsoft.Graph.Beta.Models.AttackSimulationUser();
         }
         /// <summary>
         /// The deserialization information for the current model

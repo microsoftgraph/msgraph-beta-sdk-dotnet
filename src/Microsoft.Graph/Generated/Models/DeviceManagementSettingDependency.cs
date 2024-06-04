@@ -23,16 +23,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Collection of constraints for the dependency setting value</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementConstraint>? Constraints
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>? Constraints
         {
-            get { return BackingStore?.Get<List<DeviceManagementConstraint>?>("constraints"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>?>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementConstraint> Constraints
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConstraint> Constraints
         {
-            get { return BackingStore?.Get<List<DeviceManagementConstraint>>("constraints"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
 #endif
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementSettingDependency"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency"/> and sets the default values.
         /// </summary>
         public DeviceManagementSettingDependency()
         {
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementSettingDependency"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static DeviceManagementSettingDependency CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementSettingDependency();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementSettingDependency();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "constraints", n => { Constraints = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>(Microsoft.Graph.Beta.Models.DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "definitionId", n => { DefinitionId = n.GetStringValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceManagementConstraint>("constraints", Constraints);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementConstraint>("constraints", Constraints);
             writer.WriteStringValue("definitionId", DefinitionId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

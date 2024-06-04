@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrintJob : Entity, IParsable
+    public class PrintJob : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The acknowledgedDateTime property</summary>
@@ -25,32 +25,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintJobConfiguration? Configuration
+        public Microsoft.Graph.Beta.Models.PrintJobConfiguration? Configuration
         {
-            get { return BackingStore?.Get<PrintJobConfiguration?>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintJobConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public PrintJobConfiguration Configuration
+        public Microsoft.Graph.Beta.Models.PrintJobConfiguration Configuration
         {
-            get { return BackingStore?.Get<PrintJobConfiguration>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintJobConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #endif
         /// <summary>The createdBy property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UserIdentity? CreatedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity? CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public UserIdentity CreatedBy
+        public Microsoft.Graph.Beta.Models.UserIdentity CreatedBy
         {
-            get { return BackingStore?.Get<UserIdentity>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -79,16 +79,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The documents property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintDocument>? Documents
+        public List<Microsoft.Graph.Beta.Models.PrintDocument>? Documents
         {
-            get { return BackingStore?.Get<List<PrintDocument>?>("documents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintDocument>?>("documents"); }
             set { BackingStore?.Set("documents", value); }
         }
 #nullable restore
 #else
-        public List<PrintDocument> Documents
+        public List<Microsoft.Graph.Beta.Models.PrintDocument> Documents
         {
-            get { return BackingStore?.Get<List<PrintDocument>>("documents"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintDocument>>("documents"); }
             set { BackingStore?.Set("documents", value); }
         }
 #endif
@@ -139,44 +139,44 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintJobStatus? Status
+        public Microsoft.Graph.Beta.Models.PrintJobStatus? Status
         {
-            get { return BackingStore?.Get<PrintJobStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintJobStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #nullable restore
 #else
-        public PrintJobStatus Status
+        public Microsoft.Graph.Beta.Models.PrintJobStatus Status
         {
-            get { return BackingStore?.Get<PrintJobStatus>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintJobStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
 #endif
         /// <summary>A list of printTasks that were triggered by this print job.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<PrintTask>? Tasks
+        public List<Microsoft.Graph.Beta.Models.PrintTask>? Tasks
         {
-            get { return BackingStore?.Get<List<PrintTask>?>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintTask>?>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #nullable restore
 #else
-        public List<PrintTask> Tasks
+        public List<Microsoft.Graph.Beta.Models.PrintTask> Tasks
         {
-            get { return BackingStore?.Get<List<PrintTask>>("tasks"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.PrintTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintJob"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrintJob"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrintJob CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrintJob CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintJob();
+            return new Microsoft.Graph.Beta.Models.PrintJob();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -188,17 +188,17 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "acknowledgedDateTime", n => { AcknowledgedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "configuration", n => { Configuration = n.GetObjectValue<PrintJobConfiguration>(PrintJobConfiguration.CreateFromDiscriminatorValue); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrintJobConfiguration>(Microsoft.Graph.Beta.Models.PrintJobConfiguration.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>(Microsoft.Graph.Beta.Models.UserIdentity.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "documents", n => { Documents = n.GetCollectionOfObjectValues<PrintDocument>(PrintDocument.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "documents", n => { Documents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintDocument>(Microsoft.Graph.Beta.Models.PrintDocument.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "errorCode", n => { ErrorCode = n.GetIntValue(); } },
                 { "isFetchable", n => { IsFetchable = n.GetBoolValue(); } },
                 { "redirectedFrom", n => { RedirectedFrom = n.GetStringValue(); } },
                 { "redirectedTo", n => { RedirectedTo = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<PrintJobStatus>(PrintJobStatus.CreateFromDiscriminatorValue); } },
-                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<PrintTask>(PrintTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "status", n => { Status = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrintJobStatus>(Microsoft.Graph.Beta.Models.PrintJobStatus.CreateFromDiscriminatorValue); } },
+                { "tasks", n => { Tasks = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintTask>(Microsoft.Graph.Beta.Models.PrintTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -211,17 +211,17 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("acknowledgedDateTime", AcknowledgedDateTime);
             writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
-            writer.WriteObjectValue<PrintJobConfiguration>("configuration", Configuration);
-            writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrintJobConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteCollectionOfObjectValues<PrintDocument>("documents", Documents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintDocument>("documents", Documents);
             writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteBoolValue("isFetchable", IsFetchable);
             writer.WriteStringValue("redirectedFrom", RedirectedFrom);
             writer.WriteStringValue("redirectedTo", RedirectedTo);
-            writer.WriteObjectValue<PrintJobStatus>("status", Status);
-            writer.WriteCollectionOfObjectValues<PrintTask>("tasks", Tasks);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrintJobStatus>("status", Status);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.PrintTask>("tasks", Tasks);
         }
     }
 }

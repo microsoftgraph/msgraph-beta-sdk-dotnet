@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class PrintDocument : Entity, IParsable
+    public class PrintDocument : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The configuration property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrinterDocumentConfiguration? Configuration
+        public Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration? Configuration
         {
-            get { return BackingStore?.Get<PrinterDocumentConfiguration?>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration?>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #nullable restore
 #else
-        public PrinterDocumentConfiguration Configuration
+        public Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration Configuration
         {
-            get { return BackingStore?.Get<PrinterDocumentConfiguration>("configuration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
 #endif
@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PrintDocument"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PrintDocument"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PrintDocument CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PrintDocument CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PrintDocument();
+            return new Microsoft.Graph.Beta.Models.PrintDocument();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "configuration", n => { Configuration = n.GetObjectValue<PrinterDocumentConfiguration>(PrinterDocumentConfiguration.CreateFromDiscriminatorValue); } },
+                { "configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration>(Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration.CreateFromDiscriminatorValue); } },
                 { "contentType", n => { ContentType = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "downloadedDateTime", n => { DownloadedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<PrinterDocumentConfiguration>("configuration", Configuration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrinterDocumentConfiguration>("configuration", Configuration);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("downloadedDateTime", DownloadedDateTime);

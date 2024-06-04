@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Documents.Item.Crea
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public PrintDocumentUploadProperties? Properties
+        public Microsoft.Graph.Beta.Models.PrintDocumentUploadProperties? Properties
         {
-            get { return BackingStore?.Get<PrintDocumentUploadProperties?>("properties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintDocumentUploadProperties?>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #nullable restore
 #else
-        public PrintDocumentUploadProperties Properties
+        public Microsoft.Graph.Beta.Models.PrintDocumentUploadProperties Properties
         {
-            get { return BackingStore?.Get<PrintDocumentUploadProperties>("properties"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrintDocumentUploadProperties>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreateUploadSessionPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUploadSession.CreateUploadSessionPostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateUploadSessionPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Documents.Item.Crea
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateUploadSessionPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUploadSession.CreateUploadSessionPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreateUploadSessionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUploadSession.CreateUploadSessionPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateUploadSessionPostRequestBody();
+            return new Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Documents.Item.CreateUploadSession.CreateUploadSessionPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Documents.Item.Crea
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "properties", n => { Properties = n.GetObjectValue<PrintDocumentUploadProperties>(PrintDocumentUploadProperties.CreateFromDiscriminatorValue); } },
+                { "properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrintDocumentUploadProperties>(Microsoft.Graph.Beta.Models.PrintDocumentUploadProperties.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item.Jobs.Item.Documents.Item.Crea
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<PrintDocumentUploadProperties>("properties", Properties);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PrintDocumentUploadProperties>("properties", Properties);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

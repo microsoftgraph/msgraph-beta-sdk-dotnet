@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Mention : Entity, IParsable
+    public class Mention : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The name of the application where the mention is created. Optional. Not used and defaulted as null for message.</summary>
@@ -45,16 +45,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The email information of the user who made the mention.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailAddress? CreatedBy
+        public Microsoft.Graph.Beta.Models.EmailAddress? CreatedBy
         {
-            get { return BackingStore?.Get<EmailAddress?>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress?>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #nullable restore
 #else
-        public EmailAddress CreatedBy
+        public Microsoft.Graph.Beta.Models.EmailAddress CreatedBy
         {
-            get { return BackingStore?.Get<EmailAddress>("createdBy"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
 #endif
@@ -83,16 +83,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The mentioned property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EmailAddress? Mentioned
+        public Microsoft.Graph.Beta.Models.EmailAddress? Mentioned
         {
-            get { return BackingStore?.Get<EmailAddress?>("mentioned"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress?>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
 #nullable restore
 #else
-        public EmailAddress Mentioned
+        public Microsoft.Graph.Beta.Models.EmailAddress Mentioned
         {
-            get { return BackingStore?.Get<EmailAddress>("mentioned"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
 #endif
@@ -121,12 +121,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Mention"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Mention"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Mention CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Mention CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Mention();
+            return new Microsoft.Graph.Beta.Models.Mention();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -138,11 +138,11 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "application", n => { Application = n.GetStringValue(); } },
                 { "clientReference", n => { ClientReference = n.GetStringValue(); } },
-                { "createdBy", n => { CreatedBy = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "deepLink", n => { DeepLink = n.GetStringValue(); } },
                 { "mentionText", n => { MentionText = n.GetStringValue(); } },
-                { "mentioned", n => { Mentioned = n.GetObjectValue<EmailAddress>(EmailAddress.CreateFromDiscriminatorValue); } },
+                { "mentioned", n => { Mentioned = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 { "serverCreatedDateTime", n => { ServerCreatedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -156,10 +156,10 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("application", Application);
             writer.WriteStringValue("clientReference", ClientReference);
-            writer.WriteObjectValue<EmailAddress>("createdBy", CreatedBy);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("deepLink", DeepLink);
-            writer.WriteObjectValue<EmailAddress>("mentioned", Mentioned);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>("mentioned", Mentioned);
             writer.WriteStringValue("mentionText", MentionText);
             writer.WriteDateTimeOffsetValue("serverCreatedDateTime", ServerCreatedDateTime);
         }

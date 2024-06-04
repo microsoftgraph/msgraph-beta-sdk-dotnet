@@ -9,26 +9,26 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The class used to identify the UWP app info for the kiosk configuration
     /// </summary>
-    public class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration, IParsable
+    public class WindowsKioskSingleUWPApp : Microsoft.Graph.Beta.Models.WindowsKioskAppConfiguration, IParsable
     {
         /// <summary>The uwpApp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public WindowsKioskUWPApp? UwpApp
+        public Microsoft.Graph.Beta.Models.WindowsKioskUWPApp? UwpApp
         {
-            get { return BackingStore?.Get<WindowsKioskUWPApp?>("uwpApp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskUWPApp?>("uwpApp"); }
             set { BackingStore?.Set("uwpApp", value); }
         }
 #nullable restore
 #else
-        public WindowsKioskUWPApp UwpApp
+        public Microsoft.Graph.Beta.Models.WindowsKioskUWPApp UwpApp
         {
-            get { return BackingStore?.Get<WindowsKioskUWPApp>("uwpApp"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsKioskUWPApp>("uwpApp"); }
             set { BackingStore?.Set("uwpApp", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="WindowsKioskSingleUWPApp"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsKioskSingleUWPApp"/> and sets the default values.
         /// </summary>
         public WindowsKioskSingleUWPApp() : base()
         {
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsKioskSingleUWPApp"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsKioskSingleUWPApp"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsKioskSingleUWPApp CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsKioskSingleUWPApp CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsKioskSingleUWPApp();
+            return new Microsoft.Graph.Beta.Models.WindowsKioskSingleUWPApp();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "uwpApp", n => { UwpApp = n.GetObjectValue<WindowsKioskUWPApp>(WindowsKioskUWPApp.CreateFromDiscriminatorValue); } },
+                { "uwpApp", n => { UwpApp = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskUWPApp>(Microsoft.Graph.Beta.Models.WindowsKioskUWPApp.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<WindowsKioskUWPApp>("uwpApp", UwpApp);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskUWPApp>("uwpApp", UwpApp);
         }
     }
 }

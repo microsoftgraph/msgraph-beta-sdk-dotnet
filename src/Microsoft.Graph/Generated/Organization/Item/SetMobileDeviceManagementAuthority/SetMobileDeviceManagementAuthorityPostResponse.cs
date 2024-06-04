@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthor
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="SetMobileDeviceManagementAuthorityPostResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse"/> and sets the default values.
         /// </summary>
         public SetMobileDeviceManagementAuthorityPostResponse()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthor
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="SetMobileDeviceManagementAuthorityPostResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static SetMobileDeviceManagementAuthorityPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SetMobileDeviceManagementAuthorityPostResponse();
+            return new Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority.SetMobileDeviceManagementAuthorityPostResponse();
         }
         /// <summary>
         /// The deserialization information for the current model

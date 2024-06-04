@@ -84,16 +84,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>If the reviewerType is Reviewers, this collection specifies the users who will be reviewers, either by ID or as members of a group, using a collection of singleUser and groupMembers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<UserSet>? Reviewers
+        public List<Microsoft.Graph.Beta.Models.UserSet>? Reviewers
         {
-            get { return BackingStore?.Get<List<UserSet>?>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSet>?>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #nullable restore
 #else
-        public List<UserSet> Reviewers
+        public List<Microsoft.Graph.Beta.Models.UserSet> Reviewers
         {
-            get { return BackingStore?.Get<List<UserSet>>("reviewers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserSet>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
 #endif
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="AssignmentReviewSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AssignmentReviewSettings"/> and sets the default values.
         /// </summary>
         public AssignmentReviewSettings()
         {
@@ -130,12 +130,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AssignmentReviewSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AssignmentReviewSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AssignmentReviewSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AssignmentReviewSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AssignmentReviewSettings();
+            return new Microsoft.Graph.Beta.Models.AssignmentReviewSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accessReviewTimeoutBehavior", n => { AccessReviewTimeoutBehavior = n.GetEnumValue<AccessReviewTimeoutBehavior>(); } },
+                { "accessReviewTimeoutBehavior", n => { AccessReviewTimeoutBehavior = n.GetEnumValue<Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior>(); } },
                 { "durationInDays", n => { DurationInDays = n.GetIntValue(); } },
                 { "isAccessRecommendationEnabled", n => { IsAccessRecommendationEnabled = n.GetBoolValue(); } },
                 { "isApprovalJustificationRequired", n => { IsApprovalJustificationRequired = n.GetBoolValue(); } },
@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
                 { "reviewerType", n => { ReviewerType = n.GetStringValue(); } },
-                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSet>(Microsoft.Graph.Beta.Models.UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -164,14 +164,14 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AccessReviewTimeoutBehavior>("accessReviewTimeoutBehavior", AccessReviewTimeoutBehavior);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AccessReviewTimeoutBehavior>("accessReviewTimeoutBehavior", AccessReviewTimeoutBehavior);
             writer.WriteIntValue("durationInDays", DurationInDays);
             writer.WriteBoolValue("isAccessRecommendationEnabled", IsAccessRecommendationEnabled);
             writer.WriteBoolValue("isApprovalJustificationRequired", IsApprovalJustificationRequired);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("recurrenceType", RecurrenceType);
-            writer.WriteCollectionOfObjectValues<UserSet>("reviewers", Reviewers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserSet>("reviewers", Reviewers);
             writer.WriteStringValue("reviewerType", ReviewerType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);

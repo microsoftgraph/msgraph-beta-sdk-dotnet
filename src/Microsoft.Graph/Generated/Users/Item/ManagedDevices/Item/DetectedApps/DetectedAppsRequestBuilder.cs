@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps
     public class DetectedAppsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.</summary>
         /// <param name="position">The unique identifier of detectedApp</param>
-        /// <returns>A <see cref="DetectedAppItemRequestBuilder"/></returns>
-        public DetectedAppItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.Item.DetectedAppItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.Item.DetectedAppItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("detectedApp%2Did", position);
-                return new DetectedAppItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.Item.DetectedAppItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DetectedAppsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DetectedAppsRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,25 +54,25 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps
         /// <summary>
         /// All applications currently installed on the device
         /// </summary>
-        /// <returns>A <see cref="DetectedAppCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DetectedAppCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DetectedAppCollectionResponse?> GetAsync(Action<RequestConfiguration<DetectedAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DetectedAppCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder.DetectedAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DetectedAppCollectionResponse> GetAsync(Action<RequestConfiguration<DetectedAppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DetectedAppCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder.DetectedAppsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DetectedAppCollectionResponse>(requestInfo, DetectedAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DetectedAppCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DetectedAppCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// All applications currently installed on the device
@@ -81,11 +81,11 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DetectedAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder.DetectedAppsRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DetectedAppsRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder.DetectedAppsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -96,11 +96,11 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DetectedAppsRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DetectedAppsRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder WithUrl(string rawUrl)
         {
-            return new DetectedAppsRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// All applications currently installed on the device
@@ -171,7 +171,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DetectedAppsRequestBuilderGetRequestConfiguration : RequestConfiguration<DetectedAppsRequestBuilderGetQueryParameters>
+        public class DetectedAppsRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.DetectedAppsRequestBuilder.DetectedAppsRequestBuilderGetQueryParameters>
         {
         }
     }

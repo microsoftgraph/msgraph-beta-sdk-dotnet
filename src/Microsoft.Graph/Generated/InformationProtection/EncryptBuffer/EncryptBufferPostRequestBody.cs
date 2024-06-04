@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer
             set { BackingStore?.Set("labelId", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="EncryptBufferPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.InformationProtection.EncryptBuffer.EncryptBufferPostRequestBody"/> and sets the default values.
         /// </summary>
         public EncryptBufferPostRequestBody()
         {
@@ -52,12 +52,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EncryptBufferPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.InformationProtection.EncryptBuffer.EncryptBufferPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static EncryptBufferPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.InformationProtection.EncryptBuffer.EncryptBufferPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EncryptBufferPostRequestBody();
+            return new Microsoft.Graph.Beta.InformationProtection.EncryptBuffer.EncryptBufferPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

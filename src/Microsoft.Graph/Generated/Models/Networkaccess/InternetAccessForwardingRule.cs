@@ -7,11 +7,33 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Networkaccess
 {
     #pragma warning disable CS1591
-    public class InternetAccessForwardingRule : ForwardingRule, IParsable
+    public class InternetAccessForwardingRule : Microsoft.Graph.Beta.Models.Networkaccess.ForwardingRule, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The ports property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Ports
+        {
+            get { return BackingStore?.Get<List<string>?>("ports"); }
+            set { BackingStore?.Set("ports", value); }
+        }
+#nullable restore
+#else
+        public List<string> Ports
+        {
+            get { return BackingStore?.Get<List<string>>("ports"); }
+            set { BackingStore?.Set("ports", value); }
+        }
+#endif
+        /// <summary>The protocol property</summary>
+        public Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol? Protocol
+        {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol?>("protocol"); }
+            set { BackingStore?.Set("protocol", value); }
+        }
         /// <summary>
-        /// Instantiates a new <see cref="InternetAccessForwardingRule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Networkaccess.InternetAccessForwardingRule"/> and sets the default values.
         /// </summary>
         public InternetAccessForwardingRule() : base()
         {
@@ -20,12 +42,12 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="InternetAccessForwardingRule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Networkaccess.InternetAccessForwardingRule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new InternetAccessForwardingRule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Networkaccess.InternetAccessForwardingRule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new InternetAccessForwardingRule();
+            return new Microsoft.Graph.Beta.Models.Networkaccess.InternetAccessForwardingRule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -35,6 +57,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
+                { "ports", n => { Ports = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                { "protocol", n => { Protocol = n.GetEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>(); } },
             };
         }
         /// <summary>
@@ -45,6 +69,8 @@ namespace Microsoft.Graph.Beta.Models.Networkaccess
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfPrimitiveValues<string>("ports", Ports);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Networkaccess.NetworkingProtocol>("protocol", Protocol);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ScopedRoleMembership : Entity, IParsable
+    public class ScopedRoleMembership : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
@@ -45,28 +45,28 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The roleMemberInfo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Identity? RoleMemberInfo
+        public Microsoft.Graph.Beta.Models.Identity? RoleMemberInfo
         {
-            get { return BackingStore?.Get<Identity?>("roleMemberInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("roleMemberInfo"); }
             set { BackingStore?.Set("roleMemberInfo", value); }
         }
 #nullable restore
 #else
-        public Identity RoleMemberInfo
+        public Microsoft.Graph.Beta.Models.Identity RoleMemberInfo
         {
-            get { return BackingStore?.Get<Identity>("roleMemberInfo"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("roleMemberInfo"); }
             set { BackingStore?.Set("roleMemberInfo", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ScopedRoleMembership"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ScopedRoleMembership"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ScopedRoleMembership CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ScopedRoleMembership CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ScopedRoleMembership();
+            return new Microsoft.Graph.Beta.Models.ScopedRoleMembership();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "administrativeUnitId", n => { AdministrativeUnitId = n.GetStringValue(); } },
                 { "roleId", n => { RoleId = n.GetStringValue(); } },
-                { "roleMemberInfo", n => { RoleMemberInfo = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
+                { "roleMemberInfo", n => { RoleMemberInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Identity>(Microsoft.Graph.Beta.Models.Identity.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("administrativeUnitId", AdministrativeUnitId);
             writer.WriteStringValue("roleId", RoleId);
-            writer.WriteObjectValue<Identity>("roleMemberInfo", RoleMemberInfo);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Identity>("roleMemberInfo", RoleMemberInfo);
         }
     }
 }

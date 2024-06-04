@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// The user experience analytics device scores entity consolidates the various Endpoint Analytics scores.
     /// </summary>
-    public class UserExperienceAnalyticsDeviceScores : Entity, IParsable
+    public class UserExperienceAnalyticsDeviceScores : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Indicates a score calculated from application health data to indicate when a device is having problems running one or more applications. Valid values range from 0-100. Value -1 means associated score is unavailable. A higher score indicates a healthier device. Read-only. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppReliabilityScore
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("endpointAnalyticsScore", value); }
         }
         /// <summary>The healthStatus property</summary>
-        public UserExperienceAnalyticsHealthState? HealthStatus
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState? HealthStatus
         {
-            get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>The manufacturer name of the device. Examples: Microsoft Corporation, HP, Lenovo. Supports: $select, $OrderBy. Read-only.</summary>
@@ -104,12 +104,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UserExperienceAnalyticsDeviceScores"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UserExperienceAnalyticsDeviceScores CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UserExperienceAnalyticsDeviceScores();
+            return new Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "batteryHealthScore", n => { BatteryHealthScore = n.GetDoubleValue(); } },
                 { "deviceName", n => { DeviceName = n.GetStringValue(); } },
                 { "endpointAnalyticsScore", n => { EndpointAnalyticsScore = n.GetDoubleValue(); } },
-                { "healthStatus", n => { HealthStatus = n.GetEnumValue<UserExperienceAnalyticsHealthState>(); } },
+                { "healthStatus", n => { HealthStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState>(); } },
                 { "manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 { "meanResourceSpikeTimeScore", n => { MeanResourceSpikeTimeScore = n.GetDoubleValue(); } },
                 { "model", n => { Model = n.GetStringValue(); } },
@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteDoubleValue("batteryHealthScore", BatteryHealthScore);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteDoubleValue("endpointAnalyticsScore", EndpointAnalyticsScore);
-            writer.WriteEnumValue<UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsHealthState>("healthStatus", HealthStatus);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteDoubleValue("meanResourceSpikeTimeScore", MeanResourceSpikeTimeScore);
             writer.WriteStringValue("model", Model);

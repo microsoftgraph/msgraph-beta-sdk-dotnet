@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.BulkRes
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="BulkResizePostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.BulkResize.BulkResizePostRequestBody"/> and sets the default values.
         /// </summary>
         public BulkResizePostRequestBody()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.BulkRes
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="BulkResizePostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.BulkResize.BulkResizePostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static BulkResizePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.BulkResize.BulkResizePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new BulkResizePostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.BulkResize.BulkResizePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

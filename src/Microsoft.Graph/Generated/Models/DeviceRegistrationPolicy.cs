@@ -7,38 +7,38 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class DeviceRegistrationPolicy : Entity, IParsable
+    public class DeviceRegistrationPolicy : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Microsoft Entra join within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureADJoinPolicy? AzureADJoin
+        public Microsoft.Graph.Beta.Models.AzureADJoinPolicy? AzureADJoin
         {
-            get { return BackingStore?.Get<AzureADJoinPolicy?>("azureADJoin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureADJoinPolicy?>("azureADJoin"); }
             set { BackingStore?.Set("azureADJoin", value); }
         }
 #nullable restore
 #else
-        public AzureADJoinPolicy AzureADJoin
+        public Microsoft.Graph.Beta.Models.AzureADJoinPolicy AzureADJoin
         {
-            get { return BackingStore?.Get<AzureADJoinPolicy>("azureADJoin"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureADJoinPolicy>("azureADJoin"); }
             set { BackingStore?.Set("azureADJoin", value); }
         }
 #endif
         /// <summary>Specifies the authorization policy for controlling registration of new devices using Microsoft Entra registered within your organization. Required. For more information, see What is a device identity?.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureADRegistrationPolicy? AzureADRegistration
+        public Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy? AzureADRegistration
         {
-            get { return BackingStore?.Get<AzureADRegistrationPolicy?>("azureADRegistration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy?>("azureADRegistration"); }
             set { BackingStore?.Set("azureADRegistration", value); }
         }
 #nullable restore
 #else
-        public AzureADRegistrationPolicy AzureADRegistration
+        public Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy AzureADRegistration
         {
-            get { return BackingStore?.Get<AzureADRegistrationPolicy>("azureADRegistration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy>("azureADRegistration"); }
             set { BackingStore?.Set("azureADRegistration", value); }
         }
 #endif
@@ -77,16 +77,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Specifies the setting for Local Admin Password Solution (LAPS) within your organization.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public LocalAdminPasswordSettings? LocalAdminPassword
+        public Microsoft.Graph.Beta.Models.LocalAdminPasswordSettings? LocalAdminPassword
         {
-            get { return BackingStore?.Get<LocalAdminPasswordSettings?>("localAdminPassword"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocalAdminPasswordSettings?>("localAdminPassword"); }
             set { BackingStore?.Set("localAdminPassword", value); }
         }
 #nullable restore
 #else
-        public LocalAdminPasswordSettings LocalAdminPassword
+        public Microsoft.Graph.Beta.Models.LocalAdminPasswordSettings LocalAdminPassword
         {
-            get { return BackingStore?.Get<LocalAdminPasswordSettings>("localAdminPassword"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocalAdminPasswordSettings>("localAdminPassword"); }
             set { BackingStore?.Set("localAdminPassword", value); }
         }
 #endif
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceRegistrationPolicy"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceRegistrationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceRegistrationPolicy();
+            return new Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,12 +120,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "azureADJoin", n => { AzureADJoin = n.GetObjectValue<AzureADJoinPolicy>(AzureADJoinPolicy.CreateFromDiscriminatorValue); } },
-                { "azureADRegistration", n => { AzureADRegistration = n.GetObjectValue<AzureADRegistrationPolicy>(AzureADRegistrationPolicy.CreateFromDiscriminatorValue); } },
+                { "azureADJoin", n => { AzureADJoin = n.GetObjectValue<Microsoft.Graph.Beta.Models.AzureADJoinPolicy>(Microsoft.Graph.Beta.Models.AzureADJoinPolicy.CreateFromDiscriminatorValue); } },
+                { "azureADRegistration", n => { AzureADRegistration = n.GetObjectValue<Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy>(Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "localAdminPassword", n => { LocalAdminPassword = n.GetObjectValue<LocalAdminPasswordSettings>(LocalAdminPasswordSettings.CreateFromDiscriminatorValue); } },
-                { "multiFactorAuthConfiguration", n => { MultiFactorAuthConfiguration = n.GetEnumValue<MultiFactorAuthConfiguration>(); } },
+                { "localAdminPassword", n => { LocalAdminPassword = n.GetObjectValue<Microsoft.Graph.Beta.Models.LocalAdminPasswordSettings>(Microsoft.Graph.Beta.Models.LocalAdminPasswordSettings.CreateFromDiscriminatorValue); } },
+                { "multiFactorAuthConfiguration", n => { MultiFactorAuthConfiguration = n.GetEnumValue<Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration>(); } },
                 { "userDeviceQuota", n => { UserDeviceQuota = n.GetIntValue(); } },
             };
         }
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<AzureADJoinPolicy>("azureADJoin", AzureADJoin);
-            writer.WriteObjectValue<AzureADRegistrationPolicy>("azureADRegistration", AzureADRegistration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AzureADJoinPolicy>("azureADJoin", AzureADJoin);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AzureADRegistrationPolicy>("azureADRegistration", AzureADRegistration);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<LocalAdminPasswordSettings>("localAdminPassword", LocalAdminPassword);
-            writer.WriteEnumValue<MultiFactorAuthConfiguration>("multiFactorAuthConfiguration", MultiFactorAuthConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LocalAdminPasswordSettings>("localAdminPassword", LocalAdminPassword);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.MultiFactorAuthConfiguration>("multiFactorAuthConfiguration", MultiFactorAuthConfiguration);
             writer.WriteIntValue("userDeviceQuota", UserDeviceQuota);
         }
     }

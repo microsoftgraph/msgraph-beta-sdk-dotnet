@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CustomClaimAttributeBase"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.CustomClaimAttributeBase"/> and sets the default values.
         /// </summary>
         public CustomClaimAttributeBase()
         {
@@ -46,17 +46,17 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CustomClaimAttributeBase"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.CustomClaimAttributeBase"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CustomClaimAttributeBase CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.CustomClaimAttributeBase CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.sourcedAttribute" => new SourcedAttribute(),
-                "#microsoft.graph.valueBasedAttribute" => new ValueBasedAttribute(),
-                _ => new CustomClaimAttributeBase(),
+                "#microsoft.graph.sourcedAttribute" => new Microsoft.Graph.Beta.Models.SourcedAttribute(),
+                "#microsoft.graph.valueBasedAttribute" => new Microsoft.Graph.Beta.Models.ValueBasedAttribute(),
+                _ => new Microsoft.Graph.Beta.Models.CustomClaimAttributeBase(),
             };
         }
         /// <summary>

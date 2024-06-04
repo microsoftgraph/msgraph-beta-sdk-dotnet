@@ -8,13 +8,13 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ActivityStatistics : Entity, IParsable
+    public class ActivityStatistics : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.</summary>
-        public AnalyticsActivityType? Activity
+        public Microsoft.Graph.Beta.Models.AnalyticsActivityType? Activity
         {
-            get { return BackingStore?.Get<AnalyticsActivityType?>("activity"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AnalyticsActivityType?>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
         /// <summary>Total hours spent on the activity. The value is represented in ISO 8601 format for durations.</summary>
@@ -54,20 +54,20 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ActivityStatistics"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ActivityStatistics"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ActivityStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ActivityStatistics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.callActivityStatistics" => new CallActivityStatistics(),
-                "#microsoft.graph.chatActivityStatistics" => new ChatActivityStatistics(),
-                "#microsoft.graph.emailActivityStatistics" => new EmailActivityStatistics(),
-                "#microsoft.graph.focusActivityStatistics" => new FocusActivityStatistics(),
-                "#microsoft.graph.meetingActivityStatistics" => new MeetingActivityStatistics(),
-                _ => new ActivityStatistics(),
+                "#microsoft.graph.callActivityStatistics" => new Microsoft.Graph.Beta.Models.CallActivityStatistics(),
+                "#microsoft.graph.chatActivityStatistics" => new Microsoft.Graph.Beta.Models.ChatActivityStatistics(),
+                "#microsoft.graph.emailActivityStatistics" => new Microsoft.Graph.Beta.Models.EmailActivityStatistics(),
+                "#microsoft.graph.focusActivityStatistics" => new Microsoft.Graph.Beta.Models.FocusActivityStatistics(),
+                "#microsoft.graph.meetingActivityStatistics" => new Microsoft.Graph.Beta.Models.MeetingActivityStatistics(),
+                _ => new Microsoft.Graph.Beta.Models.ActivityStatistics(),
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "activity", n => { Activity = n.GetEnumValue<AnalyticsActivityType>(); } },
+                { "activity", n => { Activity = n.GetEnumValue<Microsoft.Graph.Beta.Models.AnalyticsActivityType>(); } },
                 { "duration", n => { Duration = n.GetTimeSpanValue(); } },
                 { "endDate", n => { EndDate = n.GetDateValue(); } },
                 { "startDate", n => { StartDate = n.GetDateValue(); } },
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<AnalyticsActivityType>("activity", Activity);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AnalyticsActivityType>("activity", Activity);
             writer.WriteTimeSpanValue("duration", Duration);
             writer.WriteDateValue("endDate", EndDate);
             writer.WriteDateValue("startDate", StartDate);

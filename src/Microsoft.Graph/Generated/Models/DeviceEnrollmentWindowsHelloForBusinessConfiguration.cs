@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows Hello for Business settings lets users access their devices using a gesture, such as biometric authentication, or a PIN. Configure settings for enrolled Windows 10, Windows 10 Mobile and later.
     /// </summary>
-    public class DeviceEnrollmentWindowsHelloForBusinessConfiguration : DeviceEnrollmentConfiguration, IParsable
+    public class DeviceEnrollmentWindowsHelloForBusinessConfiguration : Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration, IParsable
     {
         /// <summary>Possible values of a property</summary>
-        public Enablement? EnhancedBiometricsState
+        public Microsoft.Graph.Beta.Models.Enablement? EnhancedBiometricsState
         {
-            get { return BackingStore?.Get<Enablement?>("enhancedBiometricsState"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("enhancedBiometricsState"); }
             set { BackingStore?.Set("enhancedBiometricsState", value); }
         }
         /// <summary>Setting to configure Enhanced sign-in security. Default is Not Configured</summary>
@@ -30,9 +30,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("pinExpirationInDays", value); }
         }
         /// <summary>Windows Hello for Business pin usage options</summary>
-        public WindowsHelloForBusinessPinUsage? PinLowercaseCharactersUsage
+        public Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage? PinLowercaseCharactersUsage
         {
-            get { return BackingStore?.Get<WindowsHelloForBusinessPinUsage?>("pinLowercaseCharactersUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage?>("pinLowercaseCharactersUsage"); }
             set { BackingStore?.Set("pinLowercaseCharactersUsage", value); }
         }
         /// <summary>Controls the maximum number of characters allowed for the Windows Hello for Business PIN. This value must be between 4 and 127, inclusive. This value must be greater than or equal to the value set for the minimum PIN.</summary>
@@ -54,15 +54,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("pinPreviousBlockCount", value); }
         }
         /// <summary>Windows Hello for Business pin usage options</summary>
-        public WindowsHelloForBusinessPinUsage? PinSpecialCharactersUsage
+        public Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage? PinSpecialCharactersUsage
         {
-            get { return BackingStore?.Get<WindowsHelloForBusinessPinUsage?>("pinSpecialCharactersUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage?>("pinSpecialCharactersUsage"); }
             set { BackingStore?.Set("pinSpecialCharactersUsage", value); }
         }
         /// <summary>Windows Hello for Business pin usage options</summary>
-        public WindowsHelloForBusinessPinUsage? PinUppercaseCharactersUsage
+        public Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage? PinUppercaseCharactersUsage
         {
-            get { return BackingStore?.Get<WindowsHelloForBusinessPinUsage?>("pinUppercaseCharactersUsage"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage?>("pinUppercaseCharactersUsage"); }
             set { BackingStore?.Set("pinUppercaseCharactersUsage", value); }
         }
         /// <summary>Controls the use of Remote Windows Hello for Business. Remote Windows Hello for Business provides the ability for a portable, registered device to be usable as a companion for desktop authentication. The desktop must be Azure AD joined and the companion device must have a Windows Hello for Business PIN.</summary>
@@ -78,15 +78,15 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("securityDeviceRequired", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? SecurityKeyForSignIn
+        public Microsoft.Graph.Beta.Models.Enablement? SecurityKeyForSignIn
         {
-            get { return BackingStore?.Get<Enablement?>("securityKeyForSignIn"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("securityKeyForSignIn"); }
             set { BackingStore?.Set("securityKeyForSignIn", value); }
         }
         /// <summary>Possible values of a property</summary>
-        public Enablement? State
+        public Microsoft.Graph.Beta.Models.Enablement? State
         {
-            get { return BackingStore?.Get<Enablement?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>Controls the use of biometric gestures, such as face and fingerprint, as an alternative to the Windows Hello for Business PIN.  If set to False, biometric gestures are not allowed. Users must still configure a PIN as a backup in case of failures.</summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("unlockWithBiometricsEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceEnrollmentWindowsHelloForBusinessConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentWindowsHelloForBusinessConfiguration"/> and sets the default values.
         /// </summary>
         public DeviceEnrollmentWindowsHelloForBusinessConfiguration() : base()
         {
@@ -105,12 +105,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceEnrollmentWindowsHelloForBusinessConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceEnrollmentWindowsHelloForBusinessConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceEnrollmentWindowsHelloForBusinessConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceEnrollmentWindowsHelloForBusinessConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceEnrollmentWindowsHelloForBusinessConfiguration();
+            return new Microsoft.Graph.Beta.Models.DeviceEnrollmentWindowsHelloForBusinessConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,19 +120,19 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "enhancedBiometricsState", n => { EnhancedBiometricsState = n.GetEnumValue<Enablement>(); } },
+                { "enhancedBiometricsState", n => { EnhancedBiometricsState = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "enhancedSignInSecurity", n => { EnhancedSignInSecurity = n.GetIntValue(); } },
                 { "pinExpirationInDays", n => { PinExpirationInDays = n.GetIntValue(); } },
-                { "pinLowercaseCharactersUsage", n => { PinLowercaseCharactersUsage = n.GetEnumValue<WindowsHelloForBusinessPinUsage>(); } },
+                { "pinLowercaseCharactersUsage", n => { PinLowercaseCharactersUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage>(); } },
                 { "pinMaximumLength", n => { PinMaximumLength = n.GetIntValue(); } },
                 { "pinMinimumLength", n => { PinMinimumLength = n.GetIntValue(); } },
                 { "pinPreviousBlockCount", n => { PinPreviousBlockCount = n.GetIntValue(); } },
-                { "pinSpecialCharactersUsage", n => { PinSpecialCharactersUsage = n.GetEnumValue<WindowsHelloForBusinessPinUsage>(); } },
-                { "pinUppercaseCharactersUsage", n => { PinUppercaseCharactersUsage = n.GetEnumValue<WindowsHelloForBusinessPinUsage>(); } },
+                { "pinSpecialCharactersUsage", n => { PinSpecialCharactersUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage>(); } },
+                { "pinUppercaseCharactersUsage", n => { PinUppercaseCharactersUsage = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage>(); } },
                 { "remotePassportEnabled", n => { RemotePassportEnabled = n.GetBoolValue(); } },
                 { "securityDeviceRequired", n => { SecurityDeviceRequired = n.GetBoolValue(); } },
-                { "securityKeyForSignIn", n => { SecurityKeyForSignIn = n.GetEnumValue<Enablement>(); } },
-                { "state", n => { State = n.GetEnumValue<Enablement>(); } },
+                { "securityKeyForSignIn", n => { SecurityKeyForSignIn = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "unlockWithBiometricsEnabled", n => { UnlockWithBiometricsEnabled = n.GetBoolValue(); } },
             };
         }
@@ -144,19 +144,19 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Enablement>("enhancedBiometricsState", EnhancedBiometricsState);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("enhancedBiometricsState", EnhancedBiometricsState);
             writer.WriteIntValue("enhancedSignInSecurity", EnhancedSignInSecurity);
             writer.WriteIntValue("pinExpirationInDays", PinExpirationInDays);
-            writer.WriteEnumValue<WindowsHelloForBusinessPinUsage>("pinLowercaseCharactersUsage", PinLowercaseCharactersUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage>("pinLowercaseCharactersUsage", PinLowercaseCharactersUsage);
             writer.WriteIntValue("pinMaximumLength", PinMaximumLength);
             writer.WriteIntValue("pinMinimumLength", PinMinimumLength);
             writer.WriteIntValue("pinPreviousBlockCount", PinPreviousBlockCount);
-            writer.WriteEnumValue<WindowsHelloForBusinessPinUsage>("pinSpecialCharactersUsage", PinSpecialCharactersUsage);
-            writer.WriteEnumValue<WindowsHelloForBusinessPinUsage>("pinUppercaseCharactersUsage", PinUppercaseCharactersUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage>("pinSpecialCharactersUsage", PinSpecialCharactersUsage);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsHelloForBusinessPinUsage>("pinUppercaseCharactersUsage", PinUppercaseCharactersUsage);
             writer.WriteBoolValue("remotePassportEnabled", RemotePassportEnabled);
             writer.WriteBoolValue("securityDeviceRequired", SecurityDeviceRequired);
-            writer.WriteEnumValue<Enablement>("securityKeyForSignIn", SecurityKeyForSignIn);
-            writer.WriteEnumValue<Enablement>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("securityKeyForSignIn", SecurityKeyForSignIn);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("state", State);
             writer.WriteBoolValue("unlockWithBiometricsEnabled", UnlockWithBiometricsEnabled);
         }
     }

@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The all property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpIdentity>? All
+        public List<Microsoft.Graph.Beta.Models.GcpIdentity>? All
         {
-            get { return BackingStore?.Get<List<GcpIdentity>?>("all"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpIdentity>?>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #nullable restore
 #else
-        public List<GcpIdentity> All
+        public List<Microsoft.Graph.Beta.Models.GcpIdentity> All
         {
-            get { return BackingStore?.Get<List<GcpIdentity>>("all"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpIdentity>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
 #endif
@@ -54,37 +54,37 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The serviceAccounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpServiceAccount>? ServiceAccounts
+        public List<Microsoft.Graph.Beta.Models.GcpServiceAccount>? ServiceAccounts
         {
-            get { return BackingStore?.Get<List<GcpServiceAccount>?>("serviceAccounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpServiceAccount>?>("serviceAccounts"); }
             set { BackingStore?.Set("serviceAccounts", value); }
         }
 #nullable restore
 #else
-        public List<GcpServiceAccount> ServiceAccounts
+        public List<Microsoft.Graph.Beta.Models.GcpServiceAccount> ServiceAccounts
         {
-            get { return BackingStore?.Get<List<GcpServiceAccount>>("serviceAccounts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpServiceAccount>>("serviceAccounts"); }
             set { BackingStore?.Set("serviceAccounts", value); }
         }
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<GcpUser>? Users
+        public List<Microsoft.Graph.Beta.Models.GcpUser>? Users
         {
-            get { return BackingStore?.Get<List<GcpUser>?>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpUser>?>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #nullable restore
 #else
-        public List<GcpUser> Users
+        public List<Microsoft.Graph.Beta.Models.GcpUser> Users
         {
-            get { return BackingStore?.Get<List<GcpUser>>("users"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GcpUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="GcpAssociatedIdentities"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.GcpAssociatedIdentities"/> and sets the default values.
         /// </summary>
         public GcpAssociatedIdentities()
         {
@@ -94,12 +94,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GcpAssociatedIdentities"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.GcpAssociatedIdentities"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GcpAssociatedIdentities CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.GcpAssociatedIdentities CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GcpAssociatedIdentities();
+            return new Microsoft.Graph.Beta.Models.GcpAssociatedIdentities();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -109,10 +109,10 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "all", n => { All = n.GetCollectionOfObjectValues<GcpIdentity>(GcpIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "all", n => { All = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpIdentity>(Microsoft.Graph.Beta.Models.GcpIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
-                { "serviceAccounts", n => { ServiceAccounts = n.GetCollectionOfObjectValues<GcpServiceAccount>(GcpServiceAccount.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "users", n => { Users = n.GetCollectionOfObjectValues<GcpUser>(GcpUser.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "serviceAccounts", n => { ServiceAccounts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpServiceAccount>(Microsoft.Graph.Beta.Models.GcpServiceAccount.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "users", n => { Users = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpUser>(Microsoft.Graph.Beta.Models.GcpUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<GcpIdentity>("all", All);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpIdentity>("all", All);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfObjectValues<GcpServiceAccount>("serviceAccounts", ServiceAccounts);
-            writer.WriteCollectionOfObjectValues<GcpUser>("users", Users);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpServiceAccount>("serviceAccounts", ServiceAccounts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.GcpUser>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

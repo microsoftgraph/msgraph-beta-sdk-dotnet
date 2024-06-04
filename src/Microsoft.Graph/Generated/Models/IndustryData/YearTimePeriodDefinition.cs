@@ -42,28 +42,28 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
         /// <summary>The year property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public YearReferenceValue? Year
+        public Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue? Year
         {
-            get { return BackingStore?.Get<YearReferenceValue?>("year"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue?>("year"); }
             set { BackingStore?.Set("year", value); }
         }
 #nullable restore
 #else
-        public YearReferenceValue Year
+        public Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue Year
         {
-            get { return BackingStore?.Get<YearReferenceValue>("year"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue>("year"); }
             set { BackingStore?.Set("year", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="YearTimePeriodDefinition"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new YearTimePeriodDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new YearTimePeriodDefinition();
+            return new Microsoft.Graph.Beta.Models.IndustryData.YearTimePeriodDefinition();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "endDate", n => { EndDate = n.GetDateValue(); } },
                 { "startDate", n => { StartDate = n.GetDateValue(); } },
-                { "year", n => { Year = n.GetObjectValue<YearReferenceValue>(YearReferenceValue.CreateFromDiscriminatorValue); } },
+                { "year", n => { Year = n.GetObjectValue<Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue>(Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models.IndustryData
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateValue("endDate", EndDate);
             writer.WriteDateValue("startDate", StartDate);
-            writer.WriteObjectValue<YearReferenceValue>("year", Year);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IndustryData.YearReferenceValue>("year", Year);
         }
     }
 }

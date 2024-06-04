@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AccessPackageAssignmentResourceRole : Entity, IParsable
+    public class AccessPackageAssignmentResourceRole : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The access package assignments resulting in this role assignment. Read-only. Nullable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AccessPackageAssignment>? AccessPackageAssignments
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAssignment>? AccessPackageAssignments
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignment>?>("accessPackageAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAssignment>?>("accessPackageAssignments"); }
             set { BackingStore?.Set("accessPackageAssignments", value); }
         }
 #nullable restore
 #else
-        public List<AccessPackageAssignment> AccessPackageAssignments
+        public List<Microsoft.Graph.Beta.Models.AccessPackageAssignment> AccessPackageAssignments
         {
-            get { return BackingStore?.Get<List<AccessPackageAssignment>>("accessPackageAssignments"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AccessPackageAssignment>>("accessPackageAssignments"); }
             set { BackingStore?.Set("accessPackageAssignments", value); }
         }
 #endif
@@ -125,12 +125,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AccessPackageAssignmentResourceRole"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AccessPackageAssignmentResourceRole CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AccessPackageAssignmentResourceRole();
+            return new Microsoft.Graph.Beta.Models.AccessPackageAssignmentResourceRole();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "accessPackageAssignments", n => { AccessPackageAssignments = n.GetCollectionOfObjectValues<AccessPackageAssignment>(AccessPackageAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "accessPackageAssignments", n => { AccessPackageAssignments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAssignment>(Microsoft.Graph.Beta.Models.AccessPackageAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "accessPackageResourceRole", n => { AccessPackageResourceRole = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>(Microsoft.Graph.Beta.Models.AccessPackageResourceRole.CreateFromDiscriminatorValue); } },
                 { "accessPackageResourceScope", n => { AccessPackageResourceScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>(Microsoft.Graph.Beta.Models.AccessPackageResourceScope.CreateFromDiscriminatorValue); } },
                 { "accessPackageSubject", n => { AccessPackageSubject = n.GetObjectValue<Microsoft.Graph.Beta.Models.AccessPackageSubject>(Microsoft.Graph.Beta.Models.AccessPackageSubject.CreateFromDiscriminatorValue); } },
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AccessPackageAssignment>("accessPackageAssignments", AccessPackageAssignments);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AccessPackageAssignment>("accessPackageAssignments", AccessPackageAssignments);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceRole>("accessPackageResourceRole", AccessPackageResourceRole);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageResourceScope>("accessPackageResourceScope", AccessPackageResourceScope);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AccessPackageSubject>("accessPackageSubject", AccessPackageSubject);

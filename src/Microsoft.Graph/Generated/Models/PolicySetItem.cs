@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A class containing the properties used for PolicySet Item.
     /// </summary>
-    public class PolicySetItem : Entity, IParsable
+    public class PolicySetItem : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>Creation time of the PolicySetItem.</summary>
         public DateTimeOffset? CreatedDateTime
@@ -94,36 +94,36 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>The enum to specify the status of PolicySet.</summary>
-        public PolicySetStatus? Status
+        public Microsoft.Graph.Beta.Models.PolicySetStatus? Status
         {
-            get { return BackingStore?.Get<PolicySetStatus?>("status"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PolicySetStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="PolicySetItem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.PolicySetItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new PolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.PolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.deviceCompliancePolicyPolicySetItem" => new DeviceCompliancePolicyPolicySetItem(),
-                "#microsoft.graph.deviceConfigurationPolicySetItem" => new DeviceConfigurationPolicySetItem(),
-                "#microsoft.graph.deviceManagementConfigurationPolicyPolicySetItem" => new DeviceManagementConfigurationPolicyPolicySetItem(),
-                "#microsoft.graph.deviceManagementScriptPolicySetItem" => new DeviceManagementScriptPolicySetItem(),
-                "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem" => new EnrollmentRestrictionsConfigurationPolicySetItem(),
-                "#microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem" => new IosLobAppProvisioningConfigurationPolicySetItem(),
-                "#microsoft.graph.managedAppProtectionPolicySetItem" => new ManagedAppProtectionPolicySetItem(),
-                "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem" => new ManagedDeviceMobileAppConfigurationPolicySetItem(),
-                "#microsoft.graph.mdmWindowsInformationProtectionPolicyPolicySetItem" => new MdmWindowsInformationProtectionPolicyPolicySetItem(),
-                "#microsoft.graph.mobileAppPolicySetItem" => new MobileAppPolicySetItem(),
-                "#microsoft.graph.targetedManagedAppConfigurationPolicySetItem" => new TargetedManagedAppConfigurationPolicySetItem(),
-                "#microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem" => new Windows10EnrollmentCompletionPageConfigurationPolicySetItem(),
-                "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem" => new WindowsAutopilotDeploymentProfilePolicySetItem(),
-                _ => new PolicySetItem(),
+                "#microsoft.graph.deviceCompliancePolicyPolicySetItem" => new Microsoft.Graph.Beta.Models.DeviceCompliancePolicyPolicySetItem(),
+                "#microsoft.graph.deviceConfigurationPolicySetItem" => new Microsoft.Graph.Beta.Models.DeviceConfigurationPolicySetItem(),
+                "#microsoft.graph.deviceManagementConfigurationPolicyPolicySetItem" => new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyPolicySetItem(),
+                "#microsoft.graph.deviceManagementScriptPolicySetItem" => new Microsoft.Graph.Beta.Models.DeviceManagementScriptPolicySetItem(),
+                "#microsoft.graph.enrollmentRestrictionsConfigurationPolicySetItem" => new Microsoft.Graph.Beta.Models.EnrollmentRestrictionsConfigurationPolicySetItem(),
+                "#microsoft.graph.iosLobAppProvisioningConfigurationPolicySetItem" => new Microsoft.Graph.Beta.Models.IosLobAppProvisioningConfigurationPolicySetItem(),
+                "#microsoft.graph.managedAppProtectionPolicySetItem" => new Microsoft.Graph.Beta.Models.ManagedAppProtectionPolicySetItem(),
+                "#microsoft.graph.managedDeviceMobileAppConfigurationPolicySetItem" => new Microsoft.Graph.Beta.Models.ManagedDeviceMobileAppConfigurationPolicySetItem(),
+                "#microsoft.graph.mdmWindowsInformationProtectionPolicyPolicySetItem" => new Microsoft.Graph.Beta.Models.MdmWindowsInformationProtectionPolicyPolicySetItem(),
+                "#microsoft.graph.mobileAppPolicySetItem" => new Microsoft.Graph.Beta.Models.MobileAppPolicySetItem(),
+                "#microsoft.graph.targetedManagedAppConfigurationPolicySetItem" => new Microsoft.Graph.Beta.Models.TargetedManagedAppConfigurationPolicySetItem(),
+                "#microsoft.graph.windows10EnrollmentCompletionPageConfigurationPolicySetItem" => new Microsoft.Graph.Beta.Models.Windows10EnrollmentCompletionPageConfigurationPolicySetItem(),
+                "#microsoft.graph.windowsAutopilotDeploymentProfilePolicySetItem" => new Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfilePolicySetItem(),
+                _ => new Microsoft.Graph.Beta.Models.PolicySetItem(),
             };
         }
         /// <summary>
@@ -136,12 +136,12 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
-                { "errorCode", n => { ErrorCode = n.GetEnumValue<ErrorCode>(); } },
+                { "errorCode", n => { ErrorCode = n.GetEnumValue<Microsoft.Graph.Beta.Models.ErrorCode>(); } },
                 { "guidedDeploymentTags", n => { GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "itemType", n => { ItemType = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 { "payloadId", n => { PayloadId = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<PolicySetStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<Microsoft.Graph.Beta.Models.PolicySetStatus>(); } },
             };
         }
         /// <summary>
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteEnumValue<ErrorCode>("errorCode", ErrorCode);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.ErrorCode>("errorCode", ErrorCode);
             writer.WriteCollectionOfPrimitiveValues<string>("guidedDeploymentTags", GuidedDeploymentTags);
             writer.WriteStringValue("itemType", ItemType);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("payloadId", PayloadId);
-            writer.WriteEnumValue<PolicySetStatus>("status", Status);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.PolicySetStatus>("status", Status);
         }
     }
 }

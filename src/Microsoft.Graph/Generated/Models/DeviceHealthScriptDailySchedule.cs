@@ -9,10 +9,10 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Device health script daily schedule.
     /// </summary>
-    public class DeviceHealthScriptDailySchedule : DeviceHealthScriptTimeSchedule, IParsable
+    public class DeviceHealthScriptDailySchedule : Microsoft.Graph.Beta.Models.DeviceHealthScriptTimeSchedule, IParsable
     {
         /// <summary>
-        /// Instantiates a new <see cref="DeviceHealthScriptDailySchedule"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptDailySchedule"/> and sets the default values.
         /// </summary>
         public DeviceHealthScriptDailySchedule() : base()
         {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceHealthScriptDailySchedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceHealthScriptDailySchedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceHealthScriptDailySchedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceHealthScriptDailySchedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceHealthScriptDailySchedule();
+            return new Microsoft.Graph.Beta.Models.DeviceHealthScriptDailySchedule();
         }
         /// <summary>
         /// The deserialization information for the current model

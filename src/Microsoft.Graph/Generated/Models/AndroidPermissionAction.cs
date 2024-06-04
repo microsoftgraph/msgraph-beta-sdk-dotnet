@@ -13,9 +13,9 @@ namespace Microsoft.Graph.Beta.Models
     public class AndroidPermissionAction : IAdditionalDataHolder, IBackedModel, IParsable
     {
         /// <summary>Android action taken when an app requests a dangerous permission.</summary>
-        public AndroidPermissionActionType? Action
+        public Microsoft.Graph.Beta.Models.AndroidPermissionActionType? Action
         {
-            get { return BackingStore?.Get<AndroidPermissionActionType?>("action"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidPermissionActionType?>("action"); }
             set { BackingStore?.Set("action", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AndroidPermissionAction"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AndroidPermissionAction"/> and sets the default values.
         /// </summary>
         public AndroidPermissionAction()
         {
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AndroidPermissionAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AndroidPermissionAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static AndroidPermissionAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.AndroidPermissionAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AndroidPermissionAction();
+            return new Microsoft.Graph.Beta.Models.AndroidPermissionAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<AndroidPermissionActionType>(); } },
+                { "action", n => { Action = n.GetEnumValue<Microsoft.Graph.Beta.Models.AndroidPermissionActionType>(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "permission", n => { Permission = n.GetStringValue(); } },
             };
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<AndroidPermissionActionType>("action", Action);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.AndroidPermissionActionType>("action", Action);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("permission", Permission);
             writer.WriteAdditionalData(AdditionalData);

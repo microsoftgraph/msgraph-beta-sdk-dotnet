@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
     public class AuthenticationContextRequestBuilder : BaseRequestBuilder
     {
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationContextRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="AuthenticationContextRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -35,25 +35,25 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
         /// <summary>
         /// Get authenticationContext from roleManagement
         /// </summary>
-        /// <returns>A <see cref="AuthenticationContextClassReference"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AuthenticationContextClassReference"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<AuthenticationContextClassReference?> GetAsync(Action<RequestConfiguration<AuthenticationContextRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder.AuthenticationContextRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<AuthenticationContextClassReference> GetAsync(Action<RequestConfiguration<AuthenticationContextRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder.AuthenticationContextRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<AuthenticationContextClassReference>(requestInfo, AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>(requestInfo, Microsoft.Graph.Beta.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get authenticationContext from roleManagement
@@ -62,11 +62,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationContextRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder.AuthenticationContextRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<AuthenticationContextRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder.AuthenticationContextRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="AuthenticationContextRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public AuthenticationContextRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder WithUrl(string rawUrl)
         {
-            return new AuthenticationContextRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get authenticationContext from roleManagement
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamesp
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class AuthenticationContextRequestBuilderGetRequestConfiguration : RequestConfiguration<AuthenticationContextRequestBuilderGetQueryParameters>
+        public class AuthenticationContextRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.RoleManagement.EnterpriseApps.Item.ResourceNamespaces.Item.ResourceActions.Item.AuthenticationContext.AuthenticationContextRequestBuilder.AuthenticationContextRequestBuilderGetQueryParameters>
         {
         }
     }

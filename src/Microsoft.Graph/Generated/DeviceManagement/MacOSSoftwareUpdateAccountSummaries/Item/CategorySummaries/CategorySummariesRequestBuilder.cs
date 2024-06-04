@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
     public class CategorySummariesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the categorySummaries property of the microsoft.graph.macOSSoftwareUpdateAccountSummary entity.</summary>
         /// <param name="position">The unique identifier of macOSSoftwareUpdateCategorySummary</param>
-        /// <returns>A <see cref="MacOSSoftwareUpdateCategorySummaryItemRequestBuilder"/></returns>
-        public MacOSSoftwareUpdateCategorySummaryItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item.MacOSSoftwareUpdateCategorySummaryItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item.MacOSSoftwareUpdateCategorySummaryItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("macOSSoftwareUpdateCategorySummary%2Did", position);
-                return new MacOSSoftwareUpdateCategorySummaryItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.Item.MacOSSoftwareUpdateCategorySummaryItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="CategorySummariesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="CategorySummariesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
         /// <summary>
         /// Summary of the updates by category.
         /// </summary>
-        /// <returns>A <see cref="MacOSSoftwareUpdateCategorySummaryCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummaryCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MacOSSoftwareUpdateCategorySummaryCollectionResponse?> GetAsync(Action<RequestConfiguration<CategorySummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummaryCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder.CategorySummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MacOSSoftwareUpdateCategorySummaryCollectionResponse> GetAsync(Action<RequestConfiguration<CategorySummariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummaryCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder.CategorySummariesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateCategorySummaryCollectionResponse>(requestInfo, MacOSSoftwareUpdateCategorySummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummaryCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummaryCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to categorySummaries for deviceManagement
         /// </summary>
-        /// <returns>A <see cref="MacOSSoftwareUpdateCategorySummary"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<MacOSSoftwareUpdateCategorySummary?> PostAsync(MacOSSoftwareUpdateCategorySummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary?> PostAsync(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<MacOSSoftwareUpdateCategorySummary> PostAsync(MacOSSoftwareUpdateCategorySummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary> PostAsync(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<MacOSSoftwareUpdateCategorySummary>(requestInfo, MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary>(requestInfo, Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Summary of the updates by category.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CategorySummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder.CategorySummariesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<CategorySummariesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder.CategorySummariesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(MacOSSoftwareUpdateCategorySummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(MacOSSoftwareUpdateCategorySummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateCategorySummary body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="CategorySummariesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public CategorySummariesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder WithUrl(string rawUrl)
         {
-            return new CategorySummariesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Summary of the updates by category.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class CategorySummariesRequestBuilderGetRequestConfiguration : RequestConfiguration<CategorySummariesRequestBuilderGetQueryParameters>
+        public class CategorySummariesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummaries.Item.CategorySummaries.CategorySummariesRequestBuilder.CategorySummariesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

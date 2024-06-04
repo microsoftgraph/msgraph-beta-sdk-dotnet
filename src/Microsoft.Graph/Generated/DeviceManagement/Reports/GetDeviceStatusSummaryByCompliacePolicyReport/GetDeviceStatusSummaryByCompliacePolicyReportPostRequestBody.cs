@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryBy
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport.GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody"/> and sets the default values.
         /// </summary>
         public GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody()
         {
@@ -138,12 +138,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryBy
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport.GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport.GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceStatusSummaryByCompliacePolicyReport.GetDeviceStatusSummaryByCompliacePolicyReportPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

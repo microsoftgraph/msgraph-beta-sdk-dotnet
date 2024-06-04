@@ -7,50 +7,50 @@ using System;
 namespace Microsoft.Graph.Beta.Models.Security
 {
     #pragma warning disable CS1591
-    public class EdiscoveryFile : FileObject, IParsable
+    public class EdiscoveryFile : Microsoft.Graph.Beta.Models.Security.FileObject, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Custodians associated with the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public EdiscoveryCustodian? Custodian
+        public Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian? Custodian
         {
-            get { return BackingStore?.Get<EdiscoveryCustodian?>("custodian"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian?>("custodian"); }
             set { BackingStore?.Set("custodian", value); }
         }
 #nullable restore
 #else
-        public EdiscoveryCustodian Custodian
+        public Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian Custodian
         {
-            get { return BackingStore?.Get<EdiscoveryCustodian>("custodian"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian>("custodian"); }
             set { BackingStore?.Set("custodian", value); }
         }
 #endif
         /// <summary>Tags associated with the file.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<EdiscoveryReviewTag>? Tags
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewTag>? Tags
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>?>("tags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewTag>?>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #nullable restore
 #else
-        public List<EdiscoveryReviewTag> Tags
+        public List<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewTag> Tags
         {
-            get { return BackingStore?.Get<List<EdiscoveryReviewTag>>("tags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewTag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="EdiscoveryFile"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Security.EdiscoveryFile"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new EdiscoveryFile CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Security.EdiscoveryFile CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new EdiscoveryFile();
+            return new Microsoft.Graph.Beta.Models.Security.EdiscoveryFile();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "custodian", n => { Custodian = n.GetObjectValue<EdiscoveryCustodian>(EdiscoveryCustodian.CreateFromDiscriminatorValue); } },
-                { "tags", n => { Tags = n.GetCollectionOfObjectValues<EdiscoveryReviewTag>(EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "custodian", n => { Custodian = n.GetObjectValue<Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian>(Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian.CreateFromDiscriminatorValue); } },
+                { "tags", n => { Tags = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewTag>(Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,8 +72,8 @@ namespace Microsoft.Graph.Beta.Models.Security
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<EdiscoveryCustodian>("custodian", Custodian);
-            writer.WriteCollectionOfObjectValues<EdiscoveryReviewTag>("tags", Tags);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Security.EdiscoveryCustodian>("custodian", Custodian);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Security.EdiscoveryReviewTag>("tags", Tags);
         }
     }
 }

@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class UnifiedRbacResourceAction : Entity, IParsable
+    public class UnifiedRbacResourceAction : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.</summary>
@@ -29,16 +29,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The authenticationContext property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AuthenticationContextClassReference? AuthenticationContext
+        public Microsoft.Graph.Beta.Models.AuthenticationContextClassReference? AuthenticationContext
         {
-            get { return BackingStore?.Get<AuthenticationContextClassReference?>("authenticationContext"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference?>("authenticationContext"); }
             set { BackingStore?.Set("authenticationContext", value); }
         }
 #nullable restore
 #else
-        public AuthenticationContextClassReference AuthenticationContext
+        public Microsoft.Graph.Beta.Models.AuthenticationContextClassReference AuthenticationContext
         {
-            get { return BackingStore?.Get<AuthenticationContextClassReference>("authenticationContext"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>("authenticationContext"); }
             set { BackingStore?.Set("authenticationContext", value); }
         }
 #endif
@@ -105,16 +105,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The resourceScope property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UnifiedRbacResourceScope? ResourceScope
+        public Microsoft.Graph.Beta.Models.UnifiedRbacResourceScope? ResourceScope
         {
-            get { return BackingStore?.Get<UnifiedRbacResourceScope?>("resourceScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRbacResourceScope?>("resourceScope"); }
             set { BackingStore?.Set("resourceScope", value); }
         }
 #nullable restore
 #else
-        public UnifiedRbacResourceScope ResourceScope
+        public Microsoft.Graph.Beta.Models.UnifiedRbacResourceScope ResourceScope
         {
-            get { return BackingStore?.Get<UnifiedRbacResourceScope>("resourceScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UnifiedRbacResourceScope>("resourceScope"); }
             set { BackingStore?.Set("resourceScope", value); }
         }
 #endif
@@ -137,12 +137,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UnifiedRbacResourceAction"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new UnifiedRbacResourceAction CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new UnifiedRbacResourceAction();
+            return new Microsoft.Graph.Beta.Models.UnifiedRbacResourceAction();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -153,13 +153,13 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "actionVerb", n => { ActionVerb = n.GetStringValue(); } },
-                { "authenticationContext", n => { AuthenticationContext = n.GetObjectValue<AuthenticationContextClassReference>(AuthenticationContextClassReference.CreateFromDiscriminatorValue); } },
+                { "authenticationContext", n => { AuthenticationContext = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>(Microsoft.Graph.Beta.Models.AuthenticationContextClassReference.CreateFromDiscriminatorValue); } },
                 { "authenticationContextId", n => { AuthenticationContextId = n.GetStringValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "isAuthenticationContextSettable", n => { IsAuthenticationContextSettable = n.GetBoolValue(); } },
                 { "isPrivileged", n => { IsPrivileged = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "resourceScope", n => { ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
+                { "resourceScope", n => { ResourceScope = n.GetObjectValue<Microsoft.Graph.Beta.Models.UnifiedRbacResourceScope>(Microsoft.Graph.Beta.Models.UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
                 { "resourceScopeId", n => { ResourceScopeId = n.GetStringValue(); } },
             };
         }
@@ -172,13 +172,13 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("actionVerb", ActionVerb);
-            writer.WriteObjectValue<AuthenticationContextClassReference>("authenticationContext", AuthenticationContext);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationContextClassReference>("authenticationContext", AuthenticationContext);
             writer.WriteStringValue("authenticationContextId", AuthenticationContextId);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isAuthenticationContextSettable", IsAuthenticationContextSettable);
             writer.WriteBoolValue("isPrivileged", IsPrivileged);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<UnifiedRbacResourceScope>("resourceScope", ResourceScope);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UnifiedRbacResourceScope>("resourceScope", ResourceScope);
             writer.WriteStringValue("resourceScopeId", ResourceScopeId);
         }
     }

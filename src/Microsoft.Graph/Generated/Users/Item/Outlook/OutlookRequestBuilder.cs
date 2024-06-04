@@ -24,83 +24,83 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook
     public class OutlookRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.</summary>
-        public MasterCategoriesRequestBuilder MasterCategories
+        public Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.MasterCategoriesRequestBuilder MasterCategories
         {
-            get => new MasterCategoriesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.MasterCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the supportedLanguages method.</summary>
-        public SupportedLanguagesRequestBuilder SupportedLanguages
+        public Microsoft.Graph.Beta.Users.Item.Outlook.SupportedLanguages.SupportedLanguagesRequestBuilder SupportedLanguages
         {
-            get => new SupportedLanguagesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Outlook.SupportedLanguages.SupportedLanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the supportedTimeZones method.</summary>
-        public SupportedTimeZonesRequestBuilder SupportedTimeZones
+        public Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder SupportedTimeZones
         {
-            get => new SupportedTimeZonesRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZones.SupportedTimeZonesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.</summary>
-        public TaskFoldersRequestBuilder TaskFolders
+        public Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.TaskFoldersRequestBuilder TaskFolders
         {
-            get => new TaskFoldersRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders.TaskFoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.</summary>
-        public TaskGroupsRequestBuilder TaskGroups
+        public Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.TaskGroupsRequestBuilder TaskGroups
         {
-            get => new TaskGroupsRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups.TaskGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the tasks property of the microsoft.graph.outlookUser entity.</summary>
-        public TasksRequestBuilder Tasks
+        public Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.TasksRequestBuilder Tasks
         {
-            get => new TasksRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Users.Item.Outlook.Tasks.TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="OutlookRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutlookRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook{?%24select}", pathParameters)
+        public OutlookRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook{?%24expand,%24select}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="OutlookRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public OutlookRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook{?%24select}", rawUrl)
+        public OutlookRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/users/{user%2Did}/outlook{?%24expand,%24select}", rawUrl)
         {
         }
         /// <summary>
         /// Selective Outlook services available to the user. Read-only. Nullable.
         /// </summary>
-        /// <returns>A <see cref="OutlookUser"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OutlookUser"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<OutlookUser?> GetAsync(Action<RequestConfiguration<OutlookRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OutlookUser?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder.OutlookRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<OutlookUser> GetAsync(Action<RequestConfiguration<OutlookRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.OutlookUser> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder.OutlookRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<OutlookUser>(requestInfo, OutlookUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OutlookUser>(requestInfo, Microsoft.Graph.Beta.Models.OutlookUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Provides operations to call the supportedTimeZones method.
         /// </summary>
-        /// <returns>A <see cref="SupportedTimeZonesWithTimeZoneStandardRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardRequestBuilder"/></returns>
         /// <param name="timeZoneStandard">Usage: TimeZoneStandard=&apos;{TimeZoneStandard}&apos;</param>
-        public SupportedTimeZonesWithTimeZoneStandardRequestBuilder SupportedTimeZonesWithTimeZoneStandard(string timeZoneStandard)
+        public Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardRequestBuilder SupportedTimeZonesWithTimeZoneStandard(string timeZoneStandard)
         {
             if(string.IsNullOrEmpty(timeZoneStandard)) throw new ArgumentNullException(nameof(timeZoneStandard));
-            return new SupportedTimeZonesWithTimeZoneStandardRequestBuilder(PathParameters, RequestAdapter, timeZoneStandard);
+            return new Microsoft.Graph.Beta.Users.Item.Outlook.SupportedTimeZonesWithTimeZoneStandard.SupportedTimeZonesWithTimeZoneStandardRequestBuilder(PathParameters, RequestAdapter, timeZoneStandard);
         }
         /// <summary>
         /// Selective Outlook services available to the user. Read-only. Nullable.
@@ -109,11 +109,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OutlookRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder.OutlookRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<OutlookRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder.OutlookRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -124,17 +124,27 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="OutlookRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public OutlookRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder WithUrl(string rawUrl)
         {
-            return new OutlookRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Selective Outlook services available to the user. Read-only. Nullable.
         /// </summary>
         public class OutlookRequestBuilderGetQueryParameters 
         {
+            /// <summary>Expand related entities</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("%24expand")]
+            public string[]? Expand { get; set; }
+#nullable restore
+#else
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+#endif
             /// <summary>Select properties to be returned</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -150,7 +160,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class OutlookRequestBuilderGetRequestConfiguration : RequestConfiguration<OutlookRequestBuilderGetQueryParameters>
+        public class OutlookRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Users.Item.Outlook.OutlookRequestBuilder.OutlookRequestBuilderGetQueryParameters>
         {
         }
     }

@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// win32MobileAppCatalogPackage extends mobileAppCatalogPackage by providing information necessary for the creation of a win32CatalogApp instance.
     /// </summary>
-    public class Win32MobileAppCatalogPackage : MobileAppCatalogPackage, IParsable
+    public class Win32MobileAppCatalogPackage : Microsoft.Graph.Beta.Models.MobileAppCatalogPackage, IParsable
     {
         /// <summary>Contains properties for Windows architecture.</summary>
-        public WindowsArchitecture? ApplicableArchitectures
+        public Microsoft.Graph.Beta.Models.WindowsArchitecture? ApplicableArchitectures
         {
-            get { return BackingStore?.Get<WindowsArchitecture?>("applicableArchitectures"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsArchitecture?>("applicableArchitectures"); }
             set { BackingStore?.Set("applicableArchitectures", value); }
         }
         /// <summary>The product branch name, which is a specific subset of product functionality as defined by the publisher (example: &quot;Fabrikam for Business (x64)&quot;). A specific product will have one or more branchDisplayNames. Read-only. Supports $filter, $search, $select. This property is read-only.</summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("packageAutoUpdateCapable", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="Win32MobileAppCatalogPackage"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.Win32MobileAppCatalogPackage"/> and sets the default values.
         /// </summary>
         public Win32MobileAppCatalogPackage() : base()
         {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Win32MobileAppCatalogPackage"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Win32MobileAppCatalogPackage"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Win32MobileAppCatalogPackage CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Win32MobileAppCatalogPackage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Win32MobileAppCatalogPackage();
+            return new Microsoft.Graph.Beta.Models.Win32MobileAppCatalogPackage();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
+                { "applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsArchitecture>(); } },
                 { "branchDisplayName", n => { BranchDisplayName = n.GetStringValue(); } },
                 { "locales", n => { Locales = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "packageAutoUpdateCapable", n => { PackageAutoUpdateCapable = n.GetBoolValue(); } },
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsArchitecture>("applicableArchitectures", ApplicableArchitectures);
         }
     }
 }

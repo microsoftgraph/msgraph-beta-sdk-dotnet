@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.C
         /// <summary>The deviceEnrollmentNotificationConfigurations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceEnrollmentConfiguration>? DeviceEnrollmentNotificationConfigurations
+        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>? DeviceEnrollmentNotificationConfigurations
         {
-            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>?>("deviceEnrollmentNotificationConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>?>("deviceEnrollmentNotificationConfigurations"); }
             set { BackingStore?.Set("deviceEnrollmentNotificationConfigurations", value); }
         }
 #nullable restore
 #else
-        public List<DeviceEnrollmentConfiguration> DeviceEnrollmentNotificationConfigurations
+        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration> DeviceEnrollmentNotificationConfigurations
         {
-            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>("deviceEnrollmentNotificationConfigurations"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>>("deviceEnrollmentNotificationConfigurations"); }
             set { BackingStore?.Set("deviceEnrollmentNotificationConfigurations", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="CreateEnrollmentNotificationConfigurationPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration.CreateEnrollmentNotificationConfigurationPostRequestBody"/> and sets the default values.
         /// </summary>
         public CreateEnrollmentNotificationConfigurationPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.C
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="CreateEnrollmentNotificationConfigurationPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration.CreateEnrollmentNotificationConfigurationPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static CreateEnrollmentNotificationConfigurationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration.CreateEnrollmentNotificationConfigurationPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CreateEnrollmentNotificationConfigurationPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.CreateEnrollmentNotificationConfiguration.CreateEnrollmentNotificationConfigurationPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.C
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceEnrollmentNotificationConfigurations", n => { DeviceEnrollmentNotificationConfigurations = n.GetCollectionOfObjectValues<DeviceEnrollmentConfiguration>(DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceEnrollmentNotificationConfigurations", n => { DeviceEnrollmentNotificationConfigurations = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>(Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.C
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceEnrollmentConfiguration>("deviceEnrollmentNotificationConfigurations", DeviceEnrollmentNotificationConfigurations);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>("deviceEnrollmentNotificationConfigurations", DeviceEnrollmentNotificationConfigurations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

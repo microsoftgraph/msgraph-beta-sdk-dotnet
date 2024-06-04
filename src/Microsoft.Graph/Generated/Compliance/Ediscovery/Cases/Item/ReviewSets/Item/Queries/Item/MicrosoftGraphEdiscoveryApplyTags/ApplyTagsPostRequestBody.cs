@@ -23,37 +23,37 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         /// <summary>The tagsToAdd property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tag>? TagsToAdd
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>? TagsToAdd
         {
-            get { return BackingStore?.Get<List<Tag>?>("tagsToAdd"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>?>("tagsToAdd"); }
             set { BackingStore?.Set("tagsToAdd", value); }
         }
 #nullable restore
 #else
-        public List<Tag> TagsToAdd
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Tag> TagsToAdd
         {
-            get { return BackingStore?.Get<List<Tag>>("tagsToAdd"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>>("tagsToAdd"); }
             set { BackingStore?.Set("tagsToAdd", value); }
         }
 #endif
         /// <summary>The tagsToRemove property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tag>? TagsToRemove
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>? TagsToRemove
         {
-            get { return BackingStore?.Get<List<Tag>?>("tagsToRemove"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>?>("tagsToRemove"); }
             set { BackingStore?.Set("tagsToRemove", value); }
         }
 #nullable restore
 #else
-        public List<Tag> TagsToRemove
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Tag> TagsToRemove
         {
-            get { return BackingStore?.Get<List<Tag>>("tagsToRemove"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>>("tagsToRemove"); }
             set { BackingStore?.Set("tagsToRemove", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ApplyTagsPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphEdiscoveryApplyTags.ApplyTagsPostRequestBody"/> and sets the default values.
         /// </summary>
         public ApplyTagsPostRequestBody()
         {
@@ -63,12 +63,12 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ApplyTagsPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphEdiscoveryApplyTags.ApplyTagsPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ApplyTagsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphEdiscoveryApplyTags.ApplyTagsPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ApplyTagsPostRequestBody();
+            return new Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.Queries.Item.MicrosoftGraphEdiscoveryApplyTags.ApplyTagsPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "tagsToAdd", n => { TagsToAdd = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "tagsToRemove", n => { TagsToRemove = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tagsToAdd", n => { TagsToAdd = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Tag>(Microsoft.Graph.Beta.Models.Ediscovery.Tag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tagsToRemove", n => { TagsToRemove = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Tag>(Microsoft.Graph.Beta.Models.Ediscovery.Tag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Tag>("tagsToAdd", TagsToAdd);
-            writer.WriteCollectionOfObjectValues<Tag>("tagsToRemove", TagsToRemove);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Tag>("tagsToAdd", TagsToAdd);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Tag>("tagsToRemove", TagsToRemove);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

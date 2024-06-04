@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class ValueBasedAttribute : CustomClaimAttributeBase, IParsable
+    public class ValueBasedAttribute : Microsoft.Graph.Beta.Models.CustomClaimAttributeBase, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The static value to be used an the attribute.</summary>
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ValueBasedAttribute"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.ValueBasedAttribute"/> and sets the default values.
         /// </summary>
         public ValueBasedAttribute() : base()
         {
@@ -36,12 +36,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ValueBasedAttribute"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ValueBasedAttribute"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new ValueBasedAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ValueBasedAttribute CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ValueBasedAttribute();
+            return new Microsoft.Graph.Beta.Models.ValueBasedAttribute();
         }
         /// <summary>
         /// The deserialization information for the current model

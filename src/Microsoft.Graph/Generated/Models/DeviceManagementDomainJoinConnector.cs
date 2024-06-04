@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// A Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs
     /// </summary>
-    public class DeviceManagementDomainJoinConnector : Entity, IParsable
+    public class DeviceManagementDomainJoinConnector : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The connector display name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("lastConnectionDateTime", value); }
         }
         /// <summary>The ODJ request states.</summary>
-        public DeviceManagementDomainJoinConnectorState? State
+        public Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnectorState? State
         {
-            get { return BackingStore?.Get<DeviceManagementDomainJoinConnectorState?>("state"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnectorState?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>The version of the connector.</summary>
@@ -58,12 +58,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementDomainJoinConnector"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementDomainJoinConnector CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementDomainJoinConnector();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models
             {
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastConnectionDateTime", n => { LastConnectionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<DeviceManagementDomainJoinConnectorState>(); } },
+                { "state", n => { State = n.GetEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnectorState>(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastConnectionDateTime", LastConnectionDateTime);
-            writer.WriteEnumValue<DeviceManagementDomainJoinConnectorState>("state", State);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnectorState>("state", State);
             writer.WriteStringValue("version", Version);
         }
     }

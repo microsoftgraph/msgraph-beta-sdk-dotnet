@@ -9,12 +9,12 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Windows device health monitoring configuration
     /// </summary>
-    public class WindowsHealthMonitoringConfiguration : DeviceConfiguration, IParsable
+    public class WindowsHealthMonitoringConfiguration : Microsoft.Graph.Beta.Models.DeviceConfiguration, IParsable
     {
         /// <summary>Possible values of a property</summary>
-        public Enablement? AllowDeviceHealthMonitoring
+        public Microsoft.Graph.Beta.Models.Enablement? AllowDeviceHealthMonitoring
         {
-            get { return BackingStore?.Get<Enablement?>("allowDeviceHealthMonitoring"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Enablement?>("allowDeviceHealthMonitoring"); }
             set { BackingStore?.Set("allowDeviceHealthMonitoring", value); }
         }
         /// <summary>Specifies custom set of events collected from the device where health monitoring is enabled</summary>
@@ -34,13 +34,13 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>Device health monitoring scope</summary>
-        public WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope
+        public Microsoft.Graph.Beta.Models.WindowsHealthMonitoringScope? ConfigDeviceHealthMonitoringScope
         {
-            get { return BackingStore?.Get<WindowsHealthMonitoringScope?>("configDeviceHealthMonitoringScope"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsHealthMonitoringScope?>("configDeviceHealthMonitoringScope"); }
             set { BackingStore?.Set("configDeviceHealthMonitoringScope", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="WindowsHealthMonitoringConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsHealthMonitoringConfiguration"/> and sets the default values.
         /// </summary>
         public WindowsHealthMonitoringConfiguration() : base()
         {
@@ -49,12 +49,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="WindowsHealthMonitoringConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsHealthMonitoringConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new WindowsHealthMonitoringConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.WindowsHealthMonitoringConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WindowsHealthMonitoringConfiguration();
+            return new Microsoft.Graph.Beta.Models.WindowsHealthMonitoringConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "allowDeviceHealthMonitoring", n => { AllowDeviceHealthMonitoring = n.GetEnumValue<Enablement>(); } },
+                { "allowDeviceHealthMonitoring", n => { AllowDeviceHealthMonitoring = n.GetEnumValue<Microsoft.Graph.Beta.Models.Enablement>(); } },
                 { "configDeviceHealthMonitoringCustomScope", n => { ConfigDeviceHealthMonitoringCustomScope = n.GetStringValue(); } },
-                { "configDeviceHealthMonitoringScope", n => { ConfigDeviceHealthMonitoringScope = n.GetEnumValue<WindowsHealthMonitoringScope>(); } },
+                { "configDeviceHealthMonitoringScope", n => { ConfigDeviceHealthMonitoringScope = n.GetEnumValue<Microsoft.Graph.Beta.Models.WindowsHealthMonitoringScope>(); } },
             };
         }
         /// <summary>
@@ -77,9 +77,9 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<Enablement>("allowDeviceHealthMonitoring", AllowDeviceHealthMonitoring);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Enablement>("allowDeviceHealthMonitoring", AllowDeviceHealthMonitoring);
             writer.WriteStringValue("configDeviceHealthMonitoringCustomScope", ConfigDeviceHealthMonitoringCustomScope);
-            writer.WriteEnumValue<WindowsHealthMonitoringScope>("configDeviceHealthMonitoringScope", ConfigDeviceHealthMonitoringScope);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.WindowsHealthMonitoringScope>("configDeviceHealthMonitoringScope", ConfigDeviceHealthMonitoringScope);
         }
     }
 }

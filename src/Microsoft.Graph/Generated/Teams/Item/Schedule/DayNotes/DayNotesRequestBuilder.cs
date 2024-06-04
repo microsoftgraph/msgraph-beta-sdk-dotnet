@@ -19,24 +19,24 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes
     public class DayNotesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Provides operations to count the resources in the collection.</summary>
-        public CountRequestBuilder Count
+        public Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.Count.CountRequestBuilder Count
         {
-            get => new CountRequestBuilder(PathParameters, RequestAdapter);
+            get => new Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.Count.CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the dayNotes property of the microsoft.graph.schedule entity.</summary>
         /// <param name="position">The unique identifier of dayNote</param>
-        /// <returns>A <see cref="DayNoteItemRequestBuilder"/></returns>
-        public DayNoteItemRequestBuilder this[string position]
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.Item.DayNoteItemRequestBuilder"/></returns>
+        public Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.Item.DayNoteItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
                 urlTplParams.Add("dayNote%2Did", position);
-                return new DayNoteItemRequestBuilder(urlTplParams, RequestAdapter);
+                return new Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.Item.DayNoteItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DayNotesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="DayNotesRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
@@ -54,50 +54,50 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes
         /// <summary>
         /// The day notes in the schedule.
         /// </summary>
-        /// <returns>A <see cref="DayNoteCollectionResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DayNoteCollectionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DayNoteCollectionResponse?> GetAsync(Action<RequestConfiguration<DayNotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DayNoteCollectionResponse?> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder.DayNotesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DayNoteCollectionResponse> GetAsync(Action<RequestConfiguration<DayNotesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DayNoteCollectionResponse> GetAsync(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder.DayNotesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DayNoteCollectionResponse>(requestInfo, DayNoteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DayNoteCollectionResponse>(requestInfo, Microsoft.Graph.Beta.Models.DayNoteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Create new navigation property to dayNotes for teams
         /// </summary>
-        /// <returns>A <see cref="DayNote"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DayNote"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="ODataError">When receiving a 4XX or 5XX status code</exception>
+        /// <exception cref="Microsoft.Graph.Beta.Models.ODataErrors.ODataError">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<DayNote?> PostAsync(DayNote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DayNote?> PostAsync(Microsoft.Graph.Beta.Models.DayNote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<DayNote> PostAsync(DayNote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Microsoft.Graph.Beta.Models.DayNote> PostAsync(Microsoft.Graph.Beta.Models.DayNote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "XXX", ODataError.CreateFromDiscriminatorValue },
+                { "XXX", Microsoft.Graph.Beta.Models.ODataErrors.ODataError.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<DayNote>(requestInfo, DayNote.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DayNote>(requestInfo, Microsoft.Graph.Beta.Models.DayNote.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// The day notes in the schedule.
@@ -106,11 +106,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DayNotesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder.DayNotesRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DayNotesRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder.DayNotesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -126,11 +126,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(DayNote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DayNote body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(DayNote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.DayNote body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,11 +143,11 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="DayNotesRequestBuilder"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public DayNotesRequestBuilder WithUrl(string rawUrl)
+        public Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder WithUrl(string rawUrl)
         {
-            return new DayNotesRequestBuilder(rawUrl, RequestAdapter);
+            return new Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// The day notes in the schedule.
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes
         /// Configuration for the request such as headers, query parameters, and middleware options.
         /// </summary>
         [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        public class DayNotesRequestBuilderGetRequestConfiguration : RequestConfiguration<DayNotesRequestBuilderGetQueryParameters>
+        public class DayNotesRequestBuilderGetRequestConfiguration : RequestConfiguration<Microsoft.Graph.Beta.Teams.Item.Schedule.DayNotes.DayNotesRequestBuilder.DayNotesRequestBuilderGetQueryParameters>
         {
         }
         /// <summary>

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="UpdatableAssetEnrollment"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment"/> and sets the default values.
         /// </summary>
         public UpdatableAssetEnrollment()
         {
@@ -46,16 +46,16 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="UpdatableAssetEnrollment"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static UpdatableAssetEnrollment CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch
             {
-                "#microsoft.graph.windowsUpdates.updateManagementEnrollment" => new UpdateManagementEnrollment(),
-                _ => new UpdatableAssetEnrollment(),
+                "#microsoft.graph.windowsUpdates.updateManagementEnrollment" => new Microsoft.Graph.Beta.Models.WindowsUpdates.UpdateManagementEnrollment(),
+                _ => new Microsoft.Graph.Beta.Models.WindowsUpdates.UpdatableAssetEnrollment(),
             };
         }
         /// <summary>

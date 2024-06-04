@@ -95,28 +95,28 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
         /// <summary>The collection of managed tenants associated with the tenant tag. Optional.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TenantInfo>? Tenants
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.TenantInfo>? Tenants
         {
-            get { return BackingStore?.Get<List<TenantInfo>?>("tenants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.TenantInfo>?>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
 #nullable restore
 #else
-        public List<TenantInfo> Tenants
+        public List<Microsoft.Graph.Beta.Models.ManagedTenants.TenantInfo> Tenants
         {
-            get { return BackingStore?.Get<List<TenantInfo>>("tenants"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedTenants.TenantInfo>>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TenantTag"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.ManagedTenants.TenantTag"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new TenantTag CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.ManagedTenants.TenantTag CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TenantTag();
+            return new Microsoft.Graph.Beta.Models.ManagedTenants.TenantTag();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 { "lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                { "tenants", n => { Tenants = n.GetCollectionOfObjectValues<TenantInfo>(TenantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "tenants", n => { Tenants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.TenantInfo>(Microsoft.Graph.Beta.Models.ManagedTenants.TenantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("lastActionByUserId", LastActionByUserId);
             writer.WriteDateTimeOffsetValue("lastActionDateTime", LastActionDateTime);
-            writer.WriteCollectionOfObjectValues<TenantInfo>("tenants", Tenants);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedTenants.TenantInfo>("tenants", Tenants);
         }
     }
 }

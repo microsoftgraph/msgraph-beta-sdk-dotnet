@@ -7,22 +7,22 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class OnenoteOperation : Operation, IParsable
+    public class OnenoteOperation : Microsoft.Graph.Beta.Models.Operation, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The error returned by the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnenoteOperationError? Error
+        public Microsoft.Graph.Beta.Models.OnenoteOperationError? Error
         {
-            get { return BackingStore?.Get<OnenoteOperationError?>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnenoteOperationError?>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #nullable restore
 #else
-        public OnenoteOperationError Error
+        public Microsoft.Graph.Beta.Models.OnenoteOperationError Error
         {
-            get { return BackingStore?.Get<OnenoteOperationError>("error"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnenoteOperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
 #endif
@@ -77,12 +77,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnenoteOperation"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnenoteOperation"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new OnenoteOperation CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.OnenoteOperation CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnenoteOperation();
+            return new Microsoft.Graph.Beta.Models.OnenoteOperation();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "error", n => { Error = n.GetObjectValue<OnenoteOperationError>(OnenoteOperationError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnenoteOperationError>(Microsoft.Graph.Beta.Models.OnenoteOperationError.CreateFromDiscriminatorValue); } },
                 { "percentComplete", n => { PercentComplete = n.GetStringValue(); } },
                 { "resourceId", n => { ResourceId = n.GetStringValue(); } },
                 { "resourceLocation", n => { ResourceLocation = n.GetStringValue(); } },
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<OnenoteOperationError>("error", Error);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnenoteOperationError>("error", Error);
             writer.WriteStringValue("percentComplete", PercentComplete);
             writer.WriteStringValue("resourceId", ResourceId);
             writer.WriteStringValue("resourceLocation", ResourceLocation);

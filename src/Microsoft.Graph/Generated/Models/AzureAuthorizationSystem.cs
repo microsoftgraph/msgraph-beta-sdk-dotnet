@@ -7,91 +7,91 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class AzureAuthorizationSystem : AuthorizationSystem, IParsable
+    public class AzureAuthorizationSystem : Microsoft.Graph.Beta.Models.AuthorizationSystem, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>List of actions for service in authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureAuthorizationSystemTypeAction>? Actions
+        public List<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemTypeAction>? Actions
         {
-            get { return BackingStore?.Get<List<AzureAuthorizationSystemTypeAction>?>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemTypeAction>?>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #nullable restore
 #else
-        public List<AzureAuthorizationSystemTypeAction> Actions
+        public List<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemTypeAction> Actions
         {
-            get { return BackingStore?.Get<List<AzureAuthorizationSystemTypeAction>>("actions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemTypeAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
 #endif
         /// <summary>Identities in the authorization system.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public AzureAssociatedIdentities? AssociatedIdentities
+        public Microsoft.Graph.Beta.Models.AzureAssociatedIdentities? AssociatedIdentities
         {
-            get { return BackingStore?.Get<AzureAssociatedIdentities?>("associatedIdentities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureAssociatedIdentities?>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #nullable restore
 #else
-        public AzureAssociatedIdentities AssociatedIdentities
+        public Microsoft.Graph.Beta.Models.AzureAssociatedIdentities AssociatedIdentities
         {
-            get { return BackingStore?.Get<AzureAssociatedIdentities>("associatedIdentities"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AzureAssociatedIdentities>("associatedIdentities"); }
             set { BackingStore?.Set("associatedIdentities", value); }
         }
 #endif
         /// <summary>Resources associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureAuthorizationSystemResource>? Resources
+        public List<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemResource>? Resources
         {
-            get { return BackingStore?.Get<List<AzureAuthorizationSystemResource>?>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemResource>?>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #nullable restore
 #else
-        public List<AzureAuthorizationSystemResource> Resources
+        public List<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemResource> Resources
         {
-            get { return BackingStore?.Get<List<AzureAuthorizationSystemResource>>("resources"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
 #endif
         /// <summary>Roles associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AzureRoleDefinition>? RoleDefinitions
+        public List<Microsoft.Graph.Beta.Models.AzureRoleDefinition>? RoleDefinitions
         {
-            get { return BackingStore?.Get<List<AzureRoleDefinition>?>("roleDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureRoleDefinition>?>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<AzureRoleDefinition> RoleDefinitions
+        public List<Microsoft.Graph.Beta.Models.AzureRoleDefinition> RoleDefinitions
         {
-            get { return BackingStore?.Get<List<AzureRoleDefinition>>("roleDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AzureRoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
 #endif
         /// <summary>Services associated with the authorization system type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<AuthorizationSystemTypeService>? Services
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>? Services
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemTypeService>?>("services"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>?>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #nullable restore
 #else
-        public List<AuthorizationSystemTypeService> Services
+        public List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService> Services
         {
-            get { return BackingStore?.Get<List<AuthorizationSystemTypeService>>("services"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="AzureAuthorizationSystem"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.AzureAuthorizationSystem"/> and sets the default values.
         /// </summary>
         public AzureAuthorizationSystem() : base()
         {
@@ -100,12 +100,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="AzureAuthorizationSystem"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.AzureAuthorizationSystem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new AzureAuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.AzureAuthorizationSystem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new AzureAuthorizationSystem();
+            return new Microsoft.Graph.Beta.Models.AzureAuthorizationSystem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "actions", n => { Actions = n.GetCollectionOfObjectValues<AzureAuthorizationSystemTypeAction>(AzureAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<AzureAssociatedIdentities>(AzureAssociatedIdentities.CreateFromDiscriminatorValue); } },
-                { "resources", n => { Resources = n.GetCollectionOfObjectValues<AzureAuthorizationSystemResource>(AzureAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<AzureRoleDefinition>(AzureRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "services", n => { Services = n.GetCollectionOfObjectValues<AuthorizationSystemTypeService>(AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "actions", n => { Actions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemTypeAction>(Microsoft.Graph.Beta.Models.AzureAuthorizationSystemTypeAction.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "associatedIdentities", n => { AssociatedIdentities = n.GetObjectValue<Microsoft.Graph.Beta.Models.AzureAssociatedIdentities>(Microsoft.Graph.Beta.Models.AzureAssociatedIdentities.CreateFromDiscriminatorValue); } },
+                { "resources", n => { Resources = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemResource>(Microsoft.Graph.Beta.Models.AzureAuthorizationSystemResource.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "roleDefinitions", n => { RoleDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureRoleDefinition>(Microsoft.Graph.Beta.Models.AzureRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "services", n => { Services = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>(Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -130,11 +130,11 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<AzureAuthorizationSystemTypeAction>("actions", Actions);
-            writer.WriteObjectValue<AzureAssociatedIdentities>("associatedIdentities", AssociatedIdentities);
-            writer.WriteCollectionOfObjectValues<AzureAuthorizationSystemResource>("resources", Resources);
-            writer.WriteCollectionOfObjectValues<AzureRoleDefinition>("roleDefinitions", RoleDefinitions);
-            writer.WriteCollectionOfObjectValues<AuthorizationSystemTypeService>("services", Services);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemTypeAction>("actions", Actions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AzureAssociatedIdentities>("associatedIdentities", AssociatedIdentities);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureAuthorizationSystemResource>("resources", Resources);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AzureRoleDefinition>("roleDefinitions", RoleDefinitions);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AuthorizationSystemTypeService>("services", Services);
         }
     }
 }

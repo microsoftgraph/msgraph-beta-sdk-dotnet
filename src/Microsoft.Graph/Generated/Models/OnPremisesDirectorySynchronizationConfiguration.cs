@@ -14,16 +14,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Contains the accidental deletion prevention configuration for a tenant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesAccidentalDeletionPrevention? AccidentalDeletionPrevention
+        public Microsoft.Graph.Beta.Models.OnPremisesAccidentalDeletionPrevention? AccidentalDeletionPrevention
         {
-            get { return BackingStore?.Get<OnPremisesAccidentalDeletionPrevention?>("accidentalDeletionPrevention"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesAccidentalDeletionPrevention?>("accidentalDeletionPrevention"); }
             set { BackingStore?.Set("accidentalDeletionPrevention", value); }
         }
 #nullable restore
 #else
-        public OnPremisesAccidentalDeletionPrevention AccidentalDeletionPrevention
+        public Microsoft.Graph.Beta.Models.OnPremisesAccidentalDeletionPrevention AccidentalDeletionPrevention
         {
-            get { return BackingStore?.Get<OnPremisesAccidentalDeletionPrevention>("accidentalDeletionPrevention"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesAccidentalDeletionPrevention>("accidentalDeletionPrevention"); }
             set { BackingStore?.Set("accidentalDeletionPrevention", value); }
         }
 #endif
@@ -70,16 +70,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Data for the current export run.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesCurrentExportData? CurrentExportData
+        public Microsoft.Graph.Beta.Models.OnPremisesCurrentExportData? CurrentExportData
         {
-            get { return BackingStore?.Get<OnPremisesCurrentExportData?>("currentExportData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesCurrentExportData?>("currentExportData"); }
             set { BackingStore?.Set("currentExportData", value); }
         }
 #nullable restore
 #else
-        public OnPremisesCurrentExportData CurrentExportData
+        public Microsoft.Graph.Beta.Models.OnPremisesCurrentExportData CurrentExportData
         {
-            get { return BackingStore?.Get<OnPremisesCurrentExportData>("currentExportData"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesCurrentExportData>("currentExportData"); }
             set { BackingStore?.Set("currentExportData", value); }
         }
 #endif
@@ -130,21 +130,21 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>Configuration to control how cloud created or owned objects are synchronized back to the on-premises directory.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public OnPremisesWritebackConfiguration? WritebackConfiguration
+        public Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration? WritebackConfiguration
         {
-            get { return BackingStore?.Get<OnPremisesWritebackConfiguration?>("writebackConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration?>("writebackConfiguration"); }
             set { BackingStore?.Set("writebackConfiguration", value); }
         }
 #nullable restore
 #else
-        public OnPremisesWritebackConfiguration WritebackConfiguration
+        public Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration WritebackConfiguration
         {
-            get { return BackingStore?.Get<OnPremisesWritebackConfiguration>("writebackConfiguration"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration>("writebackConfiguration"); }
             set { BackingStore?.Set("writebackConfiguration", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="OnPremisesDirectorySynchronizationConfiguration"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronizationConfiguration"/> and sets the default values.
         /// </summary>
         public OnPremisesDirectorySynchronizationConfiguration()
         {
@@ -154,12 +154,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="OnPremisesDirectorySynchronizationConfiguration"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronizationConfiguration"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static OnPremisesDirectorySynchronizationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronizationConfiguration CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new OnPremisesDirectorySynchronizationConfiguration();
+            return new Microsoft.Graph.Beta.Models.OnPremisesDirectorySynchronizationConfiguration();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -169,15 +169,15 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "accidentalDeletionPrevention", n => { AccidentalDeletionPrevention = n.GetObjectValue<OnPremisesAccidentalDeletionPrevention>(OnPremisesAccidentalDeletionPrevention.CreateFromDiscriminatorValue); } },
+                { "accidentalDeletionPrevention", n => { AccidentalDeletionPrevention = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesAccidentalDeletionPrevention>(Microsoft.Graph.Beta.Models.OnPremisesAccidentalDeletionPrevention.CreateFromDiscriminatorValue); } },
                 { "anchorAttribute", n => { AnchorAttribute = n.GetStringValue(); } },
                 { "applicationId", n => { ApplicationId = n.GetStringValue(); } },
-                { "currentExportData", n => { CurrentExportData = n.GetObjectValue<OnPremisesCurrentExportData>(OnPremisesCurrentExportData.CreateFromDiscriminatorValue); } },
+                { "currentExportData", n => { CurrentExportData = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesCurrentExportData>(Microsoft.Graph.Beta.Models.OnPremisesCurrentExportData.CreateFromDiscriminatorValue); } },
                 { "customerRequestedSynchronizationInterval", n => { CustomerRequestedSynchronizationInterval = n.GetTimeSpanValue(); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
                 { "synchronizationClientVersion", n => { SynchronizationClientVersion = n.GetStringValue(); } },
                 { "synchronizationInterval", n => { SynchronizationInterval = n.GetTimeSpanValue(); } },
-                { "writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<OnPremisesWritebackConfiguration>(OnPremisesWritebackConfiguration.CreateFromDiscriminatorValue); } },
+                { "writebackConfiguration", n => { WritebackConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration>(Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -187,15 +187,15 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<OnPremisesAccidentalDeletionPrevention>("accidentalDeletionPrevention", AccidentalDeletionPrevention);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnPremisesAccidentalDeletionPrevention>("accidentalDeletionPrevention", AccidentalDeletionPrevention);
             writer.WriteStringValue("anchorAttribute", AnchorAttribute);
             writer.WriteStringValue("applicationId", ApplicationId);
-            writer.WriteObjectValue<OnPremisesCurrentExportData>("currentExportData", CurrentExportData);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnPremisesCurrentExportData>("currentExportData", CurrentExportData);
             writer.WriteTimeSpanValue("customerRequestedSynchronizationInterval", CustomerRequestedSynchronizationInterval);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("synchronizationClientVersion", SynchronizationClientVersion);
             writer.WriteTimeSpanValue("synchronizationInterval", SynchronizationInterval);
-            writer.WriteObjectValue<OnPremisesWritebackConfiguration>("writebackConfiguration", WritebackConfiguration);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OnPremisesWritebackConfiguration>("writebackConfiguration", WritebackConfiguration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

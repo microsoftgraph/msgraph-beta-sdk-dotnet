@@ -9,33 +9,33 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity representing a template setting category
     /// </summary>
-    public class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory, IParsable
+    public class DeviceManagementTemplateSettingCategory : Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory, IParsable
     {
         /// <summary>The settings this category contains</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceManagementSettingInstance>? RecommendedSettings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>? RecommendedSettings
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("recommendedSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>?>("recommendedSettings"); }
             set { BackingStore?.Set("recommendedSettings", value); }
         }
 #nullable restore
 #else
-        public List<DeviceManagementSettingInstance> RecommendedSettings
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance> RecommendedSettings
         {
-            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("recommendedSettings"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>>("recommendedSettings"); }
             set { BackingStore?.Set("recommendedSettings", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementTemplateSettingCategory"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementTemplateSettingCategory CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementTemplateSettingCategory();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementTemplateSettingCategory();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "recommendedSettings", n => { RecommendedSettings = n.GetCollectionOfObjectValues<DeviceManagementSettingInstance>(DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "recommendedSettings", n => { RecommendedSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>(Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<DeviceManagementSettingInstance>("recommendedSettings", RecommendedSettings);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementSettingInstance>("recommendedSettings", RecommendedSettings);
         }
     }
 }

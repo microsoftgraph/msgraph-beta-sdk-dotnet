@@ -20,16 +20,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The approved location of the timeClock.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public GeoCoordinates? ApprovedLocation
+        public Microsoft.Graph.Beta.Models.GeoCoordinates? ApprovedLocation
         {
-            get { return BackingStore?.Get<GeoCoordinates?>("approvedLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates?>("approvedLocation"); }
             set { BackingStore?.Set("approvedLocation", value); }
         }
 #nullable restore
 #else
-        public GeoCoordinates ApprovedLocation
+        public Microsoft.Graph.Beta.Models.GeoCoordinates ApprovedLocation
         {
-            get { return BackingStore?.Get<GeoCoordinates>("approvedLocation"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.GeoCoordinates>("approvedLocation"); }
             set { BackingStore?.Set("approvedLocation", value); }
         }
 #endif
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="TimeClockSettings"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.TimeClockSettings"/> and sets the default values.
         /// </summary>
         public TimeClockSettings()
         {
@@ -62,12 +62,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="TimeClockSettings"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.TimeClockSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static TimeClockSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.Models.TimeClockSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new TimeClockSettings();
+            return new Microsoft.Graph.Beta.Models.TimeClockSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "approvedLocation", n => { ApprovedLocation = n.GetObjectValue<GeoCoordinates>(GeoCoordinates.CreateFromDiscriminatorValue); } },
+                { "approvedLocation", n => { ApprovedLocation = n.GetObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>(Microsoft.Graph.Beta.Models.GeoCoordinates.CreateFromDiscriminatorValue); } },
                 { "@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<GeoCoordinates>("approvedLocation", ApprovedLocation);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.GeoCoordinates>("approvedLocation", ApprovedLocation);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

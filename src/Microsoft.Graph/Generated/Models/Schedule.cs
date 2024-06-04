@@ -7,7 +7,7 @@ using System;
 namespace Microsoft.Graph.Beta.Models
 {
     #pragma warning disable CS1591
-    public class Schedule : Entity, IParsable
+    public class Schedule : Microsoft.Graph.Beta.Models.Entity, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Indicates whether copied shifts should include the activities.</summary>
@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The day notes in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DayNote>? DayNotes
+        public List<Microsoft.Graph.Beta.Models.DayNote>? DayNotes
         {
-            get { return BackingStore?.Get<List<DayNote>?>("dayNotes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DayNote>?>("dayNotes"); }
             set { BackingStore?.Set("dayNotes", value); }
         }
 #nullable restore
 #else
-        public List<DayNote> DayNotes
+        public List<Microsoft.Graph.Beta.Models.DayNote> DayNotes
         {
-            get { return BackingStore?.Get<List<DayNote>>("dayNotes"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DayNote>>("dayNotes"); }
             set { BackingStore?.Set("dayNotes", value); }
         }
 #endif
@@ -53,16 +53,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The offer requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OfferShiftRequest>? OfferShiftRequests
+        public List<Microsoft.Graph.Beta.Models.OfferShiftRequest>? OfferShiftRequests
         {
-            get { return BackingStore?.Get<List<OfferShiftRequest>?>("offerShiftRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OfferShiftRequest>?>("offerShiftRequests"); }
             set { BackingStore?.Set("offerShiftRequests", value); }
         }
 #nullable restore
 #else
-        public List<OfferShiftRequest> OfferShiftRequests
+        public List<Microsoft.Graph.Beta.Models.OfferShiftRequest> OfferShiftRequests
         {
-            get { return BackingStore?.Get<List<OfferShiftRequest>>("offerShiftRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OfferShiftRequest>>("offerShiftRequests"); }
             set { BackingStore?.Set("offerShiftRequests", value); }
         }
 #endif
@@ -75,32 +75,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The open shift requests in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OpenShiftChangeRequest>? OpenShiftChangeRequests
+        public List<Microsoft.Graph.Beta.Models.OpenShiftChangeRequest>? OpenShiftChangeRequests
         {
-            get { return BackingStore?.Get<List<OpenShiftChangeRequest>?>("openShiftChangeRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OpenShiftChangeRequest>?>("openShiftChangeRequests"); }
             set { BackingStore?.Set("openShiftChangeRequests", value); }
         }
 #nullable restore
 #else
-        public List<OpenShiftChangeRequest> OpenShiftChangeRequests
+        public List<Microsoft.Graph.Beta.Models.OpenShiftChangeRequest> OpenShiftChangeRequests
         {
-            get { return BackingStore?.Get<List<OpenShiftChangeRequest>>("openShiftChangeRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OpenShiftChangeRequest>>("openShiftChangeRequests"); }
             set { BackingStore?.Set("openShiftChangeRequests", value); }
         }
 #endif
         /// <summary>The set of open shifts in a scheduling group in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<OpenShift>? OpenShifts
+        public List<Microsoft.Graph.Beta.Models.OpenShift>? OpenShifts
         {
-            get { return BackingStore?.Get<List<OpenShift>?>("openShifts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OpenShift>?>("openShifts"); }
             set { BackingStore?.Set("openShifts", value); }
         }
 #nullable restore
 #else
-        public List<OpenShift> OpenShifts
+        public List<Microsoft.Graph.Beta.Models.OpenShift> OpenShifts
         {
-            get { return BackingStore?.Get<List<OpenShift>>("openShifts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OpenShift>>("openShifts"); }
             set { BackingStore?.Set("openShifts", value); }
         }
 #endif
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("openShiftsEnabled", value); }
         }
         /// <summary>The status of the schedule provisioning. The possible values are notStarted, running, completed, failed.</summary>
-        public OperationStatus? ProvisionStatus
+        public Microsoft.Graph.Beta.Models.OperationStatus? ProvisionStatus
         {
-            get { return BackingStore?.Get<OperationStatus?>("provisionStatus"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OperationStatus?>("provisionStatus"); }
             set { BackingStore?.Set("provisionStatus", value); }
         }
         /// <summary>Additional information about why schedule provisioning failed.</summary>
@@ -135,70 +135,70 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The logical grouping of users in the schedule (usually by role).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SchedulingGroup>? SchedulingGroups
+        public List<Microsoft.Graph.Beta.Models.SchedulingGroup>? SchedulingGroups
         {
-            get { return BackingStore?.Get<List<SchedulingGroup>?>("schedulingGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SchedulingGroup>?>("schedulingGroups"); }
             set { BackingStore?.Set("schedulingGroups", value); }
         }
 #nullable restore
 #else
-        public List<SchedulingGroup> SchedulingGroups
+        public List<Microsoft.Graph.Beta.Models.SchedulingGroup> SchedulingGroups
         {
-            get { return BackingStore?.Get<List<SchedulingGroup>>("schedulingGroups"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SchedulingGroup>>("schedulingGroups"); }
             set { BackingStore?.Set("schedulingGroups", value); }
         }
 #endif
         /// <summary>The shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Shift>? Shifts
+        public List<Microsoft.Graph.Beta.Models.Shift>? Shifts
         {
-            get { return BackingStore?.Get<List<Shift>?>("shifts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Shift>?>("shifts"); }
             set { BackingStore?.Set("shifts", value); }
         }
 #nullable restore
 #else
-        public List<Shift> Shifts
+        public List<Microsoft.Graph.Beta.Models.Shift> Shifts
         {
-            get { return BackingStore?.Get<List<Shift>>("shifts"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Shift>>("shifts"); }
             set { BackingStore?.Set("shifts", value); }
         }
 #endif
         /// <summary>The definitions of the roles in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<ShiftsRoleDefinition>? ShiftsRoleDefinitions
+        public List<Microsoft.Graph.Beta.Models.ShiftsRoleDefinition>? ShiftsRoleDefinitions
         {
-            get { return BackingStore?.Get<List<ShiftsRoleDefinition>?>("shiftsRoleDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ShiftsRoleDefinition>?>("shiftsRoleDefinitions"); }
             set { BackingStore?.Set("shiftsRoleDefinitions", value); }
         }
 #nullable restore
 #else
-        public List<ShiftsRoleDefinition> ShiftsRoleDefinitions
+        public List<Microsoft.Graph.Beta.Models.ShiftsRoleDefinition> ShiftsRoleDefinitions
         {
-            get { return BackingStore?.Get<List<ShiftsRoleDefinition>>("shiftsRoleDefinitions"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ShiftsRoleDefinition>>("shiftsRoleDefinitions"); }
             set { BackingStore?.Set("shiftsRoleDefinitions", value); }
         }
 #endif
         /// <summary>Indicates the start day of the week. The possible values are: sunday, monday, tuesday, wednesday, thursday, friday, saturday.</summary>
-        public DayOfWeekObject? StartDayOfWeek
+        public Microsoft.Graph.Beta.Models.DayOfWeekObject? StartDayOfWeek
         {
-            get { return BackingStore?.Get<DayOfWeekObject?>("startDayOfWeek"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeekObject?>("startDayOfWeek"); }
             set { BackingStore?.Set("startDayOfWeek", value); }
         }
         /// <summary>The swap requests for shifts in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<SwapShiftsChangeRequest>? SwapShiftsChangeRequests
+        public List<Microsoft.Graph.Beta.Models.SwapShiftsChangeRequest>? SwapShiftsChangeRequests
         {
-            get { return BackingStore?.Get<List<SwapShiftsChangeRequest>?>("swapShiftsChangeRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SwapShiftsChangeRequest>?>("swapShiftsChangeRequests"); }
             set { BackingStore?.Set("swapShiftsChangeRequests", value); }
         }
 #nullable restore
 #else
-        public List<SwapShiftsChangeRequest> SwapShiftsChangeRequests
+        public List<Microsoft.Graph.Beta.Models.SwapShiftsChangeRequest> SwapShiftsChangeRequests
         {
-            get { return BackingStore?.Get<List<SwapShiftsChangeRequest>>("swapShiftsChangeRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.SwapShiftsChangeRequest>>("swapShiftsChangeRequests"); }
             set { BackingStore?.Set("swapShiftsChangeRequests", value); }
         }
 #endif
@@ -211,16 +211,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The time cards in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeCard>? TimeCards
+        public List<Microsoft.Graph.Beta.Models.TimeCard>? TimeCards
         {
-            get { return BackingStore?.Get<List<TimeCard>?>("timeCards"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeCard>?>("timeCards"); }
             set { BackingStore?.Set("timeCards", value); }
         }
 #nullable restore
 #else
-        public List<TimeCard> TimeCards
+        public List<Microsoft.Graph.Beta.Models.TimeCard> TimeCards
         {
-            get { return BackingStore?.Get<List<TimeCard>>("timeCards"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeCard>>("timeCards"); }
             set { BackingStore?.Set("timeCards", value); }
         }
 #endif
@@ -249,32 +249,32 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The set of reasons for a time off in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeOffReason>? TimeOffReasons
+        public List<Microsoft.Graph.Beta.Models.TimeOffReason>? TimeOffReasons
         {
-            get { return BackingStore?.Get<List<TimeOffReason>?>("timeOffReasons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeOffReason>?>("timeOffReasons"); }
             set { BackingStore?.Set("timeOffReasons", value); }
         }
 #nullable restore
 #else
-        public List<TimeOffReason> TimeOffReasons
+        public List<Microsoft.Graph.Beta.Models.TimeOffReason> TimeOffReasons
         {
-            get { return BackingStore?.Get<List<TimeOffReason>>("timeOffReasons"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeOffReason>>("timeOffReasons"); }
             set { BackingStore?.Set("timeOffReasons", value); }
         }
 #endif
         /// <summary>The time off requests in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeOffRequest>? TimeOffRequests
+        public List<Microsoft.Graph.Beta.Models.TimeOffRequest>? TimeOffRequests
         {
-            get { return BackingStore?.Get<List<TimeOffRequest>?>("timeOffRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeOffRequest>?>("timeOffRequests"); }
             set { BackingStore?.Set("timeOffRequests", value); }
         }
 #nullable restore
 #else
-        public List<TimeOffRequest> TimeOffRequests
+        public List<Microsoft.Graph.Beta.Models.TimeOffRequest> TimeOffRequests
         {
-            get { return BackingStore?.Get<List<TimeOffRequest>>("timeOffRequests"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeOffRequest>>("timeOffRequests"); }
             set { BackingStore?.Set("timeOffRequests", value); }
         }
 #endif
@@ -287,16 +287,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>The instances of times off in the schedule.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<TimeOff>? TimesOff
+        public List<Microsoft.Graph.Beta.Models.TimeOff>? TimesOff
         {
-            get { return BackingStore?.Get<List<TimeOff>?>("timesOff"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeOff>?>("timesOff"); }
             set { BackingStore?.Set("timesOff", value); }
         }
 #nullable restore
 #else
-        public List<TimeOff> TimesOff
+        public List<Microsoft.Graph.Beta.Models.TimeOff> TimesOff
         {
-            get { return BackingStore?.Get<List<TimeOff>>("timesOff"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TimeOff>>("timesOff"); }
             set { BackingStore?.Set("timesOff", value); }
         }
 #endif
@@ -335,12 +335,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Schedule"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Schedule"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Schedule CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Schedule CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Schedule();
+            return new Microsoft.Graph.Beta.Models.Schedule();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -351,31 +351,31 @@ namespace Microsoft.Graph.Beta.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "activitiesIncludedWhenCopyingShiftsEnabled", n => { ActivitiesIncludedWhenCopyingShiftsEnabled = n.GetBoolValue(); } },
-                { "dayNotes", n => { DayNotes = n.GetCollectionOfObjectValues<DayNote>(DayNote.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "dayNotes", n => { DayNotes = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DayNote>(Microsoft.Graph.Beta.Models.DayNote.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
                 { "isCrossLocationShiftRequestApprovalRequired", n => { IsCrossLocationShiftRequestApprovalRequired = n.GetBoolValue(); } },
                 { "isCrossLocationShiftsEnabled", n => { IsCrossLocationShiftsEnabled = n.GetBoolValue(); } },
-                { "offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<OfferShiftRequest>(OfferShiftRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "offerShiftRequests", n => { OfferShiftRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OfferShiftRequest>(Microsoft.Graph.Beta.Models.OfferShiftRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "offerShiftRequestsEnabled", n => { OfferShiftRequestsEnabled = n.GetBoolValue(); } },
-                { "openShiftChangeRequests", n => { OpenShiftChangeRequests = n.GetCollectionOfObjectValues<OpenShiftChangeRequest>(OpenShiftChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "openShifts", n => { OpenShifts = n.GetCollectionOfObjectValues<OpenShift>(OpenShift.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "openShiftChangeRequests", n => { OpenShiftChangeRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OpenShiftChangeRequest>(Microsoft.Graph.Beta.Models.OpenShiftChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "openShifts", n => { OpenShifts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OpenShift>(Microsoft.Graph.Beta.Models.OpenShift.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "openShiftsEnabled", n => { OpenShiftsEnabled = n.GetBoolValue(); } },
-                { "provisionStatus", n => { ProvisionStatus = n.GetEnumValue<OperationStatus>(); } },
+                { "provisionStatus", n => { ProvisionStatus = n.GetEnumValue<Microsoft.Graph.Beta.Models.OperationStatus>(); } },
                 { "provisionStatusCode", n => { ProvisionStatusCode = n.GetStringValue(); } },
-                { "schedulingGroups", n => { SchedulingGroups = n.GetCollectionOfObjectValues<SchedulingGroup>(SchedulingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "shifts", n => { Shifts = n.GetCollectionOfObjectValues<Shift>(Shift.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "shiftsRoleDefinitions", n => { ShiftsRoleDefinitions = n.GetCollectionOfObjectValues<ShiftsRoleDefinition>(ShiftsRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "startDayOfWeek", n => { StartDayOfWeek = n.GetEnumValue<DayOfWeekObject>(); } },
-                { "swapShiftsChangeRequests", n => { SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<SwapShiftsChangeRequest>(SwapShiftsChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "schedulingGroups", n => { SchedulingGroups = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SchedulingGroup>(Microsoft.Graph.Beta.Models.SchedulingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shifts", n => { Shifts = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Shift>(Microsoft.Graph.Beta.Models.Shift.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "shiftsRoleDefinitions", n => { ShiftsRoleDefinitions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ShiftsRoleDefinition>(Microsoft.Graph.Beta.Models.ShiftsRoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "startDayOfWeek", n => { StartDayOfWeek = n.GetEnumValue<Microsoft.Graph.Beta.Models.DayOfWeekObject>(); } },
+                { "swapShiftsChangeRequests", n => { SwapShiftsChangeRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SwapShiftsChangeRequest>(Microsoft.Graph.Beta.Models.SwapShiftsChangeRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "swapShiftsRequestsEnabled", n => { SwapShiftsRequestsEnabled = n.GetBoolValue(); } },
-                { "timeCards", n => { TimeCards = n.GetCollectionOfObjectValues<TimeCard>(TimeCard.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timeCards", n => { TimeCards = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeCard>(Microsoft.Graph.Beta.Models.TimeCard.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "timeClockEnabled", n => { TimeClockEnabled = n.GetBoolValue(); } },
                 { "timeClockSettings", n => { TimeClockSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.TimeClockSettings>(Microsoft.Graph.Beta.Models.TimeClockSettings.CreateFromDiscriminatorValue); } },
-                { "timeOffReasons", n => { TimeOffReasons = n.GetCollectionOfObjectValues<TimeOffReason>(TimeOffReason.CreateFromDiscriminatorValue)?.ToList(); } },
-                { "timeOffRequests", n => { TimeOffRequests = n.GetCollectionOfObjectValues<TimeOffRequest>(TimeOffRequest.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timeOffReasons", n => { TimeOffReasons = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeOffReason>(Microsoft.Graph.Beta.Models.TimeOffReason.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timeOffRequests", n => { TimeOffRequests = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeOffRequest>(Microsoft.Graph.Beta.Models.TimeOffRequest.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "timeOffRequestsEnabled", n => { TimeOffRequestsEnabled = n.GetBoolValue(); } },
                 { "timeZone", n => { TimeZone = n.GetStringValue(); } },
-                { "timesOff", n => { TimesOff = n.GetCollectionOfObjectValues<TimeOff>(TimeOff.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "timesOff", n => { TimesOff = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeOff>(Microsoft.Graph.Beta.Models.TimeOff.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "workforceIntegrationIds", n => { WorkforceIntegrationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -388,28 +388,28 @@ namespace Microsoft.Graph.Beta.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("activitiesIncludedWhenCopyingShiftsEnabled", ActivitiesIncludedWhenCopyingShiftsEnabled);
-            writer.WriteCollectionOfObjectValues<DayNote>("dayNotes", DayNotes);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DayNote>("dayNotes", DayNotes);
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteBoolValue("isCrossLocationShiftRequestApprovalRequired", IsCrossLocationShiftRequestApprovalRequired);
             writer.WriteBoolValue("isCrossLocationShiftsEnabled", IsCrossLocationShiftsEnabled);
-            writer.WriteCollectionOfObjectValues<OfferShiftRequest>("offerShiftRequests", OfferShiftRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OfferShiftRequest>("offerShiftRequests", OfferShiftRequests);
             writer.WriteBoolValue("offerShiftRequestsEnabled", OfferShiftRequestsEnabled);
-            writer.WriteCollectionOfObjectValues<OpenShiftChangeRequest>("openShiftChangeRequests", OpenShiftChangeRequests);
-            writer.WriteCollectionOfObjectValues<OpenShift>("openShifts", OpenShifts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OpenShiftChangeRequest>("openShiftChangeRequests", OpenShiftChangeRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OpenShift>("openShifts", OpenShifts);
             writer.WriteBoolValue("openShiftsEnabled", OpenShiftsEnabled);
-            writer.WriteCollectionOfObjectValues<SchedulingGroup>("schedulingGroups", SchedulingGroups);
-            writer.WriteCollectionOfObjectValues<Shift>("shifts", Shifts);
-            writer.WriteCollectionOfObjectValues<ShiftsRoleDefinition>("shiftsRoleDefinitions", ShiftsRoleDefinitions);
-            writer.WriteEnumValue<DayOfWeekObject>("startDayOfWeek", StartDayOfWeek);
-            writer.WriteCollectionOfObjectValues<SwapShiftsChangeRequest>("swapShiftsChangeRequests", SwapShiftsChangeRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SchedulingGroup>("schedulingGroups", SchedulingGroups);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Shift>("shifts", Shifts);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ShiftsRoleDefinition>("shiftsRoleDefinitions", ShiftsRoleDefinitions);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.DayOfWeekObject>("startDayOfWeek", StartDayOfWeek);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.SwapShiftsChangeRequest>("swapShiftsChangeRequests", SwapShiftsChangeRequests);
             writer.WriteBoolValue("swapShiftsRequestsEnabled", SwapShiftsRequestsEnabled);
-            writer.WriteCollectionOfObjectValues<TimeCard>("timeCards", TimeCards);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeCard>("timeCards", TimeCards);
             writer.WriteBoolValue("timeClockEnabled", TimeClockEnabled);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TimeClockSettings>("timeClockSettings", TimeClockSettings);
-            writer.WriteCollectionOfObjectValues<TimeOffReason>("timeOffReasons", TimeOffReasons);
-            writer.WriteCollectionOfObjectValues<TimeOffRequest>("timeOffRequests", TimeOffRequests);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeOffReason>("timeOffReasons", TimeOffReasons);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeOffRequest>("timeOffRequests", TimeOffRequests);
             writer.WriteBoolValue("timeOffRequestsEnabled", TimeOffRequestsEnabled);
-            writer.WriteCollectionOfObjectValues<TimeOff>("timesOff", TimesOff);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TimeOff>("timesOff", TimesOff);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteCollectionOfPrimitiveValues<string>("workforceIntegrationIds", WorkforceIntegrationIds);
         }

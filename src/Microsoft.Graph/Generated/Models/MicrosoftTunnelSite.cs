@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Entity that represents a Microsoft Tunnel site
     /// </summary>
-    public class MicrosoftTunnelSite : Entity, IParsable
+    public class MicrosoftTunnelSite : Microsoft.Graph.Beta.Models.Entity, IParsable
     {
         /// <summary>The site&apos;s description (optional)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,16 +79,16 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<MicrosoftTunnelServer>? MicrosoftTunnelServers
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServer>? MicrosoftTunnelServers
         {
-            get { return BackingStore?.Get<List<MicrosoftTunnelServer>?>("microsoftTunnelServers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServer>?>("microsoftTunnelServers"); }
             set { BackingStore?.Set("microsoftTunnelServers", value); }
         }
 #nullable restore
 #else
-        public List<MicrosoftTunnelServer> MicrosoftTunnelServers
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServer> MicrosoftTunnelServers
         {
-            get { return BackingStore?.Get<List<MicrosoftTunnelServer>>("microsoftTunnelServers"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServer>>("microsoftTunnelServers"); }
             set { BackingStore?.Set("microsoftTunnelServers", value); }
         }
 #endif
@@ -157,12 +157,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="MicrosoftTunnelSite"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.MicrosoftTunnelSite"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new MicrosoftTunnelSite CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.MicrosoftTunnelSite CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new MicrosoftTunnelSite();
+            return new Microsoft.Graph.Beta.Models.MicrosoftTunnelSite();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "internalNetworkProbeUrl", n => { InternalNetworkProbeUrl = n.GetStringValue(); } },
                 { "microsoftTunnelConfiguration", n => { MicrosoftTunnelConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue); } },
-                { "microsoftTunnelServers", n => { MicrosoftTunnelServers = n.GetCollectionOfObjectValues<MicrosoftTunnelServer>(MicrosoftTunnelServer.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "microsoftTunnelServers", n => { MicrosoftTunnelServers = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelServer>(Microsoft.Graph.Beta.Models.MicrosoftTunnelServer.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "publicAddress", n => { PublicAddress = n.GetStringValue(); } },
                 { "roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 { "upgradeAutomatically", n => { UpgradeAutomatically = n.GetBoolValue(); } },
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Models
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("internalNetworkProbeUrl", InternalNetworkProbeUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration", MicrosoftTunnelConfiguration);
-            writer.WriteCollectionOfObjectValues<MicrosoftTunnelServer>("microsoftTunnelServers", MicrosoftTunnelServers);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MicrosoftTunnelServer>("microsoftTunnelServers", MicrosoftTunnelServers);
             writer.WriteStringValue("publicAddress", PublicAddress);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteBoolValue("upgradeAutomatically", UpgradeAutomatically);

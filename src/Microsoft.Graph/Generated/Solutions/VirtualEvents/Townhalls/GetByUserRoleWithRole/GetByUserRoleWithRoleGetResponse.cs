@@ -8,34 +8,34 @@ using System;
 namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole
 {
     #pragma warning disable CS1591
-    public class GetByUserRoleWithRoleGetResponse : BaseCollectionPaginationCountResponse, IParsable
+    public class GetByUserRoleWithRoleGetResponse : Microsoft.Graph.Beta.Models.BaseCollectionPaginationCountResponse, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<VirtualEventTownhall>? Value
+        public List<Microsoft.Graph.Beta.Models.VirtualEventTownhall>? Value
         {
-            get { return BackingStore?.Get<List<VirtualEventTownhall>?>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventTownhall>?>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #nullable restore
 #else
-        public List<VirtualEventTownhall> Value
+        public List<Microsoft.Graph.Beta.Models.VirtualEventTownhall> Value
         {
-            get { return BackingStore?.Get<List<VirtualEventTownhall>>("value"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.VirtualEventTownhall>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="GetByUserRoleWithRoleGetResponse"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new GetByUserRoleWithRoleGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new GetByUserRoleWithRoleGetResponse();
+            return new Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWithRole.GetByUserRoleWithRoleGetResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWi
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "value", n => { Value = n.GetCollectionOfObjectValues<VirtualEventTownhall>(VirtualEventTownhall.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventTownhall>(Microsoft.Graph.Beta.Models.VirtualEventTownhall.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Solutions.VirtualEvents.Townhalls.GetByUserRoleWi
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<VirtualEventTownhall>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.VirtualEventTownhall>("value", Value);
         }
     }
 }

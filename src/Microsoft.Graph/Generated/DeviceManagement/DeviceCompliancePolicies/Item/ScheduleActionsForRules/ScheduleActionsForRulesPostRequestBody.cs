@@ -23,21 +23,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         /// <summary>The deviceComplianceScheduledActionForRules property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<DeviceComplianceScheduledActionForRule>? DeviceComplianceScheduledActionForRules
+        public List<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule>? DeviceComplianceScheduledActionForRules
         {
-            get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>?>("deviceComplianceScheduledActionForRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule>?>("deviceComplianceScheduledActionForRules"); }
             set { BackingStore?.Set("deviceComplianceScheduledActionForRules", value); }
         }
 #nullable restore
 #else
-        public List<DeviceComplianceScheduledActionForRule> DeviceComplianceScheduledActionForRules
+        public List<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule> DeviceComplianceScheduledActionForRules
         {
-            get { return BackingStore?.Get<List<DeviceComplianceScheduledActionForRule>>("deviceComplianceScheduledActionForRules"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule>>("deviceComplianceScheduledActionForRules"); }
             set { BackingStore?.Set("deviceComplianceScheduledActionForRules", value); }
         }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="ScheduleActionsForRulesPostRequestBody"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules.ScheduleActionsForRulesPostRequestBody"/> and sets the default values.
         /// </summary>
         public ScheduleActionsForRulesPostRequestBody()
         {
@@ -47,12 +47,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="ScheduleActionsForRulesPostRequestBody"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules.ScheduleActionsForRulesPostRequestBody"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static ScheduleActionsForRulesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules.ScheduleActionsForRulesPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ScheduleActionsForRulesPostRequestBody();
+            return new Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules.ScheduleActionsForRulesPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "deviceComplianceScheduledActionForRules", n => { DeviceComplianceScheduledActionForRules = n.GetCollectionOfObjectValues<DeviceComplianceScheduledActionForRule>(DeviceComplianceScheduledActionForRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "deviceComplianceScheduledActionForRules", n => { DeviceComplianceScheduledActionForRules = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule>(Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.Sc
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<DeviceComplianceScheduledActionForRule>("deviceComplianceScheduledActionForRules", DeviceComplianceScheduledActionForRules);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceComplianceScheduledActionForRule>("deviceComplianceScheduledActionForRules", DeviceComplianceScheduledActionForRules);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

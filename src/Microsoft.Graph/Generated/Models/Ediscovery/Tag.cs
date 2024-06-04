@@ -19,16 +19,16 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>Returns the tags that are a child of a tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<Tag>? ChildTags
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>? ChildTags
         {
-            get { return BackingStore?.Get<List<Tag>?>("childTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>?>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
 #nullable restore
 #else
-        public List<Tag> ChildTags
+        public List<Microsoft.Graph.Beta.Models.Ediscovery.Tag> ChildTags
         {
-            get { return BackingStore?.Get<List<Tag>>("childTags"); }
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Ediscovery.Tag>>("childTags"); }
             set { BackingStore?.Set("childTags", value); }
         }
 #endif
@@ -89,28 +89,28 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         /// <summary>Returns the parent tag of the specified tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public Tag? Parent
+        public Microsoft.Graph.Beta.Models.Ediscovery.Tag? Parent
         {
-            get { return BackingStore?.Get<Tag?>("parent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.Tag?>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #nullable restore
 #else
-        public Tag Parent
+        public Microsoft.Graph.Beta.Models.Ediscovery.Tag Parent
         {
-            get { return BackingStore?.Get<Tag>("parent"); }
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.Tag>("parent"); }
             set { BackingStore?.Set("parent", value); }
         }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="Tag"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.Ediscovery.Tag"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new Tag CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.Ediscovery.Tag CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new Tag();
+            return new Microsoft.Graph.Beta.Models.Ediscovery.Tag();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -120,13 +120,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "childSelectability", n => { ChildSelectability = n.GetEnumValue<ChildSelectability>(); } },
-                { "childTags", n => { ChildTags = n.GetCollectionOfObjectValues<Tag>(Tag.CreateFromDiscriminatorValue)?.ToList(); } },
+                { "childSelectability", n => { ChildSelectability = n.GetEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability>(); } },
+                { "childTags", n => { ChildTags = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Tag>(Microsoft.Graph.Beta.Models.Ediscovery.Tag.CreateFromDiscriminatorValue)?.ToList(); } },
                 { "createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "displayName", n => { DisplayName = n.GetStringValue(); } },
                 { "lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                { "parent", n => { Parent = n.GetObjectValue<Tag>(Tag.CreateFromDiscriminatorValue); } },
+                { "parent", n => { Parent = n.GetObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.Tag>(Microsoft.Graph.Beta.Models.Ediscovery.Tag.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -137,13 +137,13 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<ChildSelectability>("childSelectability", ChildSelectability);
-            writer.WriteCollectionOfObjectValues<Tag>("childTags", ChildTags);
+            writer.WriteEnumValue<Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability>("childSelectability", ChildSelectability);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Ediscovery.Tag>("childTags", ChildTags);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy", CreatedBy);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteObjectValue<Tag>("parent", Parent);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Ediscovery.Tag>("parent", Parent);
         }
     }
 }

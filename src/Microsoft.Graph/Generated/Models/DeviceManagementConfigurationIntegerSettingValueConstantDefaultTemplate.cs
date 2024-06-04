@@ -9,7 +9,7 @@ namespace Microsoft.Graph.Beta.Models
     /// <summary>
     /// Integer Setting Value Constant Default Template
     /// </summary>
-    public class DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate : DeviceManagementConfigurationIntegerSettingValueDefaultTemplate, IParsable
+    public class DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate : Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueDefaultTemplate, IParsable
     {
         /// <summary>Default Constant Value. Valid values -2147483648 to 2147483647</summary>
         public int? ConstantValue
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models
             set { BackingStore?.Set("constantValue", value); }
         }
         /// <summary>
-        /// Instantiates a new <see cref="DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate"/> and sets the default values.
+        /// Instantiates a new <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate"/> and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate() : base()
         {
@@ -27,12 +27,12 @@ namespace Microsoft.Graph.Beta.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate"/></returns>
+        /// <returns>A <see cref="Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate();
+            return new Microsoft.Graph.Beta.Models.DeviceManagementConfigurationIntegerSettingValueConstantDefaultTemplate();
         }
         /// <summary>
         /// The deserialization information for the current model
